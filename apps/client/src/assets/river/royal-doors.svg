@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="384" height="768" viewBox="0 0 384 768">
+  <title>Royal Doors — the pomelnic gate. The only element you pass through.</title>
+  <!-- two leaves, 2 fields wide each -->
+  <g fill="none" stroke="#c4a24a" stroke-width="3">
+    <path d="M12 756 L12 216 A180 180 0 0 1 372 216 L372 756"/>
+    <line x1="192" y1="36" x2="192" y2="756"/>
+  </g>
+  <!-- four panels per leaf, on the field rhythm -->
+  <g fill="none" stroke="#c4a24a" stroke-width="1" opacity="0.55">
+    <rect x="36" y="264" width="132" height="132"/><rect x="216" y="264" width="132" height="132"/>
+    <rect x="36" y="420" width="132" height="132"/><rect x="216" y="420" width="132" height="132"/>
+    <rect x="36" y="576" width="132" height="132"/><rect x="216" y="576" width="132" height="132"/>
+  </g>
+</svg>

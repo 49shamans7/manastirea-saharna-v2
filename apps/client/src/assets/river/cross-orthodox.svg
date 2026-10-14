@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="312" height="624" viewBox="0 0 312 624">
+  <title>Eight-pointed Orthodox cross — constructed on the 78px field</title>
+  <!-- upright -->
+  <rect x="132" y="24" width="48" height="576" fill="#1a1208"/>
+  <!-- titulus (upper short bar) -->
+  <rect x="84" y="96" width="144" height="34" fill="#1a1208"/>
+  <!-- main crossbar -->
+  <rect x="24" y="204" width="264" height="48" fill="#1a1208"/>
+  <!-- suppedaneum: footrest, raised to the viewer's left -->
+  <g fill="#1a1208">
+    <polygon points="60,438 252,402 252,436 60,472"/>
+  </g>
+</svg>

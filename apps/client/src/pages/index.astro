@@ -1,58 +1,70 @@
 ---
-// TEMPLATE A · STRATUM — home only. The four zones in one scroll, top to
-// bottom: Stânca → Mănăstirea vie → Racla → Nistru (ARCHITECTURE.md). The
-// page still darkens through the first three and opens onto the river.
-//
-// Each zone is presented the same calm way: a photograph of the place, then
-// its words and its one job. No ornament stands in for meaning — the
-// photographs are the place, the ground colours are measured from them.
-//   I    the name, one line of purpose, the Pomelnic (first phone screen)
-//   II   the hours and the chronicle
-//   III  the shrine — photograph beside the prayer, the chambers behind it
-//   IV   the practical: address, telephone, the four pages for the journey
-//
-// The horizontal reading of the same four zones is kept at /walk.
+// TEMPLATE A · STRATUM, v2 "river" — design/prototypes/slice and descent.
+// One continuous fall from the cliff to the water. No boxes: each zone's
+// ground fades into the next at a seam, the shaft runs down the middle, and
+// only the river moves sideways.
+//   I    the cliff: the name, the dedication, "coboară"
+//        the Royal Doors: the pomelnic, the one thing you pass through
+//   II   the gate (welcome + quote on the church photo), the hours, the chronicle
+//   III  the shrine: a lit door beside the axis; the descent goes past it
+//   IV   the valley opens: sky enters, the journey pages drift sideways
 import Layout from "@layouts/Layout.astro";
-import DescentRail from "@components/temple/DescentRail.astro";
 import CalendarRail from "@components/temple/CalendarRail.astro";
+import RiverMark from "@components/marks/RiverMark.astro";
 import { getLocaleFromUrl, getLocalizedPath, telHref, useTranslations } from "@i18n/utils";
 import { getRecentPosts } from "@data/posts";
 import { schedule, serviceText } from "@data/schedule";
 import type { AllTranslationKeys } from "@i18n";
-import { zoneById } from "@temple/zones";
+import { zoneById, zones } from "@temple/zones";
 import { publicAsset } from "@utils/paths";
 
 const lang = getLocaleFromUrl(Astro.url);
 const t = useTranslations(lang);
-const posts = await getRecentPosts(lang, 3);
+const posts = await getRecentPosts(lang, 4);
 const plate = (name: string) => publicAsset(`/plates/${name}.webp`);
 // every plate ships at 1600w and 800w (scripts/build-plates.mjs)
 const plateSet = (name: string) => `${publicAsset(`/plates/${name}-800.webp`)} 800w, ${plate(name)} 1600w`;
-const plateSizes = "(min-width: 1101px) 900px, 100vw";
 const href = (path: string) => getLocalizedPath(path, lang);
 
-// One line of purpose under the name. The lead's second sentence describes
-// the page rather than the monastery, so only its first sentence is used
-// (as /walk already does).
-const purpose = (t("home.descentLead").split(/(?<=\.)\s/)[0] ?? "").trim();
-
 const goldChambers = zoneById.gold.pages;
-const riverPages = zoneById.river.pages;
 const phone = t("contact.phoneMain");
+// the journey, each with its constructed mark
+const journey: { href: string; labelKey: AllTranslationKeys; mark: "pin" | "arch" | "bell" | "hands" }[] = [
+  { href: "/cum-de-ajuns", labelKey: "zone.directions", mark: "pin" },
+  { href: "/cazare", labelKey: "zone.cazare", mark: "arch" },
+  { href: "/contact", labelKey: "nav.contact", mark: "bell" },
+  { href: "/donations", labelKey: "nav.donations", mark: "hands" },
+];
 ---
 
 <Layout>
-  <div class="descent">
-    <DescentRail lang={lang} current={null} />
+  <div class="river-home">
+    <div class="r-shaft" aria-hidden="true"></div>
 
-    <main class="descent-main">
-      {/* ═══ I · STÂNCA — the name, the purpose, the Pomelnic ═══ */}
-      <section class="zone z-rock" id="zona-rock" data-zone="rock" aria-labelledby="rock-head">
+    {/* the depth gauge: four strata, the one you are in is lit */}
+    <nav class="gauge" aria-label={t("zone.descentIndex")}>
+      <ol>
+        {
+          zones.map((zone) => (
+            <li>
+              <a href={`#zona-${zone.id}`} data-gauge={zone.id}>
+                <span class="dot" aria-hidden="true" />
+                <span class="gauge-name">{t(zone.nameKey)}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ol>
+    </nav>
+
+    <main>
+      {/* ═══ I · STÂNCA ═══ */}
+      <section class="cliff" id="zona-rock" data-zone="rock" aria-labelledby="rock-head">
         <img
-          class="photo photo-hero"
+          class="ground-photo cliff-photo"
           src={plate("rock")}
           srcset={plateSet("rock")}
-          sizes={plateSizes}
+          sizes="100vw"
           alt=""
           width="800"
           height="600"
@@ -60,118 +72,151 @@ const phone = t("contact.phoneMain");
           fetchpriority="high"
           decoding="async"
         />
-        <div class="col hero">
-          <h1 id="rock-head" class="h1">{t("main.title")}</h1>
+        <div class="cliff-inner">
+          <RiverMark name="cross" class="cliff-cross" />
+          <p class="r-eyebrow is-centred">I · {t("zone.rock")} · 1776</p>
+          <h1 id="rock-head" class="r-title">{t("main.title")}</h1>
           <p class="dedication">{t("home.descentTitle")}</p>
-          <p class="purpose">{purpose}</p>
-          <div class="actions">
-            <a class="btn btn-primary" href={href("/pomelnic")}>{t("notFound.pomelnic")}</a>
-            <a class="btn btn-quiet" href={href("/slujbe")}>{t("nav.serviceSchedule")}</a>
-          </div>
+          <p class="purpose">{t("home.descentLead")}</p>
+        </div>
+        <a class="descend" href="#doors">
+          <span>{t("home.descend")}</span>
+          <span class="descend-line" aria-hidden="true"></span>
+        </a>
+      </section>
+
+      {/* the Royal Doors: the one thing on the page you pass through */}
+      <section class="doors" id="doors" aria-labelledby="doors-head">
+        <svg class="doors-art" viewBox="0 0 384 768" aria-hidden="true" focusable="false">
+          <path d="M12 756 L12 216 A180 180 0 0 1 372 216 L372 756" />
+          <line x1="192" y1="36" x2="192" y2="756" />
+          <rect x="36" y="264" width="132" height="132" /><rect x="216" y="264" width="132" height="132" />
+          <rect x="36" y="420" width="132" height="132" /><rect x="216" y="420" width="132" height="132" />
+          <rect x="36" y="576" width="132" height="156" /><rect x="216" y="576" width="132" height="156" />
+        </svg>
+        <div class="doors-inner" data-reveal>
+          <h2 id="doors-head" class="r-title is-page">{t("home.pomelnicTitle")}</h2>
+          <p class="doors-lead">{t("home.pomelnicLead")}</p>
+          <a class="r-button" href={href("/pomelnic")}>{t("home.pomelnicCta")}</a>
         </div>
       </section>
 
-      {/* ═══ II · MĂNĂSTIREA VIE — the hours and the chronicle ═══ */}
-      <section class="zone z-green" id="zona-green" data-zone="green" aria-labelledby="green-head">
-        <figure class="figure" data-reveal>
-          <img
-            class="photo photo-wide"
-            src={plate("green")}
+      {/* ═══ II · MĂNĂSTIREA VIE ═══ */}
+      <section class="gate" aria-labelledby="gate-quote">
+        <img
+          class="ground-photo gate-photo"
+          src={plate("green")}
           srcset={plateSet("green")}
-          sizes={plateSizes}
-            alt={t("gallery.complex")}
-            width="800"
-            height="600"
-            loading="lazy"
-            decoding="async"
-          />
-          <figcaption class="col caption">{t("gallery.complex")}</figcaption>
+          sizes="100vw"
+          alt={t("gallery.complex")}
+          width="800"
+          height="600"
+          loading="lazy"
+          decoding="async"
+        />
+        <figure class="gate-inner" data-reveal>
+          <p class="r-eyebrow is-centred">{t("home.welcome")}</p>
+          <blockquote id="gate-quote" class="gate-quote">{t("home.gateQuote")}</blockquote>
+          <span class="r-rule is-centred" aria-hidden="true"></span>
+          <figcaption class="gate-by">{t("home.gateQuoteBy")}</figcaption>
         </figure>
+      </section>
 
-        <div class="col zone-body" data-reveal>
-          <header class="zone-head">
-            <h2 id="green-head" class="h2">{t("home.greenTitle")}</h2>
-            <p class="lead">{t("home.greenLead")}</p>
-          </header>
+      <section class="living" id="zona-green" data-zone="green" aria-labelledby="green-head">
+        <div class="col" data-reveal>
+          <p class="r-eyebrow">II · {t("zone.green")}</p>
+          <h2 id="green-head" class="r-title">{t("home.greenTitle")}</h2>
+          <p class="r-lead">{t("home.greenLead")}</p>
+        </div>
 
-          <div class="pair">
-            <section class="block" aria-labelledby="ceasuri">
-              <h3 id="ceasuri" class="h3">{t("zone.slujbe")}</h3>
-              {/* every day's order is in the page; a script shows today's (Chișinău time).
-                  Without it, Monday–Wednesday stands, as before. */}
-              {
-                schedule.map((day) => (
-                  <div class="day" data-day={day.key} hidden={day.key !== "monWed"}>
-                    <p class="meta">{t(`schedule.${day.key}` as AllTranslationKeys)}</p>
-                    {day.blocks.map((block) => (
-                      <>
-                        {block.titleKey && <p class="meta">{t(block.titleKey as AllTranslationKeys)}</p>}
-                        <dl class="hours">
-                          {block.services.map((h) => (
-                            <div class="hour">
-                              <dt>{h.time}</dt>
-                              <dd>{serviceText(h.name, lang)}</dd>
-                            </div>
-                          ))}
-                        </dl>
-                      </>
-                    ))}
-                  </div>
-                ))
-              }
-              <a class="more" href={href("/slujbe")}>{t("home.fullSchedule")}</a>
-            </section>
+        <div class="col flow">
+          <section class="stream" aria-labelledby="ceasuri" data-reveal>
+            <h3 id="ceasuri" class="stream-head">{t("zone.slujbe")}</h3>
+            {/* every day's order is in the page; a script shows today's (Chișinău time) */}
+            {
+              schedule.map((day) => (
+                <div class="day" data-day={day.key} hidden={day.key !== "monWed"}>
+                  <p class="day-name">{t(`schedule.${day.key}` as AllTranslationKeys)}</p>
+                  {day.blocks.map((block) => (
+                    <>
+                      {block.titleKey && <p class="block-name">{t(block.titleKey as AllTranslationKeys)}</p>}
+                      <dl class="hours">
+                        {block.services.map((h) => (
+                          <div>
+                            <dt>{h.time}</dt>
+                            <dd>{serviceText(h.name, lang)}</dd>
+                          </div>
+                        ))}
+                      </dl>
+                    </>
+                  ))}
+                </div>
+              ))
+            }
+            <a class="more" href={href("/slujbe")}>{t("home.fullSchedule")} →</a>
+          </section>
 
-            <section class="block" aria-labelledby="cronica-head">
-              <h3 id="cronica-head" class="h3">{t("zone.cronica")}</h3>
-              {
-                posts.length > 0 ? (
-                  <ul class="posts">
-                    {posts.map((post) => (
-                      <li>
-                        <a href={href(`/posts/${post.slug}`)}>
-                          <time datetime={post.isoDate}>{post.date}</time>
-                          <span class="post-title">{post.title}</span>
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p class="empty">{t("home.noPosts")}</p>
-                )
-              }
-              <a class="more" href={href("/posts")}>{t("home.allNews")}</a>
-            </section>
-          </div>
+          <section class="stream" aria-labelledby="cronica-head" data-reveal>
+            <h3 id="cronica-head" class="stream-head">{t("zone.cronica")}</h3>
+            {
+              posts.length > 0 ? (
+                <ul class="news">
+                  {posts.map((post) => (
+                    <li>
+                      <a href={href(`/posts/${post.slug}`)}>
+                        <time datetime={post.isoDate}>{post.date}</time>
+                        <span>{post.title}</span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p class="empty">{t("home.noPosts")}</p>
+              )
+            }
+            <a class="more" href={href("/posts")}>{t("home.allNews")} →</a>
+          </section>
+        </div>
+
+        <div class="col today">
+          <CalendarRail lang={lang} />
         </div>
       </section>
 
-      {
-        /* ═══ III · RACLA — the hinge. You stop here. ═══
-          The photograph stands beside the prayer, off the axis of the words:
-          the relics are something you turn aside to, not pass through. */
-      }
-      <section class="zone z-gold" id="zona-gold" data-zone="gold" aria-labelledby="gold-head">
-        <div class="col shrine" data-reveal>
-          <picture class="photo-shrine-frame">
-            {/* beside the text on wide screens the shrine stands as a 4:5 portrait */}
-            <source media="(min-width: 900px)" srcset={plateSet("gold-door-portrait")} sizes="450px" />
+      <div class="r-seam" style="--from: var(--green-deep); --to: var(--pall)" aria-hidden="true"></div>
+
+      {/* ═══ III · RACLA — the descent passes the door; you turn aside to it ═══ */}
+      <section class="shrine" id="zona-gold" data-zone="gold" aria-labelledby="gold-head">
+        <div class="shrine-grid">
+          <a class="aside aside-down" href="#zona-river">
+            <span>{t("home.shrineAsideDown")}</span>
+            <span aria-hidden="true">↓</span>
+          </a>
+
+          <a class="door" href={href("/macarie")} data-reveal>
             <img
-            class="photo photo-shrine"
-            src={plate("gold-door")}
-            srcset={plateSet("gold-door")}
-            sizes="100vw"
-            alt={t("gallery.relics")}
-            width="800"
-            height="600"
-            loading="lazy"
-            decoding="async"
-          />
-          </picture>
-          <div class="shrine-text">
-            <h2 id="gold-head" class="h2 gold">{t("home.shrineTitle")}</h2>
+              class="door-photo"
+              src={plate("gold-door-portrait")}
+              srcset={`${publicAsset("/plates/gold-door-portrait-800.webp")} 800w, ${plate("gold-door-portrait")} 1600w`}
+              sizes="(min-width: 900px) 360px, 80vw"
+              alt={t("gallery.relics")}
+              width="800"
+              height="1000"
+              loading="lazy"
+              decoding="async"
+            />
+            <span class="door-text">
+              <span class="r-eyebrow is-centred">III · {t("zone.gold")}</span>
+              <span id="gold-head" class="door-title">{t("home.shrineTitle")}</span>
+              <span class="door-enter">{t("home.shrineEnter")}</span>
+              <span class="flowers" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+            </span>
+          </a>
+
+          <div class="aside aside-in">
+            <p class="aside-label">{t("home.shrineAsideIn")}</p>
             <blockquote class="prayer">{t("home.shrineQuote")}</blockquote>
-            <ul class="rows">
+            <ul class="chambers">
               {
                 goldChambers.map((p) => (
                   <li>
@@ -184,90 +229,82 @@ const phone = t("contact.phoneMain");
         </div>
       </section>
 
-      {/* ═══ IV · NISTRU — the practical: where, how, whom to call ═══ */}
-      <section class="zone z-river" id="zona-river" data-zone="river" aria-labelledby="river-head">
+      <div class="r-seam" style="--from: var(--pall); --to: var(--r-river-deep)" aria-hidden="true"></div>
+
+      {/* ═══ IV · NISTRU — the valley opens; the only sideways movement ═══ */}
+      <section class="valley" id="zona-river" data-zone="river" aria-labelledby="river-head">
         <img
-          class="photo photo-river"
+          class="horizon"
           src={plate("river")}
           srcset={plateSet("river")}
-          sizes={plateSizes}
+          sizes="100vw"
           alt=""
           width="800"
           height="600"
           loading="lazy"
           decoding="async"
         />
-        <div class="col zone-body" data-reveal>
-          <header class="zone-head">
-            <h2 id="river-head" class="h2">{t("home.riverTitle")}</h2>
-            <p class="lead">{t("home.riverLead")}</p>
-          </header>
+        <div class="col is-centred valley-head" data-reveal>
+          <p class="r-eyebrow is-centred">IV · {t("zone.river")}</p>
+          <h2 id="river-head" class="r-title">{t("home.valleyTitle")}</h2>
+          <span class="r-rule is-centred" aria-hidden="true"></span>
+          <p class="r-lead">{t("home.valleyLead")}</p>
+        </div>
 
-          <div class="pair">
-            <dl class="facts">
-              <div>
-                <dt>{t("contact.addressLabel")}</dt>
-                <dd>
-                  {t("footer.addressName")}<br />
-                  {t("footer.addressLine")}
-                </dd>
-              </div>
-              <div>
-                <dt>{t("contact.phoneMainLabel")}</dt>
-                <dd><a class="tel" href={telHref(phone)}>{phone}</a></dd>
-              </div>
-            </dl>
+        <div class="col">
+          <ul class="r-drift journey" aria-label={t("home.riverTitle")}>
+            {
+              journey.map((j) => (
+                <li>
+                  <a href={href(j.href)}>
+                    <RiverMark name={j.mark} />
+                    <span>{t(j.labelKey)}</span>
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
 
-            <ul class="rows rows-river">
-              {
-                riverPages.map((p) => (
-                  <li>
-                    <a href={href(p.href)}>{t(p.labelKey)}</a>
-                  </li>
-                ))
-              }
-            </ul>
-          </div>
+          <dl class="r-rows facts">
+            <div>
+              <dt class="r-label">{t("contact.addressLabel")}</dt>
+              <dd>{t("footer.addressName")}, {t("footer.addressLine")}</dd>
+            </div>
+            <div>
+              <dt class="r-label">{t("contact.phoneMainLabel")}</dt>
+              <dd><a href={telHref(phone)}>{phone}</a></dd>
+            </div>
+          </dl>
         </div>
       </section>
     </main>
-
-    <CalendarRail lang={lang} />
   </div>
 </Layout>
 
 <script>
-  // Mark the zone you are in, so the left rail reads as a position: the zone
-  // that crosses the middle of the screen is the current one.
-  const strata = document.querySelectorAll<HTMLElement>(".descent-main [data-zone]");
-  const marks = new Map<string, Element>();
+  // the gauge: the stratum crossing the middle of the screen is lit
+  const marks = new Map<string, HTMLElement>();
+  document.querySelectorAll<HTMLElement>("[data-gauge]").forEach((a) => marks.set(a.dataset.gauge!, a));
 
-  document.querySelectorAll<HTMLElement>(".stratum-entry").forEach((entry) => {
-    const zone = Array.from(entry.classList)
-      .find((c) => c.startsWith("is-"))
-      ?.slice(3);
-    if (zone) marks.set(zone, entry);
-  });
-
-  if ("IntersectionObserver" in window && strata.length) {
-    const observer = new IntersectionObserver(
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver(
       (entries) => {
         for (const e of entries) {
           const zone = (e.target as HTMLElement).dataset.zone;
-          if (zone) marks.get(zone)?.classList.toggle("is-current", e.isIntersecting);
+          if (!zone) continue;
+          const mark = marks.get(zone);
+          if (e.isIntersecting) mark?.setAttribute("aria-current", "location");
+          else mark?.removeAttribute("aria-current");
         }
       },
-      { rootMargin: "-50% 0px -50% 0px", threshold: 0 },
+      { rootMargin: "-50% 0px -50% 0px" },
     );
-
-    strata.forEach((s) => observer.observe(s));
+    document.querySelectorAll<HTMLElement>("main [data-zone]").forEach((s) => io.observe(s));
   }
 
-  // Content settles in as it is reached: opacity and 8px, once. Nothing at
-  // all under reduced motion (the CSS never hides anything there).
+  // things settle in as they are reached: opacity and 8px, once
   const revealables = document.querySelectorAll<HTMLElement>("[data-reveal]");
   const still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
   if (!still && "IntersectionObserver" in window) {
     const reveal = new IntersectionObserver(
       (entries) => {
@@ -277,23 +314,20 @@ const phone = t("contact.phoneMain");
           reveal.unobserve(e.target);
         }
       },
-      { rootMargin: "0px 0px -8% 0px", threshold: 0 },
+      { rootMargin: "0px 0px -8% 0px" },
     );
     revealables.forEach((el) => reveal.observe(el));
   } else {
     revealables.forEach((el) => el.classList.add("is-revealed"));
   }
 
-  // Return from a chamber lands at that zone's depth (#zona-<id>), never the
-  // top: show its content at once and jump without smooth scrolling.
+  // return from a chamber lands at that zone's depth, without smooth scroll
   if (location.hash.startsWith("#zona-")) {
     const target = document.querySelector<HTMLElement>(location.hash);
     target?.querySelectorAll("[data-reveal]").forEach((el) => el.classList.add("is-revealed"));
     target?.scrollIntoView({ behavior: "auto", block: "start" });
   }
-</script>
 
-<script>
   // today's order of services, by the monastery's clock
   const day = new Intl.DateTimeFormat("en-US", { timeZone: "Europe/Chisinau", weekday: "short" }).format(new Date());
   const key = ({ Mon: "monWed", Tue: "monWed", Wed: "monWed", Thu: "thu", Fri: "fri", Sat: "sat", Sun: "sun" } as Record<string, string>)[day];
@@ -303,506 +337,603 @@ const phone = t("contact.phoneMain");
 </script>
 
 <style>
-  /* ─── the frame and the column ───────────────────────────────────────
-     Same frame as every chamber (TempleFrame): rail | centre | rail. Inside
-     the centre, one column and one vertical rhythm for all four zones. */
-  .descent {
-    --col-max: var(--centre-max);
-    --col-pad: var(--s-5);
-    --zone-pad: var(--s-9);
-    --head-gap: var(--s-7);
-    /* hairlines drawn from the ground's own text colour */
-    --hair: color-mix(in srgb, currentColor 20%, transparent);
-    --hair-strong: color-mix(in srgb, currentColor 55%, transparent);
-
-    display: grid;
-    grid-template-columns: var(--rail-l) minmax(0, var(--centre-max)) var(--rail-r);
-    justify-content: center;
-    gap: 0 var(--frame-gap);
-    padding: 0 var(--frame-pad);
-    background: var(--rock-deep);
-    color: var(--parchment);
+  .river-home {
+    --pad: var(--frame-pad);
+    --zone-pad: clamp(var(--s-10), 12vh, var(--s-12));
+    position: relative;
+    background: var(--r-night);
+    color: var(--r-ink);
   }
-  .descent-main {
-    min-width: 0;
+  main {
+    position: relative;
   }
-  @media (min-width: 600px) {
-    .descent {
-      --col-pad: var(--s-7);
-      --zone-pad: var(--s-11);
-      --head-gap: var(--s-8);
-    }
+  /* every section paints over the shaft except where it is meant to show */
+  main > * {
+    position: relative;
+    z-index: 1;
   }
-  @media (min-width: 1101px) {
-    .descent {
-      --col-pad: var(--s-9);
-      --zone-pad: var(--s-12);
-      --head-gap: var(--s-9);
-    }
+  .col {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--pad);
   }
-  @media (max-width: 1360px) {
-    .descent {
-      grid-template-columns: var(--rail-l) minmax(0, 1fr);
-    }
-  }
-  @media (max-width: 1100px) {
-    /* the rail is a drawer; the zones go full bleed */
-    .descent {
-      grid-template-columns: minmax(0, 1fr);
-      padding: 0;
-    }
+  .is-centred {
+    text-align: center;
   }
 
-  /* below 1360px the calendar is a fold after the descent, on the column */
-  @media (max-width: 1360px) {
-    .descent > :global(.rail-right) {
-      margin: 0;
-      padding: var(--s-8) var(--col-pad) var(--s-9);
-      border-top: 0;
-    }
-  }
-
-  /* scroll reveal — phones and tablets. 8px, one duration, no overshoot. */
-  @media (max-width: 1100px) and (prefers-reduced-motion: no-preference) {
-    :global(html.js .descent [data-reveal]) {
+  /* things settle in as reached */
+  @media (prefers-reduced-motion: no-preference) {
+    :global(html.js) [data-reveal] {
       opacity: 0;
       transform: translateY(var(--s-2));
       transition:
-        opacity var(--dur-3) var(--ease-out),
-        transform var(--dur-3) var(--ease-out);
+        opacity 600ms var(--ease-out),
+        transform 600ms var(--ease-out);
     }
-    :global(html.js .descent [data-reveal].is-revealed) {
+    :global(html.js) [data-reveal].is-revealed {
       opacity: 1;
       transform: none;
     }
   }
 
-  .col {
+  .ground-photo {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
     width: 100%;
-    max-width: var(--col-max);
-    margin: 0 auto;
-    padding: 0 var(--col-pad);
+    height: 100%;
+    object-fit: cover;
   }
 
-  /* ─── type: one hierarchy, sentence case, Georgia throughout ───────── */
-  .h1,
-  .h2,
-  .h3 {
+  /* ── the gauge ─────────────────────────────────────────────────────── */
+  .gauge {
+    position: fixed;
+    top: 50%;
+    left: var(--s-5);
+    z-index: 5;
+    transform: translateY(-50%);
+  }
+  .gauge ol {
+    display: grid;
+    gap: var(--s-2);
     margin: 0;
-    font-weight: 400;
-    text-wrap: balance;
-    overflow-wrap: break-word;
+    padding: 0;
+    list-style: none;
   }
-  .h1 {
-    font-size: clamp(36px, 5.2vw, 64px);
-    line-height: 1.08;
-    letter-spacing: -0.005em;
+  .gauge a {
+    display: flex;
+    align-items: center;
+    gap: var(--s-3);
+    min-height: var(--tap-min);
+    color: var(--r-ink);
+    text-decoration: none;
   }
-  .h2 {
-    font-size: clamp(28px, 3.4vw, 44px);
-    line-height: 1.15;
+  .dot {
+    width: 11px;
+    height: 11px;
+    border: 1px solid var(--r-ink);
+    border-radius: 50%;
+    background: var(--r-night);
+    transition: background var(--dur-2) var(--ease-out);
   }
-  .h3 {
-    padding-bottom: var(--s-3);
-    border-bottom: var(--rule) solid var(--hair-strong);
-    font-size: 21px;
-    line-height: 1.3;
+  .gauge a[aria-current] .dot {
+    border-color: var(--r-gold);
+    background: var(--r-gold);
   }
-  .lead {
-    max-width: var(--measure);
-    margin: var(--s-4) 0 0;
-    font-size: 19px;
-    line-height: 1.6;
-    opacity: 0.86;
-    text-wrap: pretty;
+  .gauge-name {
+    padding: 2px var(--s-2);
+    background: var(--r-night);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateX(-4px);
+    transition:
+      opacity var(--dur-2) var(--ease-out),
+      transform var(--dur-2) var(--ease-out);
   }
-  @media (min-width: 600px) {
-    .lead {
-      font-size: var(--t-lead);
+  .gauge a:hover .gauge-name,
+  .gauge a:focus-visible .gauge-name {
+    opacity: 1;
+    transform: none;
+  }
+  @media (max-width: 899px) {
+    .gauge {
+      display: none;
     }
   }
 
-  /* photographs: full colour, full strength, no overlay */
-  .photo {
-    display: block;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+  /* ── I · the cliff ─────────────────────────────────────────────────── */
+  .cliff {
+    display: grid;
+    place-items: center;
+    min-height: calc(100svh - var(--nav-h));
+    padding: var(--s-10) var(--pad) var(--s-12);
+    overflow: hidden;
+    isolation: isolate;
+    text-align: center;
   }
-  .figure {
-    margin: 0;
+  .cliff-photo {
+    filter: grayscale(0.45) contrast(1.06) brightness(0.8);
   }
-  .caption {
-    padding-top: var(--s-3);
-    font-size: 14px;
-    font-style: italic;
-    line-height: 1.5;
-    opacity: 0.7;
+  /* tie the photo to the measured palette and fall into the green night */
+  .cliff::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+      to bottom,
+      rgb(24 24 22 / 62%) 0%,
+      rgb(58 61 66 / 42%) 45%,
+      rgb(32 45 24 / 88%) 85%,
+      #202d18 100%
+    );
   }
-
-  .zone {
-    position: relative;
+  .cliff-inner {
+    max-width: 52rem;
   }
-
-  /* ─── I · STÂNCA ───────────────────────────────────────────────────── */
-  .z-rock {
-    background: var(--rock-deep);
-    padding-bottom: var(--zone-pad);
+  .cliff-inner :global(.cliff-cross) {
+    width: 28px;
+    height: 56px;
+    margin-bottom: var(--s-6);
+    color: var(--r-gold);
   }
-  .photo-hero {
-    aspect-ratio: 4 / 3;
-    object-position: 50% 78%;
+  .cliff .r-eyebrow {
+    color: var(--r-ink);
   }
-  .hero {
-    padding-top: var(--s-6);
+  .cliff .r-title {
+    font-size: clamp(36px, 6.4vw, 88px);
+    text-shadow: 0 2px 24px rgb(24 24 22 / 70%);
   }
   .dedication {
-    margin: var(--s-2) 0 0;
-    font-size: 19px;
+    margin: var(--s-4) 0 0;
+    font-size: clamp(19px, 1.8vw, 24px);
     font-style: italic;
-    line-height: 1.4;
-    color: var(--gold);
+    color: var(--r-gold);
   }
   .purpose {
-    max-width: var(--measure);
-    margin: var(--s-4) 0 0;
-    font-size: 18px;
-    line-height: 1.55;
-    opacity: 0.86;
-    text-wrap: pretty;
+    margin: var(--s-3) auto 0;
+    max-width: 30rem;
+    font-size: var(--t-standfirst);
+    line-height: var(--lh-lead);
   }
-  .actions {
-    display: flex;
-    flex-wrap: wrap;
+  .descend {
+    position: absolute;
+    bottom: var(--s-6);
+    left: 50%;
+    display: grid;
+    justify-items: center;
     gap: var(--s-3);
-    margin-top: var(--s-6);
+    min-width: var(--tap);
+    padding: var(--s-2);
+    transform: translateX(-50%);
+    color: var(--r-ink);
+    font-size: 11px;
+    letter-spacing: var(--r-track);
+    text-decoration: none;
+    text-transform: uppercase;
   }
-  .btn {
-    flex: 1 1 100%;
+  .descend-line {
+    width: 1px;
+    height: var(--s-9);
+    background: linear-gradient(var(--r-ink), transparent);
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .descend-line {
+      animation: fall 2.4s var(--ease-out) infinite;
+      transform-origin: top;
+    }
+    @keyframes fall {
+      0% {
+        transform: scaleY(0);
+      }
+      60%,
+      100% {
+        transform: scaleY(1);
+      }
+    }
+  }
+
+  /* ── the Royal Doors ───────────────────────────────────────────────── */
+  .doors {
+    display: grid;
+    place-items: center;
+    min-height: 80vh;
+    padding: var(--zone-pad) var(--pad);
+    overflow: hidden;
+    background: #202d18;
+    text-align: center;
+  }
+  .doors-art {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    height: 88%;
+    max-height: 720px;
+    transform: translate(-50%, -50%);
+    fill: none;
+    stroke: #4b5a35;
+    stroke-width: 2;
+  }
+  .doors-inner {
+    max-width: 30rem;
+  }
+  .doors-lead {
+    margin: var(--s-5) 0 var(--s-7);
+    line-height: var(--lh-body);
+  }
+  .r-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     min-height: var(--tap);
-    padding: var(--s-3) var(--s-5);
-    border: var(--rule) solid transparent;
-    font-size: 17px;
-    line-height: 1.3;
-    text-align: center;
+    padding: 0 var(--s-6);
+    border: 1px solid var(--r-gold);
+    color: var(--r-gold);
+    font-size: 12px;
+    letter-spacing: 0.32em;
     text-decoration: none;
+    text-transform: uppercase;
     transition:
-      background-color var(--dur-1) var(--ease-out),
-      border-color var(--dur-1) var(--ease-out),
+      background var(--dur-1) var(--ease-out),
       color var(--dur-1) var(--ease-out);
   }
-  .btn-primary {
-    background: var(--parchment);
-    color: var(--ink);
-  }
-  .btn-primary:hover {
-    background: var(--gold);
-  }
-  .btn-quiet {
-    border-color: var(--hair-strong);
-    color: var(--parchment);
-  }
-  .btn-quiet:hover {
-    border-color: var(--parchment);
-  }
-  @media (min-width: 600px) {
-    .photo-hero {
-      aspect-ratio: 16 / 9;
-    }
-    .hero {
-      padding-top: var(--s-8);
-    }
-    .btn {
-      flex: 0 0 auto;
-      padding-inline: var(--s-6);
-    }
-  }
-  @media (min-width: 1101px) {
-    .photo-hero {
-      aspect-ratio: auto;
-      height: clamp(320px, 50vh, 520px);
-    }
-    .dedication {
-      font-size: 22px;
-    }
-    .purpose {
-      font-size: var(--t-lead);
-    }
+  .r-button:hover,
+  .r-button:focus-visible {
+    background: var(--r-gold);
+    color: var(--r-night);
   }
 
-  /* ─── II · MĂNĂSTIREA VIE ──────────────────────────────────────────── */
-  .z-green {
-    background: var(--green);
-    padding-bottom: var(--zone-pad);
-  }
-  .photo-wide {
-    aspect-ratio: 3 / 2;
-    object-position: 50% 58%;
-  }
-  @media (min-width: 600px) {
-    .photo-wide {
-      aspect-ratio: 2 / 1;
-    }
-  }
-  .zone-body {
-    padding-top: var(--s-8);
-  }
-  @media (min-width: 600px) {
-    .zone-body {
-      padding-top: var(--s-10);
-    }
-  }
-
-  .pair {
+  /* ── II · the gate ─────────────────────────────────────────────────── */
+  .gate {
     display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: var(--s-8);
-    margin-top: var(--head-gap);
+    place-items: center;
+    min-height: 90vh;
+    padding: var(--zone-pad) var(--pad);
+    overflow: hidden;
+    isolation: isolate;
+    text-align: center;
   }
-  @media (min-width: 768px) {
-    .pair {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: var(--s-8);
-    }
+  .gate::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+      to bottom,
+      #202d18 0%,
+      rgb(32 45 24 / 55%) 22%,
+      rgb(32 45 24 / 55%) 70%,
+      #2b3c27 100%
+    );
   }
-
-  .meta {
-    margin: var(--s-3) 0 0;
-    font-size: 15px;
-    font-style: italic;
-    line-height: 1.5;
-    opacity: 0.72;
-  }
-  .hours {
-    margin: var(--s-2) 0 0;
-  }
-  .hour {
-    display: grid;
-    grid-template-columns: var(--s-10) minmax(0, 1fr);
-    align-items: baseline;
-    border-bottom: var(--rule) solid var(--hair);
-  }
-  .hours dt,
-  .hours dd {
+  .gate-inner {
+    max-width: 44rem;
     margin: 0;
-    padding: var(--s-3) 0;
-    line-height: 1.5;
   }
-  .hours dt {
-    font-variant-numeric: tabular-nums lining-nums;
+  .gate .r-eyebrow {
+    color: var(--r-ink);
+  }
+  .gate-quote {
+    margin: 0;
+    font-size: clamp(26px, 3.4vw, 44px);
+    line-height: 1.25;
+    text-shadow: 0 2px 20px rgb(24 24 22 / 80%);
+    text-wrap: balance;
+  }
+  .gate-by {
+    margin-top: var(--s-5);
+    font-size: 11px;
+    letter-spacing: var(--r-track);
+    text-transform: uppercase;
   }
 
-  .posts {
-    list-style: none;
+  /* ── II · the living monastery ─────────────────────────────────────── */
+  .living {
+    padding: var(--s-9) 0 var(--zone-pad);
+    background: var(--green-deep);
+    --line: #4b6136;
+  }
+  .flow {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+    gap: var(--s-9) var(--s-10);
+    margin-top: var(--s-9);
+  }
+  .stream-head {
+    margin: 0 0 var(--s-4);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: var(--r-track);
+    text-transform: uppercase;
+    color: var(--r-gold);
+  }
+  .day-name,
+  .block-name {
+    margin: var(--s-5) 0 var(--s-2);
+    font-size: var(--t-meta);
+    font-style: italic;
+    color: var(--r-cream);
+  }
+  .day-name {
+    margin-top: 0;
+  }
+  .hours,
+  .news {
     margin: 0;
     padding: 0;
+    list-style: none;
+    border-top: 1px solid var(--line);
   }
-  .posts a {
+  .hours > div {
+    display: grid;
+    grid-template-columns: 4.5rem 1fr;
+    gap: var(--s-4);
+    padding: var(--s-3) 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .hours dt {
+    color: var(--r-gold);
+    font-variant-numeric: tabular-nums;
+  }
+  .hours dd {
+    margin: 0;
+  }
+  .news a {
     display: grid;
     gap: var(--s-1);
     padding: var(--s-4) 0;
-    border-bottom: var(--rule) solid var(--hair);
+    border-bottom: 1px solid var(--line);
     color: inherit;
     text-decoration: none;
   }
-  .posts time {
-    font-size: 14px;
-    line-height: 1.4;
-    opacity: 0.68;
-    font-variant-numeric: lining-nums;
+  .news time {
+    font-size: var(--t-meta);
+    color: var(--r-gold);
   }
-  .post-title {
-    font-size: 17px;
-    line-height: 1.45;
+  .news a:hover span,
+  .news a:focus-visible span {
     text-decoration: underline;
-    text-decoration-color: transparent;
-    text-underline-offset: 0.2em;
-    text-decoration-thickness: var(--rule);
-    transition: text-decoration-color var(--dur-1) var(--ease-out);
+    text-underline-offset: 4px;
   }
-  .posts a:hover .post-title {
-    text-decoration-color: currentColor;
-  }
-  .empty {
-    margin: 0;
-    padding: var(--s-4) 0;
-    border-bottom: var(--rule) solid var(--hair);
-    font-style: italic;
-    opacity: 0.6;
-  }
-
-  /* a block closes with one plain text link, underlined */
   .more {
     display: inline-flex;
     align-items: center;
     min-height: var(--tap);
-    margin-top: var(--s-2);
-    font-size: 16px;
-    color: inherit;
-    text-decoration: underline;
-    text-decoration-color: var(--hair-strong);
-    text-underline-offset: 0.25em;
-    text-decoration-thickness: var(--rule);
-    transition: text-decoration-color var(--dur-1) var(--ease-out);
+    margin-top: var(--s-3);
+    color: var(--r-ink);
+    font-size: 12px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    text-decoration: none;
   }
   .more:hover {
-    text-decoration-color: currentColor;
+    color: var(--r-gold);
+  }
+  .today {
+    margin-top: var(--s-9);
   }
 
-  /* ─── III · RACLA ──────────────────────────────────────────────────── */
-  .z-gold {
-    background: var(--pall);
-    padding: var(--zone-pad) 0;
-  }
+  /* ── III · the shrine ──────────────────────────────────────────────── */
   .shrine {
+    padding: var(--zone-pad) var(--pad);
+    background: var(--pall);
+    --line: #4b3630;
+  }
+  .shrine-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: var(--s-7);
+    grid-template-columns: 1fr minmax(0, 22rem) 1fr;
+    align-items: center;
+    gap: var(--s-9);
+    max-width: 1200px;
+    margin: 0 auto;
   }
-  .photo-shrine-frame {
-    display: block;
+  .door {
+    position: relative;
+    display: grid;
+    border: 1px solid var(--r-gold);
+    padding: var(--s-2);
+    background: #0e0d11;
+    color: var(--r-ink);
+    text-decoration: none;
+    /* off the axis: you turn aside to it */
+    transform: translateX(var(--s-7));
   }
-  .photo-shrine {
-    aspect-ratio: 4 / 3;
-    object-position: 40% 50%;
+  .door-photo {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    filter: brightness(0.62);
   }
-  @media (max-width: 899px) {
-    /* on a phone every photograph runs edge to edge; the zone opens on it */
-    .z-gold {
-      padding-top: 0;
-    }
-    .photo-shrine {
-      width: calc(100% + 2 * var(--col-pad));
-      max-width: none;
-      margin-inline: calc(-1 * var(--col-pad));
-    }
+  .door-text {
+    position: absolute;
+    inset: auto var(--s-2) var(--s-2);
+    display: grid;
+    justify-items: center;
+    gap: var(--s-3);
+    padding: var(--s-7) var(--s-4) var(--s-5);
+    background: linear-gradient(to top, #0e0d11 55%, transparent);
+    text-align: center;
   }
-  @media (min-width: 600px) and (max-width: 899px) {
-    .photo-shrine {
-      aspect-ratio: 2 / 1;
-    }
+  .door .r-eyebrow {
+    margin: 0;
   }
-  .gold {
-    color: var(--gold);
+  .door-title {
+    font-size: clamp(26px, 2.6vw, 34px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: var(--r-track-title);
+    text-transform: uppercase;
+  }
+  .door-enter {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--r-gold);
+  }
+  .flowers {
+    display: flex;
+    gap: var(--s-2);
+  }
+  .flowers i {
+    width: 22px;
+    height: 3px;
+  }
+  .flowers i:nth-child(1) {
+    background: var(--wine);
+  }
+  .flowers i:nth-child(2) {
+    background: var(--flower);
+  }
+  .flowers i:nth-child(3) {
+    background: var(--r-gold);
+  }
+  .flowers i:nth-child(4) {
+    background: var(--r-ink);
+  }
+  .flowers i:nth-child(5) {
+    background: var(--green-lit);
+  }
+  .door:hover,
+  .door:focus-visible {
+    outline: 1px solid var(--r-gold);
+    outline-offset: var(--s-2);
+  }
+  .aside {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--r-cream);
+  }
+  .aside-down {
+    display: grid;
+    justify-items: end;
+    gap: var(--s-3);
+    text-align: right;
+    text-decoration: none;
+  }
+  .aside-down:hover {
+    color: var(--r-gold);
+  }
+  .aside-label {
+    margin: 0 0 var(--s-4);
   }
   .prayer {
-    max-width: var(--measure-gold);
-    margin: var(--s-5) 0 0;
-    padding-left: var(--s-5);
-    border-left: var(--rule-2) solid var(--gold);
-    font-size: var(--t-quote);
+    margin: 0 0 var(--s-6);
+    padding-left: var(--s-4);
+    border-left: 2px solid var(--r-gold);
+    font-size: 17px;
     font-style: italic;
     line-height: 1.6;
-    opacity: 0.9;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--r-ink);
   }
-  @media (min-width: 900px) {
-    /* the photograph beside the words, off their axis */
-    .shrine {
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: var(--s-8);
-      align-items: start;
-    }
-    .photo-shrine-frame {
-      order: 2;
-    }
-    .photo-shrine {
-      aspect-ratio: 4 / 5;
-    }
-  }
-
-  /* ruled rows of plain links — the chambers behind a zone */
-  .rows {
-    list-style: none;
-    max-width: var(--measure-gold);
-    margin: var(--s-7) 0 0;
+  .chambers {
+    margin: 0;
     padding: 0;
-    border-top: var(--rule) solid var(--hair-strong);
+    list-style: none;
+    border-top: 1px solid var(--line);
+    letter-spacing: 0;
+    text-transform: none;
   }
-  .rows a {
+  .chambers a {
     display: flex;
     align-items: center;
     min-height: var(--tap);
-    padding: var(--s-2) 0;
-    border-bottom: var(--rule) solid var(--hair);
-    color: inherit;
-    font-size: 17px;
-    line-height: 1.4;
+    border-bottom: 1px solid var(--line);
+    color: var(--r-ink);
+    font-size: 16px;
     text-decoration: none;
-    transition: color var(--dur-1) var(--ease-out);
   }
-  .z-gold .rows a:hover {
-    color: var(--gold);
+  .chambers a:hover,
+  .chambers a:focus-visible {
+    color: var(--r-gold);
+  }
+  @media (max-width: 899px) {
+    .shrine-grid {
+      grid-template-columns: minmax(0, 1fr);
+      max-width: 26rem;
+    }
+    .door {
+      order: -1;
+      transform: none;
+    }
+    .aside-down {
+      order: 3;
+      justify-items: center;
+      text-align: center;
+    }
   }
 
-  /* ─── IV · NISTRU — bright, practical, read in a car park ──────────── */
-  .z-river {
-    background: var(--river-pale);
-    color: var(--river-ink);
+  /* ── IV · the valley ───────────────────────────────────────────────── */
+  .valley {
     padding-bottom: var(--zone-pad);
+    background: linear-gradient(
+      to bottom,
+      var(--r-river-deep) 0,
+      var(--r-river) 38vh,
+      var(--r-river-pale) 75vh,
+      var(--r-river-mist) 100%
+    );
+    color: var(--r-river-ink);
+    --line: #7fa8b8;
+    --kicker: var(--r-river-ink);
   }
-  .photo-river {
-    aspect-ratio: 3 / 2;
-    object-position: 50% 78%;
+  /* the horizon: sky enters for the first time, full bleed */
+  .horizon {
+    display: block;
+    width: 100%;
+    height: clamp(220px, 42vh, 460px);
+    object-fit: cover;
+    mask-image: linear-gradient(to bottom, transparent, #000 30%, #000 70%, transparent);
   }
-  @media (min-width: 600px) {
-    .photo-river {
-      aspect-ratio: 5 / 2;
-    }
+  .valley-head {
+    margin-top: var(--s-6);
+  }
+  .valley .r-title {
+    color: var(--r-river-ink);
+  }
+  .valley .r-lead {
+    color: var(--r-river-ink);
+  }
+  .journey {
+    margin-top: var(--s-9);
+  }
+  .journey a {
+    display: grid;
+    gap: var(--s-5);
+    min-height: 9.5rem;
+    padding: var(--s-6) var(--s-5);
+    border: 1px solid var(--r-river-edge);
+    background: var(--r-river-paper);
+    color: var(--r-river-ink);
+    font-size: 19px;
+    text-decoration: none;
+    transition: border-color var(--dur-1) var(--ease-out);
+    --mark-void: var(--r-river-paper);
+  }
+  .journey a:hover,
+  .journey a:focus-visible {
+    border-color: var(--r-river-deep);
+  }
+  .journey :global(.r-mark) {
+    width: 32px;
+    height: 32px;
+    color: var(--r-river-deep);
   }
   .facts {
-    margin: 0;
-  }
-  .facts div {
-    padding: var(--s-4) 0;
-    border-top: var(--rule) solid var(--hair-strong);
-  }
-  .facts div + div {
-    border-top-color: var(--hair);
-  }
-  .facts dt {
-    font-size: 15px;
-    font-style: italic;
-    line-height: 1.4;
-    color: var(--river-muted);
+    margin-top: var(--s-8);
+    --r-label-opacity: 1;
   }
   .facts dd {
-    margin: var(--s-1) 0 0;
-    font-size: 17px;
-    line-height: 1.55;
+    margin: 0;
+    text-align: right;
   }
-  .tel {
-    display: inline-flex;
-    align-items: center;
-    min-height: var(--tap-min);
-    color: var(--river-strong);
-    font-variant-numeric: tabular-nums lining-nums;
-    text-decoration: underline;
-    text-underline-offset: 0.25em;
-    text-decoration-thickness: var(--rule);
-  }
-  .rows-river {
-    max-width: none;
-    margin-top: 0;
-  }
-  .rows-river a {
-    color: var(--river-strong);
-  }
-  .rows-river a:hover {
-    color: var(--river-ink);
-    text-decoration: underline;
-    text-underline-offset: 0.25em;
-    text-decoration-thickness: var(--rule);
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .btn,
-    .more,
-    .post-title,
-    .rows a {
-      transition: none;
-    }
+  .facts a {
+    color: inherit;
   }
 </style>

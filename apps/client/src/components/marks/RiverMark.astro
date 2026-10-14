@@ -1,0 +1,31 @@
+---
+// The constructed marks from design/prototypes/svg, drawn in currentColor.
+// Their ink (#1a1208) and gold (#c4a24a) become currentColor; the pin's
+// cross void takes --mark-void (the ground it sits on).
+//   <RiverMark name="pin" />
+import arch from "@assets/river/mark-arch.svg?raw";
+import bell from "@assets/river/mark-bell.svg?raw";
+import book from "@assets/river/mark-book.svg?raw";
+import cross from "@assets/river/cross-orthodox.svg?raw";
+import hands from "@assets/river/mark-hands.svg?raw";
+import lamp from "@assets/river/mark-lamp.svg?raw";
+import pin from "@assets/river/mark-pin.svg?raw";
+
+const marks = { arch, bell, book, cross, hands, lamp, pin };
+export type RiverMarkName = keyof typeof marks;
+
+interface Props {
+  name: RiverMarkName;
+  class?: string;
+}
+
+const { name, class: className } = Astro.props;
+const svg = marks[name]
+  .replace(/<title>.*?<\/title>/s, "")
+  .replace(/<!--.*?-->/gs, "")
+  .replace(/#1a1208|#c4a24a/gi, "currentColor")
+  .replace(/#f4efe4/gi, "var(--mark-void, transparent)")
+  .replace(/\swidth="\d+"\sheight="\d+"/, ' aria-hidden="true" focusable="false"');
+---
+
+<span class:list={["r-mark", className]} set:html={svg} />

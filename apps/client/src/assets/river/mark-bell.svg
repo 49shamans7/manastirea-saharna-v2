@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="312" height="312" viewBox="0 0 312 312">
+<title>Bell</title>
+<g fill="#1a1208">
+ <path d="M156 60 c-46 0 -66 34 -66 84 c0 34 -10 56 -24 72 h180 c-14 -16 -24 -38 -24 -72 c0 -50 -20 -84 -66 -84 z"/>
+ <rect x="147" y="30" width="18" height="30"/><rect x="132" y="36" width="48" height="12"/>
+ <circle cx="156" cy="240" r="14"/>
+</g>
+</svg>

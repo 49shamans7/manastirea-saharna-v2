@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="24" viewBox="0 0 1200 24">
+  <title>Register rule — 2px gold, terminal ticks at the field edges</title>
+  <line x1="0" y1="12" x2="1200" y2="12" stroke="#c4a24a" stroke-width="2"/>
+  <rect x="0" y="4" width="3" height="16" fill="#c4a24a"/>
+  <rect x="1197" y="4" width="3" height="16" fill="#c4a24a"/>
+</svg>

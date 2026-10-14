@@ -1,0 +1,195 @@
+/* RIVER — v2's shared language, from design/prototypes (slice, descent,
+   chamber, table). v1 reads like a book: boxed blocks on a column. v2 flows:
+   no boxes, zones melt into each other at their seams, one shaft runs down
+   the middle, and the river is the only thing that moves sideways.
+
+   Pieces, used by every page:
+     .r-eyebrow   tracked micro label + a hairline running to the edge
+     .r-title     bold Georgia capitals, the prototype's display voice
+     .r-rule      the short gold rule under a title (gold is a rule, never a fill)
+     .r-lead      the one sentence under a title
+     .r-seam      a gate: the ground of one zone fading into the next
+     .r-shaft     the well: a fixed column down the middle of the screen
+     .r-rows      hairline rows, label left · value right (Table prototype)
+     .r-drift     a sideways strip that snaps — the river's movement on phones
+     .r-mark      a constructed SVG mark at text size */
+
+:root {
+  --r-ink: #e6eae4; /* white of the slice prototype */
+  --r-cream: #d5d6d6;
+  --r-night: #181816;
+  --r-gold: #c0a974;
+  --r-gold-deep: #8f6938;
+  --r-river-deep: #2b4b58;
+  --r-river: #649fbd;
+  --r-river-pale: #bdd5dc;
+  --r-river-mist: #dce9ed;
+  --r-river-paper: #eef4f6;
+  --r-river-ink: #0f1f27;
+  --r-river-soft: #3d5560;
+  --r-river-edge: #c2d6dd;
+  --r-track: 0.42em; /* the micro label */
+  --r-track-title: 0.04em;
+  --r-shaft: 78px;
+  --t-r-title: clamp(30px, 4.4vw, 62px);
+  --t-r-title-page: clamp(28px, 3.6vw, 46px);
+}
+
+.r-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+  margin: 0 0 var(--s-5);
+  font-size: 11px;
+  letter-spacing: var(--r-track);
+  text-transform: uppercase;
+  color: var(--kicker, var(--r-gold));
+}
+.r-eyebrow::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.4;
+}
+.r-eyebrow.is-centred {
+  justify-content: center;
+}
+.r-eyebrow.is-centred::after,
+.r-eyebrow.is-short::after {
+  display: none;
+}
+
+.r-title {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  font-size: var(--t-r-title);
+  line-height: 1.06;
+  letter-spacing: var(--r-track-title);
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+.r-title.is-page {
+  font-size: var(--t-r-title-page);
+  line-height: 1.1;
+}
+.r-title.is-light {
+  font-weight: 400;
+}
+
+.r-rule {
+  display: block;
+  width: 60px;
+  height: 2px;
+  margin: var(--s-5) 0 0;
+  background: var(--r-gold);
+  border: 0;
+}
+.is-centred > .r-rule,
+.r-rule.is-centred {
+  margin-inline: auto;
+}
+
+.r-lead {
+  max-width: 34rem;
+  margin: var(--s-4) 0 0;
+  font-size: var(--t-standfirst);
+  line-height: var(--lh-lead);
+}
+.is-centred > .r-lead {
+  margin-inline: auto;
+}
+
+/* a gate between two zones: set --from and --to on it */
+.r-seam {
+  height: var(--seam-h, 24vh);
+  min-height: 120px;
+  background: linear-gradient(to bottom, var(--from), var(--to));
+}
+
+/* the well — a column of lighter air down the middle, framed by hairlines */
+.r-shaft {
+  position: fixed;
+  inset: 0 auto 0 50%;
+  z-index: 0;
+  width: var(--r-shaft);
+  transform: translateX(-50%);
+  pointer-events: none;
+  border-inline: 1px solid rgb(230 234 228 / 14%);
+  background: linear-gradient(
+    to bottom,
+    rgb(230 234 228 / 9%),
+    rgb(230 234 228 / 3%) 40%,
+    rgb(100 159 189 / 10%)
+  );
+}
+
+/* label · value rows on a hairline */
+.r-rows {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+.r-rows > * {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s-4);
+  min-height: var(--tap);
+  padding: var(--s-3) 0;
+  border-bottom: 1px solid var(--line);
+}
+.r-rows a {
+  color: inherit;
+  text-decoration: none;
+}
+.r-rows .r-label {
+  flex: 0 0 auto;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--r-soft, currentColor);
+  opacity: var(--r-label-opacity, 0.8);
+}
+
+/* the river moves sideways: a row of panels that scrolls and snaps on a
+   phone, and lays out as a row on wider screens */
+.r-drift {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(15rem, 1fr);
+  gap: var(--s-4);
+  margin: 0;
+  padding: 0 0 var(--s-4);
+  list-style: none;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+}
+.r-drift > * {
+  scroll-snap-align: start;
+}
+@media (max-width: 699px) {
+  .r-drift {
+    grid-auto-columns: 78%;
+    margin-inline: calc(-1 * var(--frame-pad));
+    padding-inline: var(--frame-pad);
+    scroll-padding-inline: var(--frame-pad);
+  }
+}
+
+.r-mark {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  flex: 0 0 auto;
+  vertical-align: middle;
+}
+.r-mark svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
