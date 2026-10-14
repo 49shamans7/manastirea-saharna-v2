@@ -1,0 +1,81 @@
+/* TEMPLE — the shared stratum classes (label, title, lead, plate).
+   Tokens live in tokens.css. */
+.temple {
+  background: var(--rock-deep);
+  color: var(--parchment);
+  font:
+    400 var(--t-body) / 1.8 Georgia,
+    "Iowan Old Style",
+    serif;
+  -webkit-font-smoothing: antialiased;
+}
+.temple .wrap {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 7vw, var(--margin));
+}
+.stratum {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.stratum > .wrap {
+  position: relative;
+  z-index: 2;
+}
+.label {
+  font-size: var(--t-label);
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--ochre);
+  display: flex;
+  align-items: center;
+  gap: var(--s-4, var(--s-4));
+}
+.label::after {
+  content: "";
+  height: var(--rule, 1px);
+  flex: 1;
+  background: var(--line);
+}
+.stratum-title {
+  font-size: var(--t-stratum);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 400;
+  line-height: 1.06;
+  margin: 0.5em 0 0.35em;
+}
+.lead {
+  font-size: var(--t-lead);
+  line-height: 1.72;
+  max-width: var(--measure);
+}
+.body {
+  max-width: var(--measure);
+  color: var(--seal-mist);
+  margin-top: 1.1em;
+}
+.rule {
+  width: 100%;
+  height: 24px;
+  display: block;
+}
+/* a plate fills a slot the stratum already decided */
+.plate {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: var(--plate-opacity, 0.7);
+  filter: saturate(1.25) contrast(1.05);
+  mix-blend-mode: var(--plate-blend, normal);
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .flower {
+    animation: none !important;
+  }
+}

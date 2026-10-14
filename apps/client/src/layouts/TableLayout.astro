@@ -1,0 +1,196 @@
+---
+// TEMPLATE C · TABLE — practical information. Flat, no theatre, no parallax.
+// On the seal's navy like every page (2026-10-10); one centred column under
+// the centred head, so the rows and the prose share one axis.
+// Reads fast on a phone in a car park.
+import Layout from "@layouts/Layout.astro";
+import TempleFrame from "@layouts/TempleFrame.astro";
+import { getLocaleFromUrl } from "@i18n/utils";
+import "@styles/temple.css";
+
+interface Props {
+  title: string;
+  /** A short line above the title, only where it orients the reader. */
+  kicker?: string | undefined;
+  lead?: string | undefined;
+}
+
+const { title, kicker, lead } = Astro.props;
+const lang = getLocaleFromUrl(Astro.url);
+---
+
+<Layout title={title} description={lead}>
+  <TempleFrame lang={lang} zone="river" path={Astro.url.pathname}>
+    <main class="table-page">
+      <header class="page-head table-head">
+        {kicker && <p class="page-kicker">{kicker}</p>}
+        <h1 class="page-title">{title}</h1>
+        {lead && <p class="page-lead">{lead}</p>}
+      </header>
+      <div class="table-body">
+        <slot />
+      </div>
+    </main>
+  </TempleFrame>
+</Layout>
+
+<style>
+  /* a title in capitals is never broken by a hyphen */
+  :global(.page-title) {
+    hyphens: manual;
+  }
+  .table-page {
+    padding: var(--page-top) 0 var(--page-bottom);
+    color: var(--river-ink);
+    max-width: 64rem;
+    margin-inline: auto;
+  }
+
+  .table-body {
+    max-width: 46rem;
+    margin-inline: auto;
+    font-size: var(--t-body);
+    line-height: var(--lh-body);
+  }
+  .table-body :global(p) {
+    margin: 0 0 1.05em;
+    text-wrap: pretty;
+  }
+  /* a section that is only an onward link sits on the head's axis */
+  .table-body :global(p:has(> a.tap:only-child)),
+  .table-body > :global(a.tap) {
+    text-align: center;
+    justify-content: center;
+    margin-inline: auto;
+  }
+  .table-body :global(p:has(> a.tap:only-child) > a.tap) {
+    display: inline-flex;
+  }
+  .table-body :global(h2) {
+    font-family: var(--font-display);
+    font-size: var(--t-h2);
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.3;
+    letter-spacing: var(--track-caps);
+    text-transform: uppercase;
+    margin: var(--s-9) 0 var(--s-4);
+    color: var(--river-strong);
+  }
+  .table-body > :global(h2:first-child),
+  .table-body > :global(:first-child > h2:first-child),
+  .table-body > :global(section:first-child > h2:first-child) {
+    margin-top: 0;
+  }
+  .table-body :global(h3) {
+    text-align: center;
+    font-size: var(--t-h3);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.4;
+    margin: var(--s-6) 0 var(--s-2);
+    color: var(--river-strong);
+  }
+  .table-body :global(a) {
+    color: var(--river-strong);
+    text-decoration: underline;
+    text-decoration-thickness: var(--rule);
+    text-decoration-color: var(--seal-gold);
+    text-underline-offset: 0.2em;
+    transition: text-decoration-color var(--dur-1) var(--ease-out);
+  }
+  .table-body :global(a:hover) {
+    text-decoration-color: currentColor;
+  }
+  /* phone numbers, e-mails, map links: thumbs, not cursors. ≥44px targets. */
+  .table-body :global(a.tap) {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--tap-min);
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+  .table-body :global(dd a.tap) {
+    display: flex;
+    width: fit-content;
+  }
+
+  .table-body :global(ol),
+  .table-body :global(ul) {
+    margin: 0 0 1.4em;
+    padding-left: 1.4em;
+  }
+  .table-body :global(ol) {
+    list-style: decimal;
+  }
+  .table-body :global(ul) {
+    list-style: disc;
+  }
+  .table-body :global(li) {
+    margin: 0 0 0.6em;
+    padding-left: 0.2em;
+  }
+  .table-body :global(li::marker) {
+    color: var(--river-link);
+  }
+
+  /* a table is a table: rows you scan, not prose you read. It opens on one
+     ink hairline; rows close on the pale one. */
+  .table-body :global(dl) {
+    display: grid;
+    grid-template-columns: 176px minmax(0, 1fr);
+    gap: 0;
+    margin: 0 0 var(--s-6);
+    border-top: var(--rule) solid var(--line-strong);
+    font-variant-numeric: lining-nums tabular-nums;
+  }
+  /* straight under the head's own rule a second one would double it */
+  .table-body > :global(dl:first-child) {
+    border-top: 0;
+  }
+  .table-body > :global(dl:first-child > dt:first-of-type),
+  .table-body > :global(dl:first-child > dd:first-of-type) {
+    padding-top: 0;
+  }
+  .table-body :global(dt) {
+    padding: var(--s-3) var(--s-4) var(--s-3) 0;
+    border-bottom: var(--rule) solid var(--line);
+    font-size: var(--t-meta);
+    /* the value's own line box, so label and value share a baseline */
+    line-height: calc(var(--t-body) * 1.72);
+    color: var(--river-muted);
+  }
+  .table-body :global(dd) {
+    margin: 0;
+    padding: var(--s-3) 0;
+    border-bottom: var(--rule) solid var(--line);
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  .table-body :global(dd:has(> a.tap)) {
+    padding-block: var(--s-1);
+  }
+  @media (max-width: 620px) {
+    .table-body :global(dl) {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .table-body :global(dt) {
+      border-bottom: 0;
+      padding: var(--s-4) 0 0;
+      line-height: 1.4;
+    }
+    .table-body :global(dd) {
+      padding-top: var(--s-1);
+    }
+  }
+
+  /* print-ready: a pilgrim prints the hours and the directions */
+  @media print {
+    .table-page {
+      color: #000;
+    }
+    .table-head {
+      border-bottom-color: #000;
+    }
+  }
+</style>

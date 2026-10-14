@@ -1,0 +1,58 @@
+---
+// The icon set. One 24-unit grid, one stroke (2 by default, 1.5 allowed),
+// square caps, mitred joins — solid and square, never rounded. Everything is
+// currentColor except `menu`, which is the four-strata mark in the zones' own
+// colours (rock, green church, gold shrine, river).
+//
+//   <Icon name="close" />                       decorative (aria-hidden)
+//   <Icon name="external" label="Deschide" />   announced (role="img")
+import { fills, lines, strata, type IconName } from "./icons";
+
+interface Props {
+  name: IconName;
+  size?: number | string;
+  stroke?: 1.5 | 2;
+  label?: string;
+  class?: string;
+  [key: string]: unknown;
+}
+
+const { name, size = 24, stroke = 2, label, class: className, ...rest } = Astro.props;
+---
+
+<svg
+  class:list={["icon", `icon-${name}`, className]}
+  viewBox="0 0 24 24"
+  width={size}
+  height={size}
+  focusable="false"
+  role={label ? "img" : undefined}
+  aria-label={label}
+  aria-hidden={label ? undefined : "true"}
+  {...rest}>
+  {
+    name === "menu" ? (
+      strata.map((fill, i) => <rect x="2" y={4 + i * 5} width="20" height="2" style={`fill:${fill}`} />)
+    ) : fills[name] ? (
+      <path d={fills[name]} fill="currentColor" />
+    ) : (
+      <path
+        d={lines[name]}
+        fill="none"
+        stroke="currentColor"
+        stroke-width={stroke}
+        stroke-linecap="square"
+        stroke-linejoin="miter"
+        stroke-miterlimit="10"
+      />
+    )
+  }
+</svg>
+
+<style>
+  :where(.icon) {
+    display: inline-block;
+    flex-shrink: 0;
+    vertical-align: middle;
+  }
+</style>

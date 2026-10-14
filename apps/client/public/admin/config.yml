@@ -1,0 +1,145 @@
+# ADMIN — what the monastery can edit, in its own words.
+# Sveltia CMS (Decap-compatible). Every save is a commit on `dev` in
+# 49shamans7/manastirea-saharna; the push rebuilds and redeploys the site.
+#
+# Sign-in: "Sign In Using Access Token" — a GitHub fine-grained token with
+# Contents: read/write on this one repository (docs/ADMIN.md). A GitHub
+# sign-in button needs an OAuth relay (sveltia-cms-auth, a Cloudflare Worker);
+# add `base_url` below once that is deployed at the Cloudflare switch.
+
+backend:
+  name: github
+  repo: 49shamans7/manastirea-saharna-v2
+  branch: main
+  commit_messages:
+    create: "Cronică: {{slug}} (nou)"
+    update: "Cronică: {{slug}}"
+    delete: "Cronică: {{slug}} (șters)"
+    uploadMedia: "Fotografie: {{path}}"
+    deleteMedia: "Fotografie ștearsă: {{path}}"
+
+# Photographs uploaded from a phone are converted to WebP and capped at 2000px
+# before they are committed, so a 6 MB phone shot lands as ~400 KB.
+media_folder: apps/client/public/uploads
+public_folder: /uploads
+media_libraries:
+  default:
+    config:
+      max_file_size: 15000000
+      transformations:
+        raster_image:
+          format: webp
+          quality: 82
+          width: 2000
+          height: 2000
+
+site_url: https://49shamans7.github.io/manastirea-saharna/
+logo:
+  src: ../favicon.svg
+
+slug:
+  encoding: ascii
+  clean_accents: true
+  sanitize_replacement: "-"
+  maxlength: 90
+
+# One entry, three languages, the folders the site already reads:
+# src/content/posts/<ro|en|ru>/<slug>.md. Romanian is required; en/ru are
+# optional and fall back to Romanian on the site when missing.
+i18n:
+  structure: multiple_folders
+  locales: [ro, en, ru]
+  default_locale: ro
+
+collections:
+  - name: posts
+    label: Cronica (știri și evenimente)
+    label_singular: Știre
+    folder: apps/client/src/content/posts
+    create: true
+    delete: true
+    extension: md
+    format: frontmatter
+    slug: "{{title}}"
+    summary: "{{publishedAt | date('YYYY-MM-DD')}} · {{title}}"
+    sortable_fields: [publishedAt, title]
+    view_filters:
+      - label: Ciorne
+        field: draft
+        pattern: true
+    i18n: true
+    fields:
+      - { name: title, label: Titlu, widget: string, i18n: true }
+      - name: publishedAt
+        label: Data publicării
+        widget: datetime
+        default: "{{now}}"
+        i18n: duplicate
+      - name: author
+        label: Autor
+        widget: select
+        options: ["preot Mihail Bortă", "Arhimandritul Iuvenalie"]
+        required: false
+        i18n: duplicate
+      - name: excerpt
+        label: Rezumat (o frază, apare în liste)
+        widget: text
+        required: false
+        i18n: true
+      - name: image
+        label: Fotografia principală
+        widget: object
+        required: false
+        i18n: duplicate
+        fields:
+          - { name: src, label: Fotografie, widget: image }
+          - { name: alt, label: Descriere scurtă a fotografiei, widget: string, required: false }
+      - name: galleryImages
+        label: Galerie (fotografii)
+        widget: list
+        required: false
+        i18n: duplicate
+        # existing entries are {src, thumb, width, height}; the admin edits src
+        # and the site derives the rest (content.config.ts)
+        fields:
+          - { name: src, label: Fotografie, widget: image }
+      - name: videos
+        label: Video YouTube (doar codul de 11 caractere, ex. dQw4w9WgXcQ)
+        widget: list
+        required: false
+        i18n: duplicate
+        field: { name: id, label: Cod video, widget: string, pattern: ['^[\w-]{11}$', "Exact 11 caractere"] }
+      - name: gallery
+        label: Știre doar cu fotografii (fără text)
+        widget: boolean
+        default: false
+        i18n: duplicate
+      - name: draft
+        label: Ciornă (nu apare pe site)
+        widget: boolean
+        default: false
+        i18n: duplicate
+      - { name: zone, widget: hidden, default: green, i18n: duplicate }
+      - { name: body, label: Text, widget: markdown, required: false, i18n: true }
+
+  # The long texts. Their place on the site (zone, template, order) is fixed in
+  # code; only the words are edited here. No new pages and no deleting.
+  - name: pages
+    label: Pagini (texte lungi)
+    label_singular: Pagină
+    folder: apps/client/src/content/pages
+    create: false
+    delete: false
+    extension: md
+    format: frontmatter
+    summary: "{{title}}"
+    i18n: true
+    fields:
+      - { name: title, label: Titlu, widget: string, i18n: true }
+      - { name: lead, label: Introducere (sub titlu), widget: text, required: false, i18n: true }
+      - { name: eyebrow, widget: hidden, default: "", i18n: duplicate }
+      - { name: zone, widget: hidden, i18n: duplicate }
+      - { name: template, widget: hidden, default: chamber, i18n: duplicate }
+      - { name: order, widget: hidden, default: 0, i18n: duplicate }
+      - { name: sourceUrl, widget: hidden, i18n: duplicate }
+      - { name: body, label: Text, widget: markdown, i18n: true }

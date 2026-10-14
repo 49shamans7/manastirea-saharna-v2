@@ -1,0 +1,56 @@
+---
+import Layout from "@layouts/Layout.astro";
+import TempleFrame from "@layouts/TempleFrame.astro";
+import ChronicleList from "@components/temple/ChronicleList.astro";
+import YearRail from "@components/temple/YearRail.astro";
+import Pagination from "@components/Pagination.astro";
+import { getPaginatedPosts, getPostYears, getPublishedPosts, getTotalPostPages } from "@data/posts";
+import { defaultLocale } from "@i18n";
+import { getLocaleFromUrl, useTranslations } from "@i18n/utils";
+import "@styles/temple.css";
+
+export async function getStaticPaths() {
+  const posts = await getPublishedPosts(defaultLocale);
+  const totalPages = getTotalPostPages(posts.length);
+
+  // page 1 is /posts itself
+  return Array.from({ length: Math.max(0, totalPages - 1) }, (_, index) => ({
+    params: { page: String(index + 2) },
+  }));
+}
+
+const lang = getLocaleFromUrl(Astro.url);
+const t = useTranslations(lang);
+const currentPage = Number(Astro.params.page) || 2;
+const allPosts = await getPublishedPosts(lang);
+const posts = getPaginatedPosts(allPosts, currentPage);
+const totalPages = getTotalPostPages(allPosts.length);
+const years = getPostYears(allPosts);
+---
+
+<Layout>
+  <TempleFrame lang={lang} zone="green" path={Astro.url.pathname}>
+    <main class="cronica">
+      <header class="page-head cronica-head">
+        <h1 class="page-title">{t("zone.cronica")}</h1>
+        <p class="page-meta">{`${currentPage} / ${totalPages}`}</p>
+      </header>
+
+      <YearRail years={years} current={null} lang={lang} />
+      <ChronicleList posts={posts} lang={lang} />
+      <Pagination currentPage={currentPage} totalPages={totalPages} lang={lang} />
+    </main>
+  </TempleFrame>
+</Layout>
+
+<style>
+  .cronica {
+    padding: var(--page-top) 0 var(--page-bottom);
+  }
+  /* the year run under the head is the head's rule */
+  .cronica-head {
+    margin-bottom: var(--s-5);
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+</style>

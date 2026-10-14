@@ -1,0 +1,12 @@
+<!-- The hooked rhomb, redrawn from the folk band on the Saharna seal
+     (src/assets/marks/seal.svg). Flat, opaque: frame = currentColor,
+     heart = the seal's gold. Square caps, mitred joins — the icon system's rule. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M16 10H24L54 40V48" />
+    <path d="M54 16V24L24 54H16" />
+    <path d="M48 54H40L10 24V16" />
+    <path d="M10 48V40L40 10H48" />
+  </g>
+  <path fill="#C9B07A" d="M32 25 39 32 32 39 25 32Z" />
+</svg>

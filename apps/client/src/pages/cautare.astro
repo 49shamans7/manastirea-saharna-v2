@@ -1,0 +1,415 @@
+---
+// CĂUTARE — a tool, not a chamber; on the seal's navy like every page.
+// Pagefind indexes the built site (postbuild: `pagefind --site dist`), one
+// index per <html lang>, so /cautare/ searches the Romanian pages, /en/cautare/
+// the English ones and /ru/cautare/ the Russian ones — the language filter is
+// the index itself. Only the JS API is used; the look is SOLID's, not
+// Pagefind's default UI. In `astro dev` there is no index: the page says so.
+import Layout from "@layouts/Layout.astro";
+import TempleFrame from "@layouts/TempleFrame.astro";
+import { getLocaleFromUrl, useTranslations } from "@i18n/utils";
+import "@styles/temple.css";
+
+const lang = getLocaleFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const strings = {
+  loading: t("search.loading"),
+  empty: t("search.empty"),
+  hint: t("search.hint"),
+  unavailable: t("search.unavailable"),
+  one: t("search.resultsOne"),
+  few: t("search.resultsFew"),
+  other: t("search.resultsOther"),
+  more: t("search.more"),
+  filterAll: t("search.filterAll"),
+  filterPosts: t("search.filterPosts"),
+  filterPages: t("search.filterPages"),
+};
+---
+
+<Layout title={t("search.title")}>
+  <TempleFrame lang={lang} zone="river" path={Astro.url.pathname}>
+    <main class="search-page" data-pagefind-ignore="all" data-search-strings={JSON.stringify({ lang, ...strings })}>
+      <header class="page-head">
+        <h1 class="page-title">{t("search.title")}</h1>
+        <p class="page-lead">{t("search.lead")}</p>
+      </header>
+
+      <search>
+        <form class="search-form" action="" method="get" data-search-form>
+          <label class="search-field-label" for="search-q">{t("search.label")}</label>
+          <div class="search-row">
+            <input
+              id="search-q"
+              class="search-input"
+              type="search"
+              name="q"
+              autocomplete="off"
+              spellcheck="false"
+              enterkeyhint="search"
+              placeholder={t("search.placeholder")}
+              data-search-input
+            />
+            <button class="search-submit" type="submit">{t("search.submit")}</button>
+          </div>
+        </form>
+      </search>
+
+      <div class="search-filters" role="group" aria-label={t("search.filterLabel")} data-search-filters hidden></div>
+
+      <p class="search-status" role="status" aria-live="polite" data-search-status></p>
+      <ol class="search-results" data-search-results></ol>
+      <button class="btn-quiet search-more" type="button" data-search-more hidden>{t("search.more")}</button>
+    </main>
+  </TempleFrame>
+</Layout>
+
+<script>
+  type PagefindResultData = {
+    url: string;
+    excerpt: string;
+    meta: { title?: string; image?: string; date?: string };
+    filters?: Record<string, string[]>;
+  };
+  type PagefindResult = { id: string; data: () => Promise<PagefindResultData> };
+  type PagefindSearch = { results: PagefindResult[]; unfilteredResultCount: number } | null;
+  type Pagefind = {
+    options: (opts: Record<string, unknown>) => Promise<void>;
+    init: () => Promise<void>;
+    filters: () => Promise<Record<string, Record<string, number>>>;
+    debouncedSearch: (q: string, opts?: Record<string, unknown>, ms?: number) => Promise<PagefindSearch>;
+  };
+  type Strings = Record<
+    | "lang"
+    | "loading"
+    | "empty"
+    | "hint"
+    | "unavailable"
+    | "one"
+    | "few"
+    | "other"
+    | "more"
+    | "filterAll"
+    | "filterPosts"
+    | "filterPages",
+    string
+  >;
+
+  const PAGE_SIZE = 10;
+  const base = import.meta.env.BASE_URL.replace(/\/?$/, "/");
+  const S = JSON.parse(
+    document.querySelector<HTMLElement>("[data-search-strings]")?.dataset["searchStrings"] ?? "{}",
+  ) as Strings;
+  const quote = (q: string): string => (S.lang === "ru" ? `«${q}»` : S.lang === "ro" ? `„${q}”` : `“${q}”`);
+
+  const form = document.querySelector<HTMLFormElement>("[data-search-form]");
+  const input = document.querySelector<HTMLInputElement>("[data-search-input]");
+  const status = document.querySelector<HTMLElement>("[data-search-status]");
+  const list = document.querySelector<HTMLOListElement>("[data-search-results]");
+  const more = document.querySelector<HTMLButtonElement>("[data-search-more]");
+  const filterBox = document.querySelector<HTMLElement>("[data-search-filters]");
+
+  let pagefind: Pagefind | null = null;
+  let results: PagefindResult[] = [];
+  let shown = 0;
+  let section = "";
+
+  const plural = new Intl.PluralRules(S.lang);
+  const countLabel = (n: number): string => {
+    const rule = plural.select(n);
+    const word = rule === "one" ? S.one : rule === "few" ? S.few : S.other;
+    return `${n} ${word}`;
+  };
+
+  async function load(): Promise<Pagefind | null> {
+    if (pagefind) return pagefind;
+    try {
+      const url = `${base}pagefind/pagefind.js`;
+      const mod = (await import(/* @vite-ignore */ url)) as Pagefind;
+      await mod.options({ baseUrl: base, excerptLength: 24 });
+      await mod.init();
+      pagefind = mod;
+      await buildFilters(mod);
+      return mod;
+    } catch {
+      if (status) status.textContent = S.unavailable;
+      return null;
+    }
+  }
+
+  async function buildFilters(mod: Pagefind): Promise<void> {
+    if (!filterBox) return;
+    const filters = await mod.filters();
+    const sections = filters["section"];
+    if (!sections || Object.keys(sections).length < 2) return;
+    const labels: Record<string, string> = { "": S.filterAll, posts: S.filterPosts, pages: S.filterPages };
+    for (const value of ["", ...Object.keys(sections)]) {
+      const chip = document.createElement("button");
+      chip.type = "button";
+      chip.className = "search-chip";
+      chip.dataset["value"] = value;
+      chip.textContent = labels[value] ?? value;
+      chip.setAttribute("aria-pressed", String(value === section));
+      chip.addEventListener("click", () => {
+        section = value;
+        filterBox.querySelectorAll<HTMLButtonElement>(".search-chip").forEach((other) => {
+          other.setAttribute("aria-pressed", String(other.dataset["value"] === section));
+        });
+        void run();
+      });
+      filterBox.append(chip);
+    }
+    filterBox.hidden = false;
+  }
+
+  function item(data: PagefindResultData): HTMLLIElement {
+    const li = document.createElement("li");
+    li.className = "search-result";
+    const a = document.createElement("a");
+    a.className = "search-result-link";
+    a.href = data.url;
+    const title = document.createElement("span");
+    title.className = "search-result-title";
+    title.textContent = data.meta.title ?? data.url;
+    a.append(title);
+    li.append(a);
+    if (data.meta.date) {
+      const date = document.createElement("span");
+      date.className = "search-result-date";
+      date.textContent = data.meta.date;
+      li.append(date);
+    }
+    const excerpt = document.createElement("p");
+    excerpt.className = "search-result-excerpt";
+    // Pagefind's excerpt is escaped text with <mark> around the hits
+    excerpt.innerHTML = data.excerpt;
+    li.append(excerpt);
+    return li;
+  }
+
+  async function showMore(): Promise<void> {
+    if (!list || !more) return;
+    const next = results.slice(shown, shown + PAGE_SIZE);
+    const items = await Promise.all(next.map((r) => r.data()));
+    for (const data of items) list.append(item(data));
+    shown += next.length;
+    more.hidden = shown >= results.length;
+  }
+
+  async function run(): Promise<void> {
+    if (!input || !status || !list || !more) return;
+    const q = input.value.trim();
+    const url = new URL(location.href);
+    if (q) url.searchParams.set("q", q);
+    else url.searchParams.delete("q");
+    history.replaceState(null, "", url);
+
+    if (q.length < 2) {
+      list.replaceChildren();
+      more.hidden = true;
+      status.textContent = q ? S.hint : "";
+      return;
+    }
+    const mod = await load();
+    if (!mod) return;
+    status.textContent = S.loading;
+    const search = await mod.debouncedSearch(q, section ? { filters: { section } } : {}, 250);
+    if (search === null) return; // a newer keystroke replaced this search
+    results = search.results;
+    shown = 0;
+    list.replaceChildren();
+    status.textContent = results.length ? countLabel(results.length) : `${S.empty} ${quote(q)}`;
+    await showMore();
+  }
+
+  form?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    void run();
+  });
+  input?.addEventListener("input", () => void run());
+  more?.addEventListener("click", () => void showMore());
+
+  const initial = new URL(location.href).searchParams.get("q");
+  if (input && initial) {
+    input.value = initial;
+    void run();
+  }
+</script>
+
+<style>
+  /* a title in capitals is never broken by a hyphen */
+  :global(.page-title) {
+    hyphens: manual;
+  }
+  .search-page {
+    padding: var(--page-top) 0 var(--page-bottom);
+    color: var(--river-ink);
+    max-width: 64rem;
+    margin-inline: auto;
+  }
+
+  /* field and button: one row of squares joined on a hairline */
+  .search-form {
+    margin: 0 0 var(--s-5);
+  }
+  .search-status,
+  .search-filters:not([hidden]) {
+    max-width: 40rem;
+    margin-inline: auto;
+  }
+  .search-field-label {
+    display: block;
+    max-width: 40rem;
+    margin-inline: auto;
+    margin-bottom: var(--s-2);
+    font-size: var(--t-ui);
+  }
+  .search-row {
+    display: flex;
+    gap: 0;
+    max-width: 40rem;
+    margin-inline: auto;
+  }
+  .search-input {
+    flex: 1;
+    min-width: 0;
+    min-height: var(--tap);
+    padding: 0 var(--s-4);
+    border: var(--rule) solid var(--seal-gold);
+    border-radius: var(--radius);
+    background: var(--seal-deep);
+    color: var(--parchment);
+    font: inherit;
+    font-size: 17px; /* ≥16 so iOS does not zoom */
+    transition: border-color var(--dur-1) var(--ease-out);
+  }
+  .search-input:hover,
+  .search-input:focus {
+    border-color: var(--seal-gold-text);
+  }
+  .search-input::placeholder {
+    color: var(--river-muted);
+  }
+  .search-input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+  }
+  .search-submit {
+    min-height: var(--tap);
+    min-width: var(--tap);
+    padding: 0 var(--s-5);
+    border: var(--rule) solid var(--seal-gold-text);
+    border-left: 0;
+    border-radius: var(--radius);
+    background: var(--seal-gold-text);
+    color: var(--seal-deep);
+    font: inherit;
+    font-size: var(--t-ui);
+    cursor: pointer;
+    transition:
+      background-color var(--dur-1) var(--ease-out),
+      border-color var(--dur-1) var(--ease-out);
+  }
+  .search-submit:hover {
+    border-color: var(--parchment);
+    background: var(--parchment);
+  }
+  .search-page :where(input, button):focus-visible {
+    outline: var(--rule-2) solid var(--river-strong);
+    outline-offset: var(--rule-2);
+  }
+
+  .search-filters:not([hidden]) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--lattice);
+    justify-content: center;
+    margin: 0 auto var(--s-5);
+  }
+  .search-filters :global(.search-chip) {
+    min-height: var(--tap-min);
+    padding: 0 var(--s-4);
+    border: var(--rule) solid var(--line);
+    border-radius: var(--radius);
+    background: transparent;
+    color: var(--river-ink);
+    font: inherit;
+    font-size: var(--t-meta);
+    cursor: pointer;
+    transition:
+      background-color var(--dur-1) var(--ease-out),
+      border-color var(--dur-1) var(--ease-out);
+  }
+  .search-filters :global(.search-chip:hover) {
+    border-color: var(--seal-gold-text);
+  }
+  .search-filters :global(.search-chip[aria-pressed="true"]) {
+    background: var(--seal-gold-text);
+    border-color: var(--seal-gold-text);
+    color: var(--seal-deep);
+  }
+
+  .search-status {
+    margin: 0 auto;
+    text-align: center;
+    min-height: calc(var(--t-body) * 1.75);
+    font-size: var(--t-meta);
+    color: var(--river-muted);
+  }
+
+  /* results: rows you scan, closed by hairlines */
+  .search-results {
+    list-style: none;
+    margin: var(--s-4) 0 0;
+    padding: 0;
+    border-top: var(--rule) solid var(--line-strong);
+  }
+  .search-results:empty {
+    border-top: 0;
+  }
+  .search-results :global(.search-result) {
+    padding: var(--s-4) 0;
+    border-bottom: var(--rule) solid var(--line);
+  }
+  .search-results :global(.search-result-link) {
+    display: flex;
+    align-items: center;
+    min-height: var(--tap-min);
+    color: var(--river-strong);
+    font-size: clamp(18px, 1.9vw, 22px);
+    line-height: 1.3;
+    text-decoration-thickness: var(--rule);
+    text-underline-offset: 0.18em;
+    overflow-wrap: anywhere;
+  }
+  .search-results :global(.search-result-date) {
+    display: block;
+    font-size: var(--t-meta);
+    color: var(--river-muted);
+  }
+  .search-results :global(.search-result-excerpt) {
+    margin: var(--s-2) 0 0;
+    max-width: var(--measure);
+    font-size: var(--t-body);
+    line-height: var(--lh-body);
+  }
+  .search-results :global(mark) {
+    background: transparent;
+    color: inherit;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: var(--river);
+    text-decoration-thickness: var(--rule-2);
+    text-underline-offset: 0.2em;
+  }
+
+  .search-more {
+    margin-top: var(--s-6);
+  }
+
+  @media (max-width: 599px) {
+    .search-submit {
+      padding: 0 var(--s-4);
+    }
+  }
+</style>

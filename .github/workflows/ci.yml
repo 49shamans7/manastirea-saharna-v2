@@ -1,0 +1,45 @@
+name: Check
+
+# Every push and pull request to dev: types, a full build, the search index,
+# and an internal link check over all ~1,500 pages. Deploys nothing.
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: check-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/client
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version-file: .tool-versions
+
+      - name: Install
+        run: bun install --frozen-lockfile
+
+      - name: Types
+        run: bun astro check
+
+      - name: Build
+        run: bun astro build
+
+      - name: Search index and CSP hashes
+        run: bun run build:index
+
+      - name: Internal links
+        run: node ../../scripts/check-links.mjs dist

@@ -1,0 +1,24 @@
+{
+  // Backend copy. Same architecture as workers/pomelnic, deployed under the
+  // monastery's own Cloudflare account. The original worker and its vars are
+  // left exactly as they are — nothing here repoints anything of Victor's.
+  //
+  // Before first deploy set the secrets (never vars):
+  //   wrangler secret put RESEND_API_KEY
+  //   wrangler secret put TURNSTILE_SECRET_KEY
+  "name": "saharna-pomelnic",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-05-17",
+  "workers_dev": true,
+  "vars": {
+    // Where the form is served from. Change to the real domain when it lands.
+    "ALLOWED_ORIGIN": "https://49shamans7.github.io",
+    "SITE_URL": "https://49shamans7.github.io/manastirea-saharna",
+    // Where pomelnice are delivered. Monastery address, set before going live.
+    "POMELNIC_TO": "",
+    "RESEND_FROM": "Pomelnic Saharna <noreply@manastirea-saharna.md>"
+  },
+  "observability": {
+    "enabled": true
+  }
+}

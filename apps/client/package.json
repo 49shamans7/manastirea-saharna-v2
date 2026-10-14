@@ -1,0 +1,26 @@
+{
+  "name": "client",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "astro": "astro",
+    "sync": "bun astro sync",
+    "build": "bun astro check && bun astro build && bun run build:index",
+    "build:index": "bun ../../scripts/build-search-index.mjs && bun ../../scripts/build-csp.mjs",
+    "build:cloudflare": "BASE_PATH=/ SITE_URL=https://manastirea-saharna.md bun run build",
+    "redirects": "bun ../../scripts/build-redirects.mjs",
+    "dev": "bun astro dev",
+    "preview": "bun run build && bun astro preview"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.4",
+    "astro": "^7.3.7",
+    "astro-i18n-aut": "^0.7.3"
+  },
+  "devDependencies": {
+    "pagefind": "^1.5.2",
+    "prettier-plugin-astro": "^0.14.1"
+  }
+}

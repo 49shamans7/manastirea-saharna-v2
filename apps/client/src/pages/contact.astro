@@ -1,0 +1,74 @@
+---
+// TEMPLATE C · TABLE — Zone IV. Contact details, flat and print-ready.
+// Numbers and addresses from the old site's own contact page and footer
+// (msaharna-archive/text/practical_info.json → _contacts).
+import TableLayout from "@layouts/TableLayout.astro";
+import { getLocaleFromUrl, getLocalizedPath, telHref, useTranslations } from "@i18n/utils";
+
+const lang = getLocaleFromUrl(Astro.url);
+const t = useTranslations(lang);
+// the old site's exact coordinates of the monastery
+const mapQuery = "47.694979,28.965466";
+const mapLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapQuery)}`;
+const emails = t("footer.email")
+  .split(",")
+  .map((address) => address.trim())
+  .filter(Boolean);
+
+const phones = [
+  { label: t("contact.secretariatLabel"), number: t("contact.phoneSecretariat") },
+  { label: t("contact.phoneMainLabel"), number: t("contact.phoneMain") },
+  { label: t("contact.guesthouseLabel"), number: t("contact.phoneMobile"), note: t("contact.guesthouseHours") },
+];
+---
+
+<TableLayout title={t("nav.contact")}>
+  <dl>
+    <dt>{t("contact.addressLabel")}</dt>
+    <dd>
+      <span class="house">{t("footer.addressName")}</span>
+      <a class="tap" href={mapLink} rel="noopener" target="_blank">{t("footer.addressLine")}</a>
+    </dd>
+    {
+      phones.map((phone) => (
+        <>
+          <dt>{phone.label}</dt>
+          <dd>
+            <a class="tap" href={telHref(phone.number)}>
+              {phone.number}
+            </a>
+            {phone.note && <span class="aside">{phone.note}</span>}
+          </dd>
+        </>
+      ))
+    }
+    <dt>{t("contact.emailLabel")}</dt>
+    <dd>
+      {
+        emails.map((address) => (
+          <a class="tap" href={`mailto:${address}`}>
+            {address}
+          </a>
+        ))
+      }
+    </dd>
+  </dl>
+
+  <h2>{t("zone.directions")}</h2>
+  <p><a class="tap" href={getLocalizedPath("/cum-de-ajuns", lang)}>{t("contact.directionsLink")}</a></p>
+
+  <h2>{t("zone.pomelnic")}</h2>
+  <p><a class="tap" href={getLocalizedPath("/pomelnic", lang)}>{t("pomelnic.title")}</a></p>
+</TableLayout>
+
+<style>
+  .aside {
+    display: block;
+    padding-bottom: var(--s-2);
+    font-size: var(--t-meta);
+    color: var(--river-muted);
+  }
+  .house {
+    display: block;
+  }
+</style>

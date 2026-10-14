@@ -1,0 +1,62 @@
+---
+// THE FRAME — a centre field between two rails, from Page 1 and from the old
+// site's own lfon_repeat / rfon_repeat margin tiles. 78 | 1200 | 198.
+// Every page that is not the descent itself sits inside this.
+import CalendarRail from "@components/temple/CalendarRail.astro";
+import type { Locale } from "@i18n";
+import type { ZoneId } from "@temple/zones";
+
+interface Props {
+  lang: Locale;
+  zone: ZoneId;
+  path?: string;
+  /** The descent hides the rails' chrome; chambers and tables show them. */
+  rails?: boolean;
+}
+
+const { lang, zone, rails = true } = Astro.props;
+---
+
+<div class:list={["frame", "ground-white", `z-${zone}`, !rails && "no-rails"]} data-zone={zone}>
+  {/* the descent index is the drawer now, at every width (owner, 2026-10-10):
+      unseen until the header button opens it */}
+  <div class="centre">
+    <slot />
+  </div>
+  {rails && <CalendarRail lang={lang} />}
+</div>
+
+<style>
+  /* centre | calendar — the left rail lives in the drawer. Every width a
+     token, every gap a step of 8. */
+  .frame {
+    display: grid;
+    grid-template-columns: minmax(0, var(--centre-max)) var(--rail-r);
+    justify-content: center;
+    gap: var(--frame-gap);
+    min-height: calc(100dvh - var(--nav-h, 80px));
+    padding: 0 var(--frame-pad);
+    background: var(--seal-navy);
+    color: var(--parchment);
+  }
+  .frame.no-rails,
+  .centre {
+    min-width: 0;
+  }
+  .frame.no-rails {
+    grid-template-columns: minmax(0, var(--centre-max));
+  }
+
+  /* below 1360px the calendar folds under the text */
+  @media (max-width: 1360px) {
+    .frame {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  /* One ground for every page: white (owner, 2026-10-10) — the shrine's
+     chambers too; their gold title and narrower measure mark them. */
+  .z-gold {
+    background: var(--seal-navy);
+  }
+</style>

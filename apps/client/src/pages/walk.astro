@@ -1,0 +1,246 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Panel from "@components/descent/Panel.astro";
+import Band from "@components/descent/Band.astro";
+import Well from "@components/descent/Well.astro";
+import { getLocaleFromUrl, useTranslations } from "@i18n/utils";
+import { homeHours, serviceText } from "@data/schedule";
+import "@styles/temple.css";
+import Cross from "@components/marks/Cross.astro";
+import Seal from "@components/marks/Seal.astro";
+
+const lang = getLocaleFromUrl(Astro.url);
+const t = useTranslations(lang);
+// first sentence of the descent lead: the walk keeps the short line
+const tagline = (t("home.descentLead").split(/(?<=\.)\s/)[0] ?? "").replace(/\.$/, "");
+
+// THE WALK — the horizontal reading of the four zones. Kept as its own route
+// while the canonical home is the vertical descent (ARCHITECTURE.md, Template A).
+// Solid vector fills. The well crosses the strata.
+---
+
+<Layout title={t("zone.descentIndex")}>
+  <div class="temple">
+    <div class="rail" id="rail">
+      {/* ── I · STÂNCA ── rocky cave. the descent begins ── */}
+      <Panel zone="rock" id="stanca" n="I" name={t("zone.rock")}>
+        <Band fill="var(--rock-lilac)" fields={3} label="peștera" />
+        <Band fill="var(--rock-grey)" fields={5} rule />
+        <Band fill="var(--rock-stone)" rule />
+        <div class="seal">
+          <Seal size={132} loading="eager" />
+        </div>
+        <div class="stage">
+          <h1 class="title">{t("home.descentTitle")}</h1>
+          <p class="sub">{tagline}</p>
+        </div>
+        <Well x="72%" />
+      </Panel>
+
+      {/* ── II · OBȘTEA ── the living monastery ── */}
+      <Panel zone="green" id="obstea" n="II" name={t("zone.green")}>
+        <Band fill="var(--green-sage)" fields={2} label="obștea" />
+        <Band fill="var(--green-olive)" fields={5} rule />
+        <Band fill="var(--green)" rule />
+        <div class="stage left">
+          <h2 class="h2">{t("home.greenTitle")}</h2>
+          {/* the monastery's real lead times — same source as the descent */}
+          <div class="hours">
+            {
+              homeHours.map((h) => (
+                <>
+                  <div class="t">{h.time}</div>
+                  <div class="n">{serviceText(h.name, lang)}</div>
+                </>
+              ))
+            }
+          </div>
+        </div>
+        <Well x="72%" />
+      </Panel>
+
+      {/* ── III · RACLA ── the door IS the zone. you stop. ── */}
+      <Panel zone="gold" id="racla" n="III" name={t("zone.gold")}>
+        <Band fill="var(--pall-lift)" fields={2} />
+        <Band fill="var(--pall)" rule />
+        <div class="stage left gold-measure">
+          <h2 class="h2">{t("home.shrineTitle")}</h2>
+          <blockquote>{t("home.shrineQuote")}</blockquote>
+        </div>
+        <div class="door-vec" aria-hidden="true">
+          <Cross fill="var(--gold)" width="100%" height="100%" />
+        </div>
+      </Panel>
+
+      {/* ── IV · NISTRU ── the water. the walk stops here. ── */}
+      <Panel zone="river" id="nistru" n="IV" name={t("zone.river")}>
+        <Band fill="var(--river-pale)" fields={2} label="orizont" />
+        <Band fill="var(--river)" fields={4} rule />
+        <Band fill="var(--river-deep)" rule />
+        <div class="stage">
+          <h2 class="h2 dark">{t("home.riverTitle")}</h2>
+          <p class="sub dark">{t("home.riverLead")}</p>
+        </div>
+      </Panel>
+    </div>
+    <p class="hint" aria-hidden="true">↔ {t("home.scrollHint")}</p>
+  </div>
+</Layout>
+
+<style>
+  .temple {
+    height: calc(100dvh - var(--nav-h, 72px));
+    overflow: hidden;
+    position: relative;
+  }
+  .rail {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+  .rail::-webkit-scrollbar {
+    display: none;
+  }
+
+  .seal {
+    position: absolute;
+    top: clamp(var(--s-4), 4vh, var(--s-8));
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 6;
+  }
+  .seal img {
+    width: clamp(72px, 7.5vw, 132px);
+    height: auto;
+    opacity: 0.96;
+  }
+
+  .stage {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    padding: 0 clamp(20px, 6vw, 90px);
+  }
+  .stage.left {
+    place-content: center start;
+    text-align: left;
+    max-width: min(46vw, 640px);
+  }
+  .gold-measure {
+    max-width: min(40vw, var(--measure-gold));
+  }
+
+  .title {
+    text-transform: uppercase;
+    font-size: clamp(24px, 3.6vw, 56px);
+    letter-spacing: 0.06em;
+    line-height: 1.1;
+    font-weight: 400;
+    color: var(--parchment);
+  }
+  .h2 {
+    text-transform: uppercase;
+    font-size: clamp(22px, 2.8vw, 44px);
+    letter-spacing: 0.05em;
+    font-weight: 400;
+    color: var(--parchment);
+    margin-bottom: 0.6em;
+  }
+  .h2.dark,
+  .sub.dark {
+    color: var(--river-ink);
+  }
+  .sub {
+    margin-top: 1.2em;
+    font-size: var(--t-lead);
+    color: var(--parchment);
+    opacity: 0.8;
+  }
+
+  .hours {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    gap: 0;
+    border-top: 1px solid rgba(196, 162, 74, 0.35);
+  }
+  .hours div {
+    padding: 11px 0;
+    border-bottom: 1px solid rgba(196, 162, 74, 0.18);
+    font-variant-numeric: tabular-nums;
+    color: var(--parchment);
+  }
+  .hours .t {
+    color: var(--ochre);
+    letter-spacing: 0.06em;
+  }
+  .hours .n {
+    opacity: 0.88;
+  }
+
+  blockquote {
+    font-size: var(--t-quote);
+    line-height: 1.6;
+    font-style: italic;
+    border-left: 2px solid var(--ochre);
+    padding-left: 20px;
+    color: var(--parchment);
+    opacity: 0.9;
+  }
+
+  .door-vec {
+    position: absolute;
+    right: clamp(var(--s-5), 8vw, 140px);
+    top: 50%;
+    transform: translateY(-50%);
+    width: clamp(90px, 11vw, 190px);
+    z-index: 4;
+    opacity: 0.92;
+  }
+
+  .hint {
+    position: absolute;
+    right: clamp(20px, 5vw, var(--s-9));
+    bottom: clamp(20px, 4vh, 44px);
+    font-size: var(--t-label);
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    color: var(--parchment);
+    opacity: 0.45;
+    z-index: 7;
+  }
+
+  @media (max-width: 820px) {
+    .stage.left,
+    .gold-measure {
+      max-width: 82vw;
+    }
+    .door-vec {
+      opacity: 0.35;
+    }
+  }
+</style>
+
+<script>
+  // wheel down / trackpad vertical → walk sideways
+  const rail = document.getElementById("rail");
+  if (rail) {
+    rail.addEventListener(
+      "wheel",
+      (e) => {
+        if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+          e.preventDefault();
+          rail.scrollLeft += e.deltaY;
+        }
+      },
+      { passive: false },
+    );
+  }
+</script>

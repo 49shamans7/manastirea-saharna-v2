@@ -1,0 +1,122 @@
+---
+// The chronicle's years, as a single horizontal run. Thirteen years of entries
+// need a way in that is not twenty-six pages of "next".
+import type { Locale } from "@i18n";
+import { getLocalizedPath, useTranslations } from "@i18n/utils";
+
+interface Props {
+  years: { year: string; count: number }[];
+  current?: string | null;
+  lang: Locale;
+}
+
+const { years, current = null, lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<nav class="years" aria-label={t("zone.cronica")}>
+  <ol>
+    <li>
+      <a
+        class:list={["year", !current && "is-current"]}
+        href={getLocalizedPath("/posts", lang)}
+        aria-current={!current ? "page" : undefined}>
+        <span class="y">{t("gallery.all")}</span>
+      </a>
+    </li>
+    {
+      years.map(({ year, count }) => (
+        <li>
+          <a
+            class:list={["year", current === year && "is-current"]}
+            href={getLocalizedPath(`/posts/an/${year}`, lang)}
+            aria-current={current === year ? "page" : undefined}>
+            <span class="y">{year}</span>
+            <span class="n">{count}</span>
+          </a>
+        </li>
+      ))
+    }
+  </ol>
+</nav>
+
+<script>
+  // A year far down the rail (2014 on a phone) would sit off-screen while
+  // its own page is open: bring the current year into the strip's view.
+  document.querySelectorAll(".years").forEach((rail) => {
+    const current = rail.querySelector('[aria-current="page"]');
+    if (rail instanceof HTMLElement && current instanceof HTMLElement) {
+      rail.scrollLeft = current.offsetLeft - rail.clientWidth / 2 + current.offsetWidth / 2;
+    }
+  });
+</script>
+
+<style>
+  /* a single run of years on one hairline; the current year is ochre and
+     underscored at emphasis weight. No cells, no frames. */
+  .years {
+    margin-bottom: var(--s-6);
+    overflow-x: auto;
+    scrollbar-width: none;
+    border-bottom: var(--rule) solid var(--line);
+  }
+  .years::-webkit-scrollbar {
+    display: none;
+  }
+  .years ol {
+    display: flex;
+    gap: var(--s-1);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: max-content;
+    /* centred under the centred head while it fits; scrolls when it does not */
+    margin-inline: auto;
+  }
+  .year {
+    position: relative;
+    display: flex;
+    align-items: baseline;
+    gap: var(--s-1);
+    min-width: var(--tap);
+    min-height: var(--tap);
+    padding: var(--s-3) var(--s-3) 0;
+    text-decoration: none;
+    color: var(--seal-mist);
+    transition: color var(--dur-1) var(--ease-out);
+  }
+  .years li:first-child .year {
+    padding-left: 0;
+  }
+  .year:hover {
+    color: inherit;
+  }
+  .year.is-current {
+    color: var(--ochre);
+  }
+  .year.is-current::after {
+    content: "";
+    position: absolute;
+    left: var(--s-3);
+    right: var(--s-3);
+    bottom: 0;
+    height: var(--rule-2);
+    background: var(--line-strong);
+  }
+  .years li:first-child .year.is-current::after {
+    left: 0;
+  }
+  .y {
+    font-size: var(--t-ui);
+    line-height: var(--s-6);
+    font-variant-numeric: lining-nums tabular-nums;
+  }
+  .n {
+    font-size: 12px;
+    line-height: var(--s-6);
+    font-variant-numeric: lining-nums tabular-nums;
+  }
+  .year:focus-visible {
+    outline-offset: calc(var(--rule-2) * -1);
+  }
+</style>

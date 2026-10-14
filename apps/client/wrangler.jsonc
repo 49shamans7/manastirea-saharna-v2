@@ -1,0 +1,48 @@
+// Cloudflare Workers — static assets only (no Worker script), the approach
+// Cloudflare recommends for a fully static Astro site (2026: Workers static
+// assets; Pages is maintained but new projects go to Workers).
+//
+// NOT DEPLOYED YET. The switch happens on the monastery's own Cloudflare
+// account — the ordered steps are in docs/CLOUDFLARE-HANDOVER.md.
+//
+//   cd apps/client
+//   bunx wrangler login                      # the monastery's account
+//   bunx wrangler deploy                     # runs build.command, uploads ./dist
+//   bunx wrangler dev                        # local preview with _headers/_redirects
+//
+// _headers and _redirects in public/ are copied into dist/ by the build and
+// honoured by Workers static assets as they are by Pages.
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "manastirea-saharna",
+  "compatibility_date": "2026-10-01",
+
+  // The site at the domain root: BASE_PATH=/ and SITE_URL=https://manastirea-saharna.md
+  // (canonical URLs, sitemap, RSS). The GitHub Pages build keeps its own
+  // defaults (/manastirea-saharna) until Pages is switched off.
+  "build": {
+    "command": "bun run build:cloudflare",
+    "cwd": ".",
+    "watch_dir": "src",
+  },
+
+  "assets": {
+    "directory": "./dist",
+    // /foo → 307 /foo/ when foo/index.html exists (Astro: trailingSlash always)
+    "html_handling": "auto-trailing-slash",
+    // unknown paths → dist/404.html with status 404
+    "not_found_handling": "404-page",
+  },
+
+  // *.workers.dev stays on as the preview address until the custom domain is live.
+  "workers_dev": true,
+  "preview_urls": false,
+
+  // Uncomment once the manastirea-saharna.md zone is ACTIVE on the monastery's
+  // account (handover step 6). wrangler deploy then attaches the domains and
+  // creates their DNS records and certificates.
+  // "routes": [
+  //   { "pattern": "manastirea-saharna.md", "custom_domain": true },
+  //   { "pattern": "www.manastirea-saharna.md", "custom_domain": true },
+  // ],
+}

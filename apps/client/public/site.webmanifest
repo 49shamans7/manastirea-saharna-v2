@@ -1,0 +1,11 @@
+{
+  "name": "Sfânta Mănăstire Saharna",
+  "short_name": "Saharna",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#253528",
+  "background_color": "#1d1c22",
+  "display": "browser"
+}

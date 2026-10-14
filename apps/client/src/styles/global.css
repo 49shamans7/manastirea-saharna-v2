@@ -1,0 +1,179 @@
+@layer base, components;
+@import "./reset.css";
+@import "./tokens.css";
+@import "../assets/marks/icons.css";
+
+@layer base {
+  /* form controls arrive rounded from the browser (iOS most of all) */
+  button,
+  input,
+  select,
+  textarea {
+    border-radius: var(--radius);
+  }
+  input:not([type="checkbox"], [type="radio"]),
+  textarea,
+  select {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    /* in-page jumps (#zona-*) land below the sticky header, not under it */
+    scroll-padding-top: var(--nav-h);
+  }
+
+  body {
+    /* nothing on the site may scroll sideways on a phone */
+    overflow-x: clip;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    background: var(--seal-navy);
+    color: var(--parchment);
+    font-family: Georgia, "Times New Roman", serif;
+  }
+
+  /* a visible focus ring on every interactive thing (WCAG 2.4.7) */
+  :where(a, button, input, textarea, select, summary, [tabindex]):focus-visible {
+    outline: var(--rule-2) solid var(--ochre);
+    outline-offset: var(--rule-2);
+  }
+  /* Zone IV is bright: ochre on the river ground is 1.6:1. The river's own
+       ink holds 8.8:1 (WCAG 2.4.13 / 1.4.11 ask for 3:1). */
+  .z-river :where(a, button, input, textarea, select, summary, [tabindex]):focus-visible {
+    outline-color: var(--river-ink);
+  }
+
+  img,
+  svg,
+  video,
+  iframe {
+    max-width: 100%;
+  }
+
+  /* headings are set in Alegreya SC, whose default figures are old-style:
+     every head takes lining figures ("ICOSUL 1", "2025") */
+  :where(h1, h2, h3, h4, .h1, .h2, .h3) {
+    font-variant-numeric: lining-nums;
+  }
+
+  /* photographs carry the seal's vividness: saturation lifted, contrast a
+     touch firmer (owner, 2026-10-10: "more lively"). Files unchanged. */
+  main img:not([src$=".svg"]) {
+    filter: saturate(1.2) contrast(1.04);
+  }
+}
+
+@layer components {
+  /* the frame's own outer lines: header and footer content starts on the
+       left rail's edge and ends on the right rail's, at every width */
+  .frame-wide {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: calc(var(--rail-l) + var(--centre-max) + var(--rail-r) + 2 * var(--frame-gap) + 2 * var(--frame-pad));
+    margin-inline: auto;
+    padding-left: max(var(--frame-pad), env(safe-area-inset-left));
+    padding-right: max(var(--frame-pad), env(safe-area-inset-right));
+  }
+
+  /* THE PAGE HEAD — one head for every page in the frame: an optional
+     kicker (only where it orients: a date, a count, an error code), the
+     title, an optional standfirst, one hairline. Chamber, Table, the
+     cronică, galerie, obștea, pomelnic, căutare and 404 all wear it. */
+  .page-head {
+    position: relative;
+    isolation: isolate;
+    /* the seal's voice: every head is centred, like the lettering round
+       the seal (owner, 2026-10-10). Body text stays left — it is read. */
+    text-align: center;
+    padding-bottom: var(--s-6);
+    margin-bottom: var(--head-gap);
+    border-bottom: var(--rule) solid var(--line);
+  }
+  .page-kicker {
+    margin: 0 0 var(--s-4);
+    font-size: var(--t-meta);
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+    color: var(--kicker, var(--ochre));
+    font-variant-numeric: lining-nums tabular-nums;
+  }
+  .page-title {
+    margin: 0;
+    font-family: var(--font-display);
+    /* Alegreya's default figures are old-style; in a capital title "2025"
+       would sit at x-height */
+    font-variant-numeric: lining-nums;
+    font-size: var(--t-title);
+    font-weight: 700;
+    line-height: var(--lh-title);
+    letter-spacing: var(--track-caps);
+    text-transform: uppercase;
+    text-wrap: balance;
+    overflow-wrap: break-word;
+    hyphens: manual;
+  }
+  .page-title.is-long {
+    font-size: var(--t-title-long);
+    line-height: 1.18;
+  }
+  .page-lead {
+    max-width: var(--measure);
+    margin: var(--s-5) auto 0;
+    font-size: var(--t-standfirst);
+    line-height: var(--lh-lead);
+    text-wrap: pretty;
+    color: var(--seal-mist);
+  }
+  .page-meta {
+    margin: var(--s-4) 0 0;
+    font-size: var(--t-meta);
+    line-height: 1.4;
+    color: var(--seal-mist);
+    font-variant-numeric: lining-nums tabular-nums;
+  }
+
+  /* BUTTONS — two, no third. A flat fill for the one thing a page asks of
+     you; a hairline for everything else. Sentence case, the text face, a
+     colour change on hover and nothing that moves. Grounds re-point
+     --btn / --btn-ink. */
+  .btn,
+  .btn-quiet {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--s-2);
+    min-height: var(--tap);
+    padding: 0 var(--s-5);
+    border: var(--rule) solid var(--btn, var(--ochre));
+    border-radius: var(--radius);
+    font: inherit;
+    font-size: var(--t-ui);
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+      background-color var(--dur-1) var(--ease-out),
+      border-color var(--dur-1) var(--ease-out),
+      color var(--dur-1) var(--ease-out);
+  }
+  .btn {
+    background: var(--btn, var(--ochre));
+    color: var(--btn-ink, var(--ink));
+  }
+  .btn:hover {
+    background: var(--btn-hover, var(--parchment));
+    border-color: var(--btn-hover, var(--parchment));
+  }
+  .btn-quiet {
+    border-color: var(--btn-line, var(--seal-mist));
+    background: transparent;
+    color: inherit;
+  }
+  .btn-quiet:hover {
+    border-color: currentColor;
+  }
+}

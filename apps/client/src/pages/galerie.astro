@@ -1,0 +1,279 @@
+---
+// GALERIE — Zone II. 217 photographs out of the monastery's own archive,
+// kept in the categories the archive already had: each folder is the page the
+// photograph was found on, so the sorting is the monastery's, not ours.
+// Derivatives are built by scripts/build-gallery.mjs.
+import Layout from "@layouts/Layout.astro";
+import TempleFrame from "@layouts/TempleFrame.astro";
+import galleryManifest from "@data/gallery.json";
+import type { AllTranslationKeys } from "@i18n";
+import { getLocaleFromUrl, useTranslations } from "@i18n/utils";
+import { withBasePath } from "@utils/paths";
+import "@styles/temple.css";
+import Icon from "@components/marks/Icon.astro";
+
+type GalleryItem = { src: string; thumb: string; tile?: string; width: number; height: number };
+type GalleryCategory = { key: string; dir: string; items: GalleryItem[] };
+
+const lang = getLocaleFromUrl(Astro.url);
+const t = useTranslations(lang);
+const categories = galleryManifest as GalleryCategory[];
+const total = categories.reduce((n, c) => n + c.items.length, 0);
+---
+
+<Layout title={t("zone.galerie")}>
+  <TempleFrame lang={lang} zone="green" path={Astro.url.pathname}>
+    <main class="galerie">
+      <header class="page-head">
+        <h1 class="page-title">{t("zone.galerie")}</h1>
+        <p class="page-lead">{t("gallery.lead")}</p>
+        <p class="page-meta">{total} {t("gallery.count")}</p>
+      </header>
+
+      {
+        categories.map((category) => (
+          <section class="category" id={category.dir} aria-labelledby={`h-${category.dir}`}>
+            <h2 id={`h-${category.dir}`} class="category-head">
+              {t(`gallery.${category.key}` as AllTranslationKeys)}
+              <span class="category-count">{category.items.length}</span>
+            </h2>
+
+            <ul class="grid">
+              {category.items.map((item, index) => (
+                <li>
+                  <button
+                    class="tile"
+                    type="button"
+                    data-full={withBasePath(item.src)}
+                    data-index={index}
+                    data-category={category.dir}
+                    aria-label={`${t(`gallery.${category.key}` as AllTranslationKeys)} ${index + 1}`}>
+                    <img
+                      src={withBasePath(item.tile ?? item.thumb)}
+                      srcset={
+                        item.tile
+                          ? `${withBasePath(item.tile.replace(/-sq\.webp$/, "-sq-sm.webp"))} 360w, ${withBasePath(item.tile)} 480w`
+                          : `${withBasePath(item.thumb.replace(/-thumb\.webp$/, "-thumb-sm.webp"))} 360w, ${withBasePath(item.thumb)} 480w`
+                      }
+                      sizes="(max-width: 600px) 33vw, 220px"
+                      alt=""
+                      width={item.tile ? 480 : item.width}
+                      height={item.tile ? 480 : item.height}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))
+      }
+    </main>
+  </TempleFrame>
+</Layout>
+
+{/* One lightbox for the whole page; the tiles only hand it a source. */}
+<dialog class="lightbox" id="lightbox" aria-label={t("zone.galerie")}>
+  <img id="lightbox-image" alt="" />
+  <div class="lightbox-controls">
+    <button type="button" data-step="-1" aria-label={t("gallery.previous")}><Icon name="arrow-left" /></button>
+    <button type="button" data-close aria-label={t("gallery.close")}><Icon name="close" /></button>
+    <button type="button" data-step="1" aria-label={t("gallery.next")}><Icon name="arrow-right" /></button>
+  </div>
+</dialog>
+
+<script>
+  const dialog = document.getElementById("lightbox") as HTMLDialogElement | null;
+  const image = document.getElementById("lightbox-image") as HTMLImageElement | null;
+
+  if (dialog && image) {
+    let tiles: HTMLButtonElement[] = [];
+    let position = 0;
+
+    const show = (index: number) => {
+      const tile = tiles[index];
+      if (!tile) return;
+      position = index;
+      image.src = tile.dataset.full ?? "";
+      image.alt = tile.getAttribute("aria-label") ?? "";
+    };
+
+    document.querySelectorAll<HTMLButtonElement>(".tile").forEach((tile) => {
+      tile.addEventListener("click", () => {
+        // step through the category you opened, not all 217
+        tiles = Array.from(
+          document.querySelectorAll<HTMLButtonElement>(`.tile[data-category="${tile.dataset.category}"]`),
+        );
+        show(tiles.indexOf(tile));
+        dialog.showModal();
+      });
+    });
+
+    dialog.querySelectorAll<HTMLButtonElement>("[data-step]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const step = Number(button.dataset.step);
+        show((position + step + tiles.length) % tiles.length);
+      });
+    });
+
+    dialog.querySelector("[data-close]")?.addEventListener("click", () => dialog.close());
+
+    // click the backdrop to leave
+    dialog.addEventListener("click", (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (!dialog.open) return;
+      if (event.key === "ArrowRight") show((position + 1) % tiles.length);
+      if (event.key === "ArrowLeft") show((position - 1 + tiles.length) % tiles.length);
+    });
+  }
+</script>
+
+<style>
+  /* a title in capitals is never broken by a hyphen */
+  :global(.page-title) {
+    hyphens: manual;
+  }
+  .galerie {
+    padding: var(--page-top) 0 var(--page-bottom);
+  }
+  .category {
+    margin-bottom: var(--s-9);
+  }
+  /* the category names itself and counts itself; no rule runs between */
+  .category-head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    gap: var(--s-1) var(--s-3);
+    font-family: var(--font-display);
+    font-size: var(--t-h2);
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.3;
+    letter-spacing: var(--track-caps);
+    text-transform: uppercase;
+    margin: 0 0 var(--s-4);
+  }
+  .category-count {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: var(--t-meta);
+    font-weight: 400;
+    letter-spacing: 0;
+    color: var(--seal-gold-text);
+    font-variant-numeric: lining-nums tabular-nums;
+  }
+
+  /* The field is square (TEMPLE.md § The grid). Tiles sit in a lattice:
+     joined by a 2px mullion, framed by the same 2px — one built screen. */
+  .grid {
+    list-style: none;
+    margin: 0;
+    padding: var(--lattice);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
+    gap: var(--lattice);
+    background: var(--line-strong);
+  }
+  .tile {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: var(--gallery-ground);
+    cursor: pointer;
+    overflow: hidden;
+  }
+  .tile img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+  /* hover draws a solid gold frame inside the tile — no veil, zoom or glow */
+  .tile::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: var(--rule-2) solid transparent;
+    transition: border-color var(--dur-1) var(--ease-out);
+    pointer-events: none;
+  }
+  .tile:hover::after {
+    border-color: var(--seal-gold);
+  }
+  .tile:focus-visible {
+    outline: var(--rule-2) solid var(--ochre);
+    outline-offset: calc(var(--rule-2) * -1);
+  }
+
+  .lightbox {
+    margin: auto;
+    border: 0;
+    padding: 0;
+    max-width: min(96vw, 1400px);
+    max-height: 94vh;
+    background: transparent;
+    color: var(--parchment);
+  }
+  .lightbox::backdrop {
+    background: var(--seal-deep);
+  }
+  .lightbox img {
+    display: block;
+    max-width: 100%;
+    max-height: 84vh;
+    margin: 0 auto;
+    object-fit: contain;
+  }
+  .lightbox-controls {
+    display: flex;
+    justify-content: center;
+    gap: var(--lattice);
+    margin-top: var(--lattice);
+  }
+  .lightbox-controls button {
+    min-width: var(--s-9);
+    min-height: var(--tap);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: var(--rule) solid var(--seal-gold);
+    background: var(--seal-deep);
+    color: var(--parchment);
+    font-size: 17px;
+    padding: 0 var(--s-6);
+    cursor: pointer;
+    transition:
+      background-color var(--dur-1) var(--ease-out),
+      border-color var(--dur-1) var(--ease-out);
+  }
+  .lightbox-controls button:hover {
+    border-color: var(--seal-gold-text);
+    background: var(--seal-lift);
+  }
+
+  @media (max-width: 600px) {
+    /* three across, square: more of the archive per screen */
+    .grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .lightbox {
+      max-width: 100vw;
+      max-height: 100dvh;
+      margin: auto;
+    }
+    .lightbox img {
+      max-height: calc(100dvh - var(--s-10));
+    }
+    .lightbox-controls button {
+      flex: 1;
+    }
+  }
+</style>

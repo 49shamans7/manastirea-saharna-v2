@@ -1,0 +1,74 @@
+# Cloudflare static-assets response headers (Workers assets / Pages).
+# Read by Cloudflare only; GitHub Pages ignores this file.
+#
+# CSP: the INLINE-SCRIPT-HASHES token is replaced at build time by
+# scripts/build-csp.mjs with the sha256 of every inline <script> in the build
+# (Astro inlines small scripts). Styles keep 'unsafe-inline' — Astro writes
+# style="" attributes and inline <style>, and attributes cannot be hashed.
+#
+# Third parties allowed, and why:
+#   www.youtube-nocookie.com   post videos (click-to-play facade → iframe)
+#   calendar.ortodox.md        right-rail liturgical calendar: script + XHR,
+#                              written into an about:blank iframe that inherits
+#                              this policy (its css, images and font load from there)
+#   challenges.cloudflare.com  Turnstile on the pomelnic form (script + iframe)
+#   *.workers.dev / pomelnic.manastirea-saharna.md
+#                              the pomelnic form POSTs to the Worker (form-action);
+#                              tighten to the one Worker URL at the switch
+#   static.cloudflareinsights.com / cloudflareinsights.com  Web Analytics
+#   commons.wikimedia.org / upload.wikimedia.org  a legacy hero background
+#   'wasm-unsafe-eval'         Pagefind runs its search in WebAssembly
+
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'INLINE-SCRIPT-HASHES' 'wasm-unsafe-eval' https://calendar.ortodox.md https://challenges.cloudflare.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://calendar.ortodox.md; img-src 'self' data: https://calendar.ortodox.md https://commons.wikimedia.org https://upload.wikimedia.org; font-src 'self' data: https://calendar.ortodox.md; connect-src 'self' https://calendar.ortodox.md https://challenges.cloudflare.com https://cloudflareinsights.com; frame-src https://www.youtube-nocookie.com https://challenges.cloudflare.com https://calendar.ortodox.md; worker-src 'self' blob:; form-action 'self' https://*.workers.dev https://pomelnic.manastirea-saharna.md; frame-ancestors 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  Cross-Origin-Opener-Policy: same-origin-allow-popups
+  X-Frame-Options: SAMEORIGIN
+
+# The editor (Sveltia CMS, public/admin/) runs a 2 MB app that talks to the
+# GitHub API and previews uploads from blob: URLs — the site policy above
+# would block it, so it gets its own, scoped to /admin/ only.
+/admin/*
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-eval' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self' data:; connect-src 'self' https://api.github.com https://*.githubusercontent.com https://github.com blob:; frame-src 'self' blob:; worker-src 'self' blob:; base-uri 'self'; object-src 'none'; frame-ancestors 'none'
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: no-cache
+
+# Hashed by Vite — the name changes when the content does.
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Photographs. Not content-hashed (a reprocessed photo keeps its name), so a
+# month, revalidated in the background — never `immutable`.
+/gallery/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+/plates/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+/obstea/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+/pages/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+/hero/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+/images/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+/fisiere/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+# /posts/<slug>/ holds both the post's HTML and its photographs: only the
+# photographs get the long cache (the HTML keeps Cloudflare's revalidate).
+/posts/:slug/:file.webp
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+/posts/:slug/:file.jpg
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+
+# The search index is rebuilt on every deploy under the same names.
+/pagefind/*
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+/sitemap-index.xml
+  Content-Type: application/xml; charset=utf-8
+/rss.xml
+  Content-Type: application/rss+xml; charset=utf-8

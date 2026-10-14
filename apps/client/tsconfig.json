@@ -1,0 +1,32 @@
+{
+    "extends": "astro/tsconfigs/strictest",
+
+    "include": ["src", "**/*.d.ts", "./*.config.ts"],
+    "exclude": ["**/dist", "**/node_modules", ".git", ".github", ".vscode"],
+
+    "compilerOptions": {
+        "target": "ESNext",
+        "verbatimModuleSyntax": true,
+        "noUncheckedIndexedAccess": true,
+        "noImplicitOverride": true,
+        "noFallthroughCasesInSwitch": true,
+        "forceConsistentCasingInFileNames": true,
+
+        "noUnusedLocals": false,
+        "noUnusedParameters": false,
+
+        "baseUrl": ".",
+        "paths": {
+            "@i18n": ["src/i18n/index"],
+
+            "@i18n/*": ["src/i18n/*"],
+            "@temple/*": ["src/temple/*"],
+            "@data/*": ["src/data/*"],
+            "@utils/*": ["src/utils/*"],
+            "@assets/*": ["src/assets/*"],
+            "@styles/*": ["src/styles/*"],
+            "@layouts/*": ["src/layouts/*"],
+            "@components/*": ["src/components/*"]
+        }
+    }
+}

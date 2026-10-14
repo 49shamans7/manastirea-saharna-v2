@@ -1,0 +1,47 @@
+---
+// Every chamber and every table is this one route. 20 old pages → 3 templates;
+// a new page picks a zone and a template and needs no new code.
+// ARCHITECTURE.md § What this settles.
+import ChamberLayout from "@layouts/Chamber.astro";
+import TableLayout from "@layouts/TableLayout.astro";
+import { getChamberPage, getChamberSlugs, renderChamber } from "@data/pages";
+import { getLocaleFromUrl } from "@i18n/utils";
+import { withBasePath } from "@utils/paths";
+
+export async function getStaticPaths() {
+  const slugs = await getChamberSlugs();
+
+  return slugs.map((chamber) => ({ params: { chamber } }));
+}
+
+const lang = getLocaleFromUrl(Astro.url);
+const page = await getChamberPage(Astro.params.chamber as string, lang);
+
+if (!page) {
+  return Astro.redirect(withBasePath("/404"));
+}
+
+const { Content } = await renderChamber(page);
+// `eyebrow` (the zone's name and numeral) is not printed: the rails already
+// say where the reader is, and "zona III" means nothing to a pilgrim.
+const { title, lead, zone, template } = page.entry.data;
+// A missing translation shows the Romanian original; say so to screen readers
+// and translation tools, so they do not read Romanian as English or Russian.
+const contentLang = page.isFallback ? "ro" : undefined;
+---
+
+{
+  template === "table" ? (
+    <TableLayout title={title} lead={lead}>
+      <div lang={contentLang}>
+        <Content />
+      </div>
+    </TableLayout>
+  ) : (
+    <ChamberLayout zone={zone} title={title} lead={lead}>
+      <div lang={contentLang}>
+        <Content />
+      </div>
+    </ChamberLayout>
+  )
+}

@@ -1,0 +1,52 @@
+---
+// The chronicle by year. 2013 → 2026, the way you actually look for the
+// Pascha of a particular year.
+import Layout from "@layouts/Layout.astro";
+import TempleFrame from "@layouts/TempleFrame.astro";
+import ChronicleList from "@components/temple/ChronicleList.astro";
+import YearRail from "@components/temple/YearRail.astro";
+import { getPostsOfYear, getPostYears, getPublishedPosts } from "@data/posts";
+import { defaultLocale } from "@i18n";
+import { getLocaleFromUrl, useTranslations } from "@i18n/utils";
+import "@styles/temple.css";
+
+export async function getStaticPaths() {
+  const posts = await getPublishedPosts(defaultLocale);
+
+  return getPostYears(posts).map(({ year }) => ({ params: { year } }));
+}
+
+const lang = getLocaleFromUrl(Astro.url);
+const t = useTranslations(lang);
+const year = Astro.params.year as string;
+const allPosts = await getPublishedPosts(lang);
+const posts = getPostsOfYear(allPosts, year);
+const years = getPostYears(allPosts);
+---
+
+<Layout>
+  <TempleFrame lang={lang} zone="green" path={Astro.url.pathname}>
+    <main class="cronica">
+      <header class="page-head cronica-head">
+        <p class="page-kicker">{t("zone.cronica")}</p>
+        <h1 class="page-title">{year}</h1>
+        <p class="page-meta">{`${posts.length} ${t("home.postCount")}`}</p>
+      </header>
+
+      <YearRail years={years} current={year} lang={lang} />
+      <ChronicleList posts={posts} lang={lang} />
+    </main>
+  </TempleFrame>
+</Layout>
+
+<style>
+  .cronica {
+    padding: var(--page-top) 0 var(--page-bottom);
+  }
+  /* the year run under the head is the head's rule */
+  .cronica-head {
+    margin-bottom: var(--s-5);
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+</style>

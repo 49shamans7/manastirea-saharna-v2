@@ -1,12 +1,28 @@
-# Saharna temple designs
+# Mănăstirea Saharna — website v2
 
-Design prototypes from the previous (lost) Mănăstirea Saharna repo, recovered from
-`msaharna-archive/design-history-2026-10-07/design/temple/`. Static HTML; open
-`index.html` in a browser, no build.
+v2 restyles the v1 site (github.com/49shamans7/manastirea-saharna, unchanged)
+to the temple designs in `design/prototypes/` (open `design/prototypes/index.html`).
+Preview: https://49shamans7.github.io/manastirea-saharna-v2/
 
-- `slice/index.html`: landing slice
-- `descent.html`: the four strata
-- `templates/chamber.html`, `templates/table.html`: page templates
-- `svg/`: constructed marks; `svg/_contact-sheet.html` shows them all
-- `assets.manifest.json`, `plates.json`, `workflows/`: asset plan and ComfyUI graphs
-- `shared/seal.svg`: official seal, from `msaharna/apps/client/src/assets/marks/`
+Static site for the Holy Trinity Monastery of Saharna (Rezina, Moldova), in
+Romanian, English and Russian. Astro builds every page to plain HTML; content is
+markdown in this repo. No server, no database.
+
+```sh
+bun install
+bun run dev:client     # http://localhost:4321/manastirea-saharna-v2/
+bun run build:client   # full build + search index
+```
+
+| Folder | What |
+|---|---|
+| `apps/client/` | the website (Astro) |
+| `workers/saharna-pomelnic/` | Pomelnic form backend (Cloudflare Worker, not deployed yet) |
+| `scripts/` | photo pipeline, imports, favicons, search index, link check |
+| `design/temple/` | design canon: zones, palettes, typography (`ARCHITECTURE.md`) |
+| `design/source/` | source art (the 4140px seal master) |
+| `docs/DEVELOPING.md` | how to run, test, and where to edit what |
+| `apps/cms/`, `workers/pomelnic/`, `.github/workflows/deploy.yml` | previous developer's infrastructure — untouched until the Cloudflare switch |
+
+Photos are derived from the archive of the old site in `~/Projects/msaharna-archive`
+(2.6 GB, never committed).

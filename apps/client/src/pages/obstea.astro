@@ -1,0 +1,212 @@
+---
+// OBȘTEA — Zone II. The old page is forty-two words and three photographs:
+// "Clerul Sfintei Mănăstiri", 2012, 2013, 2014. No amount of curation invents
+// a fourth, so the chamber is built around what exists rather than padded to
+// look like a page. The three years are the content.
+//
+// Each is a different season and a different vestment colour — green in high
+// summer, blue and white in deep snow, black habits under bare trees. Stacked
+// in order they descend into shade, which is the site's own movement.
+import Layout from "@layouts/Layout.astro";
+import TempleFrame from "@layouts/TempleFrame.astro";
+import { getLocaleFromUrl, getLocalizedPath, useTranslations } from "@i18n/utils";
+import { publicAsset } from "@utils/paths";
+import "@styles/temple.css";
+
+const lang = getLocaleFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const years = [
+  { year: "2012", key: "obstea.y2012" },
+  { year: "2013", key: "obstea.y2013" },
+  { year: "2014", key: "obstea.y2014" },
+] as const;
+---
+
+<Layout title={t("zone.obstea")}>
+  <TempleFrame lang={lang} zone="green" path={Astro.url.pathname}>
+    <main class="obstea">
+      <header class="page-head">
+        <h1 class="page-title">{t("zone.obstea")}</h1>
+        <p class="page-lead">{t("obstea.lead")}</p>
+      </header>
+
+      <ol class="years">
+        {
+          years.map(({ year, key }) => (
+            <li class="year">
+              <figure>
+                <img
+                  src={publicAsset(`/obstea/${year}.webp`)}
+                  srcset={`${publicAsset(`/obstea/${year}-640.webp`)} 640w, ${publicAsset(`/obstea/${year}.webp`)} 1200w`}
+                  sizes="(max-width: 1100px) calc(100vw - 40px), 860px"
+                  alt={`${t("obstea.caption")} ${year}`}
+                  width="1200"
+                  height="800"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption>
+                  <span class="y">{year}</span>
+                  <span class="what">{t(key)}</span>
+                </figcaption>
+              </figure>
+            </li>
+          ))
+        }
+      </ol>
+
+      <section class="abbot">
+        <img
+          src={publicAsset("/obstea/staretul.webp")}
+          alt={t("obstea.abbotName")}
+          width="502"
+          height="900"
+          loading="lazy"
+        />
+        <div class="abbot-text">
+          <h2>{t("obstea.abbotTitle")}</h2>
+          <p class="abbot-name">{t("obstea.abbotName")}</p>
+          <p>{t("obstea.abbotNote")}</p>
+          <p class="links">
+            <a href={getLocalizedPath("/mitropolitul", lang)}>{t("zone.mitropolitul")}</a>
+            <a href={getLocalizedPath("/slujbe", lang)}>{t("zone.slujbe")}</a>
+          </p>
+        </div>
+      </section>
+
+      <p class="provenance">{t("obstea.provenance")}</p>
+    </main>
+  </TempleFrame>
+</Layout>
+
+<style>
+  /* a title in capitals is never broken by a hyphen */
+  :global(.page-title) {
+    hyphens: manual;
+  }
+  .obstea {
+    padding: var(--page-top) 0 var(--page-bottom);
+  }
+
+  .years {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--s-9);
+  }
+  .year figure {
+    margin: 0;
+  }
+  .year img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  figcaption {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: var(--s-4);
+    padding-top: var(--s-3);
+    margin-top: 0;
+  }
+  .y {
+    font-size: var(--t-body);
+    color: var(--ochre);
+    font-variant-numeric: lining-nums tabular-nums;
+  }
+  .what {
+    font-size: var(--t-meta);
+    font-style: italic;
+    color: var(--seal-mist);
+  }
+
+  .abbot {
+    display: grid;
+    grid-template-columns: minmax(0, 256px) minmax(0, 1fr);
+    gap: var(--s-8);
+    align-items: start;
+    margin-top: var(--s-10);
+    padding-top: var(--s-8);
+    border-top: var(--rule) solid var(--line);
+  }
+  .abbot img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .abbot h2 {
+    font-size: var(--t-meta);
+    font-weight: 400;
+    color: var(--ochre);
+    margin: 0 0 var(--s-2);
+  }
+  .abbot-name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--t-h2);
+    line-height: 1.3;
+    letter-spacing: var(--track-caps);
+    text-transform: uppercase;
+    margin: 0 0 var(--s-4);
+  }
+  /* the links row keeps full strength: ochre must hold 4.5:1 */
+  .abbot-text p:not(.links) {
+    line-height: 1.75;
+    max-width: var(--measure);
+  }
+  .links {
+    display: flex;
+    gap: var(--s-6);
+    margin-top: var(--s-5);
+  }
+  .links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--tap);
+    color: var(--ochre);
+    font-size: var(--t-ui);
+    text-decoration: underline;
+    text-decoration-thickness: var(--rule);
+    text-decoration-color: var(--seal-gold);
+    text-underline-offset: 0.25em;
+  }
+  .links a:hover {
+    text-decoration-color: currentColor;
+  }
+
+  .provenance {
+    margin-top: var(--s-9);
+    font-size: var(--t-meta);
+    line-height: 1.6;
+    color: var(--seal-mist);
+    font-style: italic;
+    text-align: center;
+    max-width: var(--measure);
+    margin-inline: auto;
+  }
+
+  /* phone: nothing that is read runs under 16px */
+  @media (max-width: 767px) {
+    .links {
+      flex-wrap: wrap;
+      gap: 0 var(--s-6);
+    }
+    figcaption {
+      flex-wrap: wrap;
+      gap: var(--s-1) var(--s-4);
+    }
+  }
+
+  @media (max-width: 680px) {
+    .abbot {
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--s-5);
+    }
+    .abbot img {
+      max-width: 240px;
+    }
+  }
+</style>

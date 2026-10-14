@@ -1,0 +1,44 @@
+---
+// NOT FOUND — Zone I, the rock. A wrong turn underground: the rails stay, so
+// the way back is always in view. Same stratum type as every other page.
+import Layout from "@layouts/Layout.astro";
+import TempleFrame from "@layouts/TempleFrame.astro";
+import { getLocaleFromUrl, getLocalizedPath, useTranslations } from "@i18n/utils";
+import "@styles/temple.css";
+
+const lang = getLocaleFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout title={t("notFound.title")}>
+  <TempleFrame lang={lang} zone="rock" path={Astro.url.pathname}>
+    <main class="lost">
+      <header class="page-head lost-head">
+        <p class="page-kicker">{t("notFound.eyebrow")}</p>
+        <h1 class="page-title">{t("notFound.title")}</h1>
+        <p class="page-lead">{t("notFound.description")}</p>
+      </header>
+      <div class="ways">
+        <a class="btn" href={getLocalizedPath("/", lang)}>{t("notFound.home")}</a>
+        <a class="btn-quiet" href={getLocalizedPath("/pomelnic", lang)}>{t("notFound.pomelnic")}</a>
+      </div>
+    </main>
+  </TempleFrame>
+</Layout>
+
+<style>
+  .lost {
+    padding: var(--page-top) 0 var(--page-bottom);
+    max-width: 40rem;
+    margin-inline: auto;
+  }
+  .lost-head {
+    margin-bottom: var(--s-7);
+  }
+  .ways {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--s-3);
+  }
+</style>

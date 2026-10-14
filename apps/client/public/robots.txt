@@ -1,0 +1,11 @@
+# Sfânta Mănăstire Saharna — https://manastirea-saharna.md
+# Everything is public. The search page and the 404s carry no content of
+# their own and are left out of the sitemap.
+User-agent: *
+Allow: /
+Disallow: /cautare/
+Disallow: /en/cautare/
+Disallow: /ru/cautare/
+Disallow: /admin/
+
+Sitemap: https://manastirea-saharna.md/sitemap-index.xml

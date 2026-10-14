@@ -1,0 +1,33 @@
+---
+// The eight-pointed Orthodox cross on the 312×624 field, drawn once here
+// (used by walk.astro). Upright, titulus, crossbar,
+// and the footrest raised to the viewer's left (rotate −14°). Fill is
+// currentColor unless `fill` is given.
+interface Props {
+  fill?: string;
+  width?: number | string;
+  height?: number | string;
+  label?: string;
+  class?: string;
+  [key: string]: unknown;
+}
+const { fill = "currentColor", width, height, label, class: className, ...rest } = Astro.props;
+---
+
+<svg
+  class:list={["cross-mark", className]}
+  viewBox="0 0 312 624"
+  width={width}
+  height={height}
+  focusable="false"
+  role={label ? "img" : undefined}
+  aria-label={label}
+  aria-hidden={label ? undefined : "true"}
+  {...rest}>
+  <g style={`fill:${fill}`}>
+    <rect x="132" y="24" width="48" height="576"></rect>
+    <rect x="84" y="96" width="144" height="34"></rect>
+    <rect x="36" y="216" width="240" height="44"></rect>
+    <rect x="84" y="420" width="144" height="30" transform="rotate(-14 156 435)"></rect>
+  </g>
+</svg>

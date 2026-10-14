@@ -1,0 +1,314 @@
+---
+import type { Locale } from "@i18n";
+import { getLocalizedPath, telHref, useTranslations } from "@i18n/utils";
+import Icon from "@components/marks/Icon.astro";
+import { stripBasePath } from "@utils/paths";
+import { zoneById } from "@temple/zones";
+
+type Props = {
+  lang: Locale;
+};
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+// The footer carries the descent too — every zone reachable from the bottom
+// of any page, and every link a real route.
+// Three short groups instead of one run of eleven: the house, the visit,
+// the asking. Every link a real route; no headings — the grouping is enough.
+const footerGroups = [
+  [
+    { key: "zone.istoria", href: getLocalizedPath("/istoria", lang) },
+    { key: "zone.obstea", href: getLocalizedPath("/obstea", lang) },
+    { key: "zone.macarie", href: getLocalizedPath("/macarie", lang) },
+    { key: "zone.cronica", href: getLocalizedPath("/posts", lang) },
+  ],
+  [
+    { key: "nav.serviceSchedule", href: getLocalizedPath("/slujbe", lang) },
+    { key: "nav.directions", href: getLocalizedPath("/cum-de-ajuns", lang) },
+    { key: "zone.cazare", href: getLocalizedPath("/cazare", lang) },
+    { key: "nav.contact", href: getLocalizedPath("/contact", lang) },
+  ],
+  [
+    { key: "nav.pomelnic", href: getLocalizedPath("/pomelnic", lang) },
+    { key: "nav.donations", href: getLocalizedPath("/donations", lang) },
+    { key: "search.title", href: getLocalizedPath("/cautare", lang) },
+  ],
+] as const;
+// On the home page the footer only carries what the page above has not
+// already shown (owner, 2026-10-10): the landing already links the shrine,
+// the chronicle, the hours, the journey pages and the pomelnic, and prints
+// the address.
+const isHome = /^\/(en|ru)?\/?$/.test(stripBasePath(Astro.url.pathname));
+const onHome = ["/macarie", "/posts", "/slujbe", "/cum-de-ajuns", "/cazare", "/contact", "/pomelnic", "/donations"];
+const groups = isHome
+  ? footerGroups
+      .map((group) => group.filter((item) => !onHome.some((path) => item.href.endsWith(`${path}/`) || item.href.endsWith(path))))
+      .filter((group) => group.length > 0)
+  : footerGroups;
+// …and in their place it carries the pilgrim's block, moved down from the
+// landing's last zone (owner, 2026-10-10): address, telephone, the journey pages.
+const pilgrimPages = zoneById.river.pages;
+const pilgrimPhone = t("contact.phoneMain");
+const email = t("footer.email").split(",")[0]?.trim() ?? "";
+const phone = t("contact.phoneSecretariat");
+const socialLinks = [
+  { key: "social.youtube", href: "https://www.youtube.com/@manastirea.saharna", icon: "youtube", mark: "" },
+  { key: "social.facebook", href: "https://www.facebook.com/ManastireaSaharna/", icon: "text", mark: "f" },
+  { key: "social.tiktok", href: "https://www.tiktok.com/@monklife?_r=1&_t=ZS-972uTnfFdwq", icon: "tiktok", mark: "" },
+] as const;
+---
+
+{/* the lintel: a 4px solid bar closes every page; one hairline divides inside */}
+<footer class="footer">
+  <div class="frame-wide">
+    <div class:list={["top", isHome && "top-home"]}>
+      <div class="house">
+        <p class="title">{t("main.title")}</p>
+        <address>
+          {!isHome && <span>{t("footer.addressLine")}</span>}
+          <a href={telHref(phone)}>{phone}</a>
+          <a href={`mailto:${email}`}>{email}</a>
+        </address>
+      </div>
+      {
+        isHome ? (
+          <div class="pilgrim">
+            <dl class="facts">
+              <div>
+                <dt>{t("contact.addressLabel")}</dt>
+                <dd>
+                  {t("footer.addressName")}
+                  <br />
+                  {t("footer.addressLine")}
+                </dd>
+              </div>
+              <div>
+                <dt>{t("contact.phoneMainLabel")}</dt>
+                <dd>
+                  <a href={telHref(pilgrimPhone)}>{pilgrimPhone}</a>
+                </dd>
+              </div>
+            </dl>
+            <nav class="links pilgrim-links" aria-label={t("home.riverTitle")}>
+              <ul>
+                {pilgrimPages.map((page) => (
+                  <li>
+                    <a href={getLocalizedPath(page.href, lang)}>{t(page.labelKey)}</a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+        ) : (
+          <nav class="links" aria-label={t("nav.menu")}>
+            {groups.map((group) => (
+              <ul>
+                {group.map((item) => (
+                  <li>
+                    <a href={item.href}>{t(item.key)}</a>
+                  </li>
+                ))}
+              </ul>
+            ))}
+          </nav>
+        )
+      }
+    </div>
+    <div class="base">
+      <p class="copyright">{t("footer.copyright")}</p>
+      <nav class="social" aria-label={t("social.label")}>
+        {
+          socialLinks.map((item) => (
+            <a href={item.href} aria-label={t(item.key)} title={t(item.key)} target="_blank" rel="noreferrer">
+              {item.icon === "youtube" ? (
+                <Icon name="youtube" size={18} />
+              ) : item.icon === "tiktok" ? (
+                <Icon name="tiktok" size={18} />
+              ) : (
+                <span aria-hidden="true">{item.mark}</span>
+              )}
+            </a>
+          ))
+        }
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    padding: var(--s-9) 0 var(--s-5);
+    border-top: var(--bar) solid var(--ochre);
+    background: var(--header);
+    color: var(--header-ink);
+    font-size: var(--t-ui);
+    line-height: 1.5;
+  }
+  .top {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: var(--s-8);
+    padding-bottom: var(--s-8);
+  }
+  .title {
+    margin: 0 0 var(--s-4);
+    color: var(--parchment);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.3;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  address {
+    display: grid;
+    justify-items: start;
+    font-style: normal;
+    font-size: var(--t-meta);
+  }
+  address span {
+    max-width: 22rem;
+    margin-bottom: var(--s-2);
+  }
+  address a,
+  .links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--s-6);
+    text-decoration: none;
+    transition: color var(--dur-1) var(--ease-out);
+  }
+  address a:hover,
+  .links a:hover {
+    color: var(--parchment);
+    text-decoration: underline;
+    text-decoration-thickness: var(--rule);
+    text-underline-offset: 0.25em;
+  }
+
+  .links {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--s-5);
+  }
+  .links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* home: the pilgrim's block sits a step further left — facts | pages */
+  .top-home {
+    grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+  }
+  /* home: the pilgrim's block — facts | the four journey pages */
+  .pilgrim {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--s-6);
+  }
+  .facts {
+    margin: 0;
+    font-size: var(--t-meta);
+  }
+  .facts div + div {
+    margin-top: var(--s-4);
+  }
+  .facts dt {
+    font-style: italic;
+    color: var(--header-ink);
+  }
+  .facts dd {
+    margin: var(--s-1) 0 0;
+    color: var(--parchment);
+  }
+  .facts a {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--tap-min);
+    color: var(--parchment);
+    text-decoration: underline;
+    text-decoration-color: var(--seal-gold);
+    text-decoration-thickness: var(--rule);
+    text-underline-offset: 0.25em;
+  }
+  .pilgrim-links {
+    display: block;
+  }
+  @media (width < 40rem) {
+    .pilgrim {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  .base {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--s-4);
+    padding-top: var(--s-4);
+    border-top: var(--rule) solid var(--header-line);
+  }
+  .copyright {
+    margin: 0;
+    font-size: var(--t-meta);
+    color: var(--header-ink);
+  }
+
+  .social {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    margin-left: auto;
+    margin-right: calc(var(--s-3) * -1);
+  }
+  .social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--tap);
+    height: var(--tap);
+    color: var(--header-ink);
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color var(--dur-1) var(--ease-out);
+  }
+  .social a:hover {
+    color: var(--ochre);
+  }
+
+  @media (width < 64rem) {
+    .top {
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--s-6);
+    }
+    .links a,
+    address a {
+      min-height: var(--tap-min);
+    }
+  }
+  @media (width < 40rem) {
+    .footer {
+      padding-top: var(--s-8);
+    }
+    .links {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0 var(--s-4);
+    }
+    .links ul:last-child {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: var(--s-4);
+    }
+    .base {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+    }
+    .social {
+      margin-left: calc(var(--s-3) * -1);
+      margin-right: 0;
+    }
+  }
+</style>

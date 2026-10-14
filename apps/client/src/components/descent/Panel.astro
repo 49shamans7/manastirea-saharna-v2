@@ -1,0 +1,65 @@
+---
+// One zone. Panels sit side by side; the site is walked across, not down.
+// Bands inside are horizontal. Flat fills only — no gradient, no photograph.
+interface Props {
+  zone: "rock" | "green" | "gold" | "river";
+  id?: string;
+  n: string;
+  name: string;
+}
+const { zone, id, n, name } = Astro.props;
+---
+
+<section class:list={["panel", `z-${zone}`]} id={id} data-zone={zone}>
+  <div class="panel-inner"><slot /></div>
+  <p class="panel-tag"><span>{n}</span> {name}</p>
+</section>
+
+<style>
+  .panel {
+    flex: 0 0 100vw;
+    min-width: 100vw;
+    height: 100%;
+    scroll-snap-align: start;
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 1fr;
+    align-items: stretch;
+  }
+  .panel-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .panel-tag {
+    position: absolute;
+    left: clamp(20px, 5vw, var(--s-9));
+    bottom: clamp(20px, 4vh, 44px);
+    font-size: var(--t-label);
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    color: var(--parchment);
+    opacity: 0.62;
+    z-index: 5;
+  }
+  .panel-tag span {
+    color: var(--ochre);
+    margin-right: 10px;
+  }
+  /* flat grounds — solid, no gradient */
+  .z-rock {
+    background: var(--rock-grey);
+  }
+  .z-green {
+    background: var(--green-olive);
+  }
+  .z-gold {
+    background: var(--pall);
+  }
+  .z-river {
+    background: var(--river);
+  }
+</style>

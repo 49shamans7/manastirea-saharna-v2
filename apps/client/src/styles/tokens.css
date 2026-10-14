@@ -1,0 +1,373 @@
+/* TOKENS — every colour, space, rule, type size and duration on the site.
+   One file, loaded on every page by global.css. Components use var(--…) only;
+   a hex code anywhere else is a bug (exceptions: the seal artwork, the /walk
+   prototype's band data, temple/zones.ts palette data, <meta theme-color>). */
+
+/* ── PALETTE — measured, not chosen ────────────────────────────────────────
+   palettes  design/extracted/_palette_measured.json
+   scale     design/temple/TYPOGRAPHY.md  (Georgia, ratio 1.25)
+   grid      12 col · 78 field · 24 gutter · 120 margin = 1440 */
+:root {
+  /* Rock re-measured off the originals 2026-09-20. The cave is not a pale
+     grey-lilac field — it sits in foliage, and the two darkest tones below
+     are a quarter of the frame. Keep the lilac as the CLIFF, not the ground. */
+  --rock-deep: #232823;
+  --rock-shade: #3a4b3a;
+  --rock-moss: #6c8b67;
+  --rock: #798691;
+  --rock-lit: #9498a0;
+  --rock-pale: #a8b1cb;
+  --rock-mist: #c8cdda;
+  /* Green held up against the originals almost exactly. The two additions
+     are the sky and the limestone — together a sixth of the frame, and
+     missing from the first sampling. */
+  --green-deep: #2b3c27;
+  --green: #2e4328;
+  --green-mid: #4f6734;
+  --green-lit: #718c58;
+  --green-stone: #9ea29b;
+  --green-sky: #d5ddde;
+  /* Pall and gold confirmed (#1F1B17 at 26%, #B4995C). Wine and flower are
+     NOT dominant — 2.0% and 0.9% across the relic frames. They are deliberate
+     accents; sampling a photograph for them will lose them every time. */
+  --pall: #1d1c22;
+  --gold: #c0a974;
+  --wine: #663037;
+  --flower: #bd639a;
+  --river-deep: #61929e;
+  --river: #649fbd;
+  --river-pale: #bdd5dc;
+  --ink: #1a1208;
+  --parchment: #f4efe4;
+  --ochre: #c4a24a;
+
+  --field: 78px;
+  --gutter: 24px;
+  --margin: 120px;
+  --register: 384px;
+  --measure: 34rem;
+  --measure-gold: 30rem;
+  --measure-wide: 62rem;
+
+  --t-stratum: clamp(26px, 4.4vw, 62px);
+  --t-hero: clamp(34px, 6.6vw, 96px);
+  --t-h1: clamp(28px, 3.6vw, 52px);
+  --t-lead: 20px;
+  --t-body: 17px;
+  --t-quote: 19px;
+  --t-label: 11px;
+
+  /* PAGE TYPE — one scale for every page inside the frame (Chamber, Table,
+     the special pages). Ratio ≈1.2 off the 17px body. Uppercase is kept
+     for titles and h2 only; small text is set in sentence case and never
+     tracked wider than --track-kicker. */
+  --t-meta: 14px; /* dates, counts, captions, notes, table labels */
+  --t-kicker: 12px; /* the one small capital line, only where it orients */
+  --t-ui: 15px; /* rail links, buttons, form labels, footer links */
+  --t-h3: 19px;
+  --t-h2: clamp(20px, 1.7vw, 24px);
+  --t-title: clamp(30px, 3.3vw, 46px);
+  --t-title-long: clamp(25px, 2.5vw, 34px); /* titles over ~48 characters */
+  --t-standfirst: clamp(18px, 1.45vw, 20px);
+  --lh-body: 1.72;
+  --lh-lead: 1.55;
+  --lh-title: 1.12;
+  --track-caps: 0.03em; /* uppercase titles and heads */
+  --track-kicker: 0.14em; /* uppercase small text — the widest on the site */
+
+  /* the first measurement (2026-08-25), still drawn by the rail ticks and the
+     /walk bands: Rock lilac/grey/stone, Green sage/olive */
+  --rock-lilac: #b0b9d1;
+  --rock-grey: #8e9193;
+  --rock-stone: #767a86;
+  --green-sage: #6f8a73;
+  --green-olive: #4b6136;
+
+  /* the made-thing accent outside the canon, kept on purpose: the active
+     language in the header (owner's call, 2026-10-03) */
+  --signal: #e79d24;
+  /* the header bar */
+  --header: #253528;
+
+  /* Zone IV, the bright one: ground, ink and its two blues */
+  --river-ground: #e6eef1;
+  --river-ink: #16323d;
+  --river-strong: #1c4c60;
+  --river-link: #2d6a85;
+  --river-muted: #4f6b77;
+
+  /* dark grounds the strata stand on */
+  --rock-ground: #2f3136;
+  --hinge-ground: #2b322b;
+  --shrine-ground: #15131a;
+  --gallery-ground: #22301f;
+  --pall-lift: #241f26;
+  --well-wall: #282a2e;
+  --well-floor: #1f2125;
+  --night: #1b1d21;
+  --night-green: #111612;
+
+  /* liturgical red in the shrine: #BD639A lifted to 4.5:1 on the pall */
+  --rubric: #c97aa8;
+
+  /* forms: the neutral field before a page grounds it, and the two states */
+  --field-ink: #171717;
+  --field-label: #262626;
+  --field-line: #a1a1a1;
+  --field-muted: #737373;
+  --error: #b42318;
+  --error-bg: #fffbfa;
+  --error-line: #fecdca;
+  --success: #027a48;
+  --success-bg: #f6fef9;
+  --success-line: #abefc6;
+  --paper: #fff;
+}
+
+/* The sticky header's height — the rails, the walk and every sticky element
+   read it. Was referenced everywhere and defined nowhere (fallbacks of 72/80px
+   disagreed with the real 80/68px header). */
+:root {
+  --nav-h: 80px;
+}
+@media (max-width: 639px) {
+  :root {
+    --nav-h: 64px;
+  }
+}
+
+/* SOLID — the built system. "Squares and lines: a more solid look rather
+   than a smoother look." Every corner, rule, gap and duration on the site
+   comes from here. Nothing is rounded, nothing is shadowed, nothing is
+   blurred; fills are flat and lines are drawn at one of four weights.
+
+   Unit u = 4px. Every space is a multiple of it, and every structural space
+   a multiple of 8 (TEMPLE.md § The grid: base unit 8). The type scale stays
+   as TYPOGRAPHY.md sets it; only the space around type snaps. */
+:root {
+  /* corners — square. A circle is drawn only where the object is a circle
+       (the round seal in the header). */
+  --radius: 0;
+
+  /* rules — four weights, no others */
+  --rule: 1px; /* hairline: structure — rows, rails, heads, frames */
+  --rule-2: 2px; /* emphasis — the current item, a table head, a quote */
+  --bar: 4px; /* accent bar — the footer lintel */
+  --bar-2: 8px; /* the heaviest — the ochre mouth of the well */
+  /* the gap between joined tiles: a mullion, not a margin */
+  --lattice: 2px;
+
+  /* rule colours: one hairline tone, one solid tone per ground. Zone IV
+       re-points them (TempleFrame .z-river). */
+  --line: rgb(196 162 74 / 32%);
+  --line-strong: #c4a24a;
+
+  /* space — 4px steps */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 40px;
+  --s-8: 48px;
+  --s-9: 64px;
+  --s-10: 80px;
+  --s-11: 96px;
+  --s-12: 128px;
+
+  /* tap — every thumb target, never under 44 */
+  --tap: 48px;
+  --tap-min: 44px;
+
+  /* the frame: rail | centre | rail, snapped to 8 */
+  --rail-l: 208px;
+  --rail-r: 240px;
+  --centre-max: 1200px;
+  --frame-gap: var(--s-8);
+  --frame-pad: var(--s-7);
+  /* vertical rhythm of every page body */
+  --page-top: var(--s-10);
+  --page-bottom: var(--s-12);
+  --head-gap: var(--s-8); /* below a page head's rule */
+
+  /* motion — short, no overshoot, no blur. Opening decelerates, closing
+       accelerates; both are brief. */
+  --dur-1: 120ms; /* state: hover, focus, colour */
+  --dur-2: 160ms; /* fold, close */
+  --dur-3: 220ms; /* open: the drawer */
+  --ease-out: cubic-bezier(0.2, 0, 0, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+}
+@media (max-width: 1360px) {
+  :root {
+    --frame-gap: var(--s-7);
+    --frame-pad: var(--s-6);
+  }
+}
+@media (max-width: 1100px) {
+  :root {
+    --frame-pad: var(--s-5);
+    --page-top: var(--s-9);
+    --page-bottom: var(--s-11);
+  }
+}
+@media (max-width: 599px) {
+  :root {
+    --frame-pad: var(--s-4);
+    --page-top: var(--s-8);
+    --page-bottom: var(--s-9);
+    --head-gap: var(--s-6);
+    --t-meta: 15px; /* on a phone nothing that is read runs under 15 */
+    --t-ui: 16px;
+  }
+}
+
+/* ── THE SEAL — owner's call, 2026-10-10 ──────────────────────────────────
+   "Besides the top and bottom bar the whole website follows the main logo:
+   colours, font, lines." The three inks are measured off the seal artwork
+   (assets/marks/seal.svg): navy #22425A, antique gold #AB9362, paper #F7F6F1.
+   The zone palettes above stay as data (the /walk prototype, plates); every
+   ground and ink the pages draw is re-pointed here. Header and footer keep
+   the olive --header bar. */
+:root {
+  --seal-navy: #22425a;
+  --seal-deep: #1a3346; /* one step down: drawer, shrine, wells */
+  --seal-lift: #2a4f6b; /* one step up: panels, fields, the calendar card */
+  --seal-gold: #ab9362; /* line work — rings, rules, ticks */
+  --seal-gold-text: #c9b07a; /* gold that is read: 5.0:1 on navy */
+  --seal-paper: #f7f6f1;
+  --seal-mist: #b9c6cf; /* quiet text on navy: 6.0:1 */
+  /* a flat veil over photographs so text on them holds AA — no gradient */
+  --veil: rgb(26 51 70 / 62%);
+  --veil-strong: rgb(26 51 70 / 86%);
+
+  --font-display: "Alegreya SC", Georgia, "Times New Roman", serif;
+
+  --parchment: var(--seal-paper);
+  --paper: #fff;
+  --ochre: var(--seal-gold-text);
+  --gold: var(--seal-gold-text);
+  --signal: var(--seal-gold-text);
+  /* SOLID INK — no rule, mark or icon on the site is see-through (owner,
+     2026-10-10: the translucent lines read as a glow). Every hairline is an
+     opaque ink, like the seal's own printed rings. */
+  --line: #4f7088; /* navy hairline: rows, heads, frames */
+  --line-strong: var(--seal-gold);
+  --header-line: #5d6d5a; /* olive hairline on the header/footer bar */
+  --header-ink: #c9cdbf; /* quiet text on the olive bar: 8:1 */
+  --scrim: rgb(26 51 70 / 72%); /* the drawer's dimming of the page — a shade, not a mark */
+
+  --rock-deep: var(--seal-navy);
+  --rock-ground: var(--seal-navy);
+  --green: var(--seal-navy);
+  --green-deep: var(--seal-deep);
+  --pall: var(--seal-deep);
+  --pall-lift: var(--seal-lift);
+  --night: var(--seal-deep);
+  --night-green: var(--seal-deep);
+  --shrine-ground: var(--seal-deep);
+  --gallery-ground: var(--seal-navy);
+  --hinge-ground: var(--seal-navy);
+  --well-wall: var(--seal-lift);
+  --well-floor: var(--seal-deep);
+
+  /* the rail ticks: one mark, the seal's gold, for every group */
+  --rock-lilac: var(--seal-gold);
+  --green-sage: var(--seal-gold);
+  --green-olive: var(--seal-gold);
+  --rock-grey: var(--seal-mist);
+  --rock-stone: var(--seal-mist);
+
+  /* Zone IV was the one bright ground; now it is navy like the rest */
+  --river: var(--seal-gold);
+  --river-deep: var(--seal-gold);
+  --river-pale: var(--seal-navy);
+  --river-ground: var(--seal-navy);
+  --river-ink: var(--seal-paper);
+  --river-strong: var(--seal-gold-text);
+  --river-link: var(--seal-gold-text);
+  --river-muted: var(--seal-mist);
+
+  /* the rubric pink, lifted for the navy ground */
+  --rubric: #e3a3c8;
+}
+
+/* forms and states on the seal ground (2026-10-10) — the light neutrals above
+   are no longer used by any page; re-pointed so nothing falls back to them */
+:root {
+  --field-ink: var(--seal-paper);
+  --field-label: var(--seal-paper);
+  --field-line: var(--seal-gold);
+  --field-muted: var(--seal-mist);
+  --error: var(--rubric);
+  --error-bg: var(--seal-deep);
+  --error-line: var(--rubric);
+  --success: var(--seal-gold-text);
+  --success-bg: var(--seal-deep);
+  --success-line: var(--seal-gold);
+}
+
+/* ── WHITE GROUND — owner, 2026-10-10: "replace the blue background from the
+   menu and pages with white". The landing keeps its photographs, the bars
+   stay olive, the calendar stays gold; the drawer and every page inside the
+   frame turn to the seal's own field: white ground, navy ink, gold rules.
+   Done by re-pointing the seal inks inside the scope, so every component
+   that was written for navy inverts consistently (fills ↔ ink swap). */
+:root {
+  /* the calendar keeps its own inks wherever it sits */
+  --cal-ground: #c9b07a;
+  --cal-ink: #1a3346;
+}
+.ground-white {
+  --seal-navy: #ffffff; /* the ground */
+  --seal-deep: #f7f6f1; /* fields, wells, the shrine's step down */
+  --seal-lift: #efe9da; /* pressed / raised */
+  --seal-paper: #1a3346; /* ink */
+  --seal-mist: #4a6274; /* quiet ink, 6.4:1 on white */
+  --seal-gold-text: #76633a; /* gold that is read, 5.8:1 on white */
+  /* --seal-gold (#AB9362) stays: line work only */
+  --parchment: #1a3346;
+  --ochre: #76633a;
+  --gold: #76633a;
+  --signal: #76633a;
+  --line: #ddd0b2; /* opaque pale-gold hairline */
+  --line-strong: var(--seal-gold);
+  --rubric: #9b2c5f; /* the shrine's red, 7.3:1 on white */
+  --river-ink: #1a3346;
+  --river-strong: #76633a;
+  --river-link: #76633a;
+  --river-muted: #4a6274;
+  --field-ink: #1a3346;
+  --field-label: #1a3346;
+  --field-muted: #4a6274;
+  --error: #9b2c5f;
+  --success: #76633a;
+  /* aliases resolve where they are declared (:root), so each one that points
+     at a seal ink is declared again here */
+  --rock-deep: var(--seal-navy);
+  --rock-ground: var(--seal-navy);
+  --green: var(--seal-navy);
+  --green-deep: var(--seal-deep);
+  --pall: var(--seal-deep);
+  --pall-lift: var(--seal-lift);
+  --night: var(--seal-deep);
+  --night-green: var(--seal-deep);
+  --shrine-ground: var(--seal-deep);
+  --gallery-ground: var(--seal-navy);
+  --hinge-ground: var(--seal-navy);
+  --well-wall: var(--seal-lift);
+  --well-floor: var(--seal-deep);
+  --river-pale: var(--seal-navy);
+  --river-ground: var(--seal-navy);
+  --rock-grey: var(--seal-mist);
+  --rock-stone: var(--seal-mist);
+  --field-line: var(--seal-gold);
+  --error-bg: var(--seal-deep);
+  --error-line: var(--rubric);
+  --success-bg: var(--seal-deep);
+  --success-line: var(--seal-gold);
+  /* the filled button: dark read-gold field, white letters (5.8:1) */
+  --btn-ink: #ffffff;
+  color: #1a3346;
+}

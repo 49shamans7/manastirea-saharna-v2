@@ -1,0 +1,135 @@
+---
+// Pagination in the temple system — the cronică is 302 entries deep, so this
+// carries real traffic. Bright pill buttons belonged to the old Figma skin.
+import type { Locale } from "@i18n";
+import { getLocalizedPath, useTranslations } from "@i18n/utils";
+import Icon from "@components/marks/Icon.astro";
+
+type Props = {
+  currentPage: number;
+  lang: Locale;
+  totalPages: number;
+};
+
+const { currentPage, lang, totalPages } = Astro.props;
+const t = useTranslations(lang);
+const previousPage = currentPage > 1 ? currentPage - 1 : null;
+const nextPage = currentPage < totalPages ? currentPage + 1 : null;
+const pageHref = (page: number) => getLocalizedPath(page === 1 ? "/posts" : `/posts/page/${page}`, lang);
+const visiblePages = Array.from(new Set([1, currentPage - 1, currentPage, currentPage + 1, totalPages]))
+  .filter((page) => page >= 1 && page <= totalPages)
+  .sort((a, b) => a - b);
+const items = visiblePages.map((page, index) => ({
+  gapBefore: index > 0 && page - (visiblePages[index - 1] || page) > 1,
+  page,
+}));
+---
+
+{
+  totalPages > 1 && (
+    <nav class="pager" aria-label={t("news.title")}>
+      {previousPage ? (
+        <a class="step" href={pageHref(previousPage)} rel="prev">
+          <Icon name="arrow-left" size={18} label={t("gallery.previous")} />
+        </a>
+      ) : (
+        <span class="step is-off">
+          <Icon name="arrow-left" size={18} />
+        </span>
+      )}
+
+      <ol class="numbers">
+        {items.map(({ gapBefore, page }) => (
+          <>
+            {gapBefore && <li class="gap">·</li>}
+            <li>
+              <a
+                class:list={["number", page === currentPage && "is-current"]}
+                href={pageHref(page)}
+                aria-current={page === currentPage ? "page" : undefined}>
+                {page}
+              </a>
+            </li>
+          </>
+        ))}
+      </ol>
+
+      {nextPage ? (
+        <a class="step" href={pageHref(nextPage)} rel="next">
+          <Icon name="arrow-right" size={18} label={t("gallery.next")} />
+        </a>
+      ) : (
+        <span class="step is-off">
+          <Icon name="arrow-right" size={18} />
+        </span>
+      )}
+    </nav>
+  )
+}
+
+<style>
+  .pager {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--s-2);
+    margin-top: var(--s-8);
+    color: var(--parchment);
+  }
+  .numbers {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .number,
+  .step {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    /* a thumb's target: the cronică is mostly read on phones */
+    min-width: var(--tap);
+    height: var(--tap);
+    text-decoration: none;
+    color: inherit;
+    font-size: var(--t-ui);
+    font-variant-numeric: lining-nums tabular-nums;
+    color: var(--seal-mist);
+    transition: color var(--dur-1) var(--ease-out);
+  }
+  .number:hover,
+  .step:hover {
+    color: var(--seal-paper);
+  }
+  .number.is-current {
+    color: var(--ochre);
+  }
+  .number.is-current::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: var(--rule-2);
+    background: var(--line-strong);
+  }
+  .step.is-off {
+    color: var(--line);
+  }
+  .gap {
+    color: var(--seal-mist);
+    padding: 0 var(--s-1);
+  }
+  @media (max-width: 380px) {
+    .number,
+    .step {
+      min-width: var(--tap-min);
+      height: var(--tap-min);
+    }
+    .pager {
+      gap: var(--s-1);
+    }
+  }
+</style>

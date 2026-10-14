@@ -1,0 +1,47 @@
+---
+// CRONICĂ — Zone II. 302 entries, 2013 → 2026, written by Arhimandritul
+// Iuvenalie and Pr. Mihail Bortă. Each entry is a chamber with a date.
+import Layout from "@layouts/Layout.astro";
+import TempleFrame from "@layouts/TempleFrame.astro";
+import ChronicleList from "@components/temple/ChronicleList.astro";
+import YearRail from "@components/temple/YearRail.astro";
+import Pagination from "@components/Pagination.astro";
+import { getPaginatedPosts, getPostYears, getPublishedPosts, getTotalPostPages } from "@data/posts";
+import { getLocaleFromUrl, useTranslations } from "@i18n/utils";
+import "@styles/temple.css";
+
+const lang = getLocaleFromUrl(Astro.url);
+const t = useTranslations(lang);
+const allPosts = await getPublishedPosts(lang);
+const posts = getPaginatedPosts(allPosts, 1);
+const totalPages = getTotalPostPages(allPosts.length);
+const years = getPostYears(allPosts);
+---
+
+<Layout>
+  <TempleFrame lang={lang} zone="green" path={Astro.url.pathname}>
+    <main class="cronica">
+      <header class="page-head cronica-head">
+        <h1 class="page-title">{t("zone.cronica")}</h1>
+        <p class="page-lead">{t("news.subtitle")}</p>
+        <p class="page-meta">{`${allPosts.length} ${t("home.postCount")}`}</p>
+      </header>
+
+      <YearRail years={years} current={null} lang={lang} />
+      <ChronicleList posts={posts} lang={lang} />
+      <Pagination currentPage={1} totalPages={totalPages} lang={lang} />
+    </main>
+  </TempleFrame>
+</Layout>
+
+<style>
+  .cronica {
+    padding: var(--page-top) 0 var(--page-bottom);
+  }
+  /* the year run under the head is the head's rule */
+  .cronica-head {
+    margin-bottom: var(--s-5);
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+</style>

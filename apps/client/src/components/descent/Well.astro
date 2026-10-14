@@ -1,0 +1,58 @@
+---
+// The well. A vertical shaft that crosses the horizontal strata —
+// the one thing on the site that runs against the grain.
+interface Props {
+  x?: string;
+  w?: string;
+  mouthAt?: string;
+}
+// mouthAt: where the ochre mouth sits on the shaft (top of the run on the
+// descent, so the shaft opens under the Pomelnic action, never through words)
+const { x = "58%", w = "var(--well-w, 64px)", mouthAt = "50%" } = Astro.props;
+---
+
+<div class="well" style={`--x:${x};--w:${w};--m:${mouthAt}`} aria-hidden="true">
+  <span class="shaft"></span>
+  <span class="mouth"></span>
+  <span class="water"></span>
+</div>
+
+<style>
+  .well {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+  }
+  .shaft {
+    position: absolute;
+    left: var(--x);
+    top: 0;
+    bottom: 0;
+    width: var(--w);
+    transform: translateX(-50%);
+    background: rgb(244 239 228 / 14%);
+    border-left: var(--rule, 1px) solid rgb(244 239 228 / 30%);
+    border-right: var(--rule, 1px) solid rgb(244 239 228 / 30%);
+  }
+  /* the mouth: the heaviest rule on the site (SOLID --bar-2), one step wider
+     than the shaft on each side */
+  .mouth {
+    position: absolute;
+    left: var(--x);
+    top: var(--m);
+    width: calc(var(--w) + 2 * var(--s-2, 8px));
+    height: var(--bar-2, 8px);
+    transform: translate(-50%, -50%);
+    background: var(--ochre);
+  }
+  .water {
+    position: absolute;
+    left: var(--x);
+    bottom: 0;
+    width: var(--w);
+    height: 25%;
+    transform: translateX(-50%);
+    background: rgb(13 17 22 / 55%);
+  }
+</style>

@@ -1,0 +1,86 @@
+---
+// THE SEAL — Sfânta Mănăstire Saharna, as code.
+//
+// Two drawings, one mark:
+//   full — traced from the 4140×2256 master (design/source/seal-master-4140.png; scripts/trace-seal.mjs),
+//          four layers (cream silhouette / gold / navy), lettering kept as traced
+//          outlines so it renders the same in <img>, favicons and print.
+//          src/assets/marks/seal.svg, 639×535, ~39 KB (gzip ~16 KB).
+//   mini — hand-built medallion for ≤64 px: navy ring, gold hairline, inner
+//          ring, the gorge, the eight-pointed cross. src/assets/marks/seal-mini.svg.
+//
+// `size` is the drawn WIDTH in css px (matches the old <Image width={…}>).
+// Below 64 px the mini drawing is used unless `variant` says otherwise.
+// The full seal is an <img> by default (one cached file across pages);
+// `inline` puts its markup in the page instead.
+// Decorative unless `label` is given.
+import fullUrl from "@assets/marks/seal.svg?url";
+import fullRaw from "@assets/marks/seal.svg?raw";
+
+interface Props {
+  size?: number;
+  variant?: "full" | "mini";
+  label?: string;
+  inline?: boolean;
+  class?: string;
+  loading?: "eager" | "lazy";
+  [key: string]: unknown;
+}
+
+const { size = 112, variant, label, inline = false, class: className, loading = "eager", ...rest } = Astro.props;
+const kind = variant ?? (size < 64 ? "mini" : "full");
+// full drawing: viewBox 639×535
+const height = kind === "full" ? Math.round((size * 535) / 639) : size;
+const svgOpen = (vb: string) =>
+  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${vb}" width="${size}" height="${height}"${label ? ` role="img" aria-label="${label.replace(/"/g, "&quot;")}"` : ` aria-hidden="true"`} focusable="false">`;
+const fullInline = fullRaw.replace(/^<svg[^>]*>/, svgOpen("0 0 639 535"));
+---
+
+{
+  kind === "mini" ? (
+    <svg
+      class:list={["seal-mark", className]}
+      viewBox="0 0 48 48"
+      width={size}
+      height={size}
+      focusable="false"
+      role={label ? "img" : undefined}
+      aria-label={label}
+      aria-hidden={label ? undefined : "true"}
+      {...rest}>
+      <circle cx="24" cy="24" r="23.5" fill="#f7f6f1" />
+      <g fill="none">
+        <circle cx="24" cy="24" r="22" stroke="#22425a" stroke-width="3" />
+        <circle cx="24" cy="24" r="18.6" stroke="#ab9362" stroke-width="1.4" />
+        <circle cx="24" cy="24" r="15.4" stroke="#22425a" stroke-width="1.4" />
+      </g>
+      <path fill="#22425a" d="M9.47 26.24 13 22l4 4 4 6 3 3 3-3 4-6 4-4 3.53 4.24a14.7 14.7 0 0 1-29.06 0z" />
+      <path fill="#ab9362" d="M22.6 8h2.8v24h-2.8zm-2.1 3.5h7v2h-7zm-3 4h13v2.8h-13zm2.9 11.4 7.2-1.8.5 2-7.2 1.8z" />
+    </svg>
+  ) : inline ? (
+    <span class:list={["seal-mark", className]} {...rest} set:html={fullInline} />
+  ) : (
+    <img
+      class:list={["seal-mark", className]}
+      src={fullUrl}
+      width={size}
+      height={height}
+      alt={label ?? ""}
+      loading={loading}
+      decoding="async"
+      {...rest}
+    />
+  )
+}
+
+<style>
+  /* zero specificity: whatever the page says about the mark wins */
+  :where(span.seal-mark) {
+    display: inline-block;
+    line-height: 0;
+  }
+  :where(span.seal-mark) :global(svg) {
+    max-width: 100%;
+    height: auto;
+  }
+</style>

@@ -1,0 +1,53 @@
+---
+// A horizontal stratum. Height is snapped to the 78px field — never eyeballed.
+// `fields` = how many 78px units tall. Omit it and the band takes the remainder.
+interface Props {
+  fill: string;
+  fields?: number;
+  rule?: boolean;
+  label?: string;
+}
+const { fill, fields, rule = false, label } = Astro.props;
+const h = fields ? `calc(${fields} * var(--field))` : undefined;
+---
+
+<div
+  class="band"
+  class:list={[!fields && "flex"]}
+  style={`--fill:${fill};${h ? `--h:${h}` : ""}`}
+  data-fields={fields ?? "rest"}>
+  {rule && <span class="band-rule" />}
+  {label && <span class="band-label">{label}</span>}
+  <slot />
+</div>
+<style>
+  .band {
+    position: relative;
+    width: 100%;
+    height: var(--h);
+    background: var(--fill);
+    flex: 0 0 auto;
+  }
+  .band.flex {
+    flex: 1 1 auto;
+    height: auto;
+    min-height: 0;
+  }
+  .band-rule {
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 1px;
+    background: var(--ochre);
+    opacity: 0.55;
+  }
+  .band-label {
+    position: absolute;
+    left: clamp(20px, 5vw, var(--s-9));
+    top: 14px;
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--parchment);
+    opacity: 0.4;
+  }
+</style>

@@ -1,0 +1,162 @@
+---
+// THE WELL — Zone I. The pomelnic has exactly one home: the shaft, on the
+// centre axis. A subtractive object, like the cave: you lower names down it.
+// ARCHITECTURE.md § What this settles.
+import Layout from "@layouts/Layout.astro";
+import TempleFrame from "@layouts/TempleFrame.astro";
+import PrayerRequestForm from "@components/PrayerRequestForm.astro";
+import { getLocaleFromUrl, useTranslations } from "@i18n/utils";
+import "@styles/temple.css";
+
+const lang = getLocaleFromUrl(Astro.url);
+const t = useTranslations(lang);
+const guide = [
+  "pomelnicPage.guide1",
+  "pomelnicPage.guide2",
+  "pomelnicPage.guide3",
+  "pomelnicPage.guide4",
+  "pomelnicPage.guide5",
+  "pomelnicPage.guide6",
+  "pomelnicPage.guide7",
+  "pomelnicPage.guide8",
+] as const;
+---
+
+<Layout title={t("pomelnic.title")}>
+  <TempleFrame lang={lang} zone="rock" path={Astro.url.pathname}>
+    <main class="well-page" id="pomelnic-form">
+      <header class="page-head well-head">
+        <h1 class="page-title">{t("pomelnic.title")}</h1>
+        <p class="page-lead">{t("pomelnicPage.lead")}</p>
+      </header>
+
+      {/* the house's own instructions, folded: read once, then the form */}
+      <details class="guide">
+        <summary>{t("pomelnicPage.guideTitle")}</summary>
+        <div class="guide-body">
+          {guide.map((key) => <p>{t(key)}</p>)}
+        </div>
+      </details>
+
+      {/* the shaft: the form sits inside it, not beside it */}
+      <div class="shaft">
+        <div class="shaft-mouth" aria-hidden="true"></div>
+        <div class="form-well">
+          <PrayerRequestForm idPrefix="pomelnic-page" lang={lang} />
+        </div>
+        <div class="shaft-water" aria-hidden="true"></div>
+      </div>
+    </main>
+  </TempleFrame>
+</Layout>
+
+<style>
+  /* a title in capitals is never broken by a hyphen */
+  :global(.page-title) {
+    hyphens: manual;
+  }
+  .well-page {
+    padding: var(--page-top) 0 var(--page-bottom);
+    max-width: 48rem;
+    margin: 0 auto;
+  }
+  /* the well is on the axis: its head is centred, and the shaft below
+     is its rule — the head draws none of its own */
+  .well-head {
+    text-align: center;
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+  .well-head .page-lead {
+    margin-inline: auto;
+  }
+
+  /* the guide: one ruled row that opens; the text inside is prose */
+  .guide {
+    max-width: var(--measure);
+    margin: 0 auto var(--s-8);
+    border-top: var(--rule) solid var(--line);
+    border-bottom: var(--rule) solid var(--line);
+  }
+  .guide summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--s-4);
+    min-height: var(--tap);
+    font-size: var(--t-ui);
+    color: var(--ochre);
+    cursor: pointer;
+    list-style: none;
+  }
+  .guide summary::-webkit-details-marker {
+    display: none;
+  }
+  .guide summary::after {
+    content: "";
+    width: var(--s-2);
+    height: var(--s-2);
+    margin-right: var(--s-2);
+    border-right: var(--rule-2) solid currentColor;
+    border-bottom: var(--rule-2) solid currentColor;
+    transform: rotate(45deg) translate(-2px, -2px);
+    transition: transform var(--dur-2) var(--ease-out);
+  }
+  .guide[open] summary::after {
+    transform: rotate(-135deg);
+  }
+  .guide-body {
+    padding: var(--s-2) 0 var(--s-5);
+    font-size: 16px;
+    line-height: 1.65;
+  }
+  .guide-body p {
+    margin: 0 0 1em;
+  }
+  .guide-body p:last-child {
+    margin-bottom: 0;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .guide summary::after {
+      transition: none;
+    }
+  }
+
+  /* The shaft: two emphasis walls, a flat recessed fill, the ochre mouth
+     as the one heavy bar on the page, and still water as a flat dark floor. */
+  .shaft {
+    --shaft-pad: var(--s-7);
+    position: relative;
+    padding: 0 var(--shaft-pad);
+    border-left: var(--rule-2) solid var(--line);
+    border-right: var(--rule-2) solid var(--line);
+    background: var(--well-wall);
+  }
+  .shaft-mouth {
+    height: var(--bar-2);
+    background: var(--seal-gold);
+    /* the mouth spans the walls: it is laid across them */
+    margin: 0 calc((var(--shaft-pad) + var(--rule-2)) * -1) var(--s-8);
+  }
+  .shaft-water {
+    height: var(--s-10);
+    margin: var(--s-8) calc(var(--shaft-pad) * -1) 0;
+    background: var(--night);
+    border-top: var(--rule) solid var(--line);
+  }
+  @media (max-width: 599px) {
+    .shaft {
+      --shaft-pad: var(--s-4);
+    }
+    .shaft-water {
+      height: var(--s-8);
+    }
+  }
+
+  /* the form wears the seal by default (PrayerRequestForm); in the shaft
+     only the field ground steps one darker */
+  .form-well :global(input),
+  .form-well :global(textarea) {
+    background: var(--well-floor);
+  }
+</style>
