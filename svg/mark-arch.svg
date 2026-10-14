@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="312" height="312" viewBox="0 0 312 312">
+<title>Arched window - gallery mark</title>
+<g fill="none" stroke="#1a1208" stroke-width="10">
+ <path d="M48 288 V144 a108 108 0 0 1 216 0 V288"/>
+ <line x1="24" y1="288" x2="288" y2="288"/>
+</g>
+</svg>

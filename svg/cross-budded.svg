@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="312" height="312" viewBox="0 0 312 312">
+<title>Budded cross - trefoil terminals</title>
+<g fill="#1a1208">
+ <rect x="138" y="48" width="36" height="216"/><rect x="66" y="120" width="180" height="36"/>
+ <circle cx="156" cy="42" r="14"/><circle cx="140" cy="56" r="14"/><circle cx="172" cy="56" r="14"/>
+ <circle cx="156" cy="270" r="14"/><circle cx="140" cy="256" r="14"/><circle cx="172" cy="256" r="14"/>
+ <circle cx="60" cy="138" r="14"/><circle cx="74" cy="122" r="14"/><circle cx="74" cy="154" r="14"/>
+ <circle cx="252" cy="138" r="14"/><circle cx="238" cy="122" r="14"/><circle cx="238" cy="154" r="14"/>
+</g>
+</svg>

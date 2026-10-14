@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chamber template — Istoria Sfintei Mănăstiri</title>
+<style>
+/* ═══════════════════════════════════════════════════════════════════
+   TEMPLATE B · CHAMBER
+   A room you enter. Both rails present, centre column sitting inside
+   the shaft, ONE zone palette held for the whole page.
+   Every CMS post is one of these. Swap [data-zone] to re-skin.
+   ═══════════════════════════════════════════════════════════════════ */
+:root{
+  --shaft:78px; --rail-l:78px; --rail-r:198px; --gut:24px;
+  --cream:#D5D6D6; --white:#E6EAE4; --ochre:#C0A974;
+}
+/* ── zone palettes. one per chamber, never mixed. ── */
+[data-zone="rock"]{
+  --ground:#22242A; --ground-2:#2E3138; --edge:#5F6367;
+  --ink:#D5D6D6; --ink-soft:rgba(213,214,214,.74); --accent:#B0B9D1;
+}
+[data-zone="green"]{
+  --ground:#202D18; --ground-2:#2E4328; --edge:#4B6136;
+  --ink:#E6EAE4; --ink-soft:rgba(230,234,228,.76); --accent:#6F8A73;
+}
+[data-zone="gold"]{
+  --ground:#0E0D11; --ground-2:#1D1C22; --edge:#4B3630;
+  --ink:#D5D6D6; --ink-soft:rgba(213,214,214,.82); --accent:#C0A974;
+}
+[data-zone="river"]{
+  --ground:#BDD5DC; --ground-2:#D6E6EA; --edge:#61929E;
+  --ink:#12222B; --ink-soft:rgba(18,34,43,.78); --accent:#2B4B58;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:Georgia,"Times New Roman",serif; line-height:1.8;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+
+/* ── the frame: left rail · centre field · right rail ── */
+.frame{
+  display:grid;
+  grid-template-columns:var(--rail-l) minmax(0,1fr) var(--rail-r);
+  min-height:100vh;
+}
+
+/* LEFT RAIL — the descent index. where you are in the strata.
+   Not links: depth markers. Structural, permanent. */
+.rail-l{
+  position:sticky; top:0; height:100vh;
+  border-right:1px solid color-mix(in srgb,var(--edge) 55%,transparent);
+  display:flex; flex-direction:column; align-items:center;
+  justify-content:center; gap:26px; padding:24px 0;
+}
+.rail-l b{
+  display:block;width:11px;height:11px;border-radius:50%;
+  background:transparent;border:1px solid var(--edge);
+}
+.rail-l b[aria-current]{background:var(--ochre);border-color:var(--ochre)}
+.rail-l .depth{
+  writing-mode:vertical-rl; font-size:9px; letter-spacing:.42em;
+  text-transform:uppercase; color:var(--ink-soft); opacity:.6; margin-top:14px;
+}
+
+/* CENTRE FIELD — the shaft is its ground. text sits inside the well. */
+.field{position:relative;padding:0 0 14vh}
+.field::before{
+  content:""; position:absolute; top:0; bottom:0; left:50%; width:min(46rem,86%);
+  transform:translateX(-50%);
+  background:linear-gradient(to bottom,
+    color-mix(in srgb,var(--ground-2) 92%,transparent),
+    color-mix(in srgb,var(--ground-2) 40%,transparent));
+  border-left:1px solid color-mix(in srgb,var(--edge) 45%,transparent);
+  border-right:1px solid color-mix(in srgb,var(--edge) 45%,transparent);
+  pointer-events:none;
+}
+.inner{position:relative;z-index:1;max-width:34rem;margin:0 auto;padding:0 24px}
+
+/* RIGHT RAIL — the calendar. the only element that knows today. */
+.rail-r{
+  position:sticky; top:0; height:100vh;
+  border-left:1px solid color-mix(in srgb,var(--edge) 55%,transparent);
+  padding:34px 18px; font-size:11px;
+}
+.rail-r h3{
+  margin:0 0 18px;font-size:9px;letter-spacing:.4em;text-transform:uppercase;
+  color:var(--ochre);font-weight:400}
+.rail-r .day{font-size:26px;line-height:1;color:var(--ink);margin-bottom:4px}
+.rail-r .month{font-size:9px;letter-spacing:.34em;text-transform:uppercase;
+  color:var(--ink-soft);margin-bottom:22px}
+.rail-r .saint{line-height:1.7;color:var(--ink-soft)}
+.rail-r .hours{margin-top:28px;border-top:1px solid color-mix(in srgb,var(--edge) 45%,transparent);
+  padding-top:16px}
+.rail-r .hours div{display:flex;justify-content:space-between;padding:5px 0;
+  color:var(--ink-soft)}
+.rail-r .src{position:absolute;bottom:24px;left:18px;right:18px;font-size:8px;
+  letter-spacing:.2em;text-transform:uppercase;opacity:.4}
+
+/* ── the chamber's own head: you are already at the bottom. no descent cue. ── */
+header.chamber{padding:13vh 0 0;text-align:center}
+header.chamber .zone{font-size:10px;letter-spacing:.46em;text-transform:uppercase;
+  color:var(--ochre)}
+header.chamber h1{
+  margin:20px 0 0;font-size:clamp(28px,3.6vw,52px);line-height:1.1;
+  letter-spacing:.04em;text-transform:uppercase;color:var(--ink)}
+header.chamber .meta{margin-top:18px;font-size:10px;letter-spacing:.3em;
+  text-transform:uppercase;color:var(--ink-soft)}
+.rule{height:2px;width:64px;background:var(--ochre);margin:30px auto 0}
+
+article{padding-top:8vh}
+article p{margin:0 0 1.6em;font-size:17px;color:var(--ink-soft)}
+article p.lead{font-size:20px;line-height:1.72;color:var(--ink)}
+article h2{
+  margin:3.2em 0 .2em;font-size:11px;letter-spacing:.42em;text-transform:uppercase;
+  color:var(--ochre);font-weight:400}
+article h2 + .r{height:1px;width:44px;background:var(--ochre);margin-bottom:1.6em}
+article figure{margin:3.4em 0}
+article figure img{border:1px solid color-mix(in srgb,var(--edge) 60%,transparent)}
+article figcaption{margin-top:12px;font-size:10px;letter-spacing:.28em;
+  text-transform:uppercase;color:var(--ink-soft);opacity:.75}
+.ph{display:inline-block;padding:2px 10px;border:1px dashed color-mix(in srgb,var(--ochre) 60%,transparent);
+  color:var(--ochre);font-size:13px;letter-spacing:.06em;opacity:.85}
+p.ph{display:block;padding:14px 16px}
+blockquote{
+  margin:3em 0;padding-left:26px;
+  border-left:3px solid var(--ochre);font-size:19px;line-height:1.6;color:var(--ink)}
+
+/* ══ ZONE III behaviour · a gold chamber is a shrine ══
+   Narrower measure (a prayer measure, not an article measure), thread-gold
+   versal, the pall as ground, and the flowers as the only chroma.
+   Stillness is the rule: nothing in this skin moves except the flowers. */
+[data-zone="gold"] .inner{max-width:30rem}
+[data-zone="gold"] .field::before{
+  background:linear-gradient(to bottom,rgba(29,28,34,.92),rgba(14,13,17,.98)),
+             url("assets/shrine-pall.jpg") center 20%/cover no-repeat;
+  filter:saturate(.7);
+}
+[data-zone="gold"] article p.lead::first-letter{
+  float:left;font-size:4.4em;line-height:.82;padding:.04em .12em 0 0;color:var(--ochre);
+}
+[data-zone="gold"] article figure img{
+  border:1px solid rgba(192,169,116,.4);
+  box-shadow:0 0 0 1px rgba(192,169,116,.12),0 26px 70px rgba(0,0,0,.65);
+}
+/* the acatist / any versed text, numbered in thread */
+.verses{margin:3.4em 0 0;padding:0;list-style:none;counter-reset:v}
+.verses li{counter-increment:v;position:relative;padding:24px 0 24px 58px;
+  border-top:1px solid color-mix(in srgb,var(--ochre) 22%,transparent)}
+.verses li::before{content:counter(v,upper-roman);position:absolute;left:0;top:24px;
+  font-size:12px;letter-spacing:.16em;color:var(--ochre);opacity:.75}
+.verses li p{margin:0}
+.verses em{color:var(--ink);font-style:italic}
+/* the living register — visible only in gold */
+.offerings{display:none;gap:8px;justify-content:center;margin:4em 0 0;flex-wrap:wrap}
+[data-zone="gold"] .offerings{display:flex}
+.offerings i{display:block;width:40px;height:5px;border-radius:3px;
+  animation:breathe 7s ease-in-out infinite}
+.offerings i:nth-child(1){background:#663037}
+.offerings i:nth-child(2){background:#9C3D50;animation-delay:.6s}
+.offerings i:nth-child(3){background:#BD639A;animation-delay:1.2s}
+.offerings i:nth-child(4){background:#8F533F;animation-delay:1.8s}
+.offerings i:nth-child(5){background:#D5D6D6;animation-delay:2.4s}
+.offerings i:nth-child(6){background:#922B64;animation-delay:3s}
+.offerings i:nth-child(7){background:#295131;animation-delay:3.6s}
+@keyframes breathe{0%,100%{opacity:.5}50%{opacity:1}}
+@media (prefers-reduced-motion:reduce){.offerings i{animation:none;opacity:.85}}
+
+/* ── leaving a chamber: back up, or sideways to a sibling ── */
+.exits{
+  border-top:1px solid color-mix(in srgb,var(--edge) 45%,transparent);
+  margin-top:8vh;padding-top:34px;display:grid;grid-template-columns:1fr 1fr;gap:0}
+.exits a{
+  padding:22px 20px;text-decoration:none;color:var(--ink);font-size:15px;
+  transition:background .3s ease}
+.exits a:hover{background:color-mix(in srgb,var(--ochre) 12%,transparent)}
+.exits a + a{border-left:1px solid color-mix(in srgb,var(--edge) 45%,transparent)}
+.exits small{display:block;font-size:9px;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--ink-soft);margin-bottom:7px}
+
+.note{position:fixed;left:14px;bottom:12px;z-index:9;font-size:10px;
+  letter-spacing:.16em;opacity:.35;text-transform:uppercase}
+
+/* zone switcher — demo only, not part of the template */
+.zonepick{position:fixed;right:14px;bottom:12px;z-index:9;font-size:10px;
+  letter-spacing:.2em;text-transform:uppercase}
+.zonepick button{background:none;border:1px solid var(--edge);color:var(--ink);
+  font:inherit;padding:6px 12px;margin-left:6px;cursor:pointer}
+
+@media (max-width:960px){
+  .frame{grid-template-columns:1fr}
+  .rail-l{flex-direction:row;height:auto;position:static;border-right:none;
+    border-bottom:1px solid color-mix(in srgb,var(--edge) 55%,transparent);padding:16px}
+  .rail-l .depth{writing-mode:horizontal-tb;margin:0 0 0 12px}
+  .rail-r{position:static;height:auto;border-left:none;
+    border-top:1px solid color-mix(in srgb,var(--edge) 55%,transparent)}
+  .rail-r .src{position:static;margin-top:20px}
+  .field::before{width:100%}
+}
+</style>
+</head>
+<body data-zone="gold">
+
+<div class="frame">
+
+  <!-- LEFT RAIL · descent index -->
+  <aside class="rail-l" aria-label="Adâncime">
+    <b title="Rock"></b>
+    <b title="Green"></b>
+    <b aria-current="true" title="Gold — racla"></b>
+    <b title="River"></b>
+    <span class="depth">Racla</span>
+  </aside>
+
+  <!-- CENTRE FIELD -->
+  <main class="field">
+    <div class="inner">
+
+      <header class="chamber">
+        <p class="zone">Zona III · Racla</p>
+        <h1>Cuviosul<br>Macarie</h1>
+        <p class="meta">1888 – 1969 · Egumen al Sfintei Mănăstiri Saharna</p>
+        <div class="rule"></div>
+      </header>
+
+      <article>
+        <p class="lead">Părintele-egumen Macarie, în lume Marcu Tincu, s-a născut la
+          25 aprilie 1888 în satul Buciușca, raionul Rezina, într-o familie de oameni
+          credincioși — tatăl Dimitrie și mama Ana.</p>
+
+        <p>Micul Marcu se deosebea de ceilalți copii de seama lui: era retras, iar în
+          ochii lui puteai citi întotdeauna un sentiment de respect și adâncă plecăciune.
+          <span class="ph">[ paragraf — copilăria, din textul original ]</span></p>
+
+        <h2>Chemarea</h2><div class="r"></div>
+        <p>Când împlinește 12 ani, dorul de mănăstire năvălește afară și el îi roagă pe
+          părinții lui să-l ducă încolo. Părinții au rămas mirați de alegerea făcută de
+          copil. <span class="ph">[ 2–3 paragrafe — intrarea în mănăstire ]</span></p>
+
+        <figure>
+          <img src="assets/chamber-hero.jpg" alt="Biserica Sfânta Treime, interior">
+          <figcaption>Biserica Sfânta Treime · interior</figcaption>
+        </figure>
+
+        <blockquote>„Unde duhul dumnezeiesc își deschide porțile”</blockquote>
+
+        <h2>Nevoința</h2><div class="r"></div>
+        <p><span class="ph">[ secțiune — anii de egumenie la Saharna, prigoana,
+          mutarea la Domnul ]</span></p>
+
+        <h2>Acatistul</h2><div class="r"></div>
+        <ol class="verses">
+          <li><p><em>Condacul 1.</em> Alesule, de minuni făcătorule și prea minunate
+            plăcutule al lui Hristos, grabnice ajutătorule și rugătorule al nostru,
+            cuvioase părinte Macarie, mărind pe Domnul cel ce te-a preaslăvit pe tine,
+            cele de laudă aducem ție.</p></li>
+          <li><p><em>Icosul 1.</em> Îngerească viață alegând a petrece pe pământ,
+            părinte, ca să te bucuri cu îngerii în ceruri, ai părăsit toate cele
+            veselitoare ale lumii și, rănindu-te cu dumnezeiasca dragoste, ai alergat
+            la limanul cel mântuitor.</p></li>
+          <li><p>Bucură-te, că din pruncie ai ridicat pe umeri crucea Mântuitorului
+            Hristos; Bucură-te, că pentru dragostea lui Hristos ai uitat dorul
+            părinților tăi; Bucură-te, că ai ales fecioria mai mult decât nunta.</p></li>
+          <li><p class="ph">[ Condacele 2–13 și Icosele 2–12 — text complet pe site-ul
+            vechi, ~41 paragrafe ]</p></li>
+        </ol>
+
+        <div class="offerings" aria-hidden="true">
+          <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        </div>
+
+        <nav class="exits" aria-label="Ieșiri">
+          <a href="#"><small>Înapoi</small>Mănăstirea</a>
+          <a href="#"><small>Alături</small>Moaștele →</a>
+        </nav>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- RIGHT RAIL · the calendar. live, client-side. -->
+  <aside class="rail-r" aria-label="Calendar liturgic">
+    <h3>Calendar liturgic</h3>
+    <div class="day">25</div>
+    <div class="month">August 2026</div>
+    <p class="saint">Sfântul Ierarh Nifon, patriarhul Constantinopolului și
+       mitropolit al Țării Românești.</p>
+    <div class="hours">
+      <div><span>Liturghia</span><span>08:00</span></div>
+      <div><span>Acatist</span><span>12:00</span></div>
+      <div><span>Vecernia</span><span>18:00</span></div>
+    </div>
+    <p class="src">calendar.ortodox.md · ro/ru</p>
+  </aside>
+
+</div>
+
+<p class="note">template · chamber · one zone, both rails, no descent</p>
+<div class="zonepick">
+  <button onclick="document.body.dataset.zone='rock'">Rock</button>
+  <button onclick="document.body.dataset.zone='green'">Green</button>
+  <button onclick="document.body.dataset.zone='gold'">Gold</button>
+  <button onclick="document.body.dataset.zone='river'">River</button>
+</div>
+</body>
+</html>

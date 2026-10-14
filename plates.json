@@ -1,0 +1,36 @@
+{
+  "note": "One plate per stratum. The design holds without them; they fill slots the strata already decided.",
+  "model": "sd_xl_base_1.0.safetensors",
+  "size": [1536, 1024],
+  "negative": "text, watermark, signature, people, faces, modern buildings, cars, hdr, oversaturated, cartoon",
+  "plates": [
+    {
+      "id": "rock",
+      "out": "public/plates/rock.webp",
+      "opacity": 0.42,
+      "blend": "luminosity",
+      "prompt": "limestone cliff face, horizontal strata, cold grey-lilac stone, deep cave mouth in shadow, overcast diffuse light, no sky, muted #767A86 #8E9193 #B0B9D1, documentary photograph, film grain"
+    },
+    {
+      "id": "green",
+      "out": "public/plates/green.webp",
+      "opacity": 0.34,
+      "blend": "soft-light",
+      "prompt": "wooded gorge, dense summer foliage, ochre monastery walls half hidden in trees, overcast, deep greens #2E4328 #4B6136 #6F8A73, quiet, documentary photograph"
+    },
+    {
+      "id": "gold",
+      "out": "public/plates/gold-door.webp",
+      "size": [1024, 1536],
+      "opacity": 0.40,
+      "prompt": "orthodox reliquary shrine, black embroidered cloth pall, thread gold, single candle, dark interior, flowers, #1D1C22 #C0A974 #663037, still, low light photograph"
+    },
+    {
+      "id": "river",
+      "out": "public/plates/river.webp",
+      "opacity": 0.46,
+      "blend": "soft-light",
+      "prompt": "wide river at dusk seen from a high bank, low horizon, still water, pale blue #649FBD #61929E #BDD5DC, no boats, no people, quiet documentary photograph"
+    }
+  ]
+}

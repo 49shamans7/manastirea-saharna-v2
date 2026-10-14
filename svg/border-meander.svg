@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="384" height="96" viewBox="0 0 384 96">
+<title>Greek key meander - tiles at 96</title>
+<g fill="none" stroke="#1a1208" stroke-width="8">
+ <path d="M0 12 h72 v48 h-48 v-24 h24 M96 12 h72 v48 h-48 v-24 h24 M192 12 h72 v48 h-48 v-24 h24 M288 12 h72 v48 h-48 v-24 h24"/>
+ <line x1="0" y1="84" x2="384" y2="84"/>
+</g>
+</svg>

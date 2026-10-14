@@ -1,0 +1,1293 @@
+{
+ "id": "P2_site_plates",
+ "revision": 0,
+ "last_node_id": 21,
+ "last_link_id": 21,
+ "nodes": [
+  {
+   "id": 1,
+   "type": "QwenImageTextToImageApi",
+   "pos": [
+    40,
+    40
+   ],
+   "size": [
+    400,
+    380
+   ],
+   "flags": {},
+   "order": 1,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model.prompt",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "model.prompt"
+     }
+    },
+    {
+     "name": "model.negative_prompt",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "model.negative_prompt"
+     }
+    },
+    {
+     "name": "model.width",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "model.width"
+     }
+    },
+    {
+     "name": "model.height",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "model.height"
+     }
+    },
+    {
+     "name": "n",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "n"
+     }
+    },
+    {
+     "name": "seed",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "seed"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      1
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "QwenImageTextToImageApi"
+   },
+   "widgets_values": [
+    "qwen-image-3.0-pro",
+    "Moldovan Orthodox monastery architecture, Saharna, Rezina, Republic of Moldova. Traditional Moldovan church building: whitewashed lime plaster walls, dark grey wood shingle roofs, pale local limestone, hand-forged iron. Warm desaturated sand palette. Overcast dawn light, low contrast, no direct sun. Documentary architectural photography, large format, level horizon. Matte chalky weathered surfaces. Sober, traditional, restrained. The monastery gate seen straight on from outside, the courtyard and the church visible through the open arch. Mist in the valley beyond. Dawn before sunrise. The arch frames the view like a doorway cut into the picture.",
+    "saturated colors, HDR, golden hour glare, blue sky, lens flare, bokeh, tilted horizon, fisheye, people, tourists, cars, modern signage, text, watermark, logo, oversharpened, plastic, CGI render, neon, onion domes of Russian style, gilded roofs, baroque excess",
+    2464,
+    1056,
+    1,
+    1876,
+    "fixed",
+    false,
+    false
+   ]
+  },
+  {
+   "id": 2,
+   "type": "SaveImage",
+   "pos": [
+    500,
+    40
+   ],
+   "size": [
+    400,
+    380
+   ],
+   "flags": {},
+   "order": 2,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 1
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "saharna/hero_portal_dawn"
+   ]
+  },
+  {
+   "id": 3,
+   "type": "QwenImageTextToImageApi",
+   "pos": [
+    40,
+    500
+   ],
+   "size": [
+    400,
+    380
+   ],
+   "flags": {},
+   "order": 3,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model.prompt",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "model.prompt"
+     }
+    },
+    {
+     "name": "model.negative_prompt",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "model.negative_prompt"
+     }
+    },
+    {
+     "name": "model.width",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "model.width"
+     }
+    },
+    {
+     "name": "model.height",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "model.height"
+     }
+    },
+    {
+     "name": "n",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "n"
+     }
+    },
+    {
+     "name": "seed",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "seed"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      3
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "QwenImageTextToImageApi"
+   },
+   "widgets_values": [
+    "qwen-image-3.0-pro",
+    "Moldovan Orthodox monastery architecture, Saharna, Rezina, Republic of Moldova. Traditional Moldovan church building: whitewashed lime plaster walls, dark grey wood shingle roofs, pale local limestone, hand-forged iron. Warm desaturated sand palette. Overcast dawn light, low contrast, no direct sun. Documentary architectural photography, large format, level horizon. Matte chalky weathered surfaces. Sober, traditional, restrained. The Holy Trinity church, three-quarter view from the courtyard, wet flagstones, low cloud, a plain wooden bench against the wall.",
+    "saturated colors, HDR, golden hour glare, blue sky, lens flare, bokeh, tilted horizon, fisheye, people, tourists, cars, modern signage, text, watermark, logo, oversharpened, plastic, CGI render, neon, onion domes of Russian style, gilded roofs, baroque excess",
+    1856,
+    1392,
+    1,
+    1877,
+    "fixed",
+    false,
+    false
+   ]
+  },
+  {
+   "id": 4,
+   "type": "SaveImage",
+   "pos": [
+    500,
+    500
+   ],
+   "size": [
+    400,
+    380
+   ],
+   "flags": {},
+   "order": 4,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 3
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "saharna/gal_church"
+   ]
+  },
+  {
+   "id": 5,
+   "type": "QwenImageTextToImageApi",
+   "pos": [
+    40,
+    960
+   ],
+   "size": [
+    400,
+    380
+   ],
+   "flags": {},
+   "order": 5,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model.prompt",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "model.prompt"
+     }
+    },
+    {
+     "name": "model.negative_prompt",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "model.negative_prompt"
+     }
+    },
+    {
+     "name": "model.width",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "model.width"
+     }
+    },
+    {
+     "name": "model.height",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "model.height"
+     }
+    },
+    {
+     "name": "n",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "n"
+     }
+    },
+    {
+     "name": "seed",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "seed"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      5
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "QwenImageTextToImageApi"
+   },
+   "widgets_values": [
+    "qwen-image-3.0-pro",
+    "Moldovan Orthodox monastery architecture, Saharna, Rezina, Republic of Moldova. Traditional Moldovan church building: whitewashed lime plaster walls, dark grey wood shingle roofs, pale local limestone, hand-forged iron. Warm desaturated sand palette. Overcast dawn light, low contrast, no direct sun. Documentary architectural photography, large format, level horizon. Matte chalky weathered surfaces. Sober, traditional, restrained. The Saharna waterfalls in the wooded limestone gorge, water over stone shelves, bare early-spring branches, overcast.",
+    "saturated colors, HDR, golden hour glare, blue sky, lens flare, bokeh, tilted horizon, fisheye, people, tourists, cars, modern signage, text, watermark, logo, oversharpened, plastic, CGI render, neon, onion domes of Russian style, gilded roofs, baroque excess",
+    1392,
+    1856,
+    1,
+    1878,
+    "fixed",
+    false,
+    false
+   ]
+  },
+  {
+   "id": 6,
+   "type": "SaveImage",
+   "pos": [
+    500,
+    960
+   ],
+   "size": [
+    400,
+    380
+   ],
+   "flags": {},
+   "order": 6,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 5
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "saharna/gal_cascades"
+   ]
+  },
+  {
+   "id": 7,
+   "type": "QwenImageTextToImageApi",
+   "pos": [
+    40,
+    1420
+   ],
+   "size": [
+    400,
+    380
+   ],
+   "flags": {},
+   "order": 7,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model.prompt",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "model.prompt"
+     }
+    },
+    {
+     "name": "model.negative_prompt",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "model.negative_prompt"
+     }
+    },
+    {
+     "name": "model.width",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "model.width"
+     }
+    },
+    {
+     "name": "model.height",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "model.height"
+     }
+    },
+    {
+     "name": "n",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "n"
+     }
+    },
+    {
+     "name": "seed",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "seed"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      7
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "QwenImageTextToImageApi"
+   },
+   "widgets_values": [
+    "qwen-image-3.0-pro",
+    "Moldovan Orthodox monastery architecture, Saharna, Rezina, Republic of Moldova. Traditional Moldovan church building: whitewashed lime plaster walls, dark grey wood shingle roofs, pale local limestone, hand-forged iron. Warm desaturated sand palette. Overcast dawn light, low contrast, no direct sun. Documentary architectural photography, large format, level horizon. Matte chalky weathered surfaces. Sober, traditional, restrained. A row of monastic cells, whitewashed wall, small deep-set windows, a covered walkway on turned wooden posts, a plain bench.",
+    "saturated colors, HDR, golden hour glare, blue sky, lens flare, bokeh, tilted horizon, fisheye, people, tourists, cars, modern signage, text, watermark, logo, oversharpened, plastic, CGI render, neon, onion domes of Russian style, gilded roofs, baroque excess",
+    1392,
+    1856,
+    1,
+    1879,
+    "fixed",
+    false,
+    false
+   ]
+  },
+  {
+   "id": 8,
+   "type": "SaveImage",
+   "pos": [
+    500,
+    1420
+   ],
+   "size": [
+    400,
+    380
+   ],
+   "flags": {},
+   "order": 8,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 7
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "saharna/gal_cells"
+   ]
+  },
+  {
+   "id": 9,
+   "type": "QwenImageTextToImageApi",
+   "pos": [
+    40,
+    1880
+   ],
+   "size": [
+    400,
+    380
+   ],
+   "flags": {},
+   "order": 9,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model.prompt",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "model.prompt"
+     }
+    },
+    {
+     "name": "model.negative_prompt",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "model.negative_prompt"
+     }
+    },
+    {
+     "name": "model.width",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "model.width"
+     }
+    },
+    {
+     "name": "model.height",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "model.height"
+     }
+    },
+    {
+     "name": "n",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "n"
+     }
+    },
+    {
+     "name": "seed",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "seed"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      9
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "QwenImageTextToImageApi"
+   },
+   "widgets_values": [
+    "qwen-image-3.0-pro",
+    "Moldovan Orthodox monastery architecture, Saharna, Rezina, Republic of Moldova. Traditional Moldovan church building: whitewashed lime plaster walls, dark grey wood shingle roofs, pale local limestone, hand-forged iron. Warm desaturated sand palette. Overcast dawn light, low contrast, no direct sun. Documentary architectural photography, large format, level horizon. Matte chalky weathered surfaces. Sober, traditional, restrained. Wide view over the Nistru river valley from the cliff above the monastery, layered ridges fading into haze, ploughed fields, no buildings.",
+    "saturated colors, HDR, golden hour glare, blue sky, lens flare, bokeh, tilted horizon, fisheye, people, tourists, cars, modern signage, text, watermark, logo, oversharpened, plastic, CGI render, neon, onion domes of Russian style, gilded roofs, baroque excess",
+    1856,
+    1392,
+    1,
+    1880,
+    "fixed",
+    false,
+    false
+   ]
+  },
+  {
+   "id": 10,
+   "type": "SaveImage",
+   "pos": [
+    500,
+    1880
+   ],
+   "size": [
+    400,
+    380
+   ],
+   "flags": {},
+   "order": 10,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 9
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "saharna/gal_nistru"
+   ]
+  },
+  {
+   "id": 11,
+   "type": "QwenImageTextToImageApi",
+   "pos": [
+    40,
+    2340
+   ],
+   "size": [
+    400,
+    380
+   ],
+   "flags": {},
+   "order": 11,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model.prompt",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "model.prompt"
+     }
+    },
+    {
+     "name": "model.negative_prompt",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "model.negative_prompt"
+     }
+    },
+    {
+     "name": "model.width",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "model.width"
+     }
+    },
+    {
+     "name": "model.height",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "model.height"
+     }
+    },
+    {
+     "name": "n",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "n"
+     }
+    },
+    {
+     "name": "seed",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "seed"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      11
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "QwenImageTextToImageApi"
+   },
+   "widgets_values": [
+    "qwen-image-3.0-pro",
+    "Moldovan Orthodox monastery architecture, Saharna, Rezina, Republic of Moldova. Traditional Moldovan church building: whitewashed lime plaster walls, dark grey wood shingle roofs, pale local limestone, hand-forged iron. Warm desaturated sand palette. Overcast dawn light, low contrast, no direct sun. Documentary architectural photography, large format, level horizon. Matte chalky weathered surfaces. Sober, traditional, restrained. Flat-on macro of a weathered pale limestone masonry wall with lime mortar joints. Fills the whole frame, evenly lit, no perspective, tileable.",
+    "saturated colors, HDR, golden hour glare, blue sky, lens flare, bokeh, tilted horizon, fisheye, people, tourists, cars, modern signage, text, watermark, logo, oversharpened, plastic, CGI render, neon, onion domes of Russian style, gilded roofs, baroque excess",
+    1536,
+    1536,
+    1,
+    1881,
+    "fixed",
+    false,
+    false
+   ]
+  },
+  {
+   "id": 12,
+   "type": "SaveImage",
+   "pos": [
+    500,
+    2340
+   ],
+   "size": [
+    400,
+    380
+   ],
+   "flags": {},
+   "order": 12,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 11
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "saharna/tex_limestone"
+   ]
+  },
+  {
+   "id": 13,
+   "type": "QwenImageTextToImageApi",
+   "pos": [
+    40,
+    2800
+   ],
+   "size": [
+    400,
+    380
+   ],
+   "flags": {},
+   "order": 13,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model.prompt",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "model.prompt"
+     }
+    },
+    {
+     "name": "model.negative_prompt",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "model.negative_prompt"
+     }
+    },
+    {
+     "name": "model.width",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "model.width"
+     }
+    },
+    {
+     "name": "model.height",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "model.height"
+     }
+    },
+    {
+     "name": "n",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "n"
+     }
+    },
+    {
+     "name": "seed",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "seed"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      13
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "QwenImageTextToImageApi"
+   },
+   "widgets_values": [
+    "qwen-image-3.0-pro",
+    "Moldovan Orthodox monastery architecture, Saharna, Rezina, Republic of Moldova. Traditional Moldovan church building: whitewashed lime plaster walls, dark grey wood shingle roofs, pale local limestone, hand-forged iron. Warm desaturated sand palette. Overcast dawn light, low contrast, no direct sun. Documentary architectural photography, large format, level horizon. Matte chalky weathered surfaces. Sober, traditional, restrained. Flat-on macro of old whitewashed lime plaster, hairline cracks, chalky bloom, faint ochre stain. Fills the whole frame, evenly lit, tileable.",
+    "saturated colors, HDR, golden hour glare, blue sky, lens flare, bokeh, tilted horizon, fisheye, people, tourists, cars, modern signage, text, watermark, logo, oversharpened, plastic, CGI render, neon, onion domes of Russian style, gilded roofs, baroque excess",
+    1536,
+    1536,
+    1,
+    1882,
+    "fixed",
+    false,
+    false
+   ]
+  },
+  {
+   "id": 14,
+   "type": "SaveImage",
+   "pos": [
+    500,
+    2800
+   ],
+   "size": [
+    400,
+    380
+   ],
+   "flags": {},
+   "order": 14,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 13
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "saharna/tex_plaster"
+   ]
+  },
+  {
+   "id": 15,
+   "type": "QwenImageTextToImageApi",
+   "pos": [
+    40,
+    3260
+   ],
+   "size": [
+    400,
+    380
+   ],
+   "flags": {},
+   "order": 15,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model.prompt",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "model.prompt"
+     }
+    },
+    {
+     "name": "model.negative_prompt",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "model.negative_prompt"
+     }
+    },
+    {
+     "name": "model.width",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "model.width"
+     }
+    },
+    {
+     "name": "model.height",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "model.height"
+     }
+    },
+    {
+     "name": "n",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "n"
+     }
+    },
+    {
+     "name": "seed",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "seed"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      15
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "QwenImageTextToImageApi"
+   },
+   "widgets_values": [
+    "qwen-image-3.0-pro",
+    "Moldovan Orthodox monastery architecture, Saharna, Rezina, Republic of Moldova. Traditional Moldovan church building: whitewashed lime plaster walls, dark grey wood shingle roofs, pale local limestone, hand-forged iron. Warm desaturated sand palette. Overcast dawn light, low contrast, no direct sun. Documentary architectural photography, large format, level horizon. Matte chalky weathered surfaces. Sober, traditional, restrained. Flat-on macro of a weathered oak plank, deep grain, one old iron nail head, silvered surface. Fills the whole frame, evenly lit, tileable.",
+    "saturated colors, HDR, golden hour glare, blue sky, lens flare, bokeh, tilted horizon, fisheye, people, tourists, cars, modern signage, text, watermark, logo, oversharpened, plastic, CGI render, neon, onion domes of Russian style, gilded roofs, baroque excess",
+    1536,
+    1536,
+    1,
+    1883,
+    "fixed",
+    false,
+    false
+   ]
+  },
+  {
+   "id": 16,
+   "type": "SaveImage",
+   "pos": [
+    500,
+    3260
+   ],
+   "size": [
+    400,
+    380
+   ],
+   "flags": {},
+   "order": 16,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 15
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "saharna/tex_oak"
+   ]
+  },
+  {
+   "id": 17,
+   "type": "QwenImageTextToImageApi",
+   "pos": [
+    40,
+    3720
+   ],
+   "size": [
+    400,
+    380
+   ],
+   "flags": {},
+   "order": 17,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model.prompt",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "model.prompt"
+     }
+    },
+    {
+     "name": "model.negative_prompt",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "model.negative_prompt"
+     }
+    },
+    {
+     "name": "model.width",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "model.width"
+     }
+    },
+    {
+     "name": "model.height",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "model.height"
+     }
+    },
+    {
+     "name": "n",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "n"
+     }
+    },
+    {
+     "name": "seed",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "seed"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      17
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "QwenImageTextToImageApi"
+   },
+   "widgets_values": [
+    "qwen-image-3.0-pro",
+    "Moldovan Orthodox monastery architecture, Saharna, Rezina, Republic of Moldova. Traditional Moldovan church building: whitewashed lime plaster walls, dark grey wood shingle roofs, pale local limestone, hand-forged iron. Warm desaturated sand palette. Overcast dawn light, low contrast, no direct sun. Documentary architectural photography, large format, level horizon. Matte chalky weathered surfaces. Sober, traditional, restrained. Flat-on macro of a bed of fine sand with beeswax drips and candle stubs pressed into it. Fills the whole frame, evenly lit.",
+    "saturated colors, HDR, golden hour glare, blue sky, lens flare, bokeh, tilted horizon, fisheye, people, tourists, cars, modern signage, text, watermark, logo, oversharpened, plastic, CGI render, neon, onion domes of Russian style, gilded roofs, baroque excess",
+    1536,
+    1536,
+    1,
+    1884,
+    "fixed",
+    false,
+    false
+   ]
+  },
+  {
+   "id": 18,
+   "type": "SaveImage",
+   "pos": [
+    500,
+    3720
+   ],
+   "size": [
+    400,
+    380
+   ],
+   "flags": {},
+   "order": 18,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 17
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "saharna/tex_beeswax"
+   ]
+  },
+  {
+   "id": 19,
+   "type": "QwenImageTextToImageApi",
+   "pos": [
+    40,
+    4180
+   ],
+   "size": [
+    400,
+    380
+   ],
+   "flags": {},
+   "order": 19,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model.prompt",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "model.prompt"
+     }
+    },
+    {
+     "name": "model.negative_prompt",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "model.negative_prompt"
+     }
+    },
+    {
+     "name": "model.width",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "model.width"
+     }
+    },
+    {
+     "name": "model.height",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "model.height"
+     }
+    },
+    {
+     "name": "n",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "n"
+     }
+    },
+    {
+     "name": "seed",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "seed"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      19
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "QwenImageTextToImageApi"
+   },
+   "widgets_values": [
+    "qwen-image-3.0-pro",
+    "Moldovan Orthodox monastery architecture, Saharna, Rezina, Republic of Moldova. Traditional Moldovan church building: whitewashed lime plaster walls, dark grey wood shingle roofs, pale local limestone, hand-forged iron. Warm desaturated sand palette. Overcast dawn light, low contrast, no direct sun. Documentary architectural photography, large format, level horizon. Matte chalky weathered surfaces. Sober, traditional, restrained. Flat-on macro of an old gilded icon panel where the gold leaf has worn through to the red-brown clay ground beneath. Craquelure, burnished and matte patches. Fills the whole frame.",
+    "saturated colors, HDR, golden hour glare, blue sky, lens flare, bokeh, tilted horizon, fisheye, people, tourists, cars, modern signage, text, watermark, logo, oversharpened, plastic, CGI render, neon, onion domes of Russian style, gilded roofs, baroque excess",
+    1536,
+    1536,
+    1,
+    1885,
+    "fixed",
+    false,
+    false
+   ]
+  },
+  {
+   "id": 20,
+   "type": "SaveImage",
+   "pos": [
+    500,
+    4180
+   ],
+   "size": [
+    400,
+    380
+   ],
+   "flags": {},
+   "order": 20,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 19
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "saharna/tex_gesso_gold"
+   ]
+  }
+ ],
+ "links": [
+  [
+   1,
+   1,
+   0,
+   2,
+   0,
+   "IMAGE"
+  ],
+  [
+   3,
+   3,
+   0,
+   4,
+   0,
+   "IMAGE"
+  ],
+  [
+   5,
+   5,
+   0,
+   6,
+   0,
+   "IMAGE"
+  ],
+  [
+   7,
+   7,
+   0,
+   8,
+   0,
+   "IMAGE"
+  ],
+  [
+   9,
+   9,
+   0,
+   10,
+   0,
+   "IMAGE"
+  ],
+  [
+   11,
+   11,
+   0,
+   12,
+   0,
+   "IMAGE"
+  ],
+  [
+   13,
+   13,
+   0,
+   14,
+   0,
+   "IMAGE"
+  ],
+  [
+   15,
+   15,
+   0,
+   16,
+   0,
+   "IMAGE"
+  ],
+  [
+   17,
+   17,
+   0,
+   18,
+   0,
+   "IMAGE"
+  ],
+  [
+   19,
+   19,
+   0,
+   20,
+   0,
+   "IMAGE"
+  ]
+ ],
+ "groups": [],
+ "config": {},
+ "extra": {
+  "ds": {
+   "scale": 0.5,
+   "offset": [
+    0,
+    0
+   ]
+  },
+  "title": "P2 — hero, gallery, textures"
+ },
+ "version": 0.4
+}

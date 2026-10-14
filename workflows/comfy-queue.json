@@ -1,0 +1,111 @@
+{
+  "$comment": "Comfy Cloud run order for manastirea-saharna TEMPLE mvp. Budget 6252 credits. Run passes in order: P1 plates feed P3 meshes.",
+  "budget": { "available": 6252, "allocated": 4183.4, "reserve": 2068.6 },
+  "rates": {
+    "qwen_image_3_t2i_1k_std": 9.05,
+    "qwen_image_3_t2i_2k_pro": 22.63,
+    "qwen_image_3_edit_out": 9.05,
+    "qwen_image_3_edit_ref_in": 0.91,
+    "tripo_v31_img2model_notex": 42.2,
+    "tripo_p1_img2model_textured": 105.5,
+    "hunyuan3d_geometry": 63.3
+  },
+  "style_kernel": {
+    "$comment": "Prepended to every 2D prompt. Keeps the whole set one material world.",
+    "text": "Moldovan Orthodox monastery at Saharna, limestone and lime-plaster, Nistru river valley. Warm desaturated sand palette, parchment #f4efe4 ground, ink #1a1208, muted gold #c4a24a. Overcast dawn light, low contrast, no direct sun, no lens flare. Documentary architectural photography, large format, perfectly level horizon, no tilt. Matte surfaces, chalky, weathered stone. Restrained, sober, no drama.",
+    "negative": "saturated colors, HDR, golden hour glare, blue sky, lens flare, bokeh, tilted horizon, fisheye, people, tourists, cars, modern signage, text, watermark, logo, oversharpened, plastic, CGI render, neon"
+  },
+  "passes": [
+    {
+      "pass": "P1_ORTHO_PLATES",
+      "purpose": "Orthographic elevations on flat ground. These are the INPUT for the 3D pass, and double as 2D silhouettes for the site.",
+      "node": "Qwen Image 3 Text to Image",
+      "settings": { "resolution": "2K", "tier": "Pro", "aspect": "1:1" },
+      "unit_cost": 22.63,
+      "count": 8,
+      "subtotal": 181.04,
+      "shared_suffix": "Strict orthographic front elevation, dead-on, no perspective convergence. Object isolated on flat empty #f4efe4 ground, no horizon line, no environment, no shadow cast on ground. Complete object fully in frame with even margin. Uniform flat ambient light, no directional shadow.",
+      "items": [
+        { "id": "ortho_portal", "prompt": "The stone entrance gate arch of Saharna monastery. Round Byzantine arch on two squat limestone piers, low pitched roof over the arch, small cross at the apex. Weathered pale limestone, lime mortar joints visible." },
+        { "id": "ortho_church_treime", "prompt": "Moldovan Orthodox church of the Holy Trinity. Single nave, three apses, one central drum with an onion dome, tall narrow windows, whitewashed lime plaster walls, dark grey shingle roof." },
+        { "id": "ortho_belltower", "prompt": "Free-standing Moldovan monastery bell tower. Square stone base, open arcaded belfry stage with four arches, pyramidal shingle roof, cross finial. Bell visible in the arcade." },
+        { "id": "ortho_cave_mouth", "prompt": "Rock-cut cave chapel entrance in a limestone cliff face. Rough hewn opening, small carved cross above it, stratified sedimentary rock, no vegetation." },
+        { "id": "ortho_candlestand", "prompt": "Orthodox church candle stand, sfesnic. Brass tray on a turned column and tripod foot, a bed of sand, thin beeswax candles standing in it, several lit. Tarnished brass, wax runs down the column." },
+        { "id": "ortho_cross_stone", "prompt": "Free-standing Moldovan stone wayside cross, troita. Carved limestone, eight-pointed Orthodox cross form, shallow relief carving on the shaft, lichen in the carved grooves." },
+        { "id": "ortho_well", "prompt": "Moldovan monastery stone well with a shingled roof canopy on four posts, iron crank and chain, wooden bucket. Weathered oak, pale stone kerb." },
+        { "id": "ortho_threshold", "prompt": "A single worn limestone doorstep block, isolated. Deep concave wear hollowed in the centre from centuries of feet. Chipped edges, pale stone." }
+      ]
+    },
+    {
+      "pass": "P2_SITE_PLATES",
+      "purpose": "The raster images the site actually places: hero, the four gallery slots, and the material fills.",
+      "node": "Qwen Image 3 Text to Image",
+      "settings": { "resolution": "2K", "tier": "Pro" },
+      "unit_cost": 22.63,
+      "count": 10,
+      "subtotal": 226.3,
+      "items": [
+        { "id": "hero_portal_dawn", "aspect": "21:9", "slot": "R1 hero, full bleed", "prompt": "The gate of Saharna monastery seen straight on from outside, the courtyard and church visible through the open arch. Mist in the valley behind. Dawn, before sun. The arch frames the view like a doorway cut in the picture." },
+        { "id": "gal_church", "aspect": "4:3", "slot": "gallery 1 — Biserica Principala", "prompt": "The Holy Trinity church at Saharna, three-quarter view from the courtyard, wet flagstones, low cloud." },
+        { "id": "gal_cascades", "aspect": "3:4", "slot": "gallery 2 — Cascadele Saharna", "prompt": "The Saharna waterfalls in the wooded gorge, limestone shelves, thin water, bare early spring branches, overcast." },
+        { "id": "gal_cells", "aspect": "3:4", "slot": "gallery 3 — Chiliile Monahale", "prompt": "A row of monastic cells, whitewashed wall, small deep-set windows, a wooden bench, a covered walkway with turned posts." },
+        { "id": "gal_nistru", "aspect": "4:3", "slot": "gallery 4 — Panorama Nistru", "prompt": "Wide view over the Nistru river valley from the cliff above the monastery, layered ridges fading into haze, ploughed fields, no buildings." },
+        { "id": "tex_limestone", "aspect": "1:1", "slot": "material fill", "prompt": "Flat-on macro of weathered pale limestone masonry wall with lime mortar joints. Filling the whole frame, evenly lit, no perspective, tileable." },
+        { "id": "tex_plaster", "aspect": "1:1", "slot": "material fill", "prompt": "Flat-on macro of old whitewashed lime plaster, hairline cracks, chalky bloom, faint ochre stain. Filling the whole frame, evenly lit, tileable." },
+        { "id": "tex_oak", "aspect": "1:1", "slot": "material fill", "prompt": "Flat-on macro of weathered oak plank, deep grain, old iron nail head, silvered surface. Filling the whole frame, evenly lit, tileable." },
+        { "id": "tex_beeswax", "aspect": "1:1", "slot": "material fill", "prompt": "Flat-on macro of a bed of fine sand with beeswax drips and candle stubs pressed into it. Filling the whole frame, evenly lit." },
+        { "id": "tex_gesso_gold", "aspect": "1:1", "slot": "material fill — R2 Deesis ground", "prompt": "Flat-on macro of an old gilded icon panel where the gold leaf has worn through to the red-brown clay ground beneath. Craquelure, burnished patches, matte and bright areas. Filling the whole frame." }
+      ]
+    },
+    {
+      "pass": "P3_MESH",
+      "purpose": "Volume. Feed each mesh the matching ortho plate from P1. Untextured — the site lights them with its own palette.",
+      "node": "Tripo: Image to Model (v3.1, no texture)",
+      "unit_cost": 42.2,
+      "count": 6,
+      "subtotal": 253.2,
+      "items": [
+        { "id": "mesh_portal", "input": "ortho_portal", "use": "R1 hero — the 3d/2d transition object. 'isi deschide portile' is literal: the camera passes through it." },
+        { "id": "mesh_church_treime", "input": "ortho_church_treime", "use": "R1 — rotatable on the about/history axis" },
+        { "id": "mesh_belltower", "input": "ortho_belltower", "use": "R3 — marks the hours beside the schedule" },
+        { "id": "mesh_candlestand", "input": "ortho_candlestand", "use": "votive rail head — sits at the top of the calendar strip" },
+        { "id": "mesh_cross_stone", "input": "ortho_cross_stone", "use": "R5 foundation course / 404" },
+        { "id": "mesh_threshold", "input": "ortho_threshold", "use": "R2 Royal Doors — the pomelnic step you cross" }
+      ]
+    },
+    {
+      "pass": "P4_MESH_PREMIUM",
+      "purpose": "Only the two objects the visitor actually looks at closely. Textured, higher fidelity.",
+      "node": "Tripo: Image to Model (P1, textured)",
+      "unit_cost": 105.5,
+      "count": 2,
+      "subtotal": 211.0,
+      "items": [
+        { "id": "mesh_portal_hero", "input": "ortho_portal", "use": "the hero object, replaces mesh_portal if the geometry reads well" },
+        { "id": "mesh_candlestand_hero", "input": "ortho_candlestand", "use": "votive rail, close range, wax and brass need texture" }
+      ]
+    },
+    {
+      "pass": "P5_TYPE_SPECIMENS",
+      "purpose": "DRAWING REFERENCE ONLY. Never shipped. Qwen renders Romanian diacritics, so we use it to explore archaic letterforms which you then vectorise by hand. Comment #9: Zamolxis / arhaic romanesc.",
+      "node": "Qwen Image 3 Text to Image",
+      "settings": { "resolution": "2K", "tier": "Pro" },
+      "unit_cost": 22.63,
+      "count": 6,
+      "subtotal": 135.78,
+      "shared_suffix": "Black ink on aged cream paper, flat scan, dead-on, no perspective, no shadow, no ornament around the letters. The letterforms fill the frame. Crisp edges.",
+      "items": [
+        { "id": "spec_uncial_caps", "prompt": "A type specimen sheet. Large Romanian Cyrillic-influenced uncial capitals, hand-cut with a broad nib, showing: A B C D E F G I L M N O P R S T U V Z and the diacritics A-breve, A-circumflex, I-circumflex, S-comma, T-comma. Heavy vertical stress, sharp wedge serifs." },
+        { "id": "spec_uncial_lower", "prompt": "A type specimen sheet. Lowercase companion to a Romanian archaic uncial, broad-nib, showing a b c d e f g i l m n o p r s t u v z plus a-breve, a-circumflex, i-circumflex, s-comma, t-comma. Short ascenders, heavy vertical stress." },
+        { "id": "spec_word_saharna", "prompt": "The single word SAHARNA set very large in archaic Romanian uncial capitals, broad-nib carved letterforms, filling the frame." },
+        { "id": "spec_phrase_porti", "prompt": "The Romanian phrase ISI DESCHIDE PORTILE set in two lines of archaic Romanian uncial capitals, filling the frame." },
+        { "id": "spec_manastirea", "prompt": "The Romanian words MANASTIREA SAHARNA set in two lines of archaic uncial capitals with correct Romanian diacritics: A-breve in MANASTIREA. Broad-nib carved letterforms." },
+        { "id": "spec_carved_stone", "prompt": "Romanian uncial capital letters chiselled into a limestone slab, V-cut incision, raking light showing the depth of the cut. The word SAHARNA." }
+      ]
+    }
+  ],
+  "run_order": ["P1_ORTHO_PLATES", "P3_MESH", "P2_SITE_PLATES", "P5_TYPE_SPECIMENS", "P4_MESH_PREMIUM"],
+  "run_order_reason": "P1 first because P3 cannot start without it. P4 last because it is the only pass worth skipping if the P3 geometry already reads.",
+  "totals": { "P1": 181.04, "P2": 226.3, "P3": 253.2, "P4": 211.0, "P5": 135.78, "sum": 1007.32 },
+  "note": "Sum is 1007 of 6252. That is deliberate: this is one full pass of the temple. Reserve ~5200 for reruns, seed variation, and the second pass once you have assembled and seen what actually fails."
+}

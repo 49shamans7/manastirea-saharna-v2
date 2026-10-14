@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="312" height="312" viewBox="0 0 312 312">
+<title>Greek cross pattée - flared terminals</title>
+<g fill="#1a1208">
+ <path d="M132 24 h48 v84 h84 v48 h-84 v84 h-48 v-84 h-84 v-48 h84 z"/>
+ <path d="M120 12 h72 l-12 24 h-48 z"/><path d="M120 300 h72 l-12 -24 h-48 z"/>
+ <path d="M12 120 v72 l24 -12 v-48 z"/><path d="M300 120 v72 l-24 -12 v-48 z"/>
+</g>
+</svg>

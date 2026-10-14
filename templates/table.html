@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Table template — Programul slujbelor · Contacte · Donații</title>
+<style>
+/* ═══════════════════════════════════════════════════════════════════
+   TEMPLATE C · TABLE
+   Zone IV · River. Practical information, arrival, departure.
+   Bright, flat, dense. No photography ground, no parallax, no theatre.
+   The one page that must work at 3G on a phone in a car park.
+   ═══════════════════════════════════════════════════════════════════ */
+:root{
+  --river-deep:#2B4B58; --river:#649FBD; --river-pale:#BDD5DC; --river-mist:#DCE9ED;
+  --paper:#EEF4F6; --card:#FFFFFF;
+  --ink:#0F1F27; --ink-soft:#3D5560; --ink-faint:#6E8894;
+  --edge:#C2D6DD; --ochre:#8F6938;
+  --rail-r:230px;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:Georgia,"Times New Roman",serif; line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--river-deep)}
+
+/* ── the horizon: the only atmosphere allowed here. one thin band. ── */
+.horizon{height:14vh;min-height:110px;
+  background:linear-gradient(to bottom,var(--river-deep),var(--river) 55%,var(--river-pale));
+  position:relative;display:flex;align-items:flex-end}
+.horizon .bar{width:100%;padding:0 5vw 20px;display:flex;align-items:center;
+  justify-content:space-between;gap:20px}
+.horizon a.home{display:flex;align-items:center;gap:12px;color:#fff;
+  text-decoration:none;font-size:11px;letter-spacing:.3em;text-transform:uppercase}
+.horizon .seal{width:30px;height:30px;border:1px solid rgba(255,255,255,.75);
+  border-radius:50%;display:grid;place-items:center;flex:0 0 auto}
+.horizon .seal svg{width:15px;height:15px}
+.horizon .lang{font-size:10px;letter-spacing:.3em;text-transform:uppercase}
+.horizon .lang a{color:rgba(255,255,255,.7);text-decoration:none;margin-left:12px}
+.horizon .lang a[aria-current]{color:#fff}
+
+/* ── layout: content + calendar rail. no descent rail — you have arrived. ── */
+.frame{display:grid;grid-template-columns:minmax(0,1fr) var(--rail-r);
+  max-width:1240px;margin:0 auto;padding:0 5vw}
+main{padding:7vh 0 12vh;min-width:0}
+
+header.page{margin-bottom:5vh}
+header.page .zone{margin:0;font-size:10px;letter-spacing:.44em;text-transform:uppercase;
+  color:var(--ochre)}
+header.page h1{margin:14px 0 0;font-size:clamp(28px,3.6vw,46px);line-height:1.1;
+  letter-spacing:.03em;text-transform:uppercase}
+header.page .sub{margin:14px 0 0;color:var(--ink-soft);max-width:46ch}
+.rule{height:2px;width:60px;background:var(--ochre);margin:26px 0 0}
+
+section.block{margin-bottom:6vh}
+section.block > h2{
+  margin:0 0 18px;font-size:11px;letter-spacing:.4em;text-transform:uppercase;
+  color:var(--ink-faint);font-weight:400}
+
+/* ── the schedule: a real table. hours are the content. ── */
+.ph{display:inline-block;padding:2px 10px;border:1px dashed var(--ochre);
+  color:var(--ochre);font-size:13px;opacity:.9}
+table.hours{width:100%;border-collapse:collapse;background:var(--card);
+  border:1px solid var(--edge)}
+table.hours caption{caption-side:top;text-align:left;padding:16px 20px 0;
+  font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-faint)}
+table.hours th,table.hours td{padding:15px 20px;text-align:left;
+  border-top:1px solid var(--edge);font-size:16px}
+table.hours thead th{border-top:none;font-size:10px;letter-spacing:.28em;
+  text-transform:uppercase;color:var(--ink-faint);font-weight:400}
+table.hours td.time{text-align:right;font-variant-numeric:tabular-nums;
+  white-space:nowrap;font-size:18px}
+table.hours tr.today{background:#FFF9E8}
+table.hours tr.today td:first-child::before{
+  content:"▸";color:var(--ochre);margin-right:8px}
+table.hours tr.feast td:first-child{color:var(--ochre)}
+
+/* ── contact rows: every one a tap target ── */
+ul.rows{list-style:none;margin:0;padding:0;background:var(--card);
+  border:1px solid var(--edge)}
+ul.rows li + li{border-top:1px solid var(--edge)}
+ul.rows a,ul.rows .static{
+  display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+  padding:18px 20px;text-decoration:none;color:var(--ink);min-height:56px;
+  transition:background .2s ease}
+ul.rows a:hover{background:var(--river-mist)}
+ul.rows .label{font-size:10px;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--ink-faint);flex:0 0 auto}
+ul.rows .value{text-align:right;font-size:17px}
+
+/* ── bank details: an IBAN you can copy without squinting ── */
+dl.bank{margin:0;background:var(--card);border:1px solid var(--edge)}
+dl.bank div{display:flex;justify-content:space-between;gap:16px;padding:15px 20px;
+  border-top:1px solid var(--edge)}
+dl.bank div:first-child{border-top:none}
+dl.bank dt{margin:0;font-size:10px;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--ink-faint);flex:0 0 auto}
+dl.bank dd{margin:0;text-align:right;font-size:16px;word-break:break-all}
+dl.bank dd.iban{font-variant-numeric:tabular-nums;letter-spacing:.04em}
+button.copy{margin-left:12px;font:inherit;font-size:10px;letter-spacing:.2em;
+  text-transform:uppercase;padding:6px 12px;background:none;color:var(--river-deep);
+  border:1px solid var(--edge);cursor:pointer}
+button.copy:hover{background:var(--river-mist)}
+button.copy[data-done]{color:var(--ochre);border-color:var(--ochre)}
+
+/* ── map: a real link, plus a static frame. never the only route. ── */
+.map{border:1px solid var(--edge);background:var(--river-mist);aspect-ratio:16/7;
+  display:grid;place-items:center;text-align:center;color:var(--ink-soft);font-size:13px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+.actions a{
+  display:inline-block;padding:15px 26px;border:1px solid var(--river-deep);
+  color:var(--river-deep);text-decoration:none;font-size:11px;letter-spacing:.26em;
+  text-transform:uppercase;transition:background .25s ease,color .25s ease}
+.actions a:hover{background:var(--river-deep);color:#fff}
+.actions a.primary{background:var(--river-deep);color:#fff}
+.actions a.primary:hover{background:var(--ink)}
+
+/* ── right rail: the calendar. most useful of all next to a schedule. ── */
+aside.rail{border-left:1px solid var(--edge);padding:7vh 0 0 26px;margin-left:26px;
+  position:sticky;top:0;align-self:start}
+aside.rail h3{margin:0 0 16px;font-size:9px;letter-spacing:.4em;text-transform:uppercase;
+  color:var(--ochre);font-weight:400}
+aside.rail .day{font-size:34px;line-height:1}
+aside.rail .month{font-size:9px;letter-spacing:.32em;text-transform:uppercase;
+  color:var(--ink-faint);margin-bottom:18px}
+aside.rail .saint{font-size:13px;line-height:1.65;color:var(--ink-soft)}
+aside.rail .src{margin-top:22px;font-size:8px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--ink-faint)}
+
+footer{border-top:1px solid var(--edge);padding:6vh 5vw;text-align:center;
+  font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-faint)}
+.note{position:fixed;left:14px;bottom:12px;font-size:10px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ink-faint);opacity:.7}
+
+@media (max-width:860px){
+  .frame{grid-template-columns:1fr}
+  aside.rail{border-left:none;border-top:1px solid var(--edge);
+    margin:0;padding:34px 0 0;position:static}
+  ul.rows a,ul.rows .static,dl.bank div{flex-direction:column;align-items:flex-start;gap:6px}
+  ul.rows .value,dl.bank dd{text-align:left}
+  .note{display:none}
+}
+
+/* ── print: someone will print the schedule and pin it up ── */
+@media print{
+  .horizon,aside.rail,.actions,.note,footer,button.copy{display:none}
+  body{background:#fff;color:#000;font-size:12pt}
+  .frame{display:block;max-width:none;padding:0}
+  table.hours,ul.rows,dl.bank{border-color:#999}
+  tr.today{background:none}
+}
+</style>
+</head>
+<body>
+
+<div class="horizon">
+  <div class="bar">
+    <a class="home" href="../slice/index.html">
+      <span class="seal">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#fff">
+          <rect x="10.5" y="3" width="3" height="18"/><rect x="6" y="8" width="12" height="2.6"/>
+          <rect x="8.5" y="4.5" width="7" height="1.8"/>
+        </svg>
+      </span>
+      Mănăstirea Saharna
+    </a>
+    <span class="lang"><a href="#" aria-current="true">RO</a><a href="#">RU</a><a href="#">EN</a></span>
+  </div>
+</div>
+
+<div class="frame">
+<main>
+
+  <header class="page">
+    <p class="zone">Zona IV · Nistru</p>
+    <h1>Programul slujbelor</h1>
+    <p class="sub">Sfânta Mănăstire Saharna, malul drept al Nistrului, raionul Rezina.
+       Slujbele se țin zilnic. <span class="ph">[ program real — de preluat de la mănăstire ]</span></p>
+    <div class="rule"></div>
+  </header>
+
+  <section class="block">
+    <h2>Săptămâna curentă</h2>
+    <table class="hours">
+      <caption>25 – 31 august 2026</caption>
+      <thead><tr><th>Ziua</th><th>Slujba</th><th class="time">Ora</th></tr></thead>
+      <tbody>
+        <tr class="today"><td>Luni 25</td><td>Sfânta Liturghie</td><td class="time">08:00</td></tr>
+        <tr class="today"><td>Luni 25</td><td>Vecernia</td><td class="time">18:00</td></tr>
+        <tr><td>Marți 26</td><td>Sfânta Liturghie</td><td class="time">08:00</td></tr>
+        <tr><td>Miercuri 27</td><td>Acatist</td><td class="time">12:00</td></tr>
+        <tr><td>Joi 28</td><td>Sfânta Liturghie</td><td class="time">08:00</td></tr>
+        <tr><td>Vineri 29</td><td>Vecernia</td><td class="time">18:00</td></tr>
+        <tr class="feast"><td>Sâmbătă 30</td><td>Privegherea</td><td class="time">17:00</td></tr>
+        <tr class="feast"><td>Duminică 31</td><td>Sfânta Liturghie · hram</td><td class="time">08:30</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="block">
+    <h2>Contacte</h2>
+    <ul class="rows">
+      <li><a href="tel:+37369929280"><span class="label">Telefon</span>
+        <span class="value">+373 69 929 280</span></a></li>
+      <li><a href="mailto:office@manastireasaharna.md"><span class="label">Email</span>
+        <span class="value">office@manastireasaharna.md</span></a></li>
+      <li><div class="static"><span class="label">Adresa</span>
+        <span class="value">s. Saharna, MD 5431<br>r-nul Rezina, Republica Moldova</span></div></li>
+      <li><div class="static"><span class="label">Ore vizite</span>
+        <span class="value">Zilnic 08:00 – 20:00</span></div></li>
+      <li><div class="static"><span class="label">Casa de oaspeți</span>
+        <span class="value">Informații 20:00 – 21:00<br>ora locală</span></div></li>
+    </ul>
+  </section>
+
+  <section class="block">
+    <h2>Cum de ajuns</h2>
+    <div class="map">Hartă · Saharna, raionul Rezina</div>
+    <ul class="rows" style="margin-top:18px">
+      <li><div class="static"><span class="label">Din Chișinău</span>
+        <span class="value">Gara de Nord, ruta 12:00 Chișinău – Saharna,<br>
+        sau orice autocar spre or. Rezina</span></div></li>
+      <li><div class="static"><span class="label">Din Rezina</span>
+        <span class="value">Maxi-taxi spre s. Saharna,<br>
+        05:30 – 17:00, la fiecare oră fixă</span></div></li>
+    </ul>
+    <div class="actions">
+      <a class="primary" href="https://www.google.com/maps/search/?api=1&query=M%C4%83n%C4%83stirea+Saharna"
+         target="_blank" rel="noopener">Deschide în hartă</a>
+      <a href="#">Traseu de la Chișinău</a>
+      <a href="#">Casa de oaspeți</a>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Donații</h2>
+    <dl class="bank">
+      <div><dt>Beneficiar</dt><dd>Mănăstirea Saharna</dd></div>
+      <div><dt>Banca</dt><dd>—</dd></div>
+      <div><dt>Cod fiscal</dt><dd>—</dd></div>
+      <div><dt>IBAN</dt>
+        <dd class="iban">MD00 XX00 0000 0000 0000 0000
+          <button class="copy" data-copy="MD00XX000000000000000000">Copiază</button></dd></div>
+    </dl>
+    <div class="actions">
+      <a href="#">Trimite un pomelnic</a>
+    </div>
+  </section>
+
+</main>
+
+<aside class="rail" aria-label="Calendar liturgic">
+  <h3>Calendar liturgic</h3>
+  <div class="day">25</div>
+  <div class="month">August 2026</div>
+  <p class="saint">Sfântul Ierarh Nifon, patriarhul Constantinopolului și
+     mitropolit al Țării Românești.</p>
+  <p class="src">calendar.ortodox.md</p>
+</aside>
+</div>
+
+<footer>Mănăstirea Saharna · Comoara duhovnicească de pe țărmul Nistrului</footer>
+<p class="note">template · table · zone IV, flat, print-ready</p>
+
+<script>
+document.querySelectorAll('button.copy').forEach(b=>{
+  b.addEventListener('click',async()=>{
+    try{ await navigator.clipboard.writeText(b.dataset.copy);
+      const t=b.textContent; b.textContent='Copiat'; b.dataset.done='1';
+      setTimeout(()=>{b.textContent=t;delete b.dataset.done;},1800);
+    }catch(e){ /* clipboard blocked — the number is on screen anyway */ }
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="198" height="1024" viewBox="0 0 198 1024">
+  <title>Votive rail — right edge, 1 column + margin, sticky full height</title>
+  <rect width="198" height="1024" fill="#e9e1d1"/>
+  <line x1="0" y1="0" x2="0" y2="1024" stroke="#c4a24a" stroke-width="3"/>
+  <!-- candle slots on the 78px field rhythm -->
+  <g stroke="#c4a24a" stroke-width="1" opacity="0.5">
+    <line x1="24" y1="102" x2="174" y2="102"/>
+    <line x1="24" y1="204" x2="174" y2="204"/>
+    <line x1="24" y1="306" x2="174" y2="306"/>
+    <line x1="24" y1="408" x2="174" y2="408"/>
+    <line x1="24" y1="510" x2="174" y2="510"/>
+    <line x1="24" y1="612" x2="174" y2="612"/>
+  </g>
+  <g font-family="Georgia,serif" fill="#807566" font-size="12" letter-spacing="3">
+    <text x="24" y="48" transform="rotate(90 24 48)">CALENDAR LITURGIC</text>
+  </g>
+  <!-- flame mark: the only live element on the page -->
+  <ellipse cx="99" cy="960" rx="9" ry="17" fill="#c4a24a"/>
+  <rect x="94" y="972" width="10" height="40" fill="#f4efe4" stroke="#807566" stroke-width="1"/>
+</svg>

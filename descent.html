@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="ro">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mănăstirea Saharna — coborârea</title>
+<style>
+/* ─────────────────────────────────────────────────────────────────
+   TOKENS — measured, not chosen.
+   Palettes from design/extracted/_palette_measured.json
+   Scale from temple/TYPOGRAPHY.md · grid from ARCHITECTURE.md
+   ───────────────────────────────────────────────────────────────── */
+:root{
+  /* I · ROCK — cold grey-lilac limestone. movement: down */
+  --rock-deep:#2A2C29; --rock:#767A86; --rock-lit:#8E9193; --rock-pale:#B0B9D1;
+  /* II · GREEN — gorge greens, ochre buildings inside */
+  --green-deep:#263727; --green:#2E4328; --green-mid:#4B6136; --green-lit:#6F8A73;
+  /* III · GOLD & PALL — black cloth, thread gold, flowers */
+  --pall:#1D1C22; --gold:#C0A974; --wine:#663037; --flower:#BD639A;
+  /* IV · RIVER — the only wide horizon on the site */
+  --river-deep:#61929E; --river:#649FBD; --river-pale:#BDD5DC;
+
+  --ink:#1a1208; --parchment:#f4efe4; --ochre:#c4a24a;
+
+  /* grid: 12 col · 78 field · 24 gutter · 120 margin = 1440 */
+  --field:78px; --gutter:24px; --margin:120px; --register:384px;
+  --measure:34rem;
+
+  /* scale: Georgia, ratio 1.25, snapped to the 78px field */
+  --t-stratum: clamp(26px, 4.4vw, 62px);
+  --t-h1:      clamp(28px, 3.6vw, 52px);
+  --t-lead:    20px;
+  --t-body:    17px;
+  --t-quote:   19px;
+  --t-label:   11px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--rock-deep); color:var(--parchment);
+  font:400 var(--t-body)/1.8 Georgia,"Iowan Old Style",serif;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+.wrap{max-width:1440px;margin:0 auto;padding:0 clamp(20px,7vw,var(--margin))}
+
+/* a stratum is a register. unequal heights — the descent is not metronomic. */
+.stratum{position:relative;isolation:isolate;overflow:hidden}
+.stratum > .wrap{position:relative;z-index:2}
+
+.label{
+  font-size:var(--t-label); letter-spacing:.42em; text-transform:uppercase;
+  color:var(--ochre); display:flex; align-items:center; gap:14px;
+}
+.label::after{content:"";height:1px;flex:1;background:currentColor;opacity:.35}
+.stratum-title{
+  font-size:var(--t-stratum); letter-spacing:.05em; text-transform:uppercase;
+  font-weight:400; line-height:1.06; margin:.5em 0 .35em;
+}
+.lead{font-size:var(--t-lead);line-height:1.72;max-width:var(--measure);opacity:.9}
+.body{max-width:var(--measure);opacity:.82;margin-top:1.1em}
+.rule{width:100%;height:24px;display:block}
+
+/* ── I · ROCK ── the descent begins. things that were here before building. */
+#rock{
+  min-height:100vh; display:flex; align-items:flex-end;
+  padding-bottom:calc(var(--register)/3);
+  background:
+    radial-gradient(120% 80% at 50% -10%, #3b3e46 0%, transparent 60%),
+    linear-gradient(180deg,#2A2C29 0%, #3a3d45 45%, #4a4e58 100%);
+}
+/* the cave mouth: a void the eye falls into, off the golden axis */
+#rock::before{
+  content:"";position:absolute;z-index:1;left:50%;top:6vh;
+  width:min(58vw,780px);aspect-ratio:1/1.35;transform:translateX(-52%);
+  background:radial-gradient(60% 62% at 50% 42%,#0c0d10 0%,#14161a 46%,transparent 72%);
+  filter:blur(2px);
+}
+/* strata lines — the wall of the descent */
+#rock::after{
+  content:"";position:absolute;inset:0;z-index:0;opacity:.22;
+  background:repeating-linear-gradient(178deg,
+    transparent 0 46px,#0e0f12 46px 48px,transparent 48px 96px);
+}
+.hero-title{font-size:clamp(34px,6.6vw,96px);letter-spacing:.06em;line-height:.98}
+.hero-sub{margin-top:1.4em;max-width:30rem;opacity:.78;font-size:var(--t-lead)}
+
+/* ── II · GREEN ── the living monastery. strata widen. */
+#green{
+  padding:calc(var(--register)/2.2) 0;
+  background:linear-gradient(180deg,#4a4e58 0%,var(--green-deep) 22%,var(--green) 60%,#22331f 100%);
+}
+.hours{
+  margin-top:2.6rem;border-top:1px solid rgba(196,162,74,.28);
+  display:grid;grid-template-columns:120px 1fr auto;
+}
+.hours div{
+  padding:14px 0;border-bottom:1px solid rgba(196,162,74,.14);
+  font-variant-numeric:tabular-nums;
+}
+.hours .t{color:var(--ochre);letter-spacing:.06em}
+.hours .n{opacity:.86}
+.hours .d{opacity:.5;font-size:14px;text-align:right}
+
+/* ── III · GOLD & PALL ── the shrine. you do not pass through. you stop. */
+#gold{
+  padding:calc(var(--register)/2) 0;
+  background:var(--pall);
+  border-top:1px solid rgba(192,169,116,.3);
+  border-bottom:1px solid rgba(192,169,116,.3);
+}
+/* the door is the zone. offset from the axis, in the wall of the descent. */
+.door{
+  position:relative;display:grid;
+  grid-template-columns:minmax(0,1fr) min(38vw,420px);
+  gap:clamp(24px,5vw,72px);align-items:center;
+}
+.door-panel{
+  position:relative;aspect-ratio:1/1.62;border:1px solid rgba(192,169,116,.45);
+  background:
+    radial-gradient(70% 50% at 50% 30%, rgba(192,169,116,.20), transparent 70%),
+    linear-gradient(180deg,#241f26,#15131a);
+  display:grid;place-items:center;
+}
+.door-panel::after{
+  content:"";position:absolute;inset:10px;border:1px solid rgba(192,169,116,.22);
+}
+.door-panel svg{width:44%;height:auto;opacity:.92}
+.door-panel svg *{fill:var(--gold);stroke:var(--gold)}
+.gold-measure{max-width:30rem}    /* narrower prayer measure in the shrine */
+blockquote{
+  font-size:var(--t-quote);line-height:1.6;font-style:italic;
+  border-left:2px solid var(--ochre);padding-left:22px;margin:1.6em 0;opacity:.9;
+}
+/* stillness — nothing moves in a gold chamber except the flowers */
+.flower{width:7px;height:7px;border-radius:50%;background:var(--flower);
+  position:absolute;opacity:.85;animation:drift 9s ease-in-out infinite}
+@keyframes drift{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+
+/* ── IV · RIVER ── the only wide horizon. movement stops being down. */
+#river{
+  padding:calc(var(--register)/2.4) 0 calc(var(--register)/3);
+  background:linear-gradient(180deg,var(--pall) 0%,#2c4650 34%,var(--river-deep) 78%,var(--river) 100%);
+}
+.horizon{
+  margin-top:2.4rem;height:1px;width:100%;
+  background:linear-gradient(90deg,transparent,var(--river-pale),transparent);
+}
+.marks{display:flex;gap:clamp(18px,4vw,54px);margin-top:2.6rem;flex-wrap:wrap}
+.marks svg{width:44px;height:44px;opacity:.72}
+.marks svg *{fill:var(--river-pale);stroke:var(--river-pale)}
+
+footer{background:#0f1418;padding:48px 0;font-size:14px;opacity:.6}
+@media(max-width:820px){ .door{grid-template-columns:1fr} .hours{grid-template-columns:88px 1fr} .hours .d{display:none} }
+@media(prefers-reduced-motion:reduce){ .flower{animation:none} }
+</style>
+
+<!-- ══ I · ROCK ══ origin, silence, subtraction. movement: down ══ -->
+<section class="stratum" id="rock">
+  <div class="wrap">
+    <p class="label">I · Stânca &nbsp;·&nbsp; 1776</p>
+    <h1 class="hero-title">MĂNĂSTIREA<br>SAHARNA</h1>
+    <p class="hero-sub">Comoara duhovnicească de pe malul Nistrului.
+      Peștera dinaintea zidirii, schitul din stâncă, coborârea către apă.</p>
+    <svg class="rule" viewBox="0 0 1200 24" style="margin-top:3rem" aria-hidden="true">
+      <line x1="0" y1="12" x2="1200" y2="12" stroke="#c4a24a" stroke-width="2"/>
+      <rect x="0" y="4" width="3" height="16" fill="#c4a24a"/>
+      <rect x="1197" y="4" width="3" height="16" fill="#c4a24a"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ══ II · GREEN ══ the living monastery. on a rhythm. ══ -->
+<section class="stratum" id="green">
+  <div class="wrap">
+    <p class="label">II · Mănăstirea vie</p>
+    <h2 class="stratum-title">Obștea și ceasurile</h2>
+    <p class="lead">Ce se întâmplă acum, pe un ritm care nu s-a schimbat.
+      Stratul cu cel mai mult conținut și cea mai multă mișcare.</p>
+    <div class="hours">
+      <div class="t">06:00</div><div class="n">Utrenia</div><div class="d">zilnic</div>
+      <div class="t">08:30</div><div class="n">Sfânta Liturghie</div><div class="d">zilnic</div>
+      <div class="t">17:00</div><div class="n">Vecernia</div><div class="d">zilnic</div>
+      <div class="t">—</div><div class="n">Acatistul Cuviosului Macarie</div><div class="d">joi</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ III · GOLD & PALL ══ the hinge. the door IS the zone. you stop. ══ -->
+<section class="stratum" id="gold">
+  <div class="wrap door">
+    <div class="gold-measure">
+      <p class="label">III · Racla</p>
+      <h2 class="stratum-title">Cuviosul Macarie</h2>
+      <blockquote>Alesule, de minuni făcătorule şi prea minunate plăcutule al lui
+        Hristos, grabnice ajutătorule şi rugătorule…</blockquote>
+      <p class="body">Aici coborârea îşi pune singura întrebare: mai adânc în jos,
+        sau mai adânc înăuntru.</p>
+    </div>
+    <div class="door-panel">
+      <span class="flower" style="left:18%;top:24%"></span>
+      <span class="flower" style="left:74%;top:66%;animation-delay:-3s"></span>
+      <span class="flower" style="left:36%;top:81%;animation-delay:-6s"></span>
+      <svg viewBox="0 0 312 624" aria-hidden="true">
+        <rect x="132" y="24" width="48" height="576"/>
+        <rect x="84" y="96" width="144" height="34"/>
+        <rect x="36" y="216" width="240" height="44"/>
+        <rect x="84" y="420" width="144" height="30" transform="rotate(-14 156 435)"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ══ IV · RIVER ══ the wide horizon. down finally stops. ══ -->
+<section class="stratum" id="river">
+  <div class="wrap">
+    <p class="label">IV · Nistru</p>
+    <h2 class="stratum-title">Malul</h2>
+    <p class="lead">Singurul orizont larg de pe acest sit. Coborârea se opreşte la apă.</p>
+    <div class="horizon"></div>
+    <div class="marks" aria-hidden="true">
+      <svg viewBox="0 0 312 312"><g fill="none" stroke-width="10">
+        <path d="M48 288 V144 a108 108 0 0 1 216 0 V288"/><line x1="24" y1="288" x2="288" y2="288"/></g></svg>
+      <svg viewBox="0 0 312 312"><g><rect x="153" y="12" width="6" height="60"/>
+        <path d="M96 72 h120 l-18 96 a48 48 0 0 1 -84 0 z"/>
+        <path d="M156 186 c-14 18 -22 30 -22 42 a22 22 0 0 0 44 0 c0 -12 -8 -24 -22 -42 z"/></g></svg>
+      <svg viewBox="0 0 384 96"><g fill="none" stroke-width="8">
+        <path d="M0 12 h72 v48 h-48 v-24 h24 M96 12 h72 v48 h-48 v-24 h24 M192 12 h72 v48 h-48 v-24 h24"/></g></svg>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">Mănăstirea Saharna · Rezina, Republica Moldova</div></footer>
+</html>

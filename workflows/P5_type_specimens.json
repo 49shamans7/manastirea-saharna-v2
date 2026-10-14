@@ -1,0 +1,785 @@
+{
+ "id": "P5_type_specimens",
+ "revision": 0,
+ "last_node_id": 13,
+ "last_link_id": 13,
+ "nodes": [
+  {
+   "id": 1,
+   "type": "QwenImageTextToImageApi",
+   "pos": [
+    40,
+    40
+   ],
+   "size": [
+    400,
+    380
+   ],
+   "flags": {},
+   "order": 1,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model.prompt",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "model.prompt"
+     }
+    },
+    {
+     "name": "model.negative_prompt",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "model.negative_prompt"
+     }
+    },
+    {
+     "name": "model.width",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "model.width"
+     }
+    },
+    {
+     "name": "model.height",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "model.height"
+     }
+    },
+    {
+     "name": "n",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "n"
+     }
+    },
+    {
+     "name": "seed",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "seed"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      1
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "QwenImageTextToImageApi"
+   },
+   "widgets_values": [
+    "qwen-image-3.0-pro",
+    "A type specimen sheet. Large Romanian archaic uncial capitals, hand-cut with a broad nib, showing A B C D E F G I L M N O P R S T U V Z and the diacritics A-breve, A-circumflex, I-circumflex, S-comma, T-comma. Heavy vertical stress, sharp wedge serifs. Black ink on aged cream paper, flat scan, dead-on, no perspective, no shadow, no ornament around the letters. The letterforms fill the frame. Crisp edges.",
+    "saturated colors, HDR, golden hour glare, blue sky, lens flare, bokeh, tilted horizon, fisheye, people, tourists, cars, modern signage, text, watermark, logo, oversharpened, plastic, CGI render, neon, onion domes of Russian style, gilded roofs, baroque excess",
+    1856,
+    1392,
+    1,
+    1976,
+    "fixed",
+    false,
+    false
+   ]
+  },
+  {
+   "id": 2,
+   "type": "SaveImage",
+   "pos": [
+    500,
+    40
+   ],
+   "size": [
+    400,
+    380
+   ],
+   "flags": {},
+   "order": 2,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 1
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "saharna/spec_uncial_caps"
+   ]
+  },
+  {
+   "id": 3,
+   "type": "QwenImageTextToImageApi",
+   "pos": [
+    40,
+    500
+   ],
+   "size": [
+    400,
+    380
+   ],
+   "flags": {},
+   "order": 3,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model.prompt",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "model.prompt"
+     }
+    },
+    {
+     "name": "model.negative_prompt",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "model.negative_prompt"
+     }
+    },
+    {
+     "name": "model.width",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "model.width"
+     }
+    },
+    {
+     "name": "model.height",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "model.height"
+     }
+    },
+    {
+     "name": "n",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "n"
+     }
+    },
+    {
+     "name": "seed",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "seed"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      3
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "QwenImageTextToImageApi"
+   },
+   "widgets_values": [
+    "qwen-image-3.0-pro",
+    "A type specimen sheet. Lowercase companion to a Romanian archaic uncial, broad nib, showing a b c d e f g i l m n o p r s t u v z and a-breve, a-circumflex, i-circumflex, s-comma, t-comma. Short ascenders, heavy vertical stress. Black ink on aged cream paper, flat scan, dead-on, no perspective, no shadow, no ornament around the letters. The letterforms fill the frame. Crisp edges.",
+    "saturated colors, HDR, golden hour glare, blue sky, lens flare, bokeh, tilted horizon, fisheye, people, tourists, cars, modern signage, text, watermark, logo, oversharpened, plastic, CGI render, neon, onion domes of Russian style, gilded roofs, baroque excess",
+    1856,
+    1392,
+    1,
+    1977,
+    "fixed",
+    false,
+    false
+   ]
+  },
+  {
+   "id": 4,
+   "type": "SaveImage",
+   "pos": [
+    500,
+    500
+   ],
+   "size": [
+    400,
+    380
+   ],
+   "flags": {},
+   "order": 4,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 3
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "saharna/spec_uncial_lower"
+   ]
+  },
+  {
+   "id": 5,
+   "type": "QwenImageTextToImageApi",
+   "pos": [
+    40,
+    960
+   ],
+   "size": [
+    400,
+    380
+   ],
+   "flags": {},
+   "order": 5,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model.prompt",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "model.prompt"
+     }
+    },
+    {
+     "name": "model.negative_prompt",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "model.negative_prompt"
+     }
+    },
+    {
+     "name": "model.width",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "model.width"
+     }
+    },
+    {
+     "name": "model.height",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "model.height"
+     }
+    },
+    {
+     "name": "n",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "n"
+     }
+    },
+    {
+     "name": "seed",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "seed"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      5
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "QwenImageTextToImageApi"
+   },
+   "widgets_values": [
+    "qwen-image-3.0-pro",
+    "The single word SAHARNA set very large in archaic Romanian uncial capitals, broad-nib carved letterforms, filling the frame. Black ink on aged cream paper, flat scan, dead-on, no perspective, no shadow, no ornament around the letters. The letterforms fill the frame. Crisp edges.",
+    "saturated colors, HDR, golden hour glare, blue sky, lens flare, bokeh, tilted horizon, fisheye, people, tourists, cars, modern signage, text, watermark, logo, oversharpened, plastic, CGI render, neon, onion domes of Russian style, gilded roofs, baroque excess",
+    1856,
+    1392,
+    1,
+    1978,
+    "fixed",
+    false,
+    false
+   ]
+  },
+  {
+   "id": 6,
+   "type": "SaveImage",
+   "pos": [
+    500,
+    960
+   ],
+   "size": [
+    400,
+    380
+   ],
+   "flags": {},
+   "order": 6,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 5
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "saharna/spec_word_saharna"
+   ]
+  },
+  {
+   "id": 7,
+   "type": "QwenImageTextToImageApi",
+   "pos": [
+    40,
+    1420
+   ],
+   "size": [
+    400,
+    380
+   ],
+   "flags": {},
+   "order": 7,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model.prompt",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "model.prompt"
+     }
+    },
+    {
+     "name": "model.negative_prompt",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "model.negative_prompt"
+     }
+    },
+    {
+     "name": "model.width",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "model.width"
+     }
+    },
+    {
+     "name": "model.height",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "model.height"
+     }
+    },
+    {
+     "name": "n",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "n"
+     }
+    },
+    {
+     "name": "seed",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "seed"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      7
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "QwenImageTextToImageApi"
+   },
+   "widgets_values": [
+    "qwen-image-3.0-pro",
+    "The Romanian phrase ISI DESCHIDE PORTILE set in two lines of archaic Romanian uncial capitals, filling the frame. Black ink on aged cream paper, flat scan, dead-on, no perspective, no shadow, no ornament around the letters. The letterforms fill the frame. Crisp edges.",
+    "saturated colors, HDR, golden hour glare, blue sky, lens flare, bokeh, tilted horizon, fisheye, people, tourists, cars, modern signage, text, watermark, logo, oversharpened, plastic, CGI render, neon, onion domes of Russian style, gilded roofs, baroque excess",
+    1856,
+    1392,
+    1,
+    1979,
+    "fixed",
+    false,
+    false
+   ]
+  },
+  {
+   "id": 8,
+   "type": "SaveImage",
+   "pos": [
+    500,
+    1420
+   ],
+   "size": [
+    400,
+    380
+   ],
+   "flags": {},
+   "order": 8,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 7
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "saharna/spec_phrase_porti"
+   ]
+  },
+  {
+   "id": 9,
+   "type": "QwenImageTextToImageApi",
+   "pos": [
+    40,
+    1880
+   ],
+   "size": [
+    400,
+    380
+   ],
+   "flags": {},
+   "order": 9,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model.prompt",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "model.prompt"
+     }
+    },
+    {
+     "name": "model.negative_prompt",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "model.negative_prompt"
+     }
+    },
+    {
+     "name": "model.width",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "model.width"
+     }
+    },
+    {
+     "name": "model.height",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "model.height"
+     }
+    },
+    {
+     "name": "n",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "n"
+     }
+    },
+    {
+     "name": "seed",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "seed"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      9
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "QwenImageTextToImageApi"
+   },
+   "widgets_values": [
+    "qwen-image-3.0-pro",
+    "The Romanian words MANASTIREA SAHARNA set in two lines of archaic uncial capitals with correct Romanian diacritics, A-breve in MANASTIREA. Broad-nib carved letterforms. Black ink on aged cream paper, flat scan, dead-on, no perspective, no shadow, no ornament around the letters. The letterforms fill the frame. Crisp edges.",
+    "saturated colors, HDR, golden hour glare, blue sky, lens flare, bokeh, tilted horizon, fisheye, people, tourists, cars, modern signage, text, watermark, logo, oversharpened, plastic, CGI render, neon, onion domes of Russian style, gilded roofs, baroque excess",
+    1856,
+    1392,
+    1,
+    1980,
+    "fixed",
+    false,
+    false
+   ]
+  },
+  {
+   "id": 10,
+   "type": "SaveImage",
+   "pos": [
+    500,
+    1880
+   ],
+   "size": [
+    400,
+    380
+   ],
+   "flags": {},
+   "order": 10,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 9
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "saharna/spec_manastirea"
+   ]
+  },
+  {
+   "id": 11,
+   "type": "QwenImageTextToImageApi",
+   "pos": [
+    40,
+    2340
+   ],
+   "size": [
+    400,
+    380
+   ],
+   "flags": {},
+   "order": 11,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model.prompt",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "model.prompt"
+     }
+    },
+    {
+     "name": "model.negative_prompt",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "model.negative_prompt"
+     }
+    },
+    {
+     "name": "model.width",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "model.width"
+     }
+    },
+    {
+     "name": "model.height",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "model.height"
+     }
+    },
+    {
+     "name": "n",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "n"
+     }
+    },
+    {
+     "name": "seed",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "seed"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      11
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "QwenImageTextToImageApi"
+   },
+   "widgets_values": [
+    "qwen-image-3.0-pro",
+    "Romanian uncial capital letters chiselled into a limestone slab, V-cut incision, raking light showing the depth of the cut. The word SAHARNA. Black ink on aged cream paper, flat scan, dead-on, no perspective, no shadow, no ornament around the letters. The letterforms fill the frame. Crisp edges.",
+    "saturated colors, HDR, golden hour glare, blue sky, lens flare, bokeh, tilted horizon, fisheye, people, tourists, cars, modern signage, text, watermark, logo, oversharpened, plastic, CGI render, neon, onion domes of Russian style, gilded roofs, baroque excess",
+    1856,
+    1392,
+    1,
+    1981,
+    "fixed",
+    false,
+    false
+   ]
+  },
+  {
+   "id": 12,
+   "type": "SaveImage",
+   "pos": [
+    500,
+    2340
+   ],
+   "size": [
+    400,
+    380
+   ],
+   "flags": {},
+   "order": 12,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 11
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "saharna/spec_carved_stone"
+   ]
+  }
+ ],
+ "links": [
+  [
+   1,
+   1,
+   0,
+   2,
+   0,
+   "IMAGE"
+  ],
+  [
+   3,
+   3,
+   0,
+   4,
+   0,
+   "IMAGE"
+  ],
+  [
+   5,
+   5,
+   0,
+   6,
+   0,
+   "IMAGE"
+  ],
+  [
+   7,
+   7,
+   0,
+   8,
+   0,
+   "IMAGE"
+  ],
+  [
+   9,
+   9,
+   0,
+   10,
+   0,
+   "IMAGE"
+  ],
+  [
+   11,
+   11,
+   0,
+   12,
+   0,
+   "IMAGE"
+  ]
+ ],
+ "groups": [],
+ "config": {},
+ "extra": {
+  "ds": {
+   "scale": 0.5,
+   "offset": [
+    0,
+    0
+   ]
+  },
+  "title": "P5 — archaic type specimens (reference only)"
+ },
+ "version": 0.4
+}

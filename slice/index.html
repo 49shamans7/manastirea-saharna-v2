@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Saharna — vertical slice 01</title>
+<style>
+:root{
+  /* measured off the photographs, not invented */
+  --rock-pale:#B0B9D1; --rock:#8E9193; --rock-mid:#767A86; --rock-deep:#5F6367;
+  --rock-dark:#3A3D42; --rock-night:#181816;
+  --green-haze:#6F8A73; --green:#4B6136; --green-deep:#2E4328; --green-night:#202D18;
+  --river-deep:#2B4B58; --river:#649FBD; --river-pale:#BDD5DC;
+  --ochre:#C0A974; --ochre-deep:#8F6938; --bole:#4B3630;
+  --cream:#D5D6D6; --white:#E6EAE4;
+  --shaft:78px;                 /* one column of the 12-col grid */
+  --gut:24px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--rock-night); color:var(--cream);
+  font-family:Georgia,"Times New Roman",serif;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+
+/* ─────────── the shaft: one continuous well through every stratum ─────────── */
+.shaft{
+  position:fixed; top:0; left:50%; width:var(--shaft); height:100vh;
+  transform:translateX(-50%); z-index:3; pointer-events:none;
+  background:linear-gradient(to bottom,
+    rgba(230,234,228,.16) 0%,
+    rgba(230,234,228,.07) 35%,
+    rgba(24,24,22,.30) 75%,
+    rgba(24,24,22,.62) 100%);
+  border-left:1px solid rgba(230,234,228,.22);
+  border-right:1px solid rgba(230,234,228,.22);
+}
+.shaft::after{           /* the water at the bottom of the well */
+  content:""; position:absolute; left:0; right:0; bottom:0; height:26vh;
+  background:linear-gradient(to bottom,transparent,rgba(100,159,189,.30));
+}
+.shaft-label{
+  position:fixed; top:50%; left:50%; z-index:4; pointer-events:none;
+  transform:translate(-50%,-50%) rotate(90deg); transform-origin:center;
+  font-size:11px; letter-spacing:.42em; text-transform:uppercase;
+  color:rgba(230,234,228,.5); white-space:nowrap;
+}
+
+/* ─────────── stratum 1 · ROCK ─────────── */
+.rock{
+  position:relative; min-height:118vh; overflow:hidden;
+  display:flex; flex-direction:column; justify-content:center; align-items:center;
+}
+.rock-bg{
+  position:absolute; inset:-8% 0 -8% 0; z-index:0;
+  background:url("assets/cave-cliff.jpg") center/cover no-repeat;
+  filter:grayscale(.55) contrast(1.06) brightness(.82);
+  will-change:transform;
+}
+.rock::before{                       /* tie the photo to the measured palette */
+  content:""; position:absolute; inset:0; z-index:1;
+  background:
+    linear-gradient(to bottom, rgba(24,24,22,.55) 0%, rgba(94,99,103,.18) 30%,
+                    rgba(58,61,66,.42) 78%, rgba(32,45,24,.92) 100%),
+    radial-gradient(120% 70% at 50% 34%, rgba(176,185,209,.20), transparent 70%);
+}
+.rock-inner{position:relative; z-index:2; text-align:center; padding:0 6vw}
+
+.seal{width:132px;height:132px;margin:0 auto 40px;opacity:.92;will-change:transform}
+.seal svg{width:100%;height:100%}
+
+.title{
+  margin:0; font-size:clamp(26px,4.4vw,62px); line-height:1.06;
+  letter-spacing:.05em; text-transform:uppercase; color:var(--white);
+  text-shadow:0 2px 26px rgba(24,24,22,.75);
+}
+.eyebrow{
+  margin:0 0 26px; font-size:11px; letter-spacing:.5em; text-transform:uppercase;
+  color:rgba(230,234,228,.62);
+}
+
+/* the day, cut into the rock */
+.inscription{
+  margin:52px auto 0; max-width:430px; padding:20px 26px;
+  border-top:1px solid rgba(230,234,228,.22);
+  border-bottom:1px solid rgba(230,234,228,.22);
+  font-size:13px; line-height:1.85; letter-spacing:.06em;
+  color:rgba(230,234,228,.82);
+  text-shadow:0 1px 0 rgba(24,24,22,.9);
+}
+.inscription b{display:block;font-size:10px;letter-spacing:.42em;
+  text-transform:uppercase;color:var(--ochre);margin-bottom:10px;font-weight:400}
+
+.founded{
+  position:absolute; z-index:2; left:6vw; bottom:16vh;
+  font-size:10px; letter-spacing:.34em; text-transform:uppercase;
+  color:rgba(230,234,228,.5);
+}
+.lang{
+  position:absolute; z-index:2; right:6vw; bottom:16vh;
+  font-size:10px; letter-spacing:.34em; text-transform:uppercase;
+}
+.lang a{color:rgba(230,234,228,.5);text-decoration:none;margin-left:12px}
+.lang a[aria-current]{color:var(--ochre)}
+
+.descend{
+  position:absolute; z-index:2; left:50%; bottom:5vh; transform:translateX(-50%);
+  font-size:10px; letter-spacing:.4em; text-transform:uppercase;
+  color:rgba(230,234,228,.6); text-align:center;
+}
+.descend span{display:block;margin-top:12px;font-size:16px;animation:fall 3.4s ease-in-out infinite}
+@keyframes fall{0%,100%{transform:translateY(0);opacity:.45}50%{transform:translateY(9px);opacity:.95}}
+
+/* ─────────── the pomelnic: names go down the shaft ─────────── */
+.pomelnic{
+  position:relative; z-index:2; min-height:62vh;
+  background:linear-gradient(to bottom,var(--green-night),var(--green-deep));
+  display:grid; place-items:center; text-align:center; padding:11vh 6vw;
+}
+.pomelnic h2{margin:0 0 14px;font-size:clamp(20px,2.5vw,32px);letter-spacing:.06em;
+  text-transform:uppercase;color:var(--white)}
+.pomelnic p{margin:0 auto;max-width:44ch;font-size:15px;line-height:1.85;
+  color:rgba(230,234,228,.72)}
+.drop{
+  margin-top:34px; display:inline-block; padding:15px 40px;
+  border:1px solid var(--ochre); color:var(--ochre);
+  font-size:11px; letter-spacing:.32em; text-transform:uppercase; text-decoration:none;
+  transition:background .35s ease,color .35s ease;
+}
+.drop:hover{background:var(--ochre);color:var(--green-night)}
+
+/* ─────────── stratum 2 · GREEN — the monastery held by the forest ─────────── */
+.green{position:relative; min-height:152vh; overflow:hidden;}
+.green-bg{
+  position:absolute; inset:-8% 0 -8% 0; z-index:0;
+  background:url("assets/gorge-church.jpg") center/cover no-repeat;
+  filter:saturate(.82) contrast(1.04) brightness(.7);
+  will-change:transform;
+}
+.green::before{
+  content:""; position:absolute; inset:0; z-index:1;
+  background:linear-gradient(to bottom, rgba(32,45,24,.94) 0%, rgba(46,67,40,.55) 24%,
+              rgba(46,67,40,.42) 62%, rgba(24,24,22,.9) 100%);
+}
+.green-inner{position:relative;z-index:2;padding:14vh 6vw;
+  display:flex;flex-direction:column;min-height:152vh;justify-content:space-between}
+
+.welcome{text-align:center;max-width:760px;margin:0 auto}
+.welcome .eyebrow{color:var(--ochre)}
+.welcome blockquote{
+  margin:0; font-size:clamp(20px,2.9vw,38px); line-height:1.35;
+  color:var(--white); text-shadow:0 2px 22px rgba(24,24,22,.7);
+}
+.welcome cite{display:block;margin-top:24px;font-style:normal;font-size:11px;
+  letter-spacing:.34em;text-transform:uppercase;color:rgba(230,234,228,.6)}
+
+/* nav — the settled menu. no "Acasă"; the seal is the way home. */
+nav{margin:0 auto;width:min(920px,100%)}
+nav ul{list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:repeat(2,1fr);gap:0}
+nav li{border-top:1px solid rgba(230,234,228,.16)}
+nav li:nth-child(odd){border-right:1px solid rgba(196,169,116,.30)}
+nav a{
+  display:block;padding:26px 30px;color:var(--cream);text-decoration:none;
+  font-size:clamp(15px,1.7vw,20px);letter-spacing:.05em;
+  transition:background .3s ease,color .3s ease,padding-left .3s ease;
+}
+nav a:hover{background:rgba(196,169,116,.10);color:var(--ochre);padding-left:42px}
+nav small{display:block;margin-top:6px;font-size:10px;letter-spacing:.28em;
+  text-transform:uppercase;color:rgba(230,234,228,.42)}
+
+.rule{height:2px;background:var(--ochre);width:70px;margin:26px auto}
+
+
+
+/* ═══ ANNOTATION LAYER · press A to toggle. Never ships. ═══ */
+body:not(.anno) .an{display:none}
+.an{position:absolute;z-index:60;pointer-events:none;
+  border:1px dashed rgba(255,214,120,.85);background:rgba(20,16,8,.86);
+  color:#FFD678;font:11px/1.55 ui-monospace,SFMono-Regular,Menlo,monospace;
+  letter-spacing:.02em;padding:9px 11px;max-width:280px;border-radius:2px;
+  text-transform:none}
+.an b{display:block;color:#fff;font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;font-size:9px;margin-bottom:5px}
+.an.box{background:rgba(20,16,8,.30);min-height:110px}
+.annoflag{position:fixed;right:14px;top:14px;z-index:70;
+  font:11px/1 ui-monospace,Menlo,monospace;letter-spacing:.18em;text-transform:uppercase;
+  background:#FFD678;color:#140F06;padding:9px 14px;border:0;cursor:pointer}
+
+/* ─────────── the hinge · the shrine passed on the way down ───────────
+   The only place where inward and downward are different directions. */
+.hinge{position:relative;z-index:2;min-height:96vh;overflow:hidden;
+  background:linear-gradient(to bottom,var(--green-night) 0%,#151711 52%,var(--rock-night) 100%);
+  display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:0;padding:0 6vw}
+.hinge .past{grid-column:1;justify-self:end;padding-right:44px;text-align:right;max-width:22rem}
+.hinge .past p{margin:0;font-size:12px;letter-spacing:.24em;text-transform:uppercase;
+  color:rgba(230,234,228,.34);line-height:2}
+/* the aperture: a lit door offset from the axis, in the wall of the descent */
+.hinge .aperture{grid-column:2;justify-self:center;width:min(320px,62vw);
+  padding:56px 34px;text-align:center;text-decoration:none;display:block;
+  background:linear-gradient(to bottom,rgba(29,28,34,.9),rgba(14,13,17,.96));
+  border:1px solid rgba(192,169,116,.42);
+  box-shadow:0 0 90px rgba(192,169,116,.10), inset 0 0 60px rgba(192,169,116,.06);
+  transition:box-shadow .5s ease,border-color .5s ease,transform .5s ease}
+.hinge .aperture:hover{border-color:var(--ochre);transform:translateY(-3px);
+  box-shadow:0 0 130px rgba(192,169,116,.20), inset 0 0 70px rgba(192,169,116,.11)}
+.hinge .aperture .z{font-size:10px;letter-spacing:.46em;text-transform:uppercase;
+  color:var(--ochre);display:block;margin-bottom:16px}
+.hinge .aperture h2{margin:0;font-size:clamp(20px,2.4vw,30px);line-height:1.15;
+  letter-spacing:.05em;text-transform:uppercase;color:var(--white)}
+.hinge .aperture .sub{display:block;margin-top:18px;font-size:11px;
+  letter-spacing:.28em;text-transform:uppercase;color:rgba(213,214,214,.5)}
+/* flowers: the living register, visible from outside the door */
+.hinge .aperture .fl{display:flex;gap:5px;justify-content:center;margin-top:26px}
+.hinge .aperture .fl i{width:22px;height:4px;border-radius:2px;animation:breathe 7s ease-in-out infinite}
+.hinge .aperture .fl i:nth-child(1){background:#663037}
+.hinge .aperture .fl i:nth-child(2){background:#9C3D50;animation-delay:.7s}
+.hinge .aperture .fl i:nth-child(3){background:#BD639A;animation-delay:1.4s}
+.hinge .aperture .fl i:nth-child(4){background:#8F533F;animation-delay:2.1s}
+.hinge .aperture .fl i:nth-child(5){background:#D5D6D6;animation-delay:2.8s}
+@keyframes breathe{0%,100%{opacity:.5}50%{opacity:1}}
+.hinge .onward{grid-column:3;justify-self:start;padding-left:44px;max-width:22rem}
+.hinge .onward p{margin:0;font-size:12px;letter-spacing:.24em;text-transform:uppercase;
+  color:rgba(230,234,228,.34);line-height:2}
+.hinge .onward span{display:block;margin-top:14px;font-size:15px;color:rgba(230,234,228,.6);
+  animation:fall 3.4s ease-in-out infinite}
+@media (max-width:860px){
+  .hinge{grid-template-columns:1fr;justify-items:center;gap:38px;padding:12vh 6vw;text-align:center}
+  .hinge .past,.hinge .onward{grid-column:1;justify-self:center;text-align:center;padding:0}
+}
+@media (prefers-reduced-motion:reduce){.hinge .aperture .fl i{animation:none;opacity:.85}}
+
+/* ─────────── gate · the seam between strata ─────────── */
+.gate{position:relative;z-index:2;height:22vh;background:linear-gradient(to bottom,
+  var(--rock-night),var(--river-deep));display:grid;place-items:center;overflow:hidden}
+.gate span{display:block;width:var(--shaft);height:100%;
+  background:linear-gradient(to bottom,rgba(24,24,22,.9),rgba(100,159,189,.35));
+  border-left:1px solid rgba(189,213,220,.3);border-right:1px solid rgba(189,213,220,.3);
+  animation:widen 1.4s ease-out both}
+@keyframes widen{from{width:var(--shaft)}to{width:min(720px,86vw)}}
+
+/* ─────────── stratum 3 · RIVER — the only horizontal on the site ─────────── */
+.river{position:relative;min-height:126vh;overflow:hidden;
+  background:linear-gradient(to bottom,var(--river-deep) 0%,var(--river) 46%,var(--river-pale) 100%)}
+.river-band{position:absolute;left:-30%;width:160%;height:26vh;top:34%;
+  background:linear-gradient(to bottom,transparent,rgba(189,213,220,.34),transparent);
+  will-change:transform}
+.river-band.far{top:58%;height:16vh;opacity:.55}
+.river-inner{position:relative;z-index:2;padding:16vh 6vw;text-align:center;
+  max-width:860px;margin:0 auto}
+.river-title{margin:0;font-size:clamp(24px,3.4vw,46px);letter-spacing:.04em;
+  text-transform:uppercase;color:#12222b}
+.river .eyebrow{color:#2b4b58}
+.river-lead{margin:0 auto 46px;max-width:46ch;font-size:16px;line-height:1.9;color:#1c3540}
+.arrive{list-style:none;margin:0;padding:0;display:grid;
+  grid-template-columns:repeat(2,1fr);gap:0;text-align:left}
+.arrive li{border-top:1px solid rgba(18,34,43,.24)}
+.arrive li:nth-child(odd){border-right:1px solid rgba(18,34,43,.16)}
+.arrive a{display:block;padding:24px 26px;text-decoration:none;color:#12222b;
+  font-size:clamp(15px,1.7vw,19px);transition:background .3s ease,padding-left .3s ease}
+.arrive a:hover{background:rgba(255,255,255,.28);padding-left:38px}
+.arrive small{display:block;margin-top:6px;font-size:10px;letter-spacing:.26em;
+  text-transform:uppercase;color:rgba(18,34,43,.55)}
+
+footer{position:relative;z-index:2;background:var(--rock-night);
+  padding:9vh 6vw;text-align:center;font-size:11px;letter-spacing:.28em;
+  text-transform:uppercase;color:rgba(230,234,228,.4)}
+.note{position:fixed;left:14px;bottom:12px;z-index:9;font-size:10px;
+  letter-spacing:.16em;color:rgba(230,234,228,.3);text-transform:uppercase}
+@media (max-width:720px){
+  :root{--shaft:46px}
+  nav ul{grid-template-columns:1fr}
+  nav li:nth-child(odd){border-right:none}
+  .founded,.lang{bottom:11vh}
+}
+@media (prefers-reduced-motion:reduce){
+  .descend span{animation:none}
+  .rock-bg,.green-bg,.seal{transform:none !important}
+}
+</style>
+</head>
+<body>
+
+<div class="shaft" aria-hidden="true"></div>
+<div class="shaft-label" aria-hidden="true">Pomelnic</div>
+
+<!-- ══ STRATUM 1 · ROCK ══ -->
+<section class="rock">
+  <div class="rock-bg" data-par="0.22"></div>
+  <div class="rock-inner">
+    <div class="seal" data-par="0.06">
+      <svg viewBox="0 0 312 312" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="156" cy="156" r="150" fill="none" stroke="#C0A974" stroke-width="2"/>
+        <circle cx="156" cy="156" r="138" fill="none" stroke="#C0A974" stroke-width="1" opacity=".6"/>
+        <g fill="#C0A974">
+          <rect x="147" y="96" width="18" height="132"/>
+          <rect x="111" y="132" width="90" height="16"/>
+          <rect x="126" y="102" width="60" height="10"/>
+          <polygon points="120,206 192,192 192,204 120,218"/>
+        </g>
+        <text x="156" y="46" text-anchor="middle" fill="#C0A974"
+              font-family="Georgia,serif" font-size="15" letter-spacing="2">SAHARNA</text>
+        <text x="156" y="278" text-anchor="middle" fill="#C0A974"
+              font-family="Georgia,serif" font-size="11" letter-spacing="3" opacity=".8">1776</text>
+      </svg>
+    </div>
+    <p class="eyebrow">Sfânta Mănăstire</p>
+    <h1 class="title">Casa Dumnezeieștii<br>Treimi</h1>
+
+    <div class="inscription">
+      <b>Astăzi · 25 august</b>
+      Sfântul Ierarh Nifon, patriarhul Constantinopolului<br>
+      <span style="opacity:.6">calendar.ortodox.md — se încarcă în browser</span>
+    </div>
+  </div>
+
+  <p class="founded">Fundată 1776</p>
+  <p class="lang"><a href="#" aria-current="true">RO</a><a href="#">RU</a><a href="#">EN</a></p>
+  <p class="descend">Coboară<span>↓</span></p>
+<div class="an" style="top:6%;left:4%;"><b>3D · portal</b>Tripo mesh → pre-rendered AVIF sequence, 48 frames, scroll-scrubbed. Camera passes THROUGH the arch. No WebGL.</div><div class="an" style="top:6%;right:4%;"><b>Video · comment #10</b>Full-space video wanted by client. Belongs in GREEN, not here — the footage is the monastery in the gorge.</div><div class="an box" style="top:34%;left:4%;width:210px;height:150px;"><b>Saints on the cave</b>Rock-cut niches. Hermit portraits set INTO the cliff face, revealed on scroll — subtraction, like the cave itself.</div><div class="an" style="top:38%;right:4%;"><b>Seal · vectorise</b>Real crest is a raster scrape. Needs redrawing from original. Currently placeholder geometry.</div><div class="an" style="top:62%;left:4%;"><b>Inscription = live</b>calendar.ortodox.md/calendar/short/ro · client-side fetch. EN 500s → fall back to RO.</div><div class="an" style="top:74%;right:4%;"><b>Oklad ornament</b>Trace the repoussé silver + enamel from the relics photos. Real ornament beats generated Byzantine borders.</div>
+</section>
+
+<!-- ══ THE WELL · pomelnic ══ -->
+<section class="pomelnic" style="position:relative"><div class="an" style="top:8%;left:4%;"><b>The well · pomelnic</b>Names LOWERED down the shaft. Subtractive, like the cave. The only interactive thing on the descent.</div><div class="an" style="top:8%;right:4%;"><b>Worker</b>POST → Cloudflare Worker → Resend → monastery inbox. Reply-To = visitor. No storage. Already built.</div>
+  <div>
+    <h2>Trimite un pomelnic</h2>
+    <p>Numele scrise aici coboară în rugăciunea obștii. Pentru vii și pentru
+       cei adormiți, pomeniți la Sfânta Liturghie.</p>
+    <a class="drop" href="#">Scrie numele</a>
+  </div>
+</section>
+
+<!-- ══ STRATUM 2 · GREEN ══ -->
+<section class="green">
+  <div class="green-bg" data-par="0.16"></div>
+  <div class="green-inner"><div class="an" style="top:5%;left:4%;"><b>Video goes here</b>Full-bleed, comment #10. hero-monastery-1280.mp4 already in repo, currently unused (legacy HomeHero commented out).</div><div class="an" style="top:5%;right:4%;"><b>Ochre = made things</b>Landscape stays cold. Warmth only where humans built: walls #C0A974, green metal roofs. Never the ground.</div><div class="an box" style="top:40%;left:4%;width:200px;height:130px;"><b>Iconostasis grid</b>Real Saharna iconostasis photographed straight on — 5 tiers. Measure its panel proportions into the 78px field.</div><div class="an" style="top:46%;right:4%;"><b>Gate 1 · rock→green</b>Narrow cut. Portal mesh as seam device. „Își deschide porțile” — literal, three times, each wider.</div><div class="an" style="top:76%;left:4%;"><b>Left rail</b>Descent index goes here on the real build: 4 depth markers + zone name vertical. Second route to chambers.</div>
+    <div class="welcome">
+      <p class="eyebrow">Bine ai venit, pelerine</p>
+      <blockquote>„Unde duhul dumnezeiesc își deschide porțile”</blockquote>
+      <div class="rule"></div>
+      <cite>Obștea Mănăstirii Saharna</cite>
+    </div>
+
+    <nav aria-label="Principal">
+      <ul>
+        <li><a href="#">Prezentare<small>Istoria și obștea</small></a></li>
+        <li><a href="#">Cum de ajuns<small>Rezina · Republica Moldova</small></a></li>
+        <li><a href="#">Programul slujbelor<small>Liturghie · Acatist · Vecernie</small></a></li>
+        <li><a href="#">Contacte<small>Scrie mănăstirii</small></a></li>
+      </ul>
+    </nav>
+  </div>
+</section>
+
+
+<!-- ══ THE HINGE · the shrine, passed on the way down. optional, inward. ══ -->
+<section class="hinge">
+  <div class="an" style="top:6%;left:3%;"><b>Zone III = door only</b>No page of its own. Opens a gold-skinned CHAMBER. Inward ≠ downward — the only place on the site where they differ.</div><div class="an" style="top:6%;right:3%;"><b>Return</b>Back from a chamber must land at THIS depth, not page top. Persist scroll or the branch punishes you.</div><div class="past"><p>Coborârea continuă<br>spre Nistru</p></div>
+
+  <a class="aperture" href="../templates/chamber.html">
+    <span class="z">Zona III · Racla</span>
+    <h2>Cuviosul<br>Macarie</h2>
+    <span class="sub">Intră — nu se coboară</span>
+    <span class="fl" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+  </a>
+
+  <div class="onward"><p>Sau treci mai departe</p><span>↓</span></div>
+</section>
+
+<!-- ══ GATE 2 · green → river. the widest seam: sky enters ══ -->
+<div class="gate" aria-hidden="true"><span></span></div>
+
+<!-- ══ STRATUM 3 · RIVER — the vertical becomes horizontal ══ -->
+<section class="river">
+  <div class="river-band" data-drift="0.06"></div>
+  <div class="river-band far" data-drift="-0.03"></div>
+  <div class="river-inner"><div class="an" style="top:5%;left:4%;"><b>WATERFALL · missing</b>Saharna has ~30 cascades. Zero photos in 701-image archive. Shoot it. This gate is a gradient where it should be falling water.</div><div class="an" style="top:5%;right:4%;"><b>Nistru horizon</b>No river photo exists either. Pure colour for now. The only wide horizon on the site.</div><div class="an box" style="top:52%;left:4%;width:210px;height:120px;"><b>Vertical → horizontal</b>The shaft ends; movement turns sideways. Descent resolves into flow. Only horizontal on the whole site.</div><div class="an" style="top:58%;right:4%;"><b>Table template</b>These four links open Template C — flat, bright, print-ready. Real transport data already in.</div>
+    <p class="eyebrow">Nistru</p>
+    <h2 class="river-title">Aici valea se deschide</h2>
+    <div class="rule"></div>
+    <p class="river-lead">Apa care cade prin cheie ajunge la râu. Drumul urcă
+       spre mănăstire de la malul drept al Nistrului, raionul Rezina.</p>
+    <ul class="arrive">
+      <li><a href="#">Cum de ajuns<small>Drumul și harta</small></a></li>
+      <li><a href="#">Casa de oaspeți<small>Sfântul Avraam</small></a></li>
+      <li><a href="#">Contacte<small>Scrie mănăstirii</small></a></li>
+      <li><a href="#">Donații<small>Ajută mănăstirea</small></a></li>
+    </ul>
+  </div>
+</section>
+
+<footer>Donații · Pomelnic · © Mănăstirea Saharna</footer>
+
+<button class="annoflag" onclick="document.body.classList.toggle('anno')">Notes · A</button>
+<p class="note">slice 01 — rock → well → green · real photographs, measured palette</p>
+
+<script>
+/* transform-only parallax: compositor thread, no layout, no paint */
+const layers=[...document.querySelectorAll('[data-par]')];
+let ticking=false;
+function frame(){
+  const y=window.scrollY;
+  for(const el of layers){
+    const r=el.parentElement.getBoundingClientRect();
+    const off=(r.top+window.scrollY);
+    el.style.transform='translate3d(0,'+((y-off)*el.dataset.par).toFixed(2)+'px,0)';
+  }
+  ticking=false;
+}
+const shaft=document.querySelector('.shaft'), slabel=document.querySelector('.shaft-label'),
+      river=document.querySelector('.river');
+function fadeShaft(){
+  const top=river.getBoundingClientRect().top, h=innerHeight;
+  const o=Math.max(0,Math.min(1,(top-h*0.15)/(h*0.55)));
+  shaft.style.opacity=o; slabel.style.opacity=o;
+}
+addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(()=>{frame();fadeShaft();});}},{passive:true});
+/* the river drifts sideways: the only horizontal movement in the build */
+const bands=[...document.querySelectorAll('[data-drift]')];
+function drift(){
+  const y=window.scrollY;
+  for(const b of bands) b.style.transform='translate3d('+(y*b.dataset.drift).toFixed(1)+'px,0,0)';
+}
+addEventListener('scroll',()=>requestAnimationFrame(drift),{passive:true});
+frame(); fadeShaft(); drift();
+</script>
+<script>
+addEventListener('keydown',e=>{if(e.key==='a'||e.key==='A')document.body.classList.toggle('anno')});
+</script>
+</body>
+</html>

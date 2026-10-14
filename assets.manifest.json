@@ -1,0 +1,46 @@
+{
+  "$comment": "Assembly manifest. Every asset, where it lands in the grid, and who makes it. 'svg' = constructed, zero credits, already on disk. 'qwen'/'tripo' = generated, see comfy-queue.json.",
+  "grid": { "canvas": 1440, "margin": 120, "content": 1200, "columns": 12, "column_w": 78, "gutter": 24, "field": 78, "register": 384 },
+  "assets": [
+    { "id": "grid_iconostasis", "type": "svg", "source": "constructed", "file": "svg/grid-iconostasis.svg", "slot": "overlay", "role": "The grid itself. Dev reference and layout underlay, not shipped." },
+    { "id": "register_rule", "type": "svg", "source": "constructed", "file": "svg/register-rule.svg", "slot": "R1-R5 boundaries", "role": "2px gold rule with terminal ticks. Repeats at every register line." },
+    { "id": "royal_doors", "type": "svg", "source": "constructed", "file": "svg/royal-doors.svg", "slot": "R2 centre, 720px axis", "role": "The pomelnic gate. Opens on interaction — the only thing you pass through." },
+    { "id": "votive_rail", "type": "svg", "source": "constructed", "file": "svg/votive-rail.svg", "slot": "right edge, sticky, full height", "role": "Candle stand + live calendar. Fetches calendar.ortodox.md client-side.", "data": { "endpoint": "https://calendar.ortodox.md/calendar/short/{lang}", "locales_ok": ["ro", "ru"], "locale_broken": ["en"], "fallback": "ro", "fetch": "browser, not build" } },
+    { "id": "cross_orthodox", "type": "svg", "source": "constructed", "file": "svg/cross-orthodox.svg", "slot": "R5 + 404", "role": "Eight-pointed. Titulus, crossbar, slanted suppedaneum raised to viewer's left. Canonical, so constructed not generated." },
+
+    { "id": "hero_portal_dawn",  "type": "jpg", "source": "qwen", "slot": "R1 full bleed", "aspect": "21:9", "pass": "P2" },
+    { "id": "gal_church",   "type": "jpg", "source": "qwen", "slot": "gallery 1", "aspect": "4:3", "pass": "P2" },
+    { "id": "gal_cascades", "type": "jpg", "source": "qwen", "slot": "gallery 2", "aspect": "3:4", "pass": "P2" },
+    { "id": "gal_cells",    "type": "jpg", "source": "qwen", "slot": "gallery 3", "aspect": "3:4", "pass": "P2" },
+    { "id": "gal_nistru",   "type": "jpg", "source": "qwen", "slot": "gallery 4", "aspect": "4:3", "pass": "P2" },
+    { "id": "tex_limestone","type": "jpg", "source": "qwen", "slot": "material fill", "pass": "P2" },
+    { "id": "tex_plaster",  "type": "jpg", "source": "qwen", "slot": "material fill", "pass": "P2" },
+    { "id": "tex_oak",      "type": "jpg", "source": "qwen", "slot": "material fill", "pass": "P2" },
+    { "id": "tex_beeswax",  "type": "jpg", "source": "qwen", "slot": "votive rail ground", "pass": "P2" },
+    { "id": "tex_gesso_gold","type": "jpg","source": "qwen", "slot": "R2 Deesis ground", "pass": "P2" },
+
+    { "id": "mesh_portal",        "type": "glb", "source": "tripo", "from_plate": "ortho_portal",       "slot": "R1 hero", "pass": "P3", "role": "The 3d/2d transition. Camera passes through the arch — 'isi deschide portile' made literal." },
+    { "id": "mesh_church_treime", "type": "glb", "source": "tripo", "from_plate": "ortho_church_treime","slot": "R4 history axis", "pass": "P3" },
+    { "id": "mesh_belltower",     "type": "glb", "source": "tripo", "from_plate": "ortho_belltower",    "slot": "R3 beside the schedule", "pass": "P3" },
+    { "id": "mesh_candlestand",   "type": "glb", "source": "tripo", "from_plate": "ortho_candlestand",  "slot": "votive rail head", "pass": "P3" },
+    { "id": "mesh_cross_stone",   "type": "glb", "source": "tripo", "from_plate": "ortho_cross_stone",  "slot": "R5 foundation", "pass": "P3" },
+    { "id": "mesh_threshold",     "type": "glb", "source": "tripo", "from_plate": "ortho_threshold",    "slot": "R2 Royal Doors step", "pass": "P3" },
+
+    { "id": "spec_uncial_caps",  "type": "png", "source": "qwen", "slot": "NOT SHIPPED", "pass": "P5", "role": "Drawing reference for the display face. Vectorise by hand." },
+    { "id": "spec_uncial_lower", "type": "png", "source": "qwen", "slot": "NOT SHIPPED", "pass": "P5" },
+    { "id": "spec_word_saharna", "type": "png", "source": "qwen", "slot": "NOT SHIPPED", "pass": "P5" },
+    { "id": "spec_phrase_porti", "type": "png", "source": "qwen", "slot": "NOT SHIPPED", "pass": "P5" },
+    { "id": "spec_manastirea",   "type": "png", "source": "qwen", "slot": "NOT SHIPPED", "pass": "P5" },
+    { "id": "spec_carved_stone", "type": "png", "source": "qwen", "slot": "NOT SHIPPED", "pass": "P5" }
+  ],
+  "palette": {
+    "parchment": "#f4efe4", "parchment_deep": "#e9e1d1", "ink": "#1a1208",
+    "church_green": "#1e3226", "sacred_gold": "#c4a24a", "muted_brown": "#807566"
+  },
+  "laws": [
+    "Gold is a rule weight, never a fill. 2px at registers, 3px at the Royal Doors axis.",
+    "Nothing generated decides a proportion. The generator fills a slot the grid already set.",
+    "Anything canonical or geometric is constructed as SVG, never prompted.",
+    "The calendar is the only live element. Everything else is fixed structure."
+  ]
+}

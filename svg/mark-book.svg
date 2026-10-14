@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="312" height="312" viewBox="0 0 312 312">
+<title>Gospel book</title>
+<g fill="none" stroke="#1a1208" stroke-width="10">
+ <path d="M24 72 c48 -24 84 -24 132 0 c48 -24 84 -24 132 0 v144 c-48 -24 -84 -24 -132 0 c-48 -24 -84 -24 -132 0 z"/>
+ <line x1="156" y1="72" x2="156" y2="216"/>
+</g>
+<g fill="#1a1208"><rect x="207" y="108" width="9" height="54"/><rect x="192" y="126" width="39" height="9"/></g>
+</svg>

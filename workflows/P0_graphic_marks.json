@@ -1,0 +1,658 @@
+{
+ "id": "P0_graphic_marks",
+ "revision": 0,
+ "last_node_id": 11,
+ "last_link_id": 11,
+ "nodes": [
+  {
+   "id": 1,
+   "type": "QwenImageTextToImageApi",
+   "pos": [
+    40,
+    40
+   ],
+   "size": [
+    400,
+    380
+   ],
+   "flags": {},
+   "order": 1,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model.prompt",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "model.prompt"
+     }
+    },
+    {
+     "name": "model.negative_prompt",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "model.negative_prompt"
+     }
+    },
+    {
+     "name": "model.width",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "model.width"
+     }
+    },
+    {
+     "name": "model.height",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "model.height"
+     }
+    },
+    {
+     "name": "n",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "n"
+     }
+    },
+    {
+     "name": "seed",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "seed"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      1
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "QwenImageTextToImageApi"
+   },
+   "widgets_values": [
+    "qwen-image-3.0-pro",
+    "Silhouette of the whole Saharna monastery complex on the limestone cliff above the Nistru valley: the church with its slender drum, the bell tower, the lower cell ranges, the cliff edge. Moldovan Orthodox architecture, shingle roofs, no onion domes. Pure black shape on pure white background. Absolutely flat solid black, no grey, no gradient, no shading, no texture, no outline stroke, no drop shadow. Crisp hard edges. The subject is a single connected silhouette, centred, complete in frame with even margin. High contrast, two tones only.",
+    "grey, gradient, shading, soft edges, anti-aliased blur, texture, noise, photograph, photorealistic, 3d render, perspective, drop shadow, glow, color, colored, outline stroke, frame, border, multiple objects, text, watermark, signature, onion domes, russian orthodox style, gilded roof, baroque",
+    2464,
+    1056,
+    1,
+    2076,
+    "fixed",
+    false,
+    false
+   ]
+  },
+  {
+   "id": 2,
+   "type": "SaveImage",
+   "pos": [
+    500,
+    40
+   ],
+   "size": [
+    400,
+    380
+   ],
+   "flags": {},
+   "order": 2,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 1
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "saharna/mark_skyline_complex"
+   ]
+  },
+  {
+   "id": 3,
+   "type": "QwenImageTextToImageApi",
+   "pos": [
+    40,
+    500
+   ],
+   "size": [
+    400,
+    380
+   ],
+   "flags": {},
+   "order": 3,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model.prompt",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "model.prompt"
+     }
+    },
+    {
+     "name": "model.negative_prompt",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "model.negative_prompt"
+     }
+    },
+    {
+     "name": "model.width",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "model.width"
+     }
+    },
+    {
+     "name": "model.height",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "model.height"
+     }
+    },
+    {
+     "name": "n",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "n"
+     }
+    },
+    {
+     "name": "seed",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "seed"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      3
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "QwenImageTextToImageApi"
+   },
+   "widgets_values": [
+    "qwen-image-3.0-pro",
+    "Silhouette of a single Moldovan Orthodox church: three apses, one slender central drum with a modest cupola and cross, steep shingle roof, arched windows cut out of the silhouette. Pure black shape on pure white background. Absolutely flat solid black, no grey, no gradient, no shading, no texture, no outline stroke, no drop shadow. Crisp hard edges. The subject is a single connected silhouette, centred, complete in frame with even margin. High contrast, two tones only.",
+    "grey, gradient, shading, soft edges, anti-aliased blur, texture, noise, photograph, photorealistic, 3d render, perspective, drop shadow, glow, color, colored, outline stroke, frame, border, multiple objects, text, watermark, signature, onion domes, russian orthodox style, gilded roof, baroque",
+    1536,
+    1536,
+    1,
+    2077,
+    "fixed",
+    false,
+    false
+   ]
+  },
+  {
+   "id": 4,
+   "type": "SaveImage",
+   "pos": [
+    500,
+    500
+   ],
+   "size": [
+    400,
+    380
+   ],
+   "flags": {},
+   "order": 4,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 3
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "saharna/mark_church"
+   ]
+  },
+  {
+   "id": 5,
+   "type": "QwenImageTextToImageApi",
+   "pos": [
+    40,
+    960
+   ],
+   "size": [
+    400,
+    380
+   ],
+   "flags": {},
+   "order": 5,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model.prompt",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "model.prompt"
+     }
+    },
+    {
+     "name": "model.negative_prompt",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "model.negative_prompt"
+     }
+    },
+    {
+     "name": "model.width",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "model.width"
+     }
+    },
+    {
+     "name": "model.height",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "model.height"
+     }
+    },
+    {
+     "name": "n",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "n"
+     }
+    },
+    {
+     "name": "seed",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "seed"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      5
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "QwenImageTextToImageApi"
+   },
+   "widgets_values": [
+    "qwen-image-3.0-pro",
+    "Silhouette of a Moldovan monastery bell tower: square base, open arcaded belfry with four arches cut through, steep pyramidal roof, cross finial. Pure black shape on pure white background. Absolutely flat solid black, no grey, no gradient, no shading, no texture, no outline stroke, no drop shadow. Crisp hard edges. The subject is a single connected silhouette, centred, complete in frame with even margin. High contrast, two tones only.",
+    "grey, gradient, shading, soft edges, anti-aliased blur, texture, noise, photograph, photorealistic, 3d render, perspective, drop shadow, glow, color, colored, outline stroke, frame, border, multiple objects, text, watermark, signature, onion domes, russian orthodox style, gilded roof, baroque",
+    1056,
+    2464,
+    1,
+    2078,
+    "fixed",
+    false,
+    false
+   ]
+  },
+  {
+   "id": 6,
+   "type": "SaveImage",
+   "pos": [
+    500,
+    960
+   ],
+   "size": [
+    400,
+    380
+   ],
+   "flags": {},
+   "order": 6,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 5
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "saharna/mark_belltower"
+   ]
+  },
+  {
+   "id": 7,
+   "type": "QwenImageTextToImageApi",
+   "pos": [
+    40,
+    1420
+   ],
+   "size": [
+    400,
+    380
+   ],
+   "flags": {},
+   "order": 7,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model.prompt",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "model.prompt"
+     }
+    },
+    {
+     "name": "model.negative_prompt",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "model.negative_prompt"
+     }
+    },
+    {
+     "name": "model.width",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "model.width"
+     }
+    },
+    {
+     "name": "model.height",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "model.height"
+     }
+    },
+    {
+     "name": "n",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "n"
+     }
+    },
+    {
+     "name": "seed",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "seed"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      7
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "QwenImageTextToImageApi"
+   },
+   "widgets_values": [
+    "qwen-image-3.0-pro",
+    "Silhouette of a rock-cut cave chapel in a cliff: the hewn arched opening and the mass of stratified rock around it, a small cross above the opening. Pure black shape on pure white background. Absolutely flat solid black, no grey, no gradient, no shading, no texture, no outline stroke, no drop shadow. Crisp hard edges. The subject is a single connected silhouette, centred, complete in frame with even margin. High contrast, two tones only.",
+    "grey, gradient, shading, soft edges, anti-aliased blur, texture, noise, photograph, photorealistic, 3d render, perspective, drop shadow, glow, color, colored, outline stroke, frame, border, multiple objects, text, watermark, signature, onion domes, russian orthodox style, gilded roof, baroque",
+    1536,
+    1536,
+    1,
+    2079,
+    "fixed",
+    false,
+    false
+   ]
+  },
+  {
+   "id": 8,
+   "type": "SaveImage",
+   "pos": [
+    500,
+    1420
+   ],
+   "size": [
+    400,
+    380
+   ],
+   "flags": {},
+   "order": 8,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 7
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "saharna/mark_chapel_cave"
+   ]
+  },
+  {
+   "id": 9,
+   "type": "QwenImageTextToImageApi",
+   "pos": [
+    40,
+    1880
+   ],
+   "size": [
+    400,
+    380
+   ],
+   "flags": {},
+   "order": 9,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model.prompt",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "model.prompt"
+     }
+    },
+    {
+     "name": "model.negative_prompt",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "model.negative_prompt"
+     }
+    },
+    {
+     "name": "model.width",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "model.width"
+     }
+    },
+    {
+     "name": "model.height",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "model.height"
+     }
+    },
+    {
+     "name": "n",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "n"
+     }
+    },
+    {
+     "name": "seed",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "seed"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      9
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "QwenImageTextToImageApi"
+   },
+   "widgets_values": [
+    "qwen-image-3.0-pro",
+    "Silhouette of the monastery entrance gate: round arch on two piers, low pitched shingled roof over it, cross at the apex, the opening cut clean through. Pure black shape on pure white background. Absolutely flat solid black, no grey, no gradient, no shading, no texture, no outline stroke, no drop shadow. Crisp hard edges. The subject is a single connected silhouette, centred, complete in frame with even margin. High contrast, two tones only.",
+    "grey, gradient, shading, soft edges, anti-aliased blur, texture, noise, photograph, photorealistic, 3d render, perspective, drop shadow, glow, color, colored, outline stroke, frame, border, multiple objects, text, watermark, signature, onion domes, russian orthodox style, gilded roof, baroque",
+    1856,
+    1392,
+    1,
+    2080,
+    "fixed",
+    false,
+    false
+   ]
+  },
+  {
+   "id": 10,
+   "type": "SaveImage",
+   "pos": [
+    500,
+    1880
+   ],
+   "size": [
+    400,
+    380
+   ],
+   "flags": {},
+   "order": 10,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 9
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "saharna/mark_gate"
+   ]
+  }
+ ],
+ "links": [
+  [
+   1,
+   1,
+   0,
+   2,
+   0,
+   "IMAGE"
+  ],
+  [
+   3,
+   3,
+   0,
+   4,
+   0,
+   "IMAGE"
+  ],
+  [
+   5,
+   5,
+   0,
+   6,
+   0,
+   "IMAGE"
+  ],
+  [
+   7,
+   7,
+   0,
+   8,
+   0,
+   "IMAGE"
+  ],
+  [
+   9,
+   9,
+   0,
+   10,
+   0,
+   "IMAGE"
+  ]
+ ],
+ "groups": [],
+ "config": {},
+ "extra": {
+  "ds": {
+   "scale": 0.5,
+   "offset": [
+    0,
+    0
+   ]
+  },
+  "title": "P0 - black-on-white marks for tracing"
+ },
+ "version": 0.4
+}
