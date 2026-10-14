@@ -2,6 +2,7 @@
 // THE FRAME — a centre field between two rails, from Page 1 and from the old
 // site's own lfon_repeat / rfon_repeat margin tiles. 78 | 1200 | 198.
 // Every page that is not the descent itself sits inside this.
+import DescentRail from "@components/temple/DescentRail.astro";
 import CalendarRail from "@components/temple/CalendarRail.astro";
 import type { Locale } from "@i18n";
 import type { ZoneId } from "@temple/zones";
@@ -14,12 +15,11 @@ interface Props {
   rails?: boolean;
 }
 
-const { lang, zone, rails = true } = Astro.props;
+const { lang, zone, path = "", rails = true } = Astro.props;
 ---
 
-<div class:list={["frame", "ground-white", `z-${zone}`, !rails && "no-rails"]} data-zone={zone}>
-  {/* the descent index is the drawer now, at every width (owner, 2026-10-10):
-      unseen until the header button opens it */}
+<div class:list={["frame", `z-${zone}`, !rails && "no-rails"]} data-zone={zone}>
+  {rails && <DescentRail lang={lang} current={zone} path={path} />}
   <div class="centre">
     <slot />
   </div>
@@ -27,16 +27,14 @@ const { lang, zone, rails = true } = Astro.props;
 </div>
 
 <style>
-  /* centre | calendar — the left rail lives in the drawer. Every width a
-     token, every gap a step of 8. */
+  /* rail | centre | rail — every width a token, every gap a step of 8 */
   .frame {
     display: grid;
-    grid-template-columns: minmax(0, var(--centre-max)) var(--rail-r);
+    grid-template-columns: var(--rail-l) minmax(0, var(--centre-max)) var(--rail-r);
     justify-content: center;
     gap: var(--frame-gap);
     min-height: calc(100dvh - var(--nav-h, 80px));
     padding: 0 var(--frame-pad);
-    background: var(--seal-navy);
     color: var(--parchment);
   }
   .frame.no-rails,
@@ -47,16 +45,46 @@ const { lang, zone, rails = true } = Astro.props;
     grid-template-columns: minmax(0, var(--centre-max));
   }
 
-  /* below 1360px the calendar folds under the text */
+  /* the right rail goes first, because the calendar outranks the index
+     when there is only room for one */
   @media (max-width: 1360px) {
+    .frame {
+      grid-template-columns: var(--rail-l) minmax(0, 1fr);
+    }
+  }
+  @media (max-width: 1100px) {
     .frame {
       grid-template-columns: minmax(0, 1fr);
     }
   }
 
-  /* One ground for every page: white (owner, 2026-10-10) — the shrine's
-     chambers too; their gold title and narrower measure mark them. */
+  /* one palette per page, held for the whole page — never mixed. Flat
+     grounds: the page darkens downward in steps (ground → footer), not in
+     a wash. */
+  .z-rock {
+    background: var(--rock-ground);
+  }
+  .z-green {
+    background: var(--green);
+    /* ochre text on the green ground is 4.4:1; one step lighter holds 4.8:1 */
+    --ochre: #cba952;
+  }
   .z-gold {
-    background: var(--seal-navy);
+    background: var(--pall);
+    /* thread gold: line work, never a field */
+    --line: rgb(192 169 116 / 32%);
+    --line-strong: var(--gold);
+  }
+  .z-river {
+    /* Zone IV is the bright one. Practical information, read in a car park. */
+    background: var(--river-ground);
+    color: var(--river-ink);
+    --line: rgb(22 50 61 / 20%);
+    --line-strong: var(--river);
+    --kicker: var(--river-link);
+    --here: var(--river-strong);
+    --btn: var(--river-ink);
+    --btn-ink: var(--river-ground);
+    --btn-hover: var(--river-strong);
   }
 </style>

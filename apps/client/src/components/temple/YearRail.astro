@@ -69,9 +69,7 @@ const t = useTranslations(lang);
     list-style: none;
     margin: 0;
     padding: 0;
-    width: max-content;
-    /* centred under the centred head while it fits; scrolls when it does not */
-    margin-inline: auto;
+    min-width: max-content;
   }
   .year {
     position: relative;
@@ -82,7 +80,7 @@ const t = useTranslations(lang);
     min-height: var(--tap);
     padding: var(--s-3) var(--s-3) 0;
     text-decoration: none;
-    color: var(--seal-mist);
+    color: color-mix(in srgb, currentColor 72%, transparent);
     transition: color var(--dur-1) var(--ease-out);
   }
   .years li:first-child .year {

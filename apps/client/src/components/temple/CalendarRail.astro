@@ -114,42 +114,9 @@ const dateLocale = lang === "ru" ? "ru-RU" : lang === "en" ? "en-GB" : "ro-RO";
   // The embed's iframe arrives untitled (WCAG 4.1.2): name it after the rail.
   // Beside the text the rail scrolls inside itself once the embed is tall,
   // so the keyboard must be able to reach that scroll (2.1.1).
-  // The embed writes its page into an about:blank iframe — our own origin —
-  // so it can wear the seal: navy ground, paper text, gold for the feasts
-  // its own sheet prints in red. Painted icon untouched.
-  const sealSheet = `
-    html, body { background: #c9b07a !important; color: #1a3346; margin: 0; }
-    body { padding: 0 0 8px; }
-    .corner, .bottom { background: none !important; }
-    table { width: 100%; border-collapse: collapse; }
-    .calendox-icon { padding: 0 0 12px; }
-    .icon-big-calendar { max-width: 100%; height: auto; border: 1px solid #1a3346; }
-    .d1, .d2, .d3, .d4, .d5, .d6, .calendox-old-style-td, .calendox-new-style-td { color: #1a3346; }
-    .calendox-day-name { background: #1a3346; color: #f7f6f1; border: 1px solid #1a3346; }
-    .calendox-entries { color: #6b1420 !important; text-align: left; padding: 12px 0 0; border-top: 1px solid #22425a; line-height: 1.5; }
-    .r0, .r1, .post-entry { color: #1a3346 !important; background: none; }
-    .r2, .r3, .r4, .d7, .sunday, .links { color: #6b1420 !important; }
-    .entry-link { display: block; margin-bottom: 6px; }
-    td:hover, .entry-link:hover { color: #22425a !important; text-decoration: underline; }
-  `;
-  const dress = (frame: HTMLIFrameElement) => {
-    const doc = frame.contentDocument;
-    if (!doc?.body || doc.getElementById("seal-sheet")) return;
-    const style = doc.createElement("style");
-    style.id = "seal-sheet";
-    style.textContent = sealSheet;
-    doc.head.appendChild(style);
-    frame.height = String(doc.documentElement.scrollHeight);
-  };
-
   if (slot && aside) {
     const fit = () => {
       const frame = slot.querySelector("iframe");
-      if (frame && !frame.dataset.dressed) {
-        frame.dataset.dressed = "1";
-        frame.addEventListener("load", () => setTimeout(() => dress(frame), 0));
-      }
-      if (frame) dress(frame);
       if (frame && !frame.title) frame.title = aside.dataset.frameTitle ?? "";
       if (wide.matches && aside.scrollHeight > aside.clientHeight + 1) aside.tabIndex = 0;
       else aside.removeAttribute("tabindex");
@@ -165,23 +132,13 @@ const dateLocale = lang === "ru" ? "ru-RU" : lang === "en" ? "en-GB" : "ro-RO";
 </script>
 
 <style>
-  /* the calendar is the one gold field on the site (owner, 2026-10-10:
-     "blue for the calendar bg feels off, try gold"): read-gold ground,
-     deep-navy ink 6.2:1, navy rules */
   .rail-right {
-    --kicker: var(--cal-ink);
-    --line-strong: var(--cal-ink);
-    --ochre: var(--cal-ink);
     position: sticky;
     top: var(--nav-h, var(--s-10));
     align-self: start;
-    min-height: calc(100dvh - var(--nav-h, 80px));
     max-height: calc(100dvh - var(--nav-h, 80px));
     overflow-y: auto;
-    box-sizing: border-box;
-    padding: var(--page-top) var(--s-5) var(--s-8);
-    background: var(--cal-ground);
-    color: var(--cal-ink);
+    padding: var(--page-top) 0 var(--s-8);
     scrollbar-width: none;
   }
   .rail-right::-webkit-scrollbar {
@@ -205,6 +162,7 @@ const dateLocale = lang === "ru" ? "ru-RU" : lang === "en" ? "en-GB" : "ro-RO";
     display: block;
     font-size: var(--t-ui);
     line-height: 1.4;
+    opacity: 0.88;
     margin-bottom: var(--s-4);
   }
   .today::first-letter {
@@ -227,12 +185,12 @@ const dateLocale = lang === "ru" ? "ru-RU" : lang === "en" ? "en-GB" : "ro-RO";
   .calendar-slot :global(.is-unavailable)::after {
     content: "—";
     display: block;
-    color: var(--cal-ink);
+    opacity: 0.4;
     padding: var(--s-4) 0;
   }
 
   .calendar-fallback {
-    color: var(--cal-ink);
+    color: var(--ochre);
     font-size: 16px;
   }
 
@@ -242,12 +200,11 @@ const dateLocale = lang === "ru" ? "ru-RU" : lang === "en" ? "en-GB" : "ro-RO";
     .rail-right {
       position: static;
       grid-column: -2 / -1;
-      min-height: 0;
       max-height: none;
       overflow: visible;
-      padding: var(--s-2) var(--s-5) var(--s-6);
+      padding: 0 0 var(--s-8);
       margin-top: 0;
-      border-top: 0;
+      border-top: var(--rule) solid var(--line);
     }
     .rail-right > .rail-label {
       display: none;

@@ -36,7 +36,8 @@
   content: "";
   height: var(--rule, 1px);
   flex: 1;
-  background: var(--line);
+  background: currentColor;
+  opacity: 0.35;
 }
 .stratum-title {
   font-size: var(--t-stratum);
@@ -50,10 +51,11 @@
   font-size: var(--t-lead);
   line-height: 1.72;
   max-width: var(--measure);
+  opacity: 0.9;
 }
 .body {
   max-width: var(--measure);
-  color: var(--seal-mist);
+  opacity: 0.82;
   margin-top: 1.1em;
 }
 .rule {
@@ -69,8 +71,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: var(--plate-opacity, 0.7);
-  filter: saturate(1.25) contrast(1.05);
+  opacity: var(--plate-opacity, 0.5);
   mix-blend-mode: var(--plate-blend, normal);
   pointer-events: none;
 }

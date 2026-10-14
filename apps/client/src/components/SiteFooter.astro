@@ -2,8 +2,6 @@
 import type { Locale } from "@i18n";
 import { getLocalizedPath, telHref, useTranslations } from "@i18n/utils";
 import Icon from "@components/marks/Icon.astro";
-import { stripBasePath } from "@utils/paths";
-import { zoneById } from "@temple/zones";
 
 type Props = {
   lang: Locale;
@@ -34,21 +32,6 @@ const footerGroups = [
     { key: "search.title", href: getLocalizedPath("/cautare", lang) },
   ],
 ] as const;
-// On the home page the footer only carries what the page above has not
-// already shown (owner, 2026-10-10): the landing already links the shrine,
-// the chronicle, the hours, the journey pages and the pomelnic, and prints
-// the address.
-const isHome = /^\/(en|ru)?\/?$/.test(stripBasePath(Astro.url.pathname));
-const onHome = ["/macarie", "/posts", "/slujbe", "/cum-de-ajuns", "/cazare", "/contact", "/pomelnic", "/donations"];
-const groups = isHome
-  ? footerGroups
-      .map((group) => group.filter((item) => !onHome.some((path) => item.href.endsWith(`${path}/`) || item.href.endsWith(path))))
-      .filter((group) => group.length > 0)
-  : footerGroups;
-// …and in their place it carries the pilgrim's block, moved down from the
-// landing's last zone (owner, 2026-10-10): address, telephone, the journey pages.
-const pilgrimPages = zoneById.river.pages;
-const pilgrimPhone = t("contact.phoneMain");
 const email = t("footer.email").split(",")[0]?.trim() ?? "";
 const phone = t("contact.phoneSecretariat");
 const socialLinks = [
@@ -61,58 +44,28 @@ const socialLinks = [
 {/* the lintel: a 4px solid bar closes every page; one hairline divides inside */}
 <footer class="footer">
   <div class="frame-wide">
-    <div class:list={["top", isHome && "top-home"]}>
+    <div class="top">
       <div class="house">
         <p class="title">{t("main.title")}</p>
         <address>
-          {!isHome && <span>{t("footer.addressLine")}</span>}
+          <span>{t("footer.addressLine")}</span>
           <a href={telHref(phone)}>{phone}</a>
           <a href={`mailto:${email}`}>{email}</a>
         </address>
       </div>
-      {
-        isHome ? (
-          <div class="pilgrim">
-            <dl class="facts">
-              <div>
-                <dt>{t("contact.addressLabel")}</dt>
-                <dd>
-                  {t("footer.addressName")}
-                  <br />
-                  {t("footer.addressLine")}
-                </dd>
-              </div>
-              <div>
-                <dt>{t("contact.phoneMainLabel")}</dt>
-                <dd>
-                  <a href={telHref(pilgrimPhone)}>{pilgrimPhone}</a>
-                </dd>
-              </div>
-            </dl>
-            <nav class="links pilgrim-links" aria-label={t("home.riverTitle")}>
-              <ul>
-                {pilgrimPages.map((page) => (
-                  <li>
-                    <a href={getLocalizedPath(page.href, lang)}>{t(page.labelKey)}</a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </div>
-        ) : (
-          <nav class="links" aria-label={t("nav.menu")}>
-            {groups.map((group) => (
-              <ul>
-                {group.map((item) => (
-                  <li>
-                    <a href={item.href}>{t(item.key)}</a>
-                  </li>
-                ))}
-              </ul>
-            ))}
-          </nav>
-        )
-      }
+      <nav class="links" aria-label={t("nav.menu")}>
+        {
+          footerGroups.map((group) => (
+            <ul>
+              {group.map((item) => (
+                <li>
+                  <a href={item.href}>{t(item.key)}</a>
+                </li>
+              ))}
+            </ul>
+          ))
+        }
+      </nav>
     </div>
     <div class="base">
       <p class="copyright">{t("footer.copyright")}</p>
@@ -140,7 +93,7 @@ const socialLinks = [
     padding: var(--s-9) 0 var(--s-5);
     border-top: var(--bar) solid var(--ochre);
     background: var(--header);
-    color: var(--header-ink);
+    color: color-mix(in srgb, var(--parchment) 80%, transparent);
     font-size: var(--t-ui);
     line-height: 1.5;
   }
@@ -153,11 +106,9 @@ const socialLinks = [
   .title {
     margin: 0 0 var(--s-4);
     color: var(--parchment);
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 18px;
+    font-size: 17px;
     line-height: 1.3;
-    letter-spacing: 0.05em;
+    letter-spacing: var(--track-caps);
     text-transform: uppercase;
   }
   address {
@@ -197,62 +148,18 @@ const socialLinks = [
     padding: 0;
   }
 
-  /* home: the pilgrim's block sits a step further left — facts | pages */
-  .top-home {
-    grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
-  }
-  /* home: the pilgrim's block — facts | the four journey pages */
-  .pilgrim {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--s-6);
-  }
-  .facts {
-    margin: 0;
-    font-size: var(--t-meta);
-  }
-  .facts div + div {
-    margin-top: var(--s-4);
-  }
-  .facts dt {
-    font-style: italic;
-    color: var(--header-ink);
-  }
-  .facts dd {
-    margin: var(--s-1) 0 0;
-    color: var(--parchment);
-  }
-  .facts a {
-    display: inline-flex;
-    align-items: center;
-    min-height: var(--tap-min);
-    color: var(--parchment);
-    text-decoration: underline;
-    text-decoration-color: var(--seal-gold);
-    text-decoration-thickness: var(--rule);
-    text-underline-offset: 0.25em;
-  }
-  .pilgrim-links {
-    display: block;
-  }
-  @media (width < 40rem) {
-    .pilgrim {
-      grid-template-columns: minmax(0, 1fr);
-    }
-  }
-
   .base {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: var(--s-4);
     padding-top: var(--s-4);
-    border-top: var(--rule) solid var(--header-line);
+    border-top: var(--rule) solid color-mix(in srgb, var(--parchment) 14%, transparent);
   }
   .copyright {
     margin: 0;
     font-size: var(--t-meta);
-    color: var(--header-ink);
+    color: color-mix(in srgb, var(--parchment) 72%, transparent);
   }
 
   .social {
@@ -268,7 +175,7 @@ const socialLinks = [
     justify-content: center;
     width: var(--tap);
     height: var(--tap);
-    color: var(--header-ink);
+    color: color-mix(in srgb, var(--parchment) 80%, transparent);
     font-size: 17px;
     font-weight: 700;
     text-decoration: none;

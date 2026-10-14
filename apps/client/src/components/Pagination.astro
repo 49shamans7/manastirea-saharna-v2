@@ -96,14 +96,15 @@ const items = visiblePages.map((page, index) => ({
     color: inherit;
     font-size: var(--t-ui);
     font-variant-numeric: lining-nums tabular-nums;
-    color: var(--seal-mist);
-    transition: color var(--dur-1) var(--ease-out);
+    opacity: 0.72;
+    transition: opacity var(--dur-1) var(--ease-out);
   }
   .number:hover,
   .step:hover {
-    color: var(--seal-paper);
+    opacity: 1;
   }
   .number.is-current {
+    opacity: 1;
     color: var(--ochre);
   }
   .number.is-current::after {
@@ -116,10 +117,10 @@ const items = visiblePages.map((page, index) => ({
     background: var(--line-strong);
   }
   .step.is-off {
-    color: var(--line);
+    opacity: 0.25;
   }
   .gap {
-    color: var(--seal-mist);
+    opacity: 0.35;
     padding: 0 var(--s-1);
   }
   @media (max-width: 380px) {

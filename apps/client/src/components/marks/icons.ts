@@ -58,5 +58,4 @@ export const fills: Partial<Record<IconName, string>> = {
 };
 
 // the four strata — exactly the Navbar opener: 20 wide, 2 high, 3 apart
-// one ink, the seal's gold, for all four bars (2026-10-10)
-export const strata = ["var(--seal-gold)", "var(--seal-gold)", "var(--seal-gold)", "var(--seal-gold)"];
+export const strata = ["var(--rock-lilac)", "var(--green-sage)", "var(--gold)", "var(--river)"];

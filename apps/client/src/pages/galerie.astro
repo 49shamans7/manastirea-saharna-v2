@@ -133,10 +133,6 @@ const total = categories.reduce((n, c) => n + c.items.length, 0);
 </script>
 
 <style>
-  /* a title in capitals is never broken by a hyphen */
-  :global(.page-title) {
-    hyphens: manual;
-  }
   .galerie {
     padding: var(--page-top) 0 var(--page-bottom);
   }
@@ -147,24 +143,19 @@ const total = categories.reduce((n, c) => n + c.items.length, 0);
   .category-head {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     align-items: baseline;
     gap: var(--s-1) var(--s-3);
-    font-family: var(--font-display);
     font-size: var(--t-h2);
-    font-weight: 700;
-    text-align: center;
+    font-weight: 400;
     line-height: 1.3;
     letter-spacing: var(--track-caps);
     text-transform: uppercase;
     margin: 0 0 var(--s-4);
   }
   .category-count {
-    font-family: Georgia, "Times New Roman", serif;
     font-size: var(--t-meta);
-    font-weight: 400;
     letter-spacing: 0;
-    color: var(--seal-gold-text);
+    opacity: 0.66;
     font-variant-numeric: lining-nums tabular-nums;
   }
 
@@ -177,7 +168,7 @@ const total = categories.reduce((n, c) => n + c.items.length, 0);
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
     gap: var(--lattice);
-    background: var(--line-strong);
+    background: rgb(13 17 22 / 40%);
   }
   .tile {
     position: relative;
@@ -196,17 +187,18 @@ const total = categories.reduce((n, c) => n + c.items.length, 0);
     aspect-ratio: 1;
     object-fit: cover;
   }
-  /* hover draws a solid gold frame inside the tile — no veil, zoom or glow */
+  /* hover and focus draw a frame, they do not zoom or glow */
   .tile::after {
     content: "";
     position: absolute;
     inset: 0;
-    border: var(--rule-2) solid transparent;
-    transition: border-color var(--dur-1) var(--ease-out);
+    background: transparent;
+    transition: background-color var(--dur-2) var(--ease-out);
     pointer-events: none;
   }
+  /* hover lifts a veil, it does not frame, zoom or glow */
   .tile:hover::after {
-    border-color: var(--seal-gold);
+    background: rgb(244 239 228 / 10%);
   }
   .tile:focus-visible {
     outline: var(--rule-2) solid var(--ochre);
@@ -223,7 +215,7 @@ const total = categories.reduce((n, c) => n + c.items.length, 0);
     color: var(--parchment);
   }
   .lightbox::backdrop {
-    background: var(--seal-deep);
+    background: rgb(10 12 15 / 94%);
   }
   .lightbox img {
     display: block;
@@ -244,8 +236,8 @@ const total = categories.reduce((n, c) => n + c.items.length, 0);
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: var(--rule) solid var(--seal-gold);
-    background: var(--seal-deep);
+    border: var(--rule) solid rgb(244 239 228 / 24%);
+    background: var(--night);
     color: var(--parchment);
     font-size: 17px;
     padding: 0 var(--s-6);
@@ -255,8 +247,8 @@ const total = categories.reduce((n, c) => n + c.items.length, 0);
       border-color var(--dur-1) var(--ease-out);
   }
   .lightbox-controls button:hover {
-    border-color: var(--seal-gold-text);
-    background: var(--seal-lift);
+    border-color: rgb(244 239 228 / 72%);
+    background: var(--rock-ground);
   }
 
   @media (max-width: 600px) {

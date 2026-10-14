@@ -28,10 +28,10 @@
   body {
     /* nothing on the site may scroll sideways on a phone */
     overflow-x: clip;
-    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: rgb(196 162 74 / 18%);
     margin: 0;
-    background: var(--seal-navy);
-    color: var(--parchment);
+    background: var(--parchment);
+    color: var(--ink);
     font-family: Georgia, "Times New Roman", serif;
   }
 
@@ -51,18 +51,6 @@
   video,
   iframe {
     max-width: 100%;
-  }
-
-  /* headings are set in Alegreya SC, whose default figures are old-style:
-     every head takes lining figures ("ICOSUL 1", "2025") */
-  :where(h1, h2, h3, h4, .h1, .h2, .h3) {
-    font-variant-numeric: lining-nums;
-  }
-
-  /* photographs carry the seal's vividness: saturation lifted, contrast a
-     touch firmer (owner, 2026-10-10: "more lively"). Files unchanged. */
-  main img:not([src$=".svg"]) {
-    filter: saturate(1.2) contrast(1.04);
   }
 }
 
@@ -85,9 +73,6 @@
   .page-head {
     position: relative;
     isolation: isolate;
-    /* the seal's voice: every head is centred, like the lettering round
-       the seal (owner, 2026-10-10). Body text stays left — it is read. */
-    text-align: center;
     padding-bottom: var(--s-6);
     margin-bottom: var(--head-gap);
     border-bottom: var(--rule) solid var(--line);
@@ -102,18 +87,14 @@
   }
   .page-title {
     margin: 0;
-    font-family: var(--font-display);
-    /* Alegreya's default figures are old-style; in a capital title "2025"
-       would sit at x-height */
-    font-variant-numeric: lining-nums;
     font-size: var(--t-title);
-    font-weight: 700;
+    font-weight: 400;
     line-height: var(--lh-title);
     letter-spacing: var(--track-caps);
     text-transform: uppercase;
     text-wrap: balance;
     overflow-wrap: break-word;
-    hyphens: manual;
+    hyphens: auto;
   }
   .page-title.is-long {
     font-size: var(--t-title-long);
@@ -121,17 +102,17 @@
   }
   .page-lead {
     max-width: var(--measure);
-    margin: var(--s-5) auto 0;
+    margin: var(--s-5) 0 0;
     font-size: var(--t-standfirst);
     line-height: var(--lh-lead);
     text-wrap: pretty;
-    color: var(--seal-mist);
+    opacity: 0.86;
   }
   .page-meta {
     margin: var(--s-4) 0 0;
     font-size: var(--t-meta);
     line-height: 1.4;
-    color: var(--seal-mist);
+    opacity: 0.72;
     font-variant-numeric: lining-nums tabular-nums;
   }
 
@@ -169,7 +150,7 @@
     border-color: var(--btn-hover, var(--parchment));
   }
   .btn-quiet {
-    border-color: var(--btn-line, var(--seal-mist));
+    border-color: var(--btn-line, color-mix(in srgb, currentColor 40%, transparent));
     background: transparent;
     color: inherit;
   }

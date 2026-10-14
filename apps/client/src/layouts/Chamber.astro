@@ -1,8 +1,8 @@
 ---
-// TEMPLATE B · CHAMBER — a room you enter. On the seal's navy; one centred
-// column under one centred head. The gold skin is the shrine: narrower
-// measure, thread-gold versal, the deeper navy as ground, rubrics in the
-// liturgical colour, and nothing moves.
+// TEMPLATE B · CHAMBER — a room you enter. No descent; you are already at the
+// bottom. One zone palette held for the whole page. Four skins.
+// The gold skin is the shrine: narrower measure, thread-gold versal, the pall
+// as ground, flowers as the only chroma, and nothing moves.
 import Layout from "@layouts/Layout.astro";
 import TempleFrame from "@layouts/TempleFrame.astro";
 import { getLocaleFromUrl, getLocalizedPath, useTranslations } from "@i18n/utils";
@@ -19,12 +19,9 @@ interface Props {
   lead?: string | undefined;
   /** Plate behind the chamber head, if one exists for this zone. */
   plate?: string | undefined;
-  /** False where the page ends with its own way back (a post's "all news"),
-      so the reader is not offered two exits stacked on each other. */
-  backLink?: boolean;
 }
 
-const { zone, title, eyebrow, lead, plate, backLink = true } = Astro.props;
+const { zone, title, eyebrow, lead, plate } = Astro.props;
 const lang = getLocaleFromUrl(Astro.url);
 const t = useTranslations(lang);
 const isGold = zone === "gold";
@@ -46,18 +43,23 @@ const descentHref = `${getLocalizedPath("/", lang)}#zona-${zone}`;
         {lead && <p class="page-lead">{lead}</p>}
       </header>
 
+      {
+        isGold && (
+          <div class="flowers" aria-hidden="true">
+            <span style="left:12%;top:8%" />
+            <span style="left:68%;top:3%;animation-delay:-3s" />
+            <span style="left:88%;top:16%;animation-delay:-6s" />
+          </div>
+        )
+      }
 
       <div class="chamber-body">
         <slot />
       </div>
 
-      {
-        backLink && (
-          <footer class="chamber-foot">
-            <a class="back" href={descentHref}><span aria-hidden="true">←</span> {t("zone.backToDescent")}</a>
-          </footer>
-        )
-      }
+      <footer class="chamber-foot">
+        <a class="back" href={descentHref}><span aria-hidden="true">←</span> {t("zone.backToDescent")}</a>
+      </footer>
     </main>
   </TempleFrame>
 </Layout>
@@ -75,15 +77,10 @@ const descentHref = `${getLocalizedPath("/", lang)}#zona-${zone}`;
 </script>
 
 <style>
-  /* a title in capitals is never broken by a hyphen */
-  .chamber :global(.page-title) {
-    hyphens: manual;
-  }
   .chamber {
     padding: var(--page-top) 0 var(--page-bottom);
-    /* one centred column under one centred head */
+    /* the centre column sits inside the shaft, not beside it */
     max-width: var(--measure-wide, 62rem);
-    margin-inline: auto;
   }
   .is-shrine {
     max-width: calc(var(--measure-gold) + 6rem);
@@ -97,15 +94,17 @@ const descentHref = `${getLocalizedPath("/", lang)}#zona-${zone}`;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.42;
+    opacity: 0.2;
     z-index: -1;
   }
-  /* shrine titles are navy like every other page (owner, 2026-10-10); the
-     shrine keeps its narrower measure and gold sub-heads */
+  /* thread-gold versal — line work, never a field */
+  .is-shrine .chamber-title {
+    color: var(--gold);
+    letter-spacing: 0.05em;
+  }
 
   .chamber-body {
     max-width: var(--measure);
-    margin-inline: auto;
     font-size: var(--t-body);
     line-height: var(--lh-body);
   }
@@ -114,13 +113,12 @@ const descentHref = `${getLocalizedPath("/", lang)}#zona-${zone}`;
   }
   .chamber-body :global(p) {
     margin: 0 0 1.05em;
+    opacity: 0.88;
     text-wrap: pretty;
   }
   .chamber-body :global(h2) {
-    font-family: var(--font-display);
     font-size: var(--t-h2);
-    font-weight: 700;
-    text-align: center;
+    font-weight: 400;
     line-height: 1.3;
     letter-spacing: var(--track-caps);
     text-transform: uppercase;
@@ -134,7 +132,7 @@ const descentHref = `${getLocalizedPath("/", lang)}#zona-${zone}`;
     width: var(--s-6);
     height: var(--rule-2);
     background: var(--line-strong);
-    margin: 0 auto var(--s-4);
+    margin-bottom: var(--s-4);
   }
   .chamber-body > :global(:first-child) > :global(h2:first-child),
   .chamber-body > :global(h2:first-child) {
@@ -143,7 +141,6 @@ const descentHref = `${getLocalizedPath("/", lang)}#zona-${zone}`;
   /* sub-heads inside a chamber: Slujba's cântări, the Life's chapters and
      testimonies. One step down from h2, then one more; still line work. */
   .chamber-body :global(h3) {
-    text-align: center;
     font-size: var(--t-h3);
     font-weight: 400;
     font-style: italic;
@@ -187,12 +184,14 @@ const descentHref = `${getLocalizedPath("/", lang)}#zona-${zone}`;
     font-style: italic;
     font-size: var(--t-quote);
     line-height: 1.6;
+    opacity: 0.9;
   }
   /* the reset strips markers; lists in a chamber are real lists */
   .chamber-body :global(ul),
   .chamber-body :global(ol) {
     margin: 0 0 1.3em;
     padding-left: 1.4em;
+    opacity: 0.88;
   }
   .chamber-body :global(ul) {
     list-style: disc;
@@ -259,6 +258,7 @@ const descentHref = `${getLocalizedPath("/", lang)}#zona-${zone}`;
     }
   }
   .chamber-body :global(td) {
+    opacity: 0.9;
   }
 
   .chamber-body :global(hr) {
@@ -304,6 +304,7 @@ const descentHref = `${getLocalizedPath("/", lang)}#zona-${zone}`;
   }
   .chamber-body :global(dl.chronology dd) {
     line-height: 1.7;
+    opacity: 0.88;
     overflow-wrap: break-word;
   }
   @media (max-width: 599px) {
@@ -334,7 +335,7 @@ const descentHref = `${getLocalizedPath("/", lang)}#zona-${zone}`;
     font-size: var(--t-meta);
     line-height: 1.55;
     font-style: italic;
-    color: var(--seal-mist);
+    opacity: 0.72;
     max-width: var(--measure);
   }
 
@@ -342,7 +343,7 @@ const descentHref = `${getLocalizedPath("/", lang)}#zona-${zone}`;
     color: var(--ochre);
     text-decoration: underline;
     text-decoration-thickness: var(--rule);
-    text-decoration-color: var(--seal-gold);
+    text-decoration-color: color-mix(in srgb, currentColor 45%, transparent);
     text-underline-offset: 0.2em;
     transition: text-decoration-color var(--dur-1) var(--ease-out);
   }
@@ -353,6 +354,33 @@ const descentHref = `${getLocalizedPath("/", lang)}#zona-${zone}`;
     width: 100%;
     height: auto;
     margin: 2em 0;
+  }
+
+  /* the relics are buried in fresh flowers — the living half of the palette */
+  .flowers span {
+    position: absolute;
+    width: var(--s-2);
+    height: var(--s-2);
+    background: var(--flower);
+    animation: drift 9s ease-in-out infinite;
+  }
+  .flowers {
+    position: relative;
+    height: 0;
+  }
+  @keyframes drift {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-9px);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .flowers span {
+      animation: none;
+    }
   }
 
   .chamber-foot {

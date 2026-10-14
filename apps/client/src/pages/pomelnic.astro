@@ -51,10 +51,6 @@ const guide = [
 </Layout>
 
 <style>
-  /* a title in capitals is never broken by a hyphen */
-  :global(.page-title) {
-    hyphens: manual;
-  }
   .well-page {
     padding: var(--page-top) 0 var(--page-bottom);
     max-width: 48rem;
@@ -112,6 +108,7 @@ const guide = [
   }
   .guide-body p {
     margin: 0 0 1em;
+    opacity: 0.86;
   }
   .guide-body p:last-child {
     margin-bottom: 0;
@@ -128,13 +125,13 @@ const guide = [
     --shaft-pad: var(--s-7);
     position: relative;
     padding: 0 var(--shaft-pad);
-    border-left: var(--rule-2) solid var(--line);
-    border-right: var(--rule-2) solid var(--line);
+    border-left: var(--rule-2) solid rgb(244 239 228 / 32%);
+    border-right: var(--rule-2) solid rgb(244 239 228 / 32%);
     background: var(--well-wall);
   }
   .shaft-mouth {
     height: var(--bar-2);
-    background: var(--seal-gold);
+    background: var(--ochre);
     /* the mouth spans the walls: it is laid across them */
     margin: 0 calc((var(--shaft-pad) + var(--rule-2)) * -1) var(--s-8);
   }
@@ -142,7 +139,7 @@ const guide = [
     height: var(--s-10);
     margin: var(--s-8) calc(var(--shaft-pad) * -1) 0;
     background: var(--night);
-    border-top: var(--rule) solid var(--line);
+    border-top: var(--rule) solid rgb(244 239 228 / 32%);
   }
   @media (max-width: 599px) {
     .shaft {
@@ -153,10 +150,41 @@ const guide = [
     }
   }
 
-  /* the form wears the seal by default (PrayerRequestForm); in the shaft
-     only the field ground steps one darker */
+  /* the form is neutral for a bright page; in the shaft it is dark. It
+     takes its colours from here through its own custom properties. */
+  .form-well {
+    --field-label: var(--parchment);
+    --field-muted: rgb(244 239 228 / 70%);
+    --field-ink: var(--parchment);
+    --f-accent: var(--ochre);
+  }
   .form-well :global(input),
   .form-well :global(textarea) {
     background: var(--well-floor);
+    border-color: rgb(244 239 228 / 34%);
+    color: var(--parchment);
+  }
+  .form-well :global(input:hover),
+  .form-well :global(textarea:hover) {
+    border-color: rgb(244 239 228 / 60%);
+  }
+  .form-well :global(input::placeholder),
+  .form-well :global(textarea::placeholder) {
+    color: rgb(244 239 228 / 50%);
+  }
+  .form-well :global(input:focus),
+  .form-well :global(textarea:focus) {
+    border-color: var(--ochre);
+    outline: var(--rule) solid var(--ochre);
+    outline-offset: 0;
+  }
+  .form-well :global(button) {
+    border-color: var(--ochre);
+    background: var(--ochre);
+    color: var(--ink);
+  }
+  .form-well :global(button:hover) {
+    border-color: var(--parchment);
+    background: var(--parchment);
   }
 </style>

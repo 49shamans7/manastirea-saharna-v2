@@ -2,7 +2,7 @@
 import type { Locale } from "@i18n";
 import { getLocalizedPath, useTranslations } from "@i18n/utils";
 import Icon from "@components/marks/Icon.astro";
-import sealHeaderUrl from "@assets/marks/seal-header.svg?url";
+import Seal from "@components/marks/Seal.astro";
 
 type Props = {
   path: string;
@@ -23,22 +23,8 @@ const languageItems = [
 
 <header class="bar">
   <div class="frame-wide inner">
-    {/* The descent index lives in a drawer at every width (owner, 2026-10-10).
-        This is its one opener, on the side the drawer slides in from. */}
-    <button
-      type="button"
-      class="opener"
-      data-drawer-open
-      aria-label={t("nav.openMenu")}
-      aria-controls="rail-drawer"
-      aria-expanded="false">
-      <Icon name="menu" size={24} />
-    </button>
     <a class="brand" href={getLocalizedPath("/", lang)}>
-      {/* the official seal, not the small medallion (owner, 2026-10-10). Header
-          cut: seal.svg with its cream silhouette eroded by a 22-unit stroke in
-          the bar's olive (#253528), so no pale rim haloes it on the bar. */}
-      <img class="brand-seal" src={sealHeaderUrl} width="84" height="70" alt="" decoding="async" />
+      <Seal size={44} class="brand-seal" />
       <span class="brand-name">
         <span>{t("main.logoLineOne")}</span>
         <span>{t("main.logoLineTwo")}</span>
@@ -67,6 +53,20 @@ const languageItems = [
         }
       </nav>
 
+      {
+        /* The left rail is the only navigation. Below 1100px it lives in a
+          drawer (RailDrawer); this is its one opener, marked with the four
+          strata instead of a generic hamburger. */
+      }
+      <button
+        type="button"
+        class="opener"
+        data-drawer-open
+        aria-label={t("nav.openMenu")}
+        aria-controls="rail-drawer"
+        aria-expanded="false">
+        <Icon name="menu" size={24} />
+      </button>
     </div>
   </div>
 </header>
@@ -81,7 +81,7 @@ const languageItems = [
   }
   .inner {
     display: grid;
-    grid-template-columns: auto auto 1fr auto;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
     gap: var(--s-5);
     height: var(--nav-h);
@@ -102,9 +102,9 @@ const languageItems = [
   .brand-name {
     display: grid;
     gap: 2px;
-    /* the seal's lettering */
-    font-family: var(--font-display);
-    font-size: 14px;
+    /* Georgia, named first: ui-serif is New York on Apple — a third face */
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 13px;
     line-height: 1;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -121,7 +121,7 @@ const languageItems = [
   .langs {
     display: flex;
     align-items: center;
-    color: var(--header-ink);
+    color: color-mix(in srgb, var(--parchment) 82%, transparent);
     font-size: 13px;
     line-height: 16px;
     letter-spacing: 0.06em;
@@ -134,7 +134,7 @@ const languageItems = [
     min-width: var(--s-7);
     margin-left: calc(-1 * var(--rule));
     padding: 0 var(--s-2);
-    border: var(--rule) solid var(--header-line);
+    border: var(--rule) solid color-mix(in srgb, var(--parchment) 22%, transparent);
     transition:
       color var(--dur-1) var(--ease-out),
       border-color var(--dur-1) var(--ease-out);
@@ -142,19 +142,16 @@ const languageItems = [
   .lang:first-child {
     margin-left: 0;
   }
-  /* neighbours share a hairline (-1px margins), so the cell being hovered
-     must rise above them or its left edge stays hidden under the next one */
   .lang:hover {
-    position: relative;
-    z-index: 2;
-    border-color: var(--header-ink);
+    border-color: color-mix(in srgb, var(--parchment) 60%, transparent);
     color: var(--paper);
   }
   .lang.is-current {
     position: relative;
     z-index: 1;
     border-color: var(--signal);
-    color: var(--paper);
+    background: var(--signal);
+    color: var(--ink);
   }
 
   .find {
@@ -165,31 +162,33 @@ const languageItems = [
     width: var(--s-6);
     height: var(--s-6);
     border: var(--rule) solid transparent;
-    color: var(--header-ink);
+    color: color-mix(in srgb, var(--parchment) 82%, transparent);
     transition:
       color var(--dur-1) var(--ease-out),
       border-color var(--dur-1) var(--ease-out);
   }
   .find:hover {
-    border-color: var(--header-ink);
+    border-color: color-mix(in srgb, var(--parchment) 60%, transparent);
     color: var(--paper);
   }
 
   .opener {
-    display: inline-flex;
+    display: none;
     flex-shrink: 0;
     align-items: center;
     justify-content: center;
     width: var(--tap);
     height: var(--tap);
-    border: 0;
+    border: var(--rule) solid color-mix(in srgb, var(--parchment) 22%, transparent);
     background: transparent;
     color: var(--parchment);
     cursor: pointer;
-    transition: color var(--dur-1) var(--ease-out);
+    transition:
+      border-color var(--dur-1) var(--ease-out),
+      background-color var(--dur-1) var(--ease-out);
   }
   .opener:hover {
-    color: var(--seal-gold-text);
+    border-color: color-mix(in srgb, var(--parchment) 60%, transparent);
   }
 
   @media (width < 1100px) {
@@ -211,6 +210,9 @@ const languageItems = [
       width: var(--tap);
       height: var(--tap);
     }
+    .opener {
+      display: inline-flex;
+    }
   }
   @media (width < 40rem) {
     /* no room beside the name: search moves into the drawer */
@@ -218,8 +220,8 @@ const languageItems = [
       display: none;
     }
     .brand-seal {
-      width: 64px;
-      height: auto;
+      width: 40px;
+      height: 40px;
     }
     .brand-name {
       font-size: 11px;

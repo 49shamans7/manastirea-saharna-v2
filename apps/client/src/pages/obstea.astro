@@ -81,10 +81,6 @@ const years = [
 </Layout>
 
 <style>
-  /* a title in capitals is never broken by a hyphen */
-  :global(.page-title) {
-    hyphens: manual;
-  }
   .obstea {
     padding: var(--page-top) 0 var(--page-bottom);
   }
@@ -106,7 +102,6 @@ const years = [
   }
   figcaption {
     display: flex;
-    justify-content: center;
     align-items: baseline;
     gap: var(--s-4);
     padding-top: var(--s-3);
@@ -120,7 +115,7 @@ const years = [
   .what {
     font-size: var(--t-meta);
     font-style: italic;
-    color: var(--seal-mist);
+    opacity: 0.78;
   }
 
   .abbot {
@@ -144,8 +139,6 @@ const years = [
     margin: 0 0 var(--s-2);
   }
   .abbot-name {
-    font-family: var(--font-display);
-    font-weight: 700;
     font-size: var(--t-h2);
     line-height: 1.3;
     letter-spacing: var(--track-caps);
@@ -154,6 +147,7 @@ const years = [
   }
   /* the links row keeps full strength: ochre must hold 4.5:1 */
   .abbot-text p:not(.links) {
+    opacity: 0.82;
     line-height: 1.75;
     max-width: var(--measure);
   }
@@ -170,7 +164,7 @@ const years = [
     font-size: var(--t-ui);
     text-decoration: underline;
     text-decoration-thickness: var(--rule);
-    text-decoration-color: var(--seal-gold);
+    text-decoration-color: color-mix(in srgb, currentColor 45%, transparent);
     text-underline-offset: 0.25em;
   }
   .links a:hover {
@@ -181,11 +175,9 @@ const years = [
     margin-top: var(--s-9);
     font-size: var(--t-meta);
     line-height: 1.6;
-    color: var(--seal-mist);
+    opacity: 0.66;
     font-style: italic;
-    text-align: center;
     max-width: var(--measure);
-    margin-inline: auto;
   }
 
   /* phone: nothing that is read runs under 16px */
