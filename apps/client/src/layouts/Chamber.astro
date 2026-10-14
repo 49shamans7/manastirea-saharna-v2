@@ -224,7 +224,7 @@ const ornamentVars = `--ch-rhomb: url("${rhombUrl}"); --ch-band: url("${bandUrl}
   /* the display voice decides its own case and tracking (blackletter is
      never set in capitals): --display-case / --display-track */
   .ch-title {
-    font-family: var(--font-display, "Alegreya SC", Georgia, serif);
+    font-family: var(--font-gothic);
     text-transform: var(--display-case, uppercase);
     letter-spacing: var(--display-track, 0.04em);
     color: var(--ch-ink);
@@ -327,7 +327,7 @@ const ornamentVars = `--ch-rhomb: url("${rhombUrl}"); --ch-band: url("${bandUrl}
   .ch-body :global(.prose > p:first-of-type::first-letter) {
     float: left;
     margin: 0.08em 0.12em 0 0;
-    font-family: var(--font-display, "Alegreya SC", Georgia, serif);
+    font-family: var(--font-gothic);
     font-size: 4.2em;
     font-weight: 700;
     line-height: 0.82;
@@ -342,8 +342,8 @@ const ornamentVars = `--ch-rhomb: url("${rhombUrl}"); --ch-band: url("${bandUrl}
     font-size: clamp(20px, 1.6vw, 23px);
     font-weight: 700;
     line-height: 1.3;
-    letter-spacing: var(--display-track, 0.05em);
-    text-transform: var(--display-case, uppercase);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
     text-align: center;
     text-wrap: balance;
     color: var(--ch-ink);

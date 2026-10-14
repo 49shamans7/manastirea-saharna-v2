@@ -91,7 +91,7 @@ const journey: { href: string; labelKey: AllTranslationKeys; mark: "pin" | "arch
       {/* the Royal Doors: the one thing on the page you pass through */}
       <section class="doors" id="doors" aria-labelledby="doors-head">
         <svg class="doors-art" viewBox="0 0 384 768" aria-hidden="true" focusable="false">
-          <path d="M12 756 L12 216 A180 180 0 0 1 372 216 L372 756" />
+          <path d="M12 756 L12 280 C12 160 110 80 192 30 C274 80 372 160 372 280 L372 756" />
           <line x1="192" y1="36" x2="192" y2="756" />
           <rect x="36" y="264" width="132" height="132" /><rect x="216" y="264" width="132" height="132" />
           <rect x="36" y="420" width="132" height="132" /><rect x="216" y="420" width="132" height="132" />
@@ -201,6 +201,13 @@ const journey: { href: string; labelKey: AllTranslationKeys; mark: "pin" | "arch
           </a>
 
           <a class="door" href={href("/macarie")} data-reveal>
+            {/* the gothic window: a pointed arch, drawn twice like a moulding */}
+            <svg class="door-arch" viewBox="0 0 400 600" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+              <path d="M1 599 V236 C1 120 112 46 200 2 C288 46 399 120 399 236 V599 Z" vector-effect="non-scaling-stroke" />
+            </svg>
+            <svg class="door-arch door-arch-inner" viewBox="0 0 400 600" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+              <path d="M1 599 V236 C1 120 112 46 200 2 C288 46 399 120 399 236 V599 Z" vector-effect="non-scaling-stroke" />
+            </svg>
             <img
               class="door-photo"
               src={plate("gold-door-portrait")}
@@ -563,6 +570,10 @@ const journey: { href: string; labelKey: AllTranslationKeys; mark: "pin" | "arch
   }
   .doors-inner {
     max-width: 30rem;
+    /* the ground's own colour behind the words: the door lines stop at
+       the text instead of running through it — no visible box */
+    padding: var(--s-6) var(--s-5);
+    background: var(--seal-deep);
   }
   .doors-lead {
     margin: var(--s-5) 0 var(--s-7);
@@ -616,6 +627,7 @@ const journey: { href: string; labelKey: AllTranslationKeys; mark: "pin" | "arch
   }
   .gate-quote {
     margin: 0;
+    font-family: var(--font-gothic);
     font-size: clamp(26px, 3.4vw, 44px);
     line-height: 1.25;
 
@@ -729,17 +741,37 @@ const journey: { href: string; labelKey: AllTranslationKeys; mark: "pin" | "arch
     margin: 0 auto;
   }
   .door {
+    --arch: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 600' preserveAspectRatio='none'%3E%3Cpath d='M1 599 V236 C1 120 112 46 200 2 C288 46 399 120 399 236 V599 Z'/%3E%3C/svg%3E");
     position: relative;
     display: grid;
-    border: 1px solid var(--seal-gold);
-    padding: var(--s-2);
+    padding: var(--s-3);
     background: var(--seal-deep);
+    mask: var(--arch) 0 0 / 100% 100% no-repeat;
     color: var(--r-ink);
     text-decoration: none;
     /* off the axis: you turn aside to it */
     transform: translateX(var(--s-7));
   }
+  .door-arch {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: var(--seal-gold);
+    stroke-width: 1.5;
+    pointer-events: none;
+    transition: stroke var(--dur-1) var(--ease-out);
+  }
+  .door-arch-inner {
+    inset: var(--s-2);
+    width: calc(100% - 2 * var(--s-2));
+    height: calc(100% - 2 * var(--s-2));
+    stroke-width: 1;
+  }
   .door-photo {
+    mask: var(--arch) 0 0 / 100% 100% no-repeat;
     width: 100%;
     aspect-ratio: 4 / 5;
     object-fit: cover;
@@ -759,12 +791,12 @@ const journey: { href: string; labelKey: AllTranslationKeys; mark: "pin" | "arch
     margin: 0;
   }
   .door-title {
-    font-family: var(--font-display);
-    font-size: clamp(26px, 2.6vw, 34px);
-    font-weight: 700;
+    font-family: var(--font-gothic);
+    font-size: clamp(30px, 3vw, 40px);
+    font-weight: 400;
     line-height: 1.1;
-    letter-spacing: var(--r-track-title);
-    text-transform: uppercase;
+    letter-spacing: var(--display-track);
+    text-transform: var(--display-case);
   }
   .door-enter {
     font-size: 11px;
@@ -776,10 +808,15 @@ const journey: { href: string; labelKey: AllTranslationKeys; mark: "pin" | "arch
     width: 140px;
     margin-top: 0;
   }
-  .door:hover,
+  .door:hover .door-arch,
+  .door:focus-visible .door-arch {
+    stroke: var(--seal-paper);
+  }
   .door:focus-visible {
-    outline: 1px solid var(--r-gold);
-    outline-offset: var(--s-2);
+    outline: none;
+  }
+  .door:focus-visible .door-arch {
+    stroke-width: 3;
   }
   .aside {
     font-size: 11px;

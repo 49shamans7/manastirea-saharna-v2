@@ -242,8 +242,15 @@
   --seal-mist: #b9c6cf; /* quiet text on navy: 6.0:1 */
 
   --font-display: "Alegreya SC", Georgia, "Times New Roman", serif;
-  /* the gothic voice (Pirata One + Monomakh, one family); wired to titles later */
+  /* the gothic voice (design/temple/GOTHIC.md): Pirata One for Latin, the
+     Figma file's own face; Monomakh, Old Russian uncial, for Cyrillic. Titles,
+     the versal, the shrine door, the gate quote — names and thresholds only. */
   --font-gothic: "Saharna Gothic", "Alegreya SC", Georgia, serif;
+  /* blackletter is never set in capitals, and it carries its own colour —
+     every title reads these instead of a hard-coded uppercase */
+  --display-case: none;
+  --display-track: 0.01em;
+  --display-weight: 400;
 
   /* the olive bars, top and bottom */
   --header: #253528;

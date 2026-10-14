@@ -24,6 +24,9 @@
     text-size-adjust: 100%;
     /* in-page jumps (#zona-*) land below the sticky header, not under it */
     scroll-padding-top: var(--nav-h);
+    /* the gothic faces come in one weight: never let the browser smear a
+       fake bold over them (Georgia and Alegreya SC ship real bolds) */
+    font-synthesis-weight: none;
   }
 
   body {
@@ -106,7 +109,7 @@
   .page-title {
     max-width: 22ch;
     margin: 0;
-    font-family: var(--font-display);
+    font-family: var(--font-gothic);
     font-size: var(--t-title);
     font-weight: 700;
     line-height: var(--lh-title);

@@ -27,7 +27,7 @@
   --t-today: #f3ecdd;
   --t-row: 56px;
   --t-pad-x: 20px;
-  --t-display: var(--font-display, "Alegreya SC", Georgia, serif);
+  --t-display: var(--font-gothic);
   --kicker: var(--t-ochre-ink);
   --mark-void: var(--t-ground);
   color: var(--t-ink);
