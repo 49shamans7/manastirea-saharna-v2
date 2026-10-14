@@ -9,28 +9,22 @@ type Props = {
 
 const { lang } = Astro.props;
 const t = useTranslations(lang);
-// The footer carries the descent too — every zone reachable from the bottom
-// of any page, and every link a real route.
-// Three short groups instead of one run of eleven: the house, the visit,
-// the asking. Every link a real route; no headings — the grouping is enough.
-const footerGroups = [
-  [
-    { key: "zone.istoria", href: getLocalizedPath("/istoria", lang) },
-    { key: "zone.obstea", href: getLocalizedPath("/obstea", lang) },
-    { key: "zone.macarie", href: getLocalizedPath("/macarie", lang) },
-    { key: "zone.cronica", href: getLocalizedPath("/posts", lang) },
-  ],
-  [
-    { key: "nav.serviceSchedule", href: getLocalizedPath("/slujbe", lang) },
-    { key: "nav.directions", href: getLocalizedPath("/cum-de-ajuns", lang) },
-    { key: "zone.cazare", href: getLocalizedPath("/cazare", lang) },
-    { key: "nav.contact", href: getLocalizedPath("/contact", lang) },
-  ],
-  [
-    { key: "nav.pomelnic", href: getLocalizedPath("/pomelnic", lang) },
-    { key: "nav.donations", href: getLocalizedPath("/donations", lang) },
-    { key: "search.title", href: getLocalizedPath("/cautare", lang) },
-  ],
+// The descent ends here: the olive bar, quiet. One tracked line of links —
+// every zone reachable from the bottom of any page, every link a real route —
+// then where the house is and how to reach it (the phone once), then the
+// copyright and the three channels.
+const footerLinks = [
+  { key: "zone.istoria", href: "/istoria" },
+  { key: "zone.obstea", href: "/obstea" },
+  { key: "zone.macarie", href: "/macarie" },
+  { key: "zone.cronica", href: "/posts" },
+  { key: "nav.serviceSchedule", href: "/slujbe" },
+  { key: "nav.directions", href: "/cum-de-ajuns" },
+  { key: "zone.cazare", href: "/cazare" },
+  { key: "nav.contact", href: "/contact" },
+  { key: "nav.pomelnic", href: "/pomelnic" },
+  { key: "nav.donations", href: "/donations" },
+  { key: "search.title", href: "/cautare" },
 ] as const;
 const email = t("footer.email").split(",")[0]?.trim() ?? "";
 const phone = t("contact.phoneSecretariat");
@@ -41,32 +35,26 @@ const socialLinks = [
 ] as const;
 ---
 
-{/* the lintel: a 4px solid bar closes every page; one hairline divides inside */}
 <footer class="footer">
-  <div class="frame-wide">
-    <div class="top">
-      <div class="house">
-        <p class="title">{t("main.title")}</p>
-        <address>
-          <span>{t("footer.addressLine")}</span>
-          <a href={telHref(phone)}>{phone}</a>
-          <a href={`mailto:${email}`}>{email}</a>
-        </address>
-      </div>
-      <nav class="links" aria-label={t("nav.menu")}>
+  <div class="frame-wide end">
+    <span class="rule" aria-hidden="true"></span>
+    <p class="title">{t("main.title")}</p>
+    <nav class="links" aria-label={t("nav.menu")}>
+      <ul>
         {
-          footerGroups.map((group) => (
-            <ul>
-              {group.map((item) => (
-                <li>
-                  <a href={item.href}>{t(item.key)}</a>
-                </li>
-              ))}
-            </ul>
+          footerLinks.map((item) => (
+            <li>
+              <a href={getLocalizedPath(item.href, lang)}>{t(item.key)}</a>
+            </li>
           ))
         }
-      </nav>
-    </div>
+      </ul>
+    </nav>
+    <address>
+      <span>{t("footer.addressLine")}</span>
+      <a href={telHref(phone)}>{phone}</a>
+      <a href={`mailto:${email}`}>{email}</a>
+    </address>
     <div class="base">
       <p class="copyright">{t("footer.copyright")}</p>
       <nav class="social" aria-label={t("social.label")}>
@@ -89,85 +77,108 @@ const socialLinks = [
 </footer>
 
 <style>
+  /* the olive bar again, closing what the header opened: no lintel, one
+     opaque gold hairline, everything on the axis */
   .footer {
+    /* above any fixed layer a page lays under its content (the landing's shaft) */
+    position: relative;
+    z-index: 2;
     padding: var(--s-9) 0 var(--s-5);
-    border-top: var(--bar) solid var(--ochre);
+    border-top: var(--rule) solid var(--seal-gold);
     background: var(--header);
-    color: color-mix(in srgb, var(--parchment) 80%, transparent);
-    font-size: var(--t-ui);
+    color: var(--header-ink);
+    font-size: var(--t-meta);
     line-height: 1.5;
+    text-align: center;
   }
-  .top {
+  .end {
     display: grid;
-    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
-    gap: var(--s-8);
-    padding-bottom: var(--s-8);
+    justify-items: center;
+  }
+  .rule {
+    display: block;
+    width: 60px;
+    height: 2px;
+    margin-bottom: var(--s-5);
+    background: var(--seal-gold);
   }
   .title {
-    margin: 0 0 var(--s-4);
-    color: var(--parchment);
-    font-size: 17px;
+    margin: 0 0 var(--s-5);
+    color: var(--seal-paper);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 18px;
     line-height: 1.3;
-    letter-spacing: var(--track-caps);
-    text-transform: uppercase;
+    letter-spacing: var(--display-track, 0.12em);
+    text-transform: var(--display-case, uppercase);
   }
-  address {
-    display: grid;
-    justify-items: start;
-    font-style: normal;
-    font-size: var(--t-meta);
+
+  /* one tracked line of links; it wraps on a phone, never into a box */
+  .links ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0 var(--s-5);
+    max-width: 60rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
   }
-  address span {
-    max-width: 22rem;
-    margin-bottom: var(--s-2);
-  }
-  address a,
   .links a {
     display: inline-flex;
     align-items: center;
-    min-height: var(--s-6);
+    min-height: var(--tap-min);
+    color: var(--header-ink);
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
     text-decoration: none;
     transition: color var(--dur-1) var(--ease-out);
   }
-  address a:hover,
-  .links a:hover {
-    color: var(--parchment);
+  .links a:hover,
+  address a:hover {
+    color: var(--header-gold);
     text-decoration: underline;
     text-decoration-thickness: var(--rule);
-    text-underline-offset: 0.25em;
+    text-underline-offset: 0.3em;
   }
 
-  .links {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: var(--s-5);
+  address {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0 var(--s-5);
+    margin-top: var(--s-5);
+    padding-top: var(--s-4);
+    border-top: var(--rule) solid var(--header-line);
+    font-style: normal;
   }
-  .links ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  address a {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--tap-min);
+    color: var(--header-ink);
+    text-decoration: none;
+    font-variant-numeric: lining-nums;
   }
 
   .base {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
-    gap: var(--s-4);
-    padding-top: var(--s-4);
-    border-top: var(--rule) solid color-mix(in srgb, var(--parchment) 14%, transparent);
+    justify-content: center;
+    gap: 0 var(--s-5);
+    margin-top: var(--s-4);
   }
   .copyright {
     margin: 0;
-    font-size: var(--t-meta);
-    color: color-mix(in srgb, var(--parchment) 72%, transparent);
+    font-size: 13px;
+    color: var(--header-ink);
   }
-
   .social {
     display: flex;
-    flex-shrink: 0;
     align-items: center;
-    margin-left: auto;
-    margin-right: calc(var(--s-3) * -1);
   }
   .social a {
     display: inline-flex;
@@ -175,47 +186,34 @@ const socialLinks = [
     justify-content: center;
     width: var(--tap);
     height: var(--tap);
-    color: color-mix(in srgb, var(--parchment) 80%, transparent);
+    color: var(--header-ink);
     font-size: 17px;
     font-weight: 700;
     text-decoration: none;
     transition: color var(--dur-1) var(--ease-out);
   }
   .social a:hover {
-    color: var(--ochre);
+    color: var(--header-gold);
+  }
+  .footer :focus-visible {
+    outline: var(--rule-2) solid var(--header-gold);
+    outline-offset: var(--rule-2);
   }
 
-  @media (width < 64rem) {
-    .top {
-      grid-template-columns: minmax(0, 1fr);
-      gap: var(--s-6);
-    }
-    .links a,
-    address a {
-      min-height: var(--tap-min);
-    }
-  }
   @media (width < 40rem) {
     .footer {
       padding-top: var(--s-8);
     }
-    .links {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+    .links ul {
       gap: 0 var(--s-4);
     }
-    .links ul:last-child {
-      grid-column: 1 / -1;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      column-gap: var(--s-4);
+    address {
+      flex-direction: column;
+      gap: 0;
     }
-    .base {
-      flex-direction: column-reverse;
-      align-items: flex-start;
-    }
-    .social {
-      margin-left: calc(var(--s-3) * -1);
-      margin-right: 0;
+    address span {
+      max-width: 22rem;
+      margin-bottom: var(--s-1);
     }
   }
 </style>

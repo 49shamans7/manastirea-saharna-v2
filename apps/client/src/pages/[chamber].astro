@@ -5,7 +5,7 @@
 import ChamberLayout from "@layouts/Chamber.astro";
 import TableLayout from "@layouts/TableLayout.astro";
 import { getChamberPage, getChamberSlugs, renderChamber } from "@data/pages";
-import { getLocaleFromUrl } from "@i18n/utils";
+import { getLocaleFromUrl, useTranslations } from "@i18n/utils";
 import { withBasePath } from "@utils/paths";
 
 export async function getStaticPaths() {
@@ -15,6 +15,7 @@ export async function getStaticPaths() {
 }
 
 const lang = getLocaleFromUrl(Astro.url);
+const t = useTranslations(lang);
 const page = await getChamberPage(Astro.params.chamber as string, lang);
 
 if (!page) {
@@ -22,12 +23,16 @@ if (!page) {
 }
 
 const { Content } = await renderChamber(page);
-// `eyebrow` (the zone's name and numeral) is not printed: the rails already
-// say where the reader is, and "zona III" means nothing to a pilgrim.
+// The micro label over the title is the zone's numeral and name ("III ·
+// Racla"), drawn by the layout from `zone`; the frontmatter `eyebrow` is the
+// v1 wording and is not printed.
 const { title, lead, zone, template } = page.entry.data;
+// Versed text: each h2 opens a numbered stanza (the Acatist's condace and icose).
+const verses = Astro.params.chamber === "acatistul";
 // A missing translation shows the Romanian original; say so to screen readers
 // and translation tools, so they do not read Romanian as English or Russian.
 const contentLang = page.isFallback ? "ro" : undefined;
+const note = page.isFallback ? t("zone.fallbackNote") : undefined;
 ---
 
 {
@@ -38,8 +43,8 @@ const contentLang = page.isFallback ? "ro" : undefined;
       </div>
     </TableLayout>
   ) : (
-    <ChamberLayout zone={zone} title={title} lead={lead}>
-      <div lang={contentLang}>
+    <ChamberLayout zone={zone} title={title} lead={lead} note={note} verses={verses}>
+      <div class="prose" lang={contentLang}>
         <Content />
       </div>
     </ChamberLayout>

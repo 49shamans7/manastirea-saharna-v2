@@ -1,0 +1,115 @@
+---
+// LEAVING A CHAMBER — back up, or sideways to a sibling (chamber.html .exits).
+// Two doors on one hairline, split by a hairline. No boxes: the hover lays a
+// faint wash of the zone's accent, nothing moves.
+//   <ChamberExits label="Ieșiri" items={[{ dir: "Înapoi", title: "Racla", href: "/#zona-gold", side: "back" }]} />
+export type ChamberExit = {
+  /** The tracked micro word above the title: Înapoi, Alături, Mai vechi… */
+  dir: string;
+  title: string;
+  href: string;
+  /** back sits left with ←, on sits right with → */
+  side: "back" | "on";
+  rel?: "prev" | "next" | undefined;
+};
+
+interface Props {
+  label: string;
+  items: ChamberExit[];
+}
+
+const { label, items } = Astro.props;
+const back = items.find((item) => item.side === "back");
+const on = items.find((item) => item.side === "on");
+---
+
+{
+  (back || on) && (
+    <nav class="exits" aria-label={label}>
+      {back ? (
+        <a class="exit is-back" href={back.href} rel={back.rel}>
+          <small>
+            <span aria-hidden="true">← </span>
+            {back.dir}
+          </small>
+          <span class="exit-title">{back.title}</span>
+        </a>
+      ) : (
+        <span class="exit is-empty" aria-hidden="true" />
+      )}
+      {on ? (
+        <a class="exit is-on" href={on.href} rel={on.rel}>
+          <small>
+            {on.dir}
+            <span aria-hidden="true"> →</span>
+          </small>
+          <span class="exit-title">{on.title}</span>
+        </a>
+      ) : (
+        <span class="exit is-empty" aria-hidden="true" />
+      )}
+    </nav>
+  )
+}
+
+<style>
+  .exits {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    border-top: 1px solid var(--ch-edge, var(--line));
+    border-bottom: 1px solid var(--ch-edge, var(--line));
+  }
+  .exit {
+    display: grid;
+    align-content: start;
+    gap: var(--s-2);
+    min-height: var(--tap);
+    padding: var(--s-5) var(--s-5) var(--s-5) 0;
+    color: var(--ch-ink, inherit);
+    text-decoration: none;
+    transition: background-color var(--dur-1) var(--ease-out);
+  }
+  .exit.is-on {
+    padding: var(--s-5) 0 var(--s-5) var(--s-5);
+    border-left: 1px solid var(--ch-edge, var(--line));
+    text-align: right;
+  }
+  .exit.is-empty + .exit.is-on,
+  .exit.is-back + .exit.is-empty {
+    border-left: 1px solid var(--ch-edge, var(--line));
+  }
+  a.exit:hover,
+  a.exit:focus-visible {
+    background: color-mix(in srgb, var(--ch-accent, var(--ochre)) 10%, transparent);
+  }
+  small {
+    display: block;
+    font-size: 11px;
+    line-height: 1.4;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ch-accent, var(--ochre));
+  }
+  .exit-title {
+    font-size: var(--t-ui);
+    line-height: 1.4;
+    overflow-wrap: break-word;
+    text-wrap: balance;
+  }
+  a.exit:hover .exit-title {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.22em;
+  }
+  @media (max-width: 479px) {
+    .exit {
+      padding-right: var(--s-3);
+    }
+    .exit.is-on {
+      padding-left: var(--s-3);
+    }
+    small {
+      letter-spacing: 0.22em;
+    }
+  }
+</style>

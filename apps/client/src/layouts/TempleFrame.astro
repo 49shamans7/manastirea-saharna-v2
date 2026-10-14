@@ -1,7 +1,14 @@
 ---
 // THE FRAME — a centre field between two rails, from Page 1 and from the old
-// site's own lfon_repeat / rfon_repeat margin tiles. 78 | 1200 | 198.
-// Every page that is not the descent itself sits inside this.
+// site's own lfon_repeat / rfon_repeat margin tiles. Every page that is not
+// the descent itself sits inside this.
+//
+// v2 "river": the frame runs edge to edge. No boxes, no centred card — the
+// left rail is a depth gauge (one field wide, four markers, the zone you are
+// in filled gold), the centre is the seal's white field with the page's own
+// column centred in it, the right rail is the calendar's gold field. On a
+// phone the gauge lies down into a strip above the page and the calendar
+// follows the text.
 import DescentRail from "@components/temple/DescentRail.astro";
 import CalendarRail from "@components/temple/CalendarRail.astro";
 import type { Locale } from "@i18n";
@@ -18,73 +25,67 @@ interface Props {
 const { lang, zone, path = "", rails = true } = Astro.props;
 ---
 
-<div class:list={["frame", `z-${zone}`, !rails && "no-rails"]} data-zone={zone}>
+<div class:list={["frame", "ground-white", `z-${zone}`, !rails && "no-rails"]} data-zone={zone}>
   {rails && <DescentRail lang={lang} current={zone} path={path} />}
   <div class="centre">
     <slot />
   </div>
-  {rails && <CalendarRail lang={lang} />}
+  {rails && <CalendarRail lang={lang} placement="rail" />}
 </div>
 
 <style>
-  /* rail | centre | rail — every width a token, every gap a step of 8 */
+  /* gauge | field | calendar. The field takes what is left; the page's own
+     column is centred inside it, so the text sits on the axis of the screen
+     at every width, as in the chamber prototype. */
   .frame {
     display: grid;
-    grid-template-columns: var(--rail-l) minmax(0, var(--centre-max)) var(--rail-r);
-    justify-content: center;
-    gap: var(--frame-gap);
+    grid-template-columns: var(--rail-l) minmax(0, 1fr) var(--rail-r);
+    grid-template-areas: "left centre right";
     min-height: calc(100dvh - var(--nav-h, 80px));
-    padding: 0 var(--frame-pad);
-    color: var(--parchment);
-  }
-  .frame.no-rails,
-  .centre {
-    min-width: 0;
+    background: #ffffff;
+    color: var(--seal-paper);
   }
   .frame.no-rails {
-    grid-template-columns: minmax(0, var(--centre-max));
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "centre";
+  }
+  .frame > :global(.rail-left) {
+    grid-area: left;
+  }
+  .frame > :global(.rail-right) {
+    grid-area: right;
+  }
+  .centre {
+    grid-area: centre;
+    min-width: 0;
+    padding: 0 var(--frame-pad);
+  }
+  /* the page's column, whatever its measure, sits on the field's axis */
+  .centre > :global(main) {
+    width: 100%;
+    margin-inline: auto;
   }
 
-  /* the right rail goes first, because the calendar outranks the index
-     when there is only room for one */
+  /* the calendar outranks nothing beside the text below 1360px: it follows
+     the text, folded, in the field's column; the gauge keeps its rail */
   @media (max-width: 1360px) {
     .frame {
       grid-template-columns: var(--rail-l) minmax(0, 1fr);
+      grid-template-rows: auto auto;
+      grid-template-areas:
+        "left centre"
+        "left right";
     }
   }
+  /* a phone: the gauge lies down into a strip above the page */
   @media (max-width: 1100px) {
     .frame {
       grid-template-columns: minmax(0, 1fr);
+      grid-template-rows: auto 1fr auto;
+      grid-template-areas:
+        "left"
+        "centre"
+        "right";
     }
-  }
-
-  /* one palette per page, held for the whole page — never mixed. Flat
-     grounds: the page darkens downward in steps (ground → footer), not in
-     a wash. */
-  .z-rock {
-    background: var(--rock-ground);
-  }
-  .z-green {
-    background: var(--green);
-    /* ochre text on the green ground is 4.4:1; one step lighter holds 4.8:1 */
-    --ochre: #cba952;
-  }
-  .z-gold {
-    background: var(--pall);
-    /* thread gold: line work, never a field */
-    --line: rgb(192 169 116 / 32%);
-    --line-strong: var(--gold);
-  }
-  .z-river {
-    /* Zone IV is the bright one. Practical information, read in a car park. */
-    background: var(--river-ground);
-    color: var(--river-ink);
-    --line: rgb(22 50 61 / 20%);
-    --line-strong: var(--river);
-    --kicker: var(--river-link);
-    --here: var(--river-strong);
-    --btn: var(--river-ink);
-    --btn-ink: var(--river-ground);
-    --btn-hover: var(--river-strong);
   }
 </style>

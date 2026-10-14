@@ -1,72 +1,106 @@
 ---
-// TEMPLATE C · TABLE — Zone IV. Bank details are a table, not a page of prose.
+// TEMPLATE C · TABLE — Zone IV. The two ways to give sit side by side
+// (sideways on a phone); the bank details are a table you can copy from.
 // Rechizite from the old site's /donatii/ page (msaharna-archive practical_info.json).
 import TableLayout from "@layouts/TableLayout.astro";
-import { getLocaleFromUrl, useTranslations } from "@i18n/utils";
+import RiverMark from "@components/marks/RiverMark.astro";
+import { getLocaleFromUrl, getLocalizedPath, useTranslations } from "@i18n/utils";
 
 const lang = getLocaleFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const bank: { label: string; value: string; copy?: boolean }[] = [
+const iban = t("donations.iban");
+// read in fours, copied whole
+const ibanGrouped = iban.replace(/(.{4})(?=.)/g, "$1 ");
+const bank: { label: string; value: string; display?: string; copy?: boolean; iban?: boolean }[] = [
   { label: t("donations.beneficiaryLabel"), value: t("donations.monastery") },
   { label: t("donations.bankLabel"), value: t("donations.bank") },
   { label: t("donations.fiscalCodeLabel"), value: t("donations.fiscalCode"), copy: true },
   { label: t("donations.bankCodeLabel"), value: t("donations.bankCode"), copy: true },
-  { label: t("donations.ibanLabel"), value: t("donations.iban"), copy: true },
+  { label: t("donations.ibanLabel"), value: iban, display: ibanGrouped, copy: true, iban: true },
   { label: t("donations.addressLabel"), value: `${t("donations.address")}, ${t("donations.country")}` },
 ];
+const paypal = `https://${t("donations.paypalValue")}`;
 ---
 
-<TableLayout title={t("donations.title")} lead={t("donations.greeting")}>
-  <p>{t("donations.message")}</p>
-  <p>{t("donations.detailsIntro")}</p>
+<TableLayout title={t("donations.title")} lead={t("donations.greeting")} mark="hands">
+  <section class="t-section">
+    <p class="t-text">{t("donations.message")}</p>
+    <p class="t-text">{t("donations.detailsIntro")}</p>
+  </section>
 
-  <h2>{t("donations.bankDetailsTitle")}</h2>
-  <dl>
-    {
-      bank.map((row) => (
-        <>
-          <dt>{row.label}</dt>
-          <dd class:list={[row.copy && "copyable"]}>
-            <span class="value" translate="no">
-              {row.value}
-            </span>
-            {row.copy && (
-              <button
-                type="button"
-                class="copy"
-                data-copy={row.value}
-                data-copied={t("donations.copied")}
-                aria-label={`${t("donations.copy")}: ${row.label}`}
-                hidden>
-                {t("donations.copy")}
-              </button>
-            )}
-          </dd>
-        </>
-      ))
-    }
-  </dl>
-  <p class="note">{t("donations.bankNote")}</p>
+  <section class="t-section" aria-labelledby="cum-ajutati">
+    <h2 class="t-kicker" id="cum-ajutati">{t("table.ways")}</h2>
+    <ul class="r-drift t-drift">
+      <li>
+        <div class="t-card">
+          <RiverMark name="hands" />
+          <h3 class="t-card-title">{t("donations.bankDetailsTitle")}</h3>
+          <p class="t-card-text">{t("table.bankText")}</p>
+          <a class="t-btn is-primary" href="#rechizite">{t("table.seeDetails")}</a>
+        </div>
+      </li>
+      <li>
+        <div class="t-card">
+          <RiverMark name="hands" />
+          <h3 class="t-card-title">PayPal</h3>
+          <p class="t-card-text">{t("table.paypalText")}</p>
+          <a
+            class="t-btn"
+            href={paypal}
+            rel="noopener"
+            target="_blank"
+            aria-label={`${t("donations.paypalLabel")}: ${t("donations.paypalValue")}`}>
+            {t("donations.paypalValue")}
+          </a>
+        </div>
+      </li>
+      <li>
+        <a class="t-card" href={getLocalizedPath("/pomelnic", lang)}>
+          <RiverMark name="lamp" />
+          <span class="t-card-title">{t("notFound.pomelnic")}</span>
+          <span class="t-card-go" aria-hidden="true">→</span>
+        </a>
+      </li>
+    </ul>
+  </section>
 
-  <h2>PayPal</h2>
-  <p>
-    <a
-      class="tap"
-      href={`https://${t("donations.paypalValue")}`}
-      rel="noopener"
-      target="_blank"
-      aria-label={`${t("donations.paypalLabel")}: ${t("donations.paypalValue")}`}>
-      {t("donations.paypalValue")}
-    </a>
-  </p>
+  <section class="t-section" id="rechizite" aria-labelledby="rechizite-head">
+    <h2 class="t-kicker" id="rechizite-head">{t("donations.bankDetailsTitle")}</h2>
+    <dl class="t-bank">
+      {
+        bank.map((row) => (
+          <div>
+            <dt>{row.label}</dt>
+            <dd class:list={[row.iban && "is-iban"]}>
+              <span class="t-val" translate="no">
+                {row.display ?? row.value}
+              </span>
+              {row.copy && (
+                <button
+                  type="button"
+                  class="t-copy"
+                  data-copy={row.value}
+                  data-copied={t("donations.copied")}
+                  aria-label={`${t("donations.copy")}: ${row.label}`}
+                  hidden>
+                  {t("donations.copy")}
+                </button>
+              )}
+            </dd>
+          </div>
+        ))
+      }
+    </dl>
+    <p class="t-small">{t("donations.bankNote")}</p>
+  </section>
 </TableLayout>
 
 <script>
   // Copy buttons appear only where the Clipboard API exists; without it the
-  // value is still plain selectable text.
+  // value is still plain selectable text on screen.
   if (navigator.clipboard) {
-    document.querySelectorAll<HTMLButtonElement>("button.copy[data-copy]").forEach((button) => {
+    document.querySelectorAll<HTMLButtonElement>("button.t-copy[data-copy]").forEach((button) => {
       const label = button.textContent?.trim() ?? "";
 
       button.hidden = false;
@@ -74,7 +108,11 @@ const bank: { label: string; value: string; copy?: boolean }[] = [
         try {
           await navigator.clipboard.writeText(button.dataset.copy ?? "");
           button.textContent = button.dataset.copied ?? label;
-          window.setTimeout(() => (button.textContent = label), 2000);
+          button.dataset.done = "";
+          window.setTimeout(() => {
+            button.textContent = label;
+            delete button.dataset.done;
+          }, 2000);
         } catch {
           // permission denied: the text is still there to select by hand
         }
@@ -84,50 +122,10 @@ const bank: { label: string; value: string; copy?: boolean }[] = [
 </script>
 
 <style>
-  .note {
-    font-size: var(--t-meta);
-    color: var(--river-muted);
+  #rechizite {
+    scroll-margin-top: calc(var(--nav-h, 80px) + 16px);
   }
-  .copyable {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: var(--s-2) var(--s-4);
-  }
-  .value {
-    min-width: 0;
-    overflow-wrap: anywhere;
-    user-select: all;
-    -webkit-user-select: all;
-  }
-  .copy {
-    min-height: var(--tap-min);
-    min-width: var(--tap-min);
-    margin-left: auto;
-    padding: 0 var(--s-4);
-    border: var(--rule) solid color-mix(in srgb, var(--river-strong) 45%, transparent);
-    border-radius: var(--radius);
-    background: transparent;
-    color: var(--river-strong);
-    font: inherit;
-    font-size: var(--t-meta);
-    cursor: pointer;
-    transition:
-      background-color var(--dur-1) var(--ease-out),
-      color var(--dur-1) var(--ease-out);
-  }
-  .copy:hover {
-    border-color: var(--river-strong);
-    background: var(--river-strong);
-    color: var(--river-ground);
-  }
-  .copy:focus-visible {
-    outline: var(--rule-2) solid var(--river-strong);
-    outline-offset: var(--rule-2);
-  }
-  @media print {
-    .copy {
-      display: none;
-    }
+  .t-copy[hidden] {
+    display: none;
   }
 </style>

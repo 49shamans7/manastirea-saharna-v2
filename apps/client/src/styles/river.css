@@ -15,19 +15,35 @@
      .r-mark      a constructed SVG mark at text size */
 
 :root {
-  --r-ink: #e6eae4; /* white of the slice prototype */
-  --r-cream: #d5d6d6;
-  --r-night: #181816;
-  --r-gold: #c0a974;
-  --r-gold-deep: #8f6938;
-  --r-river-deep: #2b4b58;
-  --r-river: #649fbd;
-  --r-river-pale: #bdd5dc;
-  --r-river-mist: #dce9ed;
-  --r-river-paper: #eef4f6;
-  --r-river-ink: #0f1f27;
-  --r-river-soft: #3d5560;
-  --r-river-edge: #c2d6dd;
+  /* v2 wears v1's colours (the official seal, owner 2026-10-15): navy, gold,
+     paper; olive bars top and bottom; Alegreya SC for titles. The river is
+     the LAYOUT — flow, seams, shaft, drift — not a palette. */
+  --seal-navy: #22425a;
+  --seal-deep: #1a3346;
+  --seal-lift: #2a4f6b;
+  --seal-gold: #ab9362; /* line work */
+  --seal-gold-text: #c9b07a; /* gold that is read on navy: 5.0:1 */
+  --seal-gold-ink: #76633a; /* gold that is read on white/paper */
+  --seal-paper: #f7f6f1;
+  --seal-mist: #b9c6cf; /* quiet text on navy */
+  --seal-line: #ddd0b2; /* hairline on white */
+  --seal-line-navy: #4f7088; /* hairline on navy */
+  --photo-veil: rgb(8 8 8 / 58%); /* one neutral shade on every photo: AA for text on it */
+  --font-display: "Alegreya SC", Georgia, "Times New Roman", serif;
+
+  --r-ink: var(--seal-paper);
+  --r-cream: var(--seal-mist);
+  --r-night: var(--seal-deep);
+  --r-gold: var(--seal-gold-text);
+  --r-gold-deep: var(--seal-gold-ink);
+  --r-river-deep: var(--seal-navy);
+  --r-river: var(--seal-lift);
+  --r-river-pale: var(--seal-paper);
+  --r-river-mist: var(--seal-paper);
+  --r-river-paper: var(--seal-paper);
+  --r-river-ink: var(--seal-deep);
+  --r-river-soft: #4a6274;
+  --r-river-edge: var(--seal-line);
   --r-track: 0.42em; /* the micro label */
   --r-track-title: 0.04em;
   --r-shaft: 78px;
@@ -62,12 +78,12 @@
 
 .r-title {
   margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: 700;
+  font-family: var(--font-gothic, var(--font-display));
+  font-weight: var(--display-weight, 700);
   font-size: var(--t-r-title);
   line-height: 1.06;
-  letter-spacing: var(--r-track-title);
-  text-transform: uppercase;
+  letter-spacing: var(--display-track, var(--r-track-title));
+  text-transform: var(--display-case, uppercase);
   text-wrap: balance;
 }
 .r-title.is-page {
@@ -83,7 +99,7 @@
   width: 60px;
   height: 2px;
   margin: var(--s-5) 0 0;
-  background: var(--r-gold);
+  background: var(--seal-gold);
   border: 0;
 }
 .is-centred > .r-rule,
@@ -116,13 +132,8 @@
   width: var(--r-shaft);
   transform: translateX(-50%);
   pointer-events: none;
-  border-inline: 1px solid rgb(230 234 228 / 14%);
-  background: linear-gradient(
-    to bottom,
-    rgb(230 234 228 / 9%),
-    rgb(230 234 228 / 3%) 40%,
-    rgb(100 159 189 / 10%)
-  );
+  border-inline: 1px solid var(--seal-line-navy);
+  background: var(--seal-lift);
 }
 
 /* label · value rows on a hairline */
@@ -189,6 +200,32 @@
   vertical-align: middle;
 }
 .r-mark svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* the seal's folk band — rhombs between two rules — as the seam between
+   two photographs or two grounds (owner's favourite from v1) */
+.r-band {
+  display: block;
+  height: 16px;
+  background: var(--seal-deep) url("../assets/ornaments/band.svg") repeat-x 0 0 / 32px 16px;
+}
+
+/* the divider ornament under a title (components/marks/Divider.astro) */
+.r-divider {
+  display: block;
+  width: 180px;
+  height: 24px;
+  margin: var(--s-5) 0 0;
+  color: var(--seal-gold);
+}
+.is-centred > .r-divider,
+.r-divider.is-centred {
+  margin-inline: auto;
+}
+.r-divider svg {
   display: block;
   width: 100%;
   height: 100%;

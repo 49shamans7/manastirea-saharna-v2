@@ -6,6 +6,8 @@ import Chamber from "@layouts/Chamber.astro";
 import { getAllPostSlugs, getPostBySlug, getPostNeighbours, getPublishedPosts } from "@data/posts";
 import { getLocaleFromUrl, getLocalizedPath, useTranslations } from "@i18n/utils";
 import Icon from "@components/marks/Icon.astro";
+import type { ChamberExit } from "@components/chamber/ChamberExits.astro";
+import { zoneById } from "@temple/zones";
 import { rebase } from "@data/pages";
 import { getEntry } from "astro:content";
 
@@ -55,12 +57,31 @@ const plates = post
 const entry = post ? await getEntry("posts", post.id) : undefined;
 const bodyHtml = entry?.rendered?.html ? rebase(entry.rendered.html, lang) : "";
 const shown = post ? (post.image ? 1 : 0) + post.galleryImages.length : 0;
+
+// The micro label: the chronicle, under its zone's numeral ("II · Cronică").
+const eyebrow = post ? `${zoneById[post.zone].numeral} · ${t("zone.cronica")}` : undefined;
+// Leaving an entry: back in time on the left, forward on the right.
+const exits: ChamberExit[] = [
+  ...(older
+    ? [{ dir: t("chamber.older"), title: older.title, href: href(`/posts/${older.slug}`), side: "back" as const, rel: "prev" as const }]
+    : []),
+  ...(newer
+    ? [{ dir: t("chamber.newer"), title: newer.title, href: href(`/posts/${newer.slug}`), side: "on" as const, rel: "next" as const }]
+    : []),
+];
 ---
 
 {
   post ? (
-    <Chamber zone={post.zone} title={post.title} eyebrow={post.date} {...(lead ? { lead } : {})}>
-      {post.isFallback && <p class="fallback">{t("zone.fallbackNote")}</p>}
+    <Chamber
+      zone={post.zone}
+      title={post.title}
+      eyebrow={eyebrow}
+      meta={post.date}
+      metaDatetime={post.isoDate}
+      note={post.isFallback ? t("zone.fallbackNote") : undefined}
+      exits={exits}
+      {...(lead ? { lead } : {})}>
 
       {showLead && post.image && (
         <a class="lead-image" href={post.image.url} data-plate={0} aria-label={post.title}>
@@ -105,7 +126,17 @@ const shown = post ? (post.image ? 1 : 0) + post.galleryImages.length : 0;
         </div>
       ))}
 
-      {bodyHtml ? <div class="post-body" set:html={bodyHtml} /> : post.body.map((paragraph) => <p>{paragraph}</p>)}
+      {bodyHtml ? (
+        <div class="post-body prose" set:html={bodyHtml} />
+      ) : (
+        post.body.length > 0 && (
+          <div class="prose">
+            {post.body.map((paragraph) => (
+              <p>{paragraph}</p>
+            ))}
+          </div>
+        )
+      )}
 
       {post.galleryImages.length > 0 && (
         <div class="post-gallery">
@@ -133,30 +164,12 @@ const shown = post ? (post.image ? 1 : 0) + post.galleryImages.length : 0;
         <p class="archive-note">{`${post.archiveImages} ${t("gallery.count")} · ${t("zone.sourceNote")}`}</p>
       )}
 
-      <footer class="entry-foot">
+      <div class="entry-foot" slot="foot">
         {post.author && <p class="author">{post.author}</p>}
-        <nav class="neighbours" aria-label={t("zone.cronica")}>
-          {older && (
-            <a class="older" href={href(`/posts/${older.slug}`)} rel="prev">
-              <span class="dir">
-                <Icon name="arrow-left" size={16} />
-              </span>
-              <span class="what">{older.title}</span>
-            </a>
-          )}
-          {newer && (
-            <a class="newer" href={href(`/posts/${newer.slug}`)} rel="next">
-              <span class="dir">
-                <Icon name="arrow-right" size={16} />
-              </span>
-              <span class="what">{newer.title}</span>
-            </a>
-          )}
-        </nav>
         <a class="all" href={href("/posts")}>
           {t("home.allNews")}
         </a>
-      </footer>
+      </div>
 
       {plates.length > 0 && (
         <dialog
@@ -261,16 +274,16 @@ const shown = post ? (post.image ? 1 : 0) + post.galleryImages.length : 0;
 </script>
 
 <style>
-  .fallback,
+  /* The entry wears the chamber (layouts/Chamber.astro): seal colours on
+     white, the shaft, the head, the band and the exits. These are only the
+     entry's own pieces: the lead photograph, the video, the photographs. */
   .archive-note {
-    font-size: var(--t-meta);
-    line-height: 1.55;
-    font-style: italic;
-    opacity: 0.72;
-    margin-bottom: var(--s-6);
-  }
-  .archive-note {
-    margin-top: var(--s-5);
+    margin: var(--s-5) 0 0;
+    font-size: 11px;
+    line-height: 1.7;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: #4a6274;
   }
 
   .lead-image {
@@ -282,12 +295,14 @@ const shown = post ? (post.image ? 1 : 0) + post.galleryImages.length : 0;
     width: 100%;
     height: auto;
     margin: 0;
+    border: 1px solid #ddd0b2;
   }
   /* a portrait photograph must not take three screens of the column */
   .lead-image img[height] {
     width: auto;
     max-width: 100%;
     max-height: min(78vh, 760px);
+    margin-inline: auto;
   }
 
   /* 16:9 on every width; nothing from YouTube loads until the facade is used */
@@ -295,7 +310,7 @@ const shown = post ? (post.image ? 1 : 0) + post.galleryImages.length : 0;
     position: relative;
     aspect-ratio: 16 / 9;
     margin: 0 0 var(--s-8);
-    background: var(--night-green);
+    background: #1a3346;
   }
   .video > :global(iframe),
   .video-facade {
@@ -308,7 +323,7 @@ const shown = post ? (post.image ? 1 : 0) + post.galleryImages.length : 0;
   .video-facade {
     display: grid;
     place-items: center;
-    color: var(--parchment);
+    color: #fff;
     text-decoration: none;
     overflow: hidden;
   }
@@ -318,41 +333,45 @@ const shown = post ? (post.image ? 1 : 0) + post.galleryImages.length : 0;
     width: 100%;
     height: 100%;
     margin: 0;
+    border: 0;
     object-fit: cover;
-    opacity: 0.62;
+    filter: brightness(0.62);
   }
-  /* a square stop, not a round button: flat fill, emphasis frame */
+  /* a square stop, not a round button: navy fill, the seal's gold frame */
   .play {
     position: relative;
     width: var(--s-10);
     height: var(--s-10);
-    background: var(--night-green);
-    border: var(--rule-2) solid var(--ochre);
+    background: #1a3346;
+    border: 2px solid #ab9362;
     display: grid;
     place-items: center;
-    color: var(--parchment);
+    color: #fff;
     transition: background-color var(--dur-1) var(--ease-out);
   }
   .video-facade:hover .play,
   .video-facade:focus-visible .play {
-    background: var(--ochre);
+    background: #22425a;
   }
+  /* white on the darkened photo, over a navy plate so it holds on any frame */
   .video-label {
     position: absolute;
-    left: var(--s-4);
+    left: var(--s-3);
     bottom: var(--s-3);
-    font-size: var(--t-meta);
+    padding: 2px var(--s-2);
+    background: #1a3346;
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
   }
 
-  /* a plain grid, not a list: the chamber's prose list styling must not reach it */
-  /* the same lattice as the galerie: square fields, a 2px mullion */
+  /* the photographs: square fields joined by a 2px mullion of the well's paper */
   .post-gallery {
     margin: var(--s-8) 0 0;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: var(--lattice);
-    padding: var(--lattice);
-    background: rgb(13 17 22 / 40%);
+    padding: 0;
   }
   .post-gallery a {
     position: relative;
@@ -365,7 +384,7 @@ const shown = post ? (post.image ? 1 : 0) + post.galleryImages.length : 0;
     transition: background-color var(--dur-2) var(--ease-out);
   }
   .post-gallery a:hover::after {
-    background: rgb(244 239 228 / 10%);
+    background: rgb(255 255 255 / 14%);
   }
   .post-gallery img {
     display: block;
@@ -374,11 +393,12 @@ const shown = post ? (post.image ? 1 : 0) + post.galleryImages.length : 0;
     aspect-ratio: 1;
     object-fit: cover;
     margin: 0;
+    border: 0;
   }
   .post-gallery a:focus-visible,
   .lead-image:focus-visible {
-    outline: var(--rule-2) solid var(--ochre);
-    outline-offset: var(--rule-2);
+    outline: 2px solid #1a3346;
+    outline-offset: 2px;
   }
 
   .lightbox {
@@ -389,10 +409,10 @@ const shown = post ? (post.image ? 1 : 0) + post.galleryImages.length : 0;
     max-width: min(96vw, 1400px);
     max-height: 96vh;
     background: transparent;
-    color: var(--parchment);
+    color: #fff;
   }
   .lightbox::backdrop {
-    background: rgb(10 12 15 / 94%);
+    background: rgb(14 26 36 / 95%);
   }
   .lightbox img {
     display: block;
@@ -407,7 +427,7 @@ const shown = post ? (post.image ? 1 : 0) + post.galleryImages.length : 0;
     text-align: center;
     font-size: var(--t-meta);
     font-variant-numeric: lining-nums tabular-nums;
-    opacity: 0.72;
+    color: #b9c6cf;
   }
   .lightbox-controls {
     display: flex;
@@ -421,99 +441,50 @@ const shown = post ? (post.image ? 1 : 0) + post.galleryImages.length : 0;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: var(--rule) solid rgb(244 239 228 / 24%);
-    background: var(--night);
-    color: var(--parchment);
+    border: 1px solid #4f7088;
+    background: #1a3346;
+    color: #fff;
     font-size: 18px;
     padding: 0 var(--s-6);
     cursor: pointer;
-    transition:
-      background-color var(--dur-1) var(--ease-out),
-      border-color var(--dur-1) var(--ease-out);
+    transition: border-color var(--dur-1) var(--ease-out);
   }
   .lightbox-controls button:hover {
-    border-color: rgb(244 239 228 / 72%);
-    background: var(--rock-ground);
+    border-color: #c9b07a;
   }
 
   .entry-foot {
-    margin-top: var(--s-9);
-    padding-top: var(--s-5);
-    border-top: var(--rule) solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0 var(--s-5);
+    margin-top: var(--s-3);
   }
   .author {
+    margin: 0;
     font-size: var(--t-meta);
     font-style: italic;
-    opacity: 0.72;
-    margin: 0 0 var(--s-5);
+    color: #4a6274;
   }
-
-  /* older | newer: two columns, no boxes; the title is the link */
-  .neighbours {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--s-6);
-  }
-  .neighbours a {
-    display: grid;
-    align-content: start;
-    gap: var(--s-1);
-    min-height: var(--tap);
-    padding: var(--s-2) 0;
-    text-decoration: none;
-    color: inherit;
-  }
-  .neighbours .newer {
-    text-align: right;
-    justify-items: end;
-    grid-column: 2;
-  }
-  .dir {
-    display: inline-flex;
-    color: var(--ochre);
-  }
-  .what {
-    font-size: var(--t-ui);
-    line-height: 1.45;
-    opacity: 0.88;
-    text-decoration: underline;
-    text-decoration-thickness: var(--rule);
-    text-decoration-color: transparent;
-    text-underline-offset: 0.22em;
-    transition: text-decoration-color var(--dur-1) var(--ease-out);
-  }
-  .neighbours a:hover .what {
-    text-decoration-color: currentColor;
-  }
-
   .all {
     display: inline-flex;
     align-items: center;
     min-height: var(--tap);
-    margin-top: var(--s-5);
-    font-size: var(--t-ui);
-    color: var(--ochre);
-    text-decoration: underline;
-    text-decoration-thickness: var(--rule);
-    text-decoration-color: color-mix(in srgb, currentColor 45%, transparent);
-    text-underline-offset: 0.25em;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #76633a;
+    text-decoration: none;
   }
   .all:hover {
-    text-decoration-color: currentColor;
+    text-decoration: underline;
+    text-underline-offset: 0.3em;
   }
 
   @media (max-width: 620px) {
     .post-gallery {
       grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-    .neighbours {
-      grid-template-columns: 1fr;
-      gap: var(--s-3);
-    }
-    .neighbours .newer {
-      grid-column: 1;
-      text-align: left;
-      justify-items: start;
     }
     .lightbox {
       max-width: 100vw;

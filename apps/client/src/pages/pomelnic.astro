@@ -1,12 +1,12 @@
 ---
 // THE WELL — Zone I. The pomelnic has exactly one home: the shaft, on the
-// centre axis. A subtractive object, like the cave: you lower names down it.
-// ARCHITECTURE.md § What this settles.
-import Layout from "@layouts/Layout.astro";
-import TempleFrame from "@layouts/TempleFrame.astro";
+// centre axis (ARCHITECTURE.md § What this settles). It wears the table's
+// head and v1's colours: a white page, and down its middle one navy shaft
+// with the gold mouth laid across it. The names are written inside the
+// shaft and go down. All lines opaque.
+import TableLayout from "@layouts/TableLayout.astro";
 import PrayerRequestForm from "@components/PrayerRequestForm.astro";
 import { getLocaleFromUrl, useTranslations } from "@i18n/utils";
-import "@styles/temple.css";
 
 const lang = getLocaleFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -22,66 +22,56 @@ const guide = [
 ] as const;
 ---
 
-<Layout title={t("pomelnic.title")}>
-  <TempleFrame lang={lang} zone="rock" path={Astro.url.pathname}>
-    <main class="well-page" id="pomelnic-form">
-      <header class="page-head well-head">
-        <h1 class="page-title">{t("pomelnic.title")}</h1>
-        <p class="page-lead">{t("pomelnicPage.lead")}</p>
-      </header>
-
-      {/* the house's own instructions, folded: read once, then the form */}
-      <details class="guide">
-        <summary>{t("pomelnicPage.guideTitle")}</summary>
-        <div class="guide-body">
-          {guide.map((key) => <p>{t(key)}</p>)}
-        </div>
-      </details>
-
-      {/* the shaft: the form sits inside it, not beside it */}
-      <div class="shaft">
-        <div class="shaft-mouth" aria-hidden="true"></div>
-        <div class="form-well">
-          <PrayerRequestForm idPrefix="pomelnic-page" lang={lang} />
-        </div>
-        <div class="shaft-water" aria-hidden="true"></div>
+<TableLayout
+  title={t("pomelnic.title")}
+  lead={t("pomelnicPage.lead")}
+  kicker={t("table.zoneRock")}
+  mark="lamp"
+  zone="rock">
+  <div class="well-page" id="pomelnic-form">
+    {/* the house's own instructions, folded: read once, then the form */}
+    <details class="guide">
+      <summary>{t("pomelnicPage.guideTitle")}</summary>
+      <div class="guide-body">
+        {guide.map((key) => <p>{t(key)}</p>)}
       </div>
-    </main>
-  </TempleFrame>
-</Layout>
+    </details>
+
+    {/* the shaft: the form sits inside it, not beside it */}
+    <div class="shaft">
+      <div class="shaft-mouth" aria-hidden="true"></div>
+      <div class="form-well">
+        <PrayerRequestForm idPrefix="pomelnic-page" lang={lang} />
+      </div>
+      <div class="shaft-water" aria-hidden="true"></div>
+    </div>
+  </div>
+</TableLayout>
 
 <style>
   .well-page {
-    padding: var(--page-top) 0 var(--page-bottom);
     max-width: 48rem;
     margin: 0 auto;
-  }
-  /* the well is on the axis: its head is centred, and the shaft below
-     is its rule — the head draws none of its own */
-  .well-head {
-    text-align: center;
-    border-bottom: 0;
-    padding-bottom: 0;
-  }
-  .well-head .page-lead {
-    margin-inline: auto;
+    scroll-margin-top: calc(var(--nav-h, 80px) + 16px);
   }
 
   /* the guide: one ruled row that opens; the text inside is prose */
   .guide {
-    max-width: var(--measure);
-    margin: 0 auto var(--s-8);
-    border-top: var(--rule) solid var(--line);
-    border-bottom: var(--rule) solid var(--line);
+    max-width: 40rem;
+    margin: 0 auto clamp(40px, 6vh, 64px);
+    border-top: 1px solid var(--t-edge);
+    border-bottom: 1px solid var(--t-edge);
   }
   .guide summary {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: var(--s-4);
-    min-height: var(--tap);
-    font-size: var(--t-ui);
-    color: var(--ochre);
+    gap: 16px;
+    min-height: var(--t-row);
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--t-ochre-ink);
     cursor: pointer;
     list-style: none;
   }
@@ -90,25 +80,29 @@ const guide = [
   }
   .guide summary::after {
     content: "";
-    width: var(--s-2);
-    height: var(--s-2);
-    margin-right: var(--s-2);
-    border-right: var(--rule-2) solid currentColor;
-    border-bottom: var(--rule-2) solid currentColor;
+    width: 8px;
+    height: 8px;
+    margin-right: 8px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
     transform: rotate(45deg) translate(-2px, -2px);
-    transition: transform var(--dur-2) var(--ease-out);
+    transition: transform 0.24s ease;
   }
   .guide[open] summary::after {
     transform: rotate(-135deg);
   }
+  .guide summary:focus-visible {
+    outline: 2px solid var(--t-deep);
+    outline-offset: 2px;
+  }
   .guide-body {
-    padding: var(--s-2) 0 var(--s-5);
+    padding: 8px 0 24px;
     font-size: 16px;
-    line-height: 1.65;
+    line-height: 1.7;
+    color: var(--t-ink);
   }
   .guide-body p {
     margin: 0 0 1em;
-    opacity: 0.86;
   }
   .guide-body p:last-child {
     margin-bottom: 0;
@@ -119,72 +113,53 @@ const guide = [
     }
   }
 
-  /* The shaft: two emphasis walls, a flat recessed fill, the ochre mouth
-     as the one heavy bar on the page, and still water as a flat dark floor. */
+  /* The shaft: navy walls one step lighter than its fill, the gold mouth
+     as the one heavy bar on the page, still water as the deep navy floor. */
   .shaft {
-    --shaft-pad: var(--s-7);
+    --shaft-pad: 40px;
     position: relative;
     padding: 0 var(--shaft-pad);
-    border-left: var(--rule-2) solid rgb(244 239 228 / 32%);
-    border-right: var(--rule-2) solid rgb(244 239 228 / 32%);
-    background: var(--well-wall);
+    border-left: 2px solid #4f7088;
+    border-right: 2px solid #4f7088;
+    background: var(--t-deep);
   }
   .shaft-mouth {
-    height: var(--bar-2);
-    background: var(--ochre);
+    height: 8px;
+    background: var(--t-ochre);
     /* the mouth spans the walls: it is laid across them */
-    margin: 0 calc((var(--shaft-pad) + var(--rule-2)) * -1) var(--s-8);
+    margin: 0 calc((var(--shaft-pad) + 2px + 8px) * -1) 48px;
   }
   .shaft-water {
-    height: var(--s-10);
-    margin: var(--s-8) calc(var(--shaft-pad) * -1) 0;
-    background: var(--night);
-    border-top: var(--rule) solid rgb(244 239 228 / 32%);
+    height: 80px;
+    margin: 48px calc(var(--shaft-pad) * -1) 0;
+    background: var(--t-ink);
+    border-top: 1px solid #4f7088;
   }
   @media (max-width: 599px) {
     .shaft {
-      --shaft-pad: var(--s-4);
+      --shaft-pad: 16px;
+    }
+    .shaft-mouth {
+      margin-inline: calc((var(--shaft-pad) + 2px) * -1);
     }
     .shaft-water {
-      height: var(--s-8);
+      height: 48px;
     }
   }
 
-  /* the form is neutral for a bright page; in the shaft it is dark. It
-     takes its colours from here through its own custom properties. */
+  /* the form is neutral; in the shaft it reads light on navy. Contrast:
+     labels #F7F6F1 on navy 9.7, help #B9C6CF 6.0, the asterisk and links
+     #C9B07A 5.0, the button's navy on #C9B07A 6.2. */
   .form-well {
-    --field-label: var(--parchment);
-    --field-muted: rgb(244 239 228 / 70%);
-    --field-ink: var(--parchment);
-    --f-accent: var(--ochre);
-  }
-  .form-well :global(input),
-  .form-well :global(textarea) {
-    background: var(--well-floor);
-    border-color: rgb(244 239 228 / 34%);
-    color: var(--parchment);
-  }
-  .form-well :global(input:hover),
-  .form-well :global(textarea:hover) {
-    border-color: rgb(244 239 228 / 60%);
-  }
-  .form-well :global(input::placeholder),
-  .form-well :global(textarea::placeholder) {
-    color: rgb(244 239 228 / 50%);
-  }
-  .form-well :global(input:focus),
-  .form-well :global(textarea:focus) {
-    border-color: var(--ochre);
-    outline: var(--rule) solid var(--ochre);
-    outline-offset: 0;
-  }
-  .form-well :global(button) {
-    border-color: var(--ochre);
-    background: var(--ochre);
-    color: var(--ink);
-  }
-  .form-well :global(button:hover) {
-    border-color: var(--parchment);
-    background: var(--parchment);
+    --field-label: #f7f6f1;
+    --field-muted: #b9c6cf;
+    --field-ink: var(--t-ink);
+    --field-line: #fff;
+    --f-accent: #c9b07a;
+    --f-focus: #c9b07a;
+    --f-button: #c9b07a;
+    --f-button-ink: var(--t-ink);
+    --f-button-hover: #f7f6f1;
+    --f-placeholder: #5f6b76;
   }
 </style>

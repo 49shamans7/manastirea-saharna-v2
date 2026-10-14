@@ -1,174 +1,175 @@
 ---
-// LEFT RAIL — the descent index. Where you are in the strata.
-// Structural, permanent, never changes. It is also the second way into the
-// chambers: if the shrine door were the only route, most visitors would never
-// reach the monastery's substance. ARCHITECTURE.md § The hinge.
+// LEFT RAIL — the descent index as a depth gauge. Where you are in the strata.
+// From the chamber prototype (design/prototypes/templates/chamber.html
+// .rail-l): one field wide, a marker per stratum, the stratum you are in
+// filled, and its name set vertically under them. The markers are the seal's
+// gold squares (SOLID: nothing is rounded).
+//
+// It is also the second way into the chambers (ARCHITECTURE.md § The hinge):
+// the zone's name is the drawer's opener, so the full index — every zone and
+// every chamber — is one tap from the rail at every width.
 import type { Locale } from "@i18n";
 import { getLocalizedPath, useTranslations } from "@i18n/utils";
-import { zones, type ZoneId } from "@temple/zones";
+import { zones, zoneById, type ZoneId } from "@temple/zones";
 
 interface Props {
   lang: Locale;
   /** Zone the current page belongs to, or null on the descent itself. */
   current?: ZoneId | null;
-  /** Canonical path of the current page, for marking the exact chamber. */
+  /** Canonical path of the current page (kept for the API; the gauge marks zones). */
   path?: string;
 }
 
-const { lang, current = null, path = "" } = Astro.props;
+const { lang, current = null } = Astro.props;
 const t = useTranslations(lang);
-const clean = path.replace(/\/$/, "");
-// the exact chamber is "here"; a page inside it (/posts/<slug>) lights it too
-const isHere = (href: string) => clean.endsWith(href);
-const isUnder = (href: string) => isHere(href) || clean.includes(`${href}/`);
+const here = current ? zoneById[current] : null;
 ---
 
 <nav class="rail-left" aria-label={t("zone.descentIndex")}>
-  <ol class="strata">
+  <ol class="gauge">
     {
       zones.map((zone) => (
-        <li class:list={["stratum-entry", `is-${zone.id}`, current === zone.id && "is-current"]}>
-          <a class="stratum-head" href={`${getLocalizedPath("/", lang)}#zona-${zone.id}`}>
-            <span class="zone-name">{t(zone.nameKey)}</span>
+        <li>
+          <a
+            class:list={["marker", current === zone.id && "is-current"]}
+            href={`${getLocalizedPath("/", lang)}#zona-${zone.id}`}
+            title={`${zone.numeral} · ${t(zone.nameKey)}`}
+            aria-current={current === zone.id ? "location" : undefined}>
+            <span class="square" aria-hidden="true" />
+            <span class="sr-only">{`${zone.numeral} · ${t(zone.nameKey)}`}</span>
           </a>
-          <ul class="chambers">
-            {zone.pages.map((page) => (
-              <li>
-                <a
-                  class:list={["chamber-link", isUnder(page.href) && "is-here"]}
-                  href={getLocalizedPath(page.href, lang)}
-                  aria-current={isHere(page.href) ? "page" : undefined}>
-                  {t(page.labelKey)}
-                </a>
-              </li>
-            ))}
-          </ul>
         </li>
       ))
     }
   </ol>
+  {
+    here && (
+      <button
+        type="button"
+        class="depth"
+        data-drawer-open
+        aria-controls="rail-drawer"
+        aria-expanded="false"
+        aria-haspopup="dialog">
+        <span class="numeral">{here.numeral}</span>
+        <span class="depth-name">{t(here.nameKey)}</span>
+      </button>
+    )
+  }
 </nav>
 
 <style>
   .rail-left {
     position: sticky;
-    top: var(--nav-h, var(--s-10));
+    top: var(--nav-h, 80px);
     align-self: start;
-    max-height: calc(100dvh - var(--nav-h, 80px));
-    overflow-y: auto;
-    padding: var(--page-top) 0 var(--s-8);
-    scrollbar-width: none;
-  }
-  .rail-left::-webkit-scrollbar {
-    display: none;
+    box-sizing: border-box;
+    height: calc(100dvh - var(--nav-h, 80px));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--s-5);
+    padding: var(--s-5) 0;
+    border-right: var(--rule) solid var(--line);
+    background: #ffffff;
   }
 
-  .strata,
-  .chambers {
-    list-style: none;
+  .gauge {
+    display: grid;
+    gap: var(--s-1);
     margin: 0;
     padding: 0;
+    list-style: none;
   }
-
-  /* The rail is a shaft: one continuous hairline down the left edge, cut
-     by a square tick at each stratum. The stratum you are in draws its
-     length of shaft at emphasis weight, in ochre. */
-  .stratum-entry {
-    position: relative;
-    padding: 0 0 var(--s-5) var(--s-5);
-  }
-  .stratum-entry::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: var(--rule);
-    background: var(--line);
-  }
-  .stratum-entry:last-child::before {
-    bottom: auto;
-    height: var(--s-5);
-  }
-  .stratum-entry.is-current::before {
-    width: var(--rule-2);
-    background: var(--line-strong);
-  }
-  /* 8px square tick, centred on the 1px line's left edge, on the head's
-     cap height */
-  .stratum-entry::after {
-    content: "";
-    position: absolute;
-    left: calc(var(--s-1) * -1 + 1px);
-    top: var(--s-1);
-    width: var(--s-2);
-    height: var(--s-2);
-    background: var(--zone-tick, currentColor);
-  }
-  .stratum-entry.is-current::after {
-    background: var(--ochre);
-  }
-
-  .is-rock {
-    --zone-tick: var(--rock-lilac);
-  }
-  .is-green {
-    --zone-tick: var(--green-sage);
-  }
-  .is-gold {
-    --zone-tick: var(--gold);
-  }
-  .is-river {
-    --zone-tick: var(--river);
-  }
-
-  .stratum-head {
-    display: flex;
-    align-items: center;
-    gap: var(--s-2);
-    min-height: var(--s-4);
-    text-decoration: none;
-    color: inherit;
-    font-size: var(--t-kicker);
-    line-height: var(--s-4);
-    letter-spacing: var(--track-kicker);
-    text-transform: uppercase;
-    opacity: 0.78;
-    transition: opacity var(--dur-1) var(--ease-out);
-  }
-  .stratum-head:hover {
-    opacity: 1;
-  }
-  .is-current .stratum-head {
-    opacity: 1;
-  }
-
-  .chambers {
-    margin-top: var(--s-2);
+  /* a thumb's target round an 11px mark */
+  .marker {
     display: grid;
+    place-items: center;
+    width: var(--tap-min);
+    height: var(--tap-min);
+    color: inherit;
   }
-  .chamber-link {
+  .square {
+    width: 11px;
+    height: 11px;
+    box-sizing: border-box;
+    border: var(--rule) solid var(--seal-gold);
+    background: #ffffff;
+    transition:
+      background-color var(--dur-1) var(--ease-out),
+      border-color var(--dur-1) var(--ease-out);
+  }
+  .marker:hover .square {
+    border-color: var(--seal-gold-text);
+  }
+  /* the stratum you are in: filled, in the gold that holds 5.8:1 */
+  .marker.is-current .square {
+    border-color: var(--seal-gold-text);
+    background: var(--seal-gold-text);
+  }
+
+  /* the zone's name, set down the rail; it opens the full index */
+  .depth {
     display: flex;
     align-items: center;
-    min-height: var(--s-6);
-    padding: var(--s-1) 0;
-    font-size: var(--t-ui);
-    line-height: 1.3;
-    text-decoration: none;
-    color: color-mix(in srgb, currentColor 70%, transparent);
+    gap: var(--s-3);
+    min-width: var(--tap-min);
+    padding: var(--s-3) 0;
+    border: 0;
+    background: transparent;
+    color: var(--seal-gold-text);
+    font: inherit;
+    font-size: 11px;
+    line-height: 1;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+    cursor: pointer;
     transition: color var(--dur-1) var(--ease-out);
   }
-  .chamber-link:hover {
-    color: inherit;
+  .depth:hover {
+    color: var(--seal-paper);
   }
-  .chamber-link.is-here {
-    color: var(--here, var(--ochre));
+  .numeral {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.1em;
   }
 
-  /* below the frame width the rail is not a rail — the drawer carries it */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  /* a phone: the gauge lies down — a strip above the page, markers left,
+     the zone's name beside them */
   @media (max-width: 1100px) {
     .rail-left {
-      display: none;
+      position: static;
+      height: auto;
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: var(--s-3);
+      padding: 0 var(--frame-pad);
+      padding-left: calc(var(--frame-pad) - 16px);
+      border-right: 0;
+      border-bottom: var(--rule) solid var(--line);
+    }
+    .gauge {
+      display: flex;
+      gap: 0;
+    }
+    .depth {
+      writing-mode: horizontal-tb;
+      min-height: var(--tap-min);
+      padding: 0;
     }
   }
 </style>

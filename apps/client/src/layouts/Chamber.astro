@@ -1,64 +1,127 @@
 ---
-// TEMPLATE B · CHAMBER — a room you enter. No descent; you are already at the
-// bottom. One zone palette held for the whole page. Four skins.
-// The gold skin is the shrine: narrower measure, thread-gold versal, the pall
-// as ground, flowers as the only chroma, and nothing moves.
+// TEMPLATE B · CHAMBER, v2 "river" — design/prototypes/templates/chamber.html.
+// A room you enter. No descent; you are already at the bottom. One zone
+// palette held for the whole page, four skins (data-skin = rock | green |
+// gold | river). The text does not sit in a box: it sits in the SHAFT, a
+// lighter well with hairline edges that runs the full height of the page,
+// and the page's ground fades into the header above and the footer below.
+//
+// The gold skin is the shrine: a narrower (prayer) measure, the thread-gold
+// versal, the pall as ground, the flowers as the only chroma, and nothing
+// moves.
 import Layout from "@layouts/Layout.astro";
 import TempleFrame from "@layouts/TempleFrame.astro";
+import ChamberExits, { type ChamberExit } from "@components/chamber/ChamberExits.astro";
 import { getLocaleFromUrl, getLocalizedPath, useTranslations } from "@i18n/utils";
-import type { ZoneId } from "@temple/zones";
+import { zoneById, type ZoneId } from "@temple/zones";
+import divider from "@assets/ornaments/divider.svg?raw";
+import rhombUrl from "@assets/ornaments/rhomb.svg?url";
+import bandUrl from "@assets/ornaments/band.svg?url";
 import "@styles/temple.css";
 
 interface Props {
   zone: ZoneId;
   title: string;
-  /** A short line above the title, only where it orients the reader (a
-      post's date). Zone names are not passed: the rails already say where
-      you are. */
+  /** The tracked micro label above the title. Defaults to the zone's
+      numeral and name ("III · Racla"). */
   eyebrow?: string | undefined;
+  /** A tracked line under the title: a post's date, a count. */
+  meta?: string | undefined;
+  /** Machine-readable form of `meta` when it is a date. */
+  metaDatetime?: string | undefined;
   lead?: string | undefined;
+  /** A note set small under the head (a missing translation). */
+  note?: string | undefined;
   /** Plate behind the chamber head, if one exists for this zone. */
   plate?: string | undefined;
+  /** A page of photographs, not of prose: the column takes the shaft's width. */
+  wide?: boolean;
+  /** Versed text (the Acatist): each h2 opens a numbered stanza, I, II, III… */
+  verses?: boolean;
+  /** The ways out. Default: back up to the zone on the descent, and sideways
+      to the next chamber of the same zone. */
+  exits?: ChamberExit[] | undefined;
 }
 
-const { zone, title, eyebrow, lead, plate } = Astro.props;
+const { zone, title, eyebrow, meta, metaDatetime, lead, note, plate, wide = false, verses = false, exits } = Astro.props;
 const lang = getLocaleFromUrl(Astro.url);
 const t = useTranslations(lang);
+const zoneInfo = zoneById[zone];
 const isGold = zone === "gold";
 // a long title (most cronică entries) steps down one size instead of
-// shouting across three lines
+// shouting across four lines
 const isLong = title.length > 48;
+const label = eyebrow ?? `${zoneInfo.numeral} · ${t(zoneInfo.nameKey)}`;
+
 // Return lands on the descent at this zone's depth, never at the top — and it
 // must work without JavaScript, so it is written here, not patched in later.
 const descentHref = `${getLocalizedPath("/", lang)}#zona-${zone}`;
+const clean = Astro.url.pathname.replace(/\/$/, "");
+const siblings = zoneInfo.pages;
+const here = siblings.findIndex((page) => clean.endsWith(page.href));
+const next = siblings[(here + 1) % siblings.length];
+const defaultExits: ChamberExit[] = [
+  { dir: t("chamber.back"), title: t(zoneInfo.nameKey), href: descentHref, side: "back" },
+  ...(next && siblings.length > 1
+    ? [{ dir: t("chamber.beside"), title: t(next.labelKey), href: getLocalizedPath(next.href, lang), side: "on" as const }]
+    : []),
+];
+const ways = exits ?? defaultExits;
+
+// the seal's ornaments: the divider is drawn inline (it reads currentColor),
+// the rhomb and the folk band are masks/tiles for the CSS
+const dividerSvg = divider
+  .replace(/<!--.*?-->/gs, "")
+  .replace(/\swidth="\d+"\sheight="\d+"/, ' aria-hidden="true" focusable="false"');
+const ornamentVars = `--ch-rhomb: url("${rhombUrl}"); --ch-band: url("${bandUrl}")`;
 ---
 
 <Layout title={title} description={lead}>
   <TempleFrame lang={lang} zone={zone} path={Astro.url.pathname}>
-    <main class:list={["chamber", isGold && "is-shrine"]}>
-      <header class="page-head chamber-head">
+    <main
+      class:list={["chamber", isGold && "is-shrine", wide && "is-wide", verses && "is-verses"]}
+      data-skin={zone}
+      style={ornamentVars}>
+      <header class="ch-head">
         {plate && <img class="head-plate" src={plate} alt="" aria-hidden="true" loading="eager" />}
-        {eyebrow && <p class="page-kicker">{eyebrow}</p>}
-        <h1 class:list={["page-title chamber-title", isLong && "is-long"]}>{title}</h1>
-        {lead && <p class="page-lead">{lead}</p>}
+        <p class="r-eyebrow is-centred ch-eyebrow">{label}</p>
+        <h1 class:list={["r-title is-page ch-title", isLong && "is-long"]}>{title}</h1>
+        {
+          meta &&
+            (metaDatetime ? (
+              <p class="ch-meta">
+                <time datetime={metaDatetime}>{meta}</time>
+              </p>
+            ) : (
+              <p class="ch-meta">{meta}</p>
+            ))
+        }
+        <span class="ch-divider" set:html={dividerSvg} />
+        {lead && <p class="r-lead ch-lead">{lead}</p>}
+        {note && <p class="ch-note">{note}</p>}
       </header>
+
+      <div class="ch-body">
+        <slot />
+      </div>
 
       {
         isGold && (
-          <div class="flowers" aria-hidden="true">
-            <span style="left:12%;top:8%" />
-            <span style="left:68%;top:3%;animation-delay:-3s" />
-            <span style="left:88%;top:16%;animation-delay:-6s" />
+          <div class="offerings" aria-hidden="true">
+            <i />
+            <i />
+            <i />
+            <i />
+            <i />
           </div>
         )
       }
 
-      <div class="chamber-body">
-        <slot />
-      </div>
+      <div class="ch-band" aria-hidden="true"></div>
 
-      <footer class="chamber-foot">
-        <a class="back" href={descentHref}><span aria-hidden="true">←</span> {t("zone.backToDescent")}</a>
+      <footer class="ch-foot">
+        <ChamberExits label={t("chamber.exits")} items={ways} />
+        <slot name="foot" />
       </footer>
     </main>
   </TempleFrame>
@@ -68,7 +131,7 @@ const descentHref = `${getLocalizedPath("/", lang)}#zona-${zone}`;
   // A ruled table wider than a phone scrolls inside itself; a keyboard must
   // be able to reach that scroll too (WCAG 2.1.1).
   const markScrollable = () =>
-    document.querySelectorAll<HTMLTableElement>(".chamber-body table").forEach((table) => {
+    document.querySelectorAll<HTMLTableElement>(".ch-body table").forEach((table) => {
       if (table.scrollWidth > table.clientWidth + 1) table.tabIndex = 0;
       else table.removeAttribute("tabindex");
     });
@@ -77,17 +140,138 @@ const descentHref = `${getLocalizedPath("/", lang)}#zona-${zone}`;
 </script>
 
 <style>
+  /* ── the seal's colours (owner, 2026-10-15): v1's navy, gold and paper on
+     white. Zones differ by their photographs, not by their ground; only the
+     shrine changes ground, to paper, with a white well. Every colour is
+     opaque: text never takes an opacity, lines are drawn solid.
+     Measured (WCAG 2.x) on the paper #F7F6F1, the darker of the two grounds:
+       ink #1A3346 12.1 · soft #4A6274 5.9 · gold text #76633A 5.4
+       rubric #9B2C5F 6.7 — on white each is higher (ink 13.0, gold 5.8). */
   .chamber {
-    padding: var(--page-top) 0 var(--page-bottom);
-    /* the centre column sits inside the shaft, not beside it */
-    max-width: var(--measure-wide, 62rem);
+    --ch-ground: #fff;
+    --ch-well: #f7f6f1;
+    --ch-edge: #ddd0b2;
+    --ch-ink: #1a3346;
+    --ch-soft: #4a6274;
+    --ch-accent: #76633a;
+    --ch-rule: #ab9362;
+    --ch-rubric: #9b2c5f;
+    --kicker: var(--ch-accent);
   }
-  .is-shrine {
-    max-width: calc(var(--measure-gold) + 6rem);
+  .chamber.is-shrine {
+    --ch-ground: #f7f6f1;
+    --ch-well: #fff;
   }
 
-  /* a plate is cut to the head's own box — hard edges, no feather; the
-     ground lies over it as one flat layer */
+  /* TempleFrame paints the white field (.ground-white, which re-points the
+     --seal-* names for a white ground — so this file writes its hexes out).
+     The shrine alone lays paper over it. */
+  :global(.frame:has(> .centre > .chamber.is-shrine)) {
+    background: #f7f6f1;
+  }
+
+  .chamber {
+    position: relative;
+    isolation: isolate;
+    min-height: 100%;
+    padding: clamp(var(--s-9), 12vh, var(--s-12)) 0 var(--page-bottom);
+    color: var(--ch-ink);
+  }
+
+  /* THE SHAFT — a column of lighter air with hairline walls, top to bottom.
+     The text stands inside it, never beside it. */
+  .chamber::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: min(46rem, 100%);
+    transform: translateX(-50%);
+    background: var(--ch-well);
+    border-inline: 1px solid var(--ch-edge);
+    pointer-events: none;
+  }
+  .is-wide::before {
+    width: 100%;
+  }
+  /* on a phone the well is the screen: no walls at the glass, text keeps
+     the 16px gutter */
+  @media (max-width: 599px) {
+    .chamber::before,
+    .is-wide::before {
+      left: calc(-1 * var(--frame-pad));
+      right: calc(-1 * var(--frame-pad));
+      width: auto;
+      transform: none;
+      border-inline: 0;
+    }
+  }
+
+  /* ── the head: micro label · title · meta · the gold rule · lead ── */
+  .ch-head {
+    position: relative;
+    isolation: isolate;
+    max-width: 40rem;
+    margin: 0 auto var(--s-10);
+    padding: 0 var(--s-5);
+    text-align: center;
+  }
+  .ch-eyebrow {
+    margin-bottom: var(--s-5);
+  }
+  /* the display voice decides its own case and tracking (blackletter is
+     never set in capitals): --display-case / --display-track */
+  .ch-title {
+    font-family: var(--font-display, "Alegreya SC", Georgia, serif);
+    text-transform: var(--display-case, uppercase);
+    letter-spacing: var(--display-track, 0.04em);
+    color: var(--ch-ink);
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+  .ch-title.is-long {
+    font-size: clamp(22px, 2.6vw, 34px);
+    line-height: 1.18;
+  }
+  .ch-meta {
+    margin: var(--s-4) 0 0;
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ch-soft);
+    font-variant-numeric: lining-nums tabular-nums;
+  }
+  /* the seal's divider in place of the plain rule: hairline, rhombs, the
+     hooked rhomb with its gold heart */
+  .ch-divider {
+    display: block;
+    width: 168px;
+    height: 22px;
+    margin: var(--s-6) auto 0;
+    color: var(--ch-rule);
+  }
+  .ch-divider :global(svg) {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .ch-lead {
+    margin: var(--s-6) auto 0;
+    color: var(--ch-ink);
+    text-wrap: pretty;
+  }
+  .ch-note {
+    margin: var(--s-5) 0 0;
+    font-size: 11px;
+    line-height: 1.6;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--ch-soft);
+  }
+  /* a plate is cut to the head's own box — hard edges; the ground lies over it */
   .head-plate {
     position: absolute;
     inset: 0;
@@ -97,309 +281,364 @@ const descentHref = `${getLocalizedPath("/", lang)}#zona-${zone}`;
     opacity: 0.2;
     z-index: -1;
   }
-  /* thread-gold versal — line work, never a field */
-  .is-shrine .chamber-title {
-    color: var(--gold);
-    letter-spacing: 0.05em;
+
+  /* ── the body: one measure, centred in the well ── */
+  .ch-body,
+  .ch-foot {
+    max-width: calc(var(--measure) + 2 * var(--s-5));
+    margin-inline: auto;
+    padding-inline: var(--s-5);
+  }
+  .is-shrine .ch-body,
+  .is-shrine .ch-foot {
+    max-width: calc(var(--measure-gold) + 2 * var(--s-5));
+  }
+  .is-wide .ch-body,
+  .is-wide .ch-foot {
+    max-width: calc(var(--measure-wide) + 2 * var(--s-5));
+  }
+  @media (max-width: 599px) {
+    .ch-head,
+    .ch-body,
+    .ch-foot {
+      padding-inline: 0;
+    }
+    .ch-head {
+      margin-bottom: var(--s-8);
+    }
   }
 
-  .chamber-body {
-    max-width: var(--measure);
+  .ch-body {
     font-size: var(--t-body);
-    line-height: var(--lh-body);
+    line-height: 1.8;
+    color: var(--ch-ink);
   }
-  .is-shrine .chamber-body {
-    max-width: var(--measure-gold);
-  }
-  .chamber-body :global(p) {
-    margin: 0 0 1.05em;
-    opacity: 0.88;
+  .ch-body :global(p) {
+    margin: 0 0 1.4em;
     text-wrap: pretty;
+    overflow-wrap: break-word;
   }
-  .chamber-body :global(h2) {
-    font-size: var(--t-h2);
-    font-weight: 400;
+
+  /* the versal: the first letter of the first paragraph, in gold, three
+     lines deep. The paragraph holds it even when it is one line long. */
+  .ch-body :global(.prose > p:first-of-type) {
+    display: flow-root;
+  }
+  .ch-body :global(.prose > p:first-of-type::first-letter) {
+    float: left;
+    margin: 0.08em 0.12em 0 0;
+    font-family: var(--font-display, "Alegreya SC", Georgia, serif);
+    font-size: 4.2em;
+    font-weight: 700;
+    line-height: 0.82;
+    color: var(--ch-accent);
+  }
+
+  /* sub-heads: tracked gold micro capitals over a short underline
+     (chamber.html "CHEMAREA") */
+  .ch-body :global(h2) {
+    margin: 3em 0 1.4em;
+    font-family: var(--font-display, "Alegreya SC", Georgia, serif);
+    font-size: clamp(20px, 1.6vw, 23px);
+    font-weight: 700;
     line-height: 1.3;
-    letter-spacing: var(--track-caps);
-    text-transform: uppercase;
+    letter-spacing: var(--display-track, 0.05em);
+    text-transform: var(--display-case, uppercase);
+    text-align: center;
     text-wrap: balance;
-    margin: var(--s-9) 0 var(--s-4);
+    color: var(--ch-ink);
+    overflow-wrap: break-word;
   }
-  /* a section opens on a short solid bar — the one ornament in the text */
-  .chamber-body :global(h2)::before {
+  /* under each section head, one small hooked rhomb of the seal */
+  .ch-body :global(h2::after) {
     content: "";
     display: block;
-    width: var(--s-6);
-    height: var(--rule-2);
-    background: var(--line-strong);
-    margin-bottom: var(--s-4);
+    width: 18px;
+    height: 18px;
+    margin: var(--s-3) auto 0;
+    background: var(--ch-rule);
+    -webkit-mask: var(--ch-rhomb) center / contain no-repeat;
+    mask: var(--ch-rhomb) center / contain no-repeat;
   }
-  .chamber-body > :global(:first-child) > :global(h2:first-child),
-  .chamber-body > :global(h2:first-child) {
+  .ch-body :global(.prose > h2:first-child) {
     margin-top: 0;
   }
-  /* sub-heads inside a chamber: Slujba's cântări, the Life's chapters and
-     testimonies. One step down from h2, then one more; still line work. */
-  .chamber-body :global(h3) {
+  /* one step down: the Life's chapters, Slujba's canons */
+  .ch-body :global(h3) {
+    margin: 2.4em 0 0.6em;
     font-size: var(--t-h3);
     font-weight: 400;
     font-style: italic;
     line-height: 1.4;
-    margin: var(--s-7) 0 var(--s-2);
-    color: var(--ochre);
+    color: var(--ch-ink);
   }
-  .chamber-body :global(h4) {
+  .ch-body :global(h4) {
+    margin: 2em 0 0.5em;
     font-size: var(--t-body);
     font-weight: 700;
     line-height: 1.45;
-    margin: var(--s-6) 0 var(--s-2);
+    color: var(--ch-ink);
   }
-  /* Rubrics — the service's own instructions (bold-italic in the source) —
-     are printed red in a liturgical book. In the shrine that red is the
-     living half of the pall palette (#BD639A), lifted one step so it holds
-     4.5:1 on the pall ground. */
-  .is-shrine .chamber-body :global(strong em),
-  .is-shrine .chamber-body :global(em strong) {
-    color: var(--rubric);
-    font-weight: 400;
-  }
-  .is-shrine .chamber-body :global(h3) {
-    color: var(--gold);
-  }
-  .chamber-body :global(h2 + h3),
-  .chamber-body :global(h3 + h4) {
+  .ch-body :global(h2 + h3),
+  .ch-body :global(h3 + h4) {
     margin-top: var(--s-3);
   }
-
-  /* verse with hard line breaks: keep each line whole where it fits, wrap
-     cleanly where it does not */
-  .chamber-body :global(p) {
-    overflow-wrap: break-word;
+  /* Rubrics — the service's own instructions (bold-italic in the source) —
+     are printed red in a liturgical book: the seal's liturgical red,
+     6.7:1 on paper. */
+  .is-shrine .ch-body :global(strong em),
+  .is-shrine .ch-body :global(em strong) {
+    color: var(--ch-rubric);
+    font-weight: 400;
   }
 
-  .chamber-body :global(blockquote) {
-    margin: var(--s-7) 0;
+  /* VERSES — the Acatist: each condac and icos is a stanza on a thread-gold
+     hairline, numbered in the margin I, II, III… */
+  .is-verses .ch-body :global(.prose) {
+    counter-reset: stanza;
+  }
+  .is-verses .ch-body :global(.prose > h2) {
+    position: relative;
+    counter-increment: stanza;
+    margin: 2.6em 0 1em;
+    padding-top: var(--s-5);
+    border-top: 1px solid color-mix(in srgb, var(--ch-accent) 40%, var(--ch-well));
+  }
+  .is-verses .ch-body :global(.prose > h2:first-child) {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+  }
+  .is-verses .ch-body :global(.prose > h2::before) {
+    content: counter(stanza, upper-roman) "\2002";
+    letter-spacing: 0.12em;
+    color: var(--ch-accent);
+  }
+  @media (min-width: 760px) {
+    .is-verses .ch-body :global(.prose > h2::before) {
+      position: absolute;
+      top: var(--s-5);
+      right: calc(100% + var(--s-5));
+      content: counter(stanza, upper-roman);
+      white-space: nowrap;
+    }
+  }
+
+  /* the pull quote: a 2px gold bar, the text at full ink */
+  .ch-body :global(blockquote) {
+    margin: 2.6em 0;
     padding-left: var(--s-5);
-    border-left: var(--rule-2) solid var(--line-strong);
-    font-style: italic;
+    border-left: 2px solid var(--ch-rule);
     font-size: var(--t-quote);
     line-height: 1.6;
-    opacity: 0.9;
+    color: var(--ch-ink);
   }
+  .ch-body :global(blockquote p:last-child) {
+    margin-bottom: 0;
+  }
+
   /* the reset strips markers; lists in a chamber are real lists */
-  .chamber-body :global(ul),
-  .chamber-body :global(ol) {
-    margin: 0 0 1.3em;
+  .ch-body :global(ul),
+  .ch-body :global(ol) {
+    margin: 0 0 1.4em;
     padding-left: 1.4em;
-    opacity: 0.88;
   }
-  .chamber-body :global(ul) {
+  .ch-body :global(ul) {
     list-style: disc;
   }
-  .chamber-body :global(ol) {
+  .ch-body :global(ol) {
     list-style: decimal;
   }
-  .chamber-body :global(ul ul) {
+  .ch-body :global(ul ul) {
     list-style: circle;
     margin: 0.4em 0 0;
   }
-  .chamber-body :global(li) {
+  .ch-body :global(li) {
     margin-bottom: 0.5em;
     padding-left: 0.2em;
   }
-  .chamber-body :global(li::marker) {
-    color: var(--ochre);
+  .ch-body :global(li::marker) {
+    color: var(--ch-accent);
   }
-  .is-shrine .chamber-body :global(li::marker) {
-    color: var(--gold);
-  }
-  .chamber-body :global(li > p) {
+  .ch-body :global(li > p) {
     margin-bottom: 0.4em;
   }
 
-  /* tables (Istoria's abbots): full measure, ruled, numbers aligned. On a
-     phone the table scrolls inside itself, never the page. */
-  .chamber-body :global(table) {
+  /* tables (Istoria's abbots): ruled, numbers aligned, gold micro heads. On
+     a phone the table scrolls inside itself, never the page. */
+  .ch-body :global(table) {
     display: block;
     width: 100%;
     max-width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     border-collapse: collapse;
-    margin: 1.6em 0 2em;
+    margin: 1.6em 0 2.4em;
     font-size: 0.94em;
     line-height: 1.5;
     font-variant-numeric: tabular-nums;
   }
-  .chamber-body :global(th),
-  .chamber-body :global(td) {
+  .ch-body :global(th),
+  .ch-body :global(td) {
     text-align: left;
     vertical-align: top;
     padding: var(--s-2) var(--s-4);
-    border-bottom: var(--rule) solid var(--line);
+    border-bottom: 1px solid var(--ch-edge);
   }
-  .chamber-body :global(th:first-child),
-  .chamber-body :global(td:first-child) {
+  .ch-body :global(th:first-child),
+  .ch-body :global(td:first-child) {
     padding-left: 0;
   }
-  .chamber-body :global(th) {
+  .ch-body :global(th) {
     font-weight: 400;
-    font-size: var(--t-meta);
-    line-height: 1.35;
+    font-size: 11px;
+    line-height: 1.5;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
     vertical-align: bottom;
-    padding-bottom: var(--s-2);
-    color: var(--ochre);
-    border-bottom: var(--rule) solid var(--line-strong);
+    color: var(--ch-accent);
+    border-bottom: 2px solid var(--ch-rule);
   }
   @media (max-width: 767px) {
-    .chamber-body :global(th),
-    .chamber-body :global(td) {
+    .ch-body :global(th),
+    .ch-body :global(td) {
       padding: 0.35em 0.55em;
     }
   }
-  .chamber-body :global(td) {
-    opacity: 0.9;
+
+  .ch-body :global(hr) {
+    border: 0;
+    width: 60px;
+    height: 2px;
+    margin: var(--s-9) auto;
+    background: var(--ch-rule);
   }
 
-  .chamber-body :global(hr) {
-    border: 0;
-    height: var(--rule);
-    width: 100%;
-    margin: var(--s-8) 0;
-    background: var(--line);
-  }
-  /* CHRONOLOGY — a ruled table of dates. The date is a label in a fixed
-     column, the event reads beside it; a hairline under every entry, the
-     emphasis rule over the first. On a phone the date stands above. */
-  .chamber-body :global(dl.chronology) {
+  /* CHRONOLOGY — the date a gold label in its own column, the event beside it */
+  .ch-body :global(dl.chronology) {
     display: grid;
-    grid-template-columns: 176px minmax(0, 1fr);
+    grid-template-columns: 9rem minmax(0, 1fr);
     column-gap: var(--s-5);
     margin: var(--s-6) 0 var(--s-8);
-    border-top: var(--rule) solid var(--line-strong);
+    border-top: 1px solid var(--ch-edge);
     font-variant-numeric: lining-nums tabular-nums;
   }
-  /* first thing under the head: the head's rule already opens it */
-  .chamber-body :global(dl.chronology:first-child) {
+  .ch-body :global(dl.chronology:first-child) {
     border-top: 0;
   }
-  .chamber-body :global(dl.chronology:first-child > dt:first-of-type),
-  .chamber-body :global(dl.chronology:first-child > dd:first-of-type) {
+  .ch-body :global(dl.chronology:first-child > dt:first-of-type),
+  .ch-body :global(dl.chronology:first-child > dd:first-of-type) {
     padding-top: 0;
   }
-  .chamber-body :global(dl.chronology dt),
-  .chamber-body :global(dl.chronology dd) {
+  .ch-body :global(dl.chronology dt),
+  .ch-body :global(dl.chronology dd) {
     margin: 0;
     padding: var(--s-3) 0;
-    border-bottom: var(--rule) solid var(--line);
+    border-bottom: 1px solid var(--ch-edge);
     min-width: 0;
   }
-  .chamber-body :global(dl.chronology dt) {
-    font-size: var(--t-body);
+  .ch-body :global(dl.chronology dt) {
     line-height: 1.7;
-    color: var(--ochre);
+    color: var(--ch-accent);
   }
-  .chamber-body :global(dl.chronology dt strong) {
+  .ch-body :global(dl.chronology dt strong) {
     font-weight: 400;
+    color: inherit;
   }
-  .chamber-body :global(dl.chronology dd) {
+  .ch-body :global(dl.chronology dd) {
     line-height: 1.7;
-    opacity: 0.88;
     overflow-wrap: break-word;
   }
   @media (max-width: 599px) {
-    .chamber-body :global(dl.chronology) {
+    .ch-body :global(dl.chronology) {
       grid-template-columns: minmax(0, 1fr);
     }
-    .chamber-body :global(dl.chronology dt) {
+    .ch-body :global(dl.chronology dt) {
       padding-bottom: 0;
       border-bottom: 0;
     }
-    .chamber-body :global(dl.chronology dd) {
+    .ch-body :global(dl.chronology dd) {
       padding-top: var(--s-1);
     }
   }
 
-  /* FIGURE — a plate set into the wall: square, flat, no shadow. The caption
-     is a label, cut off from the text by a hairline. */
-  .chamber-body :global(figure) {
-    margin: var(--s-6) 0 var(--s-8);
+  /* FIGURE — a plate set into the wall: square, flat, a hairline frame; the
+     caption a tracked label under it */
+  .ch-body :global(figure) {
+    margin: 2.8em 0;
   }
-  .chamber-body :global(figure img) {
+  .ch-body :global(.prose img) {
     display: block;
-    margin: 0;
-    border-radius: var(--radius);
-  }
-  .chamber-body :global(figcaption) {
-    margin-top: var(--s-3);
-    font-size: var(--t-meta);
-    line-height: 1.55;
-    font-style: italic;
-    opacity: 0.72;
-    max-width: var(--measure);
-  }
-
-  .chamber-body :global(a) {
-    color: var(--ochre);
-    text-decoration: underline;
-    text-decoration-thickness: var(--rule);
-    text-decoration-color: color-mix(in srgb, currentColor 45%, transparent);
-    text-underline-offset: 0.2em;
-    transition: text-decoration-color var(--dur-1) var(--ease-out);
-  }
-  .chamber-body :global(a:hover) {
-    text-decoration-color: currentColor;
-  }
-  .chamber-body :global(img) {
     width: 100%;
     height: auto;
-    margin: 2em 0;
+    margin: 2.4em 0;
+  }
+  .ch-body :global(.prose figure img) {
+    margin: 0;
+    border: 1px solid var(--ch-edge);
+  }
+  .ch-body :global(figcaption) {
+    margin-top: var(--s-3);
+    font-size: 11px;
+    line-height: 1.7;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--ch-soft);
   }
 
-  /* the relics are buried in fresh flowers — the living half of the palette */
-  .flowers span {
-    position: absolute;
-    width: var(--s-2);
-    height: var(--s-2);
-    background: var(--flower);
-    animation: drift 9s ease-in-out infinite;
-  }
-  .flowers {
-    position: relative;
-    height: 0;
-  }
-  @keyframes drift {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-9px);
-    }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .flowers span {
-      animation: none;
-    }
-  }
-
-  .chamber-foot {
-    margin-top: var(--s-10);
-    padding-top: var(--s-3);
-    border-top: var(--rule) solid var(--line);
-  }
-  .back {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--s-2);
-    min-height: var(--tap);
-    font-size: var(--t-ui);
-    color: var(--ochre);
-    text-decoration: none;
-  }
-  .back:hover {
+  .ch-body :global(.prose a) {
+    color: var(--ch-accent);
     text-decoration: underline;
-    text-decoration-thickness: var(--rule);
-    text-underline-offset: 0.25em;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+  }
+  .ch-body :global(.prose a:hover) {
+    color: var(--ch-ink);
+  }
+
+  /* the relics are buried in fresh flowers — the living half of the palette,
+     five still bars at the foot of a gold chamber */
+  .offerings {
+    display: flex;
+    justify-content: center;
+    gap: var(--s-2);
+    margin: var(--s-10) 0 0;
+  }
+  .offerings i {
+    width: 40px;
+    height: 3px;
+  }
+  .offerings i:nth-child(1) {
+    background: var(--wine);
+  }
+  .offerings i:nth-child(2) {
+    background: var(--flower);
+  }
+  .offerings i:nth-child(3) {
+    background: #ab9362;
+  }
+  .offerings i:nth-child(4) {
+    background: #1a3346;
+  }
+  .offerings i:nth-child(5) {
+    background: var(--green-lit);
+  }
+
+  /* the folk band of the seal: the seam the chamber closes on */
+  .ch-band {
+    height: 16px;
+    max-width: var(--measure);
+    margin: var(--s-10) auto 0;
+    background: var(--ch-band) left center / 32px 16px repeat-x;
+  }
+  .is-shrine .ch-band {
+    max-width: var(--measure-gold);
+    margin-top: var(--s-6);
+  }
+  .is-wide .ch-band {
+    max-width: var(--measure-wide);
+  }
+  .ch-foot {
+    margin-top: var(--s-6);
   }
 </style>

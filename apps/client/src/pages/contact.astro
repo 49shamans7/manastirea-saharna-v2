@@ -1,8 +1,12 @@
 ---
-// TEMPLATE C · TABLE — Zone IV. Contact details, flat and print-ready.
+// TEMPLATE C · TABLE — Zone IV. Contact details: one list of rows, every row
+// a tap target (the map, the phones, the mailboxes). Then onward, sideways.
 // Numbers and addresses from the old site's own contact page and footer
 // (msaharna-archive/text/practical_info.json → _contacts).
 import TableLayout from "@layouts/TableLayout.astro";
+import Row from "@components/table/Row.astro";
+import RiverMark from "@components/marks/RiverMark.astro";
+import type { AllTranslationKeys } from "@i18n";
 import { getLocaleFromUrl, getLocalizedPath, telHref, useTranslations } from "@i18n/utils";
 
 const lang = getLocaleFromUrl(Astro.url);
@@ -20,55 +24,67 @@ const phones = [
   { label: t("contact.phoneMainLabel"), number: t("contact.phoneMain") },
   { label: t("contact.guesthouseLabel"), number: t("contact.phoneMobile"), note: t("contact.guesthouseHours") },
 ];
+
+const onward: { href: string; labelKey: AllTranslationKeys; mark: "pin" | "arch" | "lamp" | "hands" }[] = [
+  { href: "/cum-de-ajuns", labelKey: "zone.directions", mark: "pin" },
+  { href: "/cazare", labelKey: "zone.cazare", mark: "arch" },
+  { href: "/pomelnic", labelKey: "zone.pomelnic", mark: "lamp" },
+  { href: "/donations", labelKey: "nav.donations", mark: "hands" },
+];
 ---
 
-<TableLayout title={t("nav.contact")}>
-  <dl>
-    <dt>{t("contact.addressLabel")}</dt>
-    <dd>
-      <span class="house">{t("footer.addressName")}</span>
-      <a class="tap" href={mapLink} rel="noopener" target="_blank">{t("footer.addressLine")}</a>
-    </dd>
-    {
-      phones.map((phone) => (
-        <>
-          <dt>{phone.label}</dt>
-          <dd>
-            <a class="tap" href={telHref(phone.number)}>
-              {phone.number}
-            </a>
-            {phone.note && <span class="aside">{phone.note}</span>}
-          </dd>
-        </>
-      ))
-    }
-    <dt>{t("contact.emailLabel")}</dt>
-    <dd>
+<TableLayout title={t("nav.contact")} lead={t("directions.lead")} mark="bell">
+  <section class="t-section" aria-labelledby="adresa">
+    <h2 class="t-kicker" id="adresa">{t("contact.addressLabel")}</h2>
+    <ul class="t-rows">
+      <Row label={t("footer.addressName")} href={mapLink} external mark="pin" literal>
+        {t("footer.addressLine")}
+      </Row>
+    </ul>
+  </section>
+
+  <section class="t-section" aria-labelledby="telefon">
+    <h2 class="t-kicker" id="telefon">{t("contact.phoneMainLabel")}</h2>
+    <ul class="t-rows">
       {
-        emails.map((address) => (
-          <a class="tap" href={`mailto:${address}`}>
-            {address}
-          </a>
+        phones.map((phone) => (
+          <Row label={phone.label} href={telHref(phone.number)} mark="bell" note={phone.note} literal>
+            {phone.number}
+          </Row>
         ))
       }
-    </dd>
-  </dl>
+    </ul>
+  </section>
 
-  <h2>{t("zone.directions")}</h2>
-  <p><a class="tap" href={getLocalizedPath("/cum-de-ajuns", lang)}>{t("contact.directionsLink")}</a></p>
+  <section class="t-section" aria-labelledby="email">
+    <h2 class="t-kicker" id="email">{t("contact.emailLabel")}</h2>
+    <ul class="t-rows">
+      {
+        emails.map((address) => (
+          <Row label={t("contact.emailLabel")} href={`mailto:${address}`} literal>
+            {address}
+          </Row>
+        ))
+      }
+    </ul>
+  </section>
 
-  <h2>{t("zone.pomelnic")}</h2>
-  <p><a class="tap" href={getLocalizedPath("/pomelnic", lang)}>{t("pomelnic.title")}</a></p>
+  <section class="t-section" aria-labelledby="mai-departe">
+    <h2 class="t-kicker" id="mai-departe">{t("table.onward")}</h2>
+    <ul class="r-drift t-drift">
+      {
+        onward.map((item) => (
+          <li>
+            <a class="t-card" href={getLocalizedPath(item.href, lang)}>
+              <RiverMark name={item.mark} />
+              <span class="t-card-title">{t(item.labelKey)}</span>
+              <span class="t-card-go" aria-hidden="true">
+                →
+              </span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
 </TableLayout>
-
-<style>
-  .aside {
-    display: block;
-    padding-bottom: var(--s-2);
-    font-size: var(--t-meta);
-    color: var(--river-muted);
-  }
-  .house {
-    display: block;
-  }
-</style>

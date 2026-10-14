@@ -3,13 +3,11 @@
 // kept in the categories the archive already had: each folder is the page the
 // photograph was found on, so the sorting is the monastery's, not ours.
 // Derivatives are built by scripts/build-gallery.mjs.
-import Layout from "@layouts/Layout.astro";
-import TempleFrame from "@layouts/TempleFrame.astro";
+import Chamber from "@layouts/Chamber.astro";
 import galleryManifest from "@data/gallery.json";
 import type { AllTranslationKeys } from "@i18n";
 import { getLocaleFromUrl, useTranslations } from "@i18n/utils";
 import { withBasePath } from "@utils/paths";
-import "@styles/temple.css";
 import Icon from "@components/marks/Icon.astro";
 
 type GalleryItem = { src: string; thumb: string; tile?: string; width: number; height: number };
@@ -19,69 +17,78 @@ const lang = getLocaleFromUrl(Astro.url);
 const t = useTranslations(lang);
 const categories = galleryManifest as GalleryCategory[];
 const total = categories.reduce((n, c) => n + c.items.length, 0);
+const name = (category: GalleryCategory) => t(`gallery.${category.key}` as AllTranslationKeys);
 ---
 
-<Layout title={t("zone.galerie")}>
-  <TempleFrame lang={lang} zone="green" path={Astro.url.pathname}>
-    <main class="galerie">
-      <header class="page-head">
-        <h1 class="page-title">{t("zone.galerie")}</h1>
-        <p class="page-lead">{t("gallery.lead")}</p>
-        <p class="page-meta">{total} {t("gallery.count")}</p>
-      </header>
-
+<Chamber zone="green" title={t("zone.galerie")} lead={t("gallery.lead")} meta={`${total} ${t("gallery.count")}`} wide>
+  {/* the archive's own folders, as a line of tracked names: a jump, not a filter */}
+  <nav class="index" aria-label={t("zone.galerie")}>
+    <ul>
       {
         categories.map((category) => (
-          <section class="category" id={category.dir} aria-labelledby={`h-${category.dir}`}>
-            <h2 id={`h-${category.dir}`} class="category-head">
-              {t(`gallery.${category.key}` as AllTranslationKeys)}
-              <span class="category-count">{category.items.length}</span>
-            </h2>
-
-            <ul class="grid">
-              {category.items.map((item, index) => (
-                <li>
-                  <button
-                    class="tile"
-                    type="button"
-                    data-full={withBasePath(item.src)}
-                    data-index={index}
-                    data-category={category.dir}
-                    aria-label={`${t(`gallery.${category.key}` as AllTranslationKeys)} ${index + 1}`}>
-                    <img
-                      src={withBasePath(item.tile ?? item.thumb)}
-                      srcset={
-                        item.tile
-                          ? `${withBasePath(item.tile.replace(/-sq\.webp$/, "-sq-sm.webp"))} 360w, ${withBasePath(item.tile)} 480w`
-                          : `${withBasePath(item.thumb.replace(/-thumb\.webp$/, "-thumb-sm.webp"))} 360w, ${withBasePath(item.thumb)} 480w`
-                      }
-                      sizes="(max-width: 600px) 33vw, 220px"
-                      alt=""
-                      width={item.tile ? 480 : item.width}
-                      height={item.tile ? 480 : item.height}
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </section>
+          <li>
+            <a href={`#${category.dir}`}>
+              {name(category)}
+              <span class="n">{category.items.length}</span>
+            </a>
+          </li>
         ))
       }
-    </main>
-  </TempleFrame>
-</Layout>
+    </ul>
+  </nav>
 
-{/* One lightbox for the whole page; the tiles only hand it a source. */}
-<dialog class="lightbox" id="lightbox" aria-label={t("zone.galerie")}>
-  <img id="lightbox-image" alt="" />
-  <div class="lightbox-controls">
-    <button type="button" data-step="-1" aria-label={t("gallery.previous")}><Icon name="arrow-left" /></button>
-    <button type="button" data-close aria-label={t("gallery.close")}><Icon name="close" /></button>
-    <button type="button" data-step="1" aria-label={t("gallery.next")}><Icon name="arrow-right" /></button>
-  </div>
-</dialog>
+  {
+    categories.map((category) => (
+      <section class="category" id={category.dir} aria-labelledby={`h-${category.dir}`}>
+        <h2 id={`h-${category.dir}`} class="category-head">
+          {name(category)}
+          <span class="category-count">
+            {category.items.length} {t("gallery.count")}
+          </span>
+        </h2>
+
+        <ul class="grid">
+          {category.items.map((item, index) => (
+            <li>
+              <button
+                class="tile"
+                type="button"
+                data-full={withBasePath(item.src)}
+                data-index={index}
+                data-category={category.dir}
+                aria-label={`${name(category)} ${index + 1}`}>
+                <img
+                  src={withBasePath(item.tile ?? item.thumb)}
+                  srcset={
+                    item.tile
+                      ? `${withBasePath(item.tile.replace(/-sq\.webp$/, "-sq-sm.webp"))} 360w, ${withBasePath(item.tile)} 480w`
+                      : `${withBasePath(item.thumb.replace(/-thumb\.webp$/, "-thumb-sm.webp"))} 360w, ${withBasePath(item.thumb)} 480w`
+                  }
+                  sizes="(max-width: 600px) 33vw, 220px"
+                  alt=""
+                  width={item.tile ? 480 : item.width}
+                  height={item.tile ? 480 : item.height}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))
+  }
+
+  {/* One lightbox for the whole page; the tiles only hand it a source. */}
+  <dialog class="lightbox" id="lightbox" aria-label={t("zone.galerie")}>
+    <img id="lightbox-image" alt="" />
+    <div class="lightbox-controls">
+      <button type="button" data-step="-1" aria-label={t("gallery.previous")}><Icon name="arrow-left" /></button>
+      <button type="button" data-close aria-label={t("gallery.close")}><Icon name="close" /></button>
+      <button type="button" data-step="1" aria-label={t("gallery.next")}><Icon name="arrow-right" /></button>
+    </div>
+  </dialog>
+</Chamber>
 
 <script>
   const dialog = document.getElementById("lightbox") as HTMLDialogElement | null;
@@ -133,42 +140,81 @@ const total = categories.reduce((n, c) => n + c.items.length, 0);
 </script>
 
 <style>
-  .galerie {
-    padding: var(--page-top) 0 var(--page-bottom);
-  }
-  .category {
-    margin-bottom: var(--s-9);
-  }
-  /* the category names itself and counts itself; no rule runs between */
-  .category-head {
+  /* the index: the seven folders as tracked names, wrapping on the axis */
+  .index ul {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 0 var(--s-5);
+    margin: 0 0 var(--s-9);
+    padding: 0;
+    list-style: none;
+  }
+  .index li {
+    margin: 0;
+    padding: 0;
+  }
+  .index a {
+    display: inline-flex;
     align-items: baseline;
-    gap: var(--s-1) var(--s-3);
-    font-size: var(--t-h2);
-    font-weight: 400;
-    line-height: 1.3;
-    letter-spacing: var(--track-caps);
+    gap: var(--s-2);
+    min-height: var(--tap-min);
+    padding-top: var(--s-3);
+    font-size: 11px;
+    line-height: 1.6;
+    letter-spacing: 0.24em;
     text-transform: uppercase;
-    margin: 0 0 var(--s-4);
+    color: #1a3346;
+    text-decoration: none;
+  }
+  .index .n {
+    color: #76633a;
+    letter-spacing: 0.06em;
+    font-variant-numeric: lining-nums tabular-nums;
+  }
+  .index a:hover {
+    color: #76633a;
+  }
+
+  .category {
+    margin-bottom: var(--s-10);
+    scroll-margin-top: calc(var(--nav-h) + var(--s-4));
+  }
+  /* the category names itself in the seal's lettering (the chamber's h2) and
+     counts itself in a tracked line under the rhomb */
+  .category .category-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0 var(--s-5);
+  }
+  .category .category-head::after {
+    order: 1;
   }
   .category-count {
-    font-size: var(--t-meta);
-    letter-spacing: 0;
-    opacity: 0.66;
+    order: 2;
+    margin-top: var(--s-2);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.28em;
+    color: #4a6274;
     font-variant-numeric: lining-nums tabular-nums;
   }
 
-  /* The field is square (TEMPLE.md § The grid). Tiles sit in a lattice:
-     joined by a 2px mullion, framed by the same 2px — one built screen. */
-  .grid {
+  /* The field is square. Tiles sit in a lattice joined by a 2px mullion of
+     the well's own paper; a short last row simply ends, no filled cells. */
+  .category .grid {
     list-style: none;
     margin: 0;
-    padding: var(--lattice);
+    padding: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: var(--lattice);
-    background: rgb(13 17 22 / 40%);
+  }
+  .grid li {
+    margin: 0;
+    padding: 0;
   }
   .tile {
     position: relative;
@@ -176,7 +222,7 @@ const total = categories.reduce((n, c) => n + c.items.length, 0);
     width: 100%;
     padding: 0;
     border: 0;
-    background: var(--gallery-ground);
+    background: #f7f6f1;
     cursor: pointer;
     overflow: hidden;
   }
@@ -187,7 +233,7 @@ const total = categories.reduce((n, c) => n + c.items.length, 0);
     aspect-ratio: 1;
     object-fit: cover;
   }
-  /* hover and focus draw a frame, they do not zoom or glow */
+  /* hover lifts a veil, it does not frame, zoom or glow */
   .tile::after {
     content: "";
     position: absolute;
@@ -196,13 +242,12 @@ const total = categories.reduce((n, c) => n + c.items.length, 0);
     transition: background-color var(--dur-2) var(--ease-out);
     pointer-events: none;
   }
-  /* hover lifts a veil, it does not frame, zoom or glow */
   .tile:hover::after {
-    background: rgb(244 239 228 / 10%);
+    background: rgb(255 255 255 / 16%);
   }
   .tile:focus-visible {
-    outline: var(--rule-2) solid var(--ochre);
-    outline-offset: calc(var(--rule-2) * -1);
+    outline: 2px solid #1a3346;
+    outline-offset: -2px;
   }
 
   .lightbox {
@@ -212,10 +257,10 @@ const total = categories.reduce((n, c) => n + c.items.length, 0);
     max-width: min(96vw, 1400px);
     max-height: 94vh;
     background: transparent;
-    color: var(--parchment);
+    color: #fff;
   }
   .lightbox::backdrop {
-    background: rgb(10 12 15 / 94%);
+    background: rgb(14 26 36 / 95%);
   }
   .lightbox img {
     display: block;
@@ -236,25 +281,25 @@ const total = categories.reduce((n, c) => n + c.items.length, 0);
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: var(--rule) solid rgb(244 239 228 / 24%);
-    background: var(--night);
-    color: var(--parchment);
+    border: 1px solid #4f7088;
+    background: #1a3346;
+    color: #fff;
     font-size: 17px;
     padding: 0 var(--s-6);
     cursor: pointer;
-    transition:
-      background-color var(--dur-1) var(--ease-out),
-      border-color var(--dur-1) var(--ease-out);
+    transition: border-color var(--dur-1) var(--ease-out);
   }
   .lightbox-controls button:hover {
-    border-color: rgb(244 239 228 / 72%);
-    background: var(--rock-ground);
+    border-color: #c9b07a;
   }
 
   @media (max-width: 600px) {
     /* three across, square: more of the archive per screen */
-    .grid {
+    .category .grid {
       grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .index ul {
+      gap: 0 var(--s-4);
     }
     .lightbox {
       max-width: 100vw;

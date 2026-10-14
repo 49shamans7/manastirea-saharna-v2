@@ -1,6 +1,10 @@
 ---
-// TEMPLATE C · TABLE — directions. Reads fast on a phone in a car park.
+// TEMPLATE C · TABLE — directions. Reads fast on a phone in a car park:
+// the map link and the phone first, then the two ways in, side by side
+// (sideways on a phone), then the map frame — never the only route.
 import TableLayout from "@layouts/TableLayout.astro";
+import Row from "@components/table/Row.astro";
+import RiverMark from "@components/marks/RiverMark.astro";
 import { getLocaleFromUrl, telHref, useTranslations } from "@i18n/utils";
 
 const lang = getLocaleFromUrl(Astro.url);
@@ -10,50 +14,62 @@ const t = useTranslations(lang);
 const mapQuery = "47.694979,28.965466";
 const mapEmbed = `https://www.google.com/maps?q=${encodeURIComponent(mapQuery)}&hl=${lang}&output=embed`;
 const mapLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapQuery)}`;
+const secretariat = t("contact.phoneSecretariat");
 ---
 
-<TableLayout title={t("zone.directions")} lead={t("directions.lead")}>
-  <h2>{t("directions.address")}</h2>
-  <dl>
-    <dt>{t("footer.addressName")}</dt>
-    <dd>
-      <a class="tap" href={mapLink} rel="noopener" target="_blank">{t("footer.addressLine")}</a>
-    </dd>
-    <dt>{t("contact.secretariatLabel")}</dt>
-    <dd>
-      <a class="tap" href={telHref(t("contact.phoneSecretariat"))}>{t("contact.phoneSecretariat")}</a>
-    </dd>
-  </dl>
-
-  <h2>{t("directions.byBus")}</h2>
-  <p>{t("directions.busText")}</p>
-
-  <h2>{t("directions.byCar")}</h2>
-  <p>
-    <a class="tap" href={mapLink} rel="noopener" target="_blank">{t("directions.openMapLabel")}</a>
-  </p>
-
-  <div class="map">
-    <iframe src={mapEmbed} title={t("home.mapTitle")} loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-    ></iframe>
+<TableLayout title={t("zone.directions")} lead={t("directions.lead")} mark="pin">
+  <div class="t-actions top-actions">
+    <a class="t-btn is-primary" href={mapLink} rel="noopener" target="_blank">{t("directions.openMapLabel")}</a>
+    <a class="t-btn" href={telHref(secretariat)}>{t("table.call")}</a>
   </div>
+
+  <section class="t-section" aria-labelledby="adresa">
+    <h2 class="t-kicker" id="adresa">{t("directions.address")}</h2>
+    <ul class="t-rows">
+      <Row label={t("footer.addressName")} href={mapLink} external mark="pin" literal>
+        {t("footer.addressLine")}
+      </Row>
+      <Row label={t("contact.secretariatLabel")} href={telHref(secretariat)} mark="bell" literal>
+        {secretariat}
+      </Row>
+      <Row label={t("table.coords")} literal>
+        {mapQuery.replace(",", ", ")}
+      </Row>
+    </ul>
+  </section>
+
+  <section class="t-section" aria-labelledby="drumuri">
+    <h2 class="t-kicker" id="drumuri">{t("table.routes")}</h2>
+    <ul class="r-drift t-drift">
+      <li>
+        <div class="t-card">
+          <RiverMark name="pin" />
+          <h3 class="t-card-title">{t("directions.byBus")}</h3>
+          <p class="t-card-text">{t("directions.busText")}</p>
+        </div>
+      </li>
+      <li>
+        <div class="t-card">
+          <RiverMark name="pin" />
+          <h3 class="t-card-title">{t("directions.byCar")}</h3>
+          <p class="t-card-text">
+            {t("table.coords")}: <span translate="no">{mapQuery.replace(",", ", ")}</span>
+          </p>
+          <a class="t-btn" href={mapLink} rel="noopener" target="_blank">{t("directions.openMapLabel")}</a>
+        </div>
+      </li>
+    </ul>
+
+    <div class="t-map">
+      <iframe src={mapEmbed} title={t("home.mapTitle")} loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </section>
 </TableLayout>
 
 <style>
-  .map {
-    margin-top: var(--s-6);
-    border: var(--rule) solid var(--line);
-    aspect-ratio: 16 / 9;
-  }
-  .map iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-    display: block;
-  }
-  @media print {
-    .map {
-      display: none;
-    }
+  .top-actions {
+    justify-content: center;
+    margin: 0 0 clamp(48px, 7vh, 72px);
   }
 </style>

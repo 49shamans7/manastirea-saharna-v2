@@ -107,6 +107,7 @@
   --night: #1b1d21;
   --night-green: #111612;
 
+
   /* liturgical red in the shrine: #BD639A lifted to 4.5:1 on the pall */
   --rubric: #c97aa8;
 
@@ -181,7 +182,7 @@
   --tap-min: 44px;
 
   /* the frame: rail | centre | rail, snapped to 8 */
-  --rail-l: 208px;
+  --rail-l: 78px; /* the depth gauge: one field */
   --rail-r: 240px;
   --centre-max: 1200px;
   --frame-gap: var(--s-8);
@@ -221,4 +222,110 @@
     --t-meta: 15px; /* on a phone nothing that is read runs under 15 */
     --t-ui: 16px;
   }
+}
+
+/* ── THE SEAL — v1's colours and lettering, carried into v2 (owner, 2026-10-15:
+   "keep the river layout, but v1's colours and the official seal").
+   The three inks are measured off the seal artwork (assets/marks/seal.svg):
+   navy #22425A, antique gold #AB9362, paper #F7F6F1. Only NEW names are
+   declared on :root here — the zone aliases above (--green, --pall …) keep
+   their river values, because the landing's strata still read them. Inner
+   pages take the seal through the .ground-white scope below (TempleFrame,
+   the drawer). */
+:root {
+  --seal-navy: #22425a;
+  --seal-deep: #1a3346; /* one step down */
+  --seal-lift: #2a4f6b; /* one step up */
+  --seal-gold: #ab9362; /* line work — rings, rules, ticks; never read */
+  --seal-gold-text: #c9b07a; /* gold that is read on navy: 5.0:1 */
+  --seal-paper: #f7f6f1;
+  --seal-mist: #b9c6cf; /* quiet text on navy: 6.0:1 */
+
+  --font-display: "Alegreya SC", Georgia, "Times New Roman", serif;
+  /* the gothic voice (Pirata One + Monomakh, one family); wired to titles later */
+  --font-gothic: "Saharna Gothic", "Alegreya SC", Georgia, serif;
+
+  /* the olive bars, top and bottom */
+  --header: #253528;
+  --header-line: #5d6d5a; /* opaque olive hairline on the bar */
+  --header-ink: #c9cdbf; /* quiet text on the bar: 8.0:1 */
+  --header-gold: #c9b07a; /* read-gold on the bar: 6.2:1 */
+
+  /* the calendar is the one gold field on the site, wherever it sits */
+  --cal-ground: #c9b07a;
+  --cal-ink: #1a3346; /* 6.2:1 on the gold */
+  --cal-feast: #6b1420; /* the red letter days: 5.7:1 on the gold */
+  --cal-line: #1a3346;
+
+  /* the drawer's dimming of the page — a shade, not a mark */
+  --scrim: rgb(26 51 70 / 72%);
+}
+
+/* ── WHITE GROUND — the drawer and every page inside the frame: the seal's own
+   field. White ground, navy ink, read-gold, opaque pale-gold hairlines.
+   Re-points the inks inside the scope so every component written for a dark
+   ground inverts consistently. */
+.ground-white {
+  --seal-navy: #ffffff; /* the ground */
+  --seal-deep: #f7f6f1; /* fields, wells, the step down */
+  --seal-lift: #efe9da; /* pressed / raised */
+  --seal-paper: #1a3346; /* ink: 13.1:1 on white */
+  --seal-mist: #4a6274; /* quiet ink: 6.4:1 on white */
+  --seal-gold-text: #76633a; /* gold that is read: 5.8:1 on white */
+  /* --seal-gold (#AB9362) stays: line work only */
+  --parchment: #1a3346;
+  --paper: #ffffff;
+  --ink: #1a3346;
+  --ochre: #76633a;
+  --gold: #76633a;
+  --signal: #76633a;
+  --kicker: #76633a;
+  --here: #76633a;
+  --line: #ddd0b2; /* opaque pale-gold hairline */
+  --line-strong: var(--seal-gold);
+  --rubric: #9b2c5f; /* 7.2:1 on white */
+  --river-ink: #1a3346;
+  --river-strong: #76633a;
+  --river-link: #76633a;
+  --river-muted: #4a6274;
+  --field-ink: #1a3346;
+  --field-label: #1a3346;
+  --field-line: var(--seal-gold);
+  --field-muted: #4a6274;
+  --error: #9b2c5f;
+  --error-bg: #f7f6f1;
+  --error-line: #9b2c5f;
+  --success: #76633a;
+  --success-bg: #f7f6f1;
+  --success-line: var(--seal-gold);
+  /* grounds that pages paint inside the frame: all white, one step down for wells */
+  --rock-deep: #ffffff;
+  --rock-ground: #ffffff;
+  --green: #ffffff;
+  --green-deep: #f7f6f1;
+  --pall: #f7f6f1;
+  --pall-lift: #efe9da;
+  --night: #f7f6f1;
+  --night-green: #f7f6f1;
+  --shrine-ground: #f7f6f1;
+  --gallery-ground: #ffffff;
+  --hinge-ground: #ffffff;
+  --well-wall: #efe9da;
+  --well-floor: #f7f6f1;
+  --river-pale: #ffffff;
+  --river-ground: #ffffff;
+  --rock-grey: #4a6274;
+  --rock-stone: #4a6274;
+  /* the river language's own inks, re-pointed for the white field */
+  --r-ink: #1a3346;
+  --r-cream: #4a6274;
+  --r-gold: #76633a;
+  --r-soft: #4a6274;
+  /* buttons: a navy field with white letters; the quiet one a gold hairline */
+  --btn: #1a3346;
+  --btn-ink: #ffffff;
+  --btn-hover: #22425a;
+  --btn-line: var(--seal-gold);
+  background: #ffffff;
+  color: #1a3346;
 }

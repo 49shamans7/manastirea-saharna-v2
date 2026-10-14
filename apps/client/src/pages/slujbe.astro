@@ -1,7 +1,9 @@
 ---
 // TEMPLATE C · TABLE — the hours, verbatim from the monastery's own page.
 // Saharna serves two Liturgies on Thursday, Saturday and Sunday, in three
-// different churches; that structure is the information, so the table keeps it.
+// different churches; that structure is the information, so each day is a
+// real table and each Liturgy a block inside it. Today (Europe/Chisinau) is
+// warmed and marked by a script; without it every day still reads.
 import TableLayout from "@layouts/TableLayout.astro";
 import { feasts, schedule, serviceText } from "@data/schedule";
 import type { AllTranslationKeys } from "@i18n";
@@ -9,79 +11,118 @@ import { getLocaleFromUrl, getLocalizedPath, useTranslations } from "@i18n/utils
 
 const lang = getLocaleFromUrl(Astro.url);
 const t = useTranslations(lang);
+const dayName = (key: string) => t(`schedule.${key}` as AllTranslationKeys);
 ---
 
-<TableLayout title={t("zone.slujbe")} lead={t("slujbe.lead")}>
+<TableLayout title={t("zone.slujbe")} lead={t("slujbe.lead")} mark="bell">
+  <nav aria-label={t("table.days")}>
+    <ul class="t-days">
+      {
+        schedule.map((day) => (
+          <li>
+            <a href={`#zi-${day.key}`} data-day-link={day.key}>
+              {dayName(day.key)}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+
   {
     schedule.map((day) => (
-      <section class="day">
-        <h2>{t(`schedule.${day.key}` as AllTranslationKeys)}</h2>
-        {day.blocks.map((block) => (
-          <>
-            {block.titleKey && <h3 class="liturgy">{t(block.titleKey as AllTranslationKeys)}</h3>}
-            <dl class="hours">
+      <section class="t-day" id={`zi-${day.key}`} data-day={day.key}>
+        <table class="t-hours">
+          <caption>
+            {dayName(day.key)}
+            <span class="t-flag" hidden data-today-flag>
+              {t("table.today")}
+            </span>
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col" class="t-time">
+                {t("table.time")}
+              </th>
+              <th scope="col">{t("table.service")}</th>
+            </tr>
+          </thead>
+          {day.blocks.map((block) => (
+            <tbody>
+              {block.titleKey && (
+                <tr>
+                  <th class="t-block" colspan="2" scope="colgroup">
+                    {t(block.titleKey as AllTranslationKeys)}
+                  </th>
+                </tr>
+              )}
               {block.services.map((service) => (
-                <>
-                  <dt>{service.time}</dt>
-                  <dd>
+                <tr>
+                  <td class="t-time">{service.time}</td>
+                  <td>
                     {serviceText(service.name, lang)}
-                    {service.note && <span class="note">{serviceText(service.note, lang)}</span>}
-                  </dd>
-                </>
+                    {service.note && <span class="t-note">{serviceText(service.note, lang)}</span>}
+                  </td>
+                </tr>
               ))}
-            </dl>
-          </>
-        ))}
+            </tbody>
+          ))}
+        </table>
       </section>
     ))
   }
 
-  <p class="caveat">{t("schedule.caveat")}</p>
+  <p class="t-small">{t("schedule.caveat")}</p>
 
-  <section class="feasts">
-    <h2>{t("schedule.feastsTitle")}</h2>
-    <dl>
-      {
-        feasts.map((feast) => (
-          <>
-            <dt>{feast.date[lang]}</dt>
-            <dd>{feast.name[lang]}</dd>
-          </>
-        ))
-      }
-    </dl>
+  <section class="t-section feasts" aria-labelledby="hramuri">
+    <h2 class="t-kicker" id="hramuri">{t("schedule.feastsTitle")}</h2>
+    <table class="t-hours">
+      <thead>
+        <tr>
+          <th scope="col">{t("table.date")}</th>
+          <th scope="col">{t("table.feast")}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          feasts.map((feast) => (
+            <tr class="is-feast">
+              <td class="t-date">{feast.date[lang]}</td>
+              <td>{feast.name[lang]}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+    <div class="t-actions">
+      <a class="t-btn is-primary" href={getLocalizedPath("/cum-de-ajuns", lang)}>{t("zone.directions")}</a>
+      <a class="t-btn" href={getLocalizedPath("/posts", lang)}>{t("zone.cronica")}</a>
+    </div>
   </section>
-
-  <p><a href={getLocalizedPath("/posts", lang)}>{t("zone.cronica")}</a></p>
 </TableLayout>
 
+<script>
+  // today's day, by the monastery's clock
+  const weekday = new Intl.DateTimeFormat("en-US", { timeZone: "Europe/Chisinau", weekday: "short" }).format(new Date());
+  const key = (
+    { Mon: "monWed", Tue: "monWed", Wed: "monWed", Thu: "thu", Fri: "fri", Sat: "sat", Sun: "sun" } as Record<
+      string,
+      string
+    >
+  )[weekday];
+  const day = document.querySelector<HTMLElement>(`[data-day="${key}"]`);
+  if (day) {
+    day.classList.add("is-today");
+    day.querySelector<HTMLElement>("[data-today-flag]")?.removeAttribute("hidden");
+    document.querySelector(`[data-day-link="${key}"]`)?.setAttribute("aria-current", "date");
+  }
+</script>
+
 <style>
-  .day {
-    break-inside: avoid;
+  .feasts {
+    margin-top: clamp(48px, 7vh, 72px);
   }
-  /* the hour is the information: it reads at text size, in the strong
-     blue, on tabular figures */
-  .hours :global(dt) {
-    font-size: var(--t-body);
-    color: var(--river-strong);
-  }
-  .liturgy {
-    margin: var(--s-6) 0 var(--s-2);
-  }
-  h2 + .liturgy {
+  .t-small {
     margin-top: 0;
-  }
-  .note {
-    display: block;
-    margin-top: var(--s-1);
-    font-size: var(--t-meta);
-    line-height: 1.5;
-    font-style: italic;
-    color: var(--river-muted);
-  }
-  .caveat {
-    margin-top: var(--s-8);
-    font-size: var(--t-meta);
-    color: var(--river-muted);
   }
 </style>

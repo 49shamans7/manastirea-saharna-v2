@@ -31,8 +31,9 @@
     overflow-x: clip;
     -webkit-tap-highlight-color: rgb(196 162 74 / 18%);
     margin: 0;
-    background: var(--parchment);
-    color: var(--ink);
+    /* the page between the two olive bars is the seal's white field */
+    background: #ffffff;
+    color: var(--seal-deep);
     font-family: Georgia, "Times New Roman", serif;
   }
 
@@ -67,37 +68,56 @@
     padding-right: max(var(--frame-pad), env(safe-area-inset-right));
   }
 
-  /* THE PAGE HEAD — one head for every page in the frame: an optional
-     kicker (only where it orients: a date, a count, an error code), the
-     title, an optional standfirst, one hairline. Chamber, Table, the
-     cronică, galerie, obștea, pomelnic, căutare and 404 all wear it. */
+  /* THE PAGE HEAD — one head for every page in the frame, in the river
+     language with the seal's lettering: a tracked micro label (only where it
+     orients: a zone, a date, a count, an error code), the title centred in
+     Alegreya SC capitals, an optional standfirst, and the short gold rule.
+     No box, no full-width line: the head is a pause in the flow, not a lid. */
   .page-head {
     position: relative;
     isolation: isolate;
-    padding-bottom: var(--s-6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 0;
     margin-bottom: var(--head-gap);
-    border-bottom: var(--rule) solid var(--line);
+    text-align: center;
+  }
+  .page-head::after {
+    content: "";
+    order: 99;
+    display: block;
+    width: 60px;
+    height: 2px;
+    margin-top: var(--s-6);
+    background: var(--seal-gold);
   }
   .page-kicker {
     margin: 0 0 var(--s-4);
-    font-size: var(--t-meta);
-    line-height: 1.4;
-    letter-spacing: 0.02em;
+    font-size: 11px;
+    line-height: 1.6;
+    letter-spacing: 0.42em;
+    /* tracking hangs off the last letter; give it back so the line centres */
+    margin-right: -0.42em;
+    text-transform: uppercase;
     color: var(--kicker, var(--ochre));
     font-variant-numeric: lining-nums tabular-nums;
   }
   .page-title {
+    max-width: 22ch;
     margin: 0;
+    font-family: var(--font-display);
     font-size: var(--t-title);
-    font-weight: 400;
+    font-weight: 700;
     line-height: var(--lh-title);
-    letter-spacing: var(--track-caps);
-    text-transform: uppercase;
+    letter-spacing: var(--display-track, 0.04em);
+    text-transform: var(--display-case, uppercase);
     text-wrap: balance;
     overflow-wrap: break-word;
     hyphens: auto;
   }
   .page-title.is-long {
+    max-width: 30ch;
     font-size: var(--t-title-long);
     line-height: 1.18;
   }
@@ -107,13 +127,16 @@
     font-size: var(--t-standfirst);
     line-height: var(--lh-lead);
     text-wrap: pretty;
-    opacity: 0.86;
+    color: var(--seal-mist, currentColor);
   }
   .page-meta {
     margin: var(--s-4) 0 0;
-    font-size: var(--t-meta);
-    line-height: 1.4;
-    opacity: 0.72;
+    font-size: 11px;
+    line-height: 1.6;
+    letter-spacing: 0.3em;
+    margin-right: -0.3em;
+    text-transform: uppercase;
+    color: var(--seal-mist, currentColor);
     font-variant-numeric: lining-nums tabular-nums;
   }
 

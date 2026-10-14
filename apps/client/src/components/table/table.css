@@ -1,0 +1,611 @@
+/* TABLE — Zone IV. The river's LAYOUT (design/prototypes/templates/table.html:
+   horizon band, big capitals, rows, sideways drift) in v1's colours — the
+   official seal: navy, gold, paper (owner, 2026-10-15). Flat and bright.
+   Data sits in real tables and label · value rows with opaque hairlines;
+   every row is a tap target ≥56px.
+
+   Contrast, measured (WCAG 2.x, AA = 4.5):
+     ink   #1A3346 on white 13.1   on today #F3ECDD 11.1
+     soft  #4A6274 on white  6.4   on paper #F7F6F1 5.9   on today 5.4
+     navy  #22425A on white 10.5   white on navy 10.5    on today 9.0
+     gold text #76633A on white 5.8   on paper 5.4   on today 4.9
+   Gold #AB9362 (2.97 on white) is line work only: rules, ornaments, borders. */
+
+/* Literal values on purpose: TempleFrame's .ground-white scope re-points the
+   --seal-* names (paper becomes ink), so the table names its own inks. */
+.t-page {
+  --t-ground: #fff;
+  --t-paper: #f7f6f1;
+  --t-card: #fff;
+  --t-ink: #1a3346;
+  --t-soft: #4a6274;
+  --t-edge: #ddd0b2;
+  --t-deep: #22425a;
+  --t-mist: #f7f6f1;
+  --t-ochre: #ab9362;
+  --t-ochre-ink: #76633a;
+  --t-today: #f3ecdd;
+  --t-row: 56px;
+  --t-pad-x: 20px;
+  --t-display: var(--font-display, "Alegreya SC", Georgia, serif);
+  --kicker: var(--t-ochre-ink);
+  --mark-void: var(--t-ground);
+  color: var(--t-ink);
+}
+@media (max-width: 599px) {
+  .t-page {
+    --t-pad-x: 16px;
+  }
+}
+
+/* ── the page head: centred, the seal's display face ───────────────── */
+.t-head {
+  margin: 0 auto clamp(40px, 6vh, 64px);
+  text-align: center;
+}
+.t-head .r-eyebrow {
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  font-size: 11px;
+  letter-spacing: 0.44em;
+  /* the tracking trails the last letter; pull it back so it centres */
+  margin-right: -0.44em;
+}
+.t-head .r-eyebrow::after {
+  display: none;
+}
+.t-head .r-mark {
+  width: 28px;
+  height: 28px;
+  color: var(--t-deep);
+}
+.t-head .r-title {
+  font-family: var(--t-display);
+  font-weight: 700;
+  /* blackletter is never set in capitals: the display face decides */
+  text-transform: var(--display-case, uppercase);
+  letter-spacing: var(--display-track, 0.04em);
+  color: var(--t-ink);
+  overflow-wrap: break-word;
+  hyphens: manual;
+}
+.t-ornament {
+  display: block;
+  width: 180px;
+  height: 24px;
+  margin: 22px auto 0;
+  color: var(--t-ochre);
+}
+.t-ornament svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.t-head .r-lead {
+  max-width: 40rem;
+  margin-inline: auto;
+  color: var(--t-soft);
+}
+
+/* ── the horizon: the page's one band of atmosphere. Navy, with the
+   seal's folk band laid along its foot. ─────────────────────────── */
+.t-horizon {
+  position: relative;
+  height: clamp(44px, 8vh, 80px);
+  /* outside .t-page: literal inks */
+  background: linear-gradient(to bottom, #1a3346, #22425a);
+}
+.t-horizon::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 10px;
+  height: 16px;
+  background: url("../../assets/ornaments/band.svg") repeat-x left center / 32px 16px;
+}
+@media print {
+  .t-horizon {
+    display: none;
+  }
+}
+
+/* ── sections and their tracked grey heads ─────────────────────────── */
+.t-section {
+  margin: 0 0 clamp(48px, 7vh, 72px);
+}
+.t-kicker {
+  margin: 0 0 16px;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--t-soft);
+}
+.t-text {
+  max-width: 40rem;
+  margin: 0 0 1em;
+  font-size: 17px;
+  line-height: 1.7;
+  text-wrap: pretty;
+}
+.t-small {
+  max-width: 40rem;
+  margin: 16px 0 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--t-soft);
+}
+
+/* ── label · value rows on white ───────────────────────────────────── */
+.t-rows {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: var(--t-card);
+  border: 1px solid var(--t-edge);
+}
+.t-rows > li + li {
+  border-top: 1px solid var(--t-edge);
+}
+.t-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: var(--t-row);
+  padding: 14px var(--t-pad-x);
+  color: var(--t-ink);
+  text-decoration: none;
+}
+a.t-row {
+  transition: background-color var(--dur-1, 0.18s) ease;
+}
+a.t-row:hover {
+  background: var(--t-paper);
+}
+a.t-row:focus-visible {
+  outline: 2px solid var(--t-deep);
+  outline-offset: -2px;
+}
+.t-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+  font-size: 11px;
+  line-height: 1.4;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--t-soft);
+}
+.t-label .r-mark {
+  width: 22px;
+  height: 22px;
+  color: var(--t-deep);
+  --mark-void: var(--t-card);
+}
+.t-value {
+  min-width: 0;
+  text-align: right;
+  font-size: 17px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+a.t-row .t-value {
+  color: var(--t-deep);
+}
+a.t-row .t-main::after {
+  content: " →";
+  color: var(--t-soft);
+}
+a.t-row[target="_blank"] .t-main::after {
+  content: " ↗";
+}
+.t-note {
+  display: block;
+  margin-top: 2px;
+  font-size: 14px;
+  font-style: italic;
+  color: var(--t-soft);
+}
+@media (max-width: 599px) {
+  .t-row {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 6px;
+  }
+  .t-value {
+    text-align: left;
+  }
+}
+
+/* ── real tables: the hours ────────────────────────────────────────── */
+.t-hours {
+  width: 100%;
+  margin: 0 0 24px;
+  border-collapse: collapse;
+  background: var(--t-card);
+  border: 1px solid var(--t-edge);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.t-hours caption {
+  caption-side: top;
+  padding: 0 0 12px;
+  text-align: left;
+  font-family: var(--t-display);
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: var(--display-track, 0.06em);
+  text-transform: var(--display-case, uppercase);
+  color: var(--t-ink);
+}
+.t-hours th,
+.t-hours td {
+  height: var(--t-row);
+  padding: 14px var(--t-pad-x);
+  border-top: 1px solid var(--t-edge);
+  text-align: left;
+  vertical-align: baseline;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.t-hours thead th {
+  height: auto;
+  padding-block: 12px;
+  border-top: 0;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--t-soft);
+}
+.t-hours th.t-block {
+  height: auto;
+  padding-block: 12px;
+  background: var(--t-paper);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--t-ochre-ink);
+}
+.t-hours td.t-time {
+  font-size: 18px;
+  color: var(--t-deep);
+}
+.t-hours .t-time {
+  width: 1%;
+  padding-right: 8px;
+  white-space: nowrap;
+}
+.t-hours tr.is-feast td:first-child {
+  color: var(--t-ochre-ink);
+}
+.t-hours td.t-date {
+  width: 34%;
+}
+/* today: the whole day warms, each hour carries the ochre caret */
+.t-day.is-today .t-hours tbody tr:not(:has(th)) {
+  background: var(--t-today);
+}
+.t-day.is-today .t-hours td.t-time::before {
+  content: "▸";
+  margin-right: 8px;
+  color: var(--t-ochre-ink);
+}
+.t-flag {
+  display: inline-block;
+  margin-left: 12px;
+  padding: 3px 10px;
+  border: 1px solid var(--t-ochre);
+  background: var(--t-today);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  vertical-align: 0.2em;
+  color: var(--t-ochre-ink);
+}
+.t-flag[hidden] {
+  display: none;
+}
+@media (max-width: 599px) {
+  .t-hours th,
+  .t-hours td {
+    font-size: 15px;
+  }
+  .t-hours td.t-time {
+    font-size: 16px;
+  }
+  .t-hours caption {
+    font-size: 17px;
+  }
+}
+
+/* the days, as tap targets: jump straight to one */
+.t-days {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 40px;
+  padding: 0;
+  list-style: none;
+}
+.t-days a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 16px;
+  border: 1px solid var(--t-edge);
+  background: var(--t-card);
+  color: var(--t-deep);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.t-days a:hover {
+  border-color: var(--t-deep);
+}
+.t-days a[aria-current] {
+  border-color: var(--t-ochre);
+  background: var(--t-today);
+  color: var(--t-ochre-ink);
+}
+.t-days a[aria-current]::before {
+  content: "▸";
+  margin-right: 8px;
+}
+.t-day {
+  scroll-margin-top: calc(var(--nav-h, 80px) + 16px);
+  margin-bottom: 32px;
+}
+
+/* ── buttons: tracked caps, square ─────────────────────────────────── */
+.t-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 24px 0 0;
+}
+.t-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 24px;
+  border: 1px solid var(--t-deep);
+  background: transparent;
+  color: var(--t-deep);
+  font-family: inherit;
+  font-size: 11px;
+  line-height: 1.3;
+  letter-spacing: 0.26em;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color var(--dur-1, 0.18s) ease,
+    color var(--dur-1, 0.18s) ease;
+}
+.t-btn:hover {
+  background: var(--t-deep);
+  color: #fff;
+}
+.t-btn.is-primary {
+  background: var(--t-deep);
+  color: #fff;
+}
+.t-btn.is-primary:hover {
+  border-color: var(--t-ink);
+  background: var(--t-ink);
+}
+.t-btn:focus-visible {
+  outline: 2px solid var(--t-ochre);
+  outline-offset: 2px;
+}
+@media (max-width: 599px) {
+  .t-actions .t-btn {
+    flex: 1 1 100%;
+  }
+}
+
+/* ── the river moves sideways: parallel options on a snapping strip ── */
+.t-drift {
+  margin-top: 0;
+}
+.t-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+  min-height: 132px;
+  padding: 22px 20px;
+  border: 1px solid var(--t-edge);
+  background: var(--t-paper);
+  color: var(--t-ink);
+  text-decoration: none;
+  --mark-void: var(--t-paper);
+}
+.t-card .r-mark {
+  width: 32px;
+  height: 32px;
+  color: var(--t-deep);
+}
+.t-card-title {
+  margin: 0;
+  font-family: var(--t-display);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: var(--display-track, 0.08em);
+  text-transform: var(--display-case, uppercase);
+  color: var(--t-ink);
+}
+.t-card-text {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--t-soft);
+}
+.t-card .t-btn,
+.t-card-go {
+  margin-top: auto;
+}
+.t-card-go {
+  font-size: 11px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--t-deep);
+}
+a.t-card {
+  transition: border-color var(--dur-1, 0.18s) ease;
+}
+a.t-card:hover {
+  border-color: var(--t-deep);
+}
+a.t-card:focus-visible {
+  outline: 2px solid var(--t-deep);
+  outline-offset: 2px;
+}
+/* wide screens have room for the whole row: lay it out, do not scroll */
+@media (min-width: 700px) {
+  .t-drift.r-drift {
+    grid-auto-flow: row;
+    grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+    overflow: visible;
+    padding-bottom: 0;
+  }
+}
+
+/* ── bank details: an IBAN you can copy without squinting ──────────── */
+.t-bank {
+  margin: 0;
+  background: var(--t-card);
+  border: 1px solid var(--t-edge);
+}
+.t-bank > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+  min-height: var(--t-row);
+  padding: 12px var(--t-pad-x);
+}
+.t-bank > div + div {
+  border-top: 1px solid var(--t-edge);
+}
+.t-bank dt {
+  flex: 0 0 auto;
+  margin: 0;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--t-soft);
+}
+.t-bank dd {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px 12px;
+  min-width: 0;
+  margin: 0;
+  text-align: right;
+  font-size: 17px;
+  line-height: 1.45;
+}
+.t-bank .t-val {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.t-bank .is-iban .t-val {
+  font-size: 18px;
+  letter-spacing: 0.04em;
+  color: var(--t-ink);
+}
+.t-copy {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--t-deep);
+  background: transparent;
+  color: var(--t-deep);
+  font: inherit;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.t-copy:hover {
+  background: var(--t-deep);
+  color: #fff;
+}
+.t-copy[data-done] {
+  border-color: var(--t-ochre);
+  background: var(--t-today);
+  color: var(--t-ochre-ink);
+}
+.t-copy:focus-visible {
+  outline: 2px solid var(--t-ochre);
+  outline-offset: 2px;
+}
+@media (max-width: 599px) {
+  .t-bank > div {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 6px;
+  }
+  .t-bank dd {
+    justify-content: flex-start;
+    text-align: left;
+  }
+}
+
+/* ── a map: a real link first, the frame second ────────────────────── */
+.t-map {
+  margin: 24px 0 0;
+  border: 1px solid var(--t-edge);
+  background: var(--t-mist);
+  aspect-ratio: 16 / 9;
+}
+.t-map iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+@media (max-width: 599px) {
+  .t-map {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* ── print: someone will print the schedule and pin it up ──────────── */
+@media print {
+  .t-page {
+    color: #000;
+  }
+  .t-actions,
+  .t-days,
+  .t-copy,
+  .t-map,
+  .t-drift {
+    display: none !important;
+  }
+  .t-rows,
+  .t-hours,
+  .t-bank {
+    border-color: #999;
+  }
+  .t-day.is-today .t-hours tbody tr {
+    background: none;
+  }
+}

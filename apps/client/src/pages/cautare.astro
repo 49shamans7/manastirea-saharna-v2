@@ -241,7 +241,7 @@ const strings = {
   .search-page {
     padding: var(--page-top) 0 var(--page-bottom);
     color: var(--river-ink);
-    max-width: 64rem;
+    max-width: 48rem;
   }
 
   /* field and button: one row of squares joined on a hairline */
@@ -250,13 +250,15 @@ const strings = {
   }
   .search-field-label {
     display: block;
-    margin-bottom: var(--s-2);
-    font-size: var(--t-ui);
+    margin-bottom: var(--s-3);
+    font-size: 11px;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    color: var(--seal-gold-text);
   }
   .search-row {
     display: flex;
     gap: 0;
-    max-width: 40rem;
   }
   .search-input {
     flex: 1;
@@ -347,7 +349,7 @@ const strings = {
     list-style: none;
     margin: var(--s-4) 0 0;
     padding: 0;
-    border-top: var(--rule) solid var(--river-ink);
+    border-top: var(--rule) solid var(--seal-gold);
   }
   .search-results:empty {
     border-top: 0;
@@ -383,7 +385,7 @@ const strings = {
     color: inherit;
     font-weight: 700;
     text-decoration: underline;
-    text-decoration-color: var(--river);
+    text-decoration-color: var(--seal-gold);
     text-decoration-thickness: var(--rule-2);
     text-underline-offset: 0.2em;
   }

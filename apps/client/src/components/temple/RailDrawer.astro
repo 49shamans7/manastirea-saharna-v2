@@ -1,12 +1,15 @@
 ---
-// THE LEFT RAIL, ON A PHONE — the same descent index, carried in the hand.
-// Above 1100px the rail is a permanent column (DescentRail.astro). Below it
-// there is no room for a column, so the index slides in from the left, over
-// the strata, and slides back out. Same four zones, same order, same ticks:
-// it is the rail, not a menu. ARCHITECTURE.md § The frame · § The hinge.
+// THE DESCENT INDEX, IN THE HAND — every zone and every chamber. Hidden until
+// asked for, at every width (owner: the menu stays closed until toggled);
+// slides in from the left, over the page, and back out. The left rail beside
+// a page is only a depth gauge; this is the full index it opens.
+// Laid out as the descent: four strata, numbered I–IV, a gold square on one
+// hairline running down through them, each zone's chambers in hairline rows
+// under it. The seal's white field, navy ink, read-gold.
+// ARCHITECTURE.md § The frame · § The hinge.
 //
 // Behaviour (vanilla, no library):
-//   open   — the header toggle (the four-strata mark)
+//   open   — the header's strata mark, or the zone name on the depth gauge
 //   close  — scrim tap, Esc, any link, the close button, a left swipe
 //   while open — body scroll locked, the page behind is `inert`, focus is
 //   trapped in the drawer and handed back to whichever button opened it.
@@ -35,17 +38,6 @@ const currentZone = zoneOfPath(canonical);
 const isHere = (href: string) => canonical === href;
 const isUnder = (href: string) => canonical === href || canonical.startsWith(`${href}/`);
 
-// The pilgrim's row: what a visitor on the road needs, one tap away and
-// always open, above the descent (whose zones fold).
-const pilgrimLinks = [
-  { key: "zone.slujbe", href: "/slujbe" },
-  { key: "zone.directions", href: "/cum-de-ajuns" },
-  { key: "nav.contact", href: "/contact" },
-  { key: "zone.cazare", href: "/cazare" },
-  { key: "nav.donations", href: "/donations" },
-  { key: "nav.pomelnic", href: "/pomelnic" },
-] as const;
-
 const languageItems = [
   { locale: "ro", label: "RO" },
   { locale: "en", label: "EN" },
@@ -57,71 +49,48 @@ const languageItems = [
 
 <div
   id="rail-drawer"
-  class="drawer"
+  class="drawer ground-white"
   role="dialog"
   aria-modal="true"
   aria-label={t("zone.descentIndex")}
   data-drawer
   inert>
   <div class="drawer-head">
-    <a class="drawer-home" href={getLocalizedPath("/", lang)}>{t("main.title")}</a>
     <button class="drawer-close" type="button" data-drawer-close aria-label={t("nav.closeMenu")}>
       <Icon name="close" />
     </button>
+    <a class="drawer-home" href={getLocalizedPath("/", lang)}>{t("main.title")}</a>
   </div>
 
   <nav class="drawer-nav" aria-label={t("zone.descentIndex")}>
-    <ul class="drawer-pilgrim">
-      {
-        pilgrimLinks.map((link) => (
-          <li>
-            <a
-              class:list={["pilgrim-link", isUnder(link.href) && "is-here"]}
-              href={getLocalizedPath(link.href, lang)}
-              aria-current={isHere(link.href) ? "page" : undefined}>
-              {t(link.key)}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
     <ol class="drawer-strata">
       {
-        zones.map((zone, index) => {
-          // the zone you are in is open; on the descent itself, all are
-          const open = currentZone === null || currentZone === zone.id;
-          return (
-            <li
-              class:list={["zone-group", `is-${zone.id}`, currentZone === zone.id && "is-current"]}
-              style={`--i:${index}`}>
-              <div class="zone-row">
-                <a class="zone-head" href={`${getLocalizedPath("/", lang)}#zona-${zone.id}`}>
-                  <span class="zone-name">{t(zone.nameKey)}</span>
-                </a>
-                <button
-                  class="zone-toggle"
-                  type="button"
-                  aria-expanded={open ? "true" : "false"}
-                  aria-controls={`drawer-zone-${zone.id}`}
-                  aria-label={t(zone.nameKey)}>
-                  <span aria-hidden="true" />
-                </button>
-              </div>
-              <ul class="zone-chambers" id={`drawer-zone-${zone.id}`} hidden={!open}>
-                {zone.pages.map((page) => (
-                  <li>
-                    <a
-                      class:list={["drawer-link", isUnder(page.href) && "is-here"]}
-                      href={getLocalizedPath(page.href, lang)}
-                      aria-current={isHere(page.href) ? "page" : undefined}>
-                      {t(page.labelKey)}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </li>
-          );
-        })
+        zones.map((zone, index) => (
+          <li
+            class:list={["zone-group", currentZone === zone.id && "is-current"]}
+            style={`--i:${index}`}>
+            <a
+              class="zone-head"
+              href={`${getLocalizedPath("/", lang)}#zona-${zone.id}`}
+              aria-current={currentZone === zone.id ? "location" : undefined}>
+              <span class="zone-mark" aria-hidden="true" />
+              <span class="zone-numeral">{zone.numeral}</span>
+              <span class="zone-name">{t(zone.nameKey)}</span>
+            </a>
+            <ul class="zone-chambers">
+              {zone.pages.map((page) => (
+                <li>
+                  <a
+                    class:list={["drawer-link", isUnder(page.href) && "is-here"]}
+                    href={getLocalizedPath(page.href, lang)}
+                    aria-current={isHere(page.href) ? "page" : undefined}>
+                    {t(page.labelKey)}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))
       }
     </ol>
   </nav>
@@ -150,7 +119,6 @@ const languageItems = [
   const drawer = document.querySelector<HTMLElement>("[data-drawer]");
   const scrim = document.querySelector<HTMLElement>("[data-drawer-scrim]");
   const openers = Array.from(document.querySelectorAll<HTMLButtonElement>("[data-drawer-open]"));
-  const desktop = window.matchMedia("(min-width: 1101px)");
 
   if (drawer && scrim) {
     let opener: HTMLElement | null = null;
@@ -217,16 +185,6 @@ const languageItems = [
       .querySelectorAll<HTMLAnchorElement>("a[href]")
       .forEach((link) => link.addEventListener("click", () => close(false)));
 
-    // zones fold
-    drawer.querySelectorAll<HTMLButtonElement>(".zone-toggle").forEach((toggle) => {
-      toggle.addEventListener("click", () => {
-        const list = document.getElementById(toggle.getAttribute("aria-controls") ?? "");
-        const expanded = toggle.getAttribute("aria-expanded") === "true";
-        toggle.setAttribute("aria-expanded", String(!expanded));
-        if (list) list.hidden = expanded;
-      });
-    });
-
     // Esc, and a focus trap for Tab / Shift+Tab
     document.addEventListener("keydown", (event) => {
       if (!drawer.classList.contains("is-open")) return;
@@ -286,83 +244,71 @@ const languageItems = [
     drawer.addEventListener("pointerup", release);
     drawer.addEventListener("pointercancel", release);
 
-    // grow past the breakpoint with it open → the rail is a column again
-    desktop.addEventListener("change", (event) => {
-      if (event.matches) close(false);
-    });
   }
 </script>
 
 <style>
-  .drawer-scrim,
+  /* the drawer at every width: the index, unseen until it is asked for */
+  .drawer-scrim {
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    background: var(--scrim);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--dur-2) var(--ease-in);
+  }
+  .drawer-scrim.is-open {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity var(--dur-3) var(--ease-out);
+  }
+
   .drawer {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 91;
+    width: min(calc(100vw - var(--s-8)), 384px);
+    height: 100vh;
+    height: 100dvh;
+    padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom) env(safe-area-inset-left);
+    box-sizing: border-box;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    touch-action: pan-y;
+    /* the seal's white field; one hard edge in the seal's gold */
+    background: #ffffff;
+    color: var(--seal-paper);
+    border-right: var(--rule-2) solid var(--seal-gold);
+    font-family: Georgia, "Times New Roman", serif;
+    transform: translateX(-100%);
+    visibility: hidden;
+    transition:
+      transform var(--dur-2) var(--ease-in),
+      visibility 0s linear var(--dur-2);
+    will-change: transform;
+  }
+  .drawer.is-open {
+    transform: translateX(0);
+    visibility: visible;
+    transition:
+      transform var(--dur-3) var(--ease-out),
+      visibility 0s;
+  }
+  .drawer.is-dragging {
+    transition: none;
   }
 
-  @media (max-width: 1100px) {
-    .drawer-scrim {
-      display: block;
-      position: fixed;
-      inset: 0;
-      z-index: 90;
-      background: rgb(10 12 15 / 62%);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity var(--dur-2) var(--ease-in);
-    }
-    .drawer-scrim.is-open {
-      opacity: 1;
-      pointer-events: auto;
-      transition: opacity var(--dur-3) var(--ease-out);
-    }
-
-    .drawer {
-      display: flex;
-      flex-direction: column;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 91;
-      width: min(calc(100vw - var(--s-9)), 352px);
-      height: 100vh;
-      height: 100dvh;
-      padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom) env(safe-area-inset-left);
-      box-sizing: border-box;
-      overflow-y: auto;
-      overscroll-behavior: contain;
-      touch-action: pan-y;
-      /* Zone I ground: the descent starts in the rock. One flat fill, one
-         hard edge — the shaft wall at emphasis weight. */
-      background: var(--rock-deep);
-      color: var(--parchment);
-      border-right: var(--rule-2) solid var(--line-strong);
-      font-family: Georgia, "Times New Roman", serif;
-      transform: translateX(-100%);
-      visibility: hidden;
-      transition:
-        transform var(--dur-2) var(--ease-in),
-        visibility 0s linear var(--dur-2);
-      will-change: transform;
-    }
-    .drawer.is-open {
-      transform: translateX(0);
-      visibility: visible;
-      transition:
-        transform var(--dur-3) var(--ease-out),
-        visibility 0s;
-    }
-    .drawer.is-dragging {
-      transition: none;
-    }
-  }
-
+  /* the head mirrors the bar: the close sits where the opener sat */
   .drawer-head {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: var(--s-4);
+    gap: var(--s-2);
     min-height: var(--nav-h, 64px);
-    padding: 0 var(--s-2) 0 var(--s-5);
+    padding: 0 var(--s-4) 0 calc(var(--frame-pad) - 12px);
     border-bottom: var(--rule) solid var(--line);
   }
   .drawer-home {
@@ -371,53 +317,32 @@ const languageItems = [
     min-height: var(--tap);
     color: inherit;
     text-decoration: none;
-    font-size: var(--t-ui);
-    letter-spacing: var(--track-caps);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
   }
   .drawer-close {
-    position: relative;
     display: grid;
     place-items: center;
+    flex: 0 0 var(--tap);
     width: var(--tap);
     height: var(--tap);
     border: 0;
     background: transparent;
     color: inherit;
     cursor: pointer;
+    transition: color var(--dur-1) var(--ease-out);
+  }
+  .drawer-close:hover {
+    color: var(--seal-gold-text);
   }
 
+  /* ── the strata ── */
   .drawer-nav {
     flex: 1 0 auto;
-    padding: var(--s-5) 0;
-  }
-  /* the pilgrim's row: two quiet columns over one hairline */
-  .drawer-pilgrim {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: var(--s-4);
-    list-style: none;
-    margin: 0 var(--s-5) var(--s-5);
-    padding: 0 0 var(--s-4);
-    border-bottom: var(--rule) solid var(--line);
-  }
-  /* top-aligned, so a two-line name ("Programul slujbelor") keeps its
-     first line on its neighbour's */
-  .pilgrim-link {
-    display: flex;
-    align-items: flex-start;
-    min-height: var(--tap-min);
-    padding: var(--s-3) 0 var(--s-2);
-    color: color-mix(in srgb, currentColor 84%, transparent);
-    text-decoration: none;
-    font-size: var(--t-ui);
-    line-height: 1.25;
-  }
-  .pilgrim-link.is-here {
-    color: var(--ochre);
-  }
-  .pilgrim-link:active {
-    background: rgb(244 239 228 / 8%);
+    padding: var(--s-6) var(--s-5) var(--s-5);
   }
   .drawer-strata,
   .zone-chambers {
@@ -425,135 +350,108 @@ const languageItems = [
     margin: 0;
     padding: 0;
   }
-
   .zone-group {
     position: relative;
-    padding: 0 var(--s-2) var(--s-2) var(--s-5);
+    padding-bottom: var(--s-5);
   }
-  /* the rail is a shaft: one hairline, ticked per stratum; the stratum you
-     are in draws its shaft at emphasis weight */
+  /* one hairline runs down through the four markers: the shaft */
   .zone-group::before {
     content: "";
     position: absolute;
-    left: var(--s-5);
-    top: var(--s-5);
-    bottom: 0;
+    left: 5px;
+    top: 24px;
+    bottom: -24px;
     width: var(--rule);
     background: var(--line);
-  }
-  .zone-group.is-current::before {
-    width: var(--rule-2);
-    background: var(--line-strong);
   }
   .zone-group:last-child::before {
     display: none;
   }
-  .is-rock {
-    --zone-tick: var(--rock-lilac);
-  }
-  .is-green {
-    --zone-tick: var(--green-sage);
-  }
-  .is-gold {
-    --zone-tick: var(--gold);
-  }
-  .is-river {
-    --zone-tick: var(--river);
-  }
 
-  .zone-row {
-    display: flex;
-    align-items: center;
-    gap: var(--s-1);
-  }
   .zone-head {
     position: relative;
-    flex: 1;
     display: flex;
     align-items: center;
     gap: var(--s-3);
     min-height: var(--tap);
-    padding-left: var(--s-4);
-    color: inherit;
+    color: var(--seal-gold-text);
     text-decoration: none;
-    font-size: 13px;
-    letter-spacing: var(--track-kicker);
+    font-size: 11px;
+    letter-spacing: 0.42em;
     text-transform: uppercase;
   }
-  .zone-head::before {
-    content: "";
-    position: absolute;
-    left: -3px;
-    top: calc(50% - var(--s-1));
-    width: var(--s-2);
-    height: var(--s-2);
-    background: var(--zone-tick);
-  }
-  .is-current .zone-head::before {
-    background: var(--ochre);
-  }
-
-  .zone-toggle {
+  /* uniform gold squares; the stratum you are in is filled */
+  .zone-mark {
     position: relative;
-    flex: 0 0 var(--tap);
-    height: var(--tap);
-    border: 0;
-    background: transparent;
-    color: inherit;
-    cursor: pointer;
-    opacity: 0.7;
+    z-index: 1;
+    flex: 0 0 11px;
+    height: 11px;
+    box-sizing: border-box;
+    border: var(--rule) solid var(--seal-gold);
+    background: #ffffff;
   }
-  .zone-toggle span {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: var(--s-2);
-    height: var(--s-2);
-    margin: -6px 0 0 -4px;
-    border-right: var(--rule-2) solid currentColor;
-    border-bottom: var(--rule-2) solid currentColor;
-    transform: rotate(45deg);
-    transition: transform var(--dur-2) var(--ease-out);
+  .is-current .zone-mark {
+    border-color: var(--seal-gold-text);
+    background: var(--seal-gold-text);
   }
-  .zone-toggle[aria-expanded="false"] span {
-    transform: rotate(-45deg);
-    margin-top: -4px;
+  .zone-numeral {
+    min-width: 2.2em;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+  }
+  .zone-name {
+    flex: 1;
+  }
+  .zone-head:hover .zone-name {
+    text-decoration: underline;
+    text-decoration-thickness: var(--rule);
+    text-underline-offset: 0.3em;
   }
 
+  /* each zone's chambers: hairline rows, set in from the shaft */
   .zone-chambers {
-    padding: 0 0 var(--s-2) var(--s-4);
+    margin-left: calc(11px + var(--s-3));
+    border-top: var(--rule) solid var(--line);
   }
   .drawer-link {
     position: relative;
     display: flex;
     align-items: center;
-    min-height: var(--tap-min);
-    padding: 0 var(--s-3) 0 var(--s-5);
-    color: inherit;
+    min-height: var(--tap);
+    padding: var(--s-2) var(--s-2) var(--s-2) 0;
+    box-sizing: border-box;
+    border-bottom: var(--rule) solid var(--line);
+    color: var(--seal-paper);
     text-decoration: none;
     font-size: 17px;
     line-height: 1.3;
-    color: color-mix(in srgb, currentColor 84%, transparent);
+    transition: color var(--dur-1) var(--ease-out);
+  }
+  .drawer-link:hover {
+    color: var(--seal-gold-text);
   }
   .drawer-link.is-here {
-    color: var(--ochre);
+    color: var(--seal-gold-text);
   }
-  .drawer-link.is-here::before {
+  /* the chamber you are in: a short gold rule hung off the row */
+  .drawer-link.is-here::after {
     content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: var(--rule-2);
-    background: var(--line-strong);
+    flex: 0 0 24px;
+    height: 2px;
+    margin-left: auto;
+    background: var(--seal-gold);
   }
   .drawer-link:active,
   .zone-head:active {
-    background: rgb(244 239 228 / 8%);
+    background: var(--seal-deep);
   }
 
+  /* ── languages and search, closing the drawer ── */
   .drawer-langs {
     display: flex;
+    align-items: center;
     padding: var(--s-4) var(--s-5) var(--s-5);
     border-top: var(--rule) solid var(--line);
   }
@@ -563,12 +461,29 @@ const languageItems = [
     justify-content: center;
     min-width: var(--tap);
     min-height: var(--tap);
-    color: inherit;
+    box-sizing: border-box;
+    padding-left: 0.2em;
+    border: var(--rule) solid var(--line);
+    color: var(--seal-mist);
     text-decoration: none;
-    font-size: 15px;
+    font-size: 12px;
     line-height: 1;
-    letter-spacing: 0.06em;
-    border: var(--rule) solid rgb(244 239 228 / 24%);
+    letter-spacing: 0.2em;
+  }
+  .drawer-lang + .drawer-lang {
+    margin-left: calc(var(--rule) * -1);
+  }
+  .drawer-lang:hover {
+    position: relative;
+    z-index: 2;
+    border-color: var(--seal-paper);
+    color: var(--seal-paper);
+  }
+  .drawer-lang.is-current {
+    position: relative;
+    z-index: 1;
+    border-color: var(--seal-gold-text);
+    color: var(--seal-gold-text);
   }
   .drawer-find {
     display: inline-flex;
@@ -576,46 +491,28 @@ const languageItems = [
     gap: var(--s-2);
     min-height: var(--tap);
     margin-left: auto;
-    padding: 0 var(--s-4);
-    border: var(--rule) solid rgb(244 239 228 / 24%);
-    color: inherit;
-    font-size: var(--t-ui);
+    padding: 0 0 0 var(--s-4);
+    color: var(--seal-paper);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
     text-decoration: none;
   }
-  /* one joined strip: neighbours share a single hairline */
-  .drawer-lang + .drawer-lang {
-    margin-left: calc(var(--rule) * -1);
-  }
-  .drawer-lang.is-current {
-    position: relative;
-    z-index: 1;
-    border-color: var(--ochre);
-    color: var(--ochre);
-  }
-  .drawer-lang.is-current::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: var(--rule-2);
-    background: var(--ochre);
+  .drawer-find:hover {
+    color: var(--seal-gold-text);
   }
 
   .drawer :focus-visible {
-    outline: var(--rule-2) solid var(--ochre);
+    outline: var(--rule-2) solid var(--seal-gold-text);
     outline-offset: calc(var(--rule-2) * -1);
   }
 
-  /* zones arrive one after another — a short fall, ≤40ms apart */
-  @media (max-width: 1100px) {
-    .drawer.is-open .zone-group,
-    .drawer.is-open .drawer-langs {
-      animation: drawer-rise var(--dur-2) var(--ease-out) both;
-      animation-delay: calc(var(--dur-1) + var(--i, 4) * 30ms);
-    }
+  /* strata are set in place one after another — a short hard slide */
+  .drawer.is-open .zone-group,
+  .drawer.is-open .drawer-langs {
+    animation: drawer-rise var(--dur-2) var(--ease-out) both;
+    animation-delay: calc(var(--dur-1) + var(--i, 4) * 30ms);
   }
-  /* zones are set in place, one after another — a short hard slide */
   @keyframes drawer-rise {
     from {
       opacity: 0;
@@ -631,8 +528,7 @@ const languageItems = [
     .drawer,
     .drawer.is-open,
     .drawer-scrim,
-    .drawer-scrim.is-open,
-    .zone-toggle span {
+    .drawer-scrim.is-open {
       transition: none !important;
     }
     .drawer.is-open .zone-group,

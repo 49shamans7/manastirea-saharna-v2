@@ -1,0 +1,17 @@
+---
+// The seal's divider: hairline · rhomb · hooked rhomb · rhomb · hairline.
+// currentColor frame (set by .r-divider: seal gold), gold heart.
+//   <Divider class="is-centred" />
+import divider from "@assets/ornaments/divider.svg?raw";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+const svg = divider
+  .replace(/<!--.*?-->/gs, "")
+  .replace(/\swidth="\d+"\sheight="\d+"/, ' aria-hidden="true" focusable="false"');
+---
+
+<span class:list={["r-divider", className]} set:html={svg} />

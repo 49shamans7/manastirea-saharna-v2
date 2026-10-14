@@ -80,17 +80,17 @@ const t = useTranslations(lang);
     min-height: var(--tap);
     padding: var(--s-3) var(--s-3) 0;
     text-decoration: none;
-    color: color-mix(in srgb, currentColor 72%, transparent);
+    color: var(--seal-mist);
     transition: color var(--dur-1) var(--ease-out);
   }
   .years li:first-child .year {
     padding-left: 0;
   }
   .year:hover {
-    color: inherit;
+    color: var(--seal-paper);
   }
   .year.is-current {
-    color: var(--ochre);
+    color: var(--seal-gold-text);
   }
   .year.is-current::after {
     content: "";
@@ -99,13 +99,14 @@ const t = useTranslations(lang);
     right: var(--s-3);
     bottom: 0;
     height: var(--rule-2);
-    background: var(--line-strong);
+    background: var(--seal-gold);
   }
   .years li:first-child .year.is-current::after {
     left: 0;
   }
   .y {
     font-size: var(--t-ui);
+    letter-spacing: 0.06em;
     line-height: var(--s-6);
     font-variant-numeric: lining-nums tabular-nums;
   }

@@ -1,0 +1,35 @@
+---
+// One label · value row of a .t-rows list. With `href` the whole row is the
+// tap target (tel:, mailto:, the map). Put it inside <ul class="t-rows">.
+import RiverMark, { type RiverMarkName } from "@components/marks/RiverMark.astro";
+
+interface Props {
+  label: string;
+  href?: string | undefined;
+  external?: boolean;
+  mark?: RiverMarkName | undefined;
+  note?: string | undefined;
+  /** keep the value untranslated (numbers, addresses, codes) */
+  literal?: boolean;
+}
+
+const { label, href, external = false, mark, note, literal = false } = Astro.props;
+const Tag = href ? "a" : "div";
+---
+
+<li>
+  <Tag
+    class="t-row"
+    href={href}
+    target={href && external ? "_blank" : undefined}
+    rel={href && external ? "noopener" : undefined}>
+    <span class="t-label">
+      {mark && <RiverMark name={mark} />}
+      {label}
+    </span>
+    <span class="t-value" translate={literal ? "no" : undefined}>
+      <span class="t-main"><slot /></span>
+      {note && <span class="t-note">{note}</span>}
+    </span>
+  </Tag>
+</li>

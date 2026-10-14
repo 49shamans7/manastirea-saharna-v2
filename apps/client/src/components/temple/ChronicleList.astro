@@ -79,7 +79,7 @@ const t = useTranslations(lang);
     transition: text-decoration-color var(--dur-1) var(--ease-out);
   }
   .entry a:hover h2 {
-    text-decoration-color: color-mix(in srgb, currentColor 60%, transparent);
+    text-decoration-color: var(--seal-gold);
   }
   .entry a:focus-visible {
     outline-offset: var(--s-1);
@@ -90,13 +90,16 @@ const t = useTranslations(lang);
     width: 100%;
     aspect-ratio: 4 / 3;
     object-fit: cover;
-    background: rgb(13 17 22 / 32%);
+    background: var(--seal-deep);
+    border: var(--rule) solid var(--line);
+    box-sizing: border-box;
   }
   .entry time {
     display: block;
     font-size: var(--t-meta);
     line-height: 1.4;
-    color: var(--ochre);
+    letter-spacing: 0.06em;
+    color: var(--seal-gold-text);
     font-variant-numeric: lining-nums tabular-nums;
   }
   .entry h2 {
@@ -108,7 +111,7 @@ const t = useTranslations(lang);
   }
   .entry p {
     margin: var(--s-2) 0 0;
-    opacity: 0.78;
+    color: var(--seal-mist);
     font-size: 16px;
     line-height: 1.6;
     max-width: var(--measure);
@@ -122,11 +125,10 @@ const t = useTranslations(lang);
     display: block;
     margin-top: var(--s-3);
     font-size: var(--t-meta);
-    color: color-mix(in srgb, var(--parchment) 70%, transparent);
-    opacity: 1; /* not the excerpt's opacity on top: 5:1 on green */
+    color: var(--seal-mist);
   }
   .empty {
-    opacity: 0.6;
+    color: var(--seal-mist);
     font-style: italic;
   }
 

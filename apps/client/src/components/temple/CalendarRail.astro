@@ -1,80 +1,124 @@
 ---
 // RIGHT RAIL — the liturgical calendar. The only element on the site that
-// knows today. Full height, present on every page. ARCHITECTURE.md § The frame.
+// knows today. ARCHITECTURE.md § The frame; chamber prototype .rail-r.
+//
+// The one gold field on the site (owner): read-gold ground, deep-navy ink.
+// Three placements, one component:
+//   rail    (TempleFrame, ≥1361px) a full-height gold column beside the text
+//           (TempleFrame, <1361px) a gold band after the text; the saints fold
+//   inline  (the landing) a gold field set into the green zone, open
 //
 // Source: calendar.ortodox.md official embed. It serves ro and ru only —
 // the en endpoint 500s, so English readers get the Romanian calendar, which
-// is what the monastery itself keeps.
+// is what the monastery itself keeps. The embed writes its page into an
+// about:blank iframe — our own origin — so it is dressed in the seal's inks.
 import type { Locale } from "@i18n";
 import { useTranslations } from "@i18n/utils";
 
 interface Props {
   lang: Locale;
+  /** "rail" inside the frame; "inline" (default) anywhere else. */
+  placement?: "rail" | "inline";
 }
 
-const { lang } = Astro.props;
+const { lang, placement = "inline" } = Astro.props;
 const t = useTranslations(lang);
 const calendarLang = lang === "ru" ? "ru" : "ro";
+const dateLocale = lang === "ru" ? "ru-RU" : lang === "en" ? "en-GB" : "ro-RO";
+
 // Rendered at build time as a placeholder; the script below rewrites it to
 // the reader's today, since a static page cannot know the date it is read.
+// The Moldovan Church keeps the old (Julian) calendar: 13 days behind.
 const today = new Date();
-const dateLocale = lang === "ru" ? "ru-RU" : lang === "en" ? "en-GB" : "ro-RO";
+const julian = new Date(today.getTime() - 13 * 86_400_000);
+const part = (date: Date, type: string, options: Intl.DateTimeFormatOptions) =>
+  new Intl.DateTimeFormat(dateLocale, options).formatToParts(date).find((p) => p.type === type)?.value ?? "";
+const dayMonthYear: Intl.DateTimeFormatOptions = { day: "numeric", month: "long", year: "numeric" };
+const dayMonth: Intl.DateTimeFormatOptions = { day: "numeric", month: "long" };
+const iso = today.toISOString().slice(0, 10);
 ---
 
-<aside class="rail-right" aria-labelledby="calendar-rail-label" data-frame-title={t("calendar.label")}>
+<aside
+  class:list={["rail-right", `is-${placement}`]}
+  aria-labelledby="calendar-rail-label"
+  data-frame-title={t("calendar.label")}
+  data-placement={placement}
+  data-locale={dateLocale}>
+  <div class="cal-head">
   <p class="rail-label" id="calendar-rail-label">{t("calendar.label")}</p>
 
-  {/* below 1360px the rail is not beside the text but after it, folded */}
-  <button
-    class="calendar-toggle"
-    type="button"
-    aria-expanded="false"
-    aria-controls="calendar-body"
-    data-calendar-toggle>
-    <span class="rail-label">{t("calendar.label")}</span>
-    <span class="chevron" aria-hidden="true"></span>
-  </button>
-
-  <time class="today" datetime={today.toISOString().slice(0, 10)} data-today={dateLocale}>
-    {
-      new Intl.DateTimeFormat(dateLocale, {
-        weekday: "long",
-        day: "numeric",
-        month: "long",
-      }).format(today)
-    }
+  <time class="today" datetime={iso} data-today>
+    <span class="day-num" data-part="day">{today.getDate()}</span>
+    <span class="day-text">
+      <span class="month" data-part="month"
+        >{`${part(today, "month", dayMonthYear)} ${today.getFullYear()}`}</span
+      >
+      <span class="weekday" data-part="weekday"
+        >{new Intl.DateTimeFormat(dateLocale, { weekday: "long" }).format(today)}</span
+      >
+    </span>
   </time>
+  <p class="old-style">
+    {t("calendar.oldStyle")} · <span data-part="julian">{new Intl.DateTimeFormat(dateLocale, dayMonth).format(julian)}</span>
+  </p>
+  </div>
+
+  {/* in the frame below 1360px the saints fold under the date */}
+  {
+    placement === "rail" && (
+      <button
+        class="calendar-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="calendar-body"
+        data-calendar-toggle>
+        <span>{t("calendar.saints")}</span>
+        <span class="chevron" aria-hidden="true" />
+      </button>
+    )
+  }
 
   <div class="calendar-slot" id="calendar-body">
     <div id="ortodox-calendar" data-lang={calendarLang}></div>
-    <noscript>
-      <a class="calendar-fallback" href={`https://calendar.ortodox.md/`} rel="noopener" target="_blank">
-        {t("calendar.open")}
-      </a>
-    </noscript>
+    <a class="calendar-open" href="https://calendar.ortodox.md/" rel="noopener" target="_blank">
+      {t("calendar.open")} <span aria-hidden="true">→</span>
+    </a>
   </div>
 </aside>
 
 <script>
-  // The embed injects an iframe into the element we hand it. It is third-party
-  // and can be slow or down; the rail must not break the page when it is.
-  // It also measures its own height once, on load — so it must only be loaded
-  // while visible. Beside the text (wide screens) that is at once; folded
-  // under the text (phones) it is when the reader opens it.
-  const todayEl = document.querySelector<HTMLTimeElement>("time[data-today]");
-  if (todayEl) {
+  const aside = document.querySelector<HTMLElement>("aside.rail-right");
+  const slot = document.getElementById("ortodox-calendar");
+  const locale = aside?.dataset.locale || "ro-RO";
+
+  // ── today, by the reader's clock ──
+  if (aside) {
     const now = new Date();
     const pad = (n: number) => String(n).padStart(2, "0");
-    todayEl.dateTime = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
-    todayEl.textContent = new Intl.DateTimeFormat(todayEl.dataset.today || "ro-RO", {
-      weekday: "long",
-      day: "numeric",
-      month: "long",
-    }).format(now);
+    const julian = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 13);
+    const fmt = (options: Intl.DateTimeFormatOptions) => new Intl.DateTimeFormat(locale, options);
+    const month =
+      fmt({ day: "numeric", month: "long", year: "numeric" })
+        .formatToParts(now)
+        .find((p) => p.type === "month")?.value ?? "";
+    const set = (name: string, text: string) => {
+      const el = aside.querySelector<HTMLElement>(`[data-part="${name}"]`);
+      if (el) el.textContent = text;
+    };
+    const time = aside.querySelector<HTMLTimeElement>("time[data-today]");
+    if (time) time.dateTime = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
+    set("day", String(now.getDate()));
+    set("month", `${month} ${now.getFullYear()}`);
+    set("weekday", fmt({ weekday: "long" }).format(now));
+    set("julian", fmt({ day: "numeric", month: "long" }).format(julian));
   }
 
-  const slot = document.getElementById("ortodox-calendar");
-  const aside = slot?.closest<HTMLElement>(".rail-right");
+  // ── the saints: the third-party embed, loaded only while visible ──
+  // It is third-party and can be slow or down; the rail must not break the
+  // page when it is. It measures its own height once, on load — so it is only
+  // loaded where it can be seen: beside the text at once, folded when opened,
+  // inline (the landing) when scrolled near.
+  const placement = aside?.dataset.placement;
   const toggle = aside?.querySelector<HTMLButtonElement>("[data-calendar-toggle]");
   const wide = window.matchMedia("(min-width: 1361px)");
   let requested = false;
@@ -86,145 +130,281 @@ const dateLocale = lang === "ru" ? "ru-RU" : lang === "en" ? "en-GB" : "ro-RO";
     const script = document.createElement("script");
     script.src = "https://calendar.ortodox.md/assets/javascripts/calendar-iframe.js";
     script.async = true;
-
     script.addEventListener("load", () => {
       const load = (window as unknown as { loadCalendarInElement?: (id: string, lang: string) => void })
         .loadCalendarInElement;
-
-      if (typeof load === "function") {
-        load("ortodox-calendar", lang);
-      } else {
-        slot.classList.add("is-unavailable");
-      }
+      if (typeof load === "function") load("ortodox-calendar", lang);
+      else slot.classList.add("is-unavailable");
     });
-
     script.addEventListener("error", () => slot.classList.add("is-unavailable"));
     document.head.appendChild(script);
   };
 
-  if (aside && toggle) {
-    toggle.addEventListener("click", () => {
+  // The embed's own sheet is beige with red text. Dress it in the calendar's
+  // inks: navy on the gold, the red-letter days in a deep wine, five saints
+  // (the rest one tap away on calendar.ortodox.md), hairlines opaque.
+  const sheet = `
+    html, body { background: transparent !important; color: #1a3346; margin: 0; }
+    body { padding: 0; font: 15px/1.5 Georgia, "Times New Roman", serif; }
+    .corner, .bottom { background: none !important; }
+    .bottom { padding: 0 !important; height: auto !important; }
+    table { width: 100%; border-collapse: collapse; cursor: pointer; }
+    tr.d4 { display: none; }
+    .calendox-icon { padding: 0 0 16px !important; text-align: left; }
+    .icon-big-calendar { display: block; max-width: 100%; max-height: 168px; height: auto; border: 1px solid #1a3346; }
+    .calendox-entries { color: #1a3346 !important; text-align: left; padding: 0 !important; border-top: 1px solid #1a3346; }
+    .entry-link { display: block; padding: 10px 0; border-bottom: 1px solid #ab9362; text-decoration: none; }
+    .entry-link:nth-of-type(n+6) { display: none; }
+    .r, .r0, .r1, .post-entry { color: #1a3346 !important; background: none !important; font-family: Georgia, "Times New Roman", serif; }
+    .r2, .r3, .r4, .d7, .sunday, .links { color: #6b1420 !important; }
+    .r4 { font-size: 15px; }
+    .post-entry { padding: 10px 0 0 !important; text-align: left; font-style: italic; }
+    td:hover, .entry-link:hover { color: #1a3346 !important; text-decoration: underline; }
+    a:focus-visible { outline: 2px solid #1a3346; outline-offset: 2px; }
+  `;
+  const fitFrame = (frame: HTMLIFrameElement) => {
+    const doc = frame.contentDocument;
+    if (doc?.documentElement) frame.height = String(doc.documentElement.scrollHeight);
+  };
+  const dress = (frame: HTMLIFrameElement) => {
+    const doc = frame.contentDocument;
+    if (!doc?.body || !doc.head || doc.getElementById("seal-sheet")) return;
+    const style = doc.createElement("style");
+    style.id = "seal-sheet";
+    style.textContent = sheet;
+    doc.head.appendChild(style);
+    fitFrame(frame);
+    // the painted icon arrives after the text: measure again when it lands
+    Array.from(doc.images).forEach((img) => img.addEventListener("load", () => fitFrame(frame)));
+    // its links open the detailed calendar in a new tab; say so
+    doc.querySelectorAll("a[target=_blank]").forEach((a) => a.setAttribute("rel", "noopener"));
+  };
+
+  if (slot && aside) {
+    const fit = () => {
+      const frame = slot.querySelector("iframe");
+      if (!frame) return;
+      // WCAG 4.1.2: the embed's iframe arrives untitled; name it after the rail
+      if (!frame.title) frame.title = aside.dataset.frameTitle ?? "";
+      if (!frame.dataset.dressed) {
+        frame.dataset.dressed = "1";
+        frame.setAttribute("allowtransparency", "true");
+        frame.addEventListener("load", () => setTimeout(() => dress(frame), 0));
+      }
+      if (frame.style.display !== "none") dress(frame);
+      // beside the text the rail may scroll inside itself: reachable by keyboard (2.1.1)
+      if (placement === "rail" && wide.matches && aside.scrollHeight > aside.clientHeight + 1) aside.tabIndex = 0;
+      else aside.removeAttribute("tabindex");
+    };
+    new MutationObserver(fit).observe(slot, { childList: true, subtree: true, attributes: true });
+    window.addEventListener(
+      "resize",
+      () => {
+        const frame = slot.querySelector("iframe");
+        if (frame) fitFrame(frame);
+        fit();
+      },
+      { passive: true },
+    );
+  }
+
+  if (aside && placement === "rail") {
+    toggle?.addEventListener("click", () => {
       const open = toggle.getAttribute("aria-expanded") !== "true";
       toggle.setAttribute("aria-expanded", String(open));
       aside.classList.toggle("is-open", open);
       if (open) loadEmbed();
     });
+    if (wide.matches) loadEmbed();
+    wide.addEventListener("change", (event) => {
+      if (event.matches) loadEmbed();
+    });
+  } else if (aside) {
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver(
+        (entries) => {
+          if (entries.some((entry) => entry.isIntersecting)) {
+            io.disconnect();
+            loadEmbed();
+          }
+        },
+        { rootMargin: "400px 0px" },
+      );
+      io.observe(aside);
+    } else {
+      loadEmbed();
+    }
   }
-
-  // The embed's iframe arrives untitled (WCAG 4.1.2): name it after the rail.
-  // Beside the text the rail scrolls inside itself once the embed is tall,
-  // so the keyboard must be able to reach that scroll (2.1.1).
-  if (slot && aside) {
-    const fit = () => {
-      const frame = slot.querySelector("iframe");
-      if (frame && !frame.title) frame.title = aside.dataset.frameTitle ?? "";
-      if (wide.matches && aside.scrollHeight > aside.clientHeight + 1) aside.tabIndex = 0;
-      else aside.removeAttribute("tabindex");
-    };
-    new MutationObserver(fit).observe(slot, { childList: true, subtree: true, attributes: true });
-    window.addEventListener("resize", fit, { passive: true });
-  }
-
-  if (wide.matches) loadEmbed();
-  wide.addEventListener("change", (event) => {
-    if (event.matches) loadEmbed();
-  });
 </script>
 
 <style>
+  /* the one gold field: read-gold ground, deep-navy ink (6.2:1), navy rules */
   .rail-right {
-    position: sticky;
-    top: var(--nav-h, var(--s-10));
-    align-self: start;
-    max-height: calc(100dvh - var(--nav-h, 80px));
-    overflow-y: auto;
-    padding: var(--page-top) 0 var(--s-8);
-    scrollbar-width: none;
-  }
-  .rail-right::-webkit-scrollbar {
-    display: none;
+    box-sizing: border-box;
+    min-width: 0;
+    padding: var(--s-6) var(--s-5) var(--s-5);
+    background: var(--cal-ground);
+    color: var(--cal-ink);
+    font-family: Georgia, "Times New Roman", serif;
   }
 
   .rail-label {
-    margin: 0 0 var(--s-2);
-    font-size: var(--t-kicker);
-    line-height: var(--s-4);
-    letter-spacing: var(--track-kicker);
+    margin: 0 0 var(--s-5);
+    font-size: 11px;
+    line-height: 1.6;
+    letter-spacing: 0.42em;
     text-transform: uppercase;
-    color: var(--kicker, var(--ochre));
+  }
+
+  /* the date: a big numeral in the seal's lettering, the month tracked */
+  .today {
+    display: flex;
+    align-items: center;
+    gap: var(--s-4);
+  }
+  .day-num {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 0.9;
+    font-variant-numeric: lining-nums;
+  }
+  .day-text {
+    display: grid;
+    gap: var(--s-1);
+  }
+  .month {
+    font-size: 11px;
+    line-height: 1.5;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+  }
+  .weekday {
+    font-size: 15px;
+    line-height: 1.3;
+    font-style: italic;
+  }
+  .weekday::first-letter {
+    text-transform: uppercase;
+  }
+  .old-style {
+    margin: var(--s-3) 0 var(--s-5);
+    padding-bottom: var(--s-4);
+    border-bottom: var(--rule) solid var(--cal-line);
+    font-size: 14px;
+    line-height: 1.4;
   }
 
   .calendar-toggle {
     display: none;
   }
 
-  .today {
-    display: block;
-    font-size: var(--t-ui);
-    line-height: 1.4;
-    opacity: 0.88;
-    margin-bottom: var(--s-4);
-  }
-  .today::first-letter {
-    text-transform: uppercase;
-  }
-
-  .calendar-slot {
-    border-top: var(--rule) solid var(--line-strong);
-    padding-top: var(--s-4);
-  }
   .calendar-slot :global(iframe) {
     display: block;
     width: 100%;
     max-width: 100%;
     border: 0;
-    min-height: 420px;
+    min-height: 120px;
     background: transparent;
+    color-scheme: normal;
   }
-  /* embed down → the rail stays a rail, it just says less */
+  /* embed down → the field stays, it just says less */
   .calendar-slot :global(.is-unavailable)::after {
     content: "—";
     display: block;
-    opacity: 0.4;
     padding: var(--s-4) 0;
   }
-
-  .calendar-fallback {
-    color: var(--ochre);
-    font-size: 16px;
+  .calendar-open {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--s-2);
+    min-height: var(--tap);
+    margin-top: var(--s-2);
+    color: var(--cal-ink);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .calendar-open:hover {
+    text-decoration: underline;
+    text-decoration-thickness: var(--rule);
+    text-underline-offset: 0.3em;
+  }
+  .rail-right :focus-visible {
+    outline: var(--rule-2) solid var(--cal-ink);
+    outline-offset: var(--rule-2);
   }
 
-  /* Not a rail any more: a fold after the content, full width of the centre
-     column, never squeezed beside the text. */
+  /* ── inline (the landing): the date beside the saints on a wide screen,
+     one column on a phone ── */
+  @media (min-width: 900px) {
+    .is-inline {
+      display: grid;
+      grid-template-columns: minmax(0, 15rem) minmax(0, 1fr);
+      gap: 0 var(--s-8);
+      padding: var(--s-7) var(--s-7) var(--s-6);
+    }
+    .is-inline .old-style {
+      margin-bottom: 0;
+    }
+  }
+
+  /* ── rail: a full-height gold column beside the text ── */
+  .is-rail {
+    position: sticky;
+    top: var(--nav-h, 80px);
+    align-self: start;
+    height: calc(100dvh - var(--nav-h, 80px));
+    overflow-y: auto;
+    padding-top: var(--page-top);
+    scrollbar-width: none;
+  }
+  .is-rail::-webkit-scrollbar {
+    display: none;
+  }
+  /* one line in the 240px column */
+  .is-rail .rail-label {
+    letter-spacing: 0.3em;
+    white-space: nowrap;
+  }
+
+  /* ── rail, below 1360px: a gold band after the text; the saints fold ── */
   @media (max-width: 1360px) {
-    .rail-right {
+    .is-rail {
       position: static;
-      grid-column: -2 / -1;
-      max-height: none;
+      height: auto;
       overflow: visible;
-      padding: 0 0 var(--s-8);
-      margin-top: 0;
-      border-top: var(--rule) solid var(--line);
+      padding: var(--s-6) var(--frame-pad) var(--s-5);
     }
-    .rail-right > .rail-label {
-      display: none;
+    .is-rail > * {
+      max-width: 40rem;
+      margin-inline: auto;
     }
-    .calendar-toggle {
+    .is-rail .old-style {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+    .is-rail .calendar-toggle {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1rem;
+      gap: var(--s-4);
       width: 100%;
       min-height: var(--tap);
+      margin-top: var(--s-4);
       padding: 0;
       border: 0;
+      border-top: var(--rule) solid var(--cal-line);
       background: transparent;
       color: inherit;
+      font: inherit;
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
       cursor: pointer;
       text-align: left;
-    }
-    .calendar-toggle .rail-label {
-      margin: 0;
     }
     .chevron {
       width: var(--s-2);
@@ -238,14 +418,12 @@ const dateLocale = lang === "ru" ? "ru-RU" : lang === "en" ? "en-GB" : "ro-RO";
     .is-open .chevron {
       transform: rotate(-135deg);
     }
-    .today {
-      margin-bottom: var(--s-3);
-    }
-    .calendar-slot {
+    .is-rail .calendar-slot {
       display: none;
     }
-    .is-open .calendar-slot {
+    .is-rail.is-open .calendar-slot {
       display: block;
+      padding-top: var(--s-3);
     }
   }
 
