@@ -94,7 +94,7 @@
   position: relative;
   height: clamp(44px, 8vh, 80px);
   /* outside .t-page: literal inks */
-  background: linear-gradient(to bottom, #1a3346, #22425a);
+  background: var(--gloss-leaf);
 }
 .t-horizon::after {
   content: "";

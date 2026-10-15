@@ -361,7 +361,20 @@ const journey: { href: string; labelKey: AllTranslationKeys; mark: "pin" | "arch
     --pad: var(--frame-pad);
     --zone-pad: clamp(var(--s-10), 12vh, var(--s-12));
     position: relative;
-    background: var(--seal-navy);
+    /* v2: cream and gold leaf are the grounds, navy only writes */
+    --r-ink: #1a3346;
+    --r-gold: #76633a;
+    --r-cream: #4a6274;
+    --line: #ddd0b2;
+    background: var(--gloss-cream);
+    color: var(--r-ink);
+  }
+  /* on the photographs the words stay light, under the one neutral shade */
+  .cliff,
+  .gate,
+  .valley-top {
+    --r-ink: #f7f6f1;
+    --r-gold: #e2cf9f;
     color: var(--r-ink);
   }
   main {
@@ -434,7 +447,7 @@ const journey: { href: string; labelKey: AllTranslationKeys; mark: "pin" | "arch
     height: 11px;
     border: 1px solid var(--r-ink);
     border-radius: 50%;
-    background: var(--r-night);
+    background: #fffdf8;
     transition: background var(--dur-2) var(--ease-out);
   }
   .gauge a[aria-current] .dot {
@@ -443,7 +456,7 @@ const journey: { href: string; labelKey: AllTranslationKeys; mark: "pin" | "arch
   }
   .gauge-name {
     padding: 2px var(--s-2);
-    background: var(--r-night);
+    background: #fffdf8;
     font-size: 11px;
     letter-spacing: 0.3em;
     text-transform: uppercase;
@@ -557,7 +570,7 @@ const journey: { href: string; labelKey: AllTranslationKeys; mark: "pin" | "arch
     min-height: 80vh;
     padding: var(--zone-pad) var(--pad);
     overflow: hidden;
-    background: var(--seal-deep);
+    background: var(--gloss-leaf);
     text-align: center;
   }
   .doors-inner {
@@ -654,8 +667,8 @@ const journey: { href: string; labelKey: AllTranslationKeys; mark: "pin" | "arch
   /* ── II · the living monastery ─────────────────────────────────────── */
   .living {
     padding: var(--s-9) 0 var(--zone-pad);
-    background: var(--seal-navy);
-    --line: var(--seal-line-navy);
+    background: var(--gloss-cream);
+    --line: #ddd0b2;
   }
   .flow {
     display: grid;
@@ -740,8 +753,8 @@ const journey: { href: string; labelKey: AllTranslationKeys; mark: "pin" | "arch
   /* ── III · the shrine ──────────────────────────────────────────────── */
   .shrine {
     padding: var(--zone-pad) var(--pad);
-    background: var(--seal-deep);
-    --line: var(--seal-line-navy);
+    background: var(--gloss-cream);
+    --line: #ddd0b2;
   }
   .shrine-grid {
     display: grid;
@@ -756,7 +769,7 @@ const journey: { href: string; labelKey: AllTranslationKeys; mark: "pin" | "arch
     position: relative;
     display: grid;
     padding: var(--s-3);
-    background: var(--seal-deep);
+    background: #fffdf8;
     mask: var(--arch) 0 0 / 100% 100% no-repeat;
     color: var(--r-ink);
     text-decoration: none;
@@ -795,7 +808,7 @@ const journey: { href: string; labelKey: AllTranslationKeys; mark: "pin" | "arch
     justify-items: center;
     gap: var(--s-3);
     padding: var(--s-7) var(--s-4) var(--s-5);
-    background: var(--seal-deep);
+    background: #fffdf8;
     text-align: center;
   }
   .door .r-eyebrow {
@@ -899,9 +912,9 @@ const journey: { href: string; labelKey: AllTranslationKeys; mark: "pin" | "arch
   /* ── IV · the valley ───────────────────────────────────────────────── */
   .valley {
     padding-bottom: var(--zone-pad);
-    background: var(--seal-navy);
+    background: var(--gloss-cream);
     color: var(--r-ink);
-    --line: var(--seal-line-navy);
+    --line: #ddd0b2;
   }
   /* the horizon: sky enters for the first time, full bleed */
   .valley-top {
@@ -965,5 +978,21 @@ const journey: { href: string; labelKey: AllTranslationKeys; mark: "pin" | "arch
   }
   .facts a {
     color: inherit;
+  }
+</style>
+
+<style>
+  /* on gold leaf the button writes in navy (gold on gold would not read) */
+  .doors .r-button {
+    border-color: var(--seal-deep);
+    color: var(--seal-deep);
+  }
+  .doors .r-button:hover,
+  .doors .r-button:focus-visible {
+    background: var(--seal-deep);
+    color: #fffdf8;
+  }
+  .doors {
+    --r-ink: #1a3346;
   }
 </style>

@@ -133,7 +133,7 @@
   transform: translateX(-50%);
   pointer-events: none;
   border-inline: 1px solid var(--seal-line-navy);
-  background: var(--seal-lift);
+  background: #efe5cc;
 }
 
 /* label · value rows on a hairline */
@@ -216,7 +216,7 @@
   display: block;
   height: 16px;
   /* round: the tile stretches a hair so the band ends on a whole rhomb */
-  background: var(--seal-deep) url("../assets/ornaments/band.svg") round no-repeat center / 32px 16px;
+  background: #f7f3e7 url("../assets/ornaments/band.svg") round no-repeat center / 32px 16px;
 }
 
 /* the divider ornament under a title (components/marks/Divider.astro) */
@@ -268,7 +268,7 @@
 .r-brau {
   display: block;
   height: 20px;
-  background: var(--seal-deep) url("../assets/ornaments/brau.svg") repeat-x 50% 0 / 32px 20px;
+  background: #f7f3e7 url("../assets/ornaments/brau.svg") repeat-x 50% 0 / 32px 20px;
 }
 
 /* hairline · quatrefoil · hairline — a seam at text size */

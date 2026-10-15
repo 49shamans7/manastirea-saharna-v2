@@ -253,10 +253,12 @@
   --display-weight: 400;
 
   /* the olive bars, top and bottom */
-  --header: #253528;
-  --header-line: #5d6d5a; /* opaque olive hairline on the bar */
-  --header-ink: #c9cdbf; /* quiet text on the bar: 8.0:1 */
-  --header-gold: #c9b07a; /* read-gold on the bar: 6.2:1 */
+  /* v2 (owner, 2026-10-15): the logo's inks only, glossy — cream and gold
+     leaf are the grounds, navy is ink and never a field */
+  --header: linear-gradient(180deg, #fffdf8 0%, #f6efdc 100%);
+  --header-line: #ab9362;
+  --header-ink: #1a3346;
+  --header-gold: #76633a;
 
   /* the calendar is the one gold field on the site, wherever it sits */
   --cal-ground: #c9b07a;
@@ -335,4 +337,13 @@
   --btn-line: var(--seal-gold);
   background: #ffffff;
   color: #1a3346;
+}
+
+/* GLOSS — v2's grounds, from the seal's three inks. Cream lit like paper
+   under a lamp; gold like leaf, with its sheen. Navy only writes. */
+:root {
+  --gloss-cream: linear-gradient(180deg, #fffdf8 0%, #f7f3e7 55%, #efe5cc 100%);
+  --gloss-leaf: linear-gradient(135deg, #efe2bb 0%, #d9c48f 30%, #c9b07a 52%, #e4d3a3 78%, #c9b07a 100%);
+  --gloss-band: linear-gradient(180deg, #e9dab0 0%, #c9b07a 100%);
+  --cal-gloss: linear-gradient(160deg, #eadba9 0%, #d6c084 45%, #c9b07a 100%);
 }

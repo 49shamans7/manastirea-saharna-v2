@@ -5,7 +5,7 @@
 import type { Locale } from "@i18n";
 import { getLocalizedPath, useTranslations } from "@i18n/utils";
 import Icon from "@components/marks/Icon.astro";
-import sealHeaderUrl from "@assets/marks/seal-header.svg?url";
+import sealHeaderUrl from "@assets/marks/seal.svg?url";
 
 type Props = {
   path: string;
@@ -78,6 +78,7 @@ const languageItems = [
     z-index: 50;
     border-bottom: var(--rule) solid var(--seal-gold);
     background: var(--header);
+    --seal-paper: #1a3346;
     color: var(--header-ink);
   }
   .inner {
@@ -198,7 +199,7 @@ const languageItems = [
     position: relative;
     z-index: 2;
     border-color: var(--header-ink);
-    color: #ffffff;
+    color: #1a3346;
   }
   .lang.is-current {
     position: relative;

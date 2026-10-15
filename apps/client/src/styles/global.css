@@ -35,7 +35,7 @@
     -webkit-tap-highlight-color: transparent;
     margin: 0;
     /* the page between the two olive bars is the seal's white field */
-    background: #ffffff;
+    background: #fffdf8;
     color: var(--seal-deep);
     font-family: Georgia, "Times New Roman", serif;
   }
