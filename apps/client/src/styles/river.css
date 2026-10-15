@@ -230,3 +230,74 @@
   width: 100%;
   height: 100%;
 }
+
+/* ── GOTHIC / MOLDAVIAN ornament layer (ORNAMENT-SOURCES.md § Gothic /
+   Moldavian). Few and opaque: the brâu at the one great threshold, the
+   portal over a chamber's name, the quatrefoil at the foot, and the crossed
+   rods of a Moldavian window around a versal or a plate. ── */
+
+/* the inline ornaments (components/ornament/Ornament.astro) */
+.r-ornament {
+  display: inline-block;
+  flex: 0 0 auto;
+  vertical-align: middle;
+}
+.r-ornament svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.r-ornament-portal {
+  width: 30px;
+  height: 39px;
+}
+.r-ornament-quatrefoil {
+  width: 18px;
+  height: 18px;
+}
+
+/* the brâu — the twisted rope that girdles a Moldavian church. Taller than
+   the folk band (.r-band) because it is used once: at the threshold where
+   the shrine gives onto the valley. */
+.r-brau {
+  display: block;
+  height: 20px;
+  background: var(--seal-deep) url("../assets/ornaments/brau.svg") repeat-x 50% 0 / 32px 20px;
+}
+
+/* hairline · quatrefoil · hairline — a seam at text size */
+.r-foil {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-2);
+  color: var(--seal-gold);
+}
+.r-foil::before,
+.r-foil::after {
+  content: "";
+  width: var(--foil-arm, 28px);
+  height: 1px;
+  background: currentColor;
+}
+
+/* the crossed rods: a Moldavian window frame (Voroneț, Pătrăuți) — two
+   rods each way, every rod running edge to edge so they cross and overrun
+   at the corners (Stabwerk). Drawn as eight 1px opaque gold lines: the outer
+   rod 4px in from the edge, the inner rod 7px. Give the box padding ≥ 10px
+   so the content stands clear of the inner rod. */
+:root {
+  --r-rods:
+    linear-gradient(#ab9362, #ab9362) 0 4px / 100% 1px no-repeat,
+    linear-gradient(#ab9362, #ab9362) 0 calc(100% - 4px) / 100% 1px no-repeat,
+    linear-gradient(#ab9362, #ab9362) 4px 0 / 1px 100% no-repeat,
+    linear-gradient(#ab9362, #ab9362) calc(100% - 4px) 0 / 1px 100% no-repeat,
+    linear-gradient(#ab9362, #ab9362) 0 7px / 100% 1px no-repeat,
+    linear-gradient(#ab9362, #ab9362) 0 calc(100% - 7px) / 100% 1px no-repeat,
+    linear-gradient(#ab9362, #ab9362) 7px 0 / 1px 100% no-repeat,
+    linear-gradient(#ab9362, #ab9362) calc(100% - 7px) 0 / 1px 100% no-repeat;
+}
+.r-rods {
+  padding: 10px;
+  background: var(--r-rods);
+}

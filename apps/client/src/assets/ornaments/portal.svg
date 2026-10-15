@@ -1,0 +1,19 @@
+<!-- The Moldavian portal, as a mark (Pătrăuți 1487, Voroneț 1488, Neamț
+     1497: "a Byzantine plan executed by Gothic hands"). Three parts, outside in:
+       1. the frame of crossed rods — two horizontals and two verticals that
+          run past each other at the corners (Stabwerk; Voroneț's "rectangular
+          frames of crossed rods");
+       2. the pointed arch of the moulding: equilateral, span 20, each arc
+          centred on the opposite springing point, radius = span;
+          springing y = 10 + 20·√3/2 = 27.32;
+       3. the opening: an equilateral lancet, span 12, springing
+          y = 16 + 12·√3/2 = 26.39, filled solid (the dark of the doorway) —
+          a solid reads at 30px where a third line would blur.
+     Lines = currentColor; the opening = --portal-void (default seal navy). -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 52" width="40" height="52">
+  <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter">
+    <path d="M1 4.75H39M1 49.25H39M4.75 1V51M35.25 1V51" />
+    <path d="M10 49.25V27.32A20 20 0 0 1 20 10A20 20 0 0 1 30 27.32V49.25" />
+  </g>
+  <path fill="var(--portal-void, #22425A)" d="M14 49.25V26.39A12 12 0 0 1 20 16A12 12 0 0 1 26 26.39V49.25Z" />
+</svg>

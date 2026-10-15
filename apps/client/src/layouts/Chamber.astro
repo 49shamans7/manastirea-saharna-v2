@@ -12,6 +12,7 @@
 import Layout from "@layouts/Layout.astro";
 import TempleFrame from "@layouts/TempleFrame.astro";
 import ChamberExits, { type ChamberExit } from "@components/chamber/ChamberExits.astro";
+import Ornament from "@components/ornament/Ornament.astro";
 import { getLocaleFromUrl, getLocalizedPath, useTranslations } from "@i18n/utils";
 import { zoneById, type ZoneId } from "@temple/zones";
 import divider from "@assets/ornaments/divider.svg?raw";
@@ -84,6 +85,8 @@ const ornamentVars = `--ch-rhomb: url("${rhombUrl}"); --ch-band: url("${bandUrl}
       style={ornamentVars}>
       <header class="ch-head">
         {plate && <img class="head-plate" src={plate} alt="" aria-hidden="true" loading="eager" />}
+        {/* a chamber is a room you enter: its name stands under a Moldavian portal */}
+        <Ornament name="portal" class="ch-portal" />
         <p class="r-eyebrow is-centred ch-eyebrow">{label}</p>
         <h1 class:list={["r-title is-page ch-title", isLong && "is-long"]}>{title}</h1>
         {
@@ -218,6 +221,22 @@ const ornamentVars = `--ch-rhomb: url("${rhombUrl}"); --ch-band: url("${bandUrl}
     padding: 0 var(--s-5);
     text-align: center;
   }
+  /* the portal over the name: crossed rods, the pointed moulding, the dark
+     of the doorway in the seal's navy */
+  .ch-head :global(.ch-portal) {
+    display: block;
+    width: 30px;
+    height: 39px;
+    margin: 0 auto var(--s-4);
+    color: var(--ch-rule);
+    --portal-void: #22425a;
+  }
+  @media (min-width: 900px) {
+    .ch-head :global(.ch-portal) {
+      width: 34px;
+      height: 44px;
+    }
+  }
   .ch-eyebrow {
     margin-bottom: var(--s-5);
   }
@@ -332,6 +351,15 @@ const ornamentVars = `--ch-rhomb: url("${rhombUrl}"); --ch-band: url("${bandUrl}
     font-weight: 700;
     line-height: 0.82;
     color: var(--ch-accent);
+  }
+  /* in the shrine the versal stands in a Moldavian window: two rods each
+     way, crossing at the corners (river.css --r-rods). */
+  .is-shrine .ch-body :global(.prose > p:first-of-type::first-letter) {
+    margin: 0.1em 0.2em 0.06em 0;
+    padding: 0.16em 0.24em 0.12em;
+    background: var(--r-rods);
+    /* a rubric opening (Slujba) would slant it: blackletter has no italic */
+    font-style: normal;
   }
 
   /* sub-heads: tracked gold micro capitals over a short underline
@@ -576,6 +604,13 @@ const ornamentVars = `--ch-rhomb: url("${rhombUrl}"); --ch-band: url("${bandUrl}
   .ch-body :global(.prose figure img) {
     margin: 0;
     border: 1px solid var(--ch-edge);
+  }
+  /* the chamber's first plate is set like a Moldavian window: the crossed
+     rods round it, the photograph 10px inside them */
+  .ch-body :global(.prose > figure:first-of-type img) {
+    padding: 10px;
+    border: 0;
+    background: var(--r-rods);
   }
   .ch-body :global(figcaption) {
     margin-top: var(--s-3);

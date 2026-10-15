@@ -1,0 +1,24 @@
+---
+// The gothic / Moldavian ornaments, drawn inline so they read currentColor
+// (design/temple/ORNAMENT-SOURCES.md § Gothic / Moldavian).
+//   <Ornament name="portal" class="ch-portal" />   the Moldavian portal mark
+//   <Ornament name="quatrefoil" />                 the tracery foil, seal-gold heart
+// The brâu is a repeat tile and lives in CSS (.r-brau in river.css).
+import portal from "@assets/ornaments/portal.svg?raw";
+import quatrefoil from "@assets/ornaments/quatrefoil.svg?raw";
+
+const ornaments = { portal, quatrefoil };
+export type OrnamentName = keyof typeof ornaments;
+
+interface Props {
+  name: OrnamentName;
+  class?: string;
+}
+
+const { name, class: className } = Astro.props;
+const svg = ornaments[name]
+  .replace(/<!--.*?-->/gs, "")
+  .replace(/\swidth="\d+"\sheight="\d+"/, ' aria-hidden="true" focusable="false"');
+---
+
+<span class:list={["r-ornament", `r-ornament-${name}`, className]} set:html={svg} />

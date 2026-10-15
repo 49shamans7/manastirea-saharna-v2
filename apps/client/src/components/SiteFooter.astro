@@ -2,6 +2,7 @@
 import type { Locale } from "@i18n";
 import { getLocalizedPath, telHref, useTranslations } from "@i18n/utils";
 import Icon from "@components/marks/Icon.astro";
+import Ornament from "@components/ornament/Ornament.astro";
 
 type Props = {
   lang: Locale;
@@ -37,7 +38,8 @@ const socialLinks = [
 
 <footer class="footer">
   <div class="frame-wide end">
-    <span class="rule" aria-hidden="true"></span>
+    {/* hairline · quatrefoil · hairline: the tracery foil closes the page */}
+    <span class="r-foil foil" aria-hidden="true"><Ornament name="quatrefoil" /></span>
     <p class="title">{t("main.title")}</p>
     <nav class="links" aria-label={t("nav.menu")}>
       <ul>
@@ -78,7 +80,7 @@ const socialLinks = [
 
 <style>
   /* the olive bar again, closing what the header opened: no lintel, one
-     opaque gold hairline, everything on the axis */
+     opaque gold hairline, a quatrefoil, everything on the axis */
   .footer {
     /* above any fixed layer a page lays under its content (the landing's shaft) */
     position: relative;
@@ -95,12 +97,8 @@ const socialLinks = [
     display: grid;
     justify-items: center;
   }
-  .rule {
-    display: block;
-    width: 60px;
-    height: 2px;
+  .foil {
     margin-bottom: var(--s-5);
-    background: var(--seal-gold);
   }
   .title {
     margin: 0 0 var(--s-5);
