@@ -65,8 +65,8 @@
   content: "";
   flex: 1;
   height: 1px;
-  background: currentColor;
-  opacity: 0.4;
+  /* the ground's own opaque hairline — never a see-through stroke */
+  background: var(--line, var(--seal-line-navy));
 }
 .r-eyebrow.is-centred {
   justify-content: center;
@@ -156,6 +156,11 @@
   color: inherit;
   text-decoration: none;
 }
+.r-rows dd > a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap);
+}
 .r-rows .r-label {
   flex: 0 0 auto;
   font-size: 11px;
@@ -210,7 +215,8 @@
 .r-band {
   display: block;
   height: 16px;
-  background: var(--seal-deep) url("../assets/ornaments/band.svg") repeat-x 0 0 / 32px 16px;
+  /* round: the tile stretches a hair so the band ends on a whole rhomb */
+  background: var(--seal-deep) url("../assets/ornaments/band.svg") round no-repeat center / 32px 16px;
 }
 
 /* the divider ornament under a title (components/marks/Divider.astro) */

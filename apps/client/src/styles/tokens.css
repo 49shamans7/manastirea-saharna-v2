@@ -39,7 +39,7 @@
   --river-pale: #bdd5dc;
   --ink: #1a1208;
   --parchment: #f4efe4;
-  --ochre: #c4a24a;
+  --ochre: #c9b07a; /* the seal's read-gold (was the prototype #c4a24a) */
 
   --field: 78px;
   --gutter: 24px;
@@ -160,8 +160,8 @@
 
   /* rule colours: one hairline tone, one solid tone per ground. Zone IV
        re-points them (TempleFrame .z-river). */
-  --line: rgb(196 162 74 / 32%);
-  --line-strong: #c4a24a;
+  --line: #4f7088; /* opaque navy hairline; white grounds re-point it */
+  --line-strong: #ab9362;
 
   /* space — 4px steps */
   --s-1: 4px;

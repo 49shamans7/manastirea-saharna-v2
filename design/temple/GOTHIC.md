@@ -34,8 +34,9 @@ subset), each with its OFL licence.
 ## Rules
 
 - Gothic is for **names and thresholds**: the monastery's name, zone and page
-  titles, the gate quote, the shrine door. It is never used for running text,
-  navigation, the calendar or the tables.
+  titles, the gate quote, the shrine door, the day names heading each schedule
+  table. It is never used for running text, navigation, the calendar or inside
+  table cells and flags.
 - **Never set it in all caps.** Blackletter capitals are built to stand alone
   before lowercase. Titles are set in sentence or title case.
 - The colours stay v1's seal colours: navy, gold, paper, and the olive bars.

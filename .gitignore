@@ -39,3 +39,6 @@ design/extracted/_review/
 
 # agent scratch (screenshots, audits)
 .work/
+
+# agent worktrees
+.claude/
