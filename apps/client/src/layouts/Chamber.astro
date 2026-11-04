@@ -52,17 +52,15 @@ const isGold = zone === "gold";
 // a long title (most cronică entries) steps down one size instead of
 // shouting across four lines
 const isLong = title.length > 48;
-const label = eyebrow ?? `${zoneInfo.numeral} · ${t(zoneInfo.nameKey)}`;
+const label = eyebrow;
 
-// Return lands on the descent at this zone's depth, never at the top — and it
-// must work without JavaScript, so it is written here, not patched in later.
-const descentHref = `${getLocalizedPath("/", lang)}#zona-${zone}`;
+const homeHref = getLocalizedPath("/", lang);
 const clean = Astro.url.pathname.replace(/\/$/, "");
 const siblings = zoneInfo.pages;
 const here = siblings.findIndex((page) => clean.endsWith(page.href));
 const next = siblings[(here + 1) % siblings.length];
 const defaultExits: ChamberExit[] = [
-  { dir: t("chamber.back"), title: t(zoneInfo.nameKey), href: descentHref, side: "back" },
+  { dir: t("chamber.back"), title: t("nav.home"), href: homeHref, side: "back" },
   ...(next && siblings.length > 1
     ? [{ dir: t("chamber.beside"), title: t(next.labelKey), href: getLocalizedPath(next.href, lang), side: "on" as const }]
     : []),
@@ -87,7 +85,7 @@ const ornamentVars = `--ch-rhomb: url("${rhombUrl}"); --ch-band: url("${bandUrl}
         {plate && <img class="head-plate" src={plate} alt="" aria-hidden="true" loading="eager" />}
         {/* a chamber is a room you enter: its name stands under a Moldavian portal */}
         <Ornament name="portal" class="ch-portal" />
-        <p class="r-eyebrow is-centred ch-eyebrow">{label}</p>
+        {label && <p class="r-eyebrow is-centred ch-eyebrow">{label}</p>}
         <h1 class:list={["r-title is-page ch-title", isLong && "is-long"]}>{title}</h1>
         {
           meta &&
@@ -103,6 +101,11 @@ const ornamentVars = `--ch-rhomb: url("${rhombUrl}"); --ch-band: url("${bandUrl}
         {lead && <p class="r-lead ch-lead">{lead}</p>}
         {note && <p class="ch-note">{note}</p>}
       </header>
+
+      <nav class="ch-toc" aria-labelledby="ch-toc-head" data-toc hidden>
+        <h2 id="ch-toc-head">{t("chamber.contents")}</h2>
+        <ol></ol>
+      </nav>
 
       <div class="ch-body">
         <slot />
@@ -142,6 +145,26 @@ const ornamentVars = `--ch-rhomb: url("${rhombUrl}"); --ch-band: url("${bandUrl}
   window.addEventListener("resize", markScrollable, { passive: true });
 </script>
 
+<script>
+  // long texts get a short list of their own chapters, so nobody has to scroll
+  // through thousands of lines to find one
+  const toc = document.querySelector<HTMLElement>("[data-toc]");
+  const heads = Array.from(document.querySelectorAll<HTMLElement>(".ch-body .prose > h2"));
+  const list = toc?.querySelector("ol");
+  if (toc && list && heads.length >= 3 && heads.length <= 16) {
+    heads.forEach((head, index) => {
+      head.id ||= `capitol-${index + 1}`;
+      const link = document.createElement("a");
+      link.href = `#${head.id}`;
+      link.textContent = head.textContent;
+      const item = document.createElement("li");
+      item.append(link);
+      list.append(item);
+    });
+    toc.hidden = false;
+  }
+</script>
+
 <style>
   /* ── the seal's colours (owner, 2026-10-15): v1's navy, gold and paper on
      white. Zones differ by their photographs, not by their ground; only the
@@ -177,7 +200,7 @@ const ornamentVars = `--ch-rhomb: url("${rhombUrl}"); --ch-band: url("${bandUrl}
     position: relative;
     isolation: isolate;
     min-height: 100%;
-    padding: clamp(var(--s-9), 12vh, var(--s-12)) 0 var(--page-bottom);
+    padding: var(--page-top) 0 var(--page-bottom);
     color: var(--ch-ink);
   }
 
@@ -213,11 +236,43 @@ const ornamentVars = `--ch-rhomb: url("${rhombUrl}"); --ch-band: url("${bandUrl}
   }
 
   /* ── the head: micro label · title · meta · the gold rule · lead ── */
+  .ch-toc {
+    max-width: var(--measure);
+    margin: 0 auto var(--s-7);
+    padding: var(--s-4) var(--s-5);
+    border: 1px solid var(--seal-gold);
+    background: #fffdf8;
+  }
+  .ch-toc[hidden] {
+    display: none;
+  }
+  .ch-toc h2 {
+    margin: 0 0 var(--s-2);
+    font-family: var(--font-display);
+    font-size: var(--t-h3);
+    font-weight: 700;
+  }
+  .ch-toc ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .ch-toc :global(a) {
+    display: flex;
+    align-items: center;
+    min-height: var(--tap-min);
+    color: #1a3346;
+    font-size: var(--t-ui);
+    line-height: 1.3;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+  }
   .ch-head {
     position: relative;
     isolation: isolate;
     max-width: 40rem;
-    margin: 0 auto var(--s-10);
+    margin: 0 auto var(--s-6);
     padding: 0 var(--s-5);
     text-align: center;
   }
@@ -243,7 +298,7 @@ const ornamentVars = `--ch-rhomb: url("${rhombUrl}"); --ch-band: url("${bandUrl}
   /* the display voice decides its own case and tracking (blackletter is
      never set in capitals): --display-case / --display-track */
   .ch-title {
-    font-family: var(--font-gothic);
+    font-family: var(--font-display);
     text-transform: var(--display-case, uppercase);
     letter-spacing: var(--display-track, 0.04em);
     color: var(--ch-ink);
@@ -251,15 +306,17 @@ const ornamentVars = `--ch-rhomb: url("${rhombUrl}"); --ch-band: url("${bandUrl}
     hyphens: auto;
   }
   .ch-title.is-long {
+    font-family: var(--font-display);
+    font-weight: 700;
     font-size: clamp(22px, 2.6vw, 34px);
     line-height: 1.18;
   }
   .ch-meta {
     margin: var(--s-4) 0 0;
-    font-size: 12px;
+    font-size: 16px;
     line-height: 1.5;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    text-transform: none;
     color: var(--ch-soft);
     font-variant-numeric: lining-nums tabular-nums;
   }
@@ -284,10 +341,10 @@ const ornamentVars = `--ch-rhomb: url("${rhombUrl}"); --ch-band: url("${bandUrl}
   }
   .ch-note {
     margin: var(--s-5) 0 0;
-    font-size: 11px;
+    font-size: 16px;
     line-height: 1.6;
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    text-transform: none;
     color: var(--ch-soft);
   }
   /* a plate is cut to the head's own box — hard edges; the ground lies over it */
@@ -365,13 +422,13 @@ const ornamentVars = `--ch-rhomb: url("${rhombUrl}"); --ch-band: url("${bandUrl}
   /* sub-heads: tracked gold micro capitals over a short underline
      (chamber.html "CHEMAREA") */
   .ch-body :global(h2) {
-    margin: 3em 0 1.4em;
+    margin: 2em 0 1em;
     font-family: var(--font-display, "Alegreya SC", Georgia, serif);
     font-size: clamp(20px, 1.6vw, 23px);
     font-weight: 700;
     line-height: 1.3;
     letter-spacing: 0.05em;
-    text-transform: uppercase;
+    text-transform: none;
     text-align: center;
     text-wrap: balance;
     color: var(--ch-ink);
@@ -439,7 +496,7 @@ const ornamentVars = `--ch-rhomb: url("${rhombUrl}"); --ch-band: url("${bandUrl}
   }
   .is-verses .ch-body :global(.prose > h2::before) {
     content: counter(stanza, upper-roman) "\2002";
-    letter-spacing: 0.12em;
+    letter-spacing: 0.03em;
     color: var(--ch-accent);
   }
   @media (min-width: 760px) {
@@ -519,10 +576,10 @@ const ornamentVars = `--ch-rhomb: url("${rhombUrl}"); --ch-band: url("${bandUrl}
   }
   .ch-body :global(th) {
     font-weight: 400;
-    font-size: 11px;
+    font-size: 16px;
     line-height: 1.5;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    text-transform: none;
     vertical-align: bottom;
     color: var(--ch-accent);
     border-bottom: 2px solid var(--ch-rule);
@@ -614,10 +671,10 @@ const ornamentVars = `--ch-rhomb: url("${rhombUrl}"); --ch-band: url("${bandUrl}
   }
   .ch-body :global(figcaption) {
     margin-top: var(--s-3);
-    font-size: 11px;
+    font-size: 16px;
     line-height: 1.7;
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    text-transform: none;
     color: var(--ch-soft);
   }
 

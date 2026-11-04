@@ -34,13 +34,15 @@ and 1440, and no page scrolls sideways (`overflowX: 0` from `shot.mjs`).
 | You want to change… | Edit |
 |---|---|
 | Colours, spacing, rule widths, motion speed (the solid system) | `styles/global.css`, the tokens on `:root` (`--s-*`, `--rule`, `--bar`, `--dur-*`, `--tap`) |
-| Which pages exist in each zone, and their order in the left rail, drawer and footer | `temple/zones.ts`, the only list |
+| Which pages exist in each zone (page skin) | `temple/zones.ts` |
+| The menu: its groups and their order | `temple/menu.ts` |
 | Any UI text in ro/en/ru | `i18n/index.ts`. Every key must exist in all three. |
 | A chamber page's text (Istoria, Macarie, Cronologia, Starețul…) | `content/pages/ro/<slug>.md`. en/ru files hold translated titles; the body falls back to Romanian. |
 | A news post | `content/posts/ro/<slug>.md` (305 files). New file = new post. |
 | The service schedule, and its en/ru names | `data/schedule.ts` |
-| Home page (the descent) | `pages/index.astro` (one file; `components/descent/` keeps only Band, Panel, Well for `/walk`) |
-| The frame: left rail, calendar rail, phone drawer | `layouts/TempleFrame.astro`, `components/temple/*` (DescentRail, CalendarRail, RailDrawer) |
+| Home page | `pages/index.astro` |
+| The earlier descent home, kept unlinked | `pages/coborare.astro` (`components/descent/` keeps only Band, Panel, Well for `/walk`) |
+| The frame: back-home link, calendar rail, menu drawer | `layouts/TempleFrame.astro`, `components/temple/*` (CalendarRail, RailDrawer) |
 | Templates | `layouts/Chamber.astro` (reading pages), `layouts/TableLayout.astro` (practical pages), `layouts/Layout.astro` (the `<head>`) |
 | Header and footer | `components/Navbar.astro`, `components/SiteFooter.astro` |
 | Seal, mini medallion, icons, cross | `components/marks/*`. The icon paths are in `icons.ts`; the seal is `assets/marks/seal.svg`. |

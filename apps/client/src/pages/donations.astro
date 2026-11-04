@@ -29,42 +29,6 @@ const paypal = `https://${t("donations.paypalValue")}`;
     <p class="t-text">{t("donations.detailsIntro")}</p>
   </section>
 
-  <section class="t-section" aria-labelledby="cum-ajutati">
-    <h2 class="t-kicker" id="cum-ajutati">{t("table.ways")}</h2>
-    <ul class="r-drift t-drift">
-      <li>
-        <div class="t-card">
-          <RiverMark name="hands" />
-          <h3 class="t-card-title">{t("donations.bankDetailsTitle")}</h3>
-          <p class="t-card-text">{t("table.bankText")}</p>
-          <a class="t-btn is-primary" href="#rechizite">{t("table.seeDetails")}</a>
-        </div>
-      </li>
-      <li>
-        <div class="t-card">
-          <RiverMark name="hands" />
-          <h3 class="t-card-title">PayPal</h3>
-          <p class="t-card-text">{t("table.paypalText")}</p>
-          <a
-            class="t-btn"
-            href={paypal}
-            rel="noopener"
-            target="_blank"
-            aria-label={`${t("donations.paypalLabel")}: ${t("donations.paypalValue")}`}>
-            {t("donations.paypalValue")}
-          </a>
-        </div>
-      </li>
-      <li>
-        <a class="t-card" href={getLocalizedPath("/pomelnic", lang)}>
-          <RiverMark name="lamp" />
-          <span class="t-card-title">{t("notFound.pomelnic")}</span>
-          <span class="t-card-go" aria-hidden="true">→</span>
-        </a>
-      </li>
-    </ul>
-  </section>
-
   <section class="t-section" id="rechizite" aria-labelledby="rechizite-head">
     <h2 class="t-kicker" id="rechizite-head">{t("donations.bankDetailsTitle")}</h2>
     <dl class="t-bank">
@@ -92,7 +56,30 @@ const paypal = `https://${t("donations.paypalValue")}`;
         ))
       }
     </dl>
-    <p class="t-small">{t("donations.bankNote")}</p>
+  </section>
+  <section class="t-section" aria-labelledby="cum-ajutati">
+    <h2 class="t-kicker" id="cum-ajutati">{t("table.ways")}</h2>
+    <ul class="r-drift t-drift">
+      <li>
+        <a
+          class="t-card"
+          href={paypal}
+          rel="noopener"
+          target="_blank"
+          aria-label={`${t("donations.paypalLabel")}: ${t("donations.paypalValue")}`}>
+          <RiverMark name="hands" />
+          <span class="t-card-title">{t("donations.paypalLabel")}</span>
+          <span class="t-card-go" aria-hidden="true">↗</span>
+        </a>
+      </li>
+      <li>
+        <a class="t-card" href={getLocalizedPath("/pomelnic", lang)}>
+          <RiverMark name="lamp" />
+          <span class="t-card-title">{t("notFound.pomelnic")}</span>
+          <span class="t-card-go" aria-hidden="true">→</span>
+        </a>
+      </li>
+    </ul>
   </section>
 </TableLayout>
 

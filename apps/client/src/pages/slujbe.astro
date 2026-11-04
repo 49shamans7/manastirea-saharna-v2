@@ -5,6 +5,7 @@
 // real table and each Liturgy a block inside it. Today (Europe/Chisinau) is
 // warmed and marked by a script; without it every day still reads.
 import TableLayout from "@layouts/TableLayout.astro";
+import CalendarRail from "@components/temple/CalendarRail.astro";
 import { feasts, schedule, serviceText } from "@data/schedule";
 import type { AllTranslationKeys } from "@i18n";
 import { getLocaleFromUrl, getLocalizedPath, useTranslations } from "@i18n/utils";
@@ -14,7 +15,9 @@ const t = useTranslations(lang);
 const dayName = (key: string) => t(`schedule.${key}` as AllTranslationKeys);
 ---
 
-<TableLayout title={t("zone.slujbe")} lead={t("slujbe.lead")} mark="bell">
+<TableLayout title={t("zone.slujbe")} lead={t("slujbe.lead")} mark="bell" wide>
+  <div class="sj">
+  <div>
   <nav aria-label={t("table.days")}>
     <ul class="t-days">
       {
@@ -73,6 +76,9 @@ const dayName = (key: string) => t(`schedule.${key}` as AllTranslationKeys);
   }
 
   <p class="t-small">{t("schedule.caveat")}</p>
+  </div>
+  <CalendarRail lang={lang} />
+  </div>
 
   <section class="t-section feasts" aria-labelledby="hramuri">
     <h2 class="t-kicker" id="hramuri">{t("schedule.feastsTitle")}</h2>
@@ -110,17 +116,51 @@ const dayName = (key: string) => t(`schedule.${key}` as AllTranslationKeys);
       string
     >
   )[weekday];
+  const days = Array.from(document.querySelectorAll<HTMLElement>("[data-day]"));
+  const links = Array.from(document.querySelectorAll<HTMLAnchorElement>("[data-day-link]"));
+  const show = (name: string | undefined) => {
+    days.forEach((day) => (day.hidden = day.dataset.day !== name));
+    links.forEach((link) => {
+      if (link.dataset.dayLink === name) link.setAttribute("aria-current", "true");
+      else link.removeAttribute("aria-current");
+    });
+  };
+
   const day = document.querySelector<HTMLElement>(`[data-day="${key}"]`);
-  if (day) {
-    day.classList.add("is-today");
-    day.querySelector<HTMLElement>("[data-today-flag]")?.removeAttribute("hidden");
-    document.querySelector(`[data-day-link="${key}"]`)?.setAttribute("aria-current", "date");
-  }
+  day?.classList.add("is-today");
+  day?.querySelector<HTMLElement>("[data-today-flag]")?.removeAttribute("hidden");
+
+  // one day at a time, today first; without a script every day stays on the page
+  const fromLink = location.hash.startsWith("#zi-") ? location.hash.slice(4) : undefined;
+  show(days.some((d) => d.dataset.day === fromLink) ? fromLink : key);
+  links.forEach((link) =>
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      show(link.dataset.dayLink);
+      history.replaceState(null, "", link.hash);
+    }),
+  );
 </script>
 
 <style>
+  .sj {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 21rem);
+    gap: var(--s-7);
+    align-items: stretch;
+  }
+  /* the calendar's wide two-column form does not fit this column */
+  .sj :global(.is-inline) {
+    display: block;
+    padding: var(--s-5);
+  }
+  @media (max-width: 960px) {
+    .sj {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
   .feasts {
-    margin-top: clamp(48px, 7vh, 72px);
+    margin-top: var(--s-7);
   }
   .t-small {
     margin-top: 0;

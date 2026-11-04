@@ -45,31 +45,31 @@
   --gutter: 24px;
   --margin: 120px;
   --register: 384px;
-  --measure: 34rem;
-  --measure-gold: 30rem;
+  --measure: 42rem;
+  --measure-gold: 38rem;
   --measure-wide: 62rem;
 
   --t-stratum: clamp(26px, 4.4vw, 62px);
   --t-hero: clamp(34px, 6.6vw, 96px);
   --t-h1: clamp(28px, 3.6vw, 52px);
-  --t-lead: 20px;
-  --t-body: 17px;
-  --t-quote: 19px;
-  --t-label: 11px;
+  --t-lead: 22px;
+  --t-body: 20px;
+  --t-quote: 21px;
+  --t-label: 16px;
 
   /* PAGE TYPE — one scale for every page inside the frame (Chamber, Table,
      the special pages). Ratio ≈1.2 off the 17px body. Uppercase is kept
      for titles and h2 only; small text is set in sentence case and never
      tracked wider than --track-kicker. */
-  --t-meta: 14px; /* dates, counts, captions, notes, table labels */
-  --t-kicker: 12px; /* the one small capital line, only where it orients */
-  --t-ui: 15px; /* rail links, buttons, form labels, footer links */
-  --t-h3: 19px;
-  --t-h2: clamp(20px, 1.7vw, 24px);
-  --t-title: clamp(30px, 3.3vw, 46px);
-  --t-title-long: clamp(25px, 2.5vw, 34px); /* titles over ~48 characters */
-  --t-standfirst: clamp(18px, 1.45vw, 20px);
-  --lh-body: 1.72;
+  --t-meta: 17px; /* dates, counts, captions, notes, table labels */
+  --t-kicker: 16px; /* the one small capital line, only where it orients */
+  --t-ui: 18px; /* rail links, buttons, form labels, footer links */
+  --t-h3: 23px;
+  --t-h2: clamp(25px, 2vw, 29px);
+  --t-title: clamp(32px, 3.6vw, 48px);
+  --t-title-long: clamp(27px, 2.7vw, 36px); /* titles over ~48 characters */
+  --t-standfirst: clamp(21px, 1.6vw, 23px);
+  --lh-body: 1.65;
   --lh-lead: 1.55;
   --lh-title: 1.12;
   --track-caps: 0.03em; /* uppercase titles and heads */
@@ -178,8 +178,8 @@
   --s-12: 128px;
 
   /* tap — every thumb target, never under 44 */
-  --tap: 48px;
-  --tap-min: 44px;
+  --tap: 56px;
+  --tap-min: 48px;
 
   /* the frame: rail | centre | rail, snapped to 8 */
   --rail-l: 78px; /* the depth gauge: one field */
@@ -188,8 +188,8 @@
   --frame-gap: var(--s-8);
   --frame-pad: var(--s-7);
   /* vertical rhythm of every page body */
-  --page-top: var(--s-10);
-  --page-bottom: var(--s-12);
+  --page-top: var(--s-5);
+  --page-bottom: var(--s-8);
   --head-gap: var(--s-8); /* below a page head's rule */
 
   /* motion — short, no overshoot, no blur. Opening decelerates, closing
@@ -209,18 +209,18 @@
 @media (max-width: 1100px) {
   :root {
     --frame-pad: var(--s-5);
-    --page-top: var(--s-9);
-    --page-bottom: var(--s-11);
+    --page-top: var(--s-5);
+    --page-bottom: var(--s-8);
   }
 }
 @media (max-width: 599px) {
   :root {
     --frame-pad: var(--s-4);
-    --page-top: var(--s-8);
-    --page-bottom: var(--s-9);
+    --page-top: var(--s-4);
+    --page-bottom: var(--s-7);
     --head-gap: var(--s-6);
-    --t-meta: 15px; /* on a phone nothing that is read runs under 15 */
-    --t-ui: 16px;
+    --t-meta: 17px; /* nothing that is read runs under 16, on any screen */
+    --t-ui: 18px;
   }
 }
 
@@ -250,7 +250,7 @@
      every title reads these instead of a hard-coded uppercase */
   --display-case: none;
   --display-track: 0.01em;
-  --display-weight: 400;
+  --display-weight: 700;
 
   /* the olive bars, top and bottom */
   /* v2 (owner, 2026-10-15): the logo's inks only, glossy — cream and gold
@@ -279,8 +279,8 @@
   --seal-deep: #f7f6f1; /* fields, wells, the step down */
   --seal-lift: #efe9da; /* pressed / raised */
   --seal-paper: #1a3346; /* ink: 13.1:1 on white */
-  --seal-mist: #4a6274; /* quiet ink: 6.4:1 on white */
-  --seal-gold-text: #76633a; /* gold that is read: 5.8:1 on white */
+  --seal-mist: #2f4a5c; /* quiet ink: 9:1 on white */
+  --seal-gold-text: #5f4e28; /* gold that is read: 8:1 on white */
   /* --seal-gold (#AB9362) stays: line work only */
   --parchment: #1a3346;
   --paper: #ffffff;

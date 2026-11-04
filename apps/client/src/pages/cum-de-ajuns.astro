@@ -4,7 +4,6 @@
 // (sideways on a phone), then the map frame — never the only route.
 import TableLayout from "@layouts/TableLayout.astro";
 import Row from "@components/table/Row.astro";
-import RiverMark from "@components/marks/RiverMark.astro";
 import { getLocaleFromUrl, telHref, useTranslations } from "@i18n/utils";
 
 const lang = getLocaleFromUrl(Astro.url);
@@ -23,6 +22,28 @@ const secretariat = t("contact.phoneSecretariat");
     <a class="t-btn" href={telHref(secretariat)}>{t("table.call")}</a>
   </div>
 
+  <section class="t-section" aria-labelledby="drumuri">
+    <h2 class="t-kicker" id="drumuri">{t("table.routes")}</h2>
+    <div class="road">
+      <div class="road-text">
+        <div class="t-card">
+          <h3 class="t-card-title">{t("directions.byBus")}</h3>
+          <p class="t-card-text">{t("directions.busText")}</p>
+        </div>
+        <div class="t-card">
+          <h3 class="t-card-title">{t("directions.byCar")}</h3>
+          <p class="t-card-text">
+            {t("directions.byCarText")} <span translate="no">{mapQuery.replace(",", ", ")}</span>
+          </p>
+        </div>
+      </div>
+      <div class="t-map">
+        <iframe src={mapEmbed} title={t("home.mapTitle")} loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
   <section class="t-section" aria-labelledby="adresa">
     <h2 class="t-kicker" id="adresa">{t("directions.address")}</h2>
     <ul class="t-rows">
@@ -32,44 +53,41 @@ const secretariat = t("contact.phoneSecretariat");
       <Row label={t("contact.secretariatLabel")} href={telHref(secretariat)} mark="bell" literal>
         {secretariat}
       </Row>
-      <Row label={t("table.coords")} literal>
-        {mapQuery.replace(",", ", ")}
-      </Row>
     </ul>
-  </section>
-
-  <section class="t-section" aria-labelledby="drumuri">
-    <h2 class="t-kicker" id="drumuri">{t("table.routes")}</h2>
-    <ul class="r-drift t-drift">
-      <li>
-        <div class="t-card">
-          <RiverMark name="pin" />
-          <h3 class="t-card-title">{t("directions.byBus")}</h3>
-          <p class="t-card-text">{t("directions.busText")}</p>
-        </div>
-      </li>
-      <li>
-        <div class="t-card">
-          <RiverMark name="pin" />
-          <h3 class="t-card-title">{t("directions.byCar")}</h3>
-          <p class="t-card-text">
-            {t("table.coords")}: <span translate="no">{mapQuery.replace(",", ", ")}</span>
-          </p>
-          <a class="t-btn" href={mapLink} rel="noopener" target="_blank">{t("directions.openMapLabel")}</a>
-        </div>
-      </li>
-    </ul>
-
-    <div class="t-map">
-      <iframe src={mapEmbed} title={t("home.mapTitle")} loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-      ></iframe>
-    </div>
   </section>
 </TableLayout>
 
 <style>
   .top-actions {
     justify-content: center;
-    margin: 0 0 clamp(48px, 7vh, 72px);
+    margin: 0 0 var(--s-7);
+  }
+  .road {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--s-4);
+    align-items: stretch;
+  }
+  .road-text {
+    display: grid;
+    gap: var(--s-3);
+  }
+  .road .t-map {
+    min-width: 0;
+    min-height: 320px;
+    height: 100%;
+    margin: 0;
+    aspect-ratio: auto;
+  }
+  .road .t-map iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    border: 0;
+  }
+  @media (max-width: 860px) {
+    .road {
+      grid-template-columns: minmax(0, 1fr);
+    }
   }
 </style>

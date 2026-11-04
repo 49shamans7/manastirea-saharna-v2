@@ -16,8 +16,9 @@
 import type { Locale } from "@i18n";
 import { getLocalizedPath, useTranslations } from "@i18n/utils";
 import { stripBasePath } from "@utils/paths";
-import { zones, zoneOfPath } from "@temple/zones";
+import { menu } from "@temple/menu";
 import Icon from "@components/marks/Icon.astro";
+import sealUrl from "@assets/marks/seal.svg?url";
 
 interface Props {
   lang: Locale;
@@ -34,14 +35,13 @@ const canonical =
   stripBasePath(path)
     .replace(/^\/(en|ru)(?=\/|$)/, "")
     .replace(/\/$/, "") || "/";
-const currentZone = zoneOfPath(canonical);
 const isHere = (href: string) => canonical === href;
 const isUnder = (href: string) => canonical === href || canonical.startsWith(`${href}/`);
 
 const languageItems = [
-  { locale: "ro", label: "RO" },
-  { locale: "en", label: "EN" },
-  { locale: "ru", label: "RU" },
+  { locale: "ro", label: "Română" },
+  { locale: "en", label: "English" },
+  { locale: "ru", label: "Русский" },
 ] as const;
 ---
 
@@ -56,43 +56,44 @@ const languageItems = [
   data-drawer
   inert>
   <div class="drawer-head">
+    <img class="drawer-seal" src={sealUrl} width="84" height="70" alt="" decoding="async" />
     <button class="drawer-close" type="button" data-drawer-close aria-label={t("nav.closeMenu")}>
-      <Icon name="close" />
+      <Icon name="close" size={26} />
+      <span>{t("nav.close")}</span>
     </button>
-    <a class="drawer-home" href={getLocalizedPath("/", lang)}>{t("main.title")}</a>
   </div>
+  <span class="r-band" aria-hidden="true"></span>
 
-  <nav class="drawer-nav" aria-label={t("zone.descentIndex")}>
-    <ol class="drawer-strata">
-      {
-        zones.map((zone, index) => (
-          <li
-            class:list={["zone-group", currentZone === zone.id && "is-current"]}
-            style={`--i:${index}`}>
-            <a
-              class="zone-head"
-              href={`${getLocalizedPath("/", lang)}#zona-${zone.id}`}
-              aria-current={currentZone === zone.id ? "location" : undefined}>
-              <span class="zone-mark" aria-hidden="true" />
-              <span class="zone-numeral">{zone.numeral}</span>
-              <span class="zone-name">{t(zone.nameKey)}</span>
-            </a>
-            <ul class="zone-chambers">
-              {zone.pages.map((page) => (
-                <li>
-                  <a
-                    class:list={["drawer-link", isUnder(page.href) && "is-here"]}
-                    href={getLocalizedPath(page.href, lang)}
-                    aria-current={isHere(page.href) ? "page" : undefined}>
-                    {t(page.labelKey)}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </li>
-        ))
-      }
-    </ol>
+  <nav class="drawer-nav" aria-label={t("nav.menu")}>
+    <a
+      class:list={["drawer-link", "drawer-first", canonical === "/" && "is-here"]}
+      href={getLocalizedPath("/", lang)}
+      aria-current={canonical === "/" ? "page" : undefined}>
+      {t("nav.home")}
+    </a>
+    {
+      menu.map((group) => (
+        <section class="menu-group">
+          <h2 class="menu-head">{t(group.labelKey)}</h2>
+          <ul class="menu-list">
+            {group.pages.map((page) => (
+              <li>
+                <a
+                  class:list={["drawer-link", isUnder(page.href) && "is-here"]}
+                  href={getLocalizedPath(page.href, lang)}
+                  aria-current={isHere(page.href) ? "page" : undefined}>
+                  {t(page.labelKey)}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))
+    }
+    <a class="drawer-link drawer-find" href={getLocalizedPath("/cautare", lang)}>
+      <Icon name="search" size={22} />
+      <span>{t("search.title")}</span>
+    </a>
   </nav>
 
   <nav class="drawer-langs" aria-label={t("language.label")}>
@@ -102,16 +103,11 @@ const languageItems = [
           class:list={["drawer-lang", item.locale === lang && "is-current"]}
           href={getLocalizedPath(switchPath, item.locale)}
           lang={item.locale}
-          aria-label={`${item.label} · ${t(`language.${item.locale}`)}`}
           aria-current={item.locale === lang ? "page" : undefined}>
           {item.label}
         </a>
       ))
     }
-    <a class="drawer-find" href={getLocalizedPath("/cautare", lang)}>
-      <Icon name="search" size={18} />
-      <span>{t("search.title")}</span>
-    </a>
   </nav>
 </div>
 
@@ -271,7 +267,7 @@ const languageItems = [
     top: 0;
     left: 0;
     z-index: 91;
-    width: min(calc(100vw - var(--s-8)), 384px);
+    width: min(calc(100vw - var(--s-6)), 420px);
     height: 100vh;
     height: 100dvh;
     padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom) env(safe-area-inset-left);
@@ -302,226 +298,113 @@ const languageItems = [
     transition: none;
   }
 
-  /* the head mirrors the bar: the close sits where the opener sat */
   .drawer-head {
     display: flex;
     align-items: center;
-    gap: var(--s-2);
+    justify-content: space-between;
     min-height: var(--nav-h, 64px);
-    padding: 0 var(--s-4) 0 calc(var(--frame-pad) - 12px);
-    border-bottom: var(--rule) solid var(--line);
+    padding: 0 var(--s-4);
+    background: var(--gloss-cream);
   }
-  .drawer-home {
-    display: inline-flex;
-    align-items: center;
-    min-height: var(--tap);
-    color: inherit;
-    text-decoration: none;
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 16px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+  .drawer > .r-band {
+    flex: none;
+  }
+  .drawer-seal {
+    width: 64px;
+    height: auto;
   }
   .drawer-close {
-    display: grid;
-    place-items: center;
-    flex: 0 0 var(--tap);
-    width: var(--tap);
-    height: var(--tap);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--s-2);
+    min-height: var(--tap);
+    padding: 0 var(--s-2);
     border: 0;
     background: transparent;
     color: inherit;
+    font-family: inherit;
+    font-size: var(--t-ui);
+    font-weight: 700;
     cursor: pointer;
-    transition: color var(--dur-1) var(--ease-out);
-  }
-  .drawer-close:hover {
-    color: var(--seal-gold-text);
   }
 
-  /* ── the strata ── */
   .drawer-nav {
     flex: 1 0 auto;
-    padding: var(--s-6) var(--s-5) var(--s-5);
+    padding: var(--s-3) var(--s-5) var(--s-5);
   }
-  .drawer-strata,
-  .zone-chambers {
+  .menu-group {
+    margin-top: var(--s-6);
+  }
+  .menu-head {
+    margin: 0 0 var(--s-2);
+    color: var(--seal-gold-text);
+    font-family: var(--font-display);
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0;
+  }
+  .menu-list {
     list-style: none;
     margin: 0;
     padding: 0;
-  }
-  .zone-group {
-    position: relative;
-    padding-bottom: var(--s-5);
-  }
-  /* one hairline runs down through the four markers: the shaft */
-  .zone-group::before {
-    content: "";
-    position: absolute;
-    left: 5px;
-    top: 24px;
-    bottom: -24px;
-    width: var(--rule);
-    background: var(--line);
-  }
-  .zone-group:last-child::before {
-    display: none;
-  }
-
-  .zone-head {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: var(--s-3);
-    min-height: var(--tap);
-    color: var(--seal-gold-text);
-    text-decoration: none;
-    font-size: 11px;
-    letter-spacing: 0.42em;
-    text-transform: uppercase;
-  }
-  /* uniform gold squares; the stratum you are in is filled */
-  .zone-mark {
-    position: relative;
-    z-index: 1;
-    flex: 0 0 11px;
-    height: 11px;
-    box-sizing: border-box;
-    border: var(--rule) solid var(--seal-gold);
-    background: #ffffff;
-  }
-  .is-current .zone-mark {
-    border-color: var(--seal-gold-text);
-    background: var(--seal-gold-text);
-  }
-  .zone-numeral {
-    min-width: 2.2em;
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 0.08em;
-  }
-  .zone-name {
-    flex: 1;
-  }
-  .zone-head:hover .zone-name {
-    text-decoration: underline;
-    text-decoration-thickness: var(--rule);
-    text-underline-offset: 0.3em;
-  }
-
-  /* each zone's chambers: hairline rows, set in from the shaft */
-  .zone-chambers {
-    margin-left: calc(11px + var(--s-3));
     border-top: var(--rule) solid var(--line);
   }
   .drawer-link {
-    position: relative;
     display: flex;
     align-items: center;
+    gap: var(--s-2);
     min-height: var(--tap);
-    padding: var(--s-2) var(--s-2) var(--s-2) 0;
+    padding: var(--s-2) 0;
     box-sizing: border-box;
     border-bottom: var(--rule) solid var(--line);
-    color: var(--seal-paper);
+    color: #1a3346;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 20px;
     line-height: 1.3;
-    transition: color var(--dur-1) var(--ease-out);
+  }
+  .drawer-first,
+  .drawer-find {
+    font-weight: 700;
+  }
+  .drawer-find {
+    margin-top: var(--s-6);
+    border-top: var(--rule) solid var(--line);
   }
   .drawer-link:hover {
-    color: var(--seal-gold-text);
+    text-decoration: underline;
   }
   .drawer-link.is-here {
-    color: var(--seal-gold-text);
-  }
-  /* the chamber you are in: a short gold rule hung off the row */
-  .drawer-link.is-here::after {
-    content: "";
-    flex: 0 0 24px;
-    height: 2px;
-    margin-left: auto;
-    background: var(--seal-gold);
-  }
-  .drawer-link:active,
-  .zone-head:active {
-    background: #efe5cc;
+    font-weight: 700;
+    box-shadow: inset 6px 0 0 var(--seal-gold);
+    padding-left: var(--s-4);
   }
 
-  /* ── languages and search, closing the drawer ── */
   .drawer-langs {
-    display: flex;
-    align-items: center;
-    padding: var(--s-4) var(--s-5) var(--s-5);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: var(--s-3) var(--s-4) var(--s-5);
     border-top: var(--rule) solid var(--line);
   }
   .drawer-lang {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: var(--tap);
     min-height: var(--tap);
-    box-sizing: border-box;
-    padding-left: 0.2em;
-    border: var(--rule) solid var(--line);
-    color: var(--seal-mist);
+    color: #1a3346;
+    font-size: var(--t-ui);
     text-decoration: none;
-    font-size: 12px;
-    line-height: 1;
-    letter-spacing: 0.2em;
-  }
-  .drawer-lang + .drawer-lang {
-    margin-left: calc(var(--rule) * -1);
-  }
-  .drawer-lang:hover {
-    position: relative;
-    z-index: 2;
-    border-color: var(--seal-paper);
-    color: var(--seal-paper);
   }
   .drawer-lang.is-current {
-    position: relative;
-    z-index: 1;
-    border-color: var(--seal-gold-text);
-    color: var(--seal-gold-text);
-  }
-  .drawer-find {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--s-2);
-    min-height: var(--tap);
-    margin-left: auto;
-    padding: 0 0 0 var(--s-4);
-    color: var(--seal-paper);
-    font-size: 11px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    text-decoration: none;
-  }
-  .drawer-find:hover {
-    color: var(--seal-gold-text);
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.25em;
   }
 
   .drawer :focus-visible {
-    outline: var(--rule-2) solid var(--seal-gold-text);
-    outline-offset: calc(var(--rule-2) * -1);
-  }
-
-  /* strata are set in place one after another — a short hard slide */
-  .drawer.is-open .zone-group,
-  .drawer.is-open .drawer-langs {
-    animation: drawer-rise var(--dur-2) var(--ease-out) both;
-    animation-delay: calc(var(--dur-1) + var(--i, 4) * 30ms);
-  }
-  @keyframes drawer-rise {
-    from {
-      opacity: 0;
-      transform: translateX(calc(var(--s-2) * -1));
-    }
-    to {
-      opacity: 1;
-      transform: none;
-    }
+    outline: 3px solid var(--seal-gold-text);
+    outline-offset: -3px;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -530,10 +413,6 @@ const languageItems = [
     .drawer-scrim,
     .drawer-scrim.is-open {
       transition: none !important;
-    }
-    .drawer.is-open .zone-group,
-    .drawer.is-open .drawer-langs {
-      animation: none !important;
     }
   }
 </style>

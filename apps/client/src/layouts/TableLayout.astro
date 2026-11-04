@@ -9,14 +9,14 @@ import Layout from "@layouts/Layout.astro";
 import TempleFrame from "@layouts/TempleFrame.astro";
 import RiverMark, { type RiverMarkName } from "@components/marks/RiverMark.astro";
 import divider from "@assets/ornaments/divider.svg?raw";
-import { getLocaleFromUrl, useTranslations } from "@i18n/utils";
+import { getLocaleFromUrl } from "@i18n/utils";
 import type { ZoneId } from "@temple/zones";
 import "@styles/temple.css";
 import "@components/table/table.css";
 
 interface Props {
   title: string;
-  /** The tracked line above the title. Defaults to "Zona IV · Nistru". */
+  /** The small line above the title. None by default. */
   kicker?: string | undefined;
   lead?: string | undefined;
   /** A constructed mark beside the kicker (pin, bell, hands, arch, lamp…). */
@@ -24,12 +24,12 @@ interface Props {
   /** The stratum the rails mark as current. Tables are the river; the
       pomelnic wears this head but is the well of Zone I. */
   zone?: ZoneId | undefined;
+  /** A wider page, for tables with something beside them. */
+  wide?: boolean;
 }
 
-const { title, kicker, lead, mark, zone = "river" } = Astro.props;
+const { title, kicker, lead, mark, zone = "river", wide = false } = Astro.props;
 const lang = getLocaleFromUrl(Astro.url);
-const t = useTranslations(lang);
-const eyebrow = kicker ?? t("table.zoneRiver");
 const ornament = divider
   .replace(/<!--.*?-->/gs, "")
   .replace(/\swidth="\d+"\sheight="\d+"/, ' aria-hidden="true" focusable="false"');
@@ -39,12 +39,16 @@ const ornament = divider
   <div class="t-horizon" aria-hidden="true"></div>
   <div class="t-ground">
     <TempleFrame lang={lang} zone={zone} path={Astro.url.pathname}>
-      <main class="t-page table-page">
+      <main class:list={["t-page", "table-page", wide && "is-wide"]}>
         <header class="t-head">
-          <p class="r-eyebrow">
-            {mark && <RiverMark name={mark} />}
-            <span>{eyebrow}</span>
-          </p>
+          {
+            (kicker || mark) && (
+              <p class="r-eyebrow">
+                {mark && <RiverMark name={mark} />}
+                {kicker && <span>{kicker}</span>}
+              </p>
+            )
+          }
           <h1 class="r-title is-page">{title}</h1>
           <span class="t-ornament" set:html={ornament} />
           {lead && <p class="r-lead">{lead}</p>}
@@ -69,31 +73,34 @@ const ornament = divider
   }
 
   .table-page {
-    padding: clamp(40px, 7vh, 72px) 0 var(--page-bottom);
-    max-width: 60rem;
+    padding: var(--page-top) 0 var(--page-bottom);
+    max-width: 62rem;
     margin-inline: auto;
+  }
+  .table-page.is-wide {
+    max-width: 74rem;
   }
 
   /* ── prose that arrives from markdown (the guest house rules) ──────
      Only unclassed elements: the table components carry their own. */
   .t-body {
-    font-size: 17px;
+    font-size: var(--t-body);
     line-height: 1.7;
   }
   .t-body :global(p:not([class])) {
-    max-width: 40rem;
+    max-width: var(--measure);
     margin: 0 0 1.05em;
     text-wrap: pretty;
   }
   .t-body :global(h2:not([class])),
   .t-body :global(h3:not([class])) {
-    margin: clamp(48px, 7vh, 72px) 0 16px;
-    font-size: 11px;
-    font-weight: 400;
-    line-height: 1.5;
-    letter-spacing: 0.4em;
-    text-transform: uppercase;
-    color: var(--t-soft);
+    margin: var(--s-7) 0 var(--s-3);
+    font-family: var(--font-display);
+    font-size: var(--t-h2);
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: 0;
+    color: var(--t-ink);
   }
   .t-body > :global(:first-child h2:first-child),
   .t-body > :global(h2:first-child) {
@@ -141,7 +148,7 @@ const ornament = divider
     position: absolute;
     left: var(--t-pad-x);
     top: 16px;
-    font-size: 14px;
+    font-size: 16px;
     letter-spacing: 0.08em;
     font-variant-numeric: lining-nums tabular-nums;
     color: var(--t-ochre-ink);
@@ -172,9 +179,9 @@ const ornament = divider
     border-bottom: 1px solid var(--t-edge);
   }
   .t-body :global(dl:not([class]) > dt) {
-    font-size: 11px;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 0.03em;
+    text-transform: none;
     color: var(--t-soft);
   }
   @media (max-width: 599px) {

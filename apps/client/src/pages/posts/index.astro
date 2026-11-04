@@ -24,7 +24,6 @@ const years = getPostYears(allPosts);
       <header class="page-head cronica-head">
         <h1 class="page-title">{t("zone.cronica")}</h1>
         <p class="page-lead">{t("news.subtitle")}</p>
-        <p class="page-meta">{`${allPosts.length} ${t("home.postCount")}`}</p>
       </header>
 
       <YearRail years={years} current={null} lang={lang} />
@@ -37,10 +36,10 @@ const years = getPostYears(allPosts);
 <style>
   /* one column on the field's axis: head, the year run, the entries */
   .cronica {
-    max-width: 52rem;
+    max-width: 74rem;
     padding: var(--page-top) 0 var(--page-bottom);
   }
   .cronica-head {
-    margin-bottom: var(--s-7);
+    margin-bottom: var(--s-5);
   }
 </style>

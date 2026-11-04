@@ -9,9 +9,9 @@
 // column centred in it, the right rail is the calendar's gold field. On a
 // phone the gauge lies down into a strip above the page and the calendar
 // follows the text.
-import DescentRail from "@components/temple/DescentRail.astro";
-import CalendarRail from "@components/temple/CalendarRail.astro";
+import Icon from "@components/marks/Icon.astro";
 import type { Locale } from "@i18n";
+import { getLocalizedPath, useTranslations } from "@i18n/utils";
 import type { ZoneId } from "@temple/zones";
 
 interface Props {
@@ -22,70 +22,55 @@ interface Props {
   rails?: boolean;
 }
 
-const { lang, zone, path = "", rails = true } = Astro.props;
+const { lang, zone, rails = true } = Astro.props;
+const t = useTranslations(lang);
 ---
 
 <div class:list={["frame", "ground-white", `z-${zone}`, !rails && "no-rails"]} data-zone={zone}>
-  {rails && <DescentRail lang={lang} current={zone} path={path} />}
   <div class="centre">
+    {
+      rails && (
+        <a class="back-home" href={getLocalizedPath("/", lang)}>
+          <Icon name="arrow-left" size={22} />
+          <span>{t("nav.backHome")}</span>
+        </a>
+      )
+    }
     <slot />
   </div>
-  {rails && <CalendarRail lang={lang} placement="rail" />}
 </div>
 
 <style>
-  /* gauge | field | calendar. The field takes what is left; the page's own
-     column is centred inside it, so the text sits on the axis of the screen
-     at every width, as in the chamber prototype. */
   .frame {
     display: grid;
-    grid-template-columns: var(--rail-l) minmax(0, 1fr) var(--rail-r);
-    grid-template-areas: "left centre right";
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "centre";
     min-height: calc(100dvh - var(--nav-h, 80px));
     background: var(--gloss-cream);
     color: var(--seal-paper);
-  }
-  .frame.no-rails {
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-areas: "centre";
-  }
-  .frame > :global(.rail-left) {
-    grid-area: left;
-  }
-  .frame > :global(.rail-right) {
-    grid-area: right;
   }
   .centre {
     grid-area: centre;
     min-width: 0;
     padding: 0 var(--frame-pad);
   }
-  /* the page's column, whatever its measure, sits on the field's axis */
   .centre > :global(main) {
     width: 100%;
     margin-inline: auto;
   }
 
-  /* the calendar outranks nothing beside the text below 1360px: it follows
-     the text, folded, in the field's column; the gauge keeps its rail */
-  @media (max-width: 1360px) {
-    .frame {
-      grid-template-columns: var(--rail-l) minmax(0, 1fr);
-      grid-template-rows: auto auto;
-      grid-template-areas:
-        "left centre"
-        "left right";
-    }
-  }
-  /* a phone: the gauge lies down into a strip above the page */
-  @media (max-width: 1100px) {
-    .frame {
-      grid-template-columns: minmax(0, 1fr);
-      grid-template-rows: auto 1fr auto;
-      grid-template-areas:
-        "left"
-        "centre"
-        "right";
-    }
+  /* the way home: first thing on every inner page, in words */
+  .back-home {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--s-2);
+    min-height: var(--tap);
+    margin-top: var(--s-3);
+    color: #1a3346;
+    font-size: var(--t-ui);
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
   }
 </style>

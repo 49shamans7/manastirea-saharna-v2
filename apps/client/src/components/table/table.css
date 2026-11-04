@@ -27,7 +27,7 @@
   --t-today: #f3ecdd;
   --t-row: 56px;
   --t-pad-x: 20px;
-  --t-display: var(--font-gothic);
+  --t-display: var(--font-display);
   --kicker: var(--t-ochre-ink);
   --mark-void: var(--t-ground);
   color: var(--t-ink);
@@ -47,10 +47,10 @@
   justify-content: center;
   gap: 12px;
   margin-bottom: 18px;
-  font-size: 11px;
-  letter-spacing: 0.44em;
+  font-size: 16px;
+  letter-spacing: 0.03em;
   /* the tracking trails the last letter; pull it back so it centres */
-  margin-right: -0.44em;
+  margin-right: 0;
 }
 .t-head .r-eyebrow::after {
   display: none;
@@ -61,7 +61,7 @@
   color: var(--t-deep);
 }
 .t-head .r-title {
-  font-family: var(--t-display);
+  font-family: var(--font-display);
   font-weight: var(--display-weight, 700);
   /* blackletter is never set in capitals: the display face decides */
   text-transform: var(--display-case, uppercase);
@@ -123,24 +123,24 @@
 }
 .t-kicker {
   margin: 0 0 16px;
-  font-size: 11px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
-  letter-spacing: 0.4em;
-  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  text-transform: none;
   color: var(--t-soft);
 }
 .t-text {
   max-width: 40rem;
   margin: 0 0 1em;
-  font-size: 17px;
+  font-size: var(--t-body);
   line-height: 1.7;
   text-wrap: pretty;
 }
 .t-small {
   max-width: 40rem;
   margin: 16px 0 0;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.6;
   color: var(--t-soft);
 }
@@ -181,10 +181,10 @@ a.t-row:focus-visible {
   align-items: center;
   gap: 10px;
   flex: 0 0 auto;
-  font-size: 11px;
+  font-size: 16px;
   line-height: 1.4;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  text-transform: none;
   color: var(--t-soft);
 }
 .t-label .r-mark {
@@ -196,7 +196,7 @@ a.t-row:focus-visible {
 .t-value {
   min-width: 0;
   text-align: right;
-  font-size: 17px;
+  font-size: var(--t-body);
   line-height: 1.45;
   overflow-wrap: anywhere;
   font-variant-numeric: lining-nums tabular-nums;
@@ -214,7 +214,7 @@ a.t-row[target="_blank"] .t-main::after {
 .t-note {
   display: block;
   margin-top: 2px;
-  font-size: 14px;
+  font-size: 16px;
   font-style: italic;
   color: var(--t-soft);
 }
@@ -245,7 +245,7 @@ a.t-row[target="_blank"] .t-main::after {
   text-align: left;
   font-family: var(--t-display);
   font-size: 21px;
-  font-weight: var(--display-weight, 700);
+  font-weight: 700;
   line-height: 1.3;
   letter-spacing: var(--display-track, 0.06em);
   text-transform: var(--display-case, uppercase);
@@ -265,20 +265,20 @@ a.t-row[target="_blank"] .t-main::after {
   height: auto;
   padding-block: 12px;
   border-top: 0;
-  font-size: 10px;
+  font-size: 16px;
   font-weight: 400;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  text-transform: none;
   color: var(--t-soft);
 }
 .t-hours th.t-block {
   height: auto;
   padding-block: 12px;
   background: var(--t-paper);
-  font-size: 11px;
+  font-size: 16px;
   font-weight: 400;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  text-transform: none;
   color: var(--t-ochre-ink);
 }
 .t-hours td.t-time {
@@ -312,10 +312,10 @@ a.t-row[target="_blank"] .t-main::after {
   border: 1px solid var(--t-ochre);
   background: var(--t-today);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 10px;
+  font-size: 16px;
   font-weight: 400;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  text-transform: none;
   vertical-align: 0.2em;
   color: var(--t-ochre-ink);
 }
@@ -325,13 +325,13 @@ a.t-row[target="_blank"] .t-main::after {
 @media (max-width: 599px) {
   .t-hours th,
   .t-hours td {
-    font-size: 15px;
+    font-size: 16px;
   }
   .t-hours td.t-time {
     font-size: 16px;
   }
   .t-hours caption {
-    font-size: 17px;
+    font-size: var(--t-body);
   }
 }
 
@@ -352,9 +352,9 @@ a.t-row[target="_blank"] .t-main::after {
   border: 1px solid var(--t-edge);
   background: var(--t-card);
   color: var(--t-deep);
-  font-size: 11px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 0.03em;
+  text-transform: none;
   text-decoration: none;
 }
 .t-days a:hover {
@@ -392,11 +392,11 @@ a.t-row[target="_blank"] .t-main::after {
   background: transparent;
   color: var(--t-deep);
   font-family: inherit;
-  font-size: 11px;
+  font-size: 16px;
   line-height: 1.3;
-  letter-spacing: 0.26em;
+  letter-spacing: 0.03em;
   text-align: center;
-  text-transform: uppercase;
+  text-transform: none;
   text-decoration: none;
   cursor: pointer;
   transition:
@@ -450,8 +450,8 @@ a.t-row[target="_blank"] .t-main::after {
 .t-card-title {
   margin: 0;
   font-family: var(--t-display);
-  font-size: 18px;
-  font-weight: var(--display-weight, 700);
+  font-size: 20px;
+  font-weight: 700;
   line-height: 1.3;
   letter-spacing: var(--display-track, 0.08em);
   text-transform: var(--display-case, uppercase);
@@ -468,9 +468,9 @@ a.t-row[target="_blank"] .t-main::after {
   margin-top: auto;
 }
 .t-card-go {
-  font-size: 11px;
-  letter-spacing: 0.26em;
-  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 0.03em;
+  text-transform: none;
   color: var(--t-deep);
 }
 a.t-card {
@@ -513,9 +513,9 @@ a.t-card:focus-visible {
 .t-bank dt {
   flex: 0 0 auto;
   margin: 0;
-  font-size: 11px;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 0.03em;
+  text-transform: none;
   color: var(--t-soft);
 }
 .t-bank dd {
@@ -527,7 +527,7 @@ a.t-card:focus-visible {
   min-width: 0;
   margin: 0;
   text-align: right;
-  font-size: 17px;
+  font-size: var(--t-body);
   line-height: 1.45;
 }
 .t-bank .t-val {
@@ -548,9 +548,9 @@ a.t-card:focus-visible {
   background: transparent;
   color: var(--t-deep);
   font: inherit;
-  font-size: 10px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 0.03em;
+  text-transform: none;
   cursor: pointer;
 }
 .t-copy:hover {
@@ -617,5 +617,221 @@ a.t-card:focus-visible {
   }
   .t-day.is-today .t-hours tbody tr {
     background: none;
+  }
+}
+
+/* ── READABLE (2026-11-04): label above value, nothing stranded across a wide
+   row, nothing sliding sideways, ink instead of grey ─────────────────── */
+.t-page {
+  --t-soft: #2f4a5c;
+  --t-ochre-ink: #5f4e28;
+}
+.t-head {
+  margin-bottom: var(--s-6);
+}
+.t-section {
+  margin-bottom: var(--s-7);
+}
+.t-kicker {
+  margin-bottom: var(--s-3);
+  font-family: var(--font-display);
+  font-size: var(--t-h2);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0;
+  color: var(--t-ink);
+}
+.t-small,
+.t-note {
+  font-size: 18px;
+}
+.t-note {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: normal;
+  font-weight: 400;
+}
+.t-text {
+  max-width: var(--measure);
+}
+.t-horizon {
+  height: 16px;
+}
+.t-horizon::after {
+  inset: 0;
+}
+
+.t-rows {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
+  gap: var(--s-3);
+  border: 0;
+  background: none;
+}
+.t-rows > li,
+.t-rows > li + li {
+  border: 1px solid var(--t-edge);
+  background: var(--t-card);
+}
+.t-row {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--s-1);
+  height: 100%;
+  box-sizing: border-box;
+  padding: var(--s-4) var(--s-4);
+}
+.t-label {
+  font-size: 18px;
+  letter-spacing: 0;
+  color: var(--t-soft);
+}
+.t-value {
+  text-align: left;
+  font-size: 22px;
+  font-weight: 700;
+}
+a.t-row[href^="tel:"] .t-value {
+  font-family: var(--font-display);
+  font-size: 26px;
+}
+
+.t-hours th,
+.t-hours td {
+  font-size: var(--t-body);
+}
+.t-hours thead th {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.t-hours th.t-block {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0;
+  color: var(--t-ink);
+}
+.t-hours td.t-time {
+  font-family: var(--font-display);
+  font-size: 23px;
+  font-weight: 700;
+}
+.t-hours caption {
+  font-size: var(--t-h2);
+}
+.t-flag {
+  font-size: 17px;
+  letter-spacing: 0;
+  color: var(--t-ink);
+}
+.t-day[hidden] {
+  display: none;
+}
+
+.t-days {
+  gap: var(--s-2);
+  margin-bottom: var(--s-5);
+}
+.t-days a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap);
+  padding: 0 var(--s-4);
+  border: 2px solid #1a3346;
+  color: #1a3346;
+  font-size: 19px;
+  letter-spacing: 0;
+  text-decoration: none;
+}
+.t-days a[aria-current],
+.t-days a[aria-current]:hover {
+  border-color: #1a3346;
+  background: #1a3346;
+  color: #fffdf8;
+  font-weight: 700;
+  text-decoration: none;
+}
+/* the prose-link rule in TableLayout outranks plain .t-days selectors */
+.t-page .t-body .t-days a {
+  text-decoration: none;
+}
+.t-page .t-body .t-days a[aria-current] {
+  color: #fffdf8;
+}
+.t-days a[aria-current]::before {
+  display: none;
+}
+
+.t-btn {
+  min-height: var(--tap);
+  font-size: 18px;
+  letter-spacing: 0;
+}
+
+.t-drift.r-drift {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-columns: auto;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+  gap: var(--s-3);
+  margin: 0;
+  margin-inline: 0;
+  padding: 0;
+  padding-inline: 0;
+  overflow: visible;
+  scroll-snap-type: none;
+}
+.t-drift.r-drift > li {
+  width: auto;
+  min-width: 0;
+  flex: none;
+}
+.t-card-title {
+  font-size: 22px;
+}
+.t-card-text {
+  font-size: var(--t-body);
+  color: var(--t-ink);
+}
+a.t-card {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--s-3);
+  min-height: 80px;
+  padding: var(--s-3) var(--s-4);
+}
+a.t-card .r-mark {
+  margin: 0;
+}
+a.t-card .t-card-go {
+  margin: 0 0 0 auto;
+}
+
+.t-bank > div {
+  display: grid;
+  grid-template-columns: 13rem minmax(0, 1fr);
+  align-items: center;
+  gap: var(--s-4);
+}
+.t-bank dt {
+  font-size: 18px;
+  letter-spacing: 0;
+  color: var(--t-soft);
+}
+.t-bank dd {
+  justify-content: flex-start;
+  text-align: left;
+  font-size: 21px;
+  font-weight: 700;
+}
+.t-copy {
+  min-height: var(--tap-min);
+  font-size: 17px;
+  letter-spacing: 0;
+}
+@media (max-width: 699px) {
+  .t-bank > div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--s-1);
   }
 }

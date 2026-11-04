@@ -21,7 +21,7 @@ const emails = t("footer.email")
 
 const phones = [
   { label: t("contact.secretariatLabel"), number: t("contact.phoneSecretariat") },
-  { label: t("contact.phoneMainLabel"), number: t("contact.phoneMain") },
+  { label: t("contact.phoneMonastery"), number: t("contact.phoneMain") },
   { label: t("contact.guesthouseLabel"), number: t("contact.phoneMobile"), note: t("contact.guesthouseHours") },
 ];
 
@@ -33,16 +33,7 @@ const onward: { href: string; labelKey: AllTranslationKeys; mark: "pin" | "arch"
 ];
 ---
 
-<TableLayout title={t("nav.contact")} lead={t("directions.lead")} mark="bell">
-  <section class="t-section" aria-labelledby="adresa">
-    <h2 class="t-kicker" id="adresa">{t("contact.addressLabel")}</h2>
-    <ul class="t-rows">
-      <Row label={t("footer.addressName")} href={mapLink} external mark="pin" literal>
-        {t("footer.addressLine")}
-      </Row>
-    </ul>
-  </section>
-
+<TableLayout title={t("nav.contact")} lead={t("contact.lead")} mark="bell">
   <section class="t-section" aria-labelledby="telefon">
     <h2 class="t-kicker" id="telefon">{t("contact.phoneMainLabel")}</h2>
     <ul class="t-rows">
@@ -56,12 +47,21 @@ const onward: { href: string; labelKey: AllTranslationKeys; mark: "pin" | "arch"
     </ul>
   </section>
 
+  <section class="t-section" aria-labelledby="adresa">
+    <h2 class="t-kicker" id="adresa">{t("contact.addressLabel")}</h2>
+    <ul class="t-rows">
+      <Row label={t("footer.addressName")} href={mapLink} external mark="pin" literal>
+        {t("footer.addressLine")}
+      </Row>
+    </ul>
+  </section>
+
   <section class="t-section" aria-labelledby="email">
     <h2 class="t-kicker" id="email">{t("contact.emailLabel")}</h2>
     <ul class="t-rows">
       {
-        emails.map((address) => (
-          <Row label={t("contact.emailLabel")} href={`mailto:${address}`} literal>
+        emails.map((address, index) => (
+          <Row label={index === 0 ? t("contact.emailGeneral") : t("contact.secretariatLabel")} href={`mailto:${address}`} literal>
             {address}
           </Row>
         ))

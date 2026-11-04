@@ -160,10 +160,10 @@ const name = (category: GalleryCategory) => t(`gallery.${category.key}` as AllTr
     gap: var(--s-2);
     min-height: var(--tap-min);
     padding-top: var(--s-3);
-    font-size: 11px;
+    font-size: 16px;
     line-height: 1.6;
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    text-transform: none;
     color: #1a3346;
     text-decoration: none;
   }
@@ -195,9 +195,9 @@ const name = (category: GalleryCategory) => t(`gallery.${category.key}` as AllTr
     order: 2;
     margin-top: var(--s-2);
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 11px;
+    font-size: 16px;
     font-weight: 400;
-    letter-spacing: 0.28em;
+    letter-spacing: 0.03em;
     color: #4a6274;
     font-variant-numeric: lining-nums tabular-nums;
   }
@@ -284,7 +284,7 @@ const name = (category: GalleryCategory) => t(`gallery.${category.key}` as AllTr
     border: 1px solid #4f7088;
     background: #1a3346;
     color: #fff;
-    font-size: 17px;
+    font-size: var(--t-body);
     padding: 0 var(--s-6);
     cursor: pointer;
     transition: border-color var(--dur-1) var(--ease-out);

@@ -7,7 +7,6 @@ import { getAllPostSlugs, getPostBySlug, getPostNeighbours, getPublishedPosts } 
 import { getLocaleFromUrl, getLocalizedPath, useTranslations } from "@i18n/utils";
 import Icon from "@components/marks/Icon.astro";
 import type { ChamberExit } from "@components/chamber/ChamberExits.astro";
-import { zoneById } from "@temple/zones";
 import { rebase } from "@data/pages";
 import { getEntry } from "astro:content";
 
@@ -59,7 +58,7 @@ const bodyHtml = entry?.rendered?.html ? rebase(entry.rendered.html, lang) : "";
 const shown = post ? (post.image ? 1 : 0) + post.galleryImages.length : 0;
 
 // The micro label: the chronicle, under its zone's numeral ("II · Cronică").
-const eyebrow = post ? `${zoneById[post.zone].numeral} · ${t("zone.cronica")}` : undefined;
+const eyebrow = post ? t("zone.cronica") : undefined;
 // Leaving an entry: back in time on the left, forward on the right.
 const exits: ChamberExit[] = [
   ...(older
@@ -279,10 +278,10 @@ const exits: ChamberExit[] = [
      entry's own pieces: the lead photograph, the video, the photographs. */
   .archive-note {
     margin: var(--s-5) 0 0;
-    font-size: 11px;
+    font-size: 16px;
     line-height: 1.7;
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    text-transform: none;
     color: #4a6274;
   }
 
@@ -360,9 +359,9 @@ const exits: ChamberExit[] = [
     bottom: var(--s-3);
     padding: 2px var(--s-2);
     background: #1a3346;
-    font-size: 11px;
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 0.03em;
+    text-transform: none;
   }
 
   /* the photographs: square fields joined by a 2px mullion of the well's paper */
@@ -471,9 +470,9 @@ const exits: ChamberExit[] = [
     display: inline-flex;
     align-items: center;
     min-height: var(--tap);
-    font-size: 11px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 0.03em;
+    text-transform: none;
     color: #76633a;
     text-decoration: none;
   }

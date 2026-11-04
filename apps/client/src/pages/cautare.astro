@@ -251,9 +251,9 @@ const strings = {
   .search-field-label {
     display: block;
     margin-bottom: var(--s-3);
-    font-size: 11px;
-    letter-spacing: 0.42em;
-    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 0.03em;
+    text-transform: none;
     color: var(--seal-gold-text);
   }
   .search-row {
@@ -270,7 +270,7 @@ const strings = {
     background: var(--paper);
     color: var(--river-ink);
     font: inherit;
-    font-size: 17px; /* ≥16 so iOS does not zoom */
+    font-size: var(--t-body); /* ≥16 so iOS does not zoom */
     transition: border-color var(--dur-1) var(--ease-out);
   }
   .search-input:hover,

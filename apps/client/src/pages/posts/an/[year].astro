@@ -30,7 +30,6 @@ const years = getPostYears(allPosts);
       <header class="page-head cronica-head">
         <p class="page-kicker">{t("zone.cronica")}</p>
         <h1 class="page-title">{year}</h1>
-        <p class="page-meta">{`${posts.length} ${t("home.postCount")}`}</p>
       </header>
 
       <YearRail years={years} current={year} lang={lang} />

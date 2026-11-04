@@ -17,29 +17,44 @@ const t = useTranslations(lang);
 // the 404 has no page of its own in other languages: switch to that home
 const switchPath = /\/404(\.html)?\/?$/.test(path) ? "/" : path;
 
+// each language in its own name, so a reader can find theirs
 const languageItems = [
-  { locale: "ro", label: "RO" },
-  { locale: "en", label: "EN" },
-  { locale: "ru", label: "RU" },
+  { locale: "ro", label: "Română" },
+  { locale: "en", label: "English" },
+  { locale: "ru", label: "Русский" },
 ] as const;
 ---
+
+<nav class="langs" aria-label={t("language.label")}>
+  <div class="frame-wide langs-inner">
+    {
+      languageItems.map((item) => (
+        <a
+          class:list={["lang", item.locale === lang && "is-current"]}
+          href={getLocalizedPath(switchPath, item.locale)}
+          lang={item.locale}
+          aria-current={item.locale === lang ? "page" : undefined}>
+          {item.label}
+        </a>
+      ))
+    }
+  </div>
+</nav>
 
 <header class="bar">
   <div class="frame-wide inner">
     <button
       type="button"
-      class="opener"
+      class="tool"
       data-drawer-open
-      aria-label={t("nav.openMenu")}
       aria-controls="rail-drawer"
       aria-expanded="false">
-      {/* four strata, not a generic hamburger: the drawer is the descent */}
-      <span class="strata" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span>{t("nav.menu")}</span>
     </button>
 
     <a class="brand" href={getLocalizedPath("/", lang)}>
-      {/* the official seal, header cut: its cream silhouette eroded by a
-          22-unit stroke in the bar's olive, so no pale rim haloes it */}
+      {/* the official seal, header cut */}
       <img class="brand-seal" src={sealHeaderUrl} width="84" height="70" alt="" decoding="async" />
       <span class="brand-name">
         <span>{t("main.logoLineOne")}</span>
@@ -48,38 +63,50 @@ const languageItems = [
       </span>
     </a>
 
-    <div class="tools">
-      <a class="find" href={getLocalizedPath("/cautare", lang)} aria-label={t("search.title")} title={t("search.title")}>
-        <Icon name="search" size={20} />
-      </a>
-
-      <nav class="langs" aria-label={t("language.label")}>
-        {
-          languageItems.map((item) => (
-            <a
-              class:list={["lang", item.locale === lang && "is-current"]}
-              href={getLocalizedPath(switchPath, item.locale)}
-              lang={item.locale}
-              aria-label={`${item.label} · ${t(`language.${item.locale}`)}`}
-              aria-current={item.locale === lang ? "page" : undefined}>
-              {item.label}
-            </a>
-          ))
-        }
-      </nav>
-    </div>
+    <a class="tool" href={getLocalizedPath("/cautare", lang)}>
+      <Icon name="search" size={28} />
+      <span>{t("nav.searchShort")}</span>
+    </a>
   </div>
 </header>
 
 <style>
+  /* languages: a plain strip above the bar, scrolls away with the page */
+  .langs {
+    background: #1a3346;
+    color: #fffdf8;
+  }
+  .langs-inner {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--s-2);
+  }
+  .lang {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--tap-min);
+    padding: 0 var(--s-3);
+    color: inherit;
+    font-size: var(--t-ui);
+    text-decoration: none;
+  }
+  .lang:hover {
+    text-decoration: underline;
+  }
+  .lang.is-current {
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.25em;
+  }
+
   .bar {
     position: sticky;
     top: 0;
     z-index: 50;
     border-bottom: var(--rule) solid var(--seal-gold);
     background: var(--header);
-    --seal-paper: #1a3346;
-    color: var(--header-ink);
+    color: #1a3346;
   }
   .inner {
     display: grid;
@@ -87,56 +114,52 @@ const languageItems = [
     align-items: center;
     gap: var(--s-3);
     height: var(--nav-h);
-    /* the opener's 48px target is wider than its mark: pull it to the gutter */
-    padding-left: max(calc(var(--frame-pad) - 12px), env(safe-area-inset-left));
   }
 
-  /* no frame round it (owner, v1): four strata in the bar's ink; gold on hover */
-  .opener {
-    display: inline-grid;
-    place-items: center;
-    width: var(--tap);
-    height: var(--tap);
+  /* Menu and Search: an icon and its word, always together */
+  .tool {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    min-width: 64px;
+    min-height: var(--tap);
     padding: 0;
     border: 0;
     background: transparent;
-    color: var(--seal-paper);
+    color: inherit;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.1;
+    text-decoration: none;
     cursor: pointer;
-    transition: color var(--dur-1) var(--ease-out);
   }
-  .opener:hover,
-  .opener[aria-expanded="true"] {
-    color: var(--header-gold);
-  }
-  .strata {
+  .bars {
     display: grid;
-    gap: 4px;
-    width: 22px;
+    gap: 5px;
+    width: 28px;
+    padding: 4px 0;
   }
-  .strata i {
+  .bars i {
     display: block;
-    height: 2px;
+    height: 3px;
     background: currentColor;
   }
-  /* the strata widen as they go down, as the gorge does */
-  .strata i:nth-child(1) {
-    width: 12px;
-  }
-  .strata i:nth-child(2) {
-    width: 16px;
-  }
-  .strata i:nth-child(3) {
-    width: 19px;
+  .tool:hover,
+  .tool[aria-expanded="true"] {
+    color: var(--seal-gold-text);
   }
 
   .brand {
     display: flex;
     align-items: center;
-    justify-self: start;
+    justify-self: center;
     min-height: var(--tap);
     gap: var(--s-3);
     min-width: 0;
-    color: var(--seal-paper);
+    color: inherit;
     text-decoration: none;
   }
   .brand-seal {
@@ -148,124 +171,40 @@ const languageItems = [
     display: grid;
     gap: 3px;
     font-family: var(--font-display);
-    font-size: 14px;
+    font-size: 17px;
     line-height: 1;
     font-weight: 700;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.03em;
     text-transform: uppercase;
   }
-  .brand:hover .brand-name {
-    color: var(--header-gold);
+
+  .bar :focus-visible,
+  .langs :focus-visible {
+    outline: 3px solid var(--seal-gold-text);
+    outline-offset: -3px;
   }
 
-  .tools {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: var(--s-4);
-  }
-
-  /* one joined strip of three cells on olive hairlines; the current
-     language is drawn in outline, in the read-gold */
-  .langs {
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: 0.2em;
-  }
-  .lang {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    height: var(--tap-min);
-    min-width: var(--tap-min);
-    margin-left: calc(-1 * var(--rule));
-    padding: 0 var(--s-2) 0 calc(var(--s-2) + 0.2em);
-    box-sizing: border-box;
-    border: var(--rule) solid var(--header-line);
-    color: var(--header-ink);
-    text-decoration: none;
-    transition:
-      color var(--dur-1) var(--ease-out),
-      border-color var(--dur-1) var(--ease-out);
-  }
-  .lang:first-child {
-    margin-left: 0;
-  }
-  /* neighbours share a hairline (-1px margins), so the hovered cell rises
-     above them or its left edge stays under the next one */
-  .lang:hover {
-    position: relative;
-    z-index: 2;
-    border-color: var(--header-ink);
-    color: #1a3346;
-  }
-  .lang.is-current {
-    position: relative;
-    z-index: 1;
-    border-color: var(--header-gold);
-    color: var(--header-gold);
-  }
-
-  .find {
-    display: inline-grid;
-    flex-shrink: 0;
-    place-items: center;
-    width: var(--tap);
-    height: var(--tap);
-    color: var(--header-ink);
-    transition: color var(--dur-1) var(--ease-out);
-  }
-  .find:hover {
-    color: var(--header-gold);
-  }
-
-  .bar :focus-visible {
-    outline: var(--rule-2) solid var(--header-gold);
-    outline-offset: calc(var(--rule-2) * -1);
-  }
-
-  @media (width < 1100px) {
-    .tools {
-      gap: var(--s-2);
-    }
-  }
   @media (width < 40rem) {
     .inner {
       gap: var(--s-2);
-      padding-right: max(calc(var(--frame-pad) - 4px), env(safe-area-inset-right));
     }
-    /* no room beside the name: search moves into the drawer */
-    .find {
-      display: none;
+    .langs-inner {
+      justify-content: space-between;
+      gap: 0;
     }
     .brand {
       gap: var(--s-2);
     }
     .brand-seal {
-      width: 60px;
+      width: 56px;
     }
     .brand-name {
-      font-size: 11px;
-      letter-spacing: 0.08em;
-    }
-    /* on a phone the cells lose their frames: the current one keeps its
-       outline; each is a full thumb's target */
-    .lang {
-      height: var(--tap-min);
-      min-width: var(--tap-min);
-      padding: 0 0 0 0.2em;
-      margin-left: 0;
-      border-color: transparent;
+      font-size: 14px;
     }
   }
   @media (width < 380px) {
     .brand-seal {
-      width: 52px;
-    }
-    .brand-name {
-      letter-spacing: 0.04em;
+      width: 46px;
     }
   }
 </style>

@@ -1,7 +1,7 @@
 ---
 title: "Istoria sfintei mănăstiri"
 eyebrow: "Stânca · zona I"
-lead: "Unde începe mănăstirea: în stâncă. Peștera este o lucrare de scădere — piatră luată, nu piatră pusă."
+lead: "De la chiliile săpate în stâncă până la mănăstirea de astăzi."
 zone: rock
 template: chamber
 order: 1

@@ -56,9 +56,9 @@
   align-items: center;
   gap: var(--s-4);
   margin: 0 0 var(--s-5);
-  font-size: 11px;
+  font-size: 16px;
   letter-spacing: var(--r-track);
-  text-transform: uppercase;
+  text-transform: none;
   color: var(--kicker, var(--r-gold));
 }
 .r-eyebrow::after {
@@ -78,7 +78,7 @@
 
 .r-title {
   margin: 0;
-  font-family: var(--font-gothic, var(--font-display));
+  font-family: var(--font-title, var(--font-display));
   font-weight: var(--display-weight, 700);
   font-size: var(--t-r-title);
   line-height: 1.06;
@@ -163,9 +163,9 @@
 }
 .r-rows .r-label {
   flex: 0 0 auto;
-  font-size: 11px;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 0.03em;
+  text-transform: none;
   color: var(--r-soft, currentColor);
   opacity: var(--r-label-opacity, 0.8);
 }

@@ -3,7 +3,7 @@
 # Romanian original (src/data/pages.ts shows it under lang="ro").
 title: "История святой обители"
 eyebrow: "Скала · зона I"
-lead: "Где начинается монастырь: в скале. Пещера — дело убавления: камень вынут, а не положен."
+lead: "От келий, высеченных в скале, до сегодняшнего монастыря."
 zone: rock
 template: chamber
 order: 1
