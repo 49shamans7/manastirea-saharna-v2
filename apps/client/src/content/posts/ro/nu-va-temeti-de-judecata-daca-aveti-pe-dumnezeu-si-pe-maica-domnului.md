@@ -40,6 +40,70 @@ galleryImages:
     thumb: /posts/nu-va-temeti-de-judecata-daca-aveti-pe-dumnezeu-si-pe-maica-domnului/image00034-1-sm.webp
     width: 800
     height: 534
+  - src: /posts/nu-va-temeti-de-judecata-daca-aveti-pe-dumnezeu-si-pe-maica-domnului/image00035-1.webp
+    thumb: /posts/nu-va-temeti-de-judecata-daca-aveti-pe-dumnezeu-si-pe-maica-domnului/image00035-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/nu-va-temeti-de-judecata-daca-aveti-pe-dumnezeu-si-pe-maica-domnului/image00036-1.webp
+    thumb: /posts/nu-va-temeti-de-judecata-daca-aveti-pe-dumnezeu-si-pe-maica-domnului/image00036-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/nu-va-temeti-de-judecata-daca-aveti-pe-dumnezeu-si-pe-maica-domnului/image00037-1.webp
+    thumb: /posts/nu-va-temeti-de-judecata-daca-aveti-pe-dumnezeu-si-pe-maica-domnului/image00037-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/nu-va-temeti-de-judecata-daca-aveti-pe-dumnezeu-si-pe-maica-domnului/image00038-1.webp
+    thumb: /posts/nu-va-temeti-de-judecata-daca-aveti-pe-dumnezeu-si-pe-maica-domnului/image00038-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/nu-va-temeti-de-judecata-daca-aveti-pe-dumnezeu-si-pe-maica-domnului/image00039-1.webp
+    thumb: /posts/nu-va-temeti-de-judecata-daca-aveti-pe-dumnezeu-si-pe-maica-domnului/image00039-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/nu-va-temeti-de-judecata-daca-aveti-pe-dumnezeu-si-pe-maica-domnului/image00040-1.webp
+    thumb: /posts/nu-va-temeti-de-judecata-daca-aveti-pe-dumnezeu-si-pe-maica-domnului/image00040-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/nu-va-temeti-de-judecata-daca-aveti-pe-dumnezeu-si-pe-maica-domnului/image00041-1.webp
+    thumb: /posts/nu-va-temeti-de-judecata-daca-aveti-pe-dumnezeu-si-pe-maica-domnului/image00041-1-sm.webp
+    width: 800
+    height: 660
+  - src: /posts/nu-va-temeti-de-judecata-daca-aveti-pe-dumnezeu-si-pe-maica-domnului/image00042-1.webp
+    thumb: /posts/nu-va-temeti-de-judecata-daca-aveti-pe-dumnezeu-si-pe-maica-domnului/image00042-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/nu-va-temeti-de-judecata-daca-aveti-pe-dumnezeu-si-pe-maica-domnului/image00043.webp
+    thumb: /posts/nu-va-temeti-de-judecata-daca-aveti-pe-dumnezeu-si-pe-maica-domnului/image00043-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/nu-va-temeti-de-judecata-daca-aveti-pe-dumnezeu-si-pe-maica-domnului/image00044.webp
+    thumb: /posts/nu-va-temeti-de-judecata-daca-aveti-pe-dumnezeu-si-pe-maica-domnului/image00044-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/nu-va-temeti-de-judecata-daca-aveti-pe-dumnezeu-si-pe-maica-domnului/image00045.webp
+    thumb: /posts/nu-va-temeti-de-judecata-daca-aveti-pe-dumnezeu-si-pe-maica-domnului/image00045-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/nu-va-temeti-de-judecata-daca-aveti-pe-dumnezeu-si-pe-maica-domnului/image00046.webp
+    thumb: /posts/nu-va-temeti-de-judecata-daca-aveti-pe-dumnezeu-si-pe-maica-domnului/image00046-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/nu-va-temeti-de-judecata-daca-aveti-pe-dumnezeu-si-pe-maica-domnului/image00047.webp
+    thumb: /posts/nu-va-temeti-de-judecata-daca-aveti-pe-dumnezeu-si-pe-maica-domnului/image00047-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/nu-va-temeti-de-judecata-daca-aveti-pe-dumnezeu-si-pe-maica-domnului/image00048.webp
+    thumb: /posts/nu-va-temeti-de-judecata-daca-aveti-pe-dumnezeu-si-pe-maica-domnului/image00048-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/nu-va-temeti-de-judecata-daca-aveti-pe-dumnezeu-si-pe-maica-domnului/image00049.webp
+    thumb: /posts/nu-va-temeti-de-judecata-daca-aveti-pe-dumnezeu-si-pe-maica-domnului/image00049-sm.webp
+    width: 800
+    height: 977
+  - src: /posts/nu-va-temeti-de-judecata-daca-aveti-pe-dumnezeu-si-pe-maica-domnului/image00050.webp
+    thumb: /posts/nu-va-temeti-de-judecata-daca-aveti-pe-dumnezeu-si-pe-maica-domnului/image00050-sm.webp
+    width: 800
+    height: 534
 ---
 
 Astăzi cerul întinde sânurile sale, primind-o pe Născătoarea Celui pe Care zidirea toată nu poate să-L încapă.

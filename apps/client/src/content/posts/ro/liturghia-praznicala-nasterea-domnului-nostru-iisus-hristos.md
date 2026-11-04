@@ -40,6 +40,26 @@ galleryImages:
     thumb: /posts/liturghia-praznicala-nasterea-domnului-nostru-iisus-hristos/image00029-sm.webp
     width: 800
     height: 533
+  - src: /posts/liturghia-praznicala-nasterea-domnului-nostru-iisus-hristos/image00030.webp
+    thumb: /posts/liturghia-praznicala-nasterea-domnului-nostru-iisus-hristos/image00030-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/liturghia-praznicala-nasterea-domnului-nostru-iisus-hristos/image00031.webp
+    thumb: /posts/liturghia-praznicala-nasterea-domnului-nostru-iisus-hristos/image00031-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/liturghia-praznicala-nasterea-domnului-nostru-iisus-hristos/image00032.webp
+    thumb: /posts/liturghia-praznicala-nasterea-domnului-nostru-iisus-hristos/image00032-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/liturghia-praznicala-nasterea-domnului-nostru-iisus-hristos/image00033.webp
+    thumb: /posts/liturghia-praznicala-nasterea-domnului-nostru-iisus-hristos/image00033-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/liturghia-praznicala-nasterea-domnului-nostru-iisus-hristos/image00034.webp
+    thumb: /posts/liturghia-praznicala-nasterea-domnului-nostru-iisus-hristos/image00034-sm.webp
+    width: 800
+    height: 533
 ---
 
 

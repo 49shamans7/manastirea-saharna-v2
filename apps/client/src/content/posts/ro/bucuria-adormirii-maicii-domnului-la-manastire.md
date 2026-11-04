@@ -40,6 +40,22 @@ galleryImages:
     thumb: /posts/bucuria-adormirii-maicii-domnului-la-manastire/20260828_102819-scaled-sm.webp
     width: 800
     height: 450
+  - src: /posts/bucuria-adormirii-maicii-domnului-la-manastire/20260828_112658-scaled.webp
+    thumb: /posts/bucuria-adormirii-maicii-domnului-la-manastire/20260828_112658-scaled-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/bucuria-adormirii-maicii-domnului-la-manastire/20260828_113438-scaled.webp
+    thumb: /posts/bucuria-adormirii-maicii-domnului-la-manastire/20260828_113438-scaled-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/bucuria-adormirii-maicii-domnului-la-manastire/20260828_113442-scaled.webp
+    thumb: /posts/bucuria-adormirii-maicii-domnului-la-manastire/20260828_113442-scaled-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/bucuria-adormirii-maicii-domnului-la-manastire/20260828_113445-scaled.webp
+    thumb: /posts/bucuria-adormirii-maicii-domnului-la-manastire/20260828_113445-scaled-sm.webp
+    width: 800
+    height: 450
 ---
 
 Astăzi, la Sfânta Mănăstire Saharna, obștea monahală și numeroși credincioși s-au adunat în rugăciune pentru a prăznui Adormirea Maicii Domnului. Atmosfera duhovnicească a fost înălțătoare, zeci de pelerini participând cu evlavie la slujba praznicală. După încheierea Sfintei Liturghii, a urmat tradiționalul drumul crucii în jurul bisericii. Clerul au purtat pe brațe epitahul Maicii Domnului, intonând cântări de laudă și de cinstire a Născătoarei de Dumnezeu. La finalul rânduielilor liturgice, toți pelerinii și oaspeții prezenți au fost chemați la o bogată agapă frățească. Această masă comună a adus laolaltă suflete care au împărtășit bucuria praznicului și dragostea aproapelui.

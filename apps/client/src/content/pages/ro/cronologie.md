@@ -1,7 +1,7 @@
 ---
-title: "Cronologia mănăstirii"
+title: "Cronică"
 eyebrow: "Stânca · zona I"
-lead: "De la mănăstirea rupestră „Bunavestire” până astăzi: datele, așa cum le-a păstrat mănăstirea."
+lead: "De la mănăstirea rupestră „Bunavestire” până astăzi."
 zone: rock
 template: chamber
 order: 2

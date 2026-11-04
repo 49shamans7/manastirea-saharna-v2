@@ -40,6 +40,70 @@ galleryImages:
     thumb: /posts/privegherea-a-maritului-praznic-inaltarea-sfintei-cruci/privegherea-ziua-crucii_00007-sm.webp
     width: 800
     height: 534
+  - src: /posts/privegherea-a-maritului-praznic-inaltarea-sfintei-cruci/privegherea-ziua-crucii_00008.webp
+    thumb: /posts/privegherea-a-maritului-praznic-inaltarea-sfintei-cruci/privegherea-ziua-crucii_00008-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/privegherea-a-maritului-praznic-inaltarea-sfintei-cruci/privegherea-ziua-crucii_00009.webp
+    thumb: /posts/privegherea-a-maritului-praznic-inaltarea-sfintei-cruci/privegherea-ziua-crucii_00009-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/privegherea-a-maritului-praznic-inaltarea-sfintei-cruci/privegherea-ziua-crucii_00010.webp
+    thumb: /posts/privegherea-a-maritului-praznic-inaltarea-sfintei-cruci/privegherea-ziua-crucii_00010-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/privegherea-a-maritului-praznic-inaltarea-sfintei-cruci/privegherea-ziua-crucii_00011.webp
+    thumb: /posts/privegherea-a-maritului-praznic-inaltarea-sfintei-cruci/privegherea-ziua-crucii_00011-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/privegherea-a-maritului-praznic-inaltarea-sfintei-cruci/privegherea-ziua-crucii_00012.webp
+    thumb: /posts/privegherea-a-maritului-praznic-inaltarea-sfintei-cruci/privegherea-ziua-crucii_00012-sm.webp
+    width: 800
+    height: 591
+  - src: /posts/privegherea-a-maritului-praznic-inaltarea-sfintei-cruci/privegherea-ziua-crucii_00013.webp
+    thumb: /posts/privegherea-a-maritului-praznic-inaltarea-sfintei-cruci/privegherea-ziua-crucii_00013-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/privegherea-a-maritului-praznic-inaltarea-sfintei-cruci/privegherea-ziua-crucii_00014.webp
+    thumb: /posts/privegherea-a-maritului-praznic-inaltarea-sfintei-cruci/privegherea-ziua-crucii_00014-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/privegherea-a-maritului-praznic-inaltarea-sfintei-cruci/privegherea-ziua-crucii_00015.webp
+    thumb: /posts/privegherea-a-maritului-praznic-inaltarea-sfintei-cruci/privegherea-ziua-crucii_00015-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/privegherea-a-maritului-praznic-inaltarea-sfintei-cruci/privegherea-ziua-crucii_00016.webp
+    thumb: /posts/privegherea-a-maritului-praznic-inaltarea-sfintei-cruci/privegherea-ziua-crucii_00016-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/privegherea-a-maritului-praznic-inaltarea-sfintei-cruci/privegherea-ziua-crucii_00017.webp
+    thumb: /posts/privegherea-a-maritului-praznic-inaltarea-sfintei-cruci/privegherea-ziua-crucii_00017-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/privegherea-a-maritului-praznic-inaltarea-sfintei-cruci/privegherea-ziua-crucii_00018.webp
+    thumb: /posts/privegherea-a-maritului-praznic-inaltarea-sfintei-cruci/privegherea-ziua-crucii_00018-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/privegherea-a-maritului-praznic-inaltarea-sfintei-cruci/privegherea-ziua-crucii_00019.webp
+    thumb: /posts/privegherea-a-maritului-praznic-inaltarea-sfintei-cruci/privegherea-ziua-crucii_00019-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/privegherea-a-maritului-praznic-inaltarea-sfintei-cruci/privegherea-ziua-crucii_00020.webp
+    thumb: /posts/privegherea-a-maritului-praznic-inaltarea-sfintei-cruci/privegherea-ziua-crucii_00020-sm.webp
+    width: 512
+    height: 768
+  - src: /posts/privegherea-a-maritului-praznic-inaltarea-sfintei-cruci/privegherea-ziua-crucii_00021.webp
+    thumb: /posts/privegherea-a-maritului-praznic-inaltarea-sfintei-cruci/privegherea-ziua-crucii_00021-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/privegherea-a-maritului-praznic-inaltarea-sfintei-cruci/privegherea-ziua-crucii_00022.webp
+    thumb: /posts/privegherea-a-maritului-praznic-inaltarea-sfintei-cruci/privegherea-ziua-crucii_00022-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/privegherea-a-maritului-praznic-inaltarea-sfintei-cruci/privegherea-ziua-crucii_00023.webp
+    thumb: /posts/privegherea-a-maritului-praznic-inaltarea-sfintei-cruci/privegherea-ziua-crucii_00023-sm.webp
+    width: 800
+    height: 623
 ---
 
 Mântuiește, Doamne, poporul Tău și

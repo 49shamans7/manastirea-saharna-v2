@@ -6,6 +6,7 @@
 import TableLayout from "@layouts/TableLayout.astro";
 import Row from "@components/table/Row.astro";
 import RiverMark from "@components/marks/RiverMark.astro";
+import { publicAsset } from "@utils/paths";
 import type { AllTranslationKeys } from "@i18n";
 import { getLocaleFromUrl, getLocalizedPath, telHref, useTranslations } from "@i18n/utils";
 
@@ -34,6 +35,7 @@ const onward: { href: string; labelKey: AllTranslationKeys; mark: "pin" | "arch"
 ---
 
 <TableLayout title={t("nav.contact")} lead={t("contact.lead")} mark="bell">
+  <img class="t-photo" src={publicAsset("/pages/contact/manastirea.webp")} alt={t("main.title")} width="1400" height="934" loading="lazy" decoding="async" />
   <section class="t-section" aria-labelledby="telefon">
     <h2 class="t-kicker" id="telefon">{t("contact.phoneMainLabel")}</h2>
     <ul class="t-rows">

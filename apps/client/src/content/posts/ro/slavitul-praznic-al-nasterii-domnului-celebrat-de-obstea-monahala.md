@@ -40,6 +40,106 @@ galleryImages:
     thumb: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_092906-scaled-sm.webp
     width: 800
     height: 1422
+  - src: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_092941-scaled.webp
+    thumb: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_092941-scaled-sm.webp
+    width: 800
+    height: 1422
+  - src: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_093050-scaled.webp
+    thumb: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_093050-scaled-sm.webp
+    width: 800
+    height: 1422
+  - src: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_094626-scaled.webp
+    thumb: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_094626-scaled-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_094735-scaled.webp
+    thumb: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_094735-scaled-sm.webp
+    width: 800
+    height: 1422
+  - src: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_094752-scaled.webp
+    thumb: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_094752-scaled-sm.webp
+    width: 800
+    height: 1422
+  - src: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_094957-scaled.webp
+    thumb: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_094957-scaled-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_095022-scaled.webp
+    thumb: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_095022-scaled-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_095044-scaled.webp
+    thumb: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_095044-scaled-sm.webp
+    width: 800
+    height: 1422
+  - src: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_095047-scaled.webp
+    thumb: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_095047-scaled-sm.webp
+    width: 800
+    height: 1422
+  - src: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_095125-scaled.webp
+    thumb: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_095125-scaled-sm.webp
+    width: 800
+    height: 1422
+  - src: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_095607-scaled.webp
+    thumb: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_095607-scaled-sm.webp
+    width: 800
+    height: 1422
+  - src: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_095739-scaled.webp
+    thumb: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_095739-scaled-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_095816-scaled.webp
+    thumb: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_095816-scaled-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_100255-scaled.webp
+    thumb: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_100255-scaled-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_101030-scaled.webp
+    thumb: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_101030-scaled-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_101040-scaled.webp
+    thumb: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_101040-scaled-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_101332-scaled.webp
+    thumb: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_101332-scaled-sm.webp
+    width: 800
+    height: 1422
+  - src: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_101341-scaled.webp
+    thumb: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_101341-scaled-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_102821-scaled.webp
+    thumb: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_102821-scaled-sm.webp
+    width: 800
+    height: 1422
+  - src: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_102825-scaled.webp
+    thumb: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_102825-scaled-sm.webp
+    width: 800
+    height: 1422
+  - src: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_102844-scaled.webp
+    thumb: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_102844-scaled-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_102848-scaled.webp
+    thumb: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_102848-scaled-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_102903-scaled.webp
+    thumb: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_102903-scaled-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_102904-scaled.webp
+    thumb: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_102904-scaled-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_102950-scaled.webp
+    thumb: /posts/slavitul-praznic-al-nasterii-domnului-celebrat-de-obstea-monahala/20240107_102950-scaled-sm.webp
+    width: 800
+    height: 450
 ---
 
 

@@ -4,6 +4,7 @@
 // ARCHITECTURE.md § What this settles.
 import ChamberLayout from "@layouts/Chamber.astro";
 import TableLayout from "@layouts/TableLayout.astro";
+import PhotoAlbum from "@components/temple/PhotoAlbum.astro";
 import { getChamberPage, getChamberSlugs, renderChamber } from "@data/pages";
 import { getLocaleFromUrl, useTranslations } from "@i18n/utils";
 import { withBasePath } from "@utils/paths";
@@ -23,6 +24,14 @@ if (!page) {
 }
 
 const { Content } = await renderChamber(page);
+// These four pages were photograph albums on the old site.
+const albums: Record<string, string> = {
+  moastele: "relics",
+  "sfanta-treime": "sfantaTreime",
+  "nasterea-maicii-domnului": "nasterea",
+  bunavestirea: "cave",
+};
+const album = albums[Astro.params.chamber as string];
 // The micro label over the title is the zone's numeral and name ("III ·
 // Racla"), drawn by the layout from `zone`; the frontmatter `eyebrow` is the
 // v1 wording and is not printed.
@@ -47,6 +56,7 @@ const note = page.isFallback ? t("zone.fallbackNote") : undefined;
       <div class="prose" lang={contentLang}>
         <Content />
       </div>
+      {album && <PhotoAlbum album={album} title={title} />}
     </ChamberLayout>
   )
 }

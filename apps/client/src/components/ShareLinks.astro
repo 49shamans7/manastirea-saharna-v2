@@ -1,0 +1,85 @@
+---
+// "Partajează asta" — the old site's four share links, as plain links: no
+// third-party script, nothing loads until someone taps one.
+import { useTranslations } from "@i18n/utils";
+import type { Locale } from "@i18n";
+
+interface Props {
+  lang: Locale;
+  title: string;
+}
+
+const { lang, title } = Astro.props;
+const t = useTranslations(lang);
+const url = encodeURIComponent(new URL(Astro.url.pathname, Astro.site).href);
+const text = encodeURIComponent(title);
+const links = [
+  { label: "WhatsApp", href: `https://wa.me/?text=${text}%20${url}` },
+  { label: "Telegram", href: `https://t.me/share/url?url=${url}&text=${text}` },
+  { label: "Tweet", href: `https://twitter.com/intent/tweet?url=${url}&text=${text}` },
+  { label: "Email", href: `mailto:?subject=${text}&body=${url}` },
+];
+---
+
+<nav class="share" aria-label={t("nav.share")}>
+  <p>{t("nav.share")}</p>
+  <ul>
+    {
+      links.map((link) => (
+        <li>
+          <a href={link.href} target={link.label === "Email" ? undefined : "_blank"} rel="noopener">
+            {link.label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+
+<style>
+  .share {
+    max-width: var(--measure);
+    margin: var(--s-6) auto 0;
+    padding-top: var(--s-4);
+    border-top: 1px solid var(--seal-gold);
+    color: #1a3346;
+  }
+  .share p {
+    margin: 0 0 var(--s-2);
+    font-weight: 700;
+  }
+  .share ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-2);
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+  }
+  /* it sits inside the prose column: drop the prose list and link styling */
+  .share li {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .share li::before {
+    content: none !important;
+  }
+  .share li::marker {
+    content: "";
+  }
+  .share a {
+    text-decoration: none !important;
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--tap);
+    padding: 0 var(--s-4);
+    border: 2px solid #1a3346;
+    color: #1a3346;
+    font-size: var(--t-ui);
+    text-decoration: none;
+  }
+  .share a:hover {
+    background: #1a3346;
+    color: #fffdf8;
+  }
+</style>

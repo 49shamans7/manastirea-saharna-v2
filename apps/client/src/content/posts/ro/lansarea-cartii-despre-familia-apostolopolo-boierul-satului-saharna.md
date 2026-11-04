@@ -40,6 +40,66 @@ galleryImages:
     thumb: /posts/lansarea-cartii-despre-familia-apostolopolo-boierul-satului-saharna/20241013_1455252-scaled-sm.webp
     width: 800
     height: 1067
+  - src: /posts/lansarea-cartii-despre-familia-apostolopolo-boierul-satului-saharna/20241013_1457032-1-scaled.webp
+    thumb: /posts/lansarea-cartii-despre-familia-apostolopolo-boierul-satului-saharna/20241013_1457032-1-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/lansarea-cartii-despre-familia-apostolopolo-boierul-satului-saharna/20241013_1507332-scaled.webp
+    thumb: /posts/lansarea-cartii-despre-familia-apostolopolo-boierul-satului-saharna/20241013_1507332-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/lansarea-cartii-despre-familia-apostolopolo-boierul-satului-saharna/20241013_1507432-scaled.webp
+    thumb: /posts/lansarea-cartii-despre-familia-apostolopolo-boierul-satului-saharna/20241013_1507432-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/lansarea-cartii-despre-familia-apostolopolo-boierul-satului-saharna/20241013_1511202.webp
+    thumb: /posts/lansarea-cartii-despre-familia-apostolopolo-boierul-satului-saharna/20241013_1511202-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/lansarea-cartii-despre-familia-apostolopolo-boierul-satului-saharna/20241013_1511582-scaled.webp
+    thumb: /posts/lansarea-cartii-despre-familia-apostolopolo-boierul-satului-saharna/20241013_1511582-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/lansarea-cartii-despre-familia-apostolopolo-boierul-satului-saharna/20241013_1512452-scaled.webp
+    thumb: /posts/lansarea-cartii-despre-familia-apostolopolo-boierul-satului-saharna/20241013_1512452-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/lansarea-cartii-despre-familia-apostolopolo-boierul-satului-saharna/20241013_1513102-scaled.webp
+    thumb: /posts/lansarea-cartii-despre-familia-apostolopolo-boierul-satului-saharna/20241013_1513102-scaled-sm.webp
+    width: 800
+    height: 1153
+  - src: /posts/lansarea-cartii-despre-familia-apostolopolo-boierul-satului-saharna/20241013_1513372-scaled.webp
+    thumb: /posts/lansarea-cartii-despre-familia-apostolopolo-boierul-satului-saharna/20241013_1513372-scaled-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/lansarea-cartii-despre-familia-apostolopolo-boierul-satului-saharna/20241013_1513373-scaled.webp
+    thumb: /posts/lansarea-cartii-despre-familia-apostolopolo-boierul-satului-saharna/20241013_1513373-scaled-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/lansarea-cartii-despre-familia-apostolopolo-boierul-satului-saharna/20241013_1521382-scaled.webp
+    thumb: /posts/lansarea-cartii-despre-familia-apostolopolo-boierul-satului-saharna/20241013_1521382-scaled-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/lansarea-cartii-despre-familia-apostolopolo-boierul-satului-saharna/20241013_1521452-scaled.webp
+    thumb: /posts/lansarea-cartii-despre-familia-apostolopolo-boierul-satului-saharna/20241013_1521452-scaled-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/lansarea-cartii-despre-familia-apostolopolo-boierul-satului-saharna/20241013_1521572-scaled.webp
+    thumb: /posts/lansarea-cartii-despre-familia-apostolopolo-boierul-satului-saharna/20241013_1521572-scaled-sm.webp
+    width: 800
+    height: 671
+  - src: /posts/lansarea-cartii-despre-familia-apostolopolo-boierul-satului-saharna/20241013_1522032-scaled.webp
+    thumb: /posts/lansarea-cartii-despre-familia-apostolopolo-boierul-satului-saharna/20241013_1522032-scaled-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/lansarea-cartii-despre-familia-apostolopolo-boierul-satului-saharna/20241013_1524442-scaled.webp
+    thumb: /posts/lansarea-cartii-despre-familia-apostolopolo-boierul-satului-saharna/20241013_1524442-scaled-sm.webp
+    width: 800
+    height: 701
+  - src: /posts/lansarea-cartii-despre-familia-apostolopolo-boierul-satului-saharna/20241013_1526432-scaled.webp
+    thumb: /posts/lansarea-cartii-despre-familia-apostolopolo-boierul-satului-saharna/20241013_1526432-scaled-sm.webp
+    width: 800
+    height: 1067
 ---
 
 Astăzi a fost lansată cartea ,,Familia Apostolopolo – filantropii din Saharna” de Vasile Bumbac. La eveniment au venit mulți oameni deschiși spre cunoașterea istoriei neamului și a personalităților ce au contribuit la dezvoltarea culturii naționale.

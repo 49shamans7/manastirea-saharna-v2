@@ -40,6 +40,26 @@ galleryImages:
     thumb: /posts/slujba-unica-din-an-in-aceasta-seara-denia-acatistului-maicii-domnului/image00007-1-sm.webp
     width: 800
     height: 533
+  - src: /posts/slujba-unica-din-an-in-aceasta-seara-denia-acatistului-maicii-domnului/image00008-1.webp
+    thumb: /posts/slujba-unica-din-an-in-aceasta-seara-denia-acatistului-maicii-domnului/image00008-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/slujba-unica-din-an-in-aceasta-seara-denia-acatistului-maicii-domnului/image00009-1.webp
+    thumb: /posts/slujba-unica-din-an-in-aceasta-seara-denia-acatistului-maicii-domnului/image00009-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/slujba-unica-din-an-in-aceasta-seara-denia-acatistului-maicii-domnului/image00010-1.webp
+    thumb: /posts/slujba-unica-din-an-in-aceasta-seara-denia-acatistului-maicii-domnului/image00010-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/slujba-unica-din-an-in-aceasta-seara-denia-acatistului-maicii-domnului/image00011-1.webp
+    thumb: /posts/slujba-unica-din-an-in-aceasta-seara-denia-acatistului-maicii-domnului/image00011-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/slujba-unica-din-an-in-aceasta-seara-denia-acatistului-maicii-domnului/image00012-1.webp
+    thumb: /posts/slujba-unica-din-an-in-aceasta-seara-denia-acatistului-maicii-domnului/image00012-1-sm.webp
+    width: 800
+    height: 533
 ---
 
 Denia Acatistului sau Slujba Imnului Acatist este oficiată în fiecare an, vineri seara, în săptămâna a V-a a Postului Sfintelor Paști.

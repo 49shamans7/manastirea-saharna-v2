@@ -40,6 +40,58 @@ galleryImages:
     thumb: /posts/privegherea-praznicului-adormirii-maicii-domnului/20240827_184750-scaled-sm.webp
     width: 800
     height: 1067
+  - src: /posts/privegherea-praznicului-adormirii-maicii-domnului/20240827_185708-scaled.webp
+    thumb: /posts/privegherea-praznicului-adormirii-maicii-domnului/20240827_185708-scaled-sm.webp
+    width: 800
+    height: 1420
+  - src: /posts/privegherea-praznicului-adormirii-maicii-domnului/20240827_191753-scaled.webp
+    thumb: /posts/privegherea-praznicului-adormirii-maicii-domnului/20240827_191753-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/privegherea-praznicului-adormirii-maicii-domnului/20240827_191815-scaled.webp
+    thumb: /posts/privegherea-praznicului-adormirii-maicii-domnului/20240827_191815-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/privegherea-praznicului-adormirii-maicii-domnului/20240827_203257-scaled.webp
+    thumb: /posts/privegherea-praznicului-adormirii-maicii-domnului/20240827_203257-scaled-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/privegherea-praznicului-adormirii-maicii-domnului/20240827_203312-scaled.webp
+    thumb: /posts/privegherea-praznicului-adormirii-maicii-domnului/20240827_203312-scaled-sm.webp
+    width: 800
+    height: 1141
+  - src: /posts/privegherea-praznicului-adormirii-maicii-domnului/20240827_203317-scaled.webp
+    thumb: /posts/privegherea-praznicului-adormirii-maicii-domnului/20240827_203317-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/privegherea-praznicului-adormirii-maicii-domnului/20240827_203335-scaled.webp
+    thumb: /posts/privegherea-praznicului-adormirii-maicii-domnului/20240827_203335-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/privegherea-praznicului-adormirii-maicii-domnului/20240827_203341-1-scaled.webp
+    thumb: /posts/privegherea-praznicului-adormirii-maicii-domnului/20240827_203341-1-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/privegherea-praznicului-adormirii-maicii-domnului/20240827_203631-scaled.webp
+    thumb: /posts/privegherea-praznicului-adormirii-maicii-domnului/20240827_203631-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/privegherea-praznicului-adormirii-maicii-domnului/20240827_213612-scaled.webp
+    thumb: /posts/privegherea-praznicului-adormirii-maicii-domnului/20240827_213612-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/privegherea-praznicului-adormirii-maicii-domnului/20240827_213746-scaled.webp
+    thumb: /posts/privegherea-praznicului-adormirii-maicii-domnului/20240827_213746-scaled-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/privegherea-praznicului-adormirii-maicii-domnului/20240827_213754-scaled.webp
+    thumb: /posts/privegherea-praznicului-adormirii-maicii-domnului/20240827_213754-scaled-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/privegherea-praznicului-adormirii-maicii-domnului/20240827_213805-scaled.webp
+    thumb: /posts/privegherea-praznicului-adormirii-maicii-domnului/20240827_213805-scaled-sm.webp
+    width: 800
+    height: 1067
 ---
 
 

@@ -40,6 +40,42 @@ galleryImages:
     thumb: /posts/gala-tineretului-ortodox/51668631_1876931365746578_8703461091713220608_n-sm.webp
     width: 800
     height: 600
+  - src: /posts/gala-tineretului-ortodox/51670499_1876931022413279_2907720686485110784_n.webp
+    thumb: /posts/gala-tineretului-ortodox/51670499_1876931022413279_2907720686485110784_n-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/gala-tineretului-ortodox/51691381_1876933402413041_535822042331611136_n.webp
+    thumb: /posts/gala-tineretului-ortodox/51691381_1876933402413041_535822042331611136_n-sm.webp
+    width: 720
+    height: 960
+  - src: /posts/gala-tineretului-ortodox/51733879_1876933065746408_6943056728405573632_n.webp
+    thumb: /posts/gala-tineretului-ortodox/51733879_1876933065746408_6943056728405573632_n-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/gala-tineretului-ortodox/51736333_1876931932413188_2737223889426841600_n.webp
+    thumb: /posts/gala-tineretului-ortodox/51736333_1876931932413188_2737223889426841600_n-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/gala-tineretului-ortodox/51768480_1876932792413102_4013215787819991040_n.webp
+    thumb: /posts/gala-tineretului-ortodox/51768480_1876932792413102_4013215787819991040_n-sm.webp
+    width: 720
+    height: 479
+  - src: /posts/gala-tineretului-ortodox/51777422_1876932902413091_4246389296031858688_n.webp
+    thumb: /posts/gala-tineretului-ortodox/51777422_1876932902413091_4246389296031858688_n-sm.webp
+    width: 720
+    height: 960
+  - src: /posts/gala-tineretului-ortodox/51781193_1876931659079882_2010021918316429312_n.webp
+    thumb: /posts/gala-tineretului-ortodox/51781193_1876931659079882_2010021918316429312_n-sm.webp
+    width: 720
+    height: 479
+  - src: /posts/gala-tineretului-ortodox/51926043_1876931515746563_6622248853515010048_n.webp
+    thumb: /posts/gala-tineretului-ortodox/51926043_1876931515746563_6622248853515010048_n-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/gala-tineretului-ortodox/52384572_1876933175746397_4978838926904000512_n.webp
+    thumb: /posts/gala-tineretului-ortodox/52384572_1876933175746397_4978838926904000512_n-sm.webp
+    width: 720
+    height: 960
 ---
 
 Tinerii din IP Gimnaziul Saharna Nouă, r-nul Rezina, au participat la Gala Tineretului Ortodox, Ediția a III-a.

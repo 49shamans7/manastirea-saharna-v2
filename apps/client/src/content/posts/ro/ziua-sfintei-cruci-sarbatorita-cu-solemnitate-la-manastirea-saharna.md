@@ -40,6 +40,170 @@ galleryImages:
     thumb: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_000071-sm.webp
     width: 800
     height: 534
+  - src: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_000081.webp
+    thumb: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_000081-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_000091.webp
+    thumb: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_000091-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_000101.webp
+    thumb: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_000101-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_000111.webp
+    thumb: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_000111-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_000121.webp
+    thumb: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_000121-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_000131.webp
+    thumb: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_000131-sm.webp
+    width: 512
+    height: 768
+  - src: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_000141.webp
+    thumb: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_000141-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_000151.webp
+    thumb: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_000151-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_000161.webp
+    thumb: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_000161-sm.webp
+    width: 512
+    height: 768
+  - src: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_000171.webp
+    thumb: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_000171-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_000181.webp
+    thumb: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_000181-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_000191.webp
+    thumb: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_000191-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_000201.webp
+    thumb: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_000201-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_000211.webp
+    thumb: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_000211-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_000221.webp
+    thumb: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_000221-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_000231.webp
+    thumb: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_000231-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00024.webp
+    thumb: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00024-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00025.webp
+    thumb: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00025-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00026.webp
+    thumb: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00026-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00027.webp
+    thumb: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00027-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00028.webp
+    thumb: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00028-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00029.webp
+    thumb: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00029-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00030.webp
+    thumb: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00030-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00031.webp
+    thumb: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00031-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00032.webp
+    thumb: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00032-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00033.webp
+    thumb: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00033-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00034.webp
+    thumb: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00034-sm.webp
+    width: 512
+    height: 768
+  - src: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00035.webp
+    thumb: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00035-sm.webp
+    width: 512
+    height: 768
+  - src: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00036.webp
+    thumb: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00036-sm.webp
+    width: 512
+    height: 768
+  - src: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00037.webp
+    thumb: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00037-sm.webp
+    width: 512
+    height: 768
+  - src: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00038.webp
+    thumb: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00038-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00039.webp
+    thumb: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00039-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00040.webp
+    thumb: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00040-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00041.webp
+    thumb: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00041-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00042.webp
+    thumb: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00042-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00043.webp
+    thumb: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00043-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00044.webp
+    thumb: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00044-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00045.webp
+    thumb: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00045-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00046.webp
+    thumb: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00046-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00047.webp
+    thumb: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00047-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00048.webp
+    thumb: /posts/ziua-sfintei-cruci-sarbatorita-cu-solemnitate-la-manastirea-saharna/privegherea-ziua-crucii_00048-sm.webp
+    width: 800
+    height: 534
 ---
 
 Crucea, care până la Hristos a fost unealtă de tortură, stârnind groază și silă, după moartea lui Hristos pe Cruce, a devenit arma și semnul mântuirii noastre.

@@ -1,118 +1,74 @@
 # Cloudflare handover
 
-The switch from GitHub Pages to the monastery's own Cloudflare account. One
-session with the account holder logged in, about 60–90 minutes, most of it
-waiting for DNS. Nothing here has been run yet.
+The switch from GitHub Pages and the old WordPress to the monastery's own
+Cloudflare account. Cloudflare is the only new account: no Resend, no mail service.
+Nothing here has been run on a real account yet.
 
-Everything is prepared in the repo:
+## What the owner does
 
-| File | Role |
+- [ ] **1. Account.** Create a free Cloudflare account, or log into the one that
+      already holds `manastirea-saharna.md` (see *The zone*).
+- [ ] **2. Log in.** From the repo root: `bunx wrangler login`
+- [ ] **3. One command.** `bun run cloudflare:setup`. It asks you to type the account
+      name, then to answer a few questions.
+- [ ] **4. Confirm DNS.** The command prints the DNS as it stands, keeps a copy in
+      `.work/`, and asks twice: once for the mail subdomain, once for the switch.
+      Look at the workers.dev preview before you type the domain.
+- [ ] **5. Secretary.** Someone with access to `secretariat@manastirea-saharna.md`
+      clicks the link in the Cloudflare verification mail.
+- [ ] **6. Test.** Send one pomelnic from the site and confirm it arrives.
+
+`bun run cloudflare:setup --dry-run` prints every step and touches no account. The
+real run is safe to repeat: it skips what exists and picks up what was declined.
+
+## What the command does
+
+| Step | Result |
 |---|---|
-| `apps/client/wrangler.jsonc` | the site as Workers static assets (`bun run build:cloudflare` → `dist/`) |
-| `apps/client/public/_headers` | caching + security headers (CSP hashes filled in at build) |
-| `apps/client/public/_redirects` | ~1,300 old WordPress URLs → new routes (`bun run redirects` regenerates) |
-| `workers/saharna-pomelnic/` | the Pomelnic form backend (Turnstile check, mail through Resend) |
+| Account | stops unless you confirm it by typing its name; refuses the previous developer's |
+| Zone | finds `manastirea-saharna.md` in the account |
+| Worker | deploys `workers/saharna-pomelnic` |
+| Turnstile | creates the widget through wrangler, puts its secret on the worker |
+| Mail | registers `POMELNIC_TO` as a destination, enables sending on `formular.manastirea-saharna.md` |
+| Admin sign-in | optional: `workers/sveltia-cms-auth` (`docs/ADMIN.md`) |
+| Site | writes `PUBLIC_POMELNIC_WORKER_URL` and `PUBLIC_TURNSTILE_SITE_KEY` to `apps/client/.env`, builds for the domain root, deploys as Workers static assets |
+| Domain | attaches the apex and `www.` |
+| GitHub | sets the two variables and two secrets through `gh`; you create one API token (template **Edit Cloudflare Workers**) and paste it |
 
-## Before the session
+After that, `.github/workflows/deploy-cloudflare.yml` publishes every push, so
+admin saves reach the site. It does nothing until those secrets exist.
 
-- [ ] Who controls the domain `manastirea-saharna.md` today (registrar login)?
-- [ ] **The domain is already on Cloudflare** (checked 2026-10-10: nameservers
-      `greg.ns.cloudflare.com` / `kim.ns.cloudflare.com`, proxying the old
-      WordPress). Find out whose Cloudflare account holds that zone. If the
-      monastery can log into it, use that account for everything below and skip
-      step 6.1/6.3 (the zone is already there). If it is the previous developer's
-      or the old host's, either get the zone moved to the monastery's account
-      (Cloudflare → zone → *Move domain*) or re-add it there and switch nameservers.
-- [ ] **Email on the domain.** `info@` and `secretariat@manastirea-saharna.md` are
-      in use. Export the current DNS records (MX, SPF, DKIM, any TXT) first. If
-      they are lost in the move, the monastery's email stops.
-- [ ] The address pomelnice should go to (`POMELNIC_TO`).
+## The zone
 
-## 1. Account and login (5 min)
+The domain is already on Cloudflare (`greg` / `kim.ns.cloudflare.com`), in an account
+nobody has identified yet. The command tells you if the zone is not in yours. The
+site and the worker still deploy to workers.dev, but mail and the domain wait until
+the holder moves the zone to your account, or you add it and change the nameservers
+at the registrar. In that second case, check the imported records against the export
+before you change anything.
 
-```sh
-cd ~/Projects/msaharna/apps/client
-bunx wrangler login            # the monastery's Cloudflare account
-bunx wrangler whoami           # confirm the account name
-```
+## Mail
 
-## 2. Deploy the site on workers.dev (5 min)
+DNS on 2026-11-04: `MX 10 mail.manastirea-saharna.md` → `188.40.51.250`, which is
+`hosting1.prohosting.md`; `webmail.` is the same host. SPF is
+`v=spf1 +a +mx +a:hosting1.prohosting.md -all`, DMARC `p=none`.
 
-```sh
-bunx wrangler deploy           # builds for the domain root and uploads dist/
-```
+- **The monastery's mailboxes live on the old hosting. Do not cancel it** when the
+  WordPress goes, unless the mail has moved first.
+- **Never enable Email Routing on the domain itself.** It replaces that MX and the
+  mailboxes stop receiving. The setup uses a subdomain, so the root records stay.
+- The form sends through the Worker `send_email` binding to a verified destination
+  address, which Cloudflare's docs call free on every plan. Its pricing table also
+  lists Email Sending as Workers Paid. If Cloudflare refuses the subdomain on the free
+  plan, the command prints the alternative: Email Routing on the subdomain (free,
+  dashboard), or Workers Paid.
+- `POMELNIC_TO` is in `workers/saharna-pomelnic/wrangler.jsonc`. If it changes, run
+  the command again and verify the new address.
 
-Open the printed `*.workers.dev` URL and check home, a post, /galerie, /cautare,
-and an old URL such as `/istoria-sfintei-manastiri/` (must redirect to `/istoria/`).
+## After the switch
 
-## 3. Turnstile (5 min)
-
-Dashboard → Turnstile → Add site → domain `manastirea-saharna.md` (+ the
-workers.dev host while testing). Keep the **site key** (public) and the
-**secret key**.
-
-## 4. Mail through Resend (15 min + DNS wait)
-
-Resend account (the monastery's) → Domains → add `manastirea-saharna.md` → it
-lists SPF/DKIM records. Add them in step 6, then verify. Create an API key.
-
-## 5. The Pomelnic worker (10 min)
-
-```sh
-cd ~/Projects/msaharna/workers/saharna-pomelnic
-# wrangler.jsonc: POMELNIC_TO = the monastery address,
-#                 ALLOWED_ORIGIN = https://manastirea-saharna.md,
-#                 SITE_URL       = https://manastirea-saharna.md
-bunx wrangler secret put RESEND_API_KEY
-bunx wrangler secret put TURNSTILE_SECRET_KEY
-bunx wrangler deploy
-```
-
-## 6. Domain (15 min + up to 24 h propagation)
-
-1. Cloudflare → Add a site → `manastirea-saharna.md` → Free plan.
-2. **Check the imported DNS records against the export from "Before"**: MX, SPF,
-   DKIM must all be there. Add Resend's records from step 4.
-3. At the registrar, switch the nameservers to the two Cloudflare gives.
-4. When the zone shows **Active**: in `apps/client/wrangler.jsonc` uncomment the
-   `routes` block, then `bunx wrangler deploy` again. That attaches
-   `manastirea-saharna.md` and `www.` with certificates.
-
-## 7. Wire the form and redeploy (5 min)
-
-`apps/client/.env`:
-
-```sh
-PUBLIC_POMELNIC_WORKER_URL=https://saharna-pomelnic.<subdomain>.workers.dev
-PUBLIC_TURNSTILE_SITE_KEY=<site key from step 3>
-```
-
-`bunx wrangler deploy`, then send a test pomelnic and confirm it arrives.
-
-## 8. Analytics (2 min)
-
-Dashboard → Web Analytics → enable for the domain (no cookies, no banner).
-
-## 9. Switch off the old path, then clean the repo
-
-- GitHub repo → Settings → Pages → disable. Delete `.github/workflows/deploy.yml`.
-- Delete the previous developer's infrastructure, which nothing uses any more:
-  `apps/cms/`, `workers/pomelnic/`, `.github/workflows/deploy-worker.yml`,
-  the `dev:cms` / `build:cms` scripts and the `apps/*` workspace glob in the root
-  `package.json` (→ `apps/client`).
-- Delete `workers/pomelnic/` only — `deploy-worker.yml` now deploys
-  `workers/saharna-pomelnic/` and stays.
-
-## 10. Deploy on every push — required for the admin (5 min)
-
-`.github/workflows/deploy-cloudflare.yml` is already in the repo and skips
-itself until it has credentials. Each save in `/admin` is a push to `dev`, so
-without this the admin's edits would not reach the live site.
-
-1. Cloudflare → My Profile → API Tokens → *Create token* → template
-   **Edit Cloudflare Workers** → limited to the monastery account.
-2. GitHub repo → Settings → Secrets and variables → Actions:
-   - secret `CLOUDFLARE_API_TOKEN` = that token
-   - secret `CLOUDFLARE_ACCOUNT_ID` = the account id (`bunx wrangler whoami`)
-   - variables `PUBLIC_POMELNIC_WORKER_URL`, `PUBLIC_TURNSTILE_SITE_KEY` (step 7)
-3. Actions → *Deploy to Cloudflare* → Run workflow. From then on every push deploys.
+- GitHub → Settings → Pages → disable, delete `.github/workflows/deploy.yml`, and drop
+  `https://49shamans7.github.io` from `ALLOWED_ORIGINS` and `49shamans7.github.io`
+  from `ALLOWED_DOMAINS`.
+- `apps/client/public/_redirects` holds the old WordPress URLs and works only on the
+  root build. `bun run redirects` regenerates it.

@@ -28,11 +28,9 @@ const footerLinks = [
   { key: "search.title", href: "/cautare" },
 ] as const;
 const email = t("footer.email").split(",")[0]?.trim() ?? "";
-const phone = t("contact.phoneSecretariat");
+const phone = t("contact.phoneMain");
 const socialLinks = [
-  { key: "social.youtube", href: "https://www.youtube.com/@manastirea.saharna", icon: "youtube", mark: "" },
-  { key: "social.facebook", href: "https://www.facebook.com/ManastireaSaharna/", icon: "text", mark: "f" },
-  { key: "social.tiktok", href: "https://www.tiktok.com/@monklife?_r=1&_t=ZS-972uTnfFdwq", icon: "tiktok", mark: "" },
+  { key: "social.facebook", href: "https://www.facebook.com/ManastireaSaharna/", mark: "f" },
 ] as const;
 ---
 
@@ -63,13 +61,7 @@ const socialLinks = [
         {
           socialLinks.map((item) => (
             <a href={item.href} aria-label={t(item.key)} title={t(item.key)} target="_blank" rel="noreferrer">
-              {item.icon === "youtube" ? (
-                <Icon name="youtube" size={18} />
-              ) : item.icon === "tiktok" ? (
-                <Icon name="tiktok" size={18} />
-              ) : (
-                <span aria-hidden="true">{item.mark}</span>
-              )}
+              <span aria-hidden="true">{item.mark}</span>
             </a>
           ))
         }

@@ -9,3 +9,5 @@ template: chamber
 order: 2
 sourceUrl: "https://manastirea-saharna.md/mitropolitul/"
 ---
+
+![Metropolitan Vladimir](/pages/mitropolitul/mitropolitul-vladimir.webp)

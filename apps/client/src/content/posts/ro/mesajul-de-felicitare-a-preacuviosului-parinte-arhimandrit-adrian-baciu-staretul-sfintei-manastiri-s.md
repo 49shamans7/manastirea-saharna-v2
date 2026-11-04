@@ -6,7 +6,7 @@ author: "Iuvenalie Arhimandritul"
 draft: false
 zone: green
 gallery: false
-sourceUrl: "https://manastirea-saharna.md/stiri-si-evenimente/mesajul-de-felicitare-a-preacuviosului-parinte-arhimandrit-adrian-baciu-staretul-sfintei-manastiri-saharna-2/"
+sourceUrl: "https://manastirea-saharna.md/stiri-si-evenimente/mesajul-de-felicitare-a-preacuviosului-parinte-arhimandrit-adrian-baciu-staretul-sfintei-manastiri-saharna/"
 archiveImages: 1
 image:
   src: /posts/mesajul-de-felicitare-a-preacuviosului-parinte-arhimandrit-adrian-baciu-staretul-sfintei-manastiri-s/194408-p.webp

@@ -40,6 +40,54 @@ galleryImages:
     thumb: /posts/binecuvantarea-gradinitei-din-s-saharna-noua-de-clericii-manastirii/49144912_311171419605453_1480446957456457728_n-1-sm.webp
     width: 720
     height: 540
+  - src: /posts/binecuvantarea-gradinitei-din-s-saharna-noua-de-clericii-manastirii/49170296_525851034559103_5792647131126824960_n-1.webp
+    thumb: /posts/binecuvantarea-gradinitei-din-s-saharna-noua-de-clericii-manastirii/49170296_525851034559103_5792647131126824960_n-1-sm.webp
+    width: 720
+    height: 960
+  - src: /posts/binecuvantarea-gradinitei-din-s-saharna-noua-de-clericii-manastirii/49184631_133390524248044_2675835165950869504_n-1.webp
+    thumb: /posts/binecuvantarea-gradinitei-din-s-saharna-noua-de-clericii-manastirii/49184631_133390524248044_2675835165950869504_n-1-sm.webp
+    width: 720
+    height: 540
+  - src: /posts/binecuvantarea-gradinitei-din-s-saharna-noua-de-clericii-manastirii/49203514_367627383995996_6690728147089883136_n-1.webp
+    thumb: /posts/binecuvantarea-gradinitei-din-s-saharna-noua-de-clericii-manastirii/49203514_367627383995996_6690728147089883136_n-1-sm.webp
+    width: 720
+    height: 540
+  - src: /posts/binecuvantarea-gradinitei-din-s-saharna-noua-de-clericii-manastirii/49205118_282603415780773_3371184770535915520_n-1.webp
+    thumb: /posts/binecuvantarea-gradinitei-din-s-saharna-noua-de-clericii-manastirii/49205118_282603415780773_3371184770535915520_n-1-sm.webp
+    width: 720
+    height: 960
+  - src: /posts/binecuvantarea-gradinitei-din-s-saharna-noua-de-clericii-manastirii/49210710_279404809422224_6008185198678638592_n-1.webp
+    thumb: /posts/binecuvantarea-gradinitei-din-s-saharna-noua-de-clericii-manastirii/49210710_279404809422224_6008185198678638592_n-1-sm.webp
+    width: 720
+    height: 960
+  - src: /posts/binecuvantarea-gradinitei-din-s-saharna-noua-de-clericii-manastirii/49314186_588969048210128_1825012641513340928_n-1.webp
+    thumb: /posts/binecuvantarea-gradinitei-din-s-saharna-noua-de-clericii-manastirii/49314186_588969048210128_1825012641513340928_n-1-sm.webp
+    width: 720
+    height: 960
+  - src: /posts/binecuvantarea-gradinitei-din-s-saharna-noua-de-clericii-manastirii/49346131_347701159146858_1817550818736340992_n-1.webp
+    thumb: /posts/binecuvantarea-gradinitei-din-s-saharna-noua-de-clericii-manastirii/49346131_347701159146858_1817550818736340992_n-1-sm.webp
+    width: 720
+    height: 960
+  - src: /posts/binecuvantarea-gradinitei-din-s-saharna-noua-de-clericii-manastirii/49385109_2073367709375971_348000103115522048_n-1.webp
+    thumb: /posts/binecuvantarea-gradinitei-din-s-saharna-noua-de-clericii-manastirii/49385109_2073367709375971_348000103115522048_n-1-sm.webp
+    width: 720
+    height: 540
+  - src: /posts/binecuvantarea-gradinitei-din-s-saharna-noua-de-clericii-manastirii/49385109_2073367709375971_348000103115522048_n.webp
+    thumb: /posts/binecuvantarea-gradinitei-din-s-saharna-noua-de-clericii-manastirii/49385109_2073367709375971_348000103115522048_n-sm.webp
+    width: 720
+    height: 540
+  - src: /posts/binecuvantarea-gradinitei-din-s-saharna-noua-de-clericii-manastirii/49446042_313480999272608_6622992844929892352_n-1.webp
+    thumb: /posts/binecuvantarea-gradinitei-din-s-saharna-noua-de-clericii-manastirii/49446042_313480999272608_6622992844929892352_n-1-sm.webp
+    width: 720
+    height: 540
+  - src: /posts/binecuvantarea-gradinitei-din-s-saharna-noua-de-clericii-manastirii/49577989_2013459662063201_8430491047896809472_n-.webp
+    thumb: /posts/binecuvantarea-gradinitei-din-s-saharna-noua-de-clericii-manastirii/49577989_2013459662063201_8430491047896809472_n--sm.webp
+    width: 720
+    height: 540
+  - src: /posts/binecuvantarea-gradinitei-din-s-saharna-noua-de-clericii-manastirii/49577989_2013459662063201_8430491047896809472_n.webp
+    thumb: /posts/binecuvantarea-gradinitei-din-s-saharna-noua-de-clericii-manastirii/49577989_2013459662063201_8430491047896809472_n-sm.webp
+    width: 720
+    height: 540
 ---
 
 Știm cu toți că lumea e ocrotită de îngerii lui Hristos, la fel ca și fiecare țară, oraș sau sat, casă sau creștin. Sfințind casa, preotul îl cheamă pe Duhul Sfânt prin rugaciunile sale și alungă duhurile rele dintr-o încăpere, locaș. Astfel îngerul Domnului ocrotește locuința cu condiția că acolo să se trăiască bine, potrivit moralei creștine.

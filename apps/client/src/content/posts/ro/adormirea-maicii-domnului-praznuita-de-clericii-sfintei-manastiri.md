@@ -40,6 +40,42 @@ galleryImages:
     thumb: /posts/adormirea-maicii-domnului-praznuita-de-clericii-sfintei-manastiri/image00007-1-sm.webp
     width: 800
     height: 766
+  - src: /posts/adormirea-maicii-domnului-praznuita-de-clericii-sfintei-manastiri/image00008-1.webp
+    thumb: /posts/adormirea-maicii-domnului-praznuita-de-clericii-sfintei-manastiri/image00008-1-sm.webp
+    width: 800
+    height: 588
+  - src: /posts/adormirea-maicii-domnului-praznuita-de-clericii-sfintei-manastiri/image00009-1.webp
+    thumb: /posts/adormirea-maicii-domnului-praznuita-de-clericii-sfintei-manastiri/image00009-1-sm.webp
+    width: 800
+    height: 486
+  - src: /posts/adormirea-maicii-domnului-praznuita-de-clericii-sfintei-manastiri/image00010-1.webp
+    thumb: /posts/adormirea-maicii-domnului-praznuita-de-clericii-sfintei-manastiri/image00010-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/adormirea-maicii-domnului-praznuita-de-clericii-sfintei-manastiri/image00011-1.webp
+    thumb: /posts/adormirea-maicii-domnului-praznuita-de-clericii-sfintei-manastiri/image00011-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/adormirea-maicii-domnului-praznuita-de-clericii-sfintei-manastiri/image00012-1.webp
+    thumb: /posts/adormirea-maicii-domnului-praznuita-de-clericii-sfintei-manastiri/image00012-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/adormirea-maicii-domnului-praznuita-de-clericii-sfintei-manastiri/image00013-1.webp
+    thumb: /posts/adormirea-maicii-domnului-praznuita-de-clericii-sfintei-manastiri/image00013-1-sm.webp
+    width: 800
+    height: 653
+  - src: /posts/adormirea-maicii-domnului-praznuita-de-clericii-sfintei-manastiri/image00014-1.webp
+    thumb: /posts/adormirea-maicii-domnului-praznuita-de-clericii-sfintei-manastiri/image00014-1-sm.webp
+    width: 745
+    height: 1024
+  - src: /posts/adormirea-maicii-domnului-praznuita-de-clericii-sfintei-manastiri/image00015-1.webp
+    thumb: /posts/adormirea-maicii-domnului-praznuita-de-clericii-sfintei-manastiri/image00015-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/adormirea-maicii-domnului-praznuita-de-clericii-sfintei-manastiri/image00016-1.webp
+    thumb: /posts/adormirea-maicii-domnului-praznuita-de-clericii-sfintei-manastiri/image00016-1-sm.webp
+    width: 800
+    height: 534
 ---
 
 „Întru nașterea ta, zămislirea a fost fără sămânță; întru Adormirea ta, moartea fără stricăciune; minune îndoită întru minune s-a adunat, de Dumnezeu Născătoare…” (Sedealna a II-a la Utrenia Praznciului)

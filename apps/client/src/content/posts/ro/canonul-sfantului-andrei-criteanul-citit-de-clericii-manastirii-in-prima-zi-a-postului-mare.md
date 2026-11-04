@@ -40,6 +40,54 @@ galleryImages:
     thumb: /posts/canonul-sfantului-andrei-criteanul-citit-de-clericii-manastirii-in-prima-zi-a-postului-mare/image00007-sm.webp
     width: 800
     height: 534
+  - src: /posts/canonul-sfantului-andrei-criteanul-citit-de-clericii-manastirii-in-prima-zi-a-postului-mare/image00008.webp
+    thumb: /posts/canonul-sfantului-andrei-criteanul-citit-de-clericii-manastirii-in-prima-zi-a-postului-mare/image00008-sm.webp
+    width: 800
+    height: 671
+  - src: /posts/canonul-sfantului-andrei-criteanul-citit-de-clericii-manastirii-in-prima-zi-a-postului-mare/image00009.webp
+    thumb: /posts/canonul-sfantului-andrei-criteanul-citit-de-clericii-manastirii-in-prima-zi-a-postului-mare/image00009-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/canonul-sfantului-andrei-criteanul-citit-de-clericii-manastirii-in-prima-zi-a-postului-mare/image00010.webp
+    thumb: /posts/canonul-sfantului-andrei-criteanul-citit-de-clericii-manastirii-in-prima-zi-a-postului-mare/image00010-sm.webp
+    width: 800
+    height: 647
+  - src: /posts/canonul-sfantului-andrei-criteanul-citit-de-clericii-manastirii-in-prima-zi-a-postului-mare/image00011.webp
+    thumb: /posts/canonul-sfantului-andrei-criteanul-citit-de-clericii-manastirii-in-prima-zi-a-postului-mare/image00011-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/canonul-sfantului-andrei-criteanul-citit-de-clericii-manastirii-in-prima-zi-a-postului-mare/image00012.webp
+    thumb: /posts/canonul-sfantului-andrei-criteanul-citit-de-clericii-manastirii-in-prima-zi-a-postului-mare/image00012-sm.webp
+    width: 800
+    height: 701
+  - src: /posts/canonul-sfantului-andrei-criteanul-citit-de-clericii-manastirii-in-prima-zi-a-postului-mare/image00013.webp
+    thumb: /posts/canonul-sfantului-andrei-criteanul-citit-de-clericii-manastirii-in-prima-zi-a-postului-mare/image00013-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/canonul-sfantului-andrei-criteanul-citit-de-clericii-manastirii-in-prima-zi-a-postului-mare/image00014.webp
+    thumb: /posts/canonul-sfantului-andrei-criteanul-citit-de-clericii-manastirii-in-prima-zi-a-postului-mare/image00014-sm.webp
+    width: 800
+    height: 567
+  - src: /posts/canonul-sfantului-andrei-criteanul-citit-de-clericii-manastirii-in-prima-zi-a-postului-mare/image00015.webp
+    thumb: /posts/canonul-sfantului-andrei-criteanul-citit-de-clericii-manastirii-in-prima-zi-a-postului-mare/image00015-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/canonul-sfantului-andrei-criteanul-citit-de-clericii-manastirii-in-prima-zi-a-postului-mare/image00016.webp
+    thumb: /posts/canonul-sfantului-andrei-criteanul-citit-de-clericii-manastirii-in-prima-zi-a-postului-mare/image00016-sm.webp
+    width: 771
+    height: 768
+  - src: /posts/canonul-sfantului-andrei-criteanul-citit-de-clericii-manastirii-in-prima-zi-a-postului-mare/image00017.webp
+    thumb: /posts/canonul-sfantului-andrei-criteanul-citit-de-clericii-manastirii-in-prima-zi-a-postului-mare/image00017-sm.webp
+    width: 800
+    height: 459
+  - src: /posts/canonul-sfantului-andrei-criteanul-citit-de-clericii-manastirii-in-prima-zi-a-postului-mare/image00018.webp
+    thumb: /posts/canonul-sfantului-andrei-criteanul-citit-de-clericii-manastirii-in-prima-zi-a-postului-mare/image00018-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/canonul-sfantului-andrei-criteanul-citit-de-clericii-manastirii-in-prima-zi-a-postului-mare/image00019.webp
+    thumb: /posts/canonul-sfantului-andrei-criteanul-citit-de-clericii-manastirii-in-prima-zi-a-postului-mare/image00019-sm.webp
+    width: 800
+    height: 498
 ---
 
 În prima săptămână a Postului mare, Biserica ne adună pe toți în jurul analogului pentru a cânta împreună Canonul cel Mare.

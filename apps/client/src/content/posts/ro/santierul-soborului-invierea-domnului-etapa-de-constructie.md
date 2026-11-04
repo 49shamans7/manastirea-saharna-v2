@@ -40,6 +40,10 @@ galleryImages:
     thumb: /posts/santierul-soborului-invierea-domnului-etapa-de-constructie/7-sm.webp
     width: 800
     height: 533
+  - src: /posts/santierul-soborului-invierea-domnului-etapa-de-constructie/8.webp
+    thumb: /posts/santierul-soborului-invierea-domnului-etapa-de-constructie/8-sm.webp
+    width: 800
+    height: 533
 ---
 
 Etapa de construcție a soborului ”Învierea Domnului”

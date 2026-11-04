@@ -40,6 +40,66 @@ galleryImages:
     thumb: /posts/adormirea-maicii-domnului-la-manastirea-saharna/10517710_706347049450129_993674309874469656_n-sm.webp
     width: 800
     height: 530
+  - src: /posts/adormirea-maicii-domnului-la-manastirea-saharna/10523976_706346229450211_6070544871830637584_n.webp
+    thumb: /posts/adormirea-maicii-domnului-la-manastirea-saharna/10523976_706346229450211_6070544871830637584_n-sm.webp
+    width: 800
+    height: 530
+  - src: /posts/adormirea-maicii-domnului-la-manastirea-saharna/10590617_706345936116907_6165264151363873811_n.webp
+    thumb: /posts/adormirea-maicii-domnului-la-manastirea-saharna/10590617_706345936116907_6165264151363873811_n-sm.webp
+    width: 800
+    height: 530
+  - src: /posts/adormirea-maicii-domnului-la-manastirea-saharna/10592984_706349559449878_841684400906946721_n.webp
+    thumb: /posts/adormirea-maicii-domnului-la-manastirea-saharna/10592984_706349559449878_841684400906946721_n-sm.webp
+    width: 800
+    height: 530
+  - src: /posts/adormirea-maicii-domnului-la-manastirea-saharna/10600445_706349666116534_3260241765495777715_n.webp
+    thumb: /posts/adormirea-maicii-domnului-la-manastirea-saharna/10600445_706349666116534_3260241765495777715_n-sm.webp
+    width: 800
+    height: 530
+  - src: /posts/adormirea-maicii-domnului-la-manastirea-saharna/10614403_706345426116958_4333206378450922339_n.webp
+    thumb: /posts/adormirea-maicii-domnului-la-manastirea-saharna/10614403_706345426116958_4333206378450922339_n-sm.webp
+    width: 800
+    height: 530
+  - src: /posts/adormirea-maicii-domnului-la-manastirea-saharna/10616257_706346572783510_9183037361419060505_n.webp
+    thumb: /posts/adormirea-maicii-domnului-la-manastirea-saharna/10616257_706346572783510_9183037361419060505_n-sm.webp
+    width: 800
+    height: 530
+  - src: /posts/adormirea-maicii-domnului-la-manastirea-saharna/10620753_706347996116701_3357716349859815578_n.webp
+    thumb: /posts/adormirea-maicii-domnului-la-manastirea-saharna/10620753_706347996116701_3357716349859815578_n-sm.webp
+    width: 800
+    height: 530
+  - src: /posts/adormirea-maicii-domnului-la-manastirea-saharna/10632813_706345822783585_1444126410768003327_n.webp
+    thumb: /posts/adormirea-maicii-domnului-la-manastirea-saharna/10632813_706345822783585_1444126410768003327_n-sm.webp
+    width: 800
+    height: 530
+  - src: /posts/adormirea-maicii-domnului-la-manastirea-saharna/10635733_706348856116615_3528686591980300431_n.webp
+    thumb: /posts/adormirea-maicii-domnului-la-manastirea-saharna/10635733_706348856116615_3528686591980300431_n-sm.webp
+    width: 800
+    height: 530
+  - src: /posts/adormirea-maicii-domnului-la-manastirea-saharna/10646877_706346109450223_3587856036363468844_n.webp
+    thumb: /posts/adormirea-maicii-domnului-la-manastirea-saharna/10646877_706346109450223_3587856036363468844_n-sm.webp
+    width: 800
+    height: 530
+  - src: /posts/adormirea-maicii-domnului-la-manastirea-saharna/10653445_706345376116963_3392350535394716347_n-1.webp
+    thumb: /posts/adormirea-maicii-domnului-la-manastirea-saharna/10653445_706345376116963_3392350535394716347_n-1-sm.webp
+    width: 800
+    height: 530
+  - src: /posts/adormirea-maicii-domnului-la-manastirea-saharna/10653445_706345376116963_3392350535394716347_n.webp
+    thumb: /posts/adormirea-maicii-domnului-la-manastirea-saharna/10653445_706345376116963_3392350535394716347_n-sm.webp
+    width: 800
+    height: 530
+  - src: /posts/adormirea-maicii-domnului-la-manastirea-saharna/10660325_706345446116956_400886944747189339_n.webp
+    thumb: /posts/adormirea-maicii-domnului-la-manastirea-saharna/10660325_706345446116956_400886944747189339_n-sm.webp
+    width: 800
+    height: 530
+  - src: /posts/adormirea-maicii-domnului-la-manastirea-saharna/10954_706349812783186_510206398271770842_n.webp
+    thumb: /posts/adormirea-maicii-domnului-la-manastirea-saharna/10954_706349812783186_510206398271770842_n-sm.webp
+    width: 800
+    height: 530
+  - src: /posts/adormirea-maicii-domnului-la-manastirea-saharna/1932324_706346406116860_7548458111515161249_n.webp
+    thumb: /posts/adormirea-maicii-domnului-la-manastirea-saharna/1932324_706346406116860_7548458111515161249_n-sm.webp
+    width: 800
+    height: 530
 ---
 
 La data de 28 august, Biserica Ortodoxă cinstește Adormirea Maicii Domnului, cel mai de seamă eveniment religios al anului, din grupul sărbătorilor care o preslăvesc pe Sfânta Fecioară Maria. Praznicul Adormirii Maicii Domnului este cunoscut în popor sub numele de Sfântă Măria Mare sau Uspenia (denumire slavă).

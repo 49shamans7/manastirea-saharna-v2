@@ -40,6 +40,34 @@ galleryImages:
     thumb: /posts/daruind-vei-dobandi-2/received_3240041969549603-sm.webp
     width: 800
     height: 600
+  - src: /posts/daruind-vei-dobandi-2/received_341080011422133.webp
+    thumb: /posts/daruind-vei-dobandi-2/received_341080011422133-sm.webp
+    width: 720
+    height: 960
+  - src: /posts/daruind-vei-dobandi-2/received_385336746934096.webp
+    thumb: /posts/daruind-vei-dobandi-2/received_385336746934096-sm.webp
+    width: 720
+    height: 960
+  - src: /posts/daruind-vei-dobandi-2/received_523390999526773.webp
+    thumb: /posts/daruind-vei-dobandi-2/received_523390999526773-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/daruind-vei-dobandi-2/received_533639658328509.webp
+    thumb: /posts/daruind-vei-dobandi-2/received_533639658328509-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/daruind-vei-dobandi-2/received_667151584518752.webp
+    thumb: /posts/daruind-vei-dobandi-2/received_667151584518752-sm.webp
+    width: 720
+    height: 960
+  - src: /posts/daruind-vei-dobandi-2/received_710960886608419.webp
+    thumb: /posts/daruind-vei-dobandi-2/received_710960886608419-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/daruind-vei-dobandi-2/received_765566481092692.webp
+    thumb: /posts/daruind-vei-dobandi-2/received_765566481092692-sm.webp
+    width: 720
+    height: 960
 ---
 
 Milostenia este ca o sămânță. O sămânță bună poate da rod bun, însutit; fă ca și sămânța milosteniei tale să fie aleasă, să o dai cu inimă bună, curată, milostivă, compătimitoare. Sf.Ioan de Cronștadt

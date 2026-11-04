@@ -40,6 +40,146 @@ galleryImages:
     thumb: /posts/saptamana-tineretului-ortodox/57377403_417946255433429_2201384113175265280_n-sm.webp
     width: 800
     height: 600
+  - src: /posts/saptamana-tineretului-ortodox/57393195_1258249844322618_3257703342209499136_n.webp
+    thumb: /posts/saptamana-tineretului-ortodox/57393195_1258249844322618_3257703342209499136_n-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/saptamana-tineretului-ortodox/57434171_391499618103315_7866101730675523584_n.webp
+    thumb: /posts/saptamana-tineretului-ortodox/57434171_391499618103315_7866101730675523584_n-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/saptamana-tineretului-ortodox/57457037_2351232485144410_5485876162842329088_n.webp
+    thumb: /posts/saptamana-tineretului-ortodox/57457037_2351232485144410_5485876162842329088_n-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/saptamana-tineretului-ortodox/57614925_577058242778577_4270606851382444032_n.webp
+    thumb: /posts/saptamana-tineretului-ortodox/57614925_577058242778577_4270606851382444032_n-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/saptamana-tineretului-ortodox/58382398_415843992552945_6903800967838302208_n.webp
+    thumb: /posts/saptamana-tineretului-ortodox/58382398_415843992552945_6903800967838302208_n-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/saptamana-tineretului-ortodox/image00001.webp
+    thumb: /posts/saptamana-tineretului-ortodox/image00001-sm.webp
+    width: 800
+    height: 554
+  - src: /posts/saptamana-tineretului-ortodox/image00003.webp
+    thumb: /posts/saptamana-tineretului-ortodox/image00003-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/saptamana-tineretului-ortodox/image00004.webp
+    thumb: /posts/saptamana-tineretului-ortodox/image00004-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/saptamana-tineretului-ortodox/image00005.webp
+    thumb: /posts/saptamana-tineretului-ortodox/image00005-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/saptamana-tineretului-ortodox/image00006.webp
+    thumb: /posts/saptamana-tineretului-ortodox/image00006-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/saptamana-tineretului-ortodox/image00007.webp
+    thumb: /posts/saptamana-tineretului-ortodox/image00007-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/saptamana-tineretului-ortodox/image00008.webp
+    thumb: /posts/saptamana-tineretului-ortodox/image00008-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/saptamana-tineretului-ortodox/image00009.webp
+    thumb: /posts/saptamana-tineretului-ortodox/image00009-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/saptamana-tineretului-ortodox/image00010.webp
+    thumb: /posts/saptamana-tineretului-ortodox/image00010-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/saptamana-tineretului-ortodox/image00011.webp
+    thumb: /posts/saptamana-tineretului-ortodox/image00011-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/saptamana-tineretului-ortodox/image00012.webp
+    thumb: /posts/saptamana-tineretului-ortodox/image00012-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/saptamana-tineretului-ortodox/image00013.webp
+    thumb: /posts/saptamana-tineretului-ortodox/image00013-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/saptamana-tineretului-ortodox/image00014.webp
+    thumb: /posts/saptamana-tineretului-ortodox/image00014-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/saptamana-tineretului-ortodox/image00015.webp
+    thumb: /posts/saptamana-tineretului-ortodox/image00015-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/saptamana-tineretului-ortodox/image00016.webp
+    thumb: /posts/saptamana-tineretului-ortodox/image00016-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/saptamana-tineretului-ortodox/image00017.webp
+    thumb: /posts/saptamana-tineretului-ortodox/image00017-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/saptamana-tineretului-ortodox/image00018.webp
+    thumb: /posts/saptamana-tineretului-ortodox/image00018-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/saptamana-tineretului-ortodox/image00019.webp
+    thumb: /posts/saptamana-tineretului-ortodox/image00019-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/saptamana-tineretului-ortodox/image00020.webp
+    thumb: /posts/saptamana-tineretului-ortodox/image00020-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/saptamana-tineretului-ortodox/image00021.webp
+    thumb: /posts/saptamana-tineretului-ortodox/image00021-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/saptamana-tineretului-ortodox/image00022.webp
+    thumb: /posts/saptamana-tineretului-ortodox/image00022-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/saptamana-tineretului-ortodox/image00023.webp
+    thumb: /posts/saptamana-tineretului-ortodox/image00023-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/saptamana-tineretului-ortodox/image00024.webp
+    thumb: /posts/saptamana-tineretului-ortodox/image00024-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/saptamana-tineretului-ortodox/image00025.webp
+    thumb: /posts/saptamana-tineretului-ortodox/image00025-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/saptamana-tineretului-ortodox/image00026.webp
+    thumb: /posts/saptamana-tineretului-ortodox/image00026-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/saptamana-tineretului-ortodox/viber-image-2019-04-17-23-59-06.webp
+    thumb: /posts/saptamana-tineretului-ortodox/viber-image-2019-04-17-23-59-06-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/saptamana-tineretului-ortodox/viber-image-2019-04-17-23-59-13.webp
+    thumb: /posts/saptamana-tineretului-ortodox/viber-image-2019-04-17-23-59-13-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/saptamana-tineretului-ortodox/viber-image-2019-04-17-23-59-17.webp
+    thumb: /posts/saptamana-tineretului-ortodox/viber-image-2019-04-17-23-59-17-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/saptamana-tineretului-ortodox/viber-image-2019-04-17-23-59-25.webp
+    thumb: /posts/saptamana-tineretului-ortodox/viber-image-2019-04-17-23-59-25-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/saptamana-tineretului-ortodox/viber-image-2019-04-17-23-59-29.webp
+    thumb: /posts/saptamana-tineretului-ortodox/viber-image-2019-04-17-23-59-29-sm.webp
+    width: 800
+    height: 600
 ---
 
 Întâlnirea de suflet și pentru suflet pentru tinerii din Instituția Publică Gimnaziul Saharna Nouă.

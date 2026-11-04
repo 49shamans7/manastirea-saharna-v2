@@ -40,6 +40,46 @@ galleryImages:
     thumb: /posts/privegherea-de-praznicul-sf-cuv-macarie-2/20260525_174025-scaled-sm.webp
     width: 800
     height: 450
+  - src: /posts/privegherea-de-praznicul-sf-cuv-macarie-2/20260525_174403-scaled.webp
+    thumb: /posts/privegherea-de-praznicul-sf-cuv-macarie-2/20260525_174403-scaled-sm.webp
+    width: 800
+    height: 1421
+  - src: /posts/privegherea-de-praznicul-sf-cuv-macarie-2/20260525_174415-scaled.webp
+    thumb: /posts/privegherea-de-praznicul-sf-cuv-macarie-2/20260525_174415-scaled-sm.webp
+    width: 800
+    height: 1421
+  - src: /posts/privegherea-de-praznicul-sf-cuv-macarie-2/20260525_175435-scaled.webp
+    thumb: /posts/privegherea-de-praznicul-sf-cuv-macarie-2/20260525_175435-scaled-sm.webp
+    width: 800
+    height: 1421
+  - src: /posts/privegherea-de-praznicul-sf-cuv-macarie-2/20260525_175526-scaled.webp
+    thumb: /posts/privegherea-de-praznicul-sf-cuv-macarie-2/20260525_175526-scaled-sm.webp
+    width: 800
+    height: 1421
+  - src: /posts/privegherea-de-praznicul-sf-cuv-macarie-2/20260525_183424-scaled.webp
+    thumb: /posts/privegherea-de-praznicul-sf-cuv-macarie-2/20260525_183424-scaled-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/privegherea-de-praznicul-sf-cuv-macarie-2/20260525_183433-scaled.webp
+    thumb: /posts/privegherea-de-praznicul-sf-cuv-macarie-2/20260525_183433-scaled-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/privegherea-de-praznicul-sf-cuv-macarie-2/20260525_183658-scaled.webp
+    thumb: /posts/privegherea-de-praznicul-sf-cuv-macarie-2/20260525_183658-scaled-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/privegherea-de-praznicul-sf-cuv-macarie-2/20260525_184703-scaled.webp
+    thumb: /posts/privegherea-de-praznicul-sf-cuv-macarie-2/20260525_184703-scaled-sm.webp
+    width: 800
+    height: 1421
+  - src: /posts/privegherea-de-praznicul-sf-cuv-macarie-2/20260525_184721-scaled.webp
+    thumb: /posts/privegherea-de-praznicul-sf-cuv-macarie-2/20260525_184721-scaled-sm.webp
+    width: 800
+    height: 1421
+  - src: /posts/privegherea-de-praznicul-sf-cuv-macarie-2/20260525_185217-scaled.webp
+    thumb: /posts/privegherea-de-praznicul-sf-cuv-macarie-2/20260525_185217-scaled-sm.webp
+    width: 800
+    height: 1421
 ---
 
 

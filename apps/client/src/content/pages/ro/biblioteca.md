@@ -1,7 +1,7 @@
 ---
 title: "Biblioteca"
 eyebrow: "Racla · zona III"
-lead: "Canoanele și textele rânduite, adunate de obște."
+lead: "Canoanele și textele rânduite."
 zone: gold
 template: chamber
 order: 6
@@ -10,7 +10,7 @@ sourceUrl: "https://manastirea-saharna.md/biblioteca/"
 
 ## Canoane
 
-- Îndrumător Canonic – Pr. Prof. Liviu Stan (fișierul nu mai există nici pe vechiul site)
+- Îndrumător Canonic – Pr. Prof. Liviu Stan
 - [Presciptii Canonice](/fisiere/canoane/Presciptii_Canonice.pdf)
 - [Canoanele primului Sinod local de la Ancira (314)](/fisiere/canoane/Canoane_Ancira.pdf)
 - [Canoanele Sinodului al patrulea de la Antiohia (341)](/fisiere/canoane/Canoane_Antiohia.pdf)

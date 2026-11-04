@@ -40,6 +40,10 @@ galleryImages:
     thumb: /posts/iubirea-de-dumnezeu-se-reflecta-in-iubirea-aproapelui/received_469260044398095-sm.webp
     width: 528
     height: 960
+  - src: /posts/iubirea-de-dumnezeu-se-reflecta-in-iubirea-aproapelui/received_961744901251246.webp
+    thumb: /posts/iubirea-de-dumnezeu-se-reflecta-in-iubirea-aproapelui/received_961744901251246-sm.webp
+    width: 528
+    height: 960
 ---
 
 Iubirea de Dumnezeu se reflectă cel mai bine în iubirea aproapelui.

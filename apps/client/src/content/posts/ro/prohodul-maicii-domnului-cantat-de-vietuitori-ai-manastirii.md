@@ -40,6 +40,66 @@ galleryImages:
     thumb: /posts/prohodul-maicii-domnului-cantat-de-vietuitori-ai-manastirii/20230827_183017-scaled-sm.webp
     width: 800
     height: 1067
+  - src: /posts/prohodul-maicii-domnului-cantat-de-vietuitori-ai-manastirii/20230827_183046-scaled.webp
+    thumb: /posts/prohodul-maicii-domnului-cantat-de-vietuitori-ai-manastirii/20230827_183046-scaled-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/prohodul-maicii-domnului-cantat-de-vietuitori-ai-manastirii/20230827_183103-scaled.webp
+    thumb: /posts/prohodul-maicii-domnului-cantat-de-vietuitori-ai-manastirii/20230827_183103-scaled-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/prohodul-maicii-domnului-cantat-de-vietuitori-ai-manastirii/20230827_183126-scaled.webp
+    thumb: /posts/prohodul-maicii-domnului-cantat-de-vietuitori-ai-manastirii/20230827_183126-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/prohodul-maicii-domnului-cantat-de-vietuitori-ai-manastirii/20230827_183134-scaled.webp
+    thumb: /posts/prohodul-maicii-domnului-cantat-de-vietuitori-ai-manastirii/20230827_183134-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/prohodul-maicii-domnului-cantat-de-vietuitori-ai-manastirii/20230827_183143-scaled.webp
+    thumb: /posts/prohodul-maicii-domnului-cantat-de-vietuitori-ai-manastirii/20230827_183143-scaled-sm.webp
+    width: 800
+    height: 1423
+  - src: /posts/prohodul-maicii-domnului-cantat-de-vietuitori-ai-manastirii/20230827_183216-scaled.webp
+    thumb: /posts/prohodul-maicii-domnului-cantat-de-vietuitori-ai-manastirii/20230827_183216-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/prohodul-maicii-domnului-cantat-de-vietuitori-ai-manastirii/20230827_183246-scaled.webp
+    thumb: /posts/prohodul-maicii-domnului-cantat-de-vietuitori-ai-manastirii/20230827_183246-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/prohodul-maicii-domnului-cantat-de-vietuitori-ai-manastirii/20230827_194901-scaled.webp
+    thumb: /posts/prohodul-maicii-domnului-cantat-de-vietuitori-ai-manastirii/20230827_194901-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/prohodul-maicii-domnului-cantat-de-vietuitori-ai-manastirii/20230827_194921-scaled.webp
+    thumb: /posts/prohodul-maicii-domnului-cantat-de-vietuitori-ai-manastirii/20230827_194921-scaled-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/prohodul-maicii-domnului-cantat-de-vietuitori-ai-manastirii/20230827_195419-scaled.webp
+    thumb: /posts/prohodul-maicii-domnului-cantat-de-vietuitori-ai-manastirii/20230827_195419-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/prohodul-maicii-domnului-cantat-de-vietuitori-ai-manastirii/20230827_195431-scaled.webp
+    thumb: /posts/prohodul-maicii-domnului-cantat-de-vietuitori-ai-manastirii/20230827_195431-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/prohodul-maicii-domnului-cantat-de-vietuitori-ai-manastirii/20230827_195443-scaled.webp
+    thumb: /posts/prohodul-maicii-domnului-cantat-de-vietuitori-ai-manastirii/20230827_195443-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/prohodul-maicii-domnului-cantat-de-vietuitori-ai-manastirii/20230827_201413-scaled.webp
+    thumb: /posts/prohodul-maicii-domnului-cantat-de-vietuitori-ai-manastirii/20230827_201413-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/prohodul-maicii-domnului-cantat-de-vietuitori-ai-manastirii/20230827_201431-scaled.webp
+    thumb: /posts/prohodul-maicii-domnului-cantat-de-vietuitori-ai-manastirii/20230827_201431-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/prohodul-maicii-domnului-cantat-de-vietuitori-ai-manastirii/20230827_212119-scaled.webp
+    thumb: /posts/prohodul-maicii-domnului-cantat-de-vietuitori-ai-manastirii/20230827_212119-scaled-sm.webp
+    width: 800
+    height: 1067
 ---
 
 

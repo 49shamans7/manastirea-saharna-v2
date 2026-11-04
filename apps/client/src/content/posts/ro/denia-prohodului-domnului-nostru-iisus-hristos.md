@@ -40,6 +40,42 @@ galleryImages:
     thumb: /posts/denia-prohodului-domnului-nostru-iisus-hristos/20230414_191640-scaled-sm.webp
     width: 800
     height: 1067
+  - src: /posts/denia-prohodului-domnului-nostru-iisus-hristos/20230414_191645-scaled.webp
+    thumb: /posts/denia-prohodului-domnului-nostru-iisus-hristos/20230414_191645-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/denia-prohodului-domnului-nostru-iisus-hristos/20230414_191654-scaled.webp
+    thumb: /posts/denia-prohodului-domnului-nostru-iisus-hristos/20230414_191654-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/denia-prohodului-domnului-nostru-iisus-hristos/20230414_191701-scaled.webp
+    thumb: /posts/denia-prohodului-domnului-nostru-iisus-hristos/20230414_191701-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/denia-prohodului-domnului-nostru-iisus-hristos/20230414_191926-scaled.webp
+    thumb: /posts/denia-prohodului-domnului-nostru-iisus-hristos/20230414_191926-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/denia-prohodului-domnului-nostru-iisus-hristos/20230414_191931-scaled.webp
+    thumb: /posts/denia-prohodului-domnului-nostru-iisus-hristos/20230414_191931-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/denia-prohodului-domnului-nostru-iisus-hristos/20230414_191941-scaled.webp
+    thumb: /posts/denia-prohodului-domnului-nostru-iisus-hristos/20230414_191941-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/denia-prohodului-domnului-nostru-iisus-hristos/20230414_192014-scaled.webp
+    thumb: /posts/denia-prohodului-domnului-nostru-iisus-hristos/20230414_192014-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/denia-prohodului-domnului-nostru-iisus-hristos/20230414_192021-scaled.webp
+    thumb: /posts/denia-prohodului-domnului-nostru-iisus-hristos/20230414_192021-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/denia-prohodului-domnului-nostru-iisus-hristos/20230414_192043-scaled.webp
+    thumb: /posts/denia-prohodului-domnului-nostru-iisus-hristos/20230414_192043-scaled-sm.webp
+    width: 800
+    height: 600
 ---
 
 

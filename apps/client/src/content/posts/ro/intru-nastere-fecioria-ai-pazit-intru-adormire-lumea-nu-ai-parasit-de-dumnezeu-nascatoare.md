@@ -40,6 +40,102 @@ galleryImages:
     thumb: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0090-sm.webp
     width: 683
     height: 1024
+  - src: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0093.webp
+    thumb: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0093-sm.webp
+    width: 683
+    height: 1024
+  - src: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0095.webp
+    thumb: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0095-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0096.webp
+    thumb: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0096-sm.webp
+    width: 683
+    height: 1024
+  - src: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0110.webp
+    thumb: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0110-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0111.webp
+    thumb: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0111-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0122.webp
+    thumb: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0122-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0134.webp
+    thumb: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0134-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0142.webp
+    thumb: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0142-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0144.webp
+    thumb: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0144-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0153.webp
+    thumb: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0153-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0154.webp
+    thumb: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0154-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0189.webp
+    thumb: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0189-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0191.webp
+    thumb: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0191-sm.webp
+    width: 683
+    height: 1024
+  - src: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0225.webp
+    thumb: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0225-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0248.webp
+    thumb: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0248-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0249.webp
+    thumb: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0249-sm.webp
+    width: 683
+    height: 1024
+  - src: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0265.webp
+    thumb: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0265-sm.webp
+    width: 683
+    height: 1024
+  - src: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0266.webp
+    thumb: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0266-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0269.webp
+    thumb: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0269-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0277.webp
+    thumb: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0277-sm.webp
+    width: 683
+    height: 1024
+  - src: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0280.webp
+    thumb: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0280-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0283.webp
+    thumb: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0283-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0294.webp
+    thumb: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0294-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0297.webp
+    thumb: /posts/intru-nastere-fecioria-ai-pazit-intru-adormire-lumea-nu-ai-parasit-de-dumnezeu-nascatoare/dsc_0297-sm.webp
+    width: 800
+    height: 534
 ---
 
 “Întru naștere, fecioria ai păzit, întru adormire lumea nu ai părăsit, de Dumnezeu Născătoare; Mutatu-te-ai la viață, fiind Maica Vieții, și prin rugăciunile Tale izbăvești din moarte sufletele noastre”.

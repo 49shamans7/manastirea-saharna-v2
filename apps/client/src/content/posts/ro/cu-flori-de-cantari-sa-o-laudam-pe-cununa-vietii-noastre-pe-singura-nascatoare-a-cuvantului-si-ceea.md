@@ -40,6 +40,174 @@ galleryImages:
     thumb: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00027-sm.webp
     width: 800
     height: 533
+  - src: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00028.webp
+    thumb: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00028-sm.webp
+    width: 800
+    height: 1200
+  - src: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00039.webp
+    thumb: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00039-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00040.webp
+    thumb: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00040-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00043.webp
+    thumb: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00043-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00054.webp
+    thumb: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00054-sm.webp
+    width: 800
+    height: 1200
+  - src: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00056.webp
+    thumb: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00056-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00093.webp
+    thumb: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00093-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00096.webp
+    thumb: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00096-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00098.webp
+    thumb: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00098-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00103.webp
+    thumb: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00103-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00140.webp
+    thumb: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00140-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00143.webp
+    thumb: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00143-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00144.webp
+    thumb: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00144-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00146.webp
+    thumb: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00146-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00150.webp
+    thumb: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00150-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00153.webp
+    thumb: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00153-sm.webp
+    width: 800
+    height: 657
+  - src: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00155.webp
+    thumb: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00155-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00159.webp
+    thumb: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00159-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00174.webp
+    thumb: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00174-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00206.webp
+    thumb: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00206-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00208.webp
+    thumb: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00208-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00209.webp
+    thumb: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00209-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00255.webp
+    thumb: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00255-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00256.webp
+    thumb: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00256-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00261.webp
+    thumb: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00261-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00267.webp
+    thumb: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00267-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00274.webp
+    thumb: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00274-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00276.webp
+    thumb: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00276-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00283.webp
+    thumb: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00283-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00286.webp
+    thumb: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00286-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00287.webp
+    thumb: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00287-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00288.webp
+    thumb: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00288-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00290.webp
+    thumb: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00290-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00291.webp
+    thumb: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00291-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00302.webp
+    thumb: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00302-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00305.webp
+    thumb: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00305-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00310.webp
+    thumb: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00310-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00312.webp
+    thumb: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00312-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00313.webp
+    thumb: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00313-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00318.webp
+    thumb: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00318-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00320.webp
+    thumb: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00320-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00321.webp
+    thumb: /posts/cu-flori-de-cantari-sa-o-laudam-pe-cununa-vietii-noastre-pe-singura-nascatoare-a-cuvantului-si-ceea/image00321-sm.webp
+    width: 800
+    height: 533
 ---
 
 Conform tradiției formate, și în acest an cu binecuvântarea ÎPS Vladimir, Mitropolit al Chișinăului și a întregii Moldove, Sfânta și Dumnezeiacsă Liturghie a fost oficiată de către un arhiereu din cadrul Mitropoliei Chișinăului și a întregii Moldove, Prea Sfințitul părinte Ioan Moșneguțu, Episcop de Soroca, Vicar Mitropolitan.

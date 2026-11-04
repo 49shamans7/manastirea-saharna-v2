@@ -40,6 +40,18 @@ galleryImages:
     thumb: /posts/nimenea-nu-e-atat-de-bun-si-de-milos-ca-domnul-dar-nici-el-nu-iarta-pe-cel-ce-nu-se-pocaieste-sf-mar/image00007-1-sm.webp
     width: 800
     height: 534
+  - src: /posts/nimenea-nu-e-atat-de-bun-si-de-milos-ca-domnul-dar-nici-el-nu-iarta-pe-cel-ce-nu-se-pocaieste-sf-mar/image00008-1.webp
+    thumb: /posts/nimenea-nu-e-atat-de-bun-si-de-milos-ca-domnul-dar-nici-el-nu-iarta-pe-cel-ce-nu-se-pocaieste-sf-mar/image00008-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/nimenea-nu-e-atat-de-bun-si-de-milos-ca-domnul-dar-nici-el-nu-iarta-pe-cel-ce-nu-se-pocaieste-sf-mar/image00009-1.webp
+    thumb: /posts/nimenea-nu-e-atat-de-bun-si-de-milos-ca-domnul-dar-nici-el-nu-iarta-pe-cel-ce-nu-se-pocaieste-sf-mar/image00009-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/nimenea-nu-e-atat-de-bun-si-de-milos-ca-domnul-dar-nici-el-nu-iarta-pe-cel-ce-nu-se-pocaieste-sf-mar/image00010-1.webp
+    thumb: /posts/nimenea-nu-e-atat-de-bun-si-de-milos-ca-domnul-dar-nici-el-nu-iarta-pe-cel-ce-nu-se-pocaieste-sf-mar/image00010-1-sm.webp
+    width: 800
+    height: 534
 ---
 
 

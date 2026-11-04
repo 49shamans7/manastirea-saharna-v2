@@ -26,6 +26,7 @@ export const menu: MenuGroup[] = [
       { href: "/pomelnic", labelKey: "zone.pomelnic" },
       { href: "/donations", labelKey: "nav.donations" },
       { href: "/macarie", labelKey: "zone.macarie" },
+      { href: "/viata-si-activitatea", labelKey: "zone.viataActivitate" },
       { href: "/moastele", labelKey: "zone.moastele" },
       { href: "/acatistul", labelKey: "zone.acatistul" },
       { href: "/slujba", labelKey: "zone.slujba" },
@@ -36,6 +37,7 @@ export const menu: MenuGroup[] = [
     pages: [
       { href: "/posts", labelKey: "zone.cronica" },
       { href: "/galerie", labelKey: "zone.galerie" },
+      { href: "/video", labelKey: "zone.video" },
     ],
   },
   {

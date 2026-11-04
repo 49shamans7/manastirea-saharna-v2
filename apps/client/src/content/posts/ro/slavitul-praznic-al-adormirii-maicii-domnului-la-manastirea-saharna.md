@@ -40,6 +40,98 @@ galleryImages:
     thumb: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_0016-sm.webp
     width: 800
     height: 534
+  - src: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_0019.webp
+    thumb: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_0019-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_0021.webp
+    thumb: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_0021-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_0022.webp
+    thumb: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_0022-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_0030.webp
+    thumb: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_0030-sm.webp
+    width: 683
+    height: 1024
+  - src: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_0032.webp
+    thumb: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_0032-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_0050.webp
+    thumb: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_0050-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_00521.webp
+    thumb: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_00521-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_00531.webp
+    thumb: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_00531-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_0054.webp
+    thumb: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_0054-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_0059.webp
+    thumb: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_0059-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_0087.webp
+    thumb: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_0087-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_0100.webp
+    thumb: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_0100-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_0109.webp
+    thumb: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_0109-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_01101.webp
+    thumb: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_01101-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_01111.webp
+    thumb: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_01111-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_01911.webp
+    thumb: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_01911-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_0232.webp
+    thumb: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_0232-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_0236.webp
+    thumb: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_0236-sm.webp
+    width: 683
+    height: 1024
+  - src: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_0300.webp
+    thumb: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_0300-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_0302.webp
+    thumb: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_0302-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_0309.webp
+    thumb: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_0309-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_0314.webp
+    thumb: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_0314-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_0329.webp
+    thumb: /posts/slavitul-praznic-al-adormirii-maicii-domnului-la-manastirea-saharna/dsc_0329-sm.webp
+    width: 800
+    height: 534
 ---
 
 Astăzi sunetul solemn al clopotelor mănăstirești a chemat enoriașii și pelerinii la Sfânta Liturghie, oficiată de un sobor de preoți în frunte cu Arhimandritul Adrian Baciu, starețul Sfintei Mănăstiri Saharna, care au trăit momente de bucurie și înălțare duhovnicească de slăvitul praznic al Adormirii Maicii Domnului.

@@ -40,6 +40,114 @@ galleryImages:
     thumb: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/17-sm.webp
     width: 768
     height: 985
+  - src: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/18.webp
+    thumb: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/18-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/19.webp
+    thumb: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/19-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/20.webp
+    thumb: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/20-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/211.webp
+    thumb: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/211-sm.webp
+    width: 768
+    height: 919
+  - src: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/221.webp
+    thumb: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/221-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/24.webp
+    thumb: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/24-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/25.webp
+    thumb: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/25-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/26.webp
+    thumb: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/26-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/27.webp
+    thumb: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/27-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/28.webp
+    thumb: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/28-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/29.webp
+    thumb: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/29-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/30.webp
+    thumb: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/30-sm.webp
+    width: 768
+    height: 1010
+  - src: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/311.webp
+    thumb: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/311-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/34.webp
+    thumb: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/34-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/35.webp
+    thumb: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/35-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/36.webp
+    thumb: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/36-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/37.webp
+    thumb: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/37-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/38.webp
+    thumb: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/38-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/39.webp
+    thumb: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/39-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/40.webp
+    thumb: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/40-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/411.webp
+    thumb: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/411-sm.webp
+    width: 800
+    height: 671
+  - src: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/52.webp
+    thumb: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/52-sm.webp
+    width: 683
+    height: 1024
+  - src: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/62.webp
+    thumb: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/62-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/72.webp
+    thumb: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/72-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/82.webp
+    thumb: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/82-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/92.webp
+    thumb: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/92-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/img_9812.webp
+    thumb: /posts/icoana-maicii-domnului-de-la-poceaev-cinstita-de-obstea-manastireasca-de-la-saharna-2/img_9812-sm.webp
+    width: 800
+    height: 533
 ---
 
 Al nouălea an consecutiv,bătaia toacei și dangătul clopotelor cheamă enoriașii și pelerinii în data de 5 august, când este sărbătorită icoana Maicii Domnului de la Poceaev, cinstită local și de obștea mănăstirească de la Saharna.

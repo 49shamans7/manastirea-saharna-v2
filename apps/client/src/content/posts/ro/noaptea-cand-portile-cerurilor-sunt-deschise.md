@@ -40,6 +40,30 @@ galleryImages:
     thumb: /posts/noaptea-cand-portile-cerurilor-sunt-deschise/26815458_1612029998881825_8559545282415789354_n-sm.webp
     width: 720
     height: 960
+  - src: /posts/noaptea-cand-portile-cerurilor-sunt-deschise/26903924_1612030065548485_4693321383855483368_n.webp
+    thumb: /posts/noaptea-cand-portile-cerurilor-sunt-deschise/26903924_1612030065548485_4693321383855483368_n-sm.webp
+    width: 720
+    height: 960
+  - src: /posts/noaptea-cand-portile-cerurilor-sunt-deschise/26904786_1612030182215140_7987746369053429574_n.webp
+    thumb: /posts/noaptea-cand-portile-cerurilor-sunt-deschise/26904786_1612030182215140_7987746369053429574_n-sm.webp
+    width: 720
+    height: 960
+  - src: /posts/noaptea-cand-portile-cerurilor-sunt-deschise/26907411_1612030238881801_5194735017585046031_n.webp
+    thumb: /posts/noaptea-cand-portile-cerurilor-sunt-deschise/26907411_1612030238881801_5194735017585046031_n-sm.webp
+    width: 720
+    height: 960
+  - src: /posts/noaptea-cand-portile-cerurilor-sunt-deschise/26907899_1612030098881815_2934631189233100408_n.webp
+    thumb: /posts/noaptea-cand-portile-cerurilor-sunt-deschise/26907899_1612030098881815_2934631189233100408_n-sm.webp
+    width: 720
+    height: 960
+  - src: /posts/noaptea-cand-portile-cerurilor-sunt-deschise/26993599_1612030032215155_8068195542073108020_n.webp
+    thumb: /posts/noaptea-cand-portile-cerurilor-sunt-deschise/26993599_1612030032215155_8068195542073108020_n-sm.webp
+    width: 720
+    height: 960
+  - src: /posts/noaptea-cand-portile-cerurilor-sunt-deschise/26994024_1612030022215156_6052335330280752804_n.webp
+    thumb: /posts/noaptea-cand-portile-cerurilor-sunt-deschise/26994024_1612030022215156_6052335330280752804_n-sm.webp
+    width: 720
+    height: 960
 ---
 
 Apa binecuvântată sau sfințită a jucat un rol important în viața tuturor popoarelor, dintotdeauna; ea a fost întrebuințată ca mijloc principal de spălare și curățire a oamenilor și lucrurilor, fiind considerată simbolul cel mai expresiv al purității și curățirii spirituale. În Biserica creștină apa nu rămâne doar un simbol, ci elementul material – predominant în structura trupului omenesc – care, atunci când se umple de Duhul Sfânt, îl face pe om să renască.

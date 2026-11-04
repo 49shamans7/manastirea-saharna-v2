@@ -40,6 +40,22 @@ galleryImages:
     thumb: /posts/binecuvantarea-lucrarilor-de-constructie-la-santierul-catedralei-invierea-domnului/51-sm.webp
     width: 800
     height: 533
+  - src: /posts/binecuvantarea-lucrarilor-de-constructie-la-santierul-catedralei-invierea-domnului/61.webp
+    thumb: /posts/binecuvantarea-lucrarilor-de-constructie-la-santierul-catedralei-invierea-domnului/61-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/binecuvantarea-lucrarilor-de-constructie-la-santierul-catedralei-invierea-domnului/71.webp
+    thumb: /posts/binecuvantarea-lucrarilor-de-constructie-la-santierul-catedralei-invierea-domnului/71-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/binecuvantarea-lucrarilor-de-constructie-la-santierul-catedralei-invierea-domnului/81.webp
+    thumb: /posts/binecuvantarea-lucrarilor-de-constructie-la-santierul-catedralei-invierea-domnului/81-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/binecuvantarea-lucrarilor-de-constructie-la-santierul-catedralei-invierea-domnului/91.webp
+    thumb: /posts/binecuvantarea-lucrarilor-de-constructie-la-santierul-catedralei-invierea-domnului/91-sm.webp
+    width: 800
+    height: 533
 ---
 
 În timpul vizitei Sale, ÎPS Sava, Arhiepiscop de Tiraspol și Dubăsari a făcut cunoștință cu etapa lucrărilor de construcție la șantierul catedralei ” Învierea Domnului ” de pe teritoriul complexului monastic Saharna.

@@ -40,6 +40,146 @@ galleryImages:
     thumb: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_0855253-scaled-sm.webp
     width: 800
     height: 1067
+  - src: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_0856493-scaled.webp
+    thumb: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_0856493-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_0859522-scaled.webp
+    thumb: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_0859522-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_0921403-scaled.webp
+    thumb: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_0921403-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_0921502-scaled.webp
+    thumb: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_0921502-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_0922152-scaled.webp
+    thumb: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_0922152-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_0922452-scaled.webp
+    thumb: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_0922452-scaled-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_0922572-1-scaled.webp
+    thumb: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_0922572-1-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_0923022-scaled.webp
+    thumb: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_0923022-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_0923023-scaled.webp
+    thumb: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_0923023-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_0923042-scaled.webp
+    thumb: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_0923042-scaled-sm.webp
+    width: 800
+    height: 1315
+  - src: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_0923072-scaled.webp
+    thumb: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_0923072-scaled-sm.webp
+    width: 800
+    height: 1196
+  - src: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_0923073-scaled.webp
+    thumb: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_0923073-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_0924362-scaled.webp
+    thumb: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_0924362-scaled-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_0924363-scaled.webp
+    thumb: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_0924363-scaled-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_0925382-1-scaled.webp
+    thumb: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_0925382-1-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_0927032-scaled.webp
+    thumb: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_0927032-scaled-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_0931242-scaled.webp
+    thumb: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_0931242-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_1006452-scaled.webp
+    thumb: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_1006452-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_1016222-scaled.webp
+    thumb: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_1016222-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_1016422-scaled.webp
+    thumb: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_1016422-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_1017152-1-scaled.webp
+    thumb: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_1017152-1-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_1039342-scaled.webp
+    thumb: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_1039342-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_1104382-scaled.webp
+    thumb: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_1104382-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_1104492-scaled.webp
+    thumb: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_1104492-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_1105132-scaled.webp
+    thumb: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_1105132-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_1105232-scaled.webp
+    thumb: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_1105232-scaled-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_1105382-scaled.webp
+    thumb: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_1105382-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_1105492-scaled.webp
+    thumb: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_1105492-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_1105532-scaled.webp
+    thumb: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_1105532-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_1106032-scaled.webp
+    thumb: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_1106032-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_1109162-scaled.webp
+    thumb: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_1109162-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_1109302-scaled.webp
+    thumb: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_1109302-scaled-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_1109372-scaled.webp
+    thumb: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_1109372-scaled-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_1109412-scaled.webp
+    thumb: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_1109412-scaled-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_1111282-scaled.webp
+    thumb: /posts/bucura-te-macarie-parinte-pururea-fericite-3/20240526_1111282-scaled-sm.webp
+    width: 800
+    height: 1067
 ---
 
 Obștea Sfintei Mănăstiri și-a sărbătorit ocrotitorul ceresc, Sfântul Cuvios Macarie, în frunte cu Înaltpreasfințitul Vladimir, Întâistătătorul Bisericii Ortodoxe din Moldova.

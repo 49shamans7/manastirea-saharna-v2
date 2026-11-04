@@ -1,6 +1,6 @@
 name: Check
 
-# Every push and pull request to dev: types, a full build, the search index,
+# Every push and pull request to main: types, a full build, the search index,
 # and an internal link check over all ~1,500 pages. Deploys nothing.
 on:
   push:
@@ -31,6 +31,10 @@ jobs:
 
       - name: Install
         run: bun install --frozen-lockfile
+
+      - name: Workers
+        working-directory: .
+        run: bun run check:workers
 
       - name: Types
         run: bun astro check

@@ -40,6 +40,130 @@ galleryImages:
     thumb: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00007-2-sm.webp
     width: 800
     height: 533
+  - src: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00009-3.webp
+    thumb: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00009-3-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00010-2.webp
+    thumb: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00010-2-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00011-4.webp
+    thumb: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00011-4-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00012-2.webp
+    thumb: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00012-2-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00013-1.webp
+    thumb: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00013-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00014-2.webp
+    thumb: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00014-2-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00015.webp
+    thumb: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00015-sm.webp
+    width: 800
+    height: 577
+  - src: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00016-1.webp
+    thumb: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00016-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00017.webp
+    thumb: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00017-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00018-1.webp
+    thumb: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00018-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00019-1.webp
+    thumb: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00019-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00020.webp
+    thumb: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00020-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00021-1.webp
+    thumb: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00021-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00022-1.webp
+    thumb: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00022-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00023-1.webp
+    thumb: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00023-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00024-2.webp
+    thumb: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00024-2-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00025.webp
+    thumb: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00025-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00026-1.webp
+    thumb: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00026-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00027-1.webp
+    thumb: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00027-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00028-1.webp
+    thumb: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00028-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00029-1.webp
+    thumb: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00029-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00030-1.webp
+    thumb: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00030-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00032-1.webp
+    thumb: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00032-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00035-1.webp
+    thumb: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00035-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00036.webp
+    thumb: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00036-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00037.webp
+    thumb: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00037-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00038.webp
+    thumb: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00038-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00039-1.webp
+    thumb: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00039-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00040-1.webp
+    thumb: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00040-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00041.webp
+    thumb: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00041-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00042.webp
+    thumb: /posts/adormirea-maicii-domnului-cinstita-la-manastirea-saharna/image00042-sm.webp
+    width: 800
+    height: 533
 ---
 
 Azi se cântă în Biserici la aleasa-ți prăznuire, multe imnuri preafrumoase slăvind sfânta-ți adormire…

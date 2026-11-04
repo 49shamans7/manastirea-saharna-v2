@@ -40,6 +40,50 @@ galleryImages:
     thumb: /posts/cinul-spalarii-picioarelor-la-manastire/15-sm.webp
     width: 800
     height: 600
+  - src: /posts/cinul-spalarii-picioarelor-la-manastire/16.webp
+    thumb: /posts/cinul-spalarii-picioarelor-la-manastire/16-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/cinul-spalarii-picioarelor-la-manastire/17.webp
+    thumb: /posts/cinul-spalarii-picioarelor-la-manastire/17-sm.webp
+    width: 576
+    height: 768
+  - src: /posts/cinul-spalarii-picioarelor-la-manastire/2.webp
+    thumb: /posts/cinul-spalarii-picioarelor-la-manastire/2-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/cinul-spalarii-picioarelor-la-manastire/3.webp
+    thumb: /posts/cinul-spalarii-picioarelor-la-manastire/3-sm.webp
+    width: 576
+    height: 768
+  - src: /posts/cinul-spalarii-picioarelor-la-manastire/4.webp
+    thumb: /posts/cinul-spalarii-picioarelor-la-manastire/4-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/cinul-spalarii-picioarelor-la-manastire/5.webp
+    thumb: /posts/cinul-spalarii-picioarelor-la-manastire/5-sm.webp
+    width: 576
+    height: 768
+  - src: /posts/cinul-spalarii-picioarelor-la-manastire/6.webp
+    thumb: /posts/cinul-spalarii-picioarelor-la-manastire/6-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/cinul-spalarii-picioarelor-la-manastire/7.webp
+    thumb: /posts/cinul-spalarii-picioarelor-la-manastire/7-sm.webp
+    width: 576
+    height: 768
+  - src: /posts/cinul-spalarii-picioarelor-la-manastire/8.webp
+    thumb: /posts/cinul-spalarii-picioarelor-la-manastire/8-sm.webp
+    width: 576
+    height: 768
+  - src: /posts/cinul-spalarii-picioarelor-la-manastire/9.webp
+    thumb: /posts/cinul-spalarii-picioarelor-la-manastire/9-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/cinul-spalarii-picioarelor-la-manastire/rit_spalarii_2014.webp
+    thumb: /posts/cinul-spalarii-picioarelor-la-manastire/rit_spalarii_2014-sm.webp
+    width: 300
+    height: 225
 ---
 
 “Deci, după ce le-a spălat picioarele și și-a luat vestmintele, șezând iarași le-a zis: întelegeți ce v-am făcut? Voi Mă numiți învățător și Domn, și bine ziceți, căci sunt. Deci dacă Eu, Domnul și Învățătorul, v-am spălat picioarele, și voi datori sunteți să spalați picioarele unul altuia: căci pildă v-am dat, că, precum v-am făcut Eu, și voi să faceți. Amin, amin grăesc vouă: Nu este sluga mai mare decât stăpânul său, nici solul mai mare decât cel care l-a trimis. Când știți acestea, fericiți sunteți de le veți și face. Nu de voi toți zic, căci știu pe cei ce i-am ales, ci ca să se împlinească Scriptura: Cel ce mănâncă pâine cu Mine, a ridicat călcăiul asupra Mea. Vă spun aceasta acum mai înainte de a se săvârși, că atunci când se va săvârși, să credeți că Eu sunt. Amin, amin grăesc vouă: Cel ce primește pe cel ce voi trimite Eu, pe Mine Mă primește; iar cel ce Mă primește pe Mine, primește pe Cel ce M-a trimis pe Mine”.

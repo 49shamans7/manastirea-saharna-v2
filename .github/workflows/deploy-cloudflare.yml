@@ -1,0 +1,53 @@
+name: Deploy to Cloudflare
+
+# Every push to main, so a save in /admin reaches the site. Does nothing until
+# the repository has the secrets CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID.
+# `wrangler deploy` builds the site itself (build.command in wrangler.jsonc) and
+# leaves the custom domains alone.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cloudflare
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      PUBLIC_POMELNIC_WORKER_URL: ${{ vars.PUBLIC_POMELNIC_WORKER_URL }}
+      PUBLIC_TURNSTILE_SITE_KEY: ${{ vars.PUBLIC_TURNSTILE_SITE_KEY }}
+    steps:
+      # `secrets` cannot gate a job, so the first step gates the rest.
+      - name: Credentials
+        id: credentials
+        run: |
+          if [ -n "$CLOUDFLARE_API_TOKEN" ] && [ -n "$CLOUDFLARE_ACCOUNT_ID" ]; then
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "::notice::No Cloudflare credentials yet: nothing deployed."
+          fi
+
+      - uses: actions/checkout@v6
+        if: steps.credentials.outputs.ready == 'true'
+
+      - uses: oven-sh/setup-bun@v2
+        if: steps.credentials.outputs.ready == 'true'
+        with:
+          bun-version-file: .tool-versions
+
+      - name: Install
+        if: steps.credentials.outputs.ready == 'true'
+        run: bun install --frozen-lockfile
+
+      - name: Build and deploy
+        if: steps.credentials.outputs.ready == 'true'
+        working-directory: apps/client
+        run: bunx wrangler deploy

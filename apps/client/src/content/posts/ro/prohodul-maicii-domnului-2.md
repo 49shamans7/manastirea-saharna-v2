@@ -40,6 +40,58 @@ galleryImages:
     thumb: /posts/prohodul-maicii-domnului-2/image00007-sm.webp
     width: 800
     height: 534
+  - src: /posts/prohodul-maicii-domnului-2/image00008.webp
+    thumb: /posts/prohodul-maicii-domnului-2/image00008-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/prohodul-maicii-domnului-2/image00009.webp
+    thumb: /posts/prohodul-maicii-domnului-2/image00009-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/prohodul-maicii-domnului-2/image00010.webp
+    thumb: /posts/prohodul-maicii-domnului-2/image00010-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/prohodul-maicii-domnului-2/image00011.webp
+    thumb: /posts/prohodul-maicii-domnului-2/image00011-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/prohodul-maicii-domnului-2/image00012.webp
+    thumb: /posts/prohodul-maicii-domnului-2/image00012-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/prohodul-maicii-domnului-2/image00013.webp
+    thumb: /posts/prohodul-maicii-domnului-2/image00013-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/prohodul-maicii-domnului-2/image00014.webp
+    thumb: /posts/prohodul-maicii-domnului-2/image00014-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/prohodul-maicii-domnului-2/image00015.webp
+    thumb: /posts/prohodul-maicii-domnului-2/image00015-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/prohodul-maicii-domnului-2/image00016.webp
+    thumb: /posts/prohodul-maicii-domnului-2/image00016-sm.webp
+    width: 800
+    height: 920
+  - src: /posts/prohodul-maicii-domnului-2/image00017.webp
+    thumb: /posts/prohodul-maicii-domnului-2/image00017-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/prohodul-maicii-domnului-2/image00018.webp
+    thumb: /posts/prohodul-maicii-domnului-2/image00018-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/prohodul-maicii-domnului-2/image00019.webp
+    thumb: /posts/prohodul-maicii-domnului-2/image00019-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/prohodul-maicii-domnului-2/image00020.webp
+    thumb: /posts/prohodul-maicii-domnului-2/image00020-sm.webp
+    width: 800
+    height: 534
 ---
 
 

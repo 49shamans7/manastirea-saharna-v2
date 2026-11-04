@@ -40,6 +40,14 @@ galleryImages:
     thumb: /posts/hristos-domnul-a-inviat/b02f92ad-8939-4d9a-ae53-d853754fbaa4-sm.webp
     width: 800
     height: 600
+  - src: /posts/hristos-domnul-a-inviat/c9925ab2-7d23-4bfa-93a9-940e024060d3.webp
+    thumb: /posts/hristos-domnul-a-inviat/c9925ab2-7d23-4bfa-93a9-940e024060d3-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/hristos-domnul-a-inviat/fc889cb3-2b28-4e13-be19-ac9825e76fde.webp
+    thumb: /posts/hristos-domnul-a-inviat/fc889cb3-2b28-4e13-be19-ac9825e76fde-sm.webp
+    width: 800
+    height: 600
 ---
 
 Colectivul de elevi din IP Gimnaziul Saharna Nouă, pregătiți de profesorul de educația muzicală dl.Veaceslav Chiosa în parteneriat cu profesorul de religie Ieromonahul Vasilisc Donica, crericul Sfintei Mănăstiri Saharna, a participat la Festivalul de datini și obiceiuri de Paști și s-au întors cu Diplomă de mențiune.

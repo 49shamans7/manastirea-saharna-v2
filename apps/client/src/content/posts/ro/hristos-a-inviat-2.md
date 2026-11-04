@@ -40,6 +40,90 @@ galleryImages:
     thumb: /posts/hristos-a-inviat-2/20220424_001712-scaled-sm.webp
     width: 800
     height: 1067
+  - src: /posts/hristos-a-inviat-2/20220424_002104-scaled.webp
+    thumb: /posts/hristos-a-inviat-2/20220424_002104-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/hristos-a-inviat-2/20220424_002652-scaled.webp
+    thumb: /posts/hristos-a-inviat-2/20220424_002652-scaled-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/hristos-a-inviat-2/20220424_002735-scaled.webp
+    thumb: /posts/hristos-a-inviat-2/20220424_002735-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/hristos-a-inviat-2/20220424_002743-scaled.webp
+    thumb: /posts/hristos-a-inviat-2/20220424_002743-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/hristos-a-inviat-2/20220424_002929-scaled.webp
+    thumb: /posts/hristos-a-inviat-2/20220424_002929-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/hristos-a-inviat-2/20220424_003205-1-scaled.webp
+    thumb: /posts/hristos-a-inviat-2/20220424_003205-1-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/hristos-a-inviat-2/20220424_003205-scaled.webp
+    thumb: /posts/hristos-a-inviat-2/20220424_003205-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/hristos-a-inviat-2/20220424_003455-scaled.webp
+    thumb: /posts/hristos-a-inviat-2/20220424_003455-scaled-sm.webp
+    width: 800
+    height: 989
+  - src: /posts/hristos-a-inviat-2/20220424_003847-scaled.webp
+    thumb: /posts/hristos-a-inviat-2/20220424_003847-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/hristos-a-inviat-2/20220424_004259-scaled.webp
+    thumb: /posts/hristos-a-inviat-2/20220424_004259-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/hristos-a-inviat-2/20220424_004429-scaled.webp
+    thumb: /posts/hristos-a-inviat-2/20220424_004429-scaled-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/hristos-a-inviat-2/20220424_004445-scaled.webp
+    thumb: /posts/hristos-a-inviat-2/20220424_004445-scaled-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/hristos-a-inviat-2/20220424_004652-scaled.webp
+    thumb: /posts/hristos-a-inviat-2/20220424_004652-scaled-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/hristos-a-inviat-2/20220424_005103-scaled.webp
+    thumb: /posts/hristos-a-inviat-2/20220424_005103-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/hristos-a-inviat-2/20220424_005353-scaled.webp
+    thumb: /posts/hristos-a-inviat-2/20220424_005353-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/hristos-a-inviat-2/20220424_005355-scaled.webp
+    thumb: /posts/hristos-a-inviat-2/20220424_005355-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/hristos-a-inviat-2/20220424_014402-scaled.webp
+    thumb: /posts/hristos-a-inviat-2/20220424_014402-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/hristos-a-inviat-2/20220424_115620-scaled.webp
+    thumb: /posts/hristos-a-inviat-2/20220424_115620-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/hristos-a-inviat-2/20220424_115655-scaled.webp
+    thumb: /posts/hristos-a-inviat-2/20220424_115655-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/hristos-a-inviat-2/20220424_115705-1-scaled.webp
+    thumb: /posts/hristos-a-inviat-2/20220424_115705-1-scaled-sm.webp
+    width: 800
+    height: 1125
+  - src: /posts/hristos-a-inviat-2/20220424_115705-scaled.webp
+    thumb: /posts/hristos-a-inviat-2/20220424_115705-scaled-sm.webp
+    width: 800
+    height: 1125
 ---
 
 

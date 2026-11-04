@@ -22,7 +22,7 @@ for (const file of files) {
   }
 }
 // astro-i18n-aut writes /ro/404/ as a redirect stub to /404/, which is served by 404.html
-missing.delete(`${base}/404/`);
+missing.delete(`${base === "/" ? "" : base}/404/`);
 console.log(`${files.length} pages, ${missing.size} broken internal links`);
 for (const [url, file] of [...missing].slice(0, 30)) console.log(`  ${url}  <- ${file}`);
 process.exit(missing.size ? 1 : 0);

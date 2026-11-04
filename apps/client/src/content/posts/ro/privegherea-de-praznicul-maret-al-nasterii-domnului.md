@@ -40,6 +40,50 @@ galleryImages:
     thumb: /posts/privegherea-de-praznicul-maret-al-nasterii-domnului/20240106_215735-scaled-sm.webp
     width: 800
     height: 1422
+  - src: /posts/privegherea-de-praznicul-maret-al-nasterii-domnului/20240106_215805-scaled.webp
+    thumb: /posts/privegherea-de-praznicul-maret-al-nasterii-domnului/20240106_215805-scaled-sm.webp
+    width: 800
+    height: 1618
+  - src: /posts/privegherea-de-praznicul-maret-al-nasterii-domnului/20240106_223818-scaled.webp
+    thumb: /posts/privegherea-de-praznicul-maret-al-nasterii-domnului/20240106_223818-scaled-sm.webp
+    width: 800
+    height: 1422
+  - src: /posts/privegherea-de-praznicul-maret-al-nasterii-domnului/20240106_224000-scaled.webp
+    thumb: /posts/privegherea-de-praznicul-maret-al-nasterii-domnului/20240106_224000-scaled-sm.webp
+    width: 800
+    height: 1422
+  - src: /posts/privegherea-de-praznicul-maret-al-nasterii-domnului/20240106_225018-scaled.webp
+    thumb: /posts/privegherea-de-praznicul-maret-al-nasterii-domnului/20240106_225018-scaled-sm.webp
+    width: 800
+    height: 1422
+  - src: /posts/privegherea-de-praznicul-maret-al-nasterii-domnului/20240106_225024-scaled.webp
+    thumb: /posts/privegherea-de-praznicul-maret-al-nasterii-domnului/20240106_225024-scaled-sm.webp
+    width: 800
+    height: 1422
+  - src: /posts/privegherea-de-praznicul-maret-al-nasterii-domnului/20240106_225038-scaled.webp
+    thumb: /posts/privegherea-de-praznicul-maret-al-nasterii-domnului/20240106_225038-scaled-sm.webp
+    width: 800
+    height: 1422
+  - src: /posts/privegherea-de-praznicul-maret-al-nasterii-domnului/20240106_225239-scaled.webp
+    thumb: /posts/privegherea-de-praznicul-maret-al-nasterii-domnului/20240106_225239-scaled-sm.webp
+    width: 800
+    height: 1422
+  - src: /posts/privegherea-de-praznicul-maret-al-nasterii-domnului/20240106_225346-scaled.webp
+    thumb: /posts/privegherea-de-praznicul-maret-al-nasterii-domnului/20240106_225346-scaled-sm.webp
+    width: 800
+    height: 1422
+  - src: /posts/privegherea-de-praznicul-maret-al-nasterii-domnului/20240106_225351-scaled.webp
+    thumb: /posts/privegherea-de-praznicul-maret-al-nasterii-domnului/20240106_225351-scaled-sm.webp
+    width: 800
+    height: 1422
+  - src: /posts/privegherea-de-praznicul-maret-al-nasterii-domnului/20240106_2253512-scaled.webp
+    thumb: /posts/privegherea-de-praznicul-maret-al-nasterii-domnului/20240106_2253512-scaled-sm.webp
+    width: 800
+    height: 1422
+  - src: /posts/privegherea-de-praznicul-maret-al-nasterii-domnului/20240106_225456-scaled.webp
+    thumb: /posts/privegherea-de-praznicul-maret-al-nasterii-domnului/20240106_225456-scaled-sm.webp
+    width: 800
+    height: 1422
 ---
 
 Nașterea Ta, Hristoase, Dumnezeul nostru, răsărit-a lumii lumina cunoștinței; că întru dânsa cei ce slujeau stelelor de la Stea s-au învățat să se închine Ție, Soarelui dreptății și să Te cunoască pe Tine, Răsăritul Cel de sus, Doamne, Slavă Ție!

@@ -40,6 +40,10 @@ galleryImages:
     thumb: /posts/canonul-sf-andrei-criteanul-partea-iii-a/11018815_805615586189941_4877606447077936628_n-sm.webp
     width: 800
     height: 533
+  - src: /posts/canonul-sf-andrei-criteanul-partea-iii-a/524213_805615792856587_8538118658590164077_n.webp
+    thumb: /posts/canonul-sf-andrei-criteanul-partea-iii-a/524213_805615792856587_8538118658590164077_n-sm.webp
+    width: 800
+    height: 533
 ---
 
 Oficiatori Arhim. Filaret, Shierom. Alexie, Ierom. Arsenie.

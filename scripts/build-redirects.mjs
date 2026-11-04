@@ -14,10 +14,12 @@
 //     (data/posts.ts slugOf = the file name), under /ru/ for a Russian-only post
 //   - WordPress also answered /<post-slug>/ at the root (redirect_guess), and
 //     links in the wild use it: those map too, unless the slug is a new route
-//   - categories, authors, the video archive, feeds, pagination → the chronicle
+//   - categories, authors, feeds, pagination → the chronicle; the video archive → /video/
 //
-// Redirects assume the production domain at the root (BASE_PATH=/).
-// Cloudflare limits: 2000 static + 100 dynamic rules; static rules come first.
+// Redirects assume the production domain at the root (BASE_PATH=/): the file
+// works on the Cloudflare build only, and GitHub Pages ignores it.
+// Cloudflare limits: 2000 static + 100 dynamic rules, 1000 characters a rule;
+// static rules come first, and a rule wins over a file at the same path.
 import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -50,37 +52,44 @@ const PAGES = {
   "/slujba-cuviosului-macarie/": "/slujba/",
   "/trimite-un-pomelnic/": "/pomelnic/",
   "/viata-cuviosului-macarie/": "/macarie/",
-  "/viata-si-activitatea-preacuviosului-egumen-macarie-tincu-de-la-manastirea-sf-treime-saharna/": "/macarie/",
+  "/viata-si-activitatea-preacuviosului-egumen-macarie-tincu-de-la-manastirea-sf-treime-saharna/": "/viata-si-activitatea/",
   // kept their address: /biblioteca/ /cum-de-ajuns/ /mitropolitul/ /obstea/ /prezentare/ /staretul/
 };
 
 /** archive listings → the chronicle */
 const LISTINGS = {
   "/stiri-si-evenimente/": "/posts/",
-  "/video/": "/posts/",
   "/category/stiri-si-evenimente/": "/posts/",
   "/category/articole-si-interviuri/": "/posts/",
   "/category/cuvinte-duhovniceti/": "/posts/",
   "/category/predici-si-cuvantari/": "/posts/",
-  "/category/video/": "/posts/",
+  "/category/video/": "/video/",
   "/author/iuvenalie-parintele/": "/posts/",
   "/author/preot-mihail-borta/": "/posts/",
   "/feed/": "/rss.xml",
   "/comments/feed/": "/rss.xml",
+  "/sitemap.xml": "/sitemap-index.xml",
+  "/sitemap_index.xml": "/sitemap-index.xml",
+  "/post-sitemap.xml": "/sitemap-index.xml",
+  "/page-sitemap.xml": "/sitemap-index.xml",
+  "/category-sitemap.xml": "/sitemap-index.xml",
+  "/author-sitemap.xml": "/sitemap-index.xml",
+  "/wp-login.php": "/",
 };
 
 /** dynamic catch-alls, after every static rule */
 const DYNAMIC = [
   // every known entry is a static rule above; anything else lands on the chronicle
   ["/stiri-si-evenimente/*", "/posts/"],
-  ["/video/*", "/posts/"],
+  // /video/ is a page again and /video/<id>.jpg are its posters, so no /video/* here
+  ["/video/page/*", "/video/"],
+  ["/video/:slug/", "/video/"],
   ["/category/*", "/posts/"],
   ["/author/*", "/posts/"],
   ["/tag/*", "/posts/"],
   ["/page/*", "/posts/"],
   ["/feed/*", "/rss.xml"],
   ["/wp-admin/*", "/"],
-  ["/wp-login.php", "/"],
 ];
 
 function frontmatterValue(file, key) {
@@ -131,6 +140,8 @@ for (const p of [
   "hero",
   "images",
   "fisiere",
+  "uploads",
+  "admin",
 ])
   routes.add(p);
 
@@ -176,11 +187,21 @@ if (dist) {
     console.error(`build-redirects: ${missing.length} target(s) missing in ${dist}:\n  ${missing.join("\n  ")}`);
     process.exit(1);
   }
+  // a rule beats a file: a source that is also a page would hide that page
+  const shadowed = [...rules.keys()].filter(
+    (from) => from.endsWith("/") && existsSync(path.join(dist, decodeURIComponent(from), "index.html")),
+  );
+  if (shadowed.length) {
+    console.error(`build-redirects: ${shadowed.length} rule(s) hide a page:\n  ${shadowed.join("\n  ")}`);
+    process.exit(1);
+  }
 }
 
 const staticCount = rules.size;
 if (staticCount > 2000 || DYNAMIC.length > 100)
   throw new Error(`too many rules: ${staticCount} static, ${DYNAMIC.length} dynamic`);
+for (const [from, to] of rules)
+  if (`${from} ${to} 301`.length > 1000) throw new Error(`rule over 1000 characters: ${from}`);
 
 const lines = [
   "# Old WordPress URLs (manastirea-saharna.md, 2013–2026) → the new routes.",

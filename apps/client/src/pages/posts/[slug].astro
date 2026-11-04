@@ -1,4 +1,5 @@
 ---
+import VideoFacade from "@components/VideoFacade.astro";
 // A post is a chamber with a date. Most of the chronicle's entries carry no
 // prose at all — for those the title, the date and the photographs are the
 // entry, and the chamber must not look broken for saying so.
@@ -55,7 +56,6 @@ const plates = post
 // and the reader's locale, as in the chambers.
 const entry = post ? await getEntry("posts", post.id) : undefined;
 const bodyHtml = entry?.rendered?.html ? rebase(entry.rendered.html, lang) : "";
-const shown = post ? (post.image ? 1 : 0) + post.galleryImages.length : 0;
 
 // The micro label: the chronicle, under its zone's numeral ("II · Cronică").
 const eyebrow = post ? t("zone.cronica") : undefined;
@@ -99,31 +99,19 @@ const exits: ChamberExit[] = [
         </a>
       )}
 
-      {videos.map((id, index) => (
-        <div class="video">
-          <a
-            class="video-facade"
-            href={`https://www.youtube.com/watch?v=${id}`}
-            data-video={id}
-            data-title={post.title}
-            target="_blank"
-            rel="noopener"
-            aria-label={`${t("home.playVideo")}: ${post.title} (YouTube)`}>
-            {index === 0 && post.image && (
-              <img
-                src={post.image.thumb}
-                srcset={post.image.smallSrcset}
-                sizes="(max-width: 720px) 100vw, 720px"
-                alt=""
-              />
-            )}
-            <span class="play" aria-hidden="true">
-              <Icon name="play" size={28} />
-            </span>
-            <span class="video-label">{`${t("home.playVideo")} · YouTube`}</span>
-          </a>
+      {videos.length > 0 && (
+        <div class="videos">
+          {videos.map((id, index) => (
+            <VideoFacade
+              id={id}
+              title={post.title}
+              lang={lang}
+              poster={index === 0 ? post.image?.thumb : undefined}
+              srcset={index === 0 ? post.image?.smallSrcset : undefined}
+            />
+          ))}
         </div>
-      ))}
+      )}
 
       {bodyHtml ? (
         <div class="post-body prose" set:html={bodyHtml} />
@@ -157,10 +145,6 @@ const exits: ChamberExit[] = [
             </a>
           ))}
         </div>
-      )}
-
-      {post.archiveImages > shown && (
-        <p class="archive-note">{`${post.archiveImages} ${t("gallery.count")} · ${t("zone.sourceNote")}`}</p>
       )}
 
       <div class="entry-foot" slot="foot">
@@ -202,21 +186,6 @@ const exits: ChamberExit[] = [
 }
 
 <script>
-  // Videos load only when asked for: until then the page makes no request to
-  // YouTube at all, and without script the facade is a plain link out.
-  document.querySelectorAll<HTMLAnchorElement>("[data-video]").forEach((facade) => {
-    facade.addEventListener("click", (event) => {
-      event.preventDefault();
-      const frame = document.createElement("iframe");
-      frame.src = `https://www.youtube-nocookie.com/embed/${facade.dataset.video}?autoplay=1&rel=0`;
-      frame.title = facade.dataset.title ?? "YouTube";
-      frame.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
-      frame.allowFullscreen = true;
-      frame.referrerPolicy = "strict-origin-when-cross-origin";
-      facade.replaceWith(frame);
-    });
-  });
-
   // One lightbox per entry: tap a photograph, step with the arrows, the keys
   // or a swipe; the backdrop, ✕ or Escape leaves.
   const dialog = document.getElementById("lightbox") as HTMLDialogElement | null;
@@ -276,14 +245,6 @@ const exits: ChamberExit[] = [
   /* The entry wears the chamber (layouts/Chamber.astro): seal colours on
      white, the shaft, the head, the band and the exits. These are only the
      entry's own pieces: the lead photograph, the video, the photographs. */
-  .archive-note {
-    margin: var(--s-5) 0 0;
-    font-size: 16px;
-    line-height: 1.7;
-    letter-spacing: 0.03em;
-    text-transform: none;
-    color: #4a6274;
-  }
 
   .lead-image {
     display: block;
@@ -304,64 +265,10 @@ const exits: ChamberExit[] = [
     margin-inline: auto;
   }
 
-  /* 16:9 on every width; nothing from YouTube loads until the facade is used */
-  .video {
-    position: relative;
-    aspect-ratio: 16 / 9;
+  .videos {
+    display: grid;
+    gap: var(--s-8);
     margin: 0 0 var(--s-8);
-    background: #1a3346;
-  }
-  .video > :global(iframe),
-  .video-facade {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-  }
-  .video-facade {
-    display: grid;
-    place-items: center;
-    color: #fff;
-    text-decoration: none;
-    overflow: hidden;
-  }
-  .video-facade img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    border: 0;
-    object-fit: cover;
-    filter: brightness(0.62);
-  }
-  /* a square stop, not a round button: navy fill, the seal's gold frame */
-  .play {
-    position: relative;
-    width: var(--s-10);
-    height: var(--s-10);
-    background: #1a3346;
-    border: 2px solid #ab9362;
-    display: grid;
-    place-items: center;
-    color: #fff;
-    transition: background-color var(--dur-1) var(--ease-out);
-  }
-  .video-facade:hover .play,
-  .video-facade:focus-visible .play {
-    background: #22425a;
-  }
-  /* white on the darkened photo, over a navy plate so it holds on any frame */
-  .video-label {
-    position: absolute;
-    left: var(--s-3);
-    bottom: var(--s-3);
-    padding: 2px var(--s-2);
-    background: #1a3346;
-    font-size: 16px;
-    letter-spacing: 0.03em;
-    text-transform: none;
   }
 
   /* the photographs: square fields joined by a 2px mullion of the well's paper */

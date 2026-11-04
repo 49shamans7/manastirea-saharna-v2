@@ -40,6 +40,50 @@ galleryImages:
     thumb: /posts/epifania-2016-izvorul-tamaduirilor/image00007-2-sm.webp
     width: 800
     height: 534
+  - src: /posts/epifania-2016-izvorul-tamaduirilor/image00008-2.webp
+    thumb: /posts/epifania-2016-izvorul-tamaduirilor/image00008-2-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/epifania-2016-izvorul-tamaduirilor/image00009-2.webp
+    thumb: /posts/epifania-2016-izvorul-tamaduirilor/image00009-2-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/epifania-2016-izvorul-tamaduirilor/image00010-2.webp
+    thumb: /posts/epifania-2016-izvorul-tamaduirilor/image00010-2-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/epifania-2016-izvorul-tamaduirilor/image00011-2.webp
+    thumb: /posts/epifania-2016-izvorul-tamaduirilor/image00011-2-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/epifania-2016-izvorul-tamaduirilor/image00012-2.webp
+    thumb: /posts/epifania-2016-izvorul-tamaduirilor/image00012-2-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/epifania-2016-izvorul-tamaduirilor/image00013-2.webp
+    thumb: /posts/epifania-2016-izvorul-tamaduirilor/image00013-2-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/epifania-2016-izvorul-tamaduirilor/image00014-2.webp
+    thumb: /posts/epifania-2016-izvorul-tamaduirilor/image00014-2-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/epifania-2016-izvorul-tamaduirilor/image00015-2.webp
+    thumb: /posts/epifania-2016-izvorul-tamaduirilor/image00015-2-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/epifania-2016-izvorul-tamaduirilor/image00016-2.webp
+    thumb: /posts/epifania-2016-izvorul-tamaduirilor/image00016-2-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/epifania-2016-izvorul-tamaduirilor/image00017-2.webp
+    thumb: /posts/epifania-2016-izvorul-tamaduirilor/image00017-2-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/epifania-2016-izvorul-tamaduirilor/image00018-2.webp
+    thumb: /posts/epifania-2016-izvorul-tamaduirilor/image00018-2-sm.webp
+    width: 800
+    height: 534
 ---
 
 „Cine nu se va naște din Duh și din Apă nu va intra în Împărăția Cerurilor”

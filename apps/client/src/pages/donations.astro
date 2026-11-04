@@ -4,6 +4,7 @@
 // Rechizite from the old site's /donatii/ page (msaharna-archive practical_info.json).
 import TableLayout from "@layouts/TableLayout.astro";
 import RiverMark from "@components/marks/RiverMark.astro";
+import { publicAsset } from "@utils/paths";
 import { getLocaleFromUrl, getLocalizedPath, useTranslations } from "@i18n/utils";
 
 const lang = getLocaleFromUrl(Astro.url);
@@ -24,6 +25,7 @@ const paypal = `https://${t("donations.paypalValue")}`;
 ---
 
 <TableLayout title={t("donations.title")} lead={t("donations.greeting")} mark="hands">
+  <img class="t-photo" src={publicAsset("/pages/donations/donatii.webp")} alt="" width="800" height="570" loading="lazy" decoding="async" />
   <section class="t-section">
     <p class="t-text">{t("donations.message")}</p>
     <p class="t-text">{t("donations.detailsIntro")}</p>

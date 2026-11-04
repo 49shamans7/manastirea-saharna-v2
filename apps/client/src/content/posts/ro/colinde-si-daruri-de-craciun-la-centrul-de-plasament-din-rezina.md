@@ -40,6 +40,42 @@ galleryImages:
     thumb: /posts/colinde-si-daruri-de-craciun-la-centrul-de-plasament-din-rezina/20260105_115758-scaled-sm.webp
     width: 800
     height: 1421
+  - src: /posts/colinde-si-daruri-de-craciun-la-centrul-de-plasament-din-rezina/20260105_115800-scaled.webp
+    thumb: /posts/colinde-si-daruri-de-craciun-la-centrul-de-plasament-din-rezina/20260105_115800-scaled-sm.webp
+    width: 800
+    height: 1421
+  - src: /posts/colinde-si-daruri-de-craciun-la-centrul-de-plasament-din-rezina/20260105_115803-scaled.webp
+    thumb: /posts/colinde-si-daruri-de-craciun-la-centrul-de-plasament-din-rezina/20260105_115803-scaled-sm.webp
+    width: 800
+    height: 1421
+  - src: /posts/colinde-si-daruri-de-craciun-la-centrul-de-plasament-din-rezina/20260105_115808-scaled.webp
+    thumb: /posts/colinde-si-daruri-de-craciun-la-centrul-de-plasament-din-rezina/20260105_115808-scaled-sm.webp
+    width: 800
+    height: 1421
+  - src: /posts/colinde-si-daruri-de-craciun-la-centrul-de-plasament-din-rezina/20260105_120123-scaled.webp
+    thumb: /posts/colinde-si-daruri-de-craciun-la-centrul-de-plasament-din-rezina/20260105_120123-scaled-sm.webp
+    width: 800
+    height: 1421
+  - src: /posts/colinde-si-daruri-de-craciun-la-centrul-de-plasament-din-rezina/screenshot_20260106_123251_gallery.webp
+    thumb: /posts/colinde-si-daruri-de-craciun-la-centrul-de-plasament-din-rezina/screenshot_20260106_123251_gallery-sm.webp
+    width: 800
+    height: 1390
+  - src: /posts/colinde-si-daruri-de-craciun-la-centrul-de-plasament-din-rezina/screenshot_20260106_123304_gallery.webp
+    thumb: /posts/colinde-si-daruri-de-craciun-la-centrul-de-plasament-din-rezina/screenshot_20260106_123304_gallery-sm.webp
+    width: 800
+    height: 1381
+  - src: /posts/colinde-si-daruri-de-craciun-la-centrul-de-plasament-din-rezina/screenshot_20260106_123307_gallery.webp
+    thumb: /posts/colinde-si-daruri-de-craciun-la-centrul-de-plasament-din-rezina/screenshot_20260106_123307_gallery-sm.webp
+    width: 800
+    height: 1410
+  - src: /posts/colinde-si-daruri-de-craciun-la-centrul-de-plasament-din-rezina/screenshot_20260106_123350_gallery.webp
+    thumb: /posts/colinde-si-daruri-de-craciun-la-centrul-de-plasament-din-rezina/screenshot_20260106_123350_gallery-sm.webp
+    width: 800
+    height: 1333
+  - src: /posts/colinde-si-daruri-de-craciun-la-centrul-de-plasament-din-rezina/screenshot_20260106_123355_gallery.webp
+    thumb: /posts/colinde-si-daruri-de-craciun-la-centrul-de-plasament-din-rezina/screenshot_20260106_123355_gallery-sm.webp
+    width: 800
+    height: 1230
 ---
 
 În ajunul Nașterii Domnului, un grup de viețuitori ai Sfintei Mănăstiri Saharna, în frunte cu starețul Arhimandritul Adrian Baciu, a vizitat Centrul de Plasament pentru persoane vârstnice și cu dizabilități din orașul Rezină. Am colindat împreună cu bătrânii, cântând tradiționalele colinde și împărtășind bucuria praznicului Nașterii Domnului Hristos. Am împărțit daruri și produse alimentare pentru cantina centrului. Ne-am rugat pentru sănătatea și mângâierea lor, mulțumind lui Dumnezeu pentru prilejul de a fi alături de cei aflați în nevoie. Domnul să le dăruiască tuturor pace și binecuvântare.

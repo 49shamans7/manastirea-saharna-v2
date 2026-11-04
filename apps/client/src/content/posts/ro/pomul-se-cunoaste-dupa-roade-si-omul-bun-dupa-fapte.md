@@ -40,6 +40,22 @@ galleryImages:
     thumb: /posts/pomul-se-cunoaste-dupa-roade-si-omul-bun-dupa-fapte/image00007-sm.webp
     width: 800
     height: 600
+  - src: /posts/pomul-se-cunoaste-dupa-roade-si-omul-bun-dupa-fapte/image00008.webp
+    thumb: /posts/pomul-se-cunoaste-dupa-roade-si-omul-bun-dupa-fapte/image00008-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/pomul-se-cunoaste-dupa-roade-si-omul-bun-dupa-fapte/image00009.webp
+    thumb: /posts/pomul-se-cunoaste-dupa-roade-si-omul-bun-dupa-fapte/image00009-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/pomul-se-cunoaste-dupa-roade-si-omul-bun-dupa-fapte/image00010.webp
+    thumb: /posts/pomul-se-cunoaste-dupa-roade-si-omul-bun-dupa-fapte/image00010-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/pomul-se-cunoaste-dupa-roade-si-omul-bun-dupa-fapte/image00011.webp
+    thumb: /posts/pomul-se-cunoaste-dupa-roade-si-omul-bun-dupa-fapte/image00011-sm.webp
+    width: 800
+    height: 600
 ---
 
 În cadrul Săptămînii Tineretului Ortodox, elevii IP Gimnaziul Saharna Nouă, îndrumați și călăuziti de profesorul de religie Ieromonahul Vasilisc Donica, au desfășurat la data de 22 aprilie 2016, de Ziua Internațională a Pământului, o activitate de solubrizare în cimitirul din satul Saharna Nouă.

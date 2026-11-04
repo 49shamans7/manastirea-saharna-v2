@@ -40,6 +40,38 @@ galleryImages:
     thumb: /posts/canonul-sf-andrei-criteanul/10941429_804928216258678_538392869673636862_n-sm.webp
     width: 800
     height: 533
+  - src: /posts/canonul-sf-andrei-criteanul/10984265_804537106297789_1434512231597555231_n.webp
+    thumb: /posts/canonul-sf-andrei-criteanul/10984265_804537106297789_1434512231597555231_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/canonul-sf-andrei-criteanul/10987623_804929966258503_8142556032498270219_n.webp
+    thumb: /posts/canonul-sf-andrei-criteanul/10987623_804929966258503_8142556032498270219_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/canonul-sf-andrei-criteanul/10990202_804928639591969_1718905718503604400_n.webp
+    thumb: /posts/canonul-sf-andrei-criteanul/10990202_804928639591969_1718905718503604400_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/canonul-sf-andrei-criteanul/11015826_804928416258658_180784054622134473_n.webp
+    thumb: /posts/canonul-sf-andrei-criteanul/11015826_804928416258658_180784054622134473_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/canonul-sf-andrei-criteanul/11021117_804537289631104_1755785252595589343_n.webp
+    thumb: /posts/canonul-sf-andrei-criteanul/11021117_804537289631104_1755785252595589343_n-sm.webp
+    width: 800
+    height: 788
+  - src: /posts/canonul-sf-andrei-criteanul/11021120_804930016258498_8286009539493915806_n.webp
+    thumb: /posts/canonul-sf-andrei-criteanul/11021120_804930016258498_8286009539493915806_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/canonul-sf-andrei-criteanul/11022569_804928192925347_6628350518504932876_n.webp
+    thumb: /posts/canonul-sf-andrei-criteanul/11022569_804928192925347_6628350518504932876_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/canonul-sf-andrei-criteanul/11720_804929712925195_7136350958098295225_n.webp
+    thumb: /posts/canonul-sf-andrei-criteanul/11720_804929712925195_7136350958098295225_n-sm.webp
+    width: 800
+    height: 533
 ---
 
 Oficiatori Arhim.Pimen, Ierom.Iuvenalie, Ierom.Vasilisc

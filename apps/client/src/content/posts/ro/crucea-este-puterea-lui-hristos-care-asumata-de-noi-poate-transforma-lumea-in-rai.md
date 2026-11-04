@@ -40,6 +40,42 @@ galleryImages:
     thumb: /posts/crucea-este-puterea-lui-hristos-care-asumata-de-noi-poate-transforma-lumea-in-rai/20210429_194733-scaled-sm.webp
     width: 800
     height: 1067
+  - src: /posts/crucea-este-puterea-lui-hristos-care-asumata-de-noi-poate-transforma-lumea-in-rai/20210429_194741-scaled.webp
+    thumb: /posts/crucea-este-puterea-lui-hristos-care-asumata-de-noi-poate-transforma-lumea-in-rai/20210429_194741-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/crucea-este-puterea-lui-hristos-care-asumata-de-noi-poate-transforma-lumea-in-rai/20210429_194932-scaled.webp
+    thumb: /posts/crucea-este-puterea-lui-hristos-care-asumata-de-noi-poate-transforma-lumea-in-rai/20210429_194932-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/crucea-este-puterea-lui-hristos-care-asumata-de-noi-poate-transforma-lumea-in-rai/20210429_194945-scaled.webp
+    thumb: /posts/crucea-este-puterea-lui-hristos-care-asumata-de-noi-poate-transforma-lumea-in-rai/20210429_194945-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/crucea-este-puterea-lui-hristos-care-asumata-de-noi-poate-transforma-lumea-in-rai/20210429_195032-scaled.webp
+    thumb: /posts/crucea-este-puterea-lui-hristos-care-asumata-de-noi-poate-transforma-lumea-in-rai/20210429_195032-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/crucea-este-puterea-lui-hristos-care-asumata-de-noi-poate-transforma-lumea-in-rai/20210429_195208-scaled.webp
+    thumb: /posts/crucea-este-puterea-lui-hristos-care-asumata-de-noi-poate-transforma-lumea-in-rai/20210429_195208-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/crucea-este-puterea-lui-hristos-care-asumata-de-noi-poate-transforma-lumea-in-rai/20210429_195220-scaled.webp
+    thumb: /posts/crucea-este-puterea-lui-hristos-care-asumata-de-noi-poate-transforma-lumea-in-rai/20210429_195220-scaled-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/crucea-este-puterea-lui-hristos-care-asumata-de-noi-poate-transforma-lumea-in-rai/20210429_195241-scaled.webp
+    thumb: /posts/crucea-este-puterea-lui-hristos-care-asumata-de-noi-poate-transforma-lumea-in-rai/20210429_195241-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/crucea-este-puterea-lui-hristos-care-asumata-de-noi-poate-transforma-lumea-in-rai/20210429_195656-scaled.webp
+    thumb: /posts/crucea-este-puterea-lui-hristos-care-asumata-de-noi-poate-transforma-lumea-in-rai/20210429_195656-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/crucea-este-puterea-lui-hristos-care-asumata-de-noi-poate-transforma-lumea-in-rai/20210429_195827-scaled.webp
+    thumb: /posts/crucea-este-puterea-lui-hristos-care-asumata-de-noi-poate-transforma-lumea-in-rai/20210429_195827-scaled-sm.webp
+    width: 800
+    height: 548
 ---
 
 

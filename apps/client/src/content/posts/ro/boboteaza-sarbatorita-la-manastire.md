@@ -40,6 +40,70 @@ galleryImages:
     thumb: /posts/boboteaza-sarbatorita-la-manastire/20260119_114939-scaled-sm.webp
     width: 800
     height: 1421
+  - src: /posts/boboteaza-sarbatorita-la-manastire/20260119_114943-scaled.webp
+    thumb: /posts/boboteaza-sarbatorita-la-manastire/20260119_114943-scaled-sm.webp
+    width: 800
+    height: 1421
+  - src: /posts/boboteaza-sarbatorita-la-manastire/20260119_114945-scaled.webp
+    thumb: /posts/boboteaza-sarbatorita-la-manastire/20260119_114945-scaled-sm.webp
+    width: 800
+    height: 1421
+  - src: /posts/boboteaza-sarbatorita-la-manastire/20260119_115029-scaled.webp
+    thumb: /posts/boboteaza-sarbatorita-la-manastire/20260119_115029-scaled-sm.webp
+    width: 800
+    height: 1421
+  - src: /posts/boboteaza-sarbatorita-la-manastire/20260119_115036-1-scaled.webp
+    thumb: /posts/boboteaza-sarbatorita-la-manastire/20260119_115036-1-scaled-sm.webp
+    width: 800
+    height: 1421
+  - src: /posts/boboteaza-sarbatorita-la-manastire/20260119_115048-scaled.webp
+    thumb: /posts/boboteaza-sarbatorita-la-manastire/20260119_115048-scaled-sm.webp
+    width: 800
+    height: 1421
+  - src: /posts/boboteaza-sarbatorita-la-manastire/20260119_115056-scaled.webp
+    thumb: /posts/boboteaza-sarbatorita-la-manastire/20260119_115056-scaled-sm.webp
+    width: 800
+    height: 1421
+  - src: /posts/boboteaza-sarbatorita-la-manastire/20260119_115058-scaled.webp
+    thumb: /posts/boboteaza-sarbatorita-la-manastire/20260119_115058-scaled-sm.webp
+    width: 800
+    height: 1421
+  - src: /posts/boboteaza-sarbatorita-la-manastire/20260119_115125-scaled.webp
+    thumb: /posts/boboteaza-sarbatorita-la-manastire/20260119_115125-scaled-sm.webp
+    width: 800
+    height: 1421
+  - src: /posts/boboteaza-sarbatorita-la-manastire/20260119_115129-scaled.webp
+    thumb: /posts/boboteaza-sarbatorita-la-manastire/20260119_115129-scaled-sm.webp
+    width: 800
+    height: 1421
+  - src: /posts/boboteaza-sarbatorita-la-manastire/20260119_115132-scaled.webp
+    thumb: /posts/boboteaza-sarbatorita-la-manastire/20260119_115132-scaled-sm.webp
+    width: 800
+    height: 1421
+  - src: /posts/boboteaza-sarbatorita-la-manastire/20260119_121455-scaled.webp
+    thumb: /posts/boboteaza-sarbatorita-la-manastire/20260119_121455-scaled-sm.webp
+    width: 800
+    height: 1421
+  - src: /posts/boboteaza-sarbatorita-la-manastire/20260119_121502-scaled.webp
+    thumb: /posts/boboteaza-sarbatorita-la-manastire/20260119_121502-scaled-sm.webp
+    width: 800
+    height: 1421
+  - src: /posts/boboteaza-sarbatorita-la-manastire/20260119_121505-scaled.webp
+    thumb: /posts/boboteaza-sarbatorita-la-manastire/20260119_121505-scaled-sm.webp
+    width: 800
+    height: 1421
+  - src: /posts/boboteaza-sarbatorita-la-manastire/20260119_121507-scaled.webp
+    thumb: /posts/boboteaza-sarbatorita-la-manastire/20260119_121507-scaled-sm.webp
+    width: 800
+    height: 1421
+  - src: /posts/boboteaza-sarbatorita-la-manastire/20260119_121513-scaled.webp
+    thumb: /posts/boboteaza-sarbatorita-la-manastire/20260119_121513-scaled-sm.webp
+    width: 800
+    height: 1421
+  - src: /posts/boboteaza-sarbatorita-la-manastire/20260119_121516-scaled.webp
+    thumb: /posts/boboteaza-sarbatorita-la-manastire/20260119_121516-scaled-sm.webp
+    width: 800
+    height: 1421
 ---
 
 Astazi a Mănăstire, în ziua Botezului Domnului, cerul s-a coborât pe pământ.

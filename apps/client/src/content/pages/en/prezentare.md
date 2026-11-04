@@ -30,5 +30,3 @@ Saharna Monastery is a gift and a blessing of God not only for our right-believi
 ## Welcome!
 
 This monastery is the place where the beautiful, life-giving love of the Holy Trinity pours out upon all who cross its threshold with faith. Here the prosphora and the wine, fruits of the earth and of your labour, become the Body and Blood of Christ, received for the renewal of life and for eternal blessedness. Here you receive the true good tidings through the Virgin Mother, who knows you as sons and heirs of her Son's Kingdom.
-
-*From the home page of the monastery's former website.*

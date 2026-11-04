@@ -3,7 +3,7 @@
 # Romanian original (src/data/pages.ts shows it under lang="ro").
 title: "Service to Venerable Macarius"
 eyebrow: "The Reliquary · zone III"
-lead: "The order of the saint’s service, as it is sung at the monastery."
+lead: "The order of the saint’s service."
 zone: gold
 template: chamber
 order: 5

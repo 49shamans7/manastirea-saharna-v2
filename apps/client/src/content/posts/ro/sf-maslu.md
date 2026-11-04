@@ -40,6 +40,78 @@ galleryImages:
     thumb: /posts/sf-maslu/image00007-1-sm.webp
     width: 800
     height: 534
+  - src: /posts/sf-maslu/image00008-1.webp
+    thumb: /posts/sf-maslu/image00008-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/sf-maslu/image00009-1.webp
+    thumb: /posts/sf-maslu/image00009-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/sf-maslu/image00010-1.webp
+    thumb: /posts/sf-maslu/image00010-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/sf-maslu/image00011-1.webp
+    thumb: /posts/sf-maslu/image00011-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/sf-maslu/image00012-1.webp
+    thumb: /posts/sf-maslu/image00012-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/sf-maslu/image00013-1.webp
+    thumb: /posts/sf-maslu/image00013-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/sf-maslu/image00014-1.webp
+    thumb: /posts/sf-maslu/image00014-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/sf-maslu/image00015-1.webp
+    thumb: /posts/sf-maslu/image00015-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/sf-maslu/image00016-1.webp
+    thumb: /posts/sf-maslu/image00016-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/sf-maslu/image00017-1.webp
+    thumb: /posts/sf-maslu/image00017-1-sm.webp
+    width: 800
+    height: 641
+  - src: /posts/sf-maslu/image00018-1.webp
+    thumb: /posts/sf-maslu/image00018-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/sf-maslu/image00019-1.webp
+    thumb: /posts/sf-maslu/image00019-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/sf-maslu/image00020-1.webp
+    thumb: /posts/sf-maslu/image00020-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/sf-maslu/image00021-1.webp
+    thumb: /posts/sf-maslu/image00021-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/sf-maslu/image00022-1.webp
+    thumb: /posts/sf-maslu/image00022-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/sf-maslu/image00023-1.webp
+    thumb: /posts/sf-maslu/image00023-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/sf-maslu/image00024-1.webp
+    thumb: /posts/sf-maslu/image00024-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/sf-maslu/image00025-1.webp
+    thumb: /posts/sf-maslu/image00025-1-sm.webp
+    width: 800
+    height: 534
 ---
 
 Taina Sfântului Maslu săvârșită la Sfânta Mănăstire Saharna.

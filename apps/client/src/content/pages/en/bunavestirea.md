@@ -3,7 +3,7 @@
 # Romanian original (src/data/pages.ts shows it under lang="ro").
 title: "The cave church of the Annunciation"
 eyebrow: "The Rock · zone I"
-lead: "The monastery in the rock, the oldest part of the Saharna ensemble."
+lead: "The monastery in the rock at Saharna."
 zone: rock
 template: chamber
 order: 3

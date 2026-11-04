@@ -40,6 +40,54 @@ galleryImages:
     thumb: /posts/bucuria-hramului-la-manastire/20260531_091544-scaled-sm.webp
     width: 800
     height: 1421
+  - src: /posts/bucuria-hramului-la-manastire/20260531_092925-scaled.webp
+    thumb: /posts/bucuria-hramului-la-manastire/20260531_092925-scaled-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/bucuria-hramului-la-manastire/20260531_092939-scaled.webp
+    thumb: /posts/bucuria-hramului-la-manastire/20260531_092939-scaled-sm.webp
+    width: 800
+    height: 1421
+  - src: /posts/bucuria-hramului-la-manastire/fb_img_1780242237554.webp
+    thumb: /posts/bucuria-hramului-la-manastire/fb_img_1780242237554-sm.webp
+    width: 800
+    height: 1138
+  - src: /posts/bucuria-hramului-la-manastire/fb_img_1780242307189.webp
+    thumb: /posts/bucuria-hramului-la-manastire/fb_img_1780242307189-sm.webp
+    width: 800
+    height: 1215
+  - src: /posts/bucuria-hramului-la-manastire/fb_img_1780242312490.webp
+    thumb: /posts/bucuria-hramului-la-manastire/fb_img_1780242312490-sm.webp
+    width: 800
+    height: 1149
+  - src: /posts/bucuria-hramului-la-manastire/fb_img_1780242335055.webp
+    thumb: /posts/bucuria-hramului-la-manastire/fb_img_1780242335055-sm.webp
+    width: 800
+    height: 490
+  - src: /posts/bucuria-hramului-la-manastire/fb_img_1780242347185.webp
+    thumb: /posts/bucuria-hramului-la-manastire/fb_img_1780242347185-sm.webp
+    width: 800
+    height: 1145
+  - src: /posts/bucuria-hramului-la-manastire/fb_img_1780242351494.webp
+    thumb: /posts/bucuria-hramului-la-manastire/fb_img_1780242351494-sm.webp
+    width: 800
+    height: 1144
+  - src: /posts/bucuria-hramului-la-manastire/fb_img_1780242354846.webp
+    thumb: /posts/bucuria-hramului-la-manastire/fb_img_1780242354846-sm.webp
+    width: 800
+    height: 489
+  - src: /posts/bucuria-hramului-la-manastire/fb_img_1780242359129.webp
+    thumb: /posts/bucuria-hramului-la-manastire/fb_img_1780242359129-sm.webp
+    width: 800
+    height: 489
+  - src: /posts/bucuria-hramului-la-manastire/fb_img_1780242366396.webp
+    thumb: /posts/bucuria-hramului-la-manastire/fb_img_1780242366396-sm.webp
+    width: 800
+    height: 466
+  - src: /posts/bucuria-hramului-la-manastire/fb_img_1780242370049.webp
+    thumb: /posts/bucuria-hramului-la-manastire/fb_img_1780242370049-sm.webp
+    width: 800
+    height: 497
 ---
 
 În Duminica Cincizecimii, mănăstirea noastră a trăit momente de profundă înălțare duhovnicească. De sărbătoarea Sfintei Treimi, cu binecuvântarea Înaltpreasfințitului Mitropolit Vladimir, am avut marea bucurie de a-l avea în mijlocul nostru pe Înaltpreasfințitul Ioan Moșneguțu, Arhiepiscop de Soroca și Drochia, care a săvârșit Sfânta Liturghie în biserica „Învierea Domnului”.

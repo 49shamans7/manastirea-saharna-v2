@@ -3,7 +3,7 @@
 # Romanian original (src/data/pages.ts shows it under lang="ro").
 title: "Библиотека"
 eyebrow: "Рака · зона III"
-lead: "Каноны и чинопоследования, собранные братией."
+lead: "Каноны и чинопоследования."
 zone: gold
 template: chamber
 order: 6

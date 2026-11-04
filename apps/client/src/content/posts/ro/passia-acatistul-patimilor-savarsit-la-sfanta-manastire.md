@@ -40,6 +40,10 @@ galleryImages:
     thumb: /posts/passia-acatistul-patimilor-savarsit-la-sfanta-manastire/wp_20160417_19_28_08_pro-sm.webp
     width: 800
     height: 1422
+  - src: /posts/passia-acatistul-patimilor-savarsit-la-sfanta-manastire/wp_20160417_19_28_39_pro.webp
+    thumb: /posts/passia-acatistul-patimilor-savarsit-la-sfanta-manastire/wp_20160417_19_28_39_pro-sm.webp
+    width: 800
+    height: 1422
 ---
 
 Iisuse, Fiul lui Dumnezeu, pomenește-ne întru Împărăția Ta!

@@ -1,0 +1,62 @@
+---
+// The old album pages were photographs and nothing else. Each tile is a plain
+// link to the full picture: a tap opens it, Back returns.
+import galleryManifest from "@data/gallery.json";
+import { withBasePath } from "@utils/paths";
+
+interface Props {
+  album: string;
+  title: string;
+}
+
+type Item = { src: string; thumb: string; width: number; height: number };
+
+const { album, title } = Astro.props;
+const items = ((galleryManifest as { key: string; items: Item[] }[]).find((c) => c.key === album)?.items ?? []);
+---
+
+<ul class="album">
+  {
+    items.map((item, index) => (
+      <li>
+        <a href={withBasePath(item.src)} aria-label={`${title} ${index + 1}`}>
+          <img src={withBasePath(item.thumb)} alt="" width={item.width} height={item.height} loading="lazy" decoding="async" />
+        </a>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  .album {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr));
+    gap: var(--s-3);
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .album li {
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+  }
+  .album li::before,
+  .album li::marker {
+    content: none;
+  }
+  .album a {
+    display: block;
+  }
+  .album a:focus-visible {
+    outline: 3px solid var(--seal-gold-text);
+    outline-offset: 3px;
+  }
+  .album img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+</style>

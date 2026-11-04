@@ -40,6 +40,30 @@ galleryImages:
     thumb: /posts/taborul-si-ermonul-intru-slava-ta-se-vor-bucura/img-9c448452b0d98bdc563fbae9934bd631-v-sm.webp
     width: 800
     height: 571
+  - src: /posts/taborul-si-ermonul-intru-slava-ta-se-vor-bucura/img-b094c4d64055d6b7e4e05d5a64cc17bb-v.webp
+    thumb: /posts/taborul-si-ermonul-intru-slava-ta-se-vor-bucura/img-b094c4d64055d6b7e4e05d5a64cc17bb-v-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/taborul-si-ermonul-intru-slava-ta-se-vor-bucura/img-b69562b509b690c885086d103e1cf5af-v.webp
+    thumb: /posts/taborul-si-ermonul-intru-slava-ta-se-vor-bucura/img-b69562b509b690c885086d103e1cf5af-v-sm.webp
+    width: 800
+    height: 1066
+  - src: /posts/taborul-si-ermonul-intru-slava-ta-se-vor-bucura/img-cc267cb9ae7f3708f0f5347083f46a35-v.webp
+    thumb: /posts/taborul-si-ermonul-intru-slava-ta-se-vor-bucura/img-cc267cb9ae7f3708f0f5347083f46a35-v-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/taborul-si-ermonul-intru-slava-ta-se-vor-bucura/img-e49174030e99c96388c180eedaba6db6-v.webp
+    thumb: /posts/taborul-si-ermonul-intru-slava-ta-se-vor-bucura/img-e49174030e99c96388c180eedaba6db6-v-sm.webp
+    width: 800
+    height: 977
+  - src: /posts/taborul-si-ermonul-intru-slava-ta-se-vor-bucura/img-e829a27475c7fe3e88ed45fad4207eb6-v.webp
+    thumb: /posts/taborul-si-ermonul-intru-slava-ta-se-vor-bucura/img-e829a27475c7fe3e88ed45fad4207eb6-v-sm.webp
+    width: 800
+    height: 677
+  - src: /posts/taborul-si-ermonul-intru-slava-ta-se-vor-bucura/img-f3f15003c6981d3fee2bafe4feaea338-v.webp
+    thumb: /posts/taborul-si-ermonul-intru-slava-ta-se-vor-bucura/img-f3f15003c6981d3fee2bafe4feaea338-v-sm.webp
+    width: 800
+    height: 853
 ---
 
 Praznicul Schimbării la Față a Domnului nostru Iisus Hristos sărbătorit la Sfânta Mănăstire Saharna.

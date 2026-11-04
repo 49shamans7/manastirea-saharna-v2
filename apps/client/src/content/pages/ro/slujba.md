@@ -1,7 +1,7 @@
 ---
 title: "Slujba Cuviosului Macarie"
 eyebrow: "Racla · zona III"
-lead: "Rânduiala slujbei sfântului, așa cum se cântă la mănăstire."
+lead: "Rânduiala slujbei sfântului."
 zone: gold
 template: chamber
 order: 5

@@ -40,6 +40,30 @@ galleryImages:
     thumb: /posts/in-atentia-crestinilor-nu-va-lasati-manipulati/228999575_4205610199523779_215573723169179565_n-sm.webp
     width: 800
     height: 600
+  - src: /posts/in-atentia-crestinilor-nu-va-lasati-manipulati/229051839_4205611759523623_7801475670736707713_n.webp
+    thumb: /posts/in-atentia-crestinilor-nu-va-lasati-manipulati/229051839_4205611759523623_7801475670736707713_n-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/in-atentia-crestinilor-nu-va-lasati-manipulati/229313713_4205612389523560_6622330227368767176_n.webp
+    thumb: /posts/in-atentia-crestinilor-nu-va-lasati-manipulati/229313713_4205612389523560_6622330227368767176_n-sm.webp
+    width: 800
+    height: 1573
+  - src: /posts/in-atentia-crestinilor-nu-va-lasati-manipulati/230177171_4205612129523586_5342821165354761767_n.webp
+    thumb: /posts/in-atentia-crestinilor-nu-va-lasati-manipulati/230177171_4205612129523586_5342821165354761767_n-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/in-atentia-crestinilor-nu-va-lasati-manipulati/230271455_4205611372856995_252236733525426823_n.webp
+    thumb: /posts/in-atentia-crestinilor-nu-va-lasati-manipulati/230271455_4205611372856995_252236733525426823_n-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/in-atentia-crestinilor-nu-va-lasati-manipulati/231438296_4205612866190179_2950618682793265850_n.webp
+    thumb: /posts/in-atentia-crestinilor-nu-va-lasati-manipulati/231438296_4205612866190179_2950618682793265850_n-sm.webp
+    width: 800
+    height: 1066
+  - src: /posts/in-atentia-crestinilor-nu-va-lasati-manipulati/screenshot_42.webp
+    thumb: /posts/in-atentia-crestinilor-nu-va-lasati-manipulati/screenshot_42-sm.webp
+    width: 611
+    height: 683
 ---
 
 După cum vedem în pozele care sunt făcute duminică, 01.08.2021, între orele 9 și 14, pe teritoriul mănăstiri nu este instalat nici un cort pentru vaccinare.

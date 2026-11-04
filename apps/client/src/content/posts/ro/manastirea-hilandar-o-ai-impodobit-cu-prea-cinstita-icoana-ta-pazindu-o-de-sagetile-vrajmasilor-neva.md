@@ -40,6 +40,26 @@ galleryImages:
     thumb: /posts/manastirea-hilandar-o-ai-impodobit-cu-prea-cinstita-icoana-ta-pazindu-o-de-sagetile-vrajmasilor-neva/image00007-sm.webp
     width: 800
     height: 534
+  - src: /posts/manastirea-hilandar-o-ai-impodobit-cu-prea-cinstita-icoana-ta-pazindu-o-de-sagetile-vrajmasilor-neva/image00008.webp
+    thumb: /posts/manastirea-hilandar-o-ai-impodobit-cu-prea-cinstita-icoana-ta-pazindu-o-de-sagetile-vrajmasilor-neva/image00008-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/manastirea-hilandar-o-ai-impodobit-cu-prea-cinstita-icoana-ta-pazindu-o-de-sagetile-vrajmasilor-neva/image00009.webp
+    thumb: /posts/manastirea-hilandar-o-ai-impodobit-cu-prea-cinstita-icoana-ta-pazindu-o-de-sagetile-vrajmasilor-neva/image00009-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/manastirea-hilandar-o-ai-impodobit-cu-prea-cinstita-icoana-ta-pazindu-o-de-sagetile-vrajmasilor-neva/image00010.webp
+    thumb: /posts/manastirea-hilandar-o-ai-impodobit-cu-prea-cinstita-icoana-ta-pazindu-o-de-sagetile-vrajmasilor-neva/image00010-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/manastirea-hilandar-o-ai-impodobit-cu-prea-cinstita-icoana-ta-pazindu-o-de-sagetile-vrajmasilor-neva/image00011.webp
+    thumb: /posts/manastirea-hilandar-o-ai-impodobit-cu-prea-cinstita-icoana-ta-pazindu-o-de-sagetile-vrajmasilor-neva/image00011-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/manastirea-hilandar-o-ai-impodobit-cu-prea-cinstita-icoana-ta-pazindu-o-de-sagetile-vrajmasilor-neva/image00012.webp
+    thumb: /posts/manastirea-hilandar-o-ai-impodobit-cu-prea-cinstita-icoana-ta-pazindu-o-de-sagetile-vrajmasilor-neva/image00012-sm.webp
+    width: 800
+    height: 534
 ---
 
 Cu binecuvântarea ÎPS Vladimir, Mitropolitul Chișinăului și a întregii Moldove, în Sfânta Mănăstire Saharna a fost adusă spre închinare copia icoanei Maicii Domnului TRICHEROUSA ( Troerucița ) din Sfânta Mănăstire Hilandar ( Sfântul Munte Athos )

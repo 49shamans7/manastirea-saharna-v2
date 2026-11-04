@@ -1,5 +1,5 @@
 ---
-title: "Istoria sfintei mănăstiri"
+title: "Istoria Sfintei Mănăstiri"
 eyebrow: "Stânca · zona I"
 lead: "De la chiliile săpate în stâncă până la mănăstirea de astăzi."
 zone: rock

@@ -40,6 +40,58 @@ galleryImages:
     thumb: /posts/denia-prohodului-2/20250418_192909-scaled-sm.webp
     width: 800
     height: 600
+  - src: /posts/denia-prohodului-2/20250418_201239-scaled.webp
+    thumb: /posts/denia-prohodului-2/20250418_201239-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/denia-prohodului-2/20250418_201242-scaled.webp
+    thumb: /posts/denia-prohodului-2/20250418_201242-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/denia-prohodului-2/20250418_201246-scaled.webp
+    thumb: /posts/denia-prohodului-2/20250418_201246-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/denia-prohodului-2/20250418_201320-scaled.webp
+    thumb: /posts/denia-prohodului-2/20250418_201320-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/denia-prohodului-2/20250418_201328.webp
+    thumb: /posts/denia-prohodului-2/20250418_201328-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/denia-prohodului-2/20250418_201333-scaled.webp
+    thumb: /posts/denia-prohodului-2/20250418_201333-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/denia-prohodului-2/20250418_201338-scaled.webp
+    thumb: /posts/denia-prohodului-2/20250418_201338-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/denia-prohodului-2/20250418_201340-scaled.webp
+    thumb: /posts/denia-prohodului-2/20250418_201340-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/denia-prohodului-2/20250418_201342-scaled.webp
+    thumb: /posts/denia-prohodului-2/20250418_201342-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/denia-prohodului-2/20250418_201428-scaled.webp
+    thumb: /posts/denia-prohodului-2/20250418_201428-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/denia-prohodului-2/20250418_201433-scaled.webp
+    thumb: /posts/denia-prohodului-2/20250418_201433-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/denia-prohodului-2/20250418_201437-scaled.webp
+    thumb: /posts/denia-prohodului-2/20250418_201437-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/denia-prohodului-2/20250418_201441-scaled.webp
+    thumb: /posts/denia-prohodului-2/20250418_201441-scaled-sm.webp
+    width: 800
+    height: 1067
 ---
 
 

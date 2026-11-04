@@ -40,6 +40,14 @@ galleryImages:
     thumb: /posts/nasterea-domnului-vestit-batrinilor-singuratici/d0-b8-d0-b7-d0-be-d0-b1-d1-80-d0-b0-d0-b6-d0-b5--7-sm.webp
     width: 800
     height: 602
+  - src: /posts/nasterea-domnului-vestit-batrinilor-singuratici/d0-b8-d0-b7-d0-be-d0-b1-d1-80-d0-b0-d0-b6-d0-b5--8.webp
+    thumb: /posts/nasterea-domnului-vestit-batrinilor-singuratici/d0-b8-d0-b7-d0-be-d0-b1-d1-80-d0-b0-d0-b6-d0-b5--8-sm.webp
+    width: 800
+    height: 602
+  - src: /posts/nasterea-domnului-vestit-batrinilor-singuratici/d0-b8-d0-b7-d0-be-d0-b1-d1-80-d0-b0-d0-b6-d0-b5--9.webp
+    thumb: /posts/nasterea-domnului-vestit-batrinilor-singuratici/d0-b8-d0-b7-d0-be-d0-b1-d1-80-d0-b0-d0-b6-d0-b5--9-sm.webp
+    width: 800
+    height: 602
 ---
 
 În lumina binecuvântată a praznicului Nașterii Domnului, cu bunăvoința egumenului Sfintei Mănăstiri Saharna, Arhimandritul Adrian Baciu, elevii gimnaziului din s.Saharna Noua, ghidați de ierom.Vasilisc Donica, și-au deschis inimile către aproapele lor, împlinind porunca iubirii creștine printr-un gest de milostenie. Acești tineri, insuflați de duhul bunătății și al comuniunii, au mers în casele bătrânilor singuratici, ducând cu ei daruri și alinare sufletească.

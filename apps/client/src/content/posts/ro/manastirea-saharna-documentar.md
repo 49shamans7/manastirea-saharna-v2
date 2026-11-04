@@ -8,8 +8,7 @@ zone: green
 gallery: false
 sourceUrl: "https://manastirea-saharna.md/stiri-si-evenimente/manastirea-saharna-documentar/"
 archiveImages: 1
-videos:
-  - "zEycQxwuRsY"
+videos: []
 image:
   src: /posts/manastirea-saharna-documentar/manastirea-saharna-documentar.webp
   medium: /posts/manastirea-saharna-documentar/manastirea-saharna-documentar-800.webp

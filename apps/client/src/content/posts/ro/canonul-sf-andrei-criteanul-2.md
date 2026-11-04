@@ -40,6 +40,14 @@ galleryImages:
     thumb: /posts/canonul-sf-andrei-criteanul-2/20240318_162816-scaled-sm.webp
     width: 800
     height: 1422
+  - src: /posts/canonul-sf-andrei-criteanul-2/20240318_163004-scaled.webp
+    thumb: /posts/canonul-sf-andrei-criteanul-2/20240318_163004-scaled-sm.webp
+    width: 800
+    height: 1422
+  - src: /posts/canonul-sf-andrei-criteanul-2/20240318_163044-scaled.webp
+    thumb: /posts/canonul-sf-andrei-criteanul-2/20240318_163044-scaled-sm.webp
+    width: 800
+    height: 1422
 ---
 
 

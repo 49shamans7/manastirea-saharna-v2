@@ -1,0 +1,121 @@
+---
+// A video that costs nothing until it is asked for: a local poster and a plain
+// link to YouTube. With script, a press swaps in the player; without it, the
+// link still works. Three of the old site's videos refuse to play on other
+// sites, so those stay links.
+import Icon from "@components/marks/Icon.astro";
+import { useTranslations } from "@i18n/utils";
+import type { Locale } from "@i18n";
+
+interface Props {
+  id: string;
+  title: string;
+  lang: Locale;
+  poster?: string | undefined;
+  srcset?: string | undefined;
+  sizes?: string;
+}
+
+const NOT_EMBEDDABLE = new Set(["1FzhEBWD5eA", "7xwB0VS1dVw", "Ei510KfJ93k"]);
+
+const { id, title, lang, poster, srcset, sizes = "(max-width: 720px) 100vw, 720px" } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<div class="video">
+  <a
+    class="video-facade"
+    href={`https://www.youtube.com/watch?v=${id}`}
+    data-video={NOT_EMBEDDABLE.has(id) ? undefined : id}
+    data-title={title}
+    target="_blank"
+    rel="noopener"
+    aria-label={`${t("home.playVideo")}: ${title} (YouTube)`}>
+    {poster && <img src={poster} srcset={srcset} sizes={sizes} alt="" loading="lazy" decoding="async" />}
+    <span class="play" aria-hidden="true">
+      <Icon name="play" size={28} />
+    </span>
+    <span class="video-label">{`${t("home.playVideo")} · YouTube`}</span>
+  </a>
+</div>
+
+<script>
+  // Until pressed the page makes no request to YouTube at all.
+  document.querySelectorAll<HTMLAnchorElement>("[data-video]").forEach((facade) => {
+    facade.addEventListener("click", (event) => {
+      event.preventDefault();
+      const frame = document.createElement("iframe");
+      frame.src = `https://www.youtube-nocookie.com/embed/${facade.dataset.video}?autoplay=1&rel=0`;
+      frame.title = facade.dataset.title ?? "YouTube";
+      frame.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+      frame.allowFullscreen = true;
+      frame.referrerPolicy = "strict-origin-when-cross-origin";
+      facade.replaceWith(frame);
+    });
+  });
+</script>
+
+<style>
+  /* 16:9 on every width */
+  .video {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background: #1a3346;
+  }
+  .video > :global(iframe),
+  .video-facade {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  .video-facade {
+    display: grid;
+    place-items: center;
+    color: #fff;
+    text-decoration: none;
+    overflow: hidden;
+  }
+  .video-facade:focus-visible {
+    outline: 3px solid var(--seal-gold-text);
+    outline-offset: 3px;
+  }
+  .video-facade img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border: 0;
+    object-fit: cover;
+    filter: brightness(0.62);
+  }
+  /* a square stop, not a round button: navy fill, the seal's gold frame */
+  .play {
+    position: relative;
+    width: var(--s-10);
+    height: var(--s-10);
+    background: #1a3346;
+    border: 2px solid #ab9362;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    transition: background-color var(--dur-1) var(--ease-out);
+  }
+  .video-facade:hover .play,
+  .video-facade:focus-visible .play {
+    background: #22425a;
+  }
+  /* white on the darkened photo, over a navy plate so it holds on any frame */
+  .video-label {
+    position: absolute;
+    left: var(--s-3);
+    bottom: var(--s-3);
+    padding: 2px var(--s-2);
+    background: #1a3346;
+    font-size: 16px;
+    letter-spacing: 0.03em;
+    text-transform: none;
+  }
+</style>

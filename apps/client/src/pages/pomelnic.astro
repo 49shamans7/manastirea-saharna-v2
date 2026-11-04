@@ -7,6 +7,7 @@
 import TableLayout from "@layouts/TableLayout.astro";
 import PrayerRequestForm from "@components/PrayerRequestForm.astro";
 import { getLocaleFromUrl, useTranslations } from "@i18n/utils";
+import { publicAsset } from "@utils/paths";
 
 const lang = getLocaleFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -27,6 +28,7 @@ const guide = [
   lead={t("pomelnicPage.lead")}
   mark="lamp"
   zone="rock">
+  <img class="t-photo is-portrait" src={publicAsset("/pages/pomelnic/pomelnice.webp")} alt="" width="768" height="1024" loading="lazy" decoding="async" />
   <div class="well-page" id="pomelnic-form">
     {/* the house's own instructions, folded: read once, then the form */}
     <details class="guide">

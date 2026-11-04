@@ -40,6 +40,46 @@ galleryImages:
     thumb: /posts/denia-patimilor/20260409_181607-scaled-sm.webp
     width: 800
     height: 1421
+  - src: /posts/denia-patimilor/20260409_181657-scaled.webp
+    thumb: /posts/denia-patimilor/20260409_181657-scaled-sm.webp
+    width: 800
+    height: 1421
+  - src: /posts/denia-patimilor/20260409_183030-scaled.webp
+    thumb: /posts/denia-patimilor/20260409_183030-scaled-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/denia-patimilor/20260409_183042-scaled.webp
+    thumb: /posts/denia-patimilor/20260409_183042-scaled-sm.webp
+    width: 800
+    height: 1421
+  - src: /posts/denia-patimilor/20260409_183102-scaled.webp
+    thumb: /posts/denia-patimilor/20260409_183102-scaled-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/denia-patimilor/20260409_183131-scaled.webp
+    thumb: /posts/denia-patimilor/20260409_183131-scaled-sm.webp
+    width: 800
+    height: 1421
+  - src: /posts/denia-patimilor/20260409_183344-scaled.webp
+    thumb: /posts/denia-patimilor/20260409_183344-scaled-sm.webp
+    width: 800
+    height: 1421
+  - src: /posts/denia-patimilor/20260409_184334-scaled.webp
+    thumb: /posts/denia-patimilor/20260409_184334-scaled-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/denia-patimilor/20260409_185126-scaled.webp
+    thumb: /posts/denia-patimilor/20260409_185126-scaled-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/denia-patimilor/20260409_185136-scaled.webp
+    thumb: /posts/denia-patimilor/20260409_185136-scaled-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/denia-patimilor/20260409_191333-scaled.webp
+    thumb: /posts/denia-patimilor/20260409_191333-scaled-sm.webp
+    width: 800
+    height: 1421
 ---
 
 

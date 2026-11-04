@@ -40,6 +40,18 @@ galleryImages:
     thumb: /posts/icoana-maicii-domnului-tricherousa-cea-cu-trei-maini-a-ajuns-la-sfanta-manastire-saharna/10517447_674957942589040_2958913663645736035_n-sm.webp
     width: 800
     height: 451
+  - src: /posts/icoana-maicii-domnului-tricherousa-cea-cu-trei-maini-a-ajuns-la-sfanta-manastire-saharna/10520688_674957972589037_7032753413149508745_n.webp
+    thumb: /posts/icoana-maicii-domnului-tricherousa-cea-cu-trei-maini-a-ajuns-la-sfanta-manastire-saharna/10520688_674957972589037_7032753413149508745_n-sm.webp
+    width: 800
+    height: 451
+  - src: /posts/icoana-maicii-domnului-tricherousa-cea-cu-trei-maini-a-ajuns-la-sfanta-manastire-saharna/10527471_674958119255689_7814321770562019426_n.webp
+    thumb: /posts/icoana-maicii-domnului-tricherousa-cea-cu-trei-maini-a-ajuns-la-sfanta-manastire-saharna/10527471_674958119255689_7814321770562019426_n-sm.webp
+    width: 800
+    height: 451
+  - src: /posts/icoana-maicii-domnului-tricherousa-cea-cu-trei-maini-a-ajuns-la-sfanta-manastire-saharna/10527787_674958022589032_1987741783530546383_n.webp
+    thumb: /posts/icoana-maicii-domnului-tricherousa-cea-cu-trei-maini-a-ajuns-la-sfanta-manastire-saharna/10527787_674958022589032_1987741783530546383_n-sm.webp
+    width: 800
+    height: 451
 ---
 
 Mare binecuvântare și bucurie i-a revenit întregii comunități a sfintei mănăstiri, care din ziua de 2 iulie până pe 8 iulie v-a găzdui icoana Maicii Domnului Tricherousa ( cea cu trei mâini ).

@@ -40,6 +40,46 @@ galleryImages:
     thumb: /posts/intrarea-domnului-in-ierusalim-sarbatorita-de-clericii-manastirii/20240427_184731-scaled-sm.webp
     width: 800
     height: 1422
+  - src: /posts/intrarea-domnului-in-ierusalim-sarbatorita-de-clericii-manastirii/20240427_184742-scaled.webp
+    thumb: /posts/intrarea-domnului-in-ierusalim-sarbatorita-de-clericii-manastirii/20240427_184742-scaled-sm.webp
+    width: 800
+    height: 1422
+  - src: /posts/intrarea-domnului-in-ierusalim-sarbatorita-de-clericii-manastirii/20240427_184746-scaled.webp
+    thumb: /posts/intrarea-domnului-in-ierusalim-sarbatorita-de-clericii-manastirii/20240427_184746-scaled-sm.webp
+    width: 800
+    height: 1422
+  - src: /posts/intrarea-domnului-in-ierusalim-sarbatorita-de-clericii-manastirii/20240427_184907-scaled.webp
+    thumb: /posts/intrarea-domnului-in-ierusalim-sarbatorita-de-clericii-manastirii/20240427_184907-scaled-sm.webp
+    width: 800
+    height: 1422
+  - src: /posts/intrarea-domnului-in-ierusalim-sarbatorita-de-clericii-manastirii/20240427_184920-scaled.webp
+    thumb: /posts/intrarea-domnului-in-ierusalim-sarbatorita-de-clericii-manastirii/20240427_184920-scaled-sm.webp
+    width: 800
+    height: 1422
+  - src: /posts/intrarea-domnului-in-ierusalim-sarbatorita-de-clericii-manastirii/20240427_190006-scaled.webp
+    thumb: /posts/intrarea-domnului-in-ierusalim-sarbatorita-de-clericii-manastirii/20240427_190006-scaled-sm.webp
+    width: 800
+    height: 1422
+  - src: /posts/intrarea-domnului-in-ierusalim-sarbatorita-de-clericii-manastirii/20240427_190020-scaled.webp
+    thumb: /posts/intrarea-domnului-in-ierusalim-sarbatorita-de-clericii-manastirii/20240427_190020-scaled-sm.webp
+    width: 800
+    height: 1422
+  - src: /posts/intrarea-domnului-in-ierusalim-sarbatorita-de-clericii-manastirii/20240427_190031-scaled.webp
+    thumb: /posts/intrarea-domnului-in-ierusalim-sarbatorita-de-clericii-manastirii/20240427_190031-scaled-sm.webp
+    width: 800
+    height: 1422
+  - src: /posts/intrarea-domnului-in-ierusalim-sarbatorita-de-clericii-manastirii/20240427_190523-scaled.webp
+    thumb: /posts/intrarea-domnului-in-ierusalim-sarbatorita-de-clericii-manastirii/20240427_190523-scaled-sm.webp
+    width: 800
+    height: 1422
+  - src: /posts/intrarea-domnului-in-ierusalim-sarbatorita-de-clericii-manastirii/20240427_190525-scaled.webp
+    thumb: /posts/intrarea-domnului-in-ierusalim-sarbatorita-de-clericii-manastirii/20240427_190525-scaled-sm.webp
+    width: 800
+    height: 1422
+  - src: /posts/intrarea-domnului-in-ierusalim-sarbatorita-de-clericii-manastirii/20240427_191124-scaled.webp
+    thumb: /posts/intrarea-domnului-in-ierusalim-sarbatorita-de-clericii-manastirii/20240427_191124-scaled-sm.webp
+    width: 800
+    height: 1422
 ---
 
 Învierea cea de obște mai înainte de Patima Ta încredințând-o, pe Lazăr din morți l-ai sculat, Hristoase Dumnezeule. Pentru aceasta și noi, ca pruncii, semnele biruinței purtând, Ție Biruitorului morții strigăm: Osana Celui dintru înălțime, bine ești cuvântat, Cel ce vine întru numele Domnului. Tropar glas 1

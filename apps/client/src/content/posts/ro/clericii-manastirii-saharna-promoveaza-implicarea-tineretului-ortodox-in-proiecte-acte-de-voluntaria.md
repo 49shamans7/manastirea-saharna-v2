@@ -40,6 +40,10 @@ galleryImages:
     thumb: /posts/clericii-manastirii-saharna-promoveaza-implicarea-tineretului-ortodox-in-proiecte-acte-de-voluntaria/viber-image-sm.webp
     width: 800
     height: 600
+  - src: /posts/clericii-manastirii-saharna-promoveaza-implicarea-tineretului-ortodox-in-proiecte-acte-de-voluntaria/viber-image-2.webp
+    thumb: /posts/clericii-manastirii-saharna-promoveaza-implicarea-tineretului-ortodox-in-proiecte-acte-de-voluntaria/viber-image-2-sm.webp
+    width: 800
+    height: 600
 ---
 
 Gala Tineretului Ortodox, la prima ediție, desfășurată la Biserica USM.

@@ -42,3 +42,5 @@ design/extracted/_review/
 
 # agent worktrees
 .claude/
+
+.wrangler/

@@ -2,16 +2,17 @@
 // THE HOME PAGE — the descent's walls, plain doors. The grounds keep the old
 // design: the cliff, gold leaf, the folk band at each seam, the church photo,
 // the arched door to the shrine, the brâu, the river. Everything you read or
-// press stays plain, large and labelled, and nothing moves. The full descent
-// lives at /coborare.
+// press stays plain, large and labelled, and nothing moves.
 import Layout from "@layouts/Layout.astro";
 import CalendarRail from "@components/temple/CalendarRail.astro";
 import RiverMark, { type RiverMarkName } from "@components/marks/RiverMark.astro";
 import Icon from "@components/marks/Icon.astro";
 import Divider from "@components/marks/Divider.astro";
+import VideoFacade from "@components/VideoFacade.astro";
 import { getLocaleFromUrl, getLocalizedPath, telHref, useTranslations } from "@i18n/utils";
-import { getRecentPosts } from "@data/posts";
-import { schedule, serviceText } from "@data/schedule";
+import { getPostBySlug, getRecentPosts } from "@data/posts";
+import { galleryVideos } from "@data/videos";
+import { schedule, serviceName } from "@data/schedule";
 import type { AllTranslationKeys } from "@i18n";
 import { zoneById } from "@temple/zones";
 import { publicAsset } from "@utils/paths";
@@ -19,10 +20,15 @@ import { publicAsset } from "@utils/paths";
 const lang = getLocaleFromUrl(Astro.url);
 const t = useTranslations(lang);
 const posts = await getRecentPosts(lang, 4);
+// the old site's sidebar showed one video from its gallery. That one is gone
+// from YouTube, so this is the gallery's portrait of the monastery, from the
+// monastery's own channel.
+const film = galleryVideos.find((entry) => entry.video === "yMJDLAt5ZzU")!;
+const filmPost = await getPostBySlug(film.slug, lang);
 const plate = (name: string) => publicAsset(`/plates/${name}.webp`);
 const plateSet = (name: string) => `${publicAsset(`/plates/${name}-800.webp`)} 800w, ${plate(name)} 1600w`;
 const href = (path: string) => getLocalizedPath(path, lang);
-const phone = t("contact.phoneSecretariat");
+const phone = t("contact.phoneMain");
 
 const tasks: { href: string; title: string; sub: string; mark?: RiverMarkName }[] = [
   { href: href("/slujbe"), title: t("nav.serviceSchedule"), sub: t("home.taskScheduleSub"), mark: "bell" },
@@ -103,7 +109,7 @@ const tasks: { href: string; title: string; sub: string; mark?: RiverMarkName }[
                     {block.services.map((h) => (
                       <div>
                         <dt>{h.time}</dt>
-                        <dd>{serviceText(h.name, lang)}</dd>
+                        <dd>{serviceName(h, lang)}</dd>
                       </div>
                     ))}
                   </dl>
@@ -194,6 +200,24 @@ const tasks: { href: string; title: string; sub: string; mark?: RiverMarkName }[
         </section>
       </div>
     </div>
+
+    <span class="r-band" aria-hidden="true"></span>
+
+    <section class="leaf film" aria-labelledby="film-title">
+      <div class="wrap">
+        <h2 id="film-title" class="centred">{t("zone.video")}</h2>
+        <Divider class="is-centred" />
+        <VideoFacade
+          id={film.video!}
+          title={filmPost?.title ?? t("zone.video")}
+          lang={lang}
+          poster={publicAsset(`/video/${film.video}.jpg`)}
+          sizes="(min-width: 900px) 800px, 100vw"
+        />
+        {filmPost && <p class="centred film-name">{filmPost.title}</p>}
+        <p class="centred"><a class="more" href={href("/video")}>{t("home.videoMore")}<Icon name="arrow-right" size={22} /></a></p>
+      </div>
+    </section>
 
     <span class="r-brau" aria-hidden="true"></span>
 
@@ -560,6 +584,18 @@ const tasks: { href: string; title: string; sub: string; mark?: RiverMarkName }[
   }
   .plain-links a:hover {
     text-decoration: underline;
+  }
+
+  /* ── the old site's Galeria Video ── */
+  .film .wrap {
+    max-width: 50rem;
+  }
+  .film-name {
+    margin: var(--s-3) 0 0;
+    font-weight: 700;
+  }
+  .film p:last-child {
+    margin: 0;
   }
 
   /* ── the river: how to reach us ── */

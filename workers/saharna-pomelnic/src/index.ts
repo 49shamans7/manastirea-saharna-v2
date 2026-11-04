@@ -1,10 +1,20 @@
+// The Pomelnic form: Turnstile, then one plain-text mail to the monastery.
+// Nothing is stored and nothing a visitor typed reaches the logs.
+
 type Env = {
-  ALLOWED_ORIGIN: string;
+  ALLOWED_ORIGINS: string;
   POMELNIC_TO: string;
-  RESEND_API_KEY: string;
-  RESEND_FROM: string;
-  SITE_URL: string;
+  POMELNIC_FROM: string;
   TURNSTILE_SECRET_KEY: string;
+  EMAIL: {
+    send(message: {
+      to: string;
+      from: { email: string; name: string };
+      replyTo: string;
+      subject: string;
+      text: string;
+    }): Promise<unknown>;
+  };
 };
 
 type Submission = {
@@ -13,142 +23,137 @@ type Submission = {
   livingNames: string;
   departedNames: string;
   message: string;
-  language: string;
-  redirect: string;
-  turnstileToken: string;
-  honeypot: string;
 };
 
-const MAX_FIELD_LENGTH = 4_000;
-const RESEND_ENDPOINT = "https://api.resend.com/emails";
+/** The name of the site's own worker, for its workers.dev preview. */
+const SITE_WORKER = "manastirea-saharna";
+const FALLBACK_PATH = "/pomelnic/#pomelnic-form";
 const TURNSTILE_ENDPOINT = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
+
+// Cyrillic text is six bytes a letter once form-encoded.
+const MAX_BODY_BYTES = 256 * 1024;
+const MAX_LENGTH: Record<string, number> = {
+  name: 200,
+  email: 254,
+  living_names: 10_000,
+  departed_names: 10_000,
+  message: 10_000,
+  "cf-turnstile-response": 2_048,
+};
 
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
+    const origin = request.headers.get("Origin") ?? "";
+    const origins = allowedOrigins(request, env);
+    const allowed = origins.has(origin);
+
     if (request.method === "OPTIONS") {
-      return new Response(null, { status: 204, headers: corsHeaders(env) });
+      return new Response(null, { status: allowed ? 204 : 403, headers: allowed ? corsHeaders(origin) : {} });
     }
-
     if (request.method !== "POST") {
-      return new Response("Method not allowed", {
-        status: 405,
-        headers: { Allow: "POST, OPTIONS" },
-      });
+      return new Response("Method not allowed", { status: 405, headers: { Allow: "POST, OPTIONS" } });
     }
-
-    const origin = request.headers.get("Origin");
-    if (origin && origin !== env.ALLOWED_ORIGIN) {
+    if (!allowed) {
+      console.warn("[pomelnic] origin refused");
       return new Response("Forbidden", { status: 403 });
     }
 
-    let submission: Submission;
+    const size = Number(request.headers.get("Content-Length"));
+    if (!size || size > MAX_BODY_BYTES) {
+      return refuse(origin, FALLBACK_PATH, "size");
+    }
+
+    let form: FormData;
     try {
-      submission = await readSubmission(request, env);
-    } catch (error) {
-      console.warn("[pomelnic] invalid form submission", {
-        error: error instanceof Error ? error.message : String(error),
-      });
-      return redirectTo(env.SITE_URL, "invalid");
+      form = await request.formData();
+    } catch {
+      return refuse(origin, FALLBACK_PATH, "unreadable");
     }
 
-    if (submission.honeypot) {
-      console.info("[pomelnic] honeypot submission ignored");
-      return redirectTo(submission.redirect, "ok");
+    const back = returnPath(field(form, "redirect"), origins);
+
+    if (field(form, "botcheck")) {
+      console.info("[pomelnic] honeypot");
+      return redirect(origin, back, "ok");
     }
 
-    const validationError = validateSubmission(submission);
-    if (validationError) {
-      console.warn("[pomelnic] validation failed", {
-        reason: validationError,
-        hasTurnstileToken: Boolean(submission.turnstileToken),
-        contentLengths: {
-          livingNames: submission.livingNames.length,
-          departedNames: submission.departedNames.length,
-          message: submission.message.length,
-        },
-        language: submission.language || "n/a",
-      });
-      return redirectTo(submission.redirect, validationError);
+    const reason = invalidReason(form);
+    if (reason) {
+      return refuse(origin, back, reason);
     }
 
-    const turnstileOk = await verifyTurnstile(submission.turnstileToken, request, env);
-    if (!turnstileOk) {
-      console.warn("[pomelnic] turnstile verification failed");
-      return redirectTo(submission.redirect, "challenge");
+    const token = field(form, "cf-turnstile-response");
+    if (!token || !(await verifyTurnstile(token, request, env))) {
+      return redirect(origin, back, "challenge");
     }
 
-    const sent = await sendPomelnicEmail(submission, env);
-    console.info("[pomelnic] submission processed", {
-      sent,
-      to: env.POMELNIC_TO,
-      from: env.RESEND_FROM,
-      language: submission.language || "n/a",
-    });
+    const sent = await sendPomelnic(
+      {
+        name: field(form, "name"),
+        email: field(form, "email"),
+        livingNames: field(form, "living_names"),
+        departedNames: field(form, "departed_names"),
+        message: field(form, "message"),
+      },
+      env,
+    );
 
-    return redirectTo(submission.redirect, sent ? "ok" : "send");
+    return redirect(origin, back, sent ? "ok" : "send");
   },
 };
 
-async function readSubmission(request: Request, env: Env): Promise<Submission> {
-  const formData = await request.formData();
+function allowedOrigins(request: Request, env: Env): Set<string> {
+  const origins = new Set(env.ALLOWED_ORIGINS.split(",").map((origin) => origin.trim()));
+  const { hostname } = new URL(request.url);
 
+  // saharna-pomelnic.<account>.workers.dev → manastirea-saharna.<account>.workers.dev.
+  // Derived, never a wildcard: anyone can name a worker on their own account.
+  if (hostname.endsWith(".workers.dev")) {
+    origins.add(`https://${hostname.replace(/^[^.]+/, SITE_WORKER)}`);
+  }
+
+  return origins;
+}
+
+function corsHeaders(origin: string): HeadersInit {
   return {
-    name: getField(formData, "name"),
-    email: getField(formData, "email"),
-    livingNames: getField(formData, "living_names"),
-    departedNames: getField(formData, "departed_names"),
-    message: getField(formData, "message"),
-    language: getField(formData, "language"),
-    redirect: getSafeRedirect(getField(formData, "redirect"), env.SITE_URL),
-    turnstileToken: getField(formData, "cf-turnstile-response"),
-    honeypot: getField(formData, "botcheck"),
+    "Access-Control-Allow-Origin": origin,
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type",
+    Vary: "Origin",
   };
 }
 
-function getField(formData: FormData, key: string): string {
-  const value = formData.get(key);
-  return typeof value === "string" ? value.trim().slice(0, MAX_FIELD_LENGTH) : "";
+function field(form: FormData, key: string): string {
+  const value = form.get(key);
+  return typeof value === "string" ? value.trim() : "";
 }
 
-function getSafeRedirect(value: string, siteUrl: string): string {
-  const fallback = `${siteUrl.replace(/\/$/, "")}/#pomelnic-form`;
-
+/**
+ * The page to go back to, as a path. The form names its page on the site's
+ * canonical origin, which is not where a preview runs, and a redirect may only
+ * land where the form came from: the caller joins this path to the checked
+ * request origin, so no input can choose the host.
+ */
+function returnPath(value: string, origins: Set<string>): string {
   try {
-    const url = new URL(value || fallback);
-    const allowed = new URL(siteUrl);
-
-    if (url.origin !== allowed.origin) {
-      return fallback;
-    }
-
-    return url.toString();
+    const url = new URL(value);
+    return origins.has(url.origin) ? url.pathname + url.hash : FALLBACK_PATH;
   } catch {
-    return fallback;
+    return FALLBACK_PATH;
   }
 }
 
-function validateSubmission(submission: Submission): string | null {
-  if (!submission.name || !submission.email) {
-    return "required";
+function invalidReason(form: FormData): string | null {
+  for (const [key, limit] of Object.entries(MAX_LENGTH)) {
+    if (field(form, key).length > limit) return "too-long";
   }
 
-  if (!isValidEmail(submission.email)) {
-    return "email";
-  }
-
-  if (!submission.livingNames && !submission.departedNames && !submission.message) {
-    return "empty";
-  }
-
-  if (!submission.turnstileToken) {
-    return "challenge";
-  }
+  if (!field(form, "name") || !field(form, "email")) return "required";
+  if (!/^[^\s@<>,;"]+@[^\s@<>,;"]+\.[^\s@<>,;"]+$/.test(field(form, "email"))) return "email";
+  if (!field(form, "living_names") && !field(form, "departed_names") && !field(form, "message")) return "empty";
 
   return null;
-}
-
-function isValidEmail(value: string): boolean {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
 async function verifyTurnstile(token: string, request: Request, env: Env): Promise<boolean> {
@@ -157,119 +162,64 @@ async function verifyTurnstile(token: string, request: Request, env: Env): Promi
   body.set("response", token);
 
   const ip = request.headers.get("CF-Connecting-IP");
-  if (ip) {
-    body.set("remoteip", ip);
-  }
+  if (ip) body.set("remoteip", ip);
 
-  const response = await fetch(TURNSTILE_ENDPOINT, {
-    method: "POST",
-    body,
-  });
+  try {
+    const response = await fetch(TURNSTILE_ENDPOINT, { method: "POST", body });
+    const result = (await response.json()) as { success?: boolean; "error-codes"?: string[] };
 
-  if (!response.ok) {
-    console.warn("[pomelnic] turnstile endpoint failed", {
-      status: response.status,
-      statusText: response.statusText,
-    });
+    if (result.success !== true) {
+      console.warn("[pomelnic] turnstile refused", { codes: result["error-codes"] ?? [] });
+    }
+
+    return result.success === true;
+  } catch {
+    console.warn("[pomelnic] turnstile unreachable");
     return false;
   }
-
-  const result = (await response.json()) as { "error-codes"?: string[]; success?: boolean };
-  if (result.success !== true) {
-    console.warn("[pomelnic] turnstile rejected token", {
-      errorCodes: result["error-codes"] || [],
-    });
-  }
-
-  return result.success === true;
 }
 
-async function sendPomelnicEmail(submission: Submission, env: Env): Promise<boolean> {
-  const subject = `Pomelnic nou - ${submission.name}`;
-  const text = [
-    "Pomelnic nou primit de pe manastirea-saharna.md",
-    "",
-    `Nume expeditor: ${submission.name}`,
-    `Email expeditor: ${submission.email}`,
-    `Limba formular: ${submission.language || "n/a"}`,
-    "",
-    "Nume pentru pomenire vii:",
-    submission.livingNames || "-",
-    "",
-    "Nume pentru pomenire raposati:",
-    submission.departedNames || "-",
-    "",
-    "Mesaj:",
-    submission.message || "-",
-  ].join("\n");
+async function sendPomelnic(submission: Submission, env: Env): Promise<boolean> {
+  const { name, email, livingNames, departedNames, message } = submission;
 
-  const html = `
-    <h1>Pomelnic nou</h1>
-    <p><strong>Nume expeditor:</strong> ${escapeHtml(submission.name)}</p>
-    <p><strong>Email expeditor:</strong> ${escapeHtml(submission.email)}</p>
-    <p><strong>Limba formular:</strong> ${escapeHtml(submission.language || "n/a")}</p>
-    <h2>Nume pentru pomenire vii</h2>
-    <p>${formatMultilineHtml(submission.livingNames || "-")}</p>
-    <h2>Nume pentru pomenire raposati</h2>
-    <p>${formatMultilineHtml(submission.departedNames || "-")}</p>
-    <h2>Mesaj</h2>
-    <p>${formatMultilineHtml(submission.message || "-")}</p>
-  `;
-
-  const response = await fetch(RESEND_ENDPOINT, {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${env.RESEND_API_KEY}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      from: env.RESEND_FROM,
-      to: [env.POMELNIC_TO],
-      reply_to: submission.email,
-      subject,
-      text,
-      html,
-    }),
-  });
-
-  if (!response.ok) {
-    const responseBody = await response.text().catch(() => "");
-    console.warn("[pomelnic] resend failed", {
-      status: response.status,
-      statusText: response.statusText,
-      body: responseBody,
-      from: env.RESEND_FROM,
+  try {
+    await env.EMAIL.send({
       to: env.POMELNIC_TO,
+      from: { email: env.POMELNIC_FROM, name: "Pomelnic Saharna" },
+      replyTo: email,
+      subject: `Pomelnic nou - ${name.replace(/\s+/g, " ")}`,
+      text: [
+        "Pomelnic nou primit de pe manastirea-saharna.md",
+        "",
+        `Nume: ${name}`,
+        `Email: ${email}`,
+        "",
+        "Nume pentru pomenire (vii):",
+        livingNames || "-",
+        "",
+        "Nume pentru pomenire (răposați):",
+        departedNames || "-",
+        "",
+        "Mesaj:",
+        message || "-",
+      ].join("\n"),
     });
+    console.info("[pomelnic] sent");
+    return true;
+  } catch (error) {
+    // the code only: a message could quote an address
+    console.error("[pomelnic] send failed", { code: (error as { code?: string }).code ?? "unknown" });
+    return false;
   }
-
-  return response.ok;
 }
 
-function redirectTo(value: string, status: string): Response {
-  const url = new URL(value);
+function refuse(origin: string, path: string, reason: string): Response {
+  console.warn("[pomelnic] refused", { reason });
+  return redirect(origin, path, "invalid");
+}
+
+function redirect(origin: string, path: string, status: string): Response {
+  const url = new URL(path, origin);
   url.searchParams.set("pomelnic", status);
-
   return Response.redirect(url.toString(), 303);
-}
-
-function corsHeaders(env: Env): HeadersInit {
-  return {
-    "Access-Control-Allow-Origin": env.ALLOWED_ORIGIN,
-    "Access-Control-Allow-Methods": "POST, OPTIONS",
-    "Access-Control-Allow-Headers": "Content-Type",
-  };
-}
-
-function formatMultilineHtml(value: string): string {
-  return escapeHtml(value).replace(/\n/g, "<br>");
-}
-
-function escapeHtml(value: string): string {
-  return value
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#39;");
 }

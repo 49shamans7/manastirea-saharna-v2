@@ -40,6 +40,74 @@ galleryImages:
     thumb: /posts/iata-vin-colindatori-2/image00042-sm.webp
     width: 384
     height: 800
+  - src: /posts/iata-vin-colindatori-2/image00043.webp
+    thumb: /posts/iata-vin-colindatori-2/image00043-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/iata-vin-colindatori-2/image00044.webp
+    thumb: /posts/iata-vin-colindatori-2/image00044-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/iata-vin-colindatori-2/image00045.webp
+    thumb: /posts/iata-vin-colindatori-2/image00045-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/iata-vin-colindatori-2/image00046.webp
+    thumb: /posts/iata-vin-colindatori-2/image00046-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/iata-vin-colindatori-2/image00047.webp
+    thumb: /posts/iata-vin-colindatori-2/image00047-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/iata-vin-colindatori-2/image00048.webp
+    thumb: /posts/iata-vin-colindatori-2/image00048-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/iata-vin-colindatori-2/image00049.webp
+    thumb: /posts/iata-vin-colindatori-2/image00049-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/iata-vin-colindatori-2/image00050.webp
+    thumb: /posts/iata-vin-colindatori-2/image00050-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/iata-vin-colindatori-2/image00051.webp
+    thumb: /posts/iata-vin-colindatori-2/image00051-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/iata-vin-colindatori-2/image00052.webp
+    thumb: /posts/iata-vin-colindatori-2/image00052-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/iata-vin-colindatori-2/image00053.webp
+    thumb: /posts/iata-vin-colindatori-2/image00053-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/iata-vin-colindatori-2/image00054.webp
+    thumb: /posts/iata-vin-colindatori-2/image00054-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/iata-vin-colindatori-2/image00055.webp
+    thumb: /posts/iata-vin-colindatori-2/image00055-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/iata-vin-colindatori-2/image00056.webp
+    thumb: /posts/iata-vin-colindatori-2/image00056-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/iata-vin-colindatori-2/image00057.webp
+    thumb: /posts/iata-vin-colindatori-2/image00057-sm.webp
+    width: 800
+    height: 512
+  - src: /posts/iata-vin-colindatori-2/image00058.webp
+    thumb: /posts/iata-vin-colindatori-2/image00058-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/iata-vin-colindatori-2/image00059.webp
+    thumb: /posts/iata-vin-colindatori-2/image00059-sm.webp
+    width: 800
+    height: 368
 ---
 
 Pe meleagurile neamului nostru, până la Bobotează, se întinde datina colindatului, prin care se păstrează din neam în neam „Floarea neuitării” și „Candela adevărului” – Nașterea lui Iisus Hristos, cântecele de leagăn aduse Pruncului născut în Betleem.

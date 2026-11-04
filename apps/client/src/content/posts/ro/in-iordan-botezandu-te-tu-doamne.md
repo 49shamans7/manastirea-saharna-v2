@@ -40,6 +40,18 @@ galleryImages:
     thumb: /posts/in-iordan-botezandu-te-tu-doamne/20250119_102926-scaled-sm.webp
     width: 800
     height: 1422
+  - src: /posts/in-iordan-botezandu-te-tu-doamne/20250119_103739-scaled.webp
+    thumb: /posts/in-iordan-botezandu-te-tu-doamne/20250119_103739-scaled-sm.webp
+    width: 800
+    height: 1422
+  - src: /posts/in-iordan-botezandu-te-tu-doamne/20250119_105835-scaled.webp
+    thumb: /posts/in-iordan-botezandu-te-tu-doamne/20250119_105835-scaled-sm.webp
+    width: 800
+    height: 1422
+  - src: /posts/in-iordan-botezandu-te-tu-doamne/20250119_105836-scaled.webp
+    thumb: /posts/in-iordan-botezandu-te-tu-doamne/20250119_105836-scaled-sm.webp
+    width: 800
+    height: 1422
 ---
 
 Arătatu-Te-ai astăzi lumii și Lumina Ta, Doamne, s-a însemnat peste noi, care cu cunoștință Te lăudăm. Venit-ai și Te-ai arătat, Lumina Cea Neapropiată. ( Condacul Arătării Domnului)

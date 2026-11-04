@@ -40,6 +40,46 @@ galleryImages:
     thumb: /posts/credinta-pentru-mine-e-totul/religia-1-5-sm.webp
     width: 800
     height: 533
+  - src: /posts/credinta-pentru-mine-e-totul/religia-1-6.webp
+    thumb: /posts/credinta-pentru-mine-e-totul/religia-1-6-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/credinta-pentru-mine-e-totul/religia-1-8.webp
+    thumb: /posts/credinta-pentru-mine-e-totul/religia-1-8-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/credinta-pentru-mine-e-totul/romana-1.webp
+    thumb: /posts/credinta-pentru-mine-e-totul/romana-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/credinta-pentru-mine-e-totul/romana-10.webp
+    thumb: /posts/credinta-pentru-mine-e-totul/romana-10-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/credinta-pentru-mine-e-totul/romana-2.webp
+    thumb: /posts/credinta-pentru-mine-e-totul/romana-2-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/credinta-pentru-mine-e-totul/romana-4.webp
+    thumb: /posts/credinta-pentru-mine-e-totul/romana-4-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/credinta-pentru-mine-e-totul/romana-6.webp
+    thumb: /posts/credinta-pentru-mine-e-totul/romana-6-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/credinta-pentru-mine-e-totul/romana-7.webp
+    thumb: /posts/credinta-pentru-mine-e-totul/romana-7-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/credinta-pentru-mine-e-totul/romana-8.webp
+    thumb: /posts/credinta-pentru-mine-e-totul/romana-8-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/credinta-pentru-mine-e-totul/romana-9.webp
+    thumb: /posts/credinta-pentru-mine-e-totul/romana-9-sm.webp
+    width: 800
+    height: 533
 ---
 
 Trecuse o toamnă, o iarnă și o primăvară. Călugărul Vasilisc încă se acomoda cu funcția de profesor de religie în gimnaziul din satul Saharna Nouă, raionul Rezina. La început elevii l-au primit cu rezervă. Îl percepeau ca pe un „căpcăun fioros” cu barba deasă și caftan negru. Dar tânărul călugăr a reușit să-i cucerească cu diverse metode interactive. La nicio lecție nu se despărțea de laptop, proiector și fișe colorate.

@@ -40,6 +40,30 @@ galleryImages:
     thumb: /posts/privegherea-de-sarbatoarea-nasterii-domnului-la-sfanta-manastire-saharna/dsc_4336-sm.webp
     width: 800
     height: 533
+  - src: /posts/privegherea-de-sarbatoarea-nasterii-domnului-la-sfanta-manastire-saharna/dsc_4386.webp
+    thumb: /posts/privegherea-de-sarbatoarea-nasterii-domnului-la-sfanta-manastire-saharna/dsc_4386-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/privegherea-de-sarbatoarea-nasterii-domnului-la-sfanta-manastire-saharna/dsc_4401.webp
+    thumb: /posts/privegherea-de-sarbatoarea-nasterii-domnului-la-sfanta-manastire-saharna/dsc_4401-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/privegherea-de-sarbatoarea-nasterii-domnului-la-sfanta-manastire-saharna/dsc_4404.webp
+    thumb: /posts/privegherea-de-sarbatoarea-nasterii-domnului-la-sfanta-manastire-saharna/dsc_4404-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/privegherea-de-sarbatoarea-nasterii-domnului-la-sfanta-manastire-saharna/dsc_4444.webp
+    thumb: /posts/privegherea-de-sarbatoarea-nasterii-domnului-la-sfanta-manastire-saharna/dsc_4444-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/privegherea-de-sarbatoarea-nasterii-domnului-la-sfanta-manastire-saharna/dsc_4449.webp
+    thumb: /posts/privegherea-de-sarbatoarea-nasterii-domnului-la-sfanta-manastire-saharna/dsc_4449-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/privegherea-de-sarbatoarea-nasterii-domnului-la-sfanta-manastire-saharna/dsc_4461.webp
+    thumb: /posts/privegherea-de-sarbatoarea-nasterii-domnului-la-sfanta-manastire-saharna/dsc_4461-sm.webp
+    width: 800
+    height: 533
 ---
 
 

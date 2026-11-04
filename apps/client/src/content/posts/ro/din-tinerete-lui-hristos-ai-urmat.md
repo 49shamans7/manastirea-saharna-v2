@@ -40,6 +40,70 @@ galleryImages:
     thumb: /posts/din-tinerete-lui-hristos-ai-urmat/image00007-3-sm.webp
     width: 800
     height: 534
+  - src: /posts/din-tinerete-lui-hristos-ai-urmat/image00008-3.webp
+    thumb: /posts/din-tinerete-lui-hristos-ai-urmat/image00008-3-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/din-tinerete-lui-hristos-ai-urmat/image00009-3.webp
+    thumb: /posts/din-tinerete-lui-hristos-ai-urmat/image00009-3-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/din-tinerete-lui-hristos-ai-urmat/image00010-3.webp
+    thumb: /posts/din-tinerete-lui-hristos-ai-urmat/image00010-3-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/din-tinerete-lui-hristos-ai-urmat/image00011-3.webp
+    thumb: /posts/din-tinerete-lui-hristos-ai-urmat/image00011-3-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/din-tinerete-lui-hristos-ai-urmat/image00012-3.webp
+    thumb: /posts/din-tinerete-lui-hristos-ai-urmat/image00012-3-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/din-tinerete-lui-hristos-ai-urmat/image00013-3.webp
+    thumb: /posts/din-tinerete-lui-hristos-ai-urmat/image00013-3-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/din-tinerete-lui-hristos-ai-urmat/image00014-2.webp
+    thumb: /posts/din-tinerete-lui-hristos-ai-urmat/image00014-2-sm.webp
+    width: 800
+    height: 614
+  - src: /posts/din-tinerete-lui-hristos-ai-urmat/image00015-2.webp
+    thumb: /posts/din-tinerete-lui-hristos-ai-urmat/image00015-2-sm.webp
+    width: 800
+    height: 471
+  - src: /posts/din-tinerete-lui-hristos-ai-urmat/image00016-2.webp
+    thumb: /posts/din-tinerete-lui-hristos-ai-urmat/image00016-2-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/din-tinerete-lui-hristos-ai-urmat/image00017-2.webp
+    thumb: /posts/din-tinerete-lui-hristos-ai-urmat/image00017-2-sm.webp
+    width: 800
+    height: 610
+  - src: /posts/din-tinerete-lui-hristos-ai-urmat/image00018-2.webp
+    thumb: /posts/din-tinerete-lui-hristos-ai-urmat/image00018-2-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/din-tinerete-lui-hristos-ai-urmat/image00019-2.webp
+    thumb: /posts/din-tinerete-lui-hristos-ai-urmat/image00019-2-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/din-tinerete-lui-hristos-ai-urmat/image00020-2.webp
+    thumb: /posts/din-tinerete-lui-hristos-ai-urmat/image00020-2-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/din-tinerete-lui-hristos-ai-urmat/image00021-2.webp
+    thumb: /posts/din-tinerete-lui-hristos-ai-urmat/image00021-2-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/din-tinerete-lui-hristos-ai-urmat/image00022-2.webp
+    thumb: /posts/din-tinerete-lui-hristos-ai-urmat/image00022-2-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/din-tinerete-lui-hristos-ai-urmat/image00023-2.webp
+    thumb: /posts/din-tinerete-lui-hristos-ai-urmat/image00023-2-sm.webp
+    width: 800
+    height: 534
 ---
 
 “Cum cerbul însetat aleargă spre izvoarele apelor, așa sufletul tău, cuvioase părinte Macarie, prin dumnezeiască chemare a alergat la râul apelor limpezi și în mănăstire sălășluindu-te, cu îngerii împreună cântai lui Dumnezeu: Aliluia.”

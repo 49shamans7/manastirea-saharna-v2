@@ -40,6 +40,162 @@ galleryImages:
     thumb: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/10489656_855115197906646_288037483797320882_n1-sm.webp
     width: 800
     height: 533
+  - src: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/10897829_855114464573386_8126149985386478249_n1.webp
+    thumb: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/10897829_855114464573386_8126149985386478249_n1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/10922699_855117577906408_7012356152073542474_n1.webp
+    thumb: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/10922699_855117577906408_7012356152073542474_n1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11008462_855112224573610_3631958783645518557_n1.webp
+    thumb: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11008462_855112224573610_3631958783645518557_n1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11011474_855114931240006_1696903022563015801_n1.webp
+    thumb: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11011474_855114931240006_1696903022563015801_n1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11027506_855114401240059_5778944743216597744_n1.webp
+    thumb: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11027506_855114401240059_5778944743216597744_n1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11031031_855115701239929_5028872655851946825_n1.webp
+    thumb: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11031031_855115701239929_5028872655851946825_n1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11032183_855115664573266_3067596176667057723_n1.webp
+    thumb: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11032183_855115664573266_3067596176667057723_n1-sm.webp
+    width: 640
+    height: 960
+  - src: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11053203_855112937906872_3803791430033800250_n1.webp
+    thumb: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11053203_855112937906872_3803791430033800250_n1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11053395_855115474573285_8356961534584836578_n1.webp
+    thumb: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11053395_855115474573285_8356961534584836578_n1-sm.webp
+    width: 640
+    height: 960
+  - src: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11070070_855117937906372_8913211785879386828_n1.webp
+    thumb: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11070070_855117937906372_8913211785879386828_n1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11073795_855112161240283_2089111792944489618_n1.webp
+    thumb: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11073795_855112161240283_2089111792944489618_n1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11083833_855111387907027_8609257504907211443_n1.webp
+    thumb: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11083833_855111387907027_8609257504907211443_n1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11120589_855115261239973_3609448172621394227_n1.webp
+    thumb: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11120589_855115261239973_3609448172621394227_n1-sm.webp
+    width: 640
+    height: 960
+  - src: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11150632_855111524573680_1923113791192610679_n1.webp
+    thumb: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11150632_855111524573680_1923113791192610679_n1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11201919_855111187907047_6461802960095521456_n1.webp
+    thumb: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11201919_855111187907047_6461802960095521456_n1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11206097_855117981239701_8798456523672015651_n1.webp
+    thumb: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11206097_855117981239701_8798456523672015651_n1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11209478_855115077906658_2561274612536848134_n1.webp
+    thumb: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11209478_855115077906658_2561274612536848134_n1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11209577_855112357906930_3713559388628098320_n1.webp
+    thumb: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11209577_855112357906930_3713559388628098320_n1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11216575_855112657906900_7213447784249261525_n1.webp
+    thumb: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11216575_855112657906900_7213447784249261525_n1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11219728_855111214573711_6684065631394599463_n1.webp
+    thumb: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11219728_855111214573711_6684065631394599463_n1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11221654_855112791240220_575703446809755151_n1.webp
+    thumb: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11221654_855112791240220_575703446809755151_n1-sm.webp
+    width: 640
+    height: 960
+  - src: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11229757_855117984573034_1094574352374434206_n1.webp
+    thumb: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11229757_855117984573034_1094574352374434206_n1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11230726_855110841240415_3999681777278864947_n1.webp
+    thumb: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11230726_855110841240415_3999681777278864947_n1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11230785_855112827906883_1695143790096596954_n1.webp
+    thumb: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11230785_855112827906883_1695143790096596954_n1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11248255_855113601240139_3580239113775725455_n1.webp
+    thumb: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11248255_855113601240139_3580239113775725455_n1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11265118_855111991240300_7794518660282296200_n1.webp
+    thumb: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11265118_855111991240300_7794518660282296200_n1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11266245_855116834573149_5704596159216308767_n1.webp
+    thumb: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11266245_855116834573149_5704596159216308767_n1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11267045_855111711240328_3329194402051243335_n1.webp
+    thumb: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11267045_855111711240328_3329194402051243335_n1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11295638_855115861239913_10305020035627184_n1.webp
+    thumb: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11295638_855115861239913_10305020035627184_n1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11295697_855111997906966_1687063013383805214_n1.webp
+    thumb: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11295697_855111997906966_1687063013383805214_n1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11295940_855116541239845_4744270423341709996_n1.webp
+    thumb: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11295940_855116541239845_4744270423341709996_n1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11329857_855114071240092_6368018092859971803_n1.webp
+    thumb: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11329857_855114071240092_6368018092859971803_n1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11329858_855112441240255_6208354359297606253_n1.webp
+    thumb: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11329858_855112441240255_6208354359297606253_n1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11329862_855114664573366_8946540602331038733_n.webp
+    thumb: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11329862_855114664573366_8946540602331038733_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11330015_855111654573667_4384025775124158890_n.webp
+    thumb: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11330015_855111654573667_4384025775124158890_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11350551_855116607906505_3448231675501956620_n.webp
+    thumb: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11350551_855116607906505_3448231675501956620_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11377216_855112731240226_7674829747348493340_n.webp
+    thumb: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/11377216_855112731240226_7674829747348493340_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/13360_855117611239738_2352802243881835070_n1.webp
+    thumb: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/13360_855117611239738_2352802243881835070_n1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/18594_855112434573589_3912333204372646334_n1.webp
+    thumb: /posts/florile-de-salcam-se-impletesc-intr-o-cununa-cu-bucuria-harului-revarsat-din-belsug-asupra-manastiri/18594_855112434573589_3912333204372646334_n1-sm.webp
+    width: 800
+    height: 699
 ---
 
 Tradițional, sfârșitul lunii mai aduce în dar o frumoasă și binecuvântată sărbătoare pentru obștea călugărilor de la Saharna.

@@ -2,9 +2,7 @@
 //
 // Per entry: the lead photograph in three widths (1400 / 800 / 480), and up
 // to GALLERY_CAP further photographs as gallery plates (800 + 360 thumb).
-// The archive holds 5,210 post photographs — all of them would be ~480 MB at
-// these sizes, which is a decision about the repository, not about the
-// design; the cap keeps public/posts near 160 MB. Raise it deliberately.
+// Every photograph the old site carried: all 5,210, about 480 MB at these sizes.
 //
 //   bun scripts/build-post-media.mjs                 (after import-posts.mjs)
 //   bun scripts/build-post-media.mjs --no-galleries  (lead photographs only)
@@ -25,7 +23,7 @@ const CONTENT = path.join(ROOT, "apps/client/src/content/posts");
 
 const WITH_GALLERIES = !process.argv.includes("--no-galleries");
 const FORCE = process.argv.includes("--force");
-const GALLERY_CAP = 6;
+const GALLERY_CAP = Infinity;
 
 const LEAD = { width: 1400, quality: 80 };
 const MEDIUM = { width: 800, quality: 72 };
@@ -167,10 +165,10 @@ for (const post of manifest) {
   }
 
   // Point the entry at what now exists on disk.
-  // Only entries still at `image: null` are touched; a re-run leaves the rest alone.
+  // The photograph blocks are generated, so they are replaced whole.
   const markdown = await readFile(file, "utf8");
   const block = [...imageBlock, ...(gallery.length ? ["galleryImages:", ...gallery] : [])].join("\n");
-  const next = markdown.replace(/^image: null$/m, block);
+  const next = markdown.replace(/^image:(?: null\n|\n(?:  .*\n)+)(?:galleryImages:\n(?:  .*\n)+)?/m, `${block}\n`);
   if (next !== markdown) await writeFile(file, next);
 }
 

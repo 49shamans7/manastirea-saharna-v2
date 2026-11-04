@@ -40,6 +40,30 @@ galleryImages:
     thumb: /posts/imparateasa-cerului-cinstita-prin-rugaciuni-de-fii-sai/screenshot_20240805_174143_chrome-sm.webp
     width: 800
     height: 584
+  - src: /posts/imparateasa-cerului-cinstita-prin-rugaciuni-de-fii-sai/screenshot_20240805_174202_chrome.webp
+    thumb: /posts/imparateasa-cerului-cinstita-prin-rugaciuni-de-fii-sai/screenshot_20240805_174202_chrome-sm.webp
+    width: 800
+    height: 592
+  - src: /posts/imparateasa-cerului-cinstita-prin-rugaciuni-de-fii-sai/screenshot_20240805_174219_chrome.webp
+    thumb: /posts/imparateasa-cerului-cinstita-prin-rugaciuni-de-fii-sai/screenshot_20240805_174219_chrome-sm.webp
+    width: 800
+    height: 584
+  - src: /posts/imparateasa-cerului-cinstita-prin-rugaciuni-de-fii-sai/screenshot_20240805_174229_chrome.webp
+    thumb: /posts/imparateasa-cerului-cinstita-prin-rugaciuni-de-fii-sai/screenshot_20240805_174229_chrome-sm.webp
+    width: 800
+    height: 601
+  - src: /posts/imparateasa-cerului-cinstita-prin-rugaciuni-de-fii-sai/screenshot_20240805_174242_chrome.webp
+    thumb: /posts/imparateasa-cerului-cinstita-prin-rugaciuni-de-fii-sai/screenshot_20240805_174242_chrome-sm.webp
+    width: 800
+    height: 580
+  - src: /posts/imparateasa-cerului-cinstita-prin-rugaciuni-de-fii-sai/screenshot_20240805_174258_chrome.webp
+    thumb: /posts/imparateasa-cerului-cinstita-prin-rugaciuni-de-fii-sai/screenshot_20240805_174258_chrome-sm.webp
+    width: 800
+    height: 594
+  - src: /posts/imparateasa-cerului-cinstita-prin-rugaciuni-de-fii-sai/screenshot_20240805_174344_chrome.webp
+    thumb: /posts/imparateasa-cerului-cinstita-prin-rugaciuni-de-fii-sai/screenshot_20240805_174344_chrome-sm.webp
+    width: 800
+    height: 582
 ---
 
 Cu binecuvântarea ÎPS Vladimir, Întâistătătorul Bisericii Ortodoxe din Moldova, PS Siluan, Episcop de Orhei, Vicar mitropolitan a săvârșit Sfânta Liturghie în catedrala ” Învierea Domnului Hristos”.

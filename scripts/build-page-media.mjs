@@ -36,6 +36,21 @@ const PAGES = [
     // original (the -e1504010221267 suffix is an in-admin crop), so ≤1400w is 502w.
     photos: [{ from: "2014/06/Image00004-e1504010221267.jpg", name: "adrian-baciu" }],
   },
+  {
+    slug: "macarie",
+    // https://manastirea-saharna.md/viata-cuviosului-macarie/
+    photos: [
+      { from: "2022/11/Cuv.Macarie-de-la-Saharna.jpg", name: "cuviosul-macarie" },
+      { from: "2022/11/Man.-Saharna-1.jpg", name: "manastirea-saharna-1" },
+      { from: "2022/11/Man.-Saharna-2.jpg", name: "manastirea-saharna-2" },
+      { from: "2022/11/Parintele-Macarie-in-centru-1950.jpg", name: "parintele-macarie-1950" },
+      { from: "2022/11/Comunitatea-monahala-1939.-ANRM-F.-1135-inv.-2-d.-92-f.-20-scaled.jpg", name: "comunitatea-monahala-1939" },
+    ],
+  },
+  { slug: "mitropolitul", photos: [{ from: "2014/06/DSC_4076.jpg", name: "mitropolitul-vladimir" }] },
+  { slug: "contact", photos: [{ from: "2020/05/DSC_9069-scaled.jpg", name: "manastirea" }] },
+  { slug: "donations", photos: [{ from: "2019/04/2e087a6ef730bcde36455f256685aeb3.jpg", name: "donatii" }] },
+  { slug: "pomelnic", photos: [{ from: "2023/04/Un-mesaj-livrat-in-casuta-postala-a-lui-Dumnezeu-768x1024-1.jpg", name: "pomelnice" }] },
 ];
 
 const exists = (file) =>

@@ -1,24 +1,27 @@
 {
-  // Backend copy. Same architecture as workers/pomelnic, deployed under the
-  // monastery's own Cloudflare account. The original worker and its vars are
-  // left exactly as they are — nothing here repoints anything of Victor's.
-  //
-  // Before first deploy set the secrets (never vars):
-  //   wrangler secret put RESEND_API_KEY
-  //   wrangler secret put TURNSTILE_SECRET_KEY
+  // The Pomelnic form: Turnstile check, then one plain-text mail to the
+  // monastery through Cloudflare's own send_email binding. Stores nothing.
+  // `bun run cloudflare:setup` deploys it. Secret, never a var: TURNSTILE_SECRET_KEY.
+  "$schema": "../../node_modules/wrangler/config-schema.json",
   "name": "saharna-pomelnic",
   "main": "src/index.ts",
-  "compatibility_date": "2026-05-17",
+  "compatibility_date": "2026-10-01",
   "workers_dev": true,
+  "preview_urls": false,
   "vars": {
-    // Where the form is served from. Change to the real domain when it lands.
-    "ALLOWED_ORIGIN": "https://49shamans7.github.io",
-    "SITE_URL": "https://49shamans7.github.io/manastirea-saharna",
-    // Where pomelnice are delivered. Monastery address, set before going live.
-    "POMELNIC_TO": "",
-    "RESEND_FROM": "Pomelnic Saharna <noreply@manastirea-saharna.md>"
+    // Sites that may post here. The workers.dev preview of the site needs no
+    // entry: the worker derives it from its own hostname. Drop github.io when
+    // Pages is switched off.
+    "ALLOWED_ORIGINS": "https://manastirea-saharna.md,https://www.manastirea-saharna.md,https://49shamans7.github.io",
+    // Must be a verified destination address in the Cloudflare account.
+    "POMELNIC_TO": "secretariat@manastirea-saharna.md",
+    // On a subdomain, so the monastery's own mail records stay as they are.
+    "POMELNIC_FROM": "pomelnic@formular.manastirea-saharna.md"
   },
+  "send_email": [{ "name": "EMAIL" }],
   "observability": {
-    "enabled": true
+    "enabled": true,
+    // Keep our own console lines only; invocation logs carry visitor IPs.
+    "logs": { "invocation_logs": false }
   }
 }

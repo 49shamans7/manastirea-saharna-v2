@@ -40,6 +40,118 @@ galleryImages:
     thumb: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214613_chrome-sm.webp
     width: 800
     height: 1201
+  - src: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214616_chrome.webp
+    thumb: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214616_chrome-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214618_chrome.webp
+    thumb: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214618_chrome-sm.webp
+    width: 800
+    height: 523
+  - src: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214621_chrome.webp
+    thumb: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214621_chrome-sm.webp
+    width: 800
+    height: 521
+  - src: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214626_chrome.webp
+    thumb: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214626_chrome-sm.webp
+    width: 800
+    height: 1181
+  - src: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214635_chrome.webp
+    thumb: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214635_chrome-sm.webp
+    width: 800
+    height: 524
+  - src: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214638_chrome.webp
+    thumb: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214638_chrome-sm.webp
+    width: 800
+    height: 505
+  - src: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214641_chrome-1.webp
+    thumb: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214641_chrome-1-sm.webp
+    width: 800
+    height: 536
+  - src: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214644_chrome.webp
+    thumb: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214644_chrome-sm.webp
+    width: 800
+    height: 516
+  - src: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214652_chrome.webp
+    thumb: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214652_chrome-sm.webp
+    width: 800
+    height: 1200
+  - src: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214659_chrome.webp
+    thumb: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214659_chrome-sm.webp
+    width: 800
+    height: 1168
+  - src: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214707_chrome.webp
+    thumb: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214707_chrome-sm.webp
+    width: 800
+    height: 524
+  - src: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214711_chrome.webp
+    thumb: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214711_chrome-sm.webp
+    width: 800
+    height: 532
+  - src: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214713_chrome.webp
+    thumb: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214713_chrome-sm.webp
+    width: 800
+    height: 1200
+  - src: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214716_chrome.webp
+    thumb: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214716_chrome-sm.webp
+    width: 800
+    height: 527
+  - src: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214724_chrome.webp
+    thumb: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214724_chrome-sm.webp
+    width: 800
+    height: 524
+  - src: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214730_chrome.webp
+    thumb: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214730_chrome-sm.webp
+    width: 800
+    height: 522
+  - src: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214739_chrome.webp
+    thumb: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214739_chrome-sm.webp
+    width: 800
+    height: 525
+  - src: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214744_chrome.webp
+    thumb: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214744_chrome-sm.webp
+    width: 800
+    height: 1189
+  - src: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214747_chrome.webp
+    thumb: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214747_chrome-sm.webp
+    width: 800
+    height: 1189
+  - src: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214756_chrome.webp
+    thumb: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214756_chrome-sm.webp
+    width: 800
+    height: 528
+  - src: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214800_chrome.webp
+    thumb: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214800_chrome-sm.webp
+    width: 800
+    height: 1192
+  - src: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214817_chrome.webp
+    thumb: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214817_chrome-sm.webp
+    width: 800
+    height: 1187
+  - src: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214821_chrome.webp
+    thumb: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214821_chrome-sm.webp
+    width: 800
+    height: 521
+  - src: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214833_chrome.webp
+    thumb: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214833_chrome-sm.webp
+    width: 800
+    height: 1190
+  - src: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214930_chrome.webp
+    thumb: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214930_chrome-sm.webp
+    width: 800
+    height: 1183
+  - src: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214933_chrome.webp
+    thumb: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214933_chrome-sm.webp
+    width: 800
+    height: 1200
+  - src: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214941_chrome.webp
+    thumb: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214941_chrome-sm.webp
+    width: 800
+    height: 538
+  - src: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214945_chrome.webp
+    thumb: /posts/bucura-te-lauda-poceaevului-2/screenshot_20250805_214945_chrome-sm.webp
+    width: 800
+    height: 1176
 ---
 
 În lumina sfântă a praznicului Icoanei Maicii Domnului de la Poceaev, marți, 5 august 2025, Preasfințitul Siluan, Episcop de Orhei și Vicar al Mitropoliei Moldovei, a săvârșit Sfânta și Dumnezeiasca Liturghie la Sfânta Mănăstire Saharna, cu binecuvântarea Înaltpreasfințitului Vladimir, Mitropolitul Chișinăului și al întregii Moldove.

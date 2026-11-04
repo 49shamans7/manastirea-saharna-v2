@@ -40,6 +40,58 @@ galleryImages:
     thumb: /posts/bucura-te-lauda-poceaevului-nadejdea-si-mangaierea-a-toata-lumea/image00007-1-sm.webp
     width: 800
     height: 534
+  - src: /posts/bucura-te-lauda-poceaevului-nadejdea-si-mangaierea-a-toata-lumea/image00008-1.webp
+    thumb: /posts/bucura-te-lauda-poceaevului-nadejdea-si-mangaierea-a-toata-lumea/image00008-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/bucura-te-lauda-poceaevului-nadejdea-si-mangaierea-a-toata-lumea/image00009-1.webp
+    thumb: /posts/bucura-te-lauda-poceaevului-nadejdea-si-mangaierea-a-toata-lumea/image00009-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/bucura-te-lauda-poceaevului-nadejdea-si-mangaierea-a-toata-lumea/image00011-1.webp
+    thumb: /posts/bucura-te-lauda-poceaevului-nadejdea-si-mangaierea-a-toata-lumea/image00011-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/bucura-te-lauda-poceaevului-nadejdea-si-mangaierea-a-toata-lumea/image00012-1.webp
+    thumb: /posts/bucura-te-lauda-poceaevului-nadejdea-si-mangaierea-a-toata-lumea/image00012-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/bucura-te-lauda-poceaevului-nadejdea-si-mangaierea-a-toata-lumea/image00014.webp
+    thumb: /posts/bucura-te-lauda-poceaevului-nadejdea-si-mangaierea-a-toata-lumea/image00014-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/bucura-te-lauda-poceaevului-nadejdea-si-mangaierea-a-toata-lumea/image00021.webp
+    thumb: /posts/bucura-te-lauda-poceaevului-nadejdea-si-mangaierea-a-toata-lumea/image00021-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/bucura-te-lauda-poceaevului-nadejdea-si-mangaierea-a-toata-lumea/image00022.webp
+    thumb: /posts/bucura-te-lauda-poceaevului-nadejdea-si-mangaierea-a-toata-lumea/image00022-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/bucura-te-lauda-poceaevului-nadejdea-si-mangaierea-a-toata-lumea/image00024.webp
+    thumb: /posts/bucura-te-lauda-poceaevului-nadejdea-si-mangaierea-a-toata-lumea/image00024-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/bucura-te-lauda-poceaevului-nadejdea-si-mangaierea-a-toata-lumea/image00026.webp
+    thumb: /posts/bucura-te-lauda-poceaevului-nadejdea-si-mangaierea-a-toata-lumea/image00026-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/bucura-te-lauda-poceaevului-nadejdea-si-mangaierea-a-toata-lumea/image00029.webp
+    thumb: /posts/bucura-te-lauda-poceaevului-nadejdea-si-mangaierea-a-toata-lumea/image00029-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/bucura-te-lauda-poceaevului-nadejdea-si-mangaierea-a-toata-lumea/image00030.webp
+    thumb: /posts/bucura-te-lauda-poceaevului-nadejdea-si-mangaierea-a-toata-lumea/image00030-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/bucura-te-lauda-poceaevului-nadejdea-si-mangaierea-a-toata-lumea/image00031.webp
+    thumb: /posts/bucura-te-lauda-poceaevului-nadejdea-si-mangaierea-a-toata-lumea/image00031-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/bucura-te-lauda-poceaevului-nadejdea-si-mangaierea-a-toata-lumea/image00032.webp
+    thumb: /posts/bucura-te-lauda-poceaevului-nadejdea-si-mangaierea-a-toata-lumea/image00032-sm.webp
+    width: 800
+    height: 534
 ---
 
 Sute de creștini, din diferite localități ale nordului Moldovei, porniți din orașul Bălți la data de 1 august au mers în procesiunea «Drumul Crucii» cu icoana Maicii Domnului de la Poceaev spre oaza de credință Sfânta Mănăstire Saharna, făcând popasuri în raioanele Florești, Șoldănești și Rezina.

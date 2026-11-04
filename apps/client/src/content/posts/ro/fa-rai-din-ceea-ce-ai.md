@@ -40,6 +40,30 @@ galleryImages:
     thumb: /posts/fa-rai-din-ceea-ce-ai/received_536537424563444-sm.webp
     width: 800
     height: 1067
+  - src: /posts/fa-rai-din-ceea-ce-ai/received_537053724645921.webp
+    thumb: /posts/fa-rai-din-ceea-ce-ai/received_537053724645921-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/fa-rai-din-ceea-ce-ai/received_556144202606288.webp
+    thumb: /posts/fa-rai-din-ceea-ce-ai/received_556144202606288-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/fa-rai-din-ceea-ce-ai/received_671817603931312.webp
+    thumb: /posts/fa-rai-din-ceea-ce-ai/received_671817603931312-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/fa-rai-din-ceea-ce-ai/received_676247130296984.webp
+    thumb: /posts/fa-rai-din-ceea-ce-ai/received_676247130296984-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/fa-rai-din-ceea-ce-ai/received_690725408846180.webp
+    thumb: /posts/fa-rai-din-ceea-ce-ai/received_690725408846180-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/fa-rai-din-ceea-ce-ai/received_776742553298947.webp
+    thumb: /posts/fa-rai-din-ceea-ce-ai/received_776742553298947-sm.webp
+    width: 800
+    height: 1067
 ---
 
 

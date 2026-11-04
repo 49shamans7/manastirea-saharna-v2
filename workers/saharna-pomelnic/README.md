@@ -1,31 +1,21 @@
 # saharna-pomelnic
 
-The pomelnic mail worker, on the monastery's own infrastructure.
+The Pomelnic form's backend. Accepts the form POST, checks Turnstile, and sends
+the old site's fields to the monastery as one plain-text mail through Cloudflare's
+`send_email` binding, with Reply-To set to the sender. It stores nothing and logs
+only outcomes and error codes.
 
-This is a **copy of the architecture** in `workers/pomelnic`, not a replacement
-for it. That worker, its vars and its deployment are left untouched.
+| Setting | Kind | Value |
+|---|---|---|
+| `ALLOWED_ORIGINS` | var | sites that may post; the `*.workers.dev` preview is derived |
+| `POMELNIC_TO` | var | must be a verified destination address in the account |
+| `POMELNIC_FROM` | var | on `formular.manastirea-saharna.md`, the sending subdomain |
+| `TURNSTILE_SECRET_KEY` | secret | set by `bun run cloudflare:setup` |
+| `EMAIL` | binding | `send_email` |
 
-## What it does
+`bun run cloudflare:setup` deploys all of it (`docs/CLOUDFLARE-HANDOVER.md`).
 
-Accepts the pomelnic form POST, verifies the Turnstile token, and relays the
-names to the monastery by email through Resend. It stores nothing.
+`bun run check:workers` runs the typecheck and the tests.
 
-## Setup
-
-```sh
-bunx wrangler secret put RESEND_API_KEY
-bunx wrangler secret put TURNSTILE_SECRET_KEY
-bunx wrangler deploy
-```
-
-Then set `POMELNIC_TO` in `wrangler.jsonc` to the monastery address, and point
-the client at the deployed worker:
-
-```sh
-# apps/client/.env
-PUBLIC_POMELNIC_WORKER_URL=https://saharna-pomelnic.<subdomain>.workers.dev
-PUBLIC_TURNSTILE_SITE_KEY=<site key>
-```
-
-`ALLOWED_ORIGIN` and `SITE_URL` must match where the site is actually served,
-or the worker answers 403 — that is what it is for.
+After a submission the visitor returns to the page they came from with
+`?pomelnic=ok|invalid|challenge|send`.

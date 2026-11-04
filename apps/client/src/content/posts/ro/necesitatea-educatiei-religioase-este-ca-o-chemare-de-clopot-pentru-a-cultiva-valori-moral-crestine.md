@@ -40,6 +40,98 @@ galleryImages:
     thumb: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00007-sm.webp
     width: 800
     height: 533
+  - src: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00008.webp
+    thumb: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00008-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00009.webp
+    thumb: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00009-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00010.webp
+    thumb: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00010-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00011.webp
+    thumb: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00011-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00012.webp
+    thumb: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00012-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00013.webp
+    thumb: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00013-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00014.webp
+    thumb: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00014-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00015.webp
+    thumb: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00015-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00016.webp
+    thumb: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00016-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00017.webp
+    thumb: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00017-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00018.webp
+    thumb: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00018-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00019.webp
+    thumb: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00019-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00020.webp
+    thumb: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00020-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00021.webp
+    thumb: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00021-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00022.webp
+    thumb: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00022-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00023.webp
+    thumb: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00023-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00024.webp
+    thumb: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00024-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00025.webp
+    thumb: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00025-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00026.webp
+    thumb: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00026-sm.webp
+    width: 450
+    height: 800
+  - src: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00027.webp
+    thumb: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00027-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00028.webp
+    thumb: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00028-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00029.webp
+    thumb: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00029-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00030.webp
+    thumb: /posts/necesitatea-educatiei-religioase-este-ca-o-chemare-de-clopot-pentru-a-cultiva-valori-moral-crestine/image00030-sm.webp
+    width: 800
+    height: 450
 ---
 
 La data de 15 decembrie 2016, IP Gimnaziul Saharna Nouă a gazduit seminarul instructiv metodic cu profesorii de religie din raionul Rezina, la care cu mare dragoste au participat și preoții parohi ai celor două sate Saharna Nouă și Buciușca, din care și vin copii pentru a primi învățătura și înțelepciunea nesecată a acestui cuib de înțelepciune, Arhimandritul Casian Iurcu și Ieromonahul Bartolomeu Murea – clericii Sfintei Mănăstiri Saharna.

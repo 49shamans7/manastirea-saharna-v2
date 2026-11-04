@@ -1,0 +1,90 @@
+---
+// GALERIA VIDEO — the old site's /video/ list, entry for entry.
+import Layout from "@layouts/Layout.astro";
+import TempleFrame from "@layouts/TempleFrame.astro";
+import VideoFacade from "@components/VideoFacade.astro";
+import { getPostBySlug } from "@data/posts";
+import { galleryVideos } from "@data/videos";
+import { getLocaleFromUrl, getLocalizedPath, useTranslations } from "@i18n/utils";
+import { publicAsset } from "@utils/paths";
+import "@styles/temple.css";
+
+const lang = getLocaleFromUrl(Astro.url);
+const t = useTranslations(lang);
+const entries = await Promise.all(
+  galleryVideos.map(async (entry) => {
+    const post = await getPostBySlug(entry.slug, lang);
+    if (!post) throw new Error(`Galeria Video: no post "${entry.slug}"`);
+    return { ...entry, post };
+  }),
+);
+---
+
+<Layout>
+  <TempleFrame lang={lang} zone="green" path={Astro.url.pathname}>
+    <main class="films">
+      <header class="page-head">
+        <h1 class="page-title">{t("zone.video")}</h1>
+      </header>
+      <ol>
+        {
+          entries.map(({ post, video }) => (
+            <li>
+              {video && (
+                <VideoFacade
+                  id={video}
+                  title={post.title}
+                  lang={lang}
+                  poster={publicAsset(`/video/${video}.jpg`)}
+                  sizes="(max-width: 860px) 100vw, 560px"
+                />
+              )}
+              <a href={getLocalizedPath(`/posts/${post.slug}`, lang)}>
+                <time datetime={post.isoDate}>{post.date}</time>
+                <strong>{post.title}</strong>
+              </a>
+            </li>
+          ))
+        }
+      </ol>
+    </main>
+  </TempleFrame>
+</Layout>
+
+<style>
+  .films {
+    max-width: 74rem;
+    padding: var(--page-top) 0 var(--page-bottom);
+  }
+  ol {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 24rem), 1fr));
+    gap: var(--s-7) var(--s-6);
+    list-style: none;
+    margin: var(--s-5) 0 0;
+    padding: 0;
+  }
+  li > a {
+    display: grid;
+    gap: 2px;
+    min-height: var(--tap);
+    padding-top: var(--s-3);
+    color: inherit;
+    text-decoration: none;
+  }
+  li > a:hover strong {
+    text-decoration: underline;
+  }
+  li > a:focus-visible {
+    outline: 3px solid var(--seal-gold-text);
+    outline-offset: 3px;
+  }
+  time {
+    font-size: 17px;
+    color: #4a6274;
+  }
+  strong {
+    font-size: 20px;
+    line-height: 1.35;
+  }
+</style>

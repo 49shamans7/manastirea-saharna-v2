@@ -3,7 +3,7 @@
 # Romanian original (src/data/pages.ts shows it under lang="ro").
 title: "Служба преподобному Макарию"
 eyebrow: "Рака · зона III"
-lead: "Чинопоследование службы святому, как её поют в обители."
+lead: "Чинопоследование службы святому."
 zone: gold
 template: chamber
 order: 5

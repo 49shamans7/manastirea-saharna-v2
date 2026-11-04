@@ -40,6 +40,62 @@ galleryImages:
     thumb: /posts/privegherea-de-praznicul-sf-cuv-macarie/20250525_174121-rotated-sm.webp
     width: 800
     height: 1066
+  - src: /posts/privegherea-de-praznicul-sf-cuv-macarie/20250525_174140-rotated.webp
+    thumb: /posts/privegherea-de-praznicul-sf-cuv-macarie/20250525_174140-rotated-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/privegherea-de-praznicul-sf-cuv-macarie/20250525_174244-rotated.webp
+    thumb: /posts/privegherea-de-praznicul-sf-cuv-macarie/20250525_174244-rotated-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/privegherea-de-praznicul-sf-cuv-macarie/20250525_174250-rotated.webp
+    thumb: /posts/privegherea-de-praznicul-sf-cuv-macarie/20250525_174250-rotated-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/privegherea-de-praznicul-sf-cuv-macarie/20250525_174259-rotated.webp
+    thumb: /posts/privegherea-de-praznicul-sf-cuv-macarie/20250525_174259-rotated-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/privegherea-de-praznicul-sf-cuv-macarie/20250525_175146-rotated.webp
+    thumb: /posts/privegherea-de-praznicul-sf-cuv-macarie/20250525_175146-rotated-sm.webp
+    width: 790
+    height: 1053
+  - src: /posts/privegherea-de-praznicul-sf-cuv-macarie/20250525_175200-rotated.webp
+    thumb: /posts/privegherea-de-praznicul-sf-cuv-macarie/20250525_175200-rotated-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/privegherea-de-praznicul-sf-cuv-macarie/20250525_185006-rotated.webp
+    thumb: /posts/privegherea-de-praznicul-sf-cuv-macarie/20250525_185006-rotated-sm.webp
+    width: 776
+    height: 1035
+  - src: /posts/privegherea-de-praznicul-sf-cuv-macarie/20250525_185055-rotated.webp
+    thumb: /posts/privegherea-de-praznicul-sf-cuv-macarie/20250525_185055-rotated-sm.webp
+    width: 767
+    height: 1022
+  - src: /posts/privegherea-de-praznicul-sf-cuv-macarie/20250525_185104-rotated.webp
+    thumb: /posts/privegherea-de-praznicul-sf-cuv-macarie/20250525_185104-rotated-sm.webp
+    width: 800
+    height: 1068
+  - src: /posts/privegherea-de-praznicul-sf-cuv-macarie/20250525_185117-rotated.webp
+    thumb: /posts/privegherea-de-praznicul-sf-cuv-macarie/20250525_185117-rotated-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/privegherea-de-praznicul-sf-cuv-macarie/20250525_185315-rotated.webp
+    thumb: /posts/privegherea-de-praznicul-sf-cuv-macarie/20250525_185315-rotated-sm.webp
+    width: 787
+    height: 1049
+  - src: /posts/privegherea-de-praznicul-sf-cuv-macarie/20250525_185322-rotated.webp
+    thumb: /posts/privegherea-de-praznicul-sf-cuv-macarie/20250525_185322-rotated-sm.webp
+    width: 770
+    height: 1027
+  - src: /posts/privegherea-de-praznicul-sf-cuv-macarie/20250525_185452-rotated.webp
+    thumb: /posts/privegherea-de-praznicul-sf-cuv-macarie/20250525_185452-rotated-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/privegherea-de-praznicul-sf-cuv-macarie/20250525_185456-rotated.webp
+    thumb: /posts/privegherea-de-praznicul-sf-cuv-macarie/20250525_185456-rotated-sm.webp
+    width: 800
+    height: 1067
 ---
 
 

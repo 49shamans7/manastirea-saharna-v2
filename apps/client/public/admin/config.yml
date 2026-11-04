@@ -1,16 +1,19 @@
 # ADMIN — what the monastery can edit, in its own words.
-# Sveltia CMS (Decap-compatible). Every save is a commit on `dev` in
-# 49shamans7/manastirea-saharna; the push rebuilds and redeploys the site.
+# Sveltia CMS (Decap-compatible). Every save is a commit on `main` in
+# 49shamans7/manastirea-saharna-v2; the push rebuilds and redeploys the site.
 #
 # Sign-in: "Sign In Using Access Token" — a GitHub fine-grained token with
-# Contents: read/write on this one repository (docs/ADMIN.md). A GitHub
-# sign-in button needs an OAuth relay (sveltia-cms-auth, a Cloudflare Worker);
-# add `base_url` below once that is deployed at the Cloudflare switch.
+# Contents: read/write on this one repository (docs/ADMIN.md). The "Sign In with
+# GitHub" button appears once `base_url` below is set to the workers/sveltia-cms-auth
+# relay; `bun run cloudflare:setup` does that.
 
 backend:
   name: github
   repo: 49shamans7/manastirea-saharna-v2
   branch: main
+  # the repository is public: sign-in asks for no access to private ones
+  auth_scope: public_repo
+  # base_url: set by scripts/cloudflare-setup.mjs
   commit_messages:
     create: "Cronică: {{slug}} (nou)"
     update: "Cronică: {{slug}}"
@@ -20,6 +23,8 @@ backend:
 
 # Photographs uploaded from a phone are converted to WebP and capped at 2000px
 # before they are committed, so a 6 MB phone shot lands as ~400 KB.
+# public_folder is the path from the domain root and stays free of the base path:
+# posts.ts and rebase() add it, so /uploads/x.webp works on Pages and on the domain.
 media_folder: apps/client/public/uploads
 public_folder: /uploads
 media_libraries:
@@ -33,7 +38,7 @@ media_libraries:
           width: 2000
           height: 2000
 
-site_url: https://49shamans7.github.io/manastirea-saharna/
+site_url: https://manastirea-saharna.md/
 logo:
   src: ../favicon.svg
 
@@ -143,3 +148,186 @@ collections:
       - { name: order, widget: hidden, default: 0, i18n: duplicate }
       - { name: sourceUrl, widget: hidden, i18n: duplicate }
       - { name: body, label: Text, widget: markdown, i18n: true }
+
+  # The facts that change: one form each, no new files and no deleting.
+  - name: settings
+    label: Program și date de contact
+    editor: { preview: false }
+    files:
+      - name: schedule
+        label: Programul slujbelor
+        file: apps/client/src/data/schedule.json
+        format: json
+        fields:
+          - name: monWed
+            label: Luni, marți și miercuri
+            widget: object
+            fields:
+              - name: blocks
+                label: Rânduiala zilei
+                label_singular: Grup de slujbe
+                widget: list
+                fields:
+                  - name: title
+                    label: Titlu deasupra grupului
+                    widget: select
+                    default: none
+                    options:
+                      - { label: Fără titlu, value: none }
+                      - { label: Prima Liturghie, value: first }
+                      - { label: A doua Liturghie, value: second }
+                  - name: services
+                    label: Slujbe
+                    label_singular: Slujbă
+                    widget: list
+                    summary: "{{fields.time}} · {{fields.name}}"
+                    fields:
+                      - { name: time, label: "Ora (ex. 05.45)", widget: string, pattern: ['^\d{2}\.\d{2}$', "Scrieți ora așa: 05.45"] }
+                      - { name: name, label: Slujba, widget: string }
+                      - { name: nameEn, label: Slujba în engleză (opțional), widget: string, required: false }
+                      - { name: nameRu, label: Slujba în rusă (opțional), widget: string, required: false }
+                      - { name: note, label: Notă (opțional), widget: string, required: false }
+                      - { name: noteEn, label: Nota în engleză (opțional), widget: string, required: false }
+                      - { name: noteRu, label: Nota în rusă (opțional), widget: string, required: false }
+          - name: thu
+            label: Joi
+            widget: object
+            fields:
+              - name: blocks
+                label: Rânduiala zilei
+                label_singular: Grup de slujbe
+                widget: list
+                fields:
+                  - name: title
+                    label: Titlu deasupra grupului
+                    widget: select
+                    default: none
+                    options:
+                      - { label: Fără titlu, value: none }
+                      - { label: Prima Liturghie, value: first }
+                      - { label: A doua Liturghie, value: second }
+                  - name: services
+                    label: Slujbe
+                    label_singular: Slujbă
+                    widget: list
+                    summary: "{{fields.time}} · {{fields.name}}"
+                    fields:
+                      - { name: time, label: "Ora (ex. 05.45)", widget: string, pattern: ['^\d{2}\.\d{2}$', "Scrieți ora așa: 05.45"] }
+                      - { name: name, label: Slujba, widget: string }
+                      - { name: nameEn, label: Slujba în engleză (opțional), widget: string, required: false }
+                      - { name: nameRu, label: Slujba în rusă (opțional), widget: string, required: false }
+                      - { name: note, label: Notă (opțional), widget: string, required: false }
+                      - { name: noteEn, label: Nota în engleză (opțional), widget: string, required: false }
+                      - { name: noteRu, label: Nota în rusă (opțional), widget: string, required: false }
+          - name: fri
+            label: Vineri
+            widget: object
+            fields:
+              - name: blocks
+                label: Rânduiala zilei
+                label_singular: Grup de slujbe
+                widget: list
+                fields:
+                  - name: title
+                    label: Titlu deasupra grupului
+                    widget: select
+                    default: none
+                    options:
+                      - { label: Fără titlu, value: none }
+                      - { label: Prima Liturghie, value: first }
+                      - { label: A doua Liturghie, value: second }
+                  - name: services
+                    label: Slujbe
+                    label_singular: Slujbă
+                    widget: list
+                    summary: "{{fields.time}} · {{fields.name}}"
+                    fields:
+                      - { name: time, label: "Ora (ex. 05.45)", widget: string, pattern: ['^\d{2}\.\d{2}$', "Scrieți ora așa: 05.45"] }
+                      - { name: name, label: Slujba, widget: string }
+                      - { name: nameEn, label: Slujba în engleză (opțional), widget: string, required: false }
+                      - { name: nameRu, label: Slujba în rusă (opțional), widget: string, required: false }
+                      - { name: note, label: Notă (opțional), widget: string, required: false }
+                      - { name: noteEn, label: Nota în engleză (opțional), widget: string, required: false }
+                      - { name: noteRu, label: Nota în rusă (opțional), widget: string, required: false }
+          - name: sat
+            label: Sâmbătă
+            widget: object
+            fields:
+              - name: blocks
+                label: Rânduiala zilei
+                label_singular: Grup de slujbe
+                widget: list
+                fields:
+                  - name: title
+                    label: Titlu deasupra grupului
+                    widget: select
+                    default: none
+                    options:
+                      - { label: Fără titlu, value: none }
+                      - { label: Prima Liturghie, value: first }
+                      - { label: A doua Liturghie, value: second }
+                  - name: services
+                    label: Slujbe
+                    label_singular: Slujbă
+                    widget: list
+                    summary: "{{fields.time}} · {{fields.name}}"
+                    fields:
+                      - { name: time, label: "Ora (ex. 05.45)", widget: string, pattern: ['^\d{2}\.\d{2}$', "Scrieți ora așa: 05.45"] }
+                      - { name: name, label: Slujba, widget: string }
+                      - { name: nameEn, label: Slujba în engleză (opțional), widget: string, required: false }
+                      - { name: nameRu, label: Slujba în rusă (opțional), widget: string, required: false }
+                      - { name: note, label: Notă (opțional), widget: string, required: false }
+                      - { name: noteEn, label: Nota în engleză (opțional), widget: string, required: false }
+                      - { name: noteRu, label: Nota în rusă (opțional), widget: string, required: false }
+          - name: sun
+            label: Duminică
+            widget: object
+            fields:
+              - name: blocks
+                label: Rânduiala zilei
+                label_singular: Grup de slujbe
+                widget: list
+                fields:
+                  - name: title
+                    label: Titlu deasupra grupului
+                    widget: select
+                    default: none
+                    options:
+                      - { label: Fără titlu, value: none }
+                      - { label: Prima Liturghie, value: first }
+                      - { label: A doua Liturghie, value: second }
+                  - name: services
+                    label: Slujbe
+                    label_singular: Slujbă
+                    widget: list
+                    summary: "{{fields.time}} · {{fields.name}}"
+                    fields:
+                      - { name: time, label: "Ora (ex. 05.45)", widget: string, pattern: ['^\d{2}\.\d{2}$', "Scrieți ora așa: 05.45"] }
+                      - { name: name, label: Slujba, widget: string }
+                      - { name: nameEn, label: Slujba în engleză (opțional), widget: string, required: false }
+                      - { name: nameRu, label: Slujba în rusă (opțional), widget: string, required: false }
+                      - { name: note, label: Notă (opțional), widget: string, required: false }
+                      - { name: noteEn, label: Nota în engleză (opțional), widget: string, required: false }
+                      - { name: noteRu, label: Nota în rusă (opțional), widget: string, required: false }
+      - name: settings
+        label: Contacte și date bancare
+        file: apps/client/src/data/settings.json
+        format: json
+        fields:
+          - { name: phoneMain, label: Telefon principal (apare pe prima pagină), widget: string }
+          - { name: phoneSecretariat, label: Telefon secretariat, widget: string }
+          - { name: phoneMobile, label: Telefon casa de oaspeți, widget: string }
+          - { name: emailInfo, label: E-mail general, widget: string }
+          - { name: emailSecretariat, label: E-mail secretariat, widget: string }
+          - { name: addressRo, label: Adresa, widget: string }
+          - { name: addressEn, label: Adresa în engleză, widget: string }
+          - { name: addressRu, label: Adresa în rusă, widget: string }
+          - { name: beneficiary, label: Beneficiar, widget: string }
+          - { name: bank, label: Banca, widget: string }
+          - { name: fiscalCode, label: Cod fiscal, widget: string }
+          - { name: bankCode, label: Cod bancar, widget: string }
+          - { name: iban, label: IBAN, widget: string, pattern: ['^MD[0-9]{2}[A-Z0-9]{20}$', "IBAN-ul are 24 de caractere, fără spații"] }
+          - { name: paypal, label: PayPal, widget: string }
+          - { name: bankAddressRo, label: Adresa pentru rechizite, widget: string }
+          - { name: bankAddressEn, label: Adresa pentru rechizite în engleză, widget: string }
+          - { name: bankAddressRu, label: Adresa pentru rechizite în rusă, widget: string }

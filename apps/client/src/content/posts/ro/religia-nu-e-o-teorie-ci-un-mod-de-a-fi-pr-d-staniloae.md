@@ -40,6 +40,50 @@ galleryImages:
     thumb: /posts/religia-nu-e-o-teorie-ci-un-mod-de-a-fi-pr-d-staniloae/viber-image13-sm.webp
     width: 800
     height: 451
+  - src: /posts/religia-nu-e-o-teorie-ci-un-mod-de-a-fi-pr-d-staniloae/viber-image14.webp
+    thumb: /posts/religia-nu-e-o-teorie-ci-un-mod-de-a-fi-pr-d-staniloae/viber-image14-sm.webp
+    width: 721
+    height: 1280
+  - src: /posts/religia-nu-e-o-teorie-ci-un-mod-de-a-fi-pr-d-staniloae/viber-image16.webp
+    thumb: /posts/religia-nu-e-o-teorie-ci-un-mod-de-a-fi-pr-d-staniloae/viber-image16-sm.webp
+    width: 800
+    height: 451
+  - src: /posts/religia-nu-e-o-teorie-ci-un-mod-de-a-fi-pr-d-staniloae/viber-image18.webp
+    thumb: /posts/religia-nu-e-o-teorie-ci-un-mod-de-a-fi-pr-d-staniloae/viber-image18-sm.webp
+    width: 800
+    height: 451
+  - src: /posts/religia-nu-e-o-teorie-ci-un-mod-de-a-fi-pr-d-staniloae/viber-image20.webp
+    thumb: /posts/religia-nu-e-o-teorie-ci-un-mod-de-a-fi-pr-d-staniloae/viber-image20-sm.webp
+    width: 800
+    height: 451
+  - src: /posts/religia-nu-e-o-teorie-ci-un-mod-de-a-fi-pr-d-staniloae/viber-image22.webp
+    thumb: /posts/religia-nu-e-o-teorie-ci-un-mod-de-a-fi-pr-d-staniloae/viber-image22-sm.webp
+    width: 800
+    height: 451
+  - src: /posts/religia-nu-e-o-teorie-ci-un-mod-de-a-fi-pr-d-staniloae/viber-image24.webp
+    thumb: /posts/religia-nu-e-o-teorie-ci-un-mod-de-a-fi-pr-d-staniloae/viber-image24-sm.webp
+    width: 800
+    height: 451
+  - src: /posts/religia-nu-e-o-teorie-ci-un-mod-de-a-fi-pr-d-staniloae/viber-image26.webp
+    thumb: /posts/religia-nu-e-o-teorie-ci-un-mod-de-a-fi-pr-d-staniloae/viber-image26-sm.webp
+    width: 800
+    height: 451
+  - src: /posts/religia-nu-e-o-teorie-ci-un-mod-de-a-fi-pr-d-staniloae/viber-image29.webp
+    thumb: /posts/religia-nu-e-o-teorie-ci-un-mod-de-a-fi-pr-d-staniloae/viber-image29-sm.webp
+    width: 800
+    height: 451
+  - src: /posts/religia-nu-e-o-teorie-ci-un-mod-de-a-fi-pr-d-staniloae/viber-image3.webp
+    thumb: /posts/religia-nu-e-o-teorie-ci-un-mod-de-a-fi-pr-d-staniloae/viber-image3-sm.webp
+    width: 800
+    height: 451
+  - src: /posts/religia-nu-e-o-teorie-ci-un-mod-de-a-fi-pr-d-staniloae/viber-image5.webp
+    thumb: /posts/religia-nu-e-o-teorie-ci-un-mod-de-a-fi-pr-d-staniloae/viber-image5-sm.webp
+    width: 800
+    height: 451
+  - src: /posts/religia-nu-e-o-teorie-ci-un-mod-de-a-fi-pr-d-staniloae/viber-image9.webp
+    thumb: /posts/religia-nu-e-o-teorie-ci-un-mod-de-a-fi-pr-d-staniloae/viber-image9-sm.webp
+    width: 800
+    height: 451
 ---
 
 Fericiți sunt tinerii de astăzi că pot merge nu numai să se închine fără nici o pedică, dar pot și sa lăse urme frumoase acolo pe unde pășesc.

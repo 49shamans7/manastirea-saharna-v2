@@ -7,7 +7,9 @@
   "scripts": {
     "dev:client": "bun run --cwd apps/client dev",
     "build:client": "bun run --cwd apps/client build",
-    "preview:client": "bun run --cwd apps/client preview"
+    "preview:client": "bun run --cwd apps/client preview",
+    "check:workers": "tsc -p workers/saharna-pomelnic && bun test workers/saharna-pomelnic",
+    "cloudflare:setup": "bun scripts/cloudflare-setup.mjs"
   },
   "devDependencies": {
     "playwright-core": "^1.63.0",

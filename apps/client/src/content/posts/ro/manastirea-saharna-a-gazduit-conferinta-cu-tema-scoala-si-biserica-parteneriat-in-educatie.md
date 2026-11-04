@@ -40,6 +40,42 @@ galleryImages:
     thumb: /posts/manastirea-saharna-a-gazduit-conferinta-cu-tema-scoala-si-biserica-parteneriat-in-educatie/10509698_764172330334267_5178664479413625313_n-sm.webp
     width: 800
     height: 621
+  - src: /posts/manastirea-saharna-a-gazduit-conferinta-cu-tema-scoala-si-biserica-parteneriat-in-educatie/10670285_764172727000894_1563295317658527224_n.webp
+    thumb: /posts/manastirea-saharna-a-gazduit-conferinta-cu-tema-scoala-si-biserica-parteneriat-in-educatie/10670285_764172727000894_1563295317658527224_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/manastirea-saharna-a-gazduit-conferinta-cu-tema-scoala-si-biserica-parteneriat-in-educatie/10846052_764172527000914_5503069946453967663_n.webp
+    thumb: /posts/manastirea-saharna-a-gazduit-conferinta-cu-tema-scoala-si-biserica-parteneriat-in-educatie/10846052_764172527000914_5503069946453967663_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/manastirea-saharna-a-gazduit-conferinta-cu-tema-scoala-si-biserica-parteneriat-in-educatie/10846369_764172417000925_8942331886914934442_n.webp
+    thumb: /posts/manastirea-saharna-a-gazduit-conferinta-cu-tema-scoala-si-biserica-parteneriat-in-educatie/10846369_764172417000925_8942331886914934442_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/manastirea-saharna-a-gazduit-conferinta-cu-tema-scoala-si-biserica-parteneriat-in-educatie/10850097_764172810334219_195532388756288413_n.webp
+    thumb: /posts/manastirea-saharna-a-gazduit-conferinta-cu-tema-scoala-si-biserica-parteneriat-in-educatie/10850097_764172810334219_195532388756288413_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/manastirea-saharna-a-gazduit-conferinta-cu-tema-scoala-si-biserica-parteneriat-in-educatie/10850217_764172343667599_5286317011390415893_n.webp
+    thumb: /posts/manastirea-saharna-a-gazduit-conferinta-cu-tema-scoala-si-biserica-parteneriat-in-educatie/10850217_764172343667599_5286317011390415893_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/manastirea-saharna-a-gazduit-conferinta-cu-tema-scoala-si-biserica-parteneriat-in-educatie/10857944_764172313667602_3789362150202891296_n.webp
+    thumb: /posts/manastirea-saharna-a-gazduit-conferinta-cu-tema-scoala-si-biserica-parteneriat-in-educatie/10857944_764172313667602_3789362150202891296_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/manastirea-saharna-a-gazduit-conferinta-cu-tema-scoala-si-biserica-parteneriat-in-educatie/10858374_764172880334212_6239560397811499733_n.webp
+    thumb: /posts/manastirea-saharna-a-gazduit-conferinta-cu-tema-scoala-si-biserica-parteneriat-in-educatie/10858374_764172880334212_6239560397811499733_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/manastirea-saharna-a-gazduit-conferinta-cu-tema-scoala-si-biserica-parteneriat-in-educatie/1466299_764173127000854_8906426094875459582_n.webp
+    thumb: /posts/manastirea-saharna-a-gazduit-conferinta-cu-tema-scoala-si-biserica-parteneriat-in-educatie/1466299_764173127000854_8906426094875459582_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/manastirea-saharna-a-gazduit-conferinta-cu-tema-scoala-si-biserica-parteneriat-in-educatie/1979856_764172123667621_67367108117519094_n.webp
+    thumb: /posts/manastirea-saharna-a-gazduit-conferinta-cu-tema-scoala-si-biserica-parteneriat-in-educatie/1979856_764172123667621_67367108117519094_n-sm.webp
+    width: 800
+    height: 533
 ---
 
 Duminică, 14 decembrie 2014, cu binecuvântarea PCuv. Părinte Stareț arhimandritul Adrian (Baciu), Mănăstirea Saharna a găzduit conferința cu tema „Școala și Biserica: parteneriat în educație”, la care au participat profesorii de religie din raionul Rezina. Invitatul special al conferinței a fost dna Carolina Cojocaru, șefa catedrei raionale pentru disciplina Religie.

@@ -40,6 +40,18 @@ galleryImages:
     thumb: /posts/festivalului-datinilor-si-traditiilor-de-anul-nou-sa-traiti-sa-nfloriti/48954500_209397300000757_6821281280143917056_n-sm.webp
     width: 800
     height: 600
+  - src: /posts/festivalului-datinilor-si-traditiilor-de-anul-nou-sa-traiti-sa-nfloriti/48957875_328602757739681_496597016550309888_n.webp
+    thumb: /posts/festivalului-datinilor-si-traditiilor-de-anul-nou-sa-traiti-sa-nfloriti/48957875_328602757739681_496597016550309888_n-sm.webp
+    width: 800
+    height: 1432
+  - src: /posts/festivalului-datinilor-si-traditiilor-de-anul-nou-sa-traiti-sa-nfloriti/49191234_307685289853408_4323147083235196928_n.webp
+    thumb: /posts/festivalului-datinilor-si-traditiilor-de-anul-nou-sa-traiti-sa-nfloriti/49191234_307685289853408_4323147083235196928_n-sm.webp
+    width: 800
+    height: 1432
+  - src: /posts/festivalului-datinilor-si-traditiilor-de-anul-nou-sa-traiti-sa-nfloriti/49450523_596523760777040_7520460006987137024_n.webp
+    thumb: /posts/festivalului-datinilor-si-traditiilor-de-anul-nou-sa-traiti-sa-nfloriti/49450523_596523760777040_7520460006987137024_n-sm.webp
+    width: 800
+    height: 600
 ---
 
 Colectivul de copii,,Tezaur” din Instituția Publică Gimnaziul Saharna Nouă a participat la Festivalului datinilor și tradițiilor de Anul Nou „Să trăiți, să- nfloriți” care se organizează în fiecare an în ajunul sărbatorilor de iarnă de către DÎTS Rezina cu scopul de a promova și valorifica obiceiuri și tradiții ce țin de sărbătorile de iarnă precum și propagarea portului popular și a atributelor populare specifice obiceiurilor de iarnă.

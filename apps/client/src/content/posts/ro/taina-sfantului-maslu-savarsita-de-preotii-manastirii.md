@@ -40,6 +40,38 @@ galleryImages:
     thumb: /posts/taina-sfantului-maslu-savarsita-de-preotii-manastirii/10568885_695466847204816_6897797707091407639_n-sm.webp
     width: 800
     height: 530
+  - src: /posts/taina-sfantului-maslu-savarsita-de-preotii-manastirii/10590564_695466457204855_2147590334692136581_n.webp
+    thumb: /posts/taina-sfantului-maslu-savarsita-de-preotii-manastirii/10590564_695466457204855_2147590334692136581_n-sm.webp
+    width: 800
+    height: 530
+  - src: /posts/taina-sfantului-maslu-savarsita-de-preotii-manastirii/10593114_695466407204860_5987766772985016137_n.webp
+    thumb: /posts/taina-sfantului-maslu-savarsita-de-preotii-manastirii/10593114_695466407204860_5987766772985016137_n-sm.webp
+    width: 800
+    height: 530
+  - src: /posts/taina-sfantului-maslu-savarsita-de-preotii-manastirii/10603296_695466973871470_2138814484815563490_n.webp
+    thumb: /posts/taina-sfantului-maslu-savarsita-de-preotii-manastirii/10603296_695466973871470_2138814484815563490_n-sm.webp
+    width: 800
+    height: 530
+  - src: /posts/taina-sfantului-maslu-savarsita-de-preotii-manastirii/10606247_695467127204788_7466491083978255647_n.webp
+    thumb: /posts/taina-sfantului-maslu-savarsita-de-preotii-manastirii/10606247_695467127204788_7466491083978255647_n-sm.webp
+    width: 800
+    height: 530
+  - src: /posts/taina-sfantului-maslu-savarsita-de-preotii-manastirii/10610567_695466807204820_5282206432020540122_n.webp
+    thumb: /posts/taina-sfantului-maslu-savarsita-de-preotii-manastirii/10610567_695466807204820_5282206432020540122_n-sm.webp
+    width: 800
+    height: 530
+  - src: /posts/taina-sfantului-maslu-savarsita-de-preotii-manastirii/10610635_695466370538197_3781833175101954920_n.webp
+    thumb: /posts/taina-sfantului-maslu-savarsita-de-preotii-manastirii/10610635_695466370538197_3781833175101954920_n-sm.webp
+    width: 800
+    height: 530
+  - src: /posts/taina-sfantului-maslu-savarsita-de-preotii-manastirii/1472865_695467153871452_5792318041908986769_n.webp
+    thumb: /posts/taina-sfantului-maslu-savarsita-de-preotii-manastirii/1472865_695467153871452_5792318041908986769_n-sm.webp
+    width: 800
+    height: 530
+  - src: /posts/taina-sfantului-maslu-savarsita-de-preotii-manastirii/1798572_695467233871444_9109331655344619431_n.webp
+    thumb: /posts/taina-sfantului-maslu-savarsita-de-preotii-manastirii/1798572_695467233871444_9109331655344619431_n-sm.webp
+    width: 800
+    height: 530
 ---
 
 După tradiția mănăstirească, sâmbată, 09.08.2014, în ziua pomenirii Sfântului M. Mc. Panteleimon-tămăduitorul de boli, după Sfânta Liturghie, la mănăstire a fost oficiată Taina Sfântului Maslu, care este lucrarea sfântă săvârșită în numele Sfintei Treimi, de către preoții Bisericii, prin care se împărtășește credinciosului bolnav harul nevăzut al tămăduirii sau ușurării suferințelor trupești, întărirea sufletească, iertarea păcatelor.

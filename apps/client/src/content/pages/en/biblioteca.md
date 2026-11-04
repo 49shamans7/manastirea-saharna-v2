@@ -3,7 +3,7 @@
 # Romanian original (src/data/pages.ts shows it under lang="ro").
 title: "Library"
 eyebrow: "The Reliquary · zone III"
-lead: "Canons and ordered texts, gathered by the brotherhood."
+lead: "Canons and ordered texts."
 zone: gold
 template: chamber
 order: 6

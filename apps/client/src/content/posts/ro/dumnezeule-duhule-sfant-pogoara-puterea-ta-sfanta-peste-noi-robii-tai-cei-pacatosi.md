@@ -40,6 +40,106 @@ galleryImages:
     thumb: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00007-sm.webp
     width: 800
     height: 534
+  - src: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00008.webp
+    thumb: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00008-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00009.webp
+    thumb: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00009-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00010.webp
+    thumb: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00010-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00014.webp
+    thumb: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00014-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00015.webp
+    thumb: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00015-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00016.webp
+    thumb: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00016-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00017.webp
+    thumb: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00017-sm.webp
+    width: 512
+    height: 768
+  - src: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00018.webp
+    thumb: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00018-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00019.webp
+    thumb: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00019-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00020.webp
+    thumb: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00020-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00021.webp
+    thumb: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00021-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00022.webp
+    thumb: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00022-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00023.webp
+    thumb: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00023-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00024.webp
+    thumb: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00024-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00025.webp
+    thumb: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00025-sm.webp
+    width: 512
+    height: 768
+  - src: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00026.webp
+    thumb: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00026-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00027.webp
+    thumb: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00027-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00028.webp
+    thumb: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00028-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00029.webp
+    thumb: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00029-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00030.webp
+    thumb: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00030-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00031.webp
+    thumb: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00031-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00032.webp
+    thumb: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00032-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00033.webp
+    thumb: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00033-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00034.webp
+    thumb: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00034-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00035.webp
+    thumb: /posts/dumnezeule-duhule-sfant-pogoara-puterea-ta-sfanta-peste-noi-robii-tai-cei-pacatosi/image00035-sm.webp
+    width: 800
+    height: 534
 ---
 
 În această zi frumoasă de vară, una dintre perle printre mănăstiri de pe meleagurile bătrânului Nistru, ce păstrează flacăra credinței aprinse din veacuri, Sfânta Mănăstire Saharna și-a sărbătorit hramul.

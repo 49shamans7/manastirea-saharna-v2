@@ -40,6 +40,138 @@ galleryImages:
     thumb: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00007-6-sm.webp
     width: 800
     height: 600
+  - src: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00008-5.webp
+    thumb: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00008-5-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00009-6.webp
+    thumb: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00009-6-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00010-5.webp
+    thumb: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00010-5-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00011-5.webp
+    thumb: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00011-5-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00012-4.webp
+    thumb: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00012-4-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00013-4.webp
+    thumb: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00013-4-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00014-3.webp
+    thumb: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00014-3-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00015-2.webp
+    thumb: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00015-2-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00016-2.webp
+    thumb: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00016-2-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00017-2.webp
+    thumb: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00017-2-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00018-2.webp
+    thumb: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00018-2-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00019-2.webp
+    thumb: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00019-2-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00020-2.webp
+    thumb: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00020-2-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00021-2.webp
+    thumb: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00021-2-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00022-2.webp
+    thumb: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00022-2-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00023-2.webp
+    thumb: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00023-2-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00024-2.webp
+    thumb: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00024-2-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00025-1.webp
+    thumb: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00025-1-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00026-1.webp
+    thumb: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00026-1-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00027-1.webp
+    thumb: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00027-1-sm.webp
+    width: 576
+    height: 768
+  - src: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00028-1.webp
+    thumb: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00028-1-sm.webp
+    width: 576
+    height: 768
+  - src: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00029-1.webp
+    thumb: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00029-1-sm.webp
+    width: 576
+    height: 768
+  - src: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00030-1.webp
+    thumb: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00030-1-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00031.webp
+    thumb: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00031-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00032.webp
+    thumb: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00032-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00033.webp
+    thumb: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00033-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00034.webp
+    thumb: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00034-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00035.webp
+    thumb: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00035-sm.webp
+    width: 576
+    height: 768
+  - src: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00036.webp
+    thumb: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00036-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00037.webp
+    thumb: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00037-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00038.webp
+    thumb: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00038-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00039.webp
+    thumb: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00039-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00040.webp
+    thumb: /posts/la-ce-iti-foloseste-sa-iubesti-pe-cei-ce-te-iubesc/image00040-sm.webp
+    width: 800
+    height: 600
 ---
 
 Hristos a Înviat! Ce vorbă Sfântă!

@@ -40,6 +40,62 @@ galleryImages:
     thumb: /posts/epifania-la-sfanta-manastire-saharna-2/image00007-1-sm.webp
     width: 800
     height: 534
+  - src: /posts/epifania-la-sfanta-manastire-saharna-2/image00008-1.webp
+    thumb: /posts/epifania-la-sfanta-manastire-saharna-2/image00008-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/epifania-la-sfanta-manastire-saharna-2/image00009-1.webp
+    thumb: /posts/epifania-la-sfanta-manastire-saharna-2/image00009-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/epifania-la-sfanta-manastire-saharna-2/image00010-1.webp
+    thumb: /posts/epifania-la-sfanta-manastire-saharna-2/image00010-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/epifania-la-sfanta-manastire-saharna-2/image00011-1.webp
+    thumb: /posts/epifania-la-sfanta-manastire-saharna-2/image00011-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/epifania-la-sfanta-manastire-saharna-2/image00012-1.webp
+    thumb: /posts/epifania-la-sfanta-manastire-saharna-2/image00012-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/epifania-la-sfanta-manastire-saharna-2/image00013-1.webp
+    thumb: /posts/epifania-la-sfanta-manastire-saharna-2/image00013-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/epifania-la-sfanta-manastire-saharna-2/image00014-1.webp
+    thumb: /posts/epifania-la-sfanta-manastire-saharna-2/image00014-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/epifania-la-sfanta-manastire-saharna-2/image00016-1.webp
+    thumb: /posts/epifania-la-sfanta-manastire-saharna-2/image00016-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/epifania-la-sfanta-manastire-saharna-2/image00017-1.webp
+    thumb: /posts/epifania-la-sfanta-manastire-saharna-2/image00017-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/epifania-la-sfanta-manastire-saharna-2/image00018-1.webp
+    thumb: /posts/epifania-la-sfanta-manastire-saharna-2/image00018-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/epifania-la-sfanta-manastire-saharna-2/image00019-1.webp
+    thumb: /posts/epifania-la-sfanta-manastire-saharna-2/image00019-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/epifania-la-sfanta-manastire-saharna-2/image00020-1.webp
+    thumb: /posts/epifania-la-sfanta-manastire-saharna-2/image00020-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/epifania-la-sfanta-manastire-saharna-2/image00021-1.webp
+    thumb: /posts/epifania-la-sfanta-manastire-saharna-2/image00021-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/epifania-la-sfanta-manastire-saharna-2/image00022-1.webp
+    thumb: /posts/epifania-la-sfanta-manastire-saharna-2/image00022-1-sm.webp
+    width: 800
+    height: 534
 ---
 
 Botezul Domnului se mai numește și Dumnezeiasca Arătare, întrucât, cu acest prilej, S-a arătat în chip văzut singurul Dumnezeu Adevărat, Cel în Treime închinat: Dumnezeu-Tatăl prin glasul din cer, Dumnezeu-Fiul Cel Întrupat – prin botez, Dumnezeu-Duhul Sfânt – prin pogorârea asupra Celui Botezat.

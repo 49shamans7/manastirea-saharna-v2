@@ -69,6 +69,7 @@ export const zones: Zone[] = [
     palette: ["#1D1C22", "#C0A974", "#663037"],
     pages: [
       { href: "/macarie", labelKey: "zone.macarie" },
+      { href: "/viata-si-activitatea", labelKey: "zone.viataActivitate" },
       { href: "/moastele", labelKey: "zone.moastele" },
       { href: "/acatistul", labelKey: "zone.acatistul" },
       { href: "/slujba", labelKey: "zone.slujba" },

@@ -40,6 +40,34 @@ galleryImages:
     thumb: /posts/sfintele-pasti/image00008-6-sm.webp
     width: 800
     height: 534
+  - src: /posts/sfintele-pasti/image00009-6.webp
+    thumb: /posts/sfintele-pasti/image00009-6-sm.webp
+    width: 353
+    height: 800
+  - src: /posts/sfintele-pasti/image00010-5.webp
+    thumb: /posts/sfintele-pasti/image00010-5-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/sfintele-pasti/image00011-5.webp
+    thumb: /posts/sfintele-pasti/image00011-5-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/sfintele-pasti/image00012-3.webp
+    thumb: /posts/sfintele-pasti/image00012-3-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/sfintele-pasti/image00013-3.webp
+    thumb: /posts/sfintele-pasti/image00013-3-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/sfintele-pasti/image00014-3.webp
+    thumb: /posts/sfintele-pasti/image00014-3-sm.webp
+    width: 800
+    height: 622
+  - src: /posts/sfintele-pasti/image00015-2.webp
+    thumb: /posts/sfintele-pasti/image00015-2-sm.webp
+    width: 800
+    height: 534
 ---
 
 

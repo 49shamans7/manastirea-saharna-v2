@@ -40,6 +40,42 @@ galleryImages:
     thumb: /posts/desfasurarea-sarbatorii-de-sfantul-dumitru-e-hram-la-noi-in-sat-activitate-extrascolara/dscn1638-sm.webp
     width: 800
     height: 600
+  - src: /posts/desfasurarea-sarbatorii-de-sfantul-dumitru-e-hram-la-noi-in-sat-activitate-extrascolara/dscn1639.webp
+    thumb: /posts/desfasurarea-sarbatorii-de-sfantul-dumitru-e-hram-la-noi-in-sat-activitate-extrascolara/dscn1639-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/desfasurarea-sarbatorii-de-sfantul-dumitru-e-hram-la-noi-in-sat-activitate-extrascolara/dscn1646.webp
+    thumb: /posts/desfasurarea-sarbatorii-de-sfantul-dumitru-e-hram-la-noi-in-sat-activitate-extrascolara/dscn1646-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/desfasurarea-sarbatorii-de-sfantul-dumitru-e-hram-la-noi-in-sat-activitate-extrascolara/dscn1657.webp
+    thumb: /posts/desfasurarea-sarbatorii-de-sfantul-dumitru-e-hram-la-noi-in-sat-activitate-extrascolara/dscn1657-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/desfasurarea-sarbatorii-de-sfantul-dumitru-e-hram-la-noi-in-sat-activitate-extrascolara/dscn1706.webp
+    thumb: /posts/desfasurarea-sarbatorii-de-sfantul-dumitru-e-hram-la-noi-in-sat-activitate-extrascolara/dscn1706-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/desfasurarea-sarbatorii-de-sfantul-dumitru-e-hram-la-noi-in-sat-activitate-extrascolara/dscn1709.webp
+    thumb: /posts/desfasurarea-sarbatorii-de-sfantul-dumitru-e-hram-la-noi-in-sat-activitate-extrascolara/dscn1709-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/desfasurarea-sarbatorii-de-sfantul-dumitru-e-hram-la-noi-in-sat-activitate-extrascolara/dscn1774.webp
+    thumb: /posts/desfasurarea-sarbatorii-de-sfantul-dumitru-e-hram-la-noi-in-sat-activitate-extrascolara/dscn1774-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/desfasurarea-sarbatorii-de-sfantul-dumitru-e-hram-la-noi-in-sat-activitate-extrascolara/dscn1778.webp
+    thumb: /posts/desfasurarea-sarbatorii-de-sfantul-dumitru-e-hram-la-noi-in-sat-activitate-extrascolara/dscn1778-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/desfasurarea-sarbatorii-de-sfantul-dumitru-e-hram-la-noi-in-sat-activitate-extrascolara/dscn1779.webp
+    thumb: /posts/desfasurarea-sarbatorii-de-sfantul-dumitru-e-hram-la-noi-in-sat-activitate-extrascolara/dscn1779-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/desfasurarea-sarbatorii-de-sfantul-dumitru-e-hram-la-noi-in-sat-activitate-extrascolara/dscn1788.webp
+    thumb: /posts/desfasurarea-sarbatorii-de-sfantul-dumitru-e-hram-la-noi-in-sat-activitate-extrascolara/dscn1788-sm.webp
+    width: 800
+    height: 600
 ---
 
 Potrivit planului de activități extrașcolare al IP Gimnaziul Saharna Nouă, la 6 noiembrie 2015 în gimnaziu s-a desfășurat activitatea educativă interdisciplinară cu genericul propus ,,De Sfântul Dumitru e hram la noi în sat’’

@@ -7,21 +7,24 @@
 # style="" attributes and inline <style>, and attributes cannot be hashed.
 #
 # Third parties allowed, and why:
-#   www.youtube-nocookie.com   post videos (click-to-play facade → iframe)
+#   www.youtube-nocookie.com / www.youtube.com / i.ytimg.com
+#                              videos (click-to-play facade → iframe) and their posters
+#   www.google.com             the map on /cum-de-ajuns/
 #   calendar.ortodox.md        right-rail liturgical calendar: script + XHR,
 #                              written into an about:blank iframe that inherits
 #                              this policy (its css, images and font load from there)
 #   challenges.cloudflare.com  Turnstile on the pomelnic form (script + iframe)
-#   *.workers.dev / pomelnic.manastirea-saharna.md
-#                              the pomelnic form POSTs to the Worker (form-action);
-#                              tighten to the one Worker URL at the switch
-#   static.cloudflareinsights.com / cloudflareinsights.com  Web Analytics
-#   commons.wikimedia.org / upload.wikimedia.org  a legacy hero background
+#   'POMELNIC-WORKER-ORIGIN'   a token, like the hashes: build-csp.mjs swaps it for the
+#                              origin of PUBLIC_POMELNIC_WORKER_URL (form-action),
+#                              or drops it while the form has no worker
 #   'wasm-unsafe-eval'         Pagefind runs its search in WebAssembly
+#
+# HSTS leaves out includeSubDomains on purpose: mail.manastirea-saharna.md is the
+# monastery's mail host on the old hosting, and its webmail must not be pinned.
 
 /*
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'INLINE-SCRIPT-HASHES' 'wasm-unsafe-eval' https://calendar.ortodox.md https://challenges.cloudflare.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://calendar.ortodox.md; img-src 'self' data: https://calendar.ortodox.md https://commons.wikimedia.org https://upload.wikimedia.org; font-src 'self' data: https://calendar.ortodox.md; connect-src 'self' https://calendar.ortodox.md https://challenges.cloudflare.com https://cloudflareinsights.com; frame-src https://www.google.com https://www.youtube-nocookie.com https://challenges.cloudflare.com https://calendar.ortodox.md; worker-src 'self' blob:; form-action 'self' https://*.workers.dev https://pomelnic.manastirea-saharna.md; frame-ancestors 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests
-  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'INLINE-SCRIPT-HASHES' 'wasm-unsafe-eval' https://calendar.ortodox.md https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://calendar.ortodox.md; img-src 'self' data: https://i.ytimg.com https://calendar.ortodox.md; font-src 'self' data: https://calendar.ortodox.md; connect-src 'self' https://calendar.ortodox.md https://challenges.cloudflare.com; frame-src https://www.google.com https://www.youtube-nocookie.com https://www.youtube.com https://challenges.cloudflare.com https://calendar.ortodox.md; worker-src 'self' blob:; form-action 'self' 'POMELNIC-WORKER-ORIGIN'; frame-ancestors 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests
+  Strict-Transport-Security: max-age=31536000
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
@@ -33,7 +36,7 @@
 # would block it, so it gets its own, scoped to /admin/ only.
 /admin/*
   ! Content-Security-Policy
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-eval' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self' data:; connect-src 'self' https://api.github.com https://*.githubusercontent.com https://github.com blob:; frame-src 'self' blob:; worker-src 'self' blob:; base-uri 'self'; object-src 'none'; frame-ancestors 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' blob: https://unpkg.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; media-src 'self' blob:; font-src 'self' data: https://cdn.jsdelivr.net; connect-src 'self' blob: data: https://api.github.com https://*.githubusercontent.com https://github.com https://www.githubstatus.com https://unpkg.com; frame-src 'self' blob:; worker-src 'self' blob:; manifest-src 'self' blob:; base-uri 'self'; object-src 'none'; frame-ancestors 'none'
   X-Robots-Tag: noindex, nofollow
   Cache-Control: no-cache
 
@@ -56,6 +59,10 @@
 /images/*
   Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
 /fisiere/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+/uploads/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+/video/:file.jpg
   Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
 # /posts/<slug>/ holds both the post's HTML and its photographs: only the
 # photographs get the long cache (the HTML keeps Cloudflare's revalidate).

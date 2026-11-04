@@ -40,6 +40,26 @@ galleryImages:
     thumb: /posts/privegherea-praznicala-de-sfantul-cuvios-macarie-de-la-saharna/image00007-2-sm.webp
     width: 800
     height: 534
+  - src: /posts/privegherea-praznicala-de-sfantul-cuvios-macarie-de-la-saharna/image00008-2.webp
+    thumb: /posts/privegherea-praznicala-de-sfantul-cuvios-macarie-de-la-saharna/image00008-2-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/privegherea-praznicala-de-sfantul-cuvios-macarie-de-la-saharna/image00009-2.webp
+    thumb: /posts/privegherea-praznicala-de-sfantul-cuvios-macarie-de-la-saharna/image00009-2-sm.webp
+    width: 512
+    height: 768
+  - src: /posts/privegherea-praznicala-de-sfantul-cuvios-macarie-de-la-saharna/image00011-2.webp
+    thumb: /posts/privegherea-praznicala-de-sfantul-cuvios-macarie-de-la-saharna/image00011-2-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/privegherea-praznicala-de-sfantul-cuvios-macarie-de-la-saharna/image00012-2.webp
+    thumb: /posts/privegherea-praznicala-de-sfantul-cuvios-macarie-de-la-saharna/image00012-2-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/privegherea-praznicala-de-sfantul-cuvios-macarie-de-la-saharna/image00013-2.webp
+    thumb: /posts/privegherea-praznicala-de-sfantul-cuvios-macarie-de-la-saharna/image00013-2-sm.webp
+    width: 800
+    height: 534
 ---
 
 

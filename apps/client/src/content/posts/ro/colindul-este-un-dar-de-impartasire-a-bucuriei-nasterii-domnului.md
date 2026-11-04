@@ -40,6 +40,10 @@ galleryImages:
     thumb: /posts/colindul-este-un-dar-de-impartasire-a-bucuriei-nasterii-domnului/10891562_770608113024022_1247705615780050877_n-sm.webp
     width: 800
     height: 600
+  - src: /posts/colindul-este-un-dar-de-impartasire-a-bucuriei-nasterii-domnului/1926686_770607589690741_7291213560560549188_n.webp
+    thumb: /posts/colindul-este-un-dar-de-impartasire-a-bucuriei-nasterii-domnului/1926686_770607589690741_7291213560560549188_n-sm.webp
+    width: 800
+    height: 600
 ---
 
 Nașterea Domnului, mai mult decât orice sărbătoare, este sărbătoarea iubirii, deoarece Dumnezeu Creatorul atât de mult și-a iubit opera Sa încât a trimis pe Fiul Său în lume ca prin nașterea Sa, să ne mântuiască de păcat.

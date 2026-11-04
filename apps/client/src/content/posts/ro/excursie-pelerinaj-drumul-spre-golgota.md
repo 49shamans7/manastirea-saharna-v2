@@ -40,6 +40,18 @@ galleryImages:
     thumb: /posts/excursie-pelerinaj-drumul-spre-golgota/image00010-sm.webp
     width: 800
     height: 600
+  - src: /posts/excursie-pelerinaj-drumul-spre-golgota/image00012.webp
+    thumb: /posts/excursie-pelerinaj-drumul-spre-golgota/image00012-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/excursie-pelerinaj-drumul-spre-golgota/image00013.webp
+    thumb: /posts/excursie-pelerinaj-drumul-spre-golgota/image00013-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/excursie-pelerinaj-drumul-spre-golgota/image00014.webp
+    thumb: /posts/excursie-pelerinaj-drumul-spre-golgota/image00014-sm.webp
+    width: 800
+    height: 600
 ---
 
 Pelerinajul “integrează toate aspectele ce decurg din natura umană ca atare, dar se deschide… unei semnificații mai ample, teologice, revelatoare a adevarului lui Dumnezeu, a omului, și a mântuirii noastre în Hristos.”

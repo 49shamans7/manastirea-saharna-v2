@@ -835,3 +835,15 @@ a.t-card .t-card-go {
     gap: var(--s-1);
   }
 }
+
+/* the photograph the old page opened with */
+.t-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 0 var(--s-5);
+}
+.t-photo.is-portrait {
+  width: min(100%, 24rem);
+  margin-inline: auto;
+}

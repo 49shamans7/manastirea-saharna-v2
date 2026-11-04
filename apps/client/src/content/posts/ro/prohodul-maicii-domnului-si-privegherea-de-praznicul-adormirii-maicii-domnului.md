@@ -40,6 +40,58 @@ galleryImages:
     thumb: /posts/prohodul-maicii-domnului-si-privegherea-de-praznicul-adormirii-maicii-domnului/image00008-5-sm.webp
     width: 800
     height: 534
+  - src: /posts/prohodul-maicii-domnului-si-privegherea-de-praznicul-adormirii-maicii-domnului/image00009-5.webp
+    thumb: /posts/prohodul-maicii-domnului-si-privegherea-de-praznicul-adormirii-maicii-domnului/image00009-5-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/prohodul-maicii-domnului-si-privegherea-de-praznicul-adormirii-maicii-domnului/image00010-5.webp
+    thumb: /posts/prohodul-maicii-domnului-si-privegherea-de-praznicul-adormirii-maicii-domnului/image00010-5-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/prohodul-maicii-domnului-si-privegherea-de-praznicul-adormirii-maicii-domnului/image00011-4.webp
+    thumb: /posts/prohodul-maicii-domnului-si-privegherea-de-praznicul-adormirii-maicii-domnului/image00011-4-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/prohodul-maicii-domnului-si-privegherea-de-praznicul-adormirii-maicii-domnului/image00013-5.webp
+    thumb: /posts/prohodul-maicii-domnului-si-privegherea-de-praznicul-adormirii-maicii-domnului/image00013-5-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/prohodul-maicii-domnului-si-privegherea-de-praznicul-adormirii-maicii-domnului/image00014-5.webp
+    thumb: /posts/prohodul-maicii-domnului-si-privegherea-de-praznicul-adormirii-maicii-domnului/image00014-5-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/prohodul-maicii-domnului-si-privegherea-de-praznicul-adormirii-maicii-domnului/image00015-5.webp
+    thumb: /posts/prohodul-maicii-domnului-si-privegherea-de-praznicul-adormirii-maicii-domnului/image00015-5-sm.webp
+    width: 800
+    height: 719
+  - src: /posts/prohodul-maicii-domnului-si-privegherea-de-praznicul-adormirii-maicii-domnului/image00016-5.webp
+    thumb: /posts/prohodul-maicii-domnului-si-privegherea-de-praznicul-adormirii-maicii-domnului/image00016-5-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/prohodul-maicii-domnului-si-privegherea-de-praznicul-adormirii-maicii-domnului/image00017-5.webp
+    thumb: /posts/prohodul-maicii-domnului-si-privegherea-de-praznicul-adormirii-maicii-domnului/image00017-5-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/prohodul-maicii-domnului-si-privegherea-de-praznicul-adormirii-maicii-domnului/image00020-4.webp
+    thumb: /posts/prohodul-maicii-domnului-si-privegherea-de-praznicul-adormirii-maicii-domnului/image00020-4-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/prohodul-maicii-domnului-si-privegherea-de-praznicul-adormirii-maicii-domnului/image00021-4.webp
+    thumb: /posts/prohodul-maicii-domnului-si-privegherea-de-praznicul-adormirii-maicii-domnului/image00021-4-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/prohodul-maicii-domnului-si-privegherea-de-praznicul-adormirii-maicii-domnului/image00022-4.webp
+    thumb: /posts/prohodul-maicii-domnului-si-privegherea-de-praznicul-adormirii-maicii-domnului/image00022-4-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/prohodul-maicii-domnului-si-privegherea-de-praznicul-adormirii-maicii-domnului/image00024-4.webp
+    thumb: /posts/prohodul-maicii-domnului-si-privegherea-de-praznicul-adormirii-maicii-domnului/image00024-4-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/prohodul-maicii-domnului-si-privegherea-de-praznicul-adormirii-maicii-domnului/image00025-4.webp
+    thumb: /posts/prohodul-maicii-domnului-si-privegherea-de-praznicul-adormirii-maicii-domnului/image00025-4-sm.webp
+    width: 800
+    height: 534
 ---
 
 Cei ce cu dorința

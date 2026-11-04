@@ -6,6 +6,8 @@
 // public/_headers carries the token 'INLINE-SCRIPT-HASHES'; Astro inlines small
 // scripts, so their hashes change whenever a component's script does. This
 // runs on every build, so the policy always matches the HTML it ships with.
+// 'POMELNIC-WORKER-ORIGIN' becomes the origin of PUBLIC_POMELNIC_WORKER_URL in
+// form-action, or goes away while the form has no worker.
 // Fails the build if the token is missing or a line outgrows Cloudflare's
 // 2000-character limit.
 import { createHash } from "node:crypto";
@@ -16,6 +18,10 @@ import { fileURLToPath } from "node:url";
 const here = path.dirname(fileURLToPath(import.meta.url));
 const site = path.resolve(process.argv[2] || process.env.OUT_DIR || path.join(here, "../apps/client/dist"));
 const TOKEN = "'INLINE-SCRIPT-HASHES'";
+const WORKER_TOKEN = " 'POMELNIC-WORKER-ORIGIN'";
+const workerUrl = process.env.PUBLIC_POMELNIC_WORKER_URL;
+// the same reading as PrayerRequestForm.astro: the scheme may be left out
+const workerOrigin = workerUrl ? ` ${new URL(workerUrl.startsWith("http") ? workerUrl : `https://${workerUrl}`).origin}` : "";
 
 async function htmlFiles(dir) {
   const out = [];
@@ -46,7 +52,9 @@ if (policyLines.length === 0)
 const filled = headers
   .split("\n")
   .map((line) =>
-    /^\s+Content-Security-Policy:/.test(line) ? line.replaceAll(TOKEN, [...hashes].sort().join(" ")) : line,
+    /^\s+Content-Security-Policy:/.test(line)
+      ? line.replaceAll(TOKEN, [...hashes].sort().join(" ")).replaceAll(WORKER_TOKEN, workerOrigin)
+      : line,
   )
   .join("\n");
 const longest = Math.max(...filled.split("\n").map((line) => line.length));

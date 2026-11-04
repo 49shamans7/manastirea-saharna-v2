@@ -40,6 +40,38 @@ galleryImages:
     thumb: /posts/daruind-vei-dobandi/81654264_405377523564564_2926917064289419264_n-s-sm.webp
     width: 800
     height: 1067
+  - src: /posts/daruind-vei-dobandi/81658399_595956017645901_3744963464930525184_n-s.webp
+    thumb: /posts/daruind-vei-dobandi/81658399_595956017645901_3744963464930525184_n-s-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/daruind-vei-dobandi/81688016_461869498094654_2132128457016999936_n-s.webp
+    thumb: /posts/daruind-vei-dobandi/81688016_461869498094654_2132128457016999936_n-s-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/daruind-vei-dobandi/81812590_489556598415251_868943150373142528_n-sc.webp
+    thumb: /posts/daruind-vei-dobandi/81812590_489556598415251_868943150373142528_n-sc-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/daruind-vei-dobandi/82072285_2642730696013086_2930729294441218048_n-.webp
+    thumb: /posts/daruind-vei-dobandi/82072285_2642730696013086_2930729294441218048_n--sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/daruind-vei-dobandi/82184495_947717115629445_1450804957195272192_n-s.webp
+    thumb: /posts/daruind-vei-dobandi/82184495_947717115629445_1450804957195272192_n-s-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/daruind-vei-dobandi/82384197_448112826064862_1995637651935330304_n-s.webp
+    thumb: /posts/daruind-vei-dobandi/82384197_448112826064862_1995637651935330304_n-s-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/daruind-vei-dobandi/82721660_503306056958874_1339712114800984064_n-s.webp
+    thumb: /posts/daruind-vei-dobandi/82721660_503306056958874_1339712114800984064_n-s-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/daruind-vei-dobandi/82805043_2410316699282131_2188153449240068096_n-.webp
+    thumb: /posts/daruind-vei-dobandi/82805043_2410316699282131_2188153449240068096_n--sm.webp
+    width: 800
+    height: 1067
 ---
 
 Hristos se naște, slăviți-l!

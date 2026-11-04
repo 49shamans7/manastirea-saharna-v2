@@ -40,6 +40,150 @@ galleryImages:
     thumb: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00007-4-sm.webp
     width: 800
     height: 534
+  - src: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00008-4.webp
+    thumb: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00008-4-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00009-3.webp
+    thumb: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00009-3-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00009-4.webp
+    thumb: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00009-4-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00010-4.webp
+    thumb: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00010-4-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00011-3.webp
+    thumb: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00011-3-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00012-4.webp
+    thumb: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00012-4-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00013-4.webp
+    thumb: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00013-4-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00014-4.webp
+    thumb: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00014-4-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00015-4.webp
+    thumb: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00015-4-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00016-4.webp
+    thumb: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00016-4-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00017-4.webp
+    thumb: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00017-4-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00018-4.webp
+    thumb: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00018-4-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00019-4.webp
+    thumb: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00019-4-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00020-3.webp
+    thumb: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00020-3-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00021-3.webp
+    thumb: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00021-3-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00022-3.webp
+    thumb: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00022-3-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00023-3.webp
+    thumb: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00023-3-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00024-3.webp
+    thumb: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00024-3-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00025-3.webp
+    thumb: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00025-3-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00026-3.webp
+    thumb: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00026-3-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00027-1.webp
+    thumb: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00027-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00028-1.webp
+    thumb: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00028-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00029.webp
+    thumb: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00029-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00030.webp
+    thumb: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00030-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00031.webp
+    thumb: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00031-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00032.webp
+    thumb: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00032-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00033.webp
+    thumb: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00033-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00034.webp
+    thumb: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00034-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00035.webp
+    thumb: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00035-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00036.webp
+    thumb: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00036-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00037.webp
+    thumb: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00037-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00038.webp
+    thumb: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00038-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00039.webp
+    thumb: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00039-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00040.webp
+    thumb: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00040-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00041.webp
+    thumb: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00041-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00042.webp
+    thumb: /posts/o-stapana-fii-mijlocitoare-a-mantuirii-noastre/image00042-sm.webp
+    width: 800
+    height: 534
 ---
 
 Conform tradiției formate, și în acest an cu binecuvântarea ÎPS Vladimir, Mitropolit al Chișinăului și a întregii Moldove, Sfânta și Dumnezeiacsă Liturghie a fost oficiată de către un arhiereu din cadrul Mitropoliei Chișinăului și a întregii Moldove, Preasfinția Sa, Preasfințitul Siluan (Șalari) Episcop de Orhei, Vicar Mitropolitan și Exarh a mănăstirilor din cuprinsul Mitropoliei Chișinăului și a întregii Moldove.

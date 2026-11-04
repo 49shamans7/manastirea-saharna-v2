@@ -40,6 +40,118 @@ galleryImages:
     thumb: /posts/cel-ce-da-lui-isi-da/image00007-1-sm.webp
     width: 800
     height: 533
+  - src: /posts/cel-ce-da-lui-isi-da/image00008-1.webp
+    thumb: /posts/cel-ce-da-lui-isi-da/image00008-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cel-ce-da-lui-isi-da/image00009-1.webp
+    thumb: /posts/cel-ce-da-lui-isi-da/image00009-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cel-ce-da-lui-isi-da/image00010-1.webp
+    thumb: /posts/cel-ce-da-lui-isi-da/image00010-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cel-ce-da-lui-isi-da/image00011-1.webp
+    thumb: /posts/cel-ce-da-lui-isi-da/image00011-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cel-ce-da-lui-isi-da/image00012-1.webp
+    thumb: /posts/cel-ce-da-lui-isi-da/image00012-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cel-ce-da-lui-isi-da/image00013-1.webp
+    thumb: /posts/cel-ce-da-lui-isi-da/image00013-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cel-ce-da-lui-isi-da/image00014-1.webp
+    thumb: /posts/cel-ce-da-lui-isi-da/image00014-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cel-ce-da-lui-isi-da/image00015-1.webp
+    thumb: /posts/cel-ce-da-lui-isi-da/image00015-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cel-ce-da-lui-isi-da/image00016-1.webp
+    thumb: /posts/cel-ce-da-lui-isi-da/image00016-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cel-ce-da-lui-isi-da/image00017-1.webp
+    thumb: /posts/cel-ce-da-lui-isi-da/image00017-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cel-ce-da-lui-isi-da/image00018-1.webp
+    thumb: /posts/cel-ce-da-lui-isi-da/image00018-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cel-ce-da-lui-isi-da/image00019-1.webp
+    thumb: /posts/cel-ce-da-lui-isi-da/image00019-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cel-ce-da-lui-isi-da/image00020-1.webp
+    thumb: /posts/cel-ce-da-lui-isi-da/image00020-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cel-ce-da-lui-isi-da/image00021-1.webp
+    thumb: /posts/cel-ce-da-lui-isi-da/image00021-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cel-ce-da-lui-isi-da/image00022-1.webp
+    thumb: /posts/cel-ce-da-lui-isi-da/image00022-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cel-ce-da-lui-isi-da/image00023-1.webp
+    thumb: /posts/cel-ce-da-lui-isi-da/image00023-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cel-ce-da-lui-isi-da/image00024-1.webp
+    thumb: /posts/cel-ce-da-lui-isi-da/image00024-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cel-ce-da-lui-isi-da/image00025-1.webp
+    thumb: /posts/cel-ce-da-lui-isi-da/image00025-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cel-ce-da-lui-isi-da/image00026-1.webp
+    thumb: /posts/cel-ce-da-lui-isi-da/image00026-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cel-ce-da-lui-isi-da/image00027-1.webp
+    thumb: /posts/cel-ce-da-lui-isi-da/image00027-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cel-ce-da-lui-isi-da/image00028-1.webp
+    thumb: /posts/cel-ce-da-lui-isi-da/image00028-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cel-ce-da-lui-isi-da/image00029-1.webp
+    thumb: /posts/cel-ce-da-lui-isi-da/image00029-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cel-ce-da-lui-isi-da/image00030-1.webp
+    thumb: /posts/cel-ce-da-lui-isi-da/image00030-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cel-ce-da-lui-isi-da/image00031.webp
+    thumb: /posts/cel-ce-da-lui-isi-da/image00031-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cel-ce-da-lui-isi-da/image00032.webp
+    thumb: /posts/cel-ce-da-lui-isi-da/image00032-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cel-ce-da-lui-isi-da/image00033.webp
+    thumb: /posts/cel-ce-da-lui-isi-da/image00033-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cel-ce-da-lui-isi-da/image00034.webp
+    thumb: /posts/cel-ce-da-lui-isi-da/image00034-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cel-ce-da-lui-isi-da/image00035.webp
+    thumb: /posts/cel-ce-da-lui-isi-da/image00035-sm.webp
+    width: 800
+    height: 533
 ---
 
 Grădinița “Ghiocel” din s. Saharna Nouă, a îmbrăcat straie de sărbătoare pentru toți cei care i-au pășit pragul. Cel mai mult însă s-au bucurat de bradul frumos împodobit, cei 30 de copilași care și-au redat aceste sentimente prin cântece, poezii și jocuri împreună cu Moș Crăciun, care a fost oaspetele cel mai așteptat.

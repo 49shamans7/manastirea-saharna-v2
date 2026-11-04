@@ -40,6 +40,122 @@ galleryImages:
     thumb: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00002-sm.webp
     width: 800
     height: 534
+  - src: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00003.webp
+    thumb: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00003-sm.webp
+    width: 800
+    height: 651
+  - src: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00004.webp
+    thumb: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00004-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00005.webp
+    thumb: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00005-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00006.webp
+    thumb: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00006-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00007.webp
+    thumb: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00007-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00008.webp
+    thumb: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00008-sm.webp
+    width: 798
+    height: 768
+  - src: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00009.webp
+    thumb: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00009-sm.webp
+    width: 800
+    height: 449
+  - src: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00010.webp
+    thumb: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00010-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00011.webp
+    thumb: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00011-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00012.webp
+    thumb: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00012-sm.webp
+    width: 562
+    height: 768
+  - src: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00013.webp
+    thumb: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00013-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00014.webp
+    thumb: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00014-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00015.webp
+    thumb: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00015-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00016.webp
+    thumb: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00016-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00017.webp
+    thumb: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00017-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00018.webp
+    thumb: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00018-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00019.webp
+    thumb: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00019-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00020.webp
+    thumb: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00020-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00021.webp
+    thumb: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00021-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00022.webp
+    thumb: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00022-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00023.webp
+    thumb: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00023-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00024.webp
+    thumb: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00024-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00025.webp
+    thumb: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00025-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00026.webp
+    thumb: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00026-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00027.webp
+    thumb: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00027-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00028.webp
+    thumb: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00028-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00029.webp
+    thumb: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00029-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00030.webp
+    thumb: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00030-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00031.webp
+    thumb: /posts/binecuvantari-arhieresti-la-ctitoria-sfintei-manastiri-saharna/image00031-sm.webp
+    width: 800
+    height: 534
 ---
 
 Luni, 5 noiembrie 2018, satul Saharna Nouă din raionul Rezina a găzduit un eveniment de o importanță spirituală deosebită pentru credincioșii din această localitate – sfințirea noii biserici cu hramul Sfântul Mare Mucenic Dimitrie, izvorâtorul de mir, ctitoria Sfintei Mănăstiri Saharna.

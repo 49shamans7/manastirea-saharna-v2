@@ -40,6 +40,54 @@ galleryImages:
     thumb: /posts/cinul-spalarii-picioarelor-savarsit-de-staretul-sfintei-manastiri-saharna/image00007-4-sm.webp
     width: 800
     height: 533
+  - src: /posts/cinul-spalarii-picioarelor-savarsit-de-staretul-sfintei-manastiri-saharna/image00008-2.webp
+    thumb: /posts/cinul-spalarii-picioarelor-savarsit-de-staretul-sfintei-manastiri-saharna/image00008-2-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cinul-spalarii-picioarelor-savarsit-de-staretul-sfintei-manastiri-saharna/image00009-2.webp
+    thumb: /posts/cinul-spalarii-picioarelor-savarsit-de-staretul-sfintei-manastiri-saharna/image00009-2-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cinul-spalarii-picioarelor-savarsit-de-staretul-sfintei-manastiri-saharna/image00010-1.webp
+    thumb: /posts/cinul-spalarii-picioarelor-savarsit-de-staretul-sfintei-manastiri-saharna/image00010-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cinul-spalarii-picioarelor-savarsit-de-staretul-sfintei-manastiri-saharna/image00011-1.webp
+    thumb: /posts/cinul-spalarii-picioarelor-savarsit-de-staretul-sfintei-manastiri-saharna/image00011-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cinul-spalarii-picioarelor-savarsit-de-staretul-sfintei-manastiri-saharna/image00012-1.webp
+    thumb: /posts/cinul-spalarii-picioarelor-savarsit-de-staretul-sfintei-manastiri-saharna/image00012-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cinul-spalarii-picioarelor-savarsit-de-staretul-sfintei-manastiri-saharna/image00013-1.webp
+    thumb: /posts/cinul-spalarii-picioarelor-savarsit-de-staretul-sfintei-manastiri-saharna/image00013-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cinul-spalarii-picioarelor-savarsit-de-staretul-sfintei-manastiri-saharna/image00014-1.webp
+    thumb: /posts/cinul-spalarii-picioarelor-savarsit-de-staretul-sfintei-manastiri-saharna/image00014-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cinul-spalarii-picioarelor-savarsit-de-staretul-sfintei-manastiri-saharna/image00015.webp
+    thumb: /posts/cinul-spalarii-picioarelor-savarsit-de-staretul-sfintei-manastiri-saharna/image00015-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cinul-spalarii-picioarelor-savarsit-de-staretul-sfintei-manastiri-saharna/image00016.webp
+    thumb: /posts/cinul-spalarii-picioarelor-savarsit-de-staretul-sfintei-manastiri-saharna/image00016-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cinul-spalarii-picioarelor-savarsit-de-staretul-sfintei-manastiri-saharna/image00017.webp
+    thumb: /posts/cinul-spalarii-picioarelor-savarsit-de-staretul-sfintei-manastiri-saharna/image00017-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cinul-spalarii-picioarelor-savarsit-de-staretul-sfintei-manastiri-saharna/image00018.webp
+    thumb: /posts/cinul-spalarii-picioarelor-savarsit-de-staretul-sfintei-manastiri-saharna/image00018-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/cinul-spalarii-picioarelor-savarsit-de-staretul-sfintei-manastiri-saharna/image00019.webp
+    thumb: /posts/cinul-spalarii-picioarelor-savarsit-de-staretul-sfintei-manastiri-saharna/image00019-sm.webp
+    width: 800
+    height: 533
 ---
 
 Alegând Mântuitorul să mănânce Paștile cu ucenicii săi, la Cina cea de Taină, mai înainte de a institui Sfânta Euharistie, îi adâncește în învățătura smereniei, unită cu dragostea unuia către altul.

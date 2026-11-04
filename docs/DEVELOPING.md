@@ -41,7 +41,6 @@ and 1440, and no page scrolls sideways (`overflowX: 0` from `shot.mjs`).
 | A news post | `content/posts/ro/<slug>.md` (305 files). New file = new post. |
 | The service schedule, and its en/ru names | `data/schedule.ts` |
 | Home page | `pages/index.astro` |
-| The earlier descent home, kept unlinked | `pages/coborare.astro` (`components/descent/` keeps only Band, Panel, Well for `/walk`) |
 | The frame: back-home link, calendar rail, menu drawer | `layouts/TempleFrame.astro`, `components/temple/*` (CalendarRail, RailDrawer) |
 | Templates | `layouts/Chamber.astro` (reading pages), `layouts/TableLayout.astro` (practical pages), `layouts/Layout.astro` (the `<head>`) |
 | Header and footer | `components/Navbar.astro`, `components/SiteFooter.astro` |
@@ -55,8 +54,11 @@ The design canon (zones, palettes, why the page darkens downward) is in
 
 ## Photos (`scripts/`, Node + sharp)
 
-The originals live outside the repo in `~/Projects/msaharna-archive` (2.6 GB, never
-commit them). Scripts derive web sizes (WebP) through one restoration grade
+The originals live outside the repo in `~/Projects/msaharna-archive` (never commit
+them). The first archive was lost; this copy holds only the images, re-downloaded from
+the live site on 2026-11-04, so `import-posts`, `import-pages` and
+`build-gallery-curated` (they need its JSON) cannot run. The scripts look for it at
+`../msaharna-archive` beside the repo, which is a symlink on this Mac. Scripts derive web sizes (WebP) through one restoration grade
 in `scripts/lib/restore.mjs` (neutral colour, haze lift, no generation).
 
 | Script | Makes |
@@ -73,13 +75,14 @@ time: the Mac has 8 GB.
 
 ## The form backend
 
-`workers/saharna-pomelnic/` is the Pomelnic form as a Cloudflare Worker. It is not
-deployed and has no secrets set. `workers/pomelnic/`, `apps/cms/` and `deploy.yml`
-belong to the previous developer's accounts: leave them alone until the Cloudflare
-switch (see `CLEANUP-AT-SWITCH` notes when written).
+`workers/saharna-pomelnic/` is the Pomelnic form as a Cloudflare Worker (Turnstile, then
+Cloudflare mail). Until `PUBLIC_POMELNIC_WORKER_URL` is set the form is hidden and a
+notice gives the secretariat's email and phone. `workers/sveltia-cms-auth/` signs the
+admin in. `workers/pomelnic/` and `apps/cms/` belong to the previous developer's
+accounts: never use them.
 
 ## Hosting
 
-Today: GitHub Pages at `/manastirea-saharna-v2`. Planned: Cloudflare on the monastery's
-account. `apps/client/wrangler.jsonc` is ready; `bun run build:cloudflare` builds
-for the domain root.
+Today: GitHub Pages at `/manastirea-saharna-v2`. Next: Cloudflare, one command after
+login: `bun run cloudflare:setup` (`--dry-run` to rehearse). The steps are in
+`docs/CLOUDFLARE-HANDOVER.md`. `bun run build:cloudflare` builds for the domain root.

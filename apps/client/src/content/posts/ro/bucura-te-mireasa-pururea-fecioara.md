@@ -40,6 +40,14 @@ galleryImages:
     thumb: /posts/bucura-te-mireasa-pururea-fecioara/image00007-sm.webp
     width: 800
     height: 533
+  - src: /posts/bucura-te-mireasa-pururea-fecioara/image00008.webp
+    thumb: /posts/bucura-te-mireasa-pururea-fecioara/image00008-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/bucura-te-mireasa-pururea-fecioara/image00009.webp
+    thumb: /posts/bucura-te-mireasa-pururea-fecioara/image00009-sm.webp
+    width: 800
+    height: 651
 ---
 
 Zeci de credincioși s-au adunat astăzi pentru a se ruga Mijlocitoarei cerești, alături de clericii Sfintei Mănăstiri.

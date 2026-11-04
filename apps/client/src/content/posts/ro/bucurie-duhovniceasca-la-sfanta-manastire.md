@@ -40,6 +40,86 @@ galleryImages:
     thumb: /posts/bucurie-duhovniceasca-la-sfanta-manastire/2-0185-sm.webp
     width: 800
     height: 506
+  - src: /posts/bucurie-duhovniceasca-la-sfanta-manastire/2-0191.webp
+    thumb: /posts/bucurie-duhovniceasca-la-sfanta-manastire/2-0191-sm.webp
+    width: 800
+    height: 507
+  - src: /posts/bucurie-duhovniceasca-la-sfanta-manastire/2-0197.webp
+    thumb: /posts/bucurie-duhovniceasca-la-sfanta-manastire/2-0197-sm.webp
+    width: 800
+    height: 1163
+  - src: /posts/bucurie-duhovniceasca-la-sfanta-manastire/2-0210.webp
+    thumb: /posts/bucurie-duhovniceasca-la-sfanta-manastire/2-0210-sm.webp
+    width: 800
+    height: 505
+  - src: /posts/bucurie-duhovniceasca-la-sfanta-manastire/2-0213.webp
+    thumb: /posts/bucurie-duhovniceasca-la-sfanta-manastire/2-0213-sm.webp
+    width: 800
+    height: 510
+  - src: /posts/bucurie-duhovniceasca-la-sfanta-manastire/2-0235.webp
+    thumb: /posts/bucurie-duhovniceasca-la-sfanta-manastire/2-0235-sm.webp
+    width: 800
+    height: 507
+  - src: /posts/bucurie-duhovniceasca-la-sfanta-manastire/2-0242.webp
+    thumb: /posts/bucurie-duhovniceasca-la-sfanta-manastire/2-0242-sm.webp
+    width: 800
+    height: 508
+  - src: /posts/bucurie-duhovniceasca-la-sfanta-manastire/2-0249.webp
+    thumb: /posts/bucurie-duhovniceasca-la-sfanta-manastire/2-0249-sm.webp
+    width: 800
+    height: 1164
+  - src: /posts/bucurie-duhovniceasca-la-sfanta-manastire/2-0293.webp
+    thumb: /posts/bucurie-duhovniceasca-la-sfanta-manastire/2-0293-sm.webp
+    width: 800
+    height: 1167
+  - src: /posts/bucurie-duhovniceasca-la-sfanta-manastire/2-0308.webp
+    thumb: /posts/bucurie-duhovniceasca-la-sfanta-manastire/2-0308-sm.webp
+    width: 800
+    height: 507
+  - src: /posts/bucurie-duhovniceasca-la-sfanta-manastire/2-0351.webp
+    thumb: /posts/bucurie-duhovniceasca-la-sfanta-manastire/2-0351-sm.webp
+    width: 800
+    height: 508
+  - src: /posts/bucurie-duhovniceasca-la-sfanta-manastire/2-0461.webp
+    thumb: /posts/bucurie-duhovniceasca-la-sfanta-manastire/2-0461-sm.webp
+    width: 800
+    height: 511
+  - src: /posts/bucurie-duhovniceasca-la-sfanta-manastire/2-0462.webp
+    thumb: /posts/bucurie-duhovniceasca-la-sfanta-manastire/2-0462-sm.webp
+    width: 800
+    height: 1164
+  - src: /posts/bucurie-duhovniceasca-la-sfanta-manastire/2-0473.webp
+    thumb: /posts/bucurie-duhovniceasca-la-sfanta-manastire/2-0473-sm.webp
+    width: 800
+    height: 508
+  - src: /posts/bucurie-duhovniceasca-la-sfanta-manastire/2-0486.webp
+    thumb: /posts/bucurie-duhovniceasca-la-sfanta-manastire/2-0486-sm.webp
+    width: 800
+    height: 508
+  - src: /posts/bucurie-duhovniceasca-la-sfanta-manastire/2-0492.webp
+    thumb: /posts/bucurie-duhovniceasca-la-sfanta-manastire/2-0492-sm.webp
+    width: 800
+    height: 506
+  - src: /posts/bucurie-duhovniceasca-la-sfanta-manastire/2-0513.webp
+    thumb: /posts/bucurie-duhovniceasca-la-sfanta-manastire/2-0513-sm.webp
+    width: 800
+    height: 505
+  - src: /posts/bucurie-duhovniceasca-la-sfanta-manastire/2-0531.webp
+    thumb: /posts/bucurie-duhovniceasca-la-sfanta-manastire/2-0531-sm.webp
+    width: 800
+    height: 508
+  - src: /posts/bucurie-duhovniceasca-la-sfanta-manastire/2-0545.webp
+    thumb: /posts/bucurie-duhovniceasca-la-sfanta-manastire/2-0545-sm.webp
+    width: 800
+    height: 510
+  - src: /posts/bucurie-duhovniceasca-la-sfanta-manastire/2-0554.webp
+    thumb: /posts/bucurie-duhovniceasca-la-sfanta-manastire/2-0554-sm.webp
+    width: 800
+    height: 1162
+  - src: /posts/bucurie-duhovniceasca-la-sfanta-manastire/3-14.webp
+    thumb: /posts/bucurie-duhovniceasca-la-sfanta-manastire/3-14-sm.webp
+    width: 800
+    height: 450
 ---
 
 Marți, 26 mai 2026, Mănăstirea noastră a îmbrăcat haine de sărbătoare, prăznuindu-l pe ocrotitorul și rugătorul nostru ceresc, Sfântul Cuvios Macarie de la Saharna.

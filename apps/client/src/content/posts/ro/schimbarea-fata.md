@@ -40,6 +40,46 @@ galleryImages:
     thumb: /posts/schimbarea-fata/image00008-2-sm.webp
     width: 800
     height: 534
+  - src: /posts/schimbarea-fata/image00009-2.webp
+    thumb: /posts/schimbarea-fata/image00009-2-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/schimbarea-fata/image00010-2.webp
+    thumb: /posts/schimbarea-fata/image00010-2-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/schimbarea-fata/image00011-2.webp
+    thumb: /posts/schimbarea-fata/image00011-2-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/schimbarea-fata/image00012-2.webp
+    thumb: /posts/schimbarea-fata/image00012-2-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/schimbarea-fata/image00013-2.webp
+    thumb: /posts/schimbarea-fata/image00013-2-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/schimbarea-fata/image00014-2.webp
+    thumb: /posts/schimbarea-fata/image00014-2-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/schimbarea-fata/image00015-2.webp
+    thumb: /posts/schimbarea-fata/image00015-2-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/schimbarea-fata/image00016-2.webp
+    thumb: /posts/schimbarea-fata/image00016-2-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/schimbarea-fata/image00017-2.webp
+    thumb: /posts/schimbarea-fata/image00017-2-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/schimbarea-fata/image00018-2.webp
+    thumb: /posts/schimbarea-fata/image00018-2-sm.webp
+    width: 800
+    height: 604
 ---
 
 Luminata sărbătoare a Schimbării la față a Domnului și Mântuitorului nostru Iisus Hristos sărbătorită la Sfânta Mănăstire.

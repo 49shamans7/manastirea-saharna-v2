@@ -40,6 +40,22 @@ galleryImages:
     thumb: /posts/inexplicabilul-explicabil-groapa-de-gunoi-inexistenta-si-locul-necunoscut/image00008-sm.webp
     width: 800
     height: 450
+  - src: /posts/inexplicabilul-explicabil-groapa-de-gunoi-inexistenta-si-locul-necunoscut/image00009.webp
+    thumb: /posts/inexplicabilul-explicabil-groapa-de-gunoi-inexistenta-si-locul-necunoscut/image00009-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/inexplicabilul-explicabil-groapa-de-gunoi-inexistenta-si-locul-necunoscut/image00010.webp
+    thumb: /posts/inexplicabilul-explicabil-groapa-de-gunoi-inexistenta-si-locul-necunoscut/image00010-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/inexplicabilul-explicabil-groapa-de-gunoi-inexistenta-si-locul-necunoscut/image00011.webp
+    thumb: /posts/inexplicabilul-explicabil-groapa-de-gunoi-inexistenta-si-locul-necunoscut/image00011-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/inexplicabilul-explicabil-groapa-de-gunoi-inexistenta-si-locul-necunoscut/image00012.webp
+    thumb: /posts/inexplicabilul-explicabil-groapa-de-gunoi-inexistenta-si-locul-necunoscut/image00012-sm.webp
+    width: 800
+    height: 450
 ---
 
 Referitor la ultima ”noutate bombă” apărută pe internet, asigurăm toți creștinii că pomelnicele lăsate pentru o perioadă anumită la preoții, pangarul mănăstirii sau trimise prin intermediul site-ului oficial al mănăstirii pe internet, sunt pomenite atâta timp cât este indicat în pomelnic ( 5 acatiste, 40 paraclise, 40 liturghii, etc. ) care sunt arse o dată în săptămâna într-un loc special amenajat pe teritoriul mănăstirii, iar ceea ce ține de „obiceiul” de a lăsa „dorințele” în crăpăturile din piatra a zidului mânăstirii rupestre – preoții mânăstirii nu duc nici o răspundere, încât acest obicei este „din popor”, nu este binecuvântat de preoții mânăstirii și nu are nici o tangență cu pomelnicele lăsate pentru pomenire la Sfântă Mănăstire, astfel cei care cunosc insuficient rolul rânduielilor bisericești în viața poporului nostru, recomandăm îndeosebi, reprezentanților mass-media, care și-au făcut un obicei din a căuta cu orice preț senzaționalul ieftin în slujbele și viața Bisericii noastre și distorsionează semnificația acestora, să se documenteze temeinic pentru a informa corect și a respecta evlavia credincioșilor și pelerinilor ce vizitează Sfintele lăcașuri.

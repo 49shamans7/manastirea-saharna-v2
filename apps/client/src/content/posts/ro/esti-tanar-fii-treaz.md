@@ -40,6 +40,70 @@ galleryImages:
     thumb: /posts/esti-tanar-fii-treaz/29829299_2036426369964928_579248362_o-sm.webp
     width: 800
     height: 533
+  - src: /posts/esti-tanar-fii-treaz/29829844_2036426473298251_131820660_o.webp
+    thumb: /posts/esti-tanar-fii-treaz/29829844_2036426473298251_131820660_o-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/esti-tanar-fii-treaz/29830526_2036426723298226_1500276514_o.webp
+    thumb: /posts/esti-tanar-fii-treaz/29830526_2036426723298226_1500276514_o-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/esti-tanar-fii-treaz/29830686_2036426569964908_1598816699_o.webp
+    thumb: /posts/esti-tanar-fii-treaz/29830686_2036426569964908_1598816699_o-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/esti-tanar-fii-treaz/29830857_2036426463298252_1758117298_o.webp
+    thumb: /posts/esti-tanar-fii-treaz/29830857_2036426463298252_1758117298_o-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/esti-tanar-fii-treaz/29830894_2036424993298399_1698358576_o.webp
+    thumb: /posts/esti-tanar-fii-treaz/29830894_2036424993298399_1698358576_o-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/esti-tanar-fii-treaz/29830958_2036426276631604_1836177269_o.webp
+    thumb: /posts/esti-tanar-fii-treaz/29830958_2036426276631604_1836177269_o-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/esti-tanar-fii-treaz/29830972_2036426513298247_725227263_o.webp
+    thumb: /posts/esti-tanar-fii-treaz/29830972_2036426513298247_725227263_o-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/esti-tanar-fii-treaz/29883487_2036426206631611_1102590562_o.webp
+    thumb: /posts/esti-tanar-fii-treaz/29883487_2036426206631611_1102590562_o-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/esti-tanar-fii-treaz/29883683_2036426796631552_934468266_o.webp
+    thumb: /posts/esti-tanar-fii-treaz/29883683_2036426796631552_934468266_o-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/esti-tanar-fii-treaz/29884098_2036426663298232_1865219661_o.webp
+    thumb: /posts/esti-tanar-fii-treaz/29884098_2036426663298232_1865219661_o-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/esti-tanar-fii-treaz/29884105_2036426416631590_1227090084_o.webp
+    thumb: /posts/esti-tanar-fii-treaz/29884105_2036426416631590_1227090084_o-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/esti-tanar-fii-treaz/29884128_2036426179964947_1910337471_o.webp
+    thumb: /posts/esti-tanar-fii-treaz/29884128_2036426179964947_1910337471_o-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/esti-tanar-fii-treaz/29884137_2036425673298331_1451548226_o.webp
+    thumb: /posts/esti-tanar-fii-treaz/29884137_2036425673298331_1451548226_o-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/esti-tanar-fii-treaz/29884269_2036426036631628_889972284_o.webp
+    thumb: /posts/esti-tanar-fii-treaz/29884269_2036426036631628_889972284_o-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/esti-tanar-fii-treaz/29884528_2036426526631579_977656395_o.webp
+    thumb: /posts/esti-tanar-fii-treaz/29884528_2036426526631579_977656395_o-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/esti-tanar-fii-treaz/29943259_2036425889964976_737051492_o.webp
+    thumb: /posts/esti-tanar-fii-treaz/29943259_2036425889964976_737051492_o-sm.webp
+    width: 800
+    height: 533
 ---
 
 „Toate lucrurile îmi sunt îngăduite, dar nu toate sunt de folos; toate lucrurile îmi sunt îngăduite, dar nu mă voi lăsa biruit de nimic” (1 Corinteni 6, 12)

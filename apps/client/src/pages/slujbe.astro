@@ -6,7 +6,7 @@
 // warmed and marked by a script; without it every day still reads.
 import TableLayout from "@layouts/TableLayout.astro";
 import CalendarRail from "@components/temple/CalendarRail.astro";
-import { feasts, schedule, serviceText } from "@data/schedule";
+import { schedule, serviceName, serviceNote } from "@data/schedule";
 import type { AllTranslationKeys } from "@i18n";
 import { getLocaleFromUrl, getLocalizedPath, useTranslations } from "@i18n/utils";
 
@@ -63,8 +63,8 @@ const dayName = (key: string) => t(`schedule.${key}` as AllTranslationKeys);
                 <tr>
                   <td class="t-time">{service.time}</td>
                   <td>
-                    {serviceText(service.name, lang)}
-                    {service.note && <span class="t-note">{serviceText(service.note, lang)}</span>}
+                    {serviceName(service, lang)}
+                    {service.note && <span class="t-note">{serviceNote(service, lang)}</span>}
                   </td>
                 </tr>
               ))}
@@ -80,26 +80,7 @@ const dayName = (key: string) => t(`schedule.${key}` as AllTranslationKeys);
   <CalendarRail lang={lang} />
   </div>
 
-  <section class="t-section feasts" aria-labelledby="hramuri">
-    <h2 class="t-kicker" id="hramuri">{t("schedule.feastsTitle")}</h2>
-    <table class="t-hours">
-      <thead>
-        <tr>
-          <th scope="col">{t("table.date")}</th>
-          <th scope="col">{t("table.feast")}</th>
-        </tr>
-      </thead>
-      <tbody>
-        {
-          feasts.map((feast) => (
-            <tr class="is-feast">
-              <td class="t-date">{feast.date[lang]}</td>
-              <td>{feast.name[lang]}</td>
-            </tr>
-          ))
-        }
-      </tbody>
-    </table>
+  <section class="t-section feasts">
     <div class="t-actions">
       <a class="t-btn is-primary" href={getLocalizedPath("/cum-de-ajuns", lang)}>{t("zone.directions")}</a>
       <a class="t-btn" href={getLocalizedPath("/posts", lang)}>{t("zone.cronica")}</a>

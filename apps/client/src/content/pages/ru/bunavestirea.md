@@ -3,7 +3,7 @@
 # Romanian original (src/data/pages.ts shows it under lang="ro").
 title: "Пещерная церковь «Благовещение»"
 eyebrow: "Скала · зона I"
-lead: "Монастырь в скале — самая древняя часть Сахарнянского ансамбля."
+lead: "Монастырь в скале в Сахарне."
 zone: rock
 template: chamber
 order: 3

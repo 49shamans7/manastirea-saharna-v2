@@ -40,6 +40,102 @@ galleryImages:
     thumb: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00007-sm.webp
     width: 800
     height: 534
+  - src: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00008.webp
+    thumb: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00008-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00009.webp
+    thumb: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00009-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00010.webp
+    thumb: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00010-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00011.webp
+    thumb: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00011-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00012.webp
+    thumb: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00012-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00013.webp
+    thumb: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00013-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00014.webp
+    thumb: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00014-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00015.webp
+    thumb: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00015-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00016.webp
+    thumb: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00016-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00017.webp
+    thumb: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00017-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00018.webp
+    thumb: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00018-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00019.webp
+    thumb: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00019-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00020.webp
+    thumb: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00020-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00021.webp
+    thumb: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00021-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00022.webp
+    thumb: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00022-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00023.webp
+    thumb: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00023-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00024.webp
+    thumb: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00024-sm.webp
+    width: 800
+    height: 461
+  - src: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00025.webp
+    thumb: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00025-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00026.webp
+    thumb: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00026-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00027.webp
+    thumb: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00027-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00028.webp
+    thumb: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00028-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00029.webp
+    thumb: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00029-sm.webp
+    width: 800
+    height: 498
+  - src: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00030.webp
+    thumb: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00030-sm.webp
+    width: 800
+    height: 602
+  - src: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00031.webp
+    thumb: /posts/veniti-toti-credinciosii-sa-preaslavim-pogorarea-sfantului-duh/image00031-sm.webp
+    width: 800
+    height: 534
 ---
 
 În această zi frumoasă de vară, una dintre perle printre mănăstiri de pe meleagurile bătrânului Nistru, ce păstrează flacăra credinței aprinse din veacuri, Sfânta Mănăstire Saharna și-a sărbătorit hramul.

@@ -40,6 +40,14 @@ galleryImages:
     thumb: /posts/adevarat-zic-voua-de-nu-va-veti-intoarce-si-nu-veti-fi-precum-pruncii-nu-veti-intra-in-imparatia-cer/10888779_773239846094182_1389075658918585700_n-sm.webp
     width: 720
     height: 960
+  - src: /posts/adevarat-zic-voua-de-nu-va-veti-intoarce-si-nu-veti-fi-precum-pruncii-nu-veti-intra-in-imparatia-cer/10906546_773239996094167_5811730537442227060_n.webp
+    thumb: /posts/adevarat-zic-voua-de-nu-va-veti-intoarce-si-nu-veti-fi-precum-pruncii-nu-veti-intra-in-imparatia-cer/10906546_773239996094167_5811730537442227060_n-sm.webp
+    width: 720
+    height: 960
+  - src: /posts/adevarat-zic-voua-de-nu-va-veti-intoarce-si-nu-veti-fi-precum-pruncii-nu-veti-intra-in-imparatia-cer/1979677_773239639427536_5018750356027965129_n.webp
+    thumb: /posts/adevarat-zic-voua-de-nu-va-veti-intoarce-si-nu-veti-fi-precum-pruncii-nu-veti-intra-in-imparatia-cer/1979677_773239639427536_5018750356027965129_n-sm.webp
+    width: 800
+    height: 600
 ---
 
 Colindăm, colindăm iarna pe la oameni dragi și buni – așa au cântat cu vocea lor dulce copilașii de la grădinița Ghiocel din satul Saharna Nouă într-o zi minunata și frumoasa cu adevarat de iarna, cu zăpadă și ger, unde în jurul bradului s-au adunat și i-au încântat pe cei maturi cu poezii, cântece și colinde.

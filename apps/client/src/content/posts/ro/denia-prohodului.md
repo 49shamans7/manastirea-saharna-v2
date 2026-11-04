@@ -40,6 +40,30 @@ galleryImages:
     thumb: /posts/denia-prohodului/image00005-7-sm.webp
     width: 800
     height: 534
+  - src: /posts/denia-prohodului/image00006-7.webp
+    thumb: /posts/denia-prohodului/image00006-7-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/denia-prohodului/image00007-7.webp
+    thumb: /posts/denia-prohodului/image00007-7-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/denia-prohodului/image00008-5.webp
+    thumb: /posts/denia-prohodului/image00008-5-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/denia-prohodului/image00009-5.webp
+    thumb: /posts/denia-prohodului/image00009-5-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/denia-prohodului/image00010-4.webp
+    thumb: /posts/denia-prohodului/image00010-4-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/denia-prohodului/image00011-4.webp
+    thumb: /posts/denia-prohodului/image00011-4-sm.webp
+    width: 800
+    height: 534
 ---
 
 Dulcea mea lumină

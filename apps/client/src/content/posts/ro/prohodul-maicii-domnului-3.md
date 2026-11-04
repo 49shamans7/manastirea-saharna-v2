@@ -40,6 +40,70 @@ galleryImages:
     thumb: /posts/prohodul-maicii-domnului-3/20250827_1754112-scaled-sm.webp
     width: 800
     height: 1067
+  - src: /posts/prohodul-maicii-domnului-3/20250827_1754182-scaled.webp
+    thumb: /posts/prohodul-maicii-domnului-3/20250827_1754182-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/prohodul-maicii-domnului-3/20250827_1758022-scaled.webp
+    thumb: /posts/prohodul-maicii-domnului-3/20250827_1758022-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/prohodul-maicii-domnului-3/20250827_1758292-scaled.webp
+    thumb: /posts/prohodul-maicii-domnului-3/20250827_1758292-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/prohodul-maicii-domnului-3/20250827_1758572-scaled.webp
+    thumb: /posts/prohodul-maicii-domnului-3/20250827_1758572-scaled-sm.webp
+    width: 800
+    height: 833
+  - src: /posts/prohodul-maicii-domnului-3/20250827_1759092-scaled.webp
+    thumb: /posts/prohodul-maicii-domnului-3/20250827_1759092-scaled-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/prohodul-maicii-domnului-3/20250827_1839532-1-scaled.webp
+    thumb: /posts/prohodul-maicii-domnului-3/20250827_1839532-1-scaled-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/prohodul-maicii-domnului-3/20250827_1840072-scaled.webp
+    thumb: /posts/prohodul-maicii-domnului-3/20250827_1840072-scaled-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/prohodul-maicii-domnului-3/20250827_1840122-scaled.webp
+    thumb: /posts/prohodul-maicii-domnului-3/20250827_1840122-scaled-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/prohodul-maicii-domnului-3/20250827_1840172-scaled.webp
+    thumb: /posts/prohodul-maicii-domnului-3/20250827_1840172-scaled-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/prohodul-maicii-domnului-3/20250827_1840242-scaled.webp
+    thumb: /posts/prohodul-maicii-domnului-3/20250827_1840242-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/prohodul-maicii-domnului-3/20250827_1840342-1-scaled.webp
+    thumb: /posts/prohodul-maicii-domnului-3/20250827_1840342-1-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/prohodul-maicii-domnului-3/20250827_1840462-scaled.webp
+    thumb: /posts/prohodul-maicii-domnului-3/20250827_1840462-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/prohodul-maicii-domnului-3/20250827_1840512-scaled.webp
+    thumb: /posts/prohodul-maicii-domnului-3/20250827_1840512-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/prohodul-maicii-domnului-3/20250827_1843312-scaled.webp
+    thumb: /posts/prohodul-maicii-domnului-3/20250827_1843312-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/prohodul-maicii-domnului-3/20250827_1846162-scaled.webp
+    thumb: /posts/prohodul-maicii-domnului-3/20250827_1846162-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/prohodul-maicii-domnului-3/20250827_2015442-scaled.webp
+    thumb: /posts/prohodul-maicii-domnului-3/20250827_2015442-scaled-sm.webp
+    width: 800
+    height: 1067
 ---
 
 

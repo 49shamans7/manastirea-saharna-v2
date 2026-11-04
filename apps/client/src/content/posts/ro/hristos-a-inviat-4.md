@@ -40,6 +40,54 @@ galleryImages:
     thumb: /posts/hristos-a-inviat-4/20250420_000356-scaled-sm.webp
     width: 800
     height: 1067
+  - src: /posts/hristos-a-inviat-4/20250420_000444-scaled.webp
+    thumb: /posts/hristos-a-inviat-4/20250420_000444-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/hristos-a-inviat-4/20250420_000455-scaled.webp
+    thumb: /posts/hristos-a-inviat-4/20250420_000455-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/hristos-a-inviat-4/20250420_020105-scaled.webp
+    thumb: /posts/hristos-a-inviat-4/20250420_020105-scaled-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/hristos-a-inviat-4/20250420_020119-scaled.webp
+    thumb: /posts/hristos-a-inviat-4/20250420_020119-scaled-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/hristos-a-inviat-4/20250420_020129-scaled.webp
+    thumb: /posts/hristos-a-inviat-4/20250420_020129-scaled-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/hristos-a-inviat-4/20250420_020138-scaled.webp
+    thumb: /posts/hristos-a-inviat-4/20250420_020138-scaled-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/hristos-a-inviat-4/20250420_020902-scaled.webp
+    thumb: /posts/hristos-a-inviat-4/20250420_020902-scaled-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/hristos-a-inviat-4/20250420_020943-scaled.webp
+    thumb: /posts/hristos-a-inviat-4/20250420_020943-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/hristos-a-inviat-4/20250420_021033-scaled.webp
+    thumb: /posts/hristos-a-inviat-4/20250420_021033-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/hristos-a-inviat-4/20250420_021039-scaled.webp
+    thumb: /posts/hristos-a-inviat-4/20250420_021039-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/hristos-a-inviat-4/20250420_021045-scaled.webp
+    thumb: /posts/hristos-a-inviat-4/20250420_021045-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/hristos-a-inviat-4/20250420_022714-scaled.webp
+    thumb: /posts/hristos-a-inviat-4/20250420_022714-scaled-sm.webp
+    width: 800
+    height: 600
 ---
 
 “Toată istoria creștinismului nu este altceva decât istoria unei singure și unice minuni, a minunii învierii lui Hristos, care se continuă neîntrerupt în inimile creștinilor, zi de zi, an de an, veac de veac, până la cea de-a Doua Venire.”

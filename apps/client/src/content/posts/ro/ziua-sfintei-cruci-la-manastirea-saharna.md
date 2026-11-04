@@ -40,6 +40,178 @@ galleryImages:
     thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10383040_721668484584652_8005738529764074656_n-sm.webp
     width: 800
     height: 533
+  - src: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10396268_721667864584714_2695237767308833913_n.webp
+    thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10396268_721667864584714_2695237767308833913_n-sm.webp
+    width: 512
+    height: 768
+  - src: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10410387_721667117918122_6503953503294272429_n.webp
+    thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10410387_721667117918122_6503953503294272429_n-sm.webp
+    width: 512
+    height: 768
+  - src: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10410967_721670581251109_6279778054898577079_n.webp
+    thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10410967_721670581251109_6279778054898577079_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10417639_721669891251178_8863932610897621537_n.webp
+    thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10417639_721669891251178_8863932610897621537_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10423812_721669547917879_7186936456586759520_n.webp
+    thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10423812_721669547917879_7186936456586759520_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10438138_721669674584533_7150076034467356632_n.webp
+    thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10438138_721669674584533_7150076034467356632_n-sm.webp
+    width: 512
+    height: 768
+  - src: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10441085_721667731251394_7868154330601552976_n.webp
+    thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10441085_721667731251394_7868154330601552976_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10460241_721669871251180_7452807609533057167_n.webp
+    thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10460241_721669871251180_7452807609533057167_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10478124_721666731251494_3987569960508609891_n.webp
+    thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10478124_721666731251494_3987569960508609891_n-sm.webp
+    width: 512
+    height: 768
+  - src: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10522057_721666927918141_1454606686740314888_n.webp
+    thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10522057_721666927918141_1454606686740314888_n-sm.webp
+    width: 512
+    height: 768
+  - src: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10552510_721667031251464_8818124671037724510_n.webp
+    thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10552510_721667031251464_8818124671037724510_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10624830_721667271251440_5824341240740645006_n.webp
+    thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10624830_721667271251440_5824341240740645006_n-sm.webp
+    width: 512
+    height: 768
+  - src: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10629678_721669097917924_6367339308160653073_n.webp
+    thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10629678_721669097917924_6367339308160653073_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10629755_721667304584770_6029430196515566717_n.webp
+    thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10629755_721667304584770_6029430196515566717_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10635761_721667324584768_408549248885496118_n.webp
+    thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10635761_721667324584768_408549248885496118_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10635868_721669024584598_2322201877056523331_n.webp
+    thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10635868_721669024584598_2322201877056523331_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10647202_721667757918058_39809672938652453_n.webp
+    thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10647202_721667757918058_39809672938652453_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10653532_721668121251355_2945292945419985261_n.webp
+    thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10653532_721668121251355_2945292945419985261_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10653561_721670741251093_2013715919816815802_n.webp
+    thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10653561_721670741251093_2013715919816815802_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10653778_721668157918018_7563751320158563579_n.webp
+    thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10653778_721668157918018_7563751320158563579_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10653778_721668374584663_5258233785783146648_n.webp
+    thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10653778_721668374584663_5258233785783146648_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10665047_721670331251134_4457105372957459080_n.webp
+    thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10665047_721670331251134_4457105372957459080_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10665083_721668554584645_1031161976159151534_n.webp
+    thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10665083_721668554584645_1031161976159151534_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10665370_721669447917889_4906973848780289663_n.webp
+    thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10665370_721669447917889_4906973848780289663_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10666046_721670557917778_7648482951551784105_n.webp
+    thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10666046_721670557917778_7648482951551784105_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10670090_721669241251243_587550853596092982_n.webp
+    thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10670090_721669241251243_587550853596092982_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10671302_721667881251379_6362093047579172725_n.webp
+    thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10671302_721667881251379_6362093047579172725_n-sm.webp
+    width: 512
+    height: 768
+  - src: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10672130_721669704584530_666973194180763380_n.webp
+    thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10672130_721669704584530_666973194180763380_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10685421_721666824584818_3095120929502477443_n.webp
+    thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10685421_721666824584818_3095120929502477443_n-sm.webp
+    width: 512
+    height: 768
+  - src: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10689520_721668064584694_6911700946891466170_n.webp
+    thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10689520_721668064584694_6911700946891466170_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10696358_721670617917772_7528768239917008446_n.webp
+    thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10696358_721670617917772_7528768239917008446_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10702080_721670631251104_2981556541221042067_n.webp
+    thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10702080_721670631251104_2981556541221042067_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10702201_721668421251325_8353328342395043167_n.webp
+    thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10702201_721668421251325_8353328342395043167_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10703635_721666754584825_5295946106472502031_n.webp
+    thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10703635_721666754584825_5295946106472502031_n-sm.webp
+    width: 512
+    height: 768
+  - src: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10703680_721667081251459_1145747129771700546_n.webp
+    thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10703680_721667081251459_1145747129771700546_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10703777_721667557918078_1159403399714380297_n.webp
+    thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10703777_721667557918078_1159403399714380297_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10703777_721670491251118_182671024244443085_n.webp
+    thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/10703777_721670491251118_182671024244443085_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ziua-sfintei-cruci-la-manastirea-saharna/1378202_721670287917805_9164200723977679279_n.webp
+    thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/1378202_721670287917805_9164200723977679279_n-sm.webp
+    width: 512
+    height: 768
+  - src: /posts/ziua-sfintei-cruci-la-manastirea-saharna/1486679_721667377918096_4806627375723607985_n.webp
+    thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/1486679_721667377918096_4806627375723607985_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ziua-sfintei-cruci-la-manastirea-saharna/1623589_721666994584801_4041923633691178033_n.webp
+    thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/1623589_721666994584801_4041923633691178033_n-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ziua-sfintei-cruci-la-manastirea-saharna/1655987_721667774584723_3501187351014232201_n.webp
+    thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/1655987_721667774584723_3501187351014232201_n-sm.webp
+    width: 512
+    height: 768
+  - src: /posts/ziua-sfintei-cruci-la-manastirea-saharna/1911616_721670244584476_4107304739657549294_n.webp
+    thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/1911616_721670244584476_4107304739657549294_n-sm.webp
+    width: 512
+    height: 768
+  - src: /posts/ziua-sfintei-cruci-la-manastirea-saharna/img_9606.webp
+    thumb: /posts/ziua-sfintei-cruci-la-manastirea-saharna/img_9606-sm.webp
+    width: 800
+    height: 533
 ---
 
 Înălțarea Sfintei Cruci este cea mai veche sărbătoare ortodoxă închinată Sfintei Cruci, fiind trecută în rândul praznicilor împărătești. Ea se prăznuiește în fiecare an la 14 septembrie (s.v.).

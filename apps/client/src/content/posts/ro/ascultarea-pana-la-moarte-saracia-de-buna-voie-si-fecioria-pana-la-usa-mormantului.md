@@ -40,6 +40,66 @@ galleryImages:
     thumb: /posts/ascultarea-pana-la-moarte-saracia-de-buna-voie-si-fecioria-pana-la-usa-mormantului/image00019-sm.webp
     width: 800
     height: 533
+  - src: /posts/ascultarea-pana-la-moarte-saracia-de-buna-voie-si-fecioria-pana-la-usa-mormantului/image00024-1.webp
+    thumb: /posts/ascultarea-pana-la-moarte-saracia-de-buna-voie-si-fecioria-pana-la-usa-mormantului/image00024-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ascultarea-pana-la-moarte-saracia-de-buna-voie-si-fecioria-pana-la-usa-mormantului/image00066.webp
+    thumb: /posts/ascultarea-pana-la-moarte-saracia-de-buna-voie-si-fecioria-pana-la-usa-mormantului/image00066-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ascultarea-pana-la-moarte-saracia-de-buna-voie-si-fecioria-pana-la-usa-mormantului/image00074.webp
+    thumb: /posts/ascultarea-pana-la-moarte-saracia-de-buna-voie-si-fecioria-pana-la-usa-mormantului/image00074-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ascultarea-pana-la-moarte-saracia-de-buna-voie-si-fecioria-pana-la-usa-mormantului/image00077.webp
+    thumb: /posts/ascultarea-pana-la-moarte-saracia-de-buna-voie-si-fecioria-pana-la-usa-mormantului/image00077-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ascultarea-pana-la-moarte-saracia-de-buna-voie-si-fecioria-pana-la-usa-mormantului/image00087.webp
+    thumb: /posts/ascultarea-pana-la-moarte-saracia-de-buna-voie-si-fecioria-pana-la-usa-mormantului/image00087-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ascultarea-pana-la-moarte-saracia-de-buna-voie-si-fecioria-pana-la-usa-mormantului/image00089.webp
+    thumb: /posts/ascultarea-pana-la-moarte-saracia-de-buna-voie-si-fecioria-pana-la-usa-mormantului/image00089-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ascultarea-pana-la-moarte-saracia-de-buna-voie-si-fecioria-pana-la-usa-mormantului/image00090.webp
+    thumb: /posts/ascultarea-pana-la-moarte-saracia-de-buna-voie-si-fecioria-pana-la-usa-mormantului/image00090-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ascultarea-pana-la-moarte-saracia-de-buna-voie-si-fecioria-pana-la-usa-mormantului/image00093-1.webp
+    thumb: /posts/ascultarea-pana-la-moarte-saracia-de-buna-voie-si-fecioria-pana-la-usa-mormantului/image00093-1-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ascultarea-pana-la-moarte-saracia-de-buna-voie-si-fecioria-pana-la-usa-mormantului/image00097.webp
+    thumb: /posts/ascultarea-pana-la-moarte-saracia-de-buna-voie-si-fecioria-pana-la-usa-mormantului/image00097-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ascultarea-pana-la-moarte-saracia-de-buna-voie-si-fecioria-pana-la-usa-mormantului/image00107.webp
+    thumb: /posts/ascultarea-pana-la-moarte-saracia-de-buna-voie-si-fecioria-pana-la-usa-mormantului/image00107-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ascultarea-pana-la-moarte-saracia-de-buna-voie-si-fecioria-pana-la-usa-mormantului/image00122.webp
+    thumb: /posts/ascultarea-pana-la-moarte-saracia-de-buna-voie-si-fecioria-pana-la-usa-mormantului/image00122-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ascultarea-pana-la-moarte-saracia-de-buna-voie-si-fecioria-pana-la-usa-mormantului/image00123.webp
+    thumb: /posts/ascultarea-pana-la-moarte-saracia-de-buna-voie-si-fecioria-pana-la-usa-mormantului/image00123-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ascultarea-pana-la-moarte-saracia-de-buna-voie-si-fecioria-pana-la-usa-mormantului/image00126.webp
+    thumb: /posts/ascultarea-pana-la-moarte-saracia-de-buna-voie-si-fecioria-pana-la-usa-mormantului/image00126-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ascultarea-pana-la-moarte-saracia-de-buna-voie-si-fecioria-pana-la-usa-mormantului/image00131.webp
+    thumb: /posts/ascultarea-pana-la-moarte-saracia-de-buna-voie-si-fecioria-pana-la-usa-mormantului/image00131-sm.webp
+    width: 800
+    height: 533
+  - src: /posts/ascultarea-pana-la-moarte-saracia-de-buna-voie-si-fecioria-pana-la-usa-mormantului/image00132.webp
+    thumb: /posts/ascultarea-pana-la-moarte-saracia-de-buna-voie-si-fecioria-pana-la-usa-mormantului/image00132-sm.webp
+    width: 800
+    height: 533
 ---
 
 În data de 27 august, sora Emilia Țurcan, viețuitoarea Mănăstirii, a îmbracat haina îngerescului chip.

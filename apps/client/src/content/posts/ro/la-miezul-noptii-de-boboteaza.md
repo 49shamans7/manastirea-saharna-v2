@@ -40,6 +40,146 @@ galleryImages:
     thumb: /posts/la-miezul-noptii-de-boboteaza/image00007-1-sm.webp
     width: 800
     height: 534
+  - src: /posts/la-miezul-noptii-de-boboteaza/image00008-1.webp
+    thumb: /posts/la-miezul-noptii-de-boboteaza/image00008-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/la-miezul-noptii-de-boboteaza/image00009-1.webp
+    thumb: /posts/la-miezul-noptii-de-boboteaza/image00009-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/la-miezul-noptii-de-boboteaza/image00010-1.webp
+    thumb: /posts/la-miezul-noptii-de-boboteaza/image00010-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/la-miezul-noptii-de-boboteaza/image00011-1.webp
+    thumb: /posts/la-miezul-noptii-de-boboteaza/image00011-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/la-miezul-noptii-de-boboteaza/image00012-1.webp
+    thumb: /posts/la-miezul-noptii-de-boboteaza/image00012-1-sm.webp
+    width: 800
+    height: 640
+  - src: /posts/la-miezul-noptii-de-boboteaza/image00013-1.webp
+    thumb: /posts/la-miezul-noptii-de-boboteaza/image00013-1-sm.webp
+    width: 800
+    height: 646
+  - src: /posts/la-miezul-noptii-de-boboteaza/image00014-1.webp
+    thumb: /posts/la-miezul-noptii-de-boboteaza/image00014-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/la-miezul-noptii-de-boboteaza/image00015-1.webp
+    thumb: /posts/la-miezul-noptii-de-boboteaza/image00015-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/la-miezul-noptii-de-boboteaza/image00016-1.webp
+    thumb: /posts/la-miezul-noptii-de-boboteaza/image00016-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/la-miezul-noptii-de-boboteaza/image00017-1.webp
+    thumb: /posts/la-miezul-noptii-de-boboteaza/image00017-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/la-miezul-noptii-de-boboteaza/image00018-1.webp
+    thumb: /posts/la-miezul-noptii-de-boboteaza/image00018-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/la-miezul-noptii-de-boboteaza/image00019-1.webp
+    thumb: /posts/la-miezul-noptii-de-boboteaza/image00019-1-sm.webp
+    width: 800
+    height: 478
+  - src: /posts/la-miezul-noptii-de-boboteaza/image00020-1.webp
+    thumb: /posts/la-miezul-noptii-de-boboteaza/image00020-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/la-miezul-noptii-de-boboteaza/image00021-1.webp
+    thumb: /posts/la-miezul-noptii-de-boboteaza/image00021-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/la-miezul-noptii-de-boboteaza/image00022-1.webp
+    thumb: /posts/la-miezul-noptii-de-boboteaza/image00022-1-sm.webp
+    width: 800
+    height: 651
+  - src: /posts/la-miezul-noptii-de-boboteaza/image00023-1.webp
+    thumb: /posts/la-miezul-noptii-de-boboteaza/image00023-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/la-miezul-noptii-de-boboteaza/image00024-1.webp
+    thumb: /posts/la-miezul-noptii-de-boboteaza/image00024-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/la-miezul-noptii-de-boboteaza/image00025-1.webp
+    thumb: /posts/la-miezul-noptii-de-boboteaza/image00025-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/la-miezul-noptii-de-boboteaza/image00026-1.webp
+    thumb: /posts/la-miezul-noptii-de-boboteaza/image00026-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/la-miezul-noptii-de-boboteaza/image00027-1.webp
+    thumb: /posts/la-miezul-noptii-de-boboteaza/image00027-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/la-miezul-noptii-de-boboteaza/image00028-1.webp
+    thumb: /posts/la-miezul-noptii-de-boboteaza/image00028-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/la-miezul-noptii-de-boboteaza/image00029-1.webp
+    thumb: /posts/la-miezul-noptii-de-boboteaza/image00029-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/la-miezul-noptii-de-boboteaza/image00030-1.webp
+    thumb: /posts/la-miezul-noptii-de-boboteaza/image00030-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/la-miezul-noptii-de-boboteaza/image00031-1.webp
+    thumb: /posts/la-miezul-noptii-de-boboteaza/image00031-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/la-miezul-noptii-de-boboteaza/image00032-1.webp
+    thumb: /posts/la-miezul-noptii-de-boboteaza/image00032-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/la-miezul-noptii-de-boboteaza/image00033-1.webp
+    thumb: /posts/la-miezul-noptii-de-boboteaza/image00033-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/la-miezul-noptii-de-boboteaza/image00034-1.webp
+    thumb: /posts/la-miezul-noptii-de-boboteaza/image00034-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/la-miezul-noptii-de-boboteaza/image00035-1.webp
+    thumb: /posts/la-miezul-noptii-de-boboteaza/image00035-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/la-miezul-noptii-de-boboteaza/image00036-1.webp
+    thumb: /posts/la-miezul-noptii-de-boboteaza/image00036-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/la-miezul-noptii-de-boboteaza/image00037-1.webp
+    thumb: /posts/la-miezul-noptii-de-boboteaza/image00037-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/la-miezul-noptii-de-boboteaza/image00038-1.webp
+    thumb: /posts/la-miezul-noptii-de-boboteaza/image00038-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/la-miezul-noptii-de-boboteaza/image00039-1.webp
+    thumb: /posts/la-miezul-noptii-de-boboteaza/image00039-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/la-miezul-noptii-de-boboteaza/image00040-1.webp
+    thumb: /posts/la-miezul-noptii-de-boboteaza/image00040-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/la-miezul-noptii-de-boboteaza/image00041-1.webp
+    thumb: /posts/la-miezul-noptii-de-boboteaza/image00041-1-sm.webp
+    width: 800
+    height: 893
+  - src: /posts/la-miezul-noptii-de-boboteaza/image00042-1.webp
+    thumb: /posts/la-miezul-noptii-de-boboteaza/image00042-1-sm.webp
+    width: 714
+    height: 900
 ---
 
 Arătatu-Te-ai astăzi lumii și Lumina Ta,

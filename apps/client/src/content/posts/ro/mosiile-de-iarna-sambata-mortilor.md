@@ -40,6 +40,42 @@ galleryImages:
     thumb: /posts/mosiile-de-iarna-sambata-mortilor/551b6413-71d8-4b4b-a957-8b6c21394014-scaled-sm.webp
     width: 800
     height: 1067
+  - src: /posts/mosiile-de-iarna-sambata-mortilor/663345ae-b41d-4177-8605-c9d46b4384bf-scaled.webp
+    thumb: /posts/mosiile-de-iarna-sambata-mortilor/663345ae-b41d-4177-8605-c9d46b4384bf-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/mosiile-de-iarna-sambata-mortilor/a21211a8-f193-4d07-9728-5c0a9b8868e6-scaled.webp
+    thumb: /posts/mosiile-de-iarna-sambata-mortilor/a21211a8-f193-4d07-9728-5c0a9b8868e6-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/mosiile-de-iarna-sambata-mortilor/ab000d07-8031-41e0-89b0-6f9904780387-scaled.webp
+    thumb: /posts/mosiile-de-iarna-sambata-mortilor/ab000d07-8031-41e0-89b0-6f9904780387-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/mosiile-de-iarna-sambata-mortilor/b34bbb7b-f8e5-4ee9-bb9a-804a8004c668-scaled.webp
+    thumb: /posts/mosiile-de-iarna-sambata-mortilor/b34bbb7b-f8e5-4ee9-bb9a-804a8004c668-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/mosiile-de-iarna-sambata-mortilor/be618c99-776a-4495-9c8b-7792d435ee51-scaled.webp
+    thumb: /posts/mosiile-de-iarna-sambata-mortilor/be618c99-776a-4495-9c8b-7792d435ee51-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/mosiile-de-iarna-sambata-mortilor/be69a74b-14b9-4955-b4c1-a64b4e8f31a4-scaled.webp
+    thumb: /posts/mosiile-de-iarna-sambata-mortilor/be69a74b-14b9-4955-b4c1-a64b4e8f31a4-scaled-sm.webp
+    width: 800
+    height: 1164
+  - src: /posts/mosiile-de-iarna-sambata-mortilor/c81a725d-596e-4b52-b294-9681e6c165fa-scaled.webp
+    thumb: /posts/mosiile-de-iarna-sambata-mortilor/c81a725d-596e-4b52-b294-9681e6c165fa-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/mosiile-de-iarna-sambata-mortilor/df34c202-f682-49a2-84a9-60fed8588eca-scaled.webp
+    thumb: /posts/mosiile-de-iarna-sambata-mortilor/df34c202-f682-49a2-84a9-60fed8588eca-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/mosiile-de-iarna-sambata-mortilor/ede8673f-c546-4d2f-bac2-7fd5b5bd3488-scaled.webp
+    thumb: /posts/mosiile-de-iarna-sambata-mortilor/ede8673f-c546-4d2f-bac2-7fd5b5bd3488-scaled-sm.webp
+    width: 800
+    height: 1067
 ---
 
 

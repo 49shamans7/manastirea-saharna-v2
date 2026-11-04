@@ -40,6 +40,34 @@ galleryImages:
     thumb: /posts/saptamana-tineretului-ortodox-continua-pentru-elevii-din-ip-gimnaziul-saharna-noua/image00007-1-sm.webp
     width: 800
     height: 600
+  - src: /posts/saptamana-tineretului-ortodox-continua-pentru-elevii-din-ip-gimnaziul-saharna-noua/image00008-1.webp
+    thumb: /posts/saptamana-tineretului-ortodox-continua-pentru-elevii-din-ip-gimnaziul-saharna-noua/image00008-1-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/saptamana-tineretului-ortodox-continua-pentru-elevii-din-ip-gimnaziul-saharna-noua/image00009-1.webp
+    thumb: /posts/saptamana-tineretului-ortodox-continua-pentru-elevii-din-ip-gimnaziul-saharna-noua/image00009-1-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/saptamana-tineretului-ortodox-continua-pentru-elevii-din-ip-gimnaziul-saharna-noua/image00010-1.webp
+    thumb: /posts/saptamana-tineretului-ortodox-continua-pentru-elevii-din-ip-gimnaziul-saharna-noua/image00010-1-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/saptamana-tineretului-ortodox-continua-pentru-elevii-din-ip-gimnaziul-saharna-noua/image00011-1.webp
+    thumb: /posts/saptamana-tineretului-ortodox-continua-pentru-elevii-din-ip-gimnaziul-saharna-noua/image00011-1-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/saptamana-tineretului-ortodox-continua-pentru-elevii-din-ip-gimnaziul-saharna-noua/image00012.webp
+    thumb: /posts/saptamana-tineretului-ortodox-continua-pentru-elevii-din-ip-gimnaziul-saharna-noua/image00012-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/saptamana-tineretului-ortodox-continua-pentru-elevii-din-ip-gimnaziul-saharna-noua/image00013.webp
+    thumb: /posts/saptamana-tineretului-ortodox-continua-pentru-elevii-din-ip-gimnaziul-saharna-noua/image00013-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/saptamana-tineretului-ortodox-continua-pentru-elevii-din-ip-gimnaziul-saharna-noua/image00014.webp
+    thumb: /posts/saptamana-tineretului-ortodox-continua-pentru-elevii-din-ip-gimnaziul-saharna-noua/image00014-sm.webp
+    width: 800
+    height: 600
 ---
 
 La data de 23 aprilie 2016, un grup de elevi au mers în pelerinaj la mai multe mănăstiri din centru țării însoțiți de profesorul de religie Ierom. Vasilisc Donica.

@@ -40,6 +40,42 @@ galleryImages:
     thumb: /posts/denia-celor-12-evanghelii-2/20230413_182727-scaled-sm.webp
     width: 800
     height: 1067
+  - src: /posts/denia-celor-12-evanghelii-2/20230413_182734-scaled.webp
+    thumb: /posts/denia-celor-12-evanghelii-2/20230413_182734-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/denia-celor-12-evanghelii-2/20230413_182748-scaled.webp
+    thumb: /posts/denia-celor-12-evanghelii-2/20230413_182748-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/denia-celor-12-evanghelii-2/20230413_182755-scaled.webp
+    thumb: /posts/denia-celor-12-evanghelii-2/20230413_182755-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/denia-celor-12-evanghelii-2/20230413_185146-scaled.webp
+    thumb: /posts/denia-celor-12-evanghelii-2/20230413_185146-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/denia-celor-12-evanghelii-2/20230413_185202-scaled.webp
+    thumb: /posts/denia-celor-12-evanghelii-2/20230413_185202-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/denia-celor-12-evanghelii-2/20230413_190518-scaled.webp
+    thumb: /posts/denia-celor-12-evanghelii-2/20230413_190518-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/denia-celor-12-evanghelii-2/20230413_193046-scaled.webp
+    thumb: /posts/denia-celor-12-evanghelii-2/20230413_193046-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/denia-celor-12-evanghelii-2/20230413_193450-scaled.webp
+    thumb: /posts/denia-celor-12-evanghelii-2/20230413_193450-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/denia-celor-12-evanghelii-2/20230413_193510-scaled.webp
+    thumb: /posts/denia-celor-12-evanghelii-2/20230413_193510-scaled-sm.webp
+    width: 800
+    height: 1067
 ---
 
 

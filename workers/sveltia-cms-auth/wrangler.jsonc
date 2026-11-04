@@ -1,0 +1,15 @@
+{
+  // The "Sign in with GitHub" relay for /admin/. Vendored, unmodified, from
+  // github.com/sveltia/sveltia-cms-auth at 33500e1 (MIT, LICENSE.txt).
+  // Secrets, never vars: GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET.
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "sveltia-cms-auth",
+  "main": "src/index.js",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": true,
+  "preview_urls": false,
+  "vars": {
+    // Only pages on these hosts may start a sign-in or receive a token.
+    "ALLOWED_DOMAINS": "manastirea-saharna.md,www.manastirea-saharna.md,49shamans7.github.io"
+  }
+}

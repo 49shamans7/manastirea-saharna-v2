@@ -10,6 +10,7 @@
 // versal, the pall as ground, the flowers as the only chroma, and nothing
 // moves.
 import Layout from "@layouts/Layout.astro";
+import ShareLinks from "@components/ShareLinks.astro";
 import TempleFrame from "@layouts/TempleFrame.astro";
 import ChamberExits, { type ChamberExit } from "@components/chamber/ChamberExits.astro";
 import Ornament from "@components/ornament/Ornament.astro";
@@ -109,6 +110,7 @@ const ornamentVars = `--ch-rhomb: url("${rhombUrl}"); --ch-band: url("${bandUrl}
 
       <div class="ch-body">
         <slot />
+        <ShareLinks lang={lang} title={title} />
       </div>
 
       {

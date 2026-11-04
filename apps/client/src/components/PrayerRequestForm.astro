@@ -1,5 +1,5 @@
 ---
-import { useTranslations } from "@i18n/utils";
+import { telHref, useTranslations } from "@i18n/utils";
 import type { Locale } from "@i18n";
 
 type Props = {
@@ -16,10 +16,26 @@ const formAction = pomelnicWorkerUrl
     ? pomelnicWorkerUrl
     : `https://${pomelnicWorkerUrl}`
   : "#";
+// until the worker exists, nobody may fill in names that go nowhere
+const email = t("footer.email").split(",")[1]?.trim() ?? "";
+const phone = t("contact.phoneMain");
 const redirectUrl = `${Astro.url.origin}${Astro.url.pathname}#pomelnic-form`;
 ---
 
-<form class="f-form" action={formAction} method="post">
+{
+  !pomelnicWorkerUrl && (
+    <div class="f-offline">
+      <p>{t("pomelnic.offline")}</p>
+      <p>
+        <a href={`mailto:${email}`}>{email}</a>
+        <br />
+        <a href={telHref(phone)}>{phone}</a>
+      </p>
+    </div>
+  )
+}
+
+<form class="f-form" action={formAction} method="post" hidden={!pomelnicWorkerUrl}>
   <input type="hidden" name="redirect" value={redirectUrl} />
   <input type="hidden" name="language" value={lang} />
   <input class="f-trap" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" />
@@ -120,6 +136,23 @@ const redirectUrl = `${Astro.url.origin}${Astro.url.pathname}#pomelnic-form`;
     .f-pair {
       grid-template-columns: 1fr 1fr;
     }
+  }
+  .f-form[hidden] {
+    display: none;
+  }
+  .f-offline {
+    color: var(--field-label, inherit);
+    font-size: var(--t-body);
+  }
+  .f-offline p {
+    margin: 0 0 var(--s-3);
+  }
+  .f-offline a {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--tap-min);
+    color: inherit;
+    font-weight: 700;
   }
   .f-trap {
     display: none;

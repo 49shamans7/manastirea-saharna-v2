@@ -40,6 +40,18 @@ galleryImages:
     thumb: /posts/mesaj-de-condoleanta/52783918_2480276415333524_279018568949956608_n-sm.webp
     width: 800
     height: 937
+  - src: /posts/mesaj-de-condoleanta/52815349_254780328782094_6316266136283381760_n.webp
+    thumb: /posts/mesaj-de-condoleanta/52815349_254780328782094_6316266136283381760_n-sm.webp
+    width: 800
+    height: 956
+  - src: /posts/mesaj-de-condoleanta/53220387_565553297254456_3461085505557364736_n.webp
+    thumb: /posts/mesaj-de-condoleanta/53220387_565553297254456_3461085505557364736_n-sm.webp
+    width: 800
+    height: 908
+  - src: /posts/mesaj-de-condoleanta/iet.webp
+    thumb: /posts/mesaj-de-condoleanta/iet-sm.webp
+    width: 800
+    height: 1067
 ---
 
 În acest ceas de vremelnică despărțire până la învierea cea de obște, rugăm pe Mântuitorul Hristos, Cel înviat din morți, să odihnească în lumina iubirii Sale veșnice pe roaba sa, Egumena HERUVIMA ( VÎRLAN ), în Împărăția Cerurilor unde nu este durere, nici întristare, nici suspin, iar familiei îndoliate și celor care au cunoscut-o și au iubit-o, să le dăruiască mângâiere și întărire sufletească.

@@ -40,6 +40,114 @@ galleryImages:
     thumb: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-36-52-sm.webp
     width: 800
     height: 1067
+  - src: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-36-54.webp
+    thumb: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-36-54-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-36-56.webp
+    thumb: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-36-56-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-36-59.webp
+    thumb: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-36-59-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-01.webp
+    thumb: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-01-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-04.webp
+    thumb: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-04-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-06.webp
+    thumb: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-06-sm.webp
+    width: 800
+    height: 888
+  - src: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-08.webp
+    thumb: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-08-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-11.webp
+    thumb: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-11-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-13.webp
+    thumb: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-13-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-15.webp
+    thumb: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-15-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-16.webp
+    thumb: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-16-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-19.webp
+    thumb: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-19-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-22.webp
+    thumb: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-22-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-24.webp
+    thumb: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-24-sm.webp
+    width: 800
+    height: 856
+  - src: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-26.webp
+    thumb: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-26-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-28.webp
+    thumb: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-28-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-32.webp
+    thumb: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-32-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-34.webp
+    thumb: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-34-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-36.webp
+    thumb: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-36-sm.webp
+    width: 800
+    height: 678
+  - src: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-37.webp
+    thumb: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-37-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-39.webp
+    thumb: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-39-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-41.webp
+    thumb: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-41-sm.webp
+    width: 800
+    height: 888
+  - src: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-43.webp
+    thumb: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-43-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-46.webp
+    thumb: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-46-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-49.webp
+    thumb: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-49-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-51.webp
+    thumb: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_14-37-51-sm.webp
+    width: 800
+    height: 874
+  - src: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_15-01-05.webp
+    thumb: /posts/bucura-te-bucuria-noastra/photo_2020-10-14_15-01-05-sm.webp
+    width: 800
+    height: 662
 ---
 
 Toată firea îngerească aduce laudă ție, pentru că ești cu adevărat Maica lui Dumnezeu și apărătoarea tuturor celor ce se roagă ție. Tu, cu Acoperământul tău cel dumnezeiesc, pe cei drepți îi veselești, pe păcătoși îi aperi, pe cei din primejdii îi izbăvești și te rogi pentru toți credincioșii!

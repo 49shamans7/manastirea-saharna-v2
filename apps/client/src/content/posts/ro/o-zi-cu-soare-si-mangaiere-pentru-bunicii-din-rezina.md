@@ -40,6 +40,74 @@ galleryImages:
     thumb: /posts/o-zi-cu-soare-si-mangaiere-pentru-bunicii-din-rezina/20260410_122737-scaled-sm.webp
     width: 800
     height: 1421
+  - src: /posts/o-zi-cu-soare-si-mangaiere-pentru-bunicii-din-rezina/20260410_122831-scaled.webp
+    thumb: /posts/o-zi-cu-soare-si-mangaiere-pentru-bunicii-din-rezina/20260410_122831-scaled-sm.webp
+    width: 800
+    height: 1421
+  - src: /posts/o-zi-cu-soare-si-mangaiere-pentru-bunicii-din-rezina/20260410_123112-scaled.webp
+    thumb: /posts/o-zi-cu-soare-si-mangaiere-pentru-bunicii-din-rezina/20260410_123112-scaled-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/o-zi-cu-soare-si-mangaiere-pentru-bunicii-din-rezina/20260410_123138-scaled.webp
+    thumb: /posts/o-zi-cu-soare-si-mangaiere-pentru-bunicii-din-rezina/20260410_123138-scaled-sm.webp
+    width: 800
+    height: 1421
+  - src: /posts/o-zi-cu-soare-si-mangaiere-pentru-bunicii-din-rezina/20260410_123146-scaled.webp
+    thumb: /posts/o-zi-cu-soare-si-mangaiere-pentru-bunicii-din-rezina/20260410_123146-scaled-sm.webp
+    width: 800
+    height: 1421
+  - src: /posts/o-zi-cu-soare-si-mangaiere-pentru-bunicii-din-rezina/20260410_123150-1-scaled.webp
+    thumb: /posts/o-zi-cu-soare-si-mangaiere-pentru-bunicii-din-rezina/20260410_123150-1-scaled-sm.webp
+    width: 800
+    height: 1421
+  - src: /posts/o-zi-cu-soare-si-mangaiere-pentru-bunicii-din-rezina/20260410_123153-scaled.webp
+    thumb: /posts/o-zi-cu-soare-si-mangaiere-pentru-bunicii-din-rezina/20260410_123153-scaled-sm.webp
+    width: 800
+    height: 1421
+  - src: /posts/o-zi-cu-soare-si-mangaiere-pentru-bunicii-din-rezina/20260410_123238-scaled.webp
+    thumb: /posts/o-zi-cu-soare-si-mangaiere-pentru-bunicii-din-rezina/20260410_123238-scaled-sm.webp
+    width: 800
+    height: 1421
+  - src: /posts/o-zi-cu-soare-si-mangaiere-pentru-bunicii-din-rezina/20260410_123242-scaled.webp
+    thumb: /posts/o-zi-cu-soare-si-mangaiere-pentru-bunicii-din-rezina/20260410_123242-scaled-sm.webp
+    width: 800
+    height: 1421
+  - src: /posts/o-zi-cu-soare-si-mangaiere-pentru-bunicii-din-rezina/20260410_123250-scaled.webp
+    thumb: /posts/o-zi-cu-soare-si-mangaiere-pentru-bunicii-din-rezina/20260410_123250-scaled-sm.webp
+    width: 800
+    height: 1421
+  - src: /posts/o-zi-cu-soare-si-mangaiere-pentru-bunicii-din-rezina/20260410_123317-scaled.webp
+    thumb: /posts/o-zi-cu-soare-si-mangaiere-pentru-bunicii-din-rezina/20260410_123317-scaled-sm.webp
+    width: 800
+    height: 1421
+  - src: /posts/o-zi-cu-soare-si-mangaiere-pentru-bunicii-din-rezina/20260410_123319-scaled.webp
+    thumb: /posts/o-zi-cu-soare-si-mangaiere-pentru-bunicii-din-rezina/20260410_123319-scaled-sm.webp
+    width: 800
+    height: 1421
+  - src: /posts/o-zi-cu-soare-si-mangaiere-pentru-bunicii-din-rezina/20260410_123325-scaled.webp
+    thumb: /posts/o-zi-cu-soare-si-mangaiere-pentru-bunicii-din-rezina/20260410_123325-scaled-sm.webp
+    width: 800
+    height: 1421
+  - src: /posts/o-zi-cu-soare-si-mangaiere-pentru-bunicii-din-rezina/20260410_123354-scaled.webp
+    thumb: /posts/o-zi-cu-soare-si-mangaiere-pentru-bunicii-din-rezina/20260410_123354-scaled-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/o-zi-cu-soare-si-mangaiere-pentru-bunicii-din-rezina/20260410_123359-scaled.webp
+    thumb: /posts/o-zi-cu-soare-si-mangaiere-pentru-bunicii-din-rezina/20260410_123359-scaled-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/o-zi-cu-soare-si-mangaiere-pentru-bunicii-din-rezina/20260410_123402-scaled.webp
+    thumb: /posts/o-zi-cu-soare-si-mangaiere-pentru-bunicii-din-rezina/20260410_123402-scaled-sm.webp
+    width: 800
+    height: 450
+  - src: /posts/o-zi-cu-soare-si-mangaiere-pentru-bunicii-din-rezina/20260410_123756-scaled.webp
+    thumb: /posts/o-zi-cu-soare-si-mangaiere-pentru-bunicii-din-rezina/20260410_123756-scaled-sm.webp
+    width: 800
+    height: 1421
+  - src: /posts/o-zi-cu-soare-si-mangaiere-pentru-bunicii-din-rezina/20260410_123759-scaled.webp
+    thumb: /posts/o-zi-cu-soare-si-mangaiere-pentru-bunicii-din-rezina/20260410_123759-scaled-sm.webp
+    width: 800
+    height: 1421
 ---
 
 Astăzi, sub mângâierea unui soare blând și a unei vremi neașteptat de calde, doi dintre clericii mănăstirii noastre, cu binecuvântarea Egumenului Sfintei Mănăstiri, Arhim.Adrian Baciu, au poposit la Centrul de plasament pentru persoane vârstnice, persoane cu dizabilități din orașul Rezina. A fost o zi dăruită de Dumnezeu cu multă lumină, parcă anume lăsată pentru ca bătrânii să poată ieși afară și să se bucure de prospețimea zilei.

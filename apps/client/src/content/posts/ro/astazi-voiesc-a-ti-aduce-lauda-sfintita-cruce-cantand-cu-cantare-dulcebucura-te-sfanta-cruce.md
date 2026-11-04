@@ -40,6 +40,38 @@ galleryImages:
     thumb: /posts/astazi-voiesc-a-ti-aduce-lauda-sfintita-cruce-cantand-cu-cantare-dulcebucura-te-sfanta-cruce/image00007-sm.webp
     width: 800
     height: 534
+  - src: /posts/astazi-voiesc-a-ti-aduce-lauda-sfintita-cruce-cantand-cu-cantare-dulcebucura-te-sfanta-cruce/image00008.webp
+    thumb: /posts/astazi-voiesc-a-ti-aduce-lauda-sfintita-cruce-cantand-cu-cantare-dulcebucura-te-sfanta-cruce/image00008-sm.webp
+    width: 604
+    height: 768
+  - src: /posts/astazi-voiesc-a-ti-aduce-lauda-sfintita-cruce-cantand-cu-cantare-dulcebucura-te-sfanta-cruce/image00009.webp
+    thumb: /posts/astazi-voiesc-a-ti-aduce-lauda-sfintita-cruce-cantand-cu-cantare-dulcebucura-te-sfanta-cruce/image00009-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/astazi-voiesc-a-ti-aduce-lauda-sfintita-cruce-cantand-cu-cantare-dulcebucura-te-sfanta-cruce/image00010.webp
+    thumb: /posts/astazi-voiesc-a-ti-aduce-lauda-sfintita-cruce-cantand-cu-cantare-dulcebucura-te-sfanta-cruce/image00010-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/astazi-voiesc-a-ti-aduce-lauda-sfintita-cruce-cantand-cu-cantare-dulcebucura-te-sfanta-cruce/image00011.webp
+    thumb: /posts/astazi-voiesc-a-ti-aduce-lauda-sfintita-cruce-cantand-cu-cantare-dulcebucura-te-sfanta-cruce/image00011-sm.webp
+    width: 800
+    height: 736
+  - src: /posts/astazi-voiesc-a-ti-aduce-lauda-sfintita-cruce-cantand-cu-cantare-dulcebucura-te-sfanta-cruce/image00012.webp
+    thumb: /posts/astazi-voiesc-a-ti-aduce-lauda-sfintita-cruce-cantand-cu-cantare-dulcebucura-te-sfanta-cruce/image00012-sm.webp
+    width: 800
+    height: 763
+  - src: /posts/astazi-voiesc-a-ti-aduce-lauda-sfintita-cruce-cantand-cu-cantare-dulcebucura-te-sfanta-cruce/image00013.webp
+    thumb: /posts/astazi-voiesc-a-ti-aduce-lauda-sfintita-cruce-cantand-cu-cantare-dulcebucura-te-sfanta-cruce/image00013-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/astazi-voiesc-a-ti-aduce-lauda-sfintita-cruce-cantand-cu-cantare-dulcebucura-te-sfanta-cruce/image00014.webp
+    thumb: /posts/astazi-voiesc-a-ti-aduce-lauda-sfintita-cruce-cantand-cu-cantare-dulcebucura-te-sfanta-cruce/image00014-sm.webp
+    width: 786
+    height: 768
+  - src: /posts/astazi-voiesc-a-ti-aduce-lauda-sfintita-cruce-cantand-cu-cantare-dulcebucura-te-sfanta-cruce/image00015.webp
+    thumb: /posts/astazi-voiesc-a-ti-aduce-lauda-sfintita-cruce-cantand-cu-cantare-dulcebucura-te-sfanta-cruce/image00015-sm.webp
+    width: 800
+    height: 534
 ---
 
 

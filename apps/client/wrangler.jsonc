@@ -2,11 +2,9 @@
 // Cloudflare recommends for a fully static Astro site (2026: Workers static
 // assets; Pages is maintained but new projects go to Workers).
 //
-// NOT DEPLOYED YET. The switch happens on the monastery's own Cloudflare
-// account — the ordered steps are in docs/CLOUDFLARE-HANDOVER.md.
+// NOT DEPLOYED YET. `bun run cloudflare:setup` deploys it on the monastery's
+// own account (docs/CLOUDFLARE-HANDOVER.md). After that:
 //
-//   cd apps/client
-//   bunx wrangler login                      # the monastery's account
 //   bunx wrangler deploy                     # runs build.command, uploads ./dist
 //   bunx wrangler dev                        # local preview with _headers/_redirects
 //
@@ -19,7 +17,7 @@
 
   // The site at the domain root: BASE_PATH=/ and SITE_URL=https://manastirea-saharna.md
   // (canonical URLs, sitemap, RSS). The GitHub Pages build keeps its own
-  // defaults (/manastirea-saharna) until Pages is switched off.
+  // defaults (/manastirea-saharna-v2) until Pages is switched off.
   "build": {
     "command": "bun run build:cloudflare",
     "cwd": ".",
@@ -38,11 +36,8 @@
   "workers_dev": true,
   "preview_urls": false,
 
-  // Uncomment once the manastirea-saharna.md zone is ACTIVE on the monastery's
-  // account (handover step 6). wrangler deploy then attaches the domains and
-  // creates their DNS records and certificates.
-  // "routes": [
-  //   { "pattern": "manastirea-saharna.md", "custom_domain": true },
-  //   { "pattern": "www.manastirea-saharna.md", "custom_domain": true },
-  // ],
+  // No "routes" here on purpose. The custom domains are attached once, with
+  // confirmation, by scripts/cloudflare-setup.mjs (`wrangler deploy --domain`),
+  // and later deploys leave them in place. In CI, wrangler would overwrite
+  // conflicting DNS records without asking if they were listed here.
 }

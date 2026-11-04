@@ -30,5 +30,3 @@ Mănăstirea Saharna este un dar și o binecuvântare a lui Dumnezeu nu numai pe
 ## Bine ați venit!
 
 Mănăstirea aceasta este locul în care iubirea frumoasă și dătătoare de viață a Sfintei Treimi se revarsă asupra tuturor acelora care-i vor trece pragul cu credință. Aici prescurile și vinul, roade ale pământului și ale muncii voastre, vor deveni Trupul și Sângele lui Hristos, consumate pentru înnoirea vieții și spre fericirea veșnică. Aici primiți adevăratele bunevestiri prin Fecioara-Mamă, care vă recunoaște ca fii și moștenitori ai Împărăției Fiului ei.
-
-*Din pagina de start a vechiului site al mănăstirii.*

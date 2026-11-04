@@ -40,6 +40,30 @@ galleryImages:
     thumb: /posts/doamne-tu-sa-mi-speli-mie-picioarele/image00007-3-sm.webp
     width: 800
     height: 534
+  - src: /posts/doamne-tu-sa-mi-speli-mie-picioarele/image00008-2.webp
+    thumb: /posts/doamne-tu-sa-mi-speli-mie-picioarele/image00008-2-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/doamne-tu-sa-mi-speli-mie-picioarele/image00009-3.webp
+    thumb: /posts/doamne-tu-sa-mi-speli-mie-picioarele/image00009-3-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/doamne-tu-sa-mi-speli-mie-picioarele/image00010-2.webp
+    thumb: /posts/doamne-tu-sa-mi-speli-mie-picioarele/image00010-2-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/doamne-tu-sa-mi-speli-mie-picioarele/image00011-2.webp
+    thumb: /posts/doamne-tu-sa-mi-speli-mie-picioarele/image00011-2-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/doamne-tu-sa-mi-speli-mie-picioarele/image00012-1.webp
+    thumb: /posts/doamne-tu-sa-mi-speli-mie-picioarele/image00012-1-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/doamne-tu-sa-mi-speli-mie-picioarele/image00013-1.webp
+    thumb: /posts/doamne-tu-sa-mi-speli-mie-picioarele/image00013-1-sm.webp
+    width: 800
+    height: 534
 ---
 
 În Sfânta și Marea Joi din Săptămâna Patimilor, după obiceiul Sfintei Mănăstiri, starețul a săvârșit Cinul spălării picioarelor a celor doisprezece din viețuitorii mănăstirii. Acest ritual se face în amintirea spălării picioarelor Apostolilor de către Hristos, înainte de Cina cea de Taină. Rânduiala cere ca cel mai mare să spele picioarele celor mai mici, așa cum a făcut Mântuitorul.

@@ -40,6 +40,98 @@ galleryImages:
     thumb: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_082217-scaled-sm.webp
     width: 800
     height: 600
+  - src: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_082222-scaled.webp
+    thumb: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_082222-scaled-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_094050-scaled.webp
+    thumb: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_094050-scaled-sm.webp
+    width: 800
+    height: 761
+  - src: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_094054-scaled.webp
+    thumb: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_094054-scaled-sm.webp
+    width: 800
+    height: 943
+  - src: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_103454-scaled.webp
+    thumb: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_103454-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_103505-scaled.webp
+    thumb: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_103505-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_103518-scaled.webp
+    thumb: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_103518-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_103654-scaled.webp
+    thumb: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_103654-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_103743-scaled.webp
+    thumb: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_103743-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_103752-scaled.webp
+    thumb: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_103752-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_103754-scaled.webp
+    thumb: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_103754-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_103946-scaled.webp
+    thumb: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_103946-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_103948-scaled.webp
+    thumb: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_103948-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_103950-scaled.webp
+    thumb: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_103950-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_103951-scaled.webp
+    thumb: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_103951-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_104049-scaled.webp
+    thumb: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_104049-scaled-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_104053-scaled.webp
+    thumb: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_104053-scaled-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_104103-scaled.webp
+    thumb: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_104103-scaled-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_104122-scaled.webp
+    thumb: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_104122-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_104124-scaled.webp
+    thumb: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_104124-scaled-sm.webp
+    width: 800
+    height: 1067
+  - src: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_104858-scaled.webp
+    thumb: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_104858-scaled-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_104903-scaled.webp
+    thumb: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_104903-scaled-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_104924-scaled.webp
+    thumb: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_104924-scaled-sm.webp
+    width: 800
+    height: 600
+  - src: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_104927-scaled.webp
+    thumb: /posts/biserica-din-s-saharna-noua-si-a-sarbatorit-hramul/20221108_104927-scaled-sm.webp
+    width: 800
+    height: 600
 ---
 
 În ziua pomenirii Sfântului Mare Mucenic Dimitrie, izvorâtorul de mir, biserica din s.Saharna Nouă, raionului Rezina, care se află în subordinea Sfintei Mănăstiri Saharna, și-a serbat hramul.

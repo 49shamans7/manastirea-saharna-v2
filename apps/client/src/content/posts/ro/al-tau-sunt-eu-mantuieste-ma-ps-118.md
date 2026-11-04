@@ -40,6 +40,62 @@ galleryImages:
     thumb: /posts/al-tau-sunt-eu-mantuieste-ma-ps-118/image00007-4-sm.webp
     width: 800
     height: 641
+  - src: /posts/al-tau-sunt-eu-mantuieste-ma-ps-118/image00008-4.webp
+    thumb: /posts/al-tau-sunt-eu-mantuieste-ma-ps-118/image00008-4-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/al-tau-sunt-eu-mantuieste-ma-ps-118/image00009-4.webp
+    thumb: /posts/al-tau-sunt-eu-mantuieste-ma-ps-118/image00009-4-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/al-tau-sunt-eu-mantuieste-ma-ps-118/image00010-4.webp
+    thumb: /posts/al-tau-sunt-eu-mantuieste-ma-ps-118/image00010-4-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/al-tau-sunt-eu-mantuieste-ma-ps-118/image00011-4.webp
+    thumb: /posts/al-tau-sunt-eu-mantuieste-ma-ps-118/image00011-4-sm.webp
+    width: 512
+    height: 768
+  - src: /posts/al-tau-sunt-eu-mantuieste-ma-ps-118/image00012-4.webp
+    thumb: /posts/al-tau-sunt-eu-mantuieste-ma-ps-118/image00012-4-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/al-tau-sunt-eu-mantuieste-ma-ps-118/image00013-4.webp
+    thumb: /posts/al-tau-sunt-eu-mantuieste-ma-ps-118/image00013-4-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/al-tau-sunt-eu-mantuieste-ma-ps-118/image00014-3.webp
+    thumb: /posts/al-tau-sunt-eu-mantuieste-ma-ps-118/image00014-3-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/al-tau-sunt-eu-mantuieste-ma-ps-118/image00015-3.webp
+    thumb: /posts/al-tau-sunt-eu-mantuieste-ma-ps-118/image00015-3-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/al-tau-sunt-eu-mantuieste-ma-ps-118/image00016-3.webp
+    thumb: /posts/al-tau-sunt-eu-mantuieste-ma-ps-118/image00016-3-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/al-tau-sunt-eu-mantuieste-ma-ps-118/image00017-3.webp
+    thumb: /posts/al-tau-sunt-eu-mantuieste-ma-ps-118/image00017-3-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/al-tau-sunt-eu-mantuieste-ma-ps-118/image00018-3.webp
+    thumb: /posts/al-tau-sunt-eu-mantuieste-ma-ps-118/image00018-3-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/al-tau-sunt-eu-mantuieste-ma-ps-118/image00019-3.webp
+    thumb: /posts/al-tau-sunt-eu-mantuieste-ma-ps-118/image00019-3-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/al-tau-sunt-eu-mantuieste-ma-ps-118/image00020-3.webp
+    thumb: /posts/al-tau-sunt-eu-mantuieste-ma-ps-118/image00020-3-sm.webp
+    width: 800
+    height: 534
+  - src: /posts/al-tau-sunt-eu-mantuieste-ma-ps-118/image00021-3.webp
+    thumb: /posts/al-tau-sunt-eu-mantuieste-ma-ps-118/image00021-3-sm.webp
+    width: 800
+    height: 534
 ---
 
 A trecut la cele veșnice Monahia Agnia ( Ceapa ), viețuitoarea Sfintei Mănăstiri Saharna.
