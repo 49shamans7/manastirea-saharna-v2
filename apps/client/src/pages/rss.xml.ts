@@ -1,6 +1,6 @@
 // The chronicle as a feed — the newest fifty entries, Romanian originals.
 // Every link is absolute and carries the base path, so the feed is right on
-// GitHub Pages (/manastirea-saharna/) and on the monastery's own domain (/).
+// GitHub Pages (/manastirea-saharna-v2/) and on the monastery's own domain (/).
 import rss from "@astrojs/rss";
 import type { APIContext } from "astro";
 

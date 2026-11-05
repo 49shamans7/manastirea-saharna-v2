@@ -41,7 +41,8 @@ const verses = Astro.params.chamber === "acatistul";
 // A missing translation shows the Romanian original; say so to screen readers
 // and translation tools, so they do not read Romanian as English or Russian.
 const contentLang = page.isFallback ? "ro" : undefined;
-const note = page.isFallback ? t("zone.fallbackNote") : undefined;
+// an album has no text to apologise for
+const note = page.isFallback && !album ? t("zone.fallbackNote") : undefined;
 ---
 
 {

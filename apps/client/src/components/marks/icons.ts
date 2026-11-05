@@ -29,7 +29,7 @@ export type IconName = (typeof iconNames)[number];
 export const lines: Partial<Record<IconName, string>> = {
   "arrow-left": "M21 12H5M11 6l-6 6 6 6",
   // a square lens, not a round one: the solid system draws no curves it can avoid
-  search: "M4 4h12v12H4zM16 16l5 5",
+  search: "M10.5 3a7.5 7.5 0 1 0 0 15 7.5 7.5 0 0 0 0-15zM16 16l5 5",
   "arrow-right": "M3 12h16M13 6l6 6-6 6",
   "arrow-up": "M12 21V5M6 11l6-6 6 6",
   "arrow-down": "M12 3v16M6 13l6 6 6-6",

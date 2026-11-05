@@ -37,7 +37,12 @@
     /* the page between the two olive bars is the seal's white field */
     background: #fffdf8;
     color: var(--seal-deep);
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: var(--font-body);
+  }
+
+  /* Alegreya SC has no 600: the medium cut, thickened a hair */
+  :where(h1, h2, h3, h4) {
+    -webkit-text-stroke: 0.3px currentColor;
   }
 
   /* a visible focus ring on every interactive thing (WCAG 2.4.7) */
@@ -121,7 +126,7 @@
   }
   .page-title.is-long {
     font-family: var(--font-display);
-    font-weight: 700;
+    font-weight: 500;
     max-width: 30ch;
     font-size: var(--t-title-long);
     line-height: 1.18;

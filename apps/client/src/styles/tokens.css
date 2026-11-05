@@ -241,6 +241,7 @@
   --seal-paper: #f7f6f1;
   --seal-mist: #b9c6cf; /* quiet text on navy: 6.0:1 */
 
+  --font-body: "Alegreya", Georgia, "Times New Roman", serif;
   --font-display: "Alegreya SC", Georgia, "Times New Roman", serif;
   /* the gothic voice (design/temple/GOTHIC.md): Pirata One for Latin, the
      Figma file's own face; Monomakh, Old Russian uncial, for Cyrillic. Titles,
@@ -250,7 +251,7 @@
      every title reads these instead of a hard-coded uppercase */
   --display-case: none;
   --display-track: 0.01em;
-  --display-weight: 700;
+  --display-weight: 500;
 
   /* the olive bars, top and bottom */
   /* v2 (owner, 2026-10-15): the logo's inks only, glossy — cream and gold
@@ -343,7 +344,8 @@
    under a lamp; gold like leaf, with its sheen. Navy only writes. */
 :root {
   --gloss-cream: linear-gradient(180deg, #fffdf8 0%, #f7f3e7 55%, #efe5cc 100%);
-  --gloss-leaf: linear-gradient(135deg, #efe2bb 0%, #d9c48f 30%, #c9b07a 52%, #e4d3a3 78%, #c9b07a 100%);
+  /* gold leaf: burnished bands of light laid over the old theme's scrolled paper */
+  --gloss-leaf: linear-gradient(125deg, rgba(246, 226, 170, 0.5) 0%, rgba(201, 158, 80, 0.8) 24%, rgba(250, 234, 186, 0.42) 42%, rgba(186, 142, 66, 0.82) 60%, rgba(244, 222, 162, 0.5) 80%, rgba(194, 150, 72, 0.82) 100%), url("../assets/textures/flourish.jpg");
   --gloss-band: linear-gradient(180deg, #e9dab0 0%, #c9b07a 100%);
-  --cal-gloss: linear-gradient(160deg, #eadba9 0%, #d6c084 45%, #c9b07a 100%);
+  --cal-gloss: linear-gradient(160deg, rgba(244, 222, 162, 0.55) 0%, rgba(201, 158, 80, 0.8) 50%, rgba(232, 205, 140, 0.6) 100%), url("../assets/textures/flourish.jpg");
 }

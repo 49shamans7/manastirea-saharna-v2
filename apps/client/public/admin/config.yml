@@ -15,9 +15,9 @@ backend:
   auth_scope: public_repo
   # base_url: set by scripts/cloudflare-setup.mjs
   commit_messages:
-    create: "Cronică: {{slug}} (nou)"
-    update: "Cronică: {{slug}}"
-    delete: "Cronică: {{slug}} (șters)"
+    create: "Nou: {{slug}}"
+    update: "Modificat: {{slug}}"
+    delete: "Șters: {{slug}}"
     uploadMedia: "Fotografie: {{path}}"
     deleteMedia: "Fotografie ștearsă: {{path}}"
 
@@ -83,7 +83,7 @@ collections:
       - name: author
         label: Autor
         widget: select
-        options: ["preot Mihail Bortă", "Arhimandritul Iuvenalie"]
+        options: ["preot Mihail Bortă", "Iuvenalie Arhimandritul"]
         required: false
         i18n: duplicate
       - name: excerpt
@@ -125,6 +125,9 @@ collections:
         default: false
         i18n: duplicate
       - { name: zone, widget: hidden, default: green, i18n: duplicate }
+      # the redirects are built from sourceUrl: a save must not lose it
+      - { name: sourceUrl, widget: hidden, required: false, i18n: duplicate }
+      - { name: archiveImages, widget: hidden, default: 0, i18n: duplicate }
       - { name: body, label: Text, widget: markdown, required: false, i18n: true }
 
   # The long texts. Their place on the site (zone, template, order) is fixed in
@@ -147,7 +150,7 @@ collections:
       - { name: template, widget: hidden, default: chamber, i18n: duplicate }
       - { name: order, widget: hidden, default: 0, i18n: duplicate }
       - { name: sourceUrl, widget: hidden, i18n: duplicate }
-      - { name: body, label: Text, widget: markdown, i18n: true }
+      - { name: body, label: Text, widget: markdown, required: false, i18n: true }
 
   # The facts that change: one form each, no new files and no deleting.
   - name: settings

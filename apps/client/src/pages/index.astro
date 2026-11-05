@@ -265,6 +265,7 @@ const tasks: { href: string; title: string; sub: string; mark?: RiverMarkName }[
   /* gothic for the large display lines only; everything read is plain */
   /* gothic for the name and the quote; every other title reads plainly */
   h1 {
+    -webkit-text-stroke: 0;
     font-family: var(--font-gothic);
     font-weight: 400;
     line-height: 1.12;
@@ -274,7 +275,7 @@ const tasks: { href: string; title: string; sub: string; mark?: RiverMarkName }[
     margin: 0 0 var(--s-4);
     font-family: var(--font-display);
     font-size: clamp(30px, 3vw, 38px);
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1.15;
     letter-spacing: 0;
   }
@@ -410,6 +411,7 @@ const tasks: { href: string; title: string; sub: string; mark?: RiverMarkName }[
     line-height: 1.3;
   }
   .task-text strong {
+    font-weight: 600;
     font-size: 22px;
     line-height: 1.2;
   }
@@ -436,7 +438,7 @@ const tasks: { href: string; title: string; sub: string; mark?: RiverMarkName }[
   .day-name,
   .block-name {
     margin: var(--s-4) 0 var(--s-2);
-    font-weight: 700;
+    font-weight: 500;
   }
   .day-name {
     margin-top: 0;
@@ -455,7 +457,7 @@ const tasks: { href: string; title: string; sub: string; mark?: RiverMarkName }[
   .hours dt {
     font-family: var(--font-display);
     font-size: 22px;
-    font-weight: 700;
+    font-weight: 500;
     font-variant-numeric: lining-nums tabular-nums;
   }
   .hours dd {
@@ -469,7 +471,7 @@ const tasks: { href: string; title: string; sub: string; mark?: RiverMarkName }[
     min-height: var(--tap);
     margin-top: var(--s-3);
     color: inherit;
-    font-weight: 700;
+    font-weight: 500;
     text-decoration: underline;
     text-decoration-thickness: 2px;
     text-underline-offset: 0.2em;
@@ -531,7 +533,7 @@ const tasks: { href: string; title: string; sub: string; mark?: RiverMarkName }[
     color: #4a6274;
   }
   .news span {
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1.35;
   }
 
@@ -579,7 +581,7 @@ const tasks: { href: string; title: string; sub: string; mark?: RiverMarkName }[
     min-height: var(--tap);
     border-bottom: 1px solid #ddd0b2;
     color: var(--ink);
-    font-weight: 700;
+    font-weight: 500;
     text-decoration: none;
   }
   .plain-links a:hover {
@@ -592,7 +594,7 @@ const tasks: { href: string; title: string; sub: string; mark?: RiverMarkName }[
   }
   .film-name {
     margin: var(--s-3) 0 0;
-    font-weight: 700;
+    font-weight: 600;
   }
   .film p:last-child {
     margin: 0;
@@ -630,7 +632,7 @@ const tasks: { href: string; title: string; sub: string; mark?: RiverMarkName }[
     min-height: var(--tap);
     color: inherit;
     font-size: 30px;
-    font-weight: 700;
+    font-weight: 500;
     text-decoration: none;
   }
   .valley .more {

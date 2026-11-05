@@ -38,7 +38,7 @@ const posts = defineCollection({
       })
       .nullable()
       .default(null),
-    /** Further photographs (800w + 360w), capped per post by build-post-media.mjs. */
+    /** Further photographs (800w + 360w), from build-post-media.mjs. */
     galleryImages: z
       .array(
         z.union([

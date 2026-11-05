@@ -4,9 +4,7 @@
   background: var(--rock-deep);
   color: var(--parchment);
   font:
-    400 var(--t-body) / 1.8 Georgia,
-    "Iowan Old Style",
-    serif;
+    400 var(--t-body) / 1.8 var(--font-body);
   -webkit-font-smoothing: antialiased;
 }
 .temple .wrap {
